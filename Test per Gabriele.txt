@@ -1,1 +1,0 @@
-File testo per dimostare come funziona git
