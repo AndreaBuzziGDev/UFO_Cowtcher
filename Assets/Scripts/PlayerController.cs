@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         if (!GameStateController.Instance.IsPaused)
         {
         */
-            Move(new Vector2(0, MovementInputFactor));
+            Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
         /*
         }
         */
@@ -107,6 +107,6 @@ public class PlayerController : MonoBehaviour
 
 
     //FUNCTIONALITIES
-    public void Move(Vector2 direction) => rb2D.velocity = (direction) * MoveSpeed;
+    public void Move(Vector3 direction) => rb2D.velocity = (direction) * MoveSpeed;
 
 }
