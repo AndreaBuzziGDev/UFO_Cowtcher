@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     //TODO: SET INITIAL PLAYER POSITION PROGRAMMATICALLY
     //public Vector3 InitialPosition = new Vector3(-10, 0, 0);
     [SerializeField] private float MoveSpeed = 5;
-    Rigidbody2D rb2D;
+    Rigidbody myRigidBody;
 
 
 
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         Input = new PlayerInput();
-        rb2D = this.gameObject.GetComponent<Rigidbody2D>();
+        myRigidBody = this.gameObject.GetComponent<Rigidbody>();
     }
 
     // Start is called before the first frame update
@@ -107,6 +107,6 @@ public class PlayerController : MonoBehaviour
 
 
     //FUNCTIONALITIES
-    public void Move(Vector3 direction) => rb2D.velocity = (direction) * MoveSpeed;
+    public void Move(Vector3 direction) => myRigidBody.velocity = (direction) * MoveSpeed;
 
 }
