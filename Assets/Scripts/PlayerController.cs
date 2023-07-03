@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     
     //INPUT - EVENT-DRIVEN IMPLEMENTATION
     private PlayerInput Input = null;
-    private Vector2 MovementInputFactor = new Vector2(0,0);
+    private Vector2 MovementInputFactor = new(0,0);
 
 
     //POSITION ETC
