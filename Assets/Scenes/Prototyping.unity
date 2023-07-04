@@ -324,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetUFO: {fileID: 1117801784}
   Offset: {x: 0, y: 3, z: -7.5}
-  Damping: 10
+  Damping: 5
 --- !u!4 &1117801784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2213579584673786655, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
