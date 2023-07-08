@@ -5,7 +5,8 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour
 {
     public Transform TargetUFO;
-    public Vector3 Offset;
+    public Vector3 CameraOffset;
+    public float UFOVerticalOffset;
     public float Damping = 1.0f;
 
     private void Update()
@@ -15,8 +16,8 @@ public class FollowCamera : MonoBehaviour
             return;
         }
 
-        transform.position = Vector3.Lerp(transform.position, TargetUFO.position + Offset, Time.deltaTime * Damping);
+        transform.position = Vector3.Lerp(transform.position, TargetUFO.position + CameraOffset, Time.deltaTime * Damping);
 
-        transform.LookAt(TargetUFO, Vector3.up);
+        transform.LookAt(TargetUFO.position - new Vector3(0, UFOVerticalOffset, 0), Vector3.up);
     }
 }
