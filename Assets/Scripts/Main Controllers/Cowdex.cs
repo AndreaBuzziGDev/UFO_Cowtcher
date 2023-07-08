@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cowdex : MonoBehaviour
+public class Cowdex : MonoSingleton<Cowdex>
 {
     // Start is called before the first frame update
     void Start()
