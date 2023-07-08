@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class Cow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private ScriptableCow cowTemplate;
+    //private Hideout targetHideout;
+
+    enum State
+    {
+        Calm,
+        Alert,
+        Panic,
+        Hidden
+    }
+
+    private void Awake()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
     {
         
     }
