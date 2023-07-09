@@ -1,2 +1,11 @@
 ...
 
+
+
+
+
+
+EXTERNAL ASSETS
+
+See "Assets Tracking" for a complete list of all used Assets from third parties.
+
