@@ -5,12 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Cow", menuName = "Cow")]
 public class ScriptableCow : ScriptableObject
 {
-    public enum Rarity
-    {
-        Common,
-        Rare,
-        Legendary
-    }
+    //ENUMS
     public enum UniqueID
     {
         C001,
@@ -23,15 +18,41 @@ public class ScriptableCow : ScriptableObject
         C008
     }
 
-    public int FuelRecoveryAmount;
-    //public List<Hideout.Type> FavouriteHideoutTypes = new List<Hideout.Type>();
-    public float AlertRadius;
-    //public List<SpawnPoint.SpawnPointType> AllowedSpawnPointTypes = new List<SpawnPoint.SpawnPointType>();
-    public float Speed;
-    //public ScriptableRitual SummoningRitual;
+    public enum Rarity
+    {
+        Common,
+        Rare,
+        Legendary
+    }
 
-    //private PlayerStatusAlteration statusAlteration;
-    //private MovementPattern movPatternCalm;
-    //private MovementPattern movPatternAlert;
+
+    //DATA
+    ///UNIQUE ID & ENUMS
+    public UniqueID UID = UniqueID.C001;
+    public Rarity rarity = Rarity.Common;
+
+
+
+    /// SIMPLE DATA
+    public int FuelRecoveryAmount;
+    public float AlertRadius;
+    public float Speed;
+
+    //TODO: TIMERS FROM GDD
+
+
+    ///COMPLEX DATA
+    public ScriptableRitual SummoningRitual;
     
+    //TODO: EVALUATE ADOPT SET AS COLLECTION TYPE
+    public List<ScriptableHideout.Type> FavouriteHideoutTypes = new List<ScriptableHideout.Type>();
+    public List<SpawnPoint.Type> AllowedSpawnPointTypes = new List<SpawnPoint.Type>();
+
+
+    public AbstractStatusAlteration statusAlteration;
+
+    //TODO: EVALUATE FURTHER DIVERSIFICATION OF MOVEMENT PATTERNS
+    public AbstractMovementPattern movPatternCalm;
+    public AbstractMovementPattern movPatternAlert;
+
 }
