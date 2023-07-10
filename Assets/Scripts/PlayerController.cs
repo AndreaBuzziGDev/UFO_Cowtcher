@@ -96,17 +96,7 @@ public class PlayerController : MonoBehaviour
     private void OnMovementCanceled(InputAction.CallbackContext value) => MovementInputFactor = value.ReadValue<Vector2>();
 
     //ESCAPE
-    private void OnEscapePerformed(InputAction.CallbackContext value)
-    {
-        if (GameController.Instance.IsPaused)
-        {
-            GameController.Instance.SetState(GameController.EGameState.Playing);
-        }
-        else
-        {
-            GameController.Instance.SetState(GameController.EGameState.Paused);
-        }
-    }
+    private void OnEscapePerformed(InputAction.CallbackContext value) => GameController.Instance.helper.HandleEscInput();
 
 
 

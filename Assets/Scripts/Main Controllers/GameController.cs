@@ -5,6 +5,10 @@ using UnityEngine;
 public class GameController : MonoSingleton<GameController>
 {
     //ENUMS
+    //TODO: MIGHT BE USEFUL TO USE AN ENUM TO HANDLE WETHER THE PLAYER IS IN THE MAIN MENU OR IN A PLAYABLE LEVEL
+
+
+
     public enum EGameState
     {
         Start,
@@ -15,9 +19,14 @@ public class GameController : MonoSingleton<GameController>
     }
 
     //DATA
+    ///SIMPLE DATA
     private EGameState state = 0;
-
     public bool IsPaused { get { return this.state == EGameState.Paused; } }
+
+    ///COMPLEX DATA
+    public GameControllerHelper helper = new GameControllerHelper();
+
+
 
 
     //METHODS
