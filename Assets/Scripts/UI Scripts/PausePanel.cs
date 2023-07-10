@@ -6,6 +6,9 @@ public class PausePanel : MonoBehaviour
 {
     //METHODS
 
+    //OPEN COWDEX
+    public void OpenCowdex() => Resume();//TODO: CHANGE
+
     //UNPAUSE
     public void Resume() => GameController.Instance.SetState(GameController.EGameState.Playing);
 

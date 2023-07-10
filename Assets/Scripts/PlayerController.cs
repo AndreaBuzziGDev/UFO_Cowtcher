@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
 
         //ESCAPE
-        //Input.Player.Escape.performed += OnEscapePerformed;
+        Input.Player.Escape.performed += OnEscapePerformed;
 
     }
 
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
 
         //ESCAPE
-        //Input.Player.Escape.performed -= OnEscapePerformed;
+        Input.Player.Escape.performed -= OnEscapePerformed;
 
     }
 
@@ -94,6 +94,19 @@ public class PlayerController : MonoBehaviour
     //MOVEMENT
     private void OnMovementPerformed(InputAction.CallbackContext value) => MovementInputFactor = value.ReadValue<Vector2>();
     private void OnMovementCanceled(InputAction.CallbackContext value) => MovementInputFactor = value.ReadValue<Vector2>();
+
+    //ESCAPE
+    private void OnEscapePerformed(InputAction.CallbackContext value)
+    {
+        if (GameController.Instance.IsPaused)
+        {
+            GameController.Instance.SetState(GameController.EGameState.Playing);
+        }
+        else
+        {
+            GameController.Instance.SetState(GameController.EGameState.Paused);
+        }
+    }
 
 
 

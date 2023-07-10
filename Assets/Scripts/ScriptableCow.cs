@@ -37,8 +37,14 @@ public class ScriptableCow : ScriptableObject
     public int FuelRecoveryAmount;
     public float AlertRadius;
     public float Speed;
+    public int Score;
 
     //TODO: TIMERS FROM GDD
+    //TODO: RENAME EACH TIMER
+    public float t1 = 1.0f;
+    public float t2 = 1.0f;
+    public float t3 = 1.0f;
+    public float t4 = 1.0f;
 
 
     ///COMPLEX DATA

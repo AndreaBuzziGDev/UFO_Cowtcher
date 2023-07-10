@@ -33,9 +33,6 @@ public class GameController : MonoSingleton<GameController>
     }
 
 
-    //TODO: LISTEN TO ESC INPUT HERE INSTEAD OF PLAYER?
-
-
 
     //FUNCTIONALITIES
     //...
@@ -51,9 +48,7 @@ public class GameController : MonoSingleton<GameController>
                 break;
 
             case EGameState.Playing:
-                //TODO: HIDE PAUSE MENU
                 UIController.Instance.HideAllMenuPanels();
-                Debug.Log("Hid All Stuff");
                 UnpauseGame();
 
                 break;
