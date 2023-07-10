@@ -14,13 +14,19 @@ public class IndexedCow
 
     //DATA
     private CowKnowledgeState state = CowKnowledgeState.Unknown;
+    public CowKnowledgeState State { get { return state; } }
+
     private ScriptableCow referenceTemplate;
+    public ScriptableCow ReferenceTemplate { get { return referenceTemplate; } }
+
+
     private List<IndexedCow> cowSummoningRitual;
+    public List<IndexedCow> CowSummoningRitual { get { return cowSummoningRitual; } }
 
 
     //METHODS
 
 
-    
+
 
 }

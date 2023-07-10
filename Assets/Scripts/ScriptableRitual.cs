@@ -6,6 +6,7 @@ using UnityEngine;
 public class ScriptableRitual : ScriptableObject
 {
     //DATA
-    List<ScriptableCow.UniqueID> RequiredCows = new List<ScriptableCow.UniqueID>();
+    [SerializeField] private List<ScriptableCow.UniqueID> requiredCows = new List<ScriptableCow.UniqueID>();
+    public List<ScriptableCow.UniqueID> RequiredCows { get { return requiredCows; } }
 
 }
