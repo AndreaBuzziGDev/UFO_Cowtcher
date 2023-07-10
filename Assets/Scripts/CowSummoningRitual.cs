@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CowSummoningRitual
 {
+    //TODO: DEVELOP UNIT TESTS
+
+
     //DATA
     private Dictionary<ScriptableCow.UniqueID, RitualModule> ritualDictionary = new();
 
