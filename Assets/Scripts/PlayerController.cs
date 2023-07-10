@@ -51,14 +51,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*
-        if (!GameStateController.Instance.IsPaused)
-        {
-        */
-            Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
-        /*
-        }
-        */
+        
+        if (!GameController.Instance.IsPaused) Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
     }
 
 

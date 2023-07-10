@@ -9,7 +9,9 @@ public class GameController : MonoSingleton<GameController>
     {
         Start,
         Playing,
-        Paused
+        Paused,
+        Quitting,
+        Exiting
     }
 
     //DATA
@@ -26,7 +28,12 @@ public class GameController : MonoSingleton<GameController>
     {
         //SHOULD HELP DRIVING THE OTHER CONTROLLERS THROUGH THEIR INITIALIZATION SEQUENTIALLY.
 
+        //ENFORCES START SEQUENCE
+        SetState(EGameState.Playing);
     }
+
+
+    //TODO: LISTEN TO ESC INPUT HERE INSTEAD OF PLAYER?
 
 
 
@@ -40,18 +47,28 @@ public class GameController : MonoSingleton<GameController>
             case EGameState.Start:
                 //RESERVED FOR INITIALIZATION
 
-                //TODO: TRANSITION TO STATE "PLAYING" AT THE END OF START STATE
+                SetState(EGameState.Playing);
                 break;
 
             case EGameState.Playing:
+                //TODO: HIDE PAUSE MENU
+                UIController.Instance.HideAllMenuPanels();
+                Debug.Log("Hid All Stuff");
                 UnpauseGame();
-
 
                 break;
 
             case EGameState.Paused:
-
+                UIController.Instance.ShowPause();
                 PauseGame();
+                break;
+
+            case EGameState.Quitting:
+                QuitGame();
+                break;
+
+            case EGameState.Exiting:
+                ExitGame();
                 break;
 
         }
@@ -59,13 +76,34 @@ public class GameController : MonoSingleton<GameController>
 
 
     //PAUSING
-    public static void PauseGame()
+    private static void PauseGame()
     {
         Time.timeScale = 0;
     }
-    public static void UnpauseGame()
+    private static void UnpauseGame()
     {
         Time.timeScale = 1;
+    }
+
+
+    //QUIT GAME (ABANDON SESSION)
+    private static void QuitGame()
+    {
+        //TODO: GO BACK TO MAIN MENU
+        //NOW IT QUITS THE GAME
+        ExitGame();
+    }
+
+
+
+    //EXIT GAME
+    private static void ExitGame()
+    {
+        Application.Quit();
+        if (UnityEditor.EditorApplication.isPlaying)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
     }
 
 }
