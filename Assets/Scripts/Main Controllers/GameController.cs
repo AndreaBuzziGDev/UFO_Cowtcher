@@ -53,6 +53,8 @@ public class GameController : MonoSingleton<GameController>
             case EGameState.Start:
                 //RESERVED FOR INITIALIZATION
 
+                //TODO: THE COWDEX NEEDS TO BE INITIALIZED BEFORE THE SPAWNMANAGER IS
+
                 SetState(EGameState.Playing);
                 break;
 
