@@ -15,6 +15,8 @@ public class UIController : MonoSingleton<UIController>
     [SerializeField] private GameObject PauseGamePanel;
     [SerializeField] private GameObject CowdexPanel;
 
+    [SerializeField] private GameObject GameplayInputCanvas;
+
 
     //METHODS
 
@@ -33,6 +35,11 @@ public class UIController : MonoSingleton<UIController>
     }
 
     ///INDIVIDUALS
+    //GAMEPLAY INPUT GUI
+    public void ShowInputCanvas() => GameplayInputCanvas.SetActive(true);
+    public void HideInputCanvas() => GameplayInputCanvas.SetActive(false);
+
+
     //PAUSE
     public void ShowPause() => PauseGamePanel.SetActive(true);
     public void Hidepause() => PauseGamePanel.SetActive(false);

@@ -4120,6 +4120,7 @@ MonoBehaviour:
   - {fileID: 356542193}
   PauseGamePanel: {fileID: 356542193}
   CowdexPanel: {fileID: 0}
+  GameplayInputCanvas: {fileID: 722530450}
 --- !u!4 &1958190534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3008297296413678391, guid: cb422acdc199d6e42910f589b81c283b, type: 3}
