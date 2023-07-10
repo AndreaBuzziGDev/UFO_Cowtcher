@@ -39,18 +39,20 @@ public class ScriptableCow : ScriptableObject
     public float Speed;
     public int Score;
 
-    //TODO: TIMERS FROM GDD
-    //TODO: RENAME EACH TIMER
-    public float t1 = 1.0f;
-    public float t2 = 1.0f;
-    public float t3 = 1.0f;
-    public float t4 = 1.0f;
+    //TIMERS
+    [Tooltip("Time the cow will spend in alert state while not being chased by the UFO anymore")]
+    public float TimerAlertToCalm = 1.0f;
+    [Tooltip("Time the cow will spend in alert state before transitioning to Panic (search Hideout)")]
+    public float TimerAlertToPanic = 1.0f;
+
+    [Tooltip("Time the cow will spend moving randomly while being in the calm state")]
+    public float TimerCalmMovement = 1.0f;
+    [Tooltip("Time the cow will spend moving standing still while being in the calm state")]
+    public float TimerCalmStill = 1.0f;
 
 
     ///COMPLEX DATA
     public ScriptableRitual SummoningRitual;
-    
-    //TODO: EVALUATE ADOPT SET AS COLLECTION TYPE
     public List<ScriptableHideout.Type> FavouriteHideoutTypes = new List<ScriptableHideout.Type>();
     public List<SpawnPoint.Type> AllowedSpawnPointTypes = new List<SpawnPoint.Type>();
 
