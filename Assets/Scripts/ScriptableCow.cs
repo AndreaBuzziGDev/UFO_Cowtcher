@@ -53,8 +53,8 @@ public class ScriptableCow : ScriptableObject
 
     ///COMPLEX DATA
     public ScriptableRitual SummoningRitual;
-    public List<ScriptableHideout.Type> FavouriteHideoutTypes = new List<ScriptableHideout.Type>();
-    public List<SpawnPoint.Type> AllowedSpawnPointTypes = new List<SpawnPoint.Type>();
+    public List<ScriptableHideout.Type> FavouriteHideoutTypes = new();
+    public List<SpawnPoint.Type> AllowedSpawnPointTypes = new();
 
 
     public AbstractStatusAlteration statusAlteration;
