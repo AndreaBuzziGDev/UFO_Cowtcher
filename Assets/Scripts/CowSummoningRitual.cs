@@ -7,11 +7,17 @@ public class CowSummoningRitual
     //TODO: DEVELOP UNIT TESTS
 
 
+    //TODO: HANDLE MANAGEMENT FOR SPECIAL BEHAVIOURS IN RITUALS (iRitualBehaviour)
+    //NB: AN ALTERNATE IMPLEMENTATION OF SUMMONING RITUALS CAN BE ACHIEVED BY MAKING THIS CLASS ABSTRACT AND HANDLING THE CONCRETE DETAILS IN A CHILD CLASS
+
+
     //DATA
     private Dictionary<ScriptableCow.UniqueID, RitualModule> ritualDictionary = new();
 
-    private List<RitualModule> modules = new List<RitualModule>();//TODO: modules seems obsolete/useless since we have a dictionary with more functionalities.
-    public List<RitualModule> Modules { get { return modules; } }
+
+    private iRitualBehaviour behaviour;
+    public iRitualBehaviour Behaviour { get { return behaviour; } }
+
     
 
     //CONSTRUCTOR
@@ -38,24 +44,53 @@ public class CowSummoningRitual
             }
         }
 
-        //TODO: CREA RITUALMODULE
+        //
         foreach (KeyValuePair<ScriptableCow.UniqueID, int> entry in plottedRituals)
         {
             RitualModule iteratedModule = new RitualModule(entry.Key, entry.Value);
-            modules.Add(iteratedModule);
             ritualDictionary.Add(entry.Key, iteratedModule);
+        }
+
+        //
+        behaviour = mapBehaviour(sr.Type);
+    }
+
+
+
+    //RITUAL TYPE MAPPING
+    private iRitualBehaviour mapBehaviour(ScriptableRitual.ERitualType type)
+    {
+        switch (type)
+        {
+            case ScriptableRitual.ERitualType.SequentialCapture:
+                return new RitSequentialCapture();
+            case ScriptableRitual.ERitualType.ItemProximity:
+                return null;
+            case ScriptableRitual.ERitualType.ScoreThreshold:
+                return null;
+            default:
+                //HAS SimpleCapture EMBEDDED
+                return null;
         }
 
     }
 
 
+
+
     //METHODS
+    //TODO: DEVELOP A METHOD THAT CALLS THE iRitualBehaviour LOGIC AND THE REST OF THE PROCEDURES
+
+
+
+
+    public bool HasCow(ScriptableCow.UniqueID searchedID) => ritualDictionary.ContainsKey(searchedID);
+
     public void ChangeCapturedCowCount(ScriptableCow.UniqueID cowUID, int delta)
     {
         RitualModule rm = ritualDictionary[cowUID];
         rm.ChangeAmount(delta);
     }
-
 
     public bool IsReadyToSpawn()
     {
@@ -85,5 +120,7 @@ public class CowSummoningRitual
             entry.Value.HandleCowSpawn();
         }
     }
+
+
 
 }

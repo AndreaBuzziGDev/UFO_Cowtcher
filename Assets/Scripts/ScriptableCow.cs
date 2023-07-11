@@ -6,8 +6,10 @@ using UnityEngine;
 public class ScriptableCow : ScriptableObject
 {
     //ENUMS
+    //NB: "ANY" RESERVED FOR APPLICATIONS THAT DO NOT NEED SPECIFYING A COW (LIKE NON-SPECIFIC RITUALS)
     public enum UniqueID
     {
+        C000,
         C001,
         C002,
         C003,
@@ -15,7 +17,8 @@ public class ScriptableCow : ScriptableObject
         C005,
         C006,
         C007,
-        C008
+        C008,
+        ANY
     }
 
     public enum Rarity
@@ -34,9 +37,11 @@ public class ScriptableCow : ScriptableObject
 
 
     /// SIMPLE DATA
+    public string Name;
     public int FuelRecoveryAmount;
     public float AlertRadius;
-    public float Speed;
+    public float SpeedCalm;
+    public float SpeedAlert;
     public int Score;
 
     //TIMERS
@@ -52,7 +57,7 @@ public class ScriptableCow : ScriptableObject
 
 
     ///COMPLEX DATA
-    public ScriptableRitual SummoningRitual;
+    public ScriptableRitual SummoningRitual;//TODO: MUST BE NULL-SAFE
     public List<ScriptableHideout.Type> FavouriteHideoutTypes = new();
     public List<SpawnPoint.Type> AllowedSpawnPointTypes = new();
 

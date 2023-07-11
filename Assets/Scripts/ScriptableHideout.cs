@@ -8,9 +8,9 @@ public class ScriptableHideout : ScriptableObject
     //ENUMS
     public enum Type
     {
-        Granary,
-        Bush,
-        Treetop
+        Barn,
+        Rock,
+        Garage
     }
 
     //DATA
