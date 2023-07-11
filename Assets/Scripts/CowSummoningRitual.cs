@@ -10,6 +10,9 @@ public class CowSummoningRitual
     //TODO: HANDLE MANAGEMENT FOR SPECIAL BEHAVIOURS IN RITUALS (iRitualBehaviour)
     //NB: AN ALTERNATE IMPLEMENTATION OF SUMMONING RITUALS CAN BE ACHIEVED BY MAKING THIS CLASS ABSTRACT AND HANDLING THE CONCRETE DETAILS IN A CHILD CLASS
 
+    //TODO: HANDLE TYPE "ANY" CORRECTLY
+
+
 
     //DATA
     private Dictionary<ScriptableCow.UniqueID, RitualModule> ritualDictionary = new();
@@ -84,7 +87,7 @@ public class CowSummoningRitual
 
 
 
-    public bool HasCow(ScriptableCow.UniqueID searchedID) => ritualDictionary.ContainsKey(searchedID);
+    public bool HasCow(ScriptableCow.UniqueID searchedID) => ritualDictionary.ContainsKey(searchedID);//TODO: HANDLE TYPE "ANY" CORRECTLY
 
     public void ChangeCapturedCowCount(ScriptableCow.UniqueID cowUID, int delta)
     {
