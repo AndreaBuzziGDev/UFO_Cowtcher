@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb00f1e59a3184444a64362713f5e79c, type: 3}
   m_Name: ScareCow
   m_EditorClassIdentifier: 
-  requiredCows: 
+  requiredCows: 0900000009000000090000000900000009000000
   type: 0

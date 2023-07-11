@@ -68,9 +68,9 @@ public class CowSummoningRitual
             case ScriptableRitual.ERitualType.SequentialCapture:
                 return new RitSequentialCapture();
             case ScriptableRitual.ERitualType.ItemProximity:
-                return null;
+                return new RitProximity();
             case ScriptableRitual.ERitualType.ScoreThreshold:
-                return null;
+                return new RitScoreThreshold();
             default:
                 //HAS SimpleCapture EMBEDDED
                 return null;

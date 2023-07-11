@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb00f1e59a3184444a64362713f5e79c, type: 3}
   m_Name: Kowbra
   m_EditorClassIdentifier: 
-  requiredCows: 
+  requiredCows: 09000000
+  type: 2
