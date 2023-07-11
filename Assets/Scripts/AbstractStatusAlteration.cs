@@ -6,6 +6,6 @@ using UnityEngine;
 public class AbstractStatusAlteration : ScriptableObject
 {
 
-    //NB: "DEAD" CLASS. DISCARDED IN ORDER TO FAVOR ANOTHER DEVELOPMENT APPROACH (Interfaces)
+    //NB: "DEAD" CLASS. DISCARDED IN ORDER TO FAVOR ANOTHER DEVELOPMENT APPROACH (Abstract non-ScriptableObject Class)
 
 }

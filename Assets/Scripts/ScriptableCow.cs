@@ -29,6 +29,7 @@ public class ScriptableCow : ScriptableObject
     }
 
 
+
     //DATA
     ///UNIQUE ID & ENUMS
     public UniqueID UID = UniqueID.C001;
@@ -61,8 +62,8 @@ public class ScriptableCow : ScriptableObject
     public List<ScriptableHideout.Type> FavouriteHideoutTypes = new();
     public List<SpawnPoint.Type> AllowedSpawnPointTypes = new();
 
-
-    public AbstractStatusAlteration statusAlteration;
+    //TODO: SWITCH TO ENUM VARIABLE
+    public AbstractAlteration.EBuffType Alteration;
 
     //TODO: EVALUATE FURTHER DIVERSIFICATION OF MOVEMENT PATTERNS
     public AbstractMovementPattern movPatternCalm;
