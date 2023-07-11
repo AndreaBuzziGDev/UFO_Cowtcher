@@ -42,5 +42,11 @@ public class Hideout : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    public bool IsFull()
+    {
+        //TODO: IMPLEMENT
+
+        return true;
+    }
 
 }

@@ -18,6 +18,10 @@ public class Cow : MonoBehaviour
     ///INNATE COW DATA
     private State currentState = State.Calm;
     public State CurrentState { get { return currentState; } }
+    public bool IsCalm { get { return (currentState == State.Calm); } }
+    public bool IsAlert { get { return (currentState == State.Alert || currentState == State.Panic); } }
+
+
 
     [SerializeField] private ScriptableCow cowTemplate;
     private Hideout targetHideout;
@@ -66,6 +70,9 @@ public class Cow : MonoBehaviour
 
     //TECHNICAL DATA FOR OTHER PURPOSES
     private SpriteRenderer sr;
+    private Rigidbody rb;
+
+    private Vector3 movementDirection = Vector3.forward;
 
 
 
@@ -75,33 +82,15 @@ public class Cow : MonoBehaviour
     //...
     private void Awake()
     {
-        /// SIMPLE DATA
-        //TODO: CLONE DATA FROM SCRIPTABLE COW
-        this.UID = cowTemplate.UID;
-        this.rarity = cowTemplate.rarity;
-        this.cowName = cowTemplate.Name;
-        this.fuelRecoveryAmount = cowTemplate.FuelRecoveryAmount;
-        this.AlertRadius = cowTemplate.AlertRadius;
-        this.SpeedCalm = cowTemplate.SpeedCalm;
-        this.SpeedAlert = cowTemplate.SpeedAlert;
-        this.Score = cowTemplate.Score;
-        this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
-        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
-        this.TimerCalmMovement = cowTemplate.TimerCalmMovement;
-        this.TimerCalmStill = cowTemplate.TimerCalmStill;
-
-        /// COMPLEX DATA
-        this.FavouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
-        this.AllowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
-        this.alteration = cowTemplate.Alteration;
-        this.movPatternCalm = cowTemplate.movPatternCalm;
-        this.movPatternAlert = cowTemplate.movPatternAlert;
-        
+        if(cowTemplate != null) CloneFromTemplate();
+        else Debug.LogWarning("COW WITHOUT TEMPLATE (SCRIPTABLE COW) " + this.gameObject.name);
 
         //OTHER TECHNICAL AWAKE SETUP
         sr = this.gameObject.GetComponent<SpriteRenderer>();
         sr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         sr.receiveShadows = true;
+
+        rb = this.gameObject.GetComponent<Rigidbody>();
 
     }
 
@@ -110,13 +99,143 @@ public class Cow : MonoBehaviour
         
     }
 
+
+    private void FixedUpdate()
+    {
+        float mySpeed;
+        if (this.IsCalm) mySpeed = SpeedCalm;
+        else mySpeed = SpeedAlert;
+
+        rb.MovePosition(transform.position + movementDirection * Time.deltaTime * mySpeed);
+    }
+
     private void Update()
     {
-        
+        //STEP 1
+        if (CowHelper.IsUFOWithinRadius(this))
+        {
+            if (IsCalm) this.currentState = State.Alert;
+            this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
+        }
+        else
+        {
+            this.TimerAlertToCalm -= Time.deltaTime;
+            if (this.TimerAlertToCalm <= 0.0f) this.currentState = State.Calm;
+        }
+
+
+        //STEP 2
+        if (IsAlert)
+        {
+            this.TimerAlertToPanic -= Time.deltaTime;
+            if (this.TimerAlertToPanic > 0.0f)
+            {
+                //use ALERT movement pattern to effectively determine how to move cow.
+                //NB: THIS IS SPECIFICALLY THE "ALERT" MOVEMENT, DO NOT CONFUSE IT WITH PANIC (run for hideout) MOVEMENT.
+                //Vector3 myNewDirection = AbstractMovementPattern.ManageMovement();
+
+            }
+            else
+            {
+                //NB: THIS HANDLES PANIC (run for hideout) BEHAVIOUR
+                if (!CowHelper.HasChosenHideout(this))
+                {
+                    //HELPER - CHOSE HIDEOUT...
+                    this.targetHideout = CowHelper.FindHideout(this);
+
+                }
+                else
+                {
+                    if (!targetHideout.IsFull())
+                    {
+                        //use ALERT movement pattern to effectively determine how to move cow.
+                        //NB: THIS IS SPECIFICALLY THE "PANIC" MOVEMENT, DO NOT CONFUSE IT WITH ALERT (escape from UFO) MOVEMENT.
+                        //Vector3 myNewDirection = AbstractMovementPattern.ManageMovement();
+
+                    }
+                    else
+                    {
+                        Hideout newHideout = CowHelper.FindHideout(this);
+                        if (newHideout != null) this.targetHideout = newHideout;
+                        else this.targetHideout = null;//NB: THIS IS DIRTY. IMPLEMENT AS A CALL TO THE SAME CODE THAT ESSENTIALLY MOVES THE COW AS IF IT WERE IN ALERT STATE
+                    }
+                }
+
+                if (CowHelper.CanEnterHideout(this))
+                {
+                    //NOTIFY THE HIDEOUT THAT THE COW WANTS TO ENTER THE HIDEOUT
+                    //NB: SYNCHRONIZATION ISSUES!!!
+
+                    //IF COW HAS ENTERED HIDEOUT, TRANSITION TO HIDDEN STATE
+                    //IF COW HAS ENTERED HIDEOUT, DISABLE COW
+
+                }
+
+            }
+        }
+        else
+        {
+            //TODO: HANDLE CALM MOVEMENT PATTERN HERE
+            //calm movement timer handling...
+
+            //calm quiet timer handling...
+
+            //use CALM movement pattern to effectively determine how to move cow.
+            //Vector3 myNewDirection = AbstractMovementPattern.ManageMovement();
+
+
+        }
+
+
     }
+
+
+    //ENABLEMENT/DISABLEMENT
+    private void OnEnable()
+    {
+        this.movementDirection = Vector3.zero;
+        this.currentState = State.Calm;
+    }
+
+    private void OnDisable()
+    {
+
+    }
+
+
 
 
     //FUNCTIONALITIES
 
+
+
+    ///CLONE SCRIPTABLE COW
+    private void CloneFromTemplate()
+    {
+        /// SIMPLE DATA
+        this.UID = cowTemplate.UID;
+        this.rarity = cowTemplate.rarity;
+        this.cowName = cowTemplate.Name;
+        this.fuelRecoveryAmount = cowTemplate.FuelRecoveryAmount;
+        this.AlertRadius = cowTemplate.AlertRadius;
+        this.SpeedCalm = cowTemplate.SpeedCalm;
+        this.SpeedAlert = cowTemplate.SpeedAlert;
+        this.Score = cowTemplate.Score;
+
+        //TIMERS START AT 0. THE TEMPLATE IS USED TO "RESET" TIMERS WHEN NEEDED.
+        /*
+        this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
+        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
+        this.TimerCalmMovement = cowTemplate.TimerCalmMovement;
+        this.TimerCalmStill = cowTemplate.TimerCalmStill;
+        */
+
+        /// COMPLEX DATA
+        this.FavouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
+        this.AllowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
+        this.alteration = cowTemplate.Alteration;
+        this.movPatternCalm = cowTemplate.movPatternCalm;
+        this.movPatternAlert = cowTemplate.movPatternAlert;
+    }
 
 }

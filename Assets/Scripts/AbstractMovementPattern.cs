@@ -6,6 +6,6 @@ using UnityEngine;
 public abstract class AbstractMovementPattern : ScriptableObject
 {
 
-
+    public abstract Vector3 ManageMovement();
 
 }
