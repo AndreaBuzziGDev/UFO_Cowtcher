@@ -44,7 +44,9 @@ public class Cow : MonoBehaviour
     private float AlertRadius;
     private float SpeedCalm;
     private float SpeedAlert;
-    private float Score;
+
+    private int score;
+    public int Score { get { return score; } }
 
     ///TIMERS
     private float TimerAlertToCalm;
@@ -220,7 +222,7 @@ public class Cow : MonoBehaviour
         this.AlertRadius = cowTemplate.AlertRadius;
         this.SpeedCalm = cowTemplate.SpeedCalm;
         this.SpeedAlert = cowTemplate.SpeedAlert;
-        this.Score = cowTemplate.Score;
+        this.score = cowTemplate.Score;
 
         //TIMERS START AT 0. THE TEMPLATE IS USED TO "RESET" TIMERS WHEN NEEDED.
         /*

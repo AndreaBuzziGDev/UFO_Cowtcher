@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 1083418052433258214}
   - component: {fileID: 1681479589206780651}
   - component: {fileID: 5347159759819700417}
+  - component: {fileID: 2316233886179570003}
   - component: {fileID: 3824681213956448144}
   - component: {fileID: 1113527563185232423}
   m_Layer: 0
@@ -172,7 +173,7 @@ Transform:
   - {fileID: 6294619815631106068}
   - {fileID: 2573885485125725165}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1083418052433258214
 SpriteRenderer:
@@ -276,6 +277,21 @@ CapsuleCollider:
   m_Height: 1.364
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2316233886179570003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941655071495466051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bbea98eb98fec4084667567816308e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FuelAmount: 0
+  ScoreAmount: 0
+  maxFuelAmount: 50
 --- !u!114 &3824681213956448144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be14ff4c47002946aa29fe709d77713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UFO: {fileID: 2316233886179570003}
   captureTimer: 10
   timeBeforeReduction: 5
   maxRadius: 1.5

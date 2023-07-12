@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Abductor : MonoBehaviour
 {
     //DATA
+    [SerializeField] private UFO UFO;
     [SerializeField] private float captureTimer;
     [SerializeField] private float timeBeforeReduction;
     [SerializeField] private float maxRadius;
@@ -46,6 +48,11 @@ public class Abductor : MonoBehaviour
             DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
 
             timeBeforeReductionProgress = 0f;
+
+            if (currentCaptureTimer >= captureTimer)
+            {
+                CatchCows();
+            }
         }
         else
         {
@@ -98,5 +105,25 @@ public class Abductor : MonoBehaviour
 
             circleRenderer.SetPosition(currentStep, currentPosition);
         }
+    }
+
+    private void CatchCows()
+    {
+        for (int i = cowsInRange.Count - 1; i >= 0; i--)
+        {
+            cowsInRange[i].SetActive(false);
+
+            //PASS THE COW ATTRIBUTES TO THE RIGHT SCRIPTS
+            Cow cow = cowsInRange[i].GetComponent<Cow>();
+            float cowFuelRecoveryAmount = cow.FuelRecoveryAmount;
+            float cowIncreaseScoreAmount = cow.Score;
+
+            UFO.FuelAmount += cowFuelRecoveryAmount;
+            UFO.ScoreAmount += cowIncreaseScoreAmount;
+
+            cowsInRange.Remove(cowsInRange[i]);
+        }
+        
+        currentCaptureTimer = 0.0f;
     }
 }
