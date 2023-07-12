@@ -67,7 +67,7 @@ public class Cow : MonoBehaviour
 
     //TODO: EVALUATE FURTHER DIVERSIFICATION OF MOVEMENT PATTERNS
     private AbstractMovementPattern movPatternCalm;
-    private AbstractMovementPattern movPatternAlert;
+    private AbstractMovementAlert movPatternAlert;
 
 
     //TECHNICAL DATA FOR OTHER PURPOSES
@@ -237,7 +237,7 @@ public class Cow : MonoBehaviour
         this.AllowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
         this.alteration = cowTemplate.Alteration;
         this.movPatternCalm = cowTemplate.movPatternCalm;
-        this.movPatternAlert = cowTemplate.movPatternAlert;
+        this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert;
     }
 
 }
