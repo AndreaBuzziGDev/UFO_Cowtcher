@@ -42,6 +42,7 @@ public class Hideout : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    //TODO: RENAME AS "IsAvailable/HasAvailableSlots"?
     public bool IsFull()
     {
         //TODO: IMPLEMENT
