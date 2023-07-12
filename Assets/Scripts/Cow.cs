@@ -165,7 +165,7 @@ public class Cow : MonoBehaviour
 
                 if (CowHelper.CanEnterHideout(this))
                 {
-                    //NOTIFY THE HIDEOUT THAT THE COW WANTS TO ENTER THE HIDEOUT
+                    //NOTIFY THE HIDEOUT THAT THE COW WANTS TO ENTER INSIDE
                     //NB: SYNCHRONIZATION ISSUES!!!
 
                     //IF COW HAS ENTERED HIDEOUT, TRANSITION TO HIDDEN STATE
