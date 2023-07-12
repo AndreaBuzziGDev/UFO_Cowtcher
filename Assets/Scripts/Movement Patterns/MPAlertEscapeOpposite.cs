@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New MPAlertEscapeOpposite", menuName = "MovPattern Alert Escape Opposite")]
 public class MPAlertEscapeOpposite : AbstractMovementAlert
 {
 
