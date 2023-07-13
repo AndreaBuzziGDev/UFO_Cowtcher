@@ -37,17 +37,7 @@ public class IndexedCow
 
     public List<IndexedCow> RitualCows()
     {
-        List<IndexedCow> relatedCows = new();
-
-        //TODO: IMPLEMENT MASS RETRIEVAL FUNCTIONALITY IN COWDEX INSTEAD?
-        if (referenceTemplate.SummoningRitual != null)
-        {
-            foreach (ScriptableCow.UniqueID UID in referenceTemplate.SummoningRitual.RequiredCows)
-            {
-                relatedCows.Add(Cowdex.Instance.GetIndexedCow(UID));
-            }
-
-        }
+        List<IndexedCow> relatedCows = Cowdex.Instance.GetIndexedCows(referenceTemplate.SummoningRitual.RequiredCows);
 
         //TODO: COWDEX MUST HANDLE THE ANY COW PROPERLY
         //      HANDLING OF THE "GENERICALLY-ALLOWED" COW TYPE HERE ?

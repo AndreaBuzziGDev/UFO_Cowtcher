@@ -64,18 +64,37 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///DATA RETRIEVAL
 
     ///RETRIEVE ANY Cow
+    public List<Cow> GetCows(List<ScriptableCow.UniqueID> UIDs)
+    {
+        List<Cow> requiredCows = new();
+        foreach (ScriptableCow.UniqueID UID in UIDs) requiredCows.Add(GetCow(UID));
+        return requiredCows;
+    }
     public Cow GetCow(ScriptableCow.UniqueID UID)
     {
         return CowArchive[UID];
     }
 
     ///RETRIEVE ANY ScriptableCow
+    public List<ScriptableCow> GetScriptableCows(List<ScriptableCow.UniqueID> UIDs)
+    {
+        List<ScriptableCow> requiredScriptableCows = new();
+        foreach (ScriptableCow.UniqueID UID in UIDs) requiredScriptableCows.Add(GetScriptableCow(UID));
+        return requiredScriptableCows;
+    }
     public ScriptableCow GetScriptableCow(ScriptableCow.UniqueID UID)
     {
         return ScriptableCowArchive[UID];
     }
 
+
     ///RETRIEVE ANY IndexedCow
+    public List<IndexedCow> GetIndexedCows(List<ScriptableCow.UniqueID> UIDs)
+    {
+        List<IndexedCow> relatedCows = new();
+        foreach (ScriptableCow.UniqueID UID in UIDs) relatedCows.Add(GetIndexedCow(UID));
+        return relatedCows;
+    }
     public IndexedCow GetIndexedCow(ScriptableCow.UniqueID UID)
     {
         return PlayableCowdex[UID];
