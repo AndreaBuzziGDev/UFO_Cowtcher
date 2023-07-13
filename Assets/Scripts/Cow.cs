@@ -24,6 +24,8 @@ public class Cow : MonoBehaviour
 
 
     [SerializeField] private ScriptableCow cowTemplate;
+    public ScriptableCow CowTemplate { get { return cowTemplate; } }
+
     private Hideout targetHideout;
 
 

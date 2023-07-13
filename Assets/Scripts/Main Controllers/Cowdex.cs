@@ -5,26 +5,30 @@ using UnityEngine;
 public class Cowdex : MonoSingleton<Cowdex>
 {
     //DATA
-    private Dictionary<ScriptableCow.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
-    private Dictionary<ScriptableCow.UniqueID, ScriptableCow> CowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
     /*
      * NOTE: This might benefit from a refactor, that further separates each class' concerns.
      * Specifically, another component/prefab/class could handle the list of cows that a specific level/scene can manage.
      * This could separate the nature of the controller from the nature of what is being controlled.
      */
 
-    [SerializeField] private List<ScriptableCow> FullListOfExistingCows = new();//PUT ALL SCRIPTABLE OBJECT COWS INSIDE HERE.
+    [SerializeField] private List<Cow> FullListOfExistingCows = new();//PUT ALL "PREFAB" COWS INSIDE HERE.
+
+    ///DATA STRUCTURES
+    private Dictionary<ScriptableCow.UniqueID, Cow> CowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
+    private Dictionary<ScriptableCow.UniqueID, ScriptableCow> ScriptableCowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
+    private Dictionary<ScriptableCow.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
 
 
 
     //METHODS
 
     //...
-
     // Start is called before the first frame update
     void Start()
     {
-        //TODO: INITIALIZE COWDEX
+        BuildCowdex();
+
+        //TODO: INTRODUCE DEBUGGING FUNCTIONALITIES (FIND DUPLICATES ETC)
 
     }
 
@@ -36,25 +40,52 @@ public class Cowdex : MonoSingleton<Cowdex>
 
 
     //FUNCTIONALITIES
+    ///INITIALIZATION
     public void BuildCowdex()
     {
-        //BuildCowArchive();
-        //BuildCowRitualInformation
-    }
-
-    public void BuildCowArchive()
-    {
-        foreach(ScriptableCow sc in FullListOfExistingCows)
+        foreach(Cow iteratedCow in FullListOfExistingCows)
         {
-            CowArchive.Add(sc.UID, sc);
-            IndexedCow ic = new IndexedCow(IndexedCow.CowKnowledgeState.Unknown, sc);
-            PlayableCowdex.Add(sc.UID, ic);
+            //Cow
+            CowArchive.Add(iteratedCow.CowTemplate.UID, iteratedCow);
+
+            //ScriptableCow
+            ScriptableCowArchive.Add(iteratedCow.CowTemplate.UID, iteratedCow.CowTemplate);
+
+            //IndexedCow
+            IndexedCow ic = new IndexedCow(IndexedCow.CowKnowledgeState.Unknown, iteratedCow.CowTemplate);
+            PlayableCowdex.Add(iteratedCow.CowTemplate.UID, ic);
         }
     }
 
 
 
+    ///DATA RETRIEVAL
+
+    ///RETRIEVE ANY Cow
+    public Cow GetCow(ScriptableCow.UniqueID UID)
+    {
+        return CowArchive[UID];
+    }
+
+    ///RETRIEVE ANY ScriptableCow
+    public ScriptableCow GetScriptableCow(ScriptableCow.UniqueID UID)
+    {
+        return ScriptableCowArchive[UID];
+    }
+
+    ///RETRIEVE ANY IndexedCow
+    public IndexedCow GetIndexedCow(ScriptableCow.UniqueID UID)
+    {
+        return PlayableCowdex[UID];
+    }
+
+
+
+
+
+
     //TODO: DEVELOP A DEBUG FUNCTIONALITY THAT DETECTS DUPLICATES AMONG THE FullListOfExistingCows AND REPORTS THEM AS ERRORS ON THE GAME/EDITOR CONSOLE.
+
 
 
 }
