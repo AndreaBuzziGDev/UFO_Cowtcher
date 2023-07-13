@@ -39,6 +39,8 @@ public class ScriptableCow : ScriptableObject
 
     /// SIMPLE DATA
     public string Name;
+    public string Description;
+
     public int FuelRecoveryAmount;
     public float AlertRadius;
     public float SpeedCalm;
