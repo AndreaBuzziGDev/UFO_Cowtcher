@@ -52,19 +52,6 @@ public class Cowdex : MonoSingleton<Cowdex>
         }
     }
 
-    public void BuildCowRitualInformation()
-    {
-        foreach (ScriptableCow sc in FullListOfExistingCows)
-        {
-            ScriptableRitual sr = sc.SummoningRitual;
-            List<ScriptableCow.UniqueID> ritualCows = sr.RequiredCows;
-            List<IndexedCow> correspondingCows = new();
-            foreach(ScriptableCow.UniqueID uid in ritualCows)
-            {
-                //PlayableCowdex
-            }
-        }
-    }
 
 
     //TODO: DEVELOP A DEBUG FUNCTIONALITY THAT DETECTS DUPLICATES AMONG THE FullListOfExistingCows AND REPORTS THEM AS ERRORS ON THE GAME/EDITOR CONSOLE.
