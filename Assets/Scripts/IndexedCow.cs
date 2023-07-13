@@ -37,6 +37,7 @@ public class IndexedCow
 
     public List<IndexedCow> RitualCows()
     {
+        //TODO: HANDLE SUMMONING RITUAL NULL
         List<IndexedCow> relatedCows = Cowdex.Instance.GetIndexedCows(referenceTemplate.SummoningRitual.RequiredCows);
 
         //TODO: COWDEX MUST HANDLE THE ANY COW PROPERLY
