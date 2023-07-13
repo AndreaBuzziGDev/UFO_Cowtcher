@@ -13,12 +13,8 @@ public class MPQuietMonoDirectionMovement : AbstractMovementPattern
         {
             return Vector3.zero;
         }
-        //TODO: IMPLEMENT
-        //TODO: EQUAL PROBABILITY
-        float eqChance = 100 / AllowedDirections.Count;
 
-
-        return Vector3.zero;
+        return AllowedDirections[Random.Range(0, AllowedDirections.Count)];
     }
 
 }
