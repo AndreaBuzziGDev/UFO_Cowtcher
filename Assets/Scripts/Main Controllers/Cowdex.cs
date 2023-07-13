@@ -5,14 +5,15 @@ using UnityEngine;
 public class Cowdex : MonoSingleton<Cowdex>
 {
     //DATA
-    private Dictionary<ScriptableCow.UniqueID, IndexedCow> PlayableCowdex;//THE ACTUAL "ENCYCLOPEDIA OF COWS"
+    private Dictionary<ScriptableCow.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
+    private Dictionary<ScriptableCow.UniqueID, ScriptableCow> CowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
     /*
      * NOTE: This might benefit from a refactor, that further separates each class' concerns.
      * Specifically, another component/prefab/class could handle the list of cows that a specific level/scene can manage.
      * This could separate the nature of the controller from the nature of what is being controlled.
      */
 
-    [SerializeField] private List<ScriptableCow> FullListOfExistingCows;//PUT ALL SCRIPTABLE OBJECT COWS INSIDE HERE.
+    [SerializeField] private List<ScriptableCow> FullListOfExistingCows = new();//PUT ALL SCRIPTABLE OBJECT COWS INSIDE HERE.
 
 
 
@@ -23,7 +24,8 @@ public class Cowdex : MonoSingleton<Cowdex>
     // Start is called before the first frame update
     void Start()
     {
-        
+        //TODO: INITIALIZE COWDEX
+
     }
 
     // Update is called once per frame
@@ -34,6 +36,36 @@ public class Cowdex : MonoSingleton<Cowdex>
 
 
     //FUNCTIONALITIES
+    public void BuildCowdex()
+    {
+        //BuildCowArchive();
+        //BuildCowRitualInformation
+    }
+
+    public void BuildCowArchive()
+    {
+        foreach(ScriptableCow sc in FullListOfExistingCows)
+        {
+            CowArchive.Add(sc.UID, sc);
+            IndexedCow ic = new IndexedCow(IndexedCow.CowKnowledgeState.Unknown, sc);
+            PlayableCowdex.Add(sc.UID, ic);
+        }
+    }
+
+    public void BuildCowRitualInformation()
+    {
+        foreach (ScriptableCow sc in FullListOfExistingCows)
+        {
+            ScriptableRitual sr = sc.SummoningRitual;
+            List<ScriptableCow.UniqueID> ritualCows = sr.RequiredCows;
+            List<IndexedCow> correspondingCows = new();
+            foreach(ScriptableCow.UniqueID uid in ritualCows)
+            {
+                //PlayableCowdex
+            }
+        }
+    }
+
 
     //TODO: DEVELOP A DEBUG FUNCTIONALITY THAT DETECTS DUPLICATES AMONG THE FullListOfExistingCows AND REPORTS THEM AS ERRORS ON THE GAME/EDITOR CONSOLE.
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitScoreThreshold : iRitualBehaviour
+public class RitScoreThreshold : IRitualBehaviour
 {
     public void DoRitual()
     {
