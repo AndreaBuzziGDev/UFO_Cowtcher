@@ -20,31 +20,20 @@ public class IndexedCow
     public ScriptableCow ReferenceTemplate { get { return referenceTemplate; } }
 
 
-    //TODO: NON SERVE NEMMENO. BASTA USARE IL Cowdex PER RECUPERARE LA COW CORRISPONDENTE.
-    //LETTERALMENTE MEGLIO AVERE LA LISTA DELLE REQUIRED COWS.
-
-
-    private List<IndexedCow> cowSummoningRitual = new();
-    public List<IndexedCow> CowSummoningRitual { get { return cowSummoningRitual; } }
-
 
     //CONSTRUCTOR
-    //TODO: IT MIGHT BE USEFUL TO BUILD WRAPPERS TO MAKE THE COW TRANSITION INTO ANOTHER STATE VALUE
-    public IndexedCow(CowKnowledgeState targetState, ScriptableCow template)
+    public IndexedCow(CowKnowledgeState startingState, ScriptableCow template)
     {
-        this.state = targetState;
+        this.state = startingState;
         this.referenceTemplate = template;
-        //NB: cowSummoningRitual NEEDS TO BE INITIALIZED (in a second moment?)
-
     }
-
 
     //METHODS
-    public void SetRitual(List<IndexedCow> listOfRelated)
+    public void ChangeState(CowKnowledgeState targetState)
     {
-        this.cowSummoningRitual = listOfRelated;
+        //NB: MIGHT HOST FUTURE FUNCTIONALITY EXPANSIONS
+        this.state = targetState;
     }
-
 
 
 }
