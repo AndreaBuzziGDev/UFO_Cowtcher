@@ -195,6 +195,7 @@ public class Cow : MonoBehaviour
             }
             else
             {
+                //TODO: CAN USE TERNARY OPERATORS?
                 TimerCalmMovement = cowTemplate.TimerCalmMovement;
                 TimerCalmStill = cowTemplate.TimerCalmStill;
 
