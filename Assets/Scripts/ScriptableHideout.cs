@@ -17,5 +17,5 @@ public class ScriptableHideout : ScriptableObject
     public Type type = 0;
     public int numberOfHideoutSlots = 1;
     public float HideoutPermanenceTimer = 5.0f;
-
+    public float UFODetectionRadius = 3.0f;
 }

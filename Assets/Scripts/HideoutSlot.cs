@@ -5,15 +5,14 @@ using UnityEngine;
 public class HideoutSlot
 {
     //DATA
-    private Cow hostedCow;
-    private float SlotPermanenceTimer;
+    public Cow HostedCow;
+    public float SlotPermanenceTimer;
+    public bool CanSpawn = false;
 
 
     //CONSTRUCTOR
-    //NOT NEEDED...
+    //NOT NEEDED
 
 
     //METHODS
-
-
 }

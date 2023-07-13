@@ -15,3 +15,4 @@ MonoBehaviour:
   type: 2
   numberOfHideoutSlots: 1
   HideoutPermanenceTimer: 5
+  UFODetectionRadius: 3

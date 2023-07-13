@@ -148,7 +148,7 @@ public class Cow : MonoBehaviour
                 }
                 else
                 {
-                    if (!targetHideout.IsFull())
+                    if (!targetHideout.HasAvailableSlots())
                     {
                         //use ALERT movement pattern to effectively determine how to move cow.
                         //NB: THIS IS SPECIFICALLY THE "PANIC" MOVEMENT, DO NOT CONFUSE IT WITH ALERT (escape from UFO) MOVEMENT.
