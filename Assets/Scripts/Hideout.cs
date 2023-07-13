@@ -90,7 +90,7 @@ public class Hideout : MonoBehaviour
     {
         float distanceFromUFO = Vector3.Distance(transform.position, ufoDistanceXZ);
 
-        Debug.Log("UFO distance in range: " + (distanceFromUFO <= ufoDetectionRadius));
+        //Debug.Log("UFO distance in range: " + (distanceFromUFO <= ufoDetectionRadius));
         return (distanceFromUFO <= ufoDetectionRadius);
     }
 
@@ -107,12 +107,12 @@ public class Hideout : MonoBehaviour
         }
     }
 
-    #region DEBUG
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
 
         Gizmos.DrawWireSphere(transform.position, ufoDetectionRadius);
     }
-    #endregion
+#endif
 }

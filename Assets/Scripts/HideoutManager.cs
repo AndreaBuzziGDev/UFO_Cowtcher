@@ -5,7 +5,10 @@ using UnityEngine;
 public class HideoutManager : MonoSingleton<HideoutManager>
 {
     //DATA
-    private Dictionary<ScriptableHideout.Type, List<Hideout>> allHideouts = new Dictionary<ScriptableHideout.Type, List<Hideout>>();
+
+    //create a list of all hideouts in the scene
+    //private Dictionary<ScriptableHideout.Type, List<Hideout>> allHideouts = new Dictionary<ScriptableHideout.Type, List<Hideout>>(); maybe not this
+    //look up how to make it in rituals
 
     //METHODS
     //...
