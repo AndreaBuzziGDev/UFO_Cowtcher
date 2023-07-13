@@ -194,7 +194,7 @@ public class Cow : MonoBehaviour
                 TimerCalmStill = cowTemplate.TimerCalmStill;
 
                 //RESETTING THE MOVEMENT DIRECTION RANDOMLY BASED ON CALM PATTERN
-                movementDirection = movPatternCalm.ManageMovement();
+                movementDirection = movPatternCalm.ManageMovement(this.transform.position);
                 Debug.Log("movementDirection: " + movementDirection);
             }
         }
