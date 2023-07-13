@@ -45,6 +45,8 @@ public class GameController : MonoSingleton<GameController>
 
     //FUNCTIONALITIES
     //...
+
+    /// STATE-HANDLING FUNCTIONALITIES
     public void SetState(EGameState targetState)
     {
         state = targetState;
@@ -105,7 +107,6 @@ public class GameController : MonoSingleton<GameController>
     }
 
 
-
     //EXIT GAME
     private static void ExitGame()
     {
@@ -118,5 +119,16 @@ public class GameController : MonoSingleton<GameController>
         }
 #endif
     }
+
+
+
+    ///OTHER FUNCTIONALITIES
+    public UFO FindUFOAnywhere()
+    {
+        return ((UFO) FindObjectOfType<UFO>());
+    }
+
+
+
 
 }

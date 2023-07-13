@@ -8,9 +8,15 @@ public class CowHelper
     //CHECK IF PLAYER IS WITHIN ALERT RADIUS
     public static bool IsUFOWithinRadius(Cow interestedCow)
     {
-        //TODO: IMPLEMENT
+        //TODO: UFO POSITION HAS TO BE PROJECTED TO THE GROUND
 
-        return false;
+        Vector3 cowPos = interestedCow.transform.position;
+        Vector3 ufoPos = GameController.Instance.FindUFOAnywhere().transform.position;
+
+        Vector3 distanceVec = cowPos - ufoPos;
+        float distance = distanceVec.magnitude;
+
+        return (distance < interestedCow.AlertRadius);//TODO: COW UNITS
     }
 
     public static bool HasChosenHideout(Cow interestedCow)

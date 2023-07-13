@@ -43,9 +43,11 @@ public class Cow : MonoBehaviour
     private int fuelRecoveryAmount;
     public int FuelRecoveryAmount { get { return fuelRecoveryAmount; } }
 
-    private float AlertRadius;
-    private float SpeedCalm;
-    private float SpeedAlert;
+    private float alertRadius;
+    public float AlertRadius { get { return alertRadius; } }//TODO: HAS TO BE MORPHED IN COW UNITS
+
+    private float speedCalm;
+    private float speedAlert;
 
     private int score;
     public int Score { get { return score; } }
@@ -107,8 +109,8 @@ public class Cow : MonoBehaviour
     private void FixedUpdate()
     {
         float mySpeed;
-        if (this.IsCalm) mySpeed = SpeedCalm;
-        else mySpeed = SpeedAlert;
+        if (this.IsCalm) mySpeed = speedCalm;
+        else mySpeed = speedAlert;
 
         rb.MovePosition(transform.position + movementDirection * Time.deltaTime * mySpeed);
     }
@@ -116,6 +118,9 @@ public class Cow : MonoBehaviour
     private void Update()
     {
         //STEP 1
+        bool isInRad = CowHelper.IsUFOWithinRadius(this);
+        Debug.Log("isInRad: " + isInRad);
+
         if (CowHelper.IsUFOWithinRadius(this))
         {
             if (IsCalm) this.currentState = State.Alert;
@@ -126,18 +131,22 @@ public class Cow : MonoBehaviour
             this.TimerAlertToCalm -= Time.deltaTime;
             if (this.TimerAlertToCalm <= 0.0f) this.currentState = State.Calm;
         }
+        Debug.Log("IsAlert: " + IsAlert);
 
 
         //STEP 2
         if (IsAlert)
         {
             this.TimerAlertToPanic -= Time.deltaTime;
+            Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
+
+
             if (this.TimerAlertToPanic > 0.0f)
             {
                 //use ALERT movement pattern to effectively determine how to move cow.
                 //NB: THIS IS SPECIFICALLY THE "ALERT" MOVEMENT, DO NOT CONFUSE IT WITH PANIC (run for hideout) MOVEMENT.
-                //Vector3 myNewDirection = AbstractMovementPattern.ManageMovement();
-
+                if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this.transform.position);
+                else movementDirection = Vector3.zero;
             }
             else
             {
@@ -230,18 +239,16 @@ public class Cow : MonoBehaviour
         this.rarity = cowTemplate.rarity;
         this.cowName = cowTemplate.Name;
         this.fuelRecoveryAmount = cowTemplate.FuelRecoveryAmount;
-        this.AlertRadius = cowTemplate.AlertRadius;
-        this.SpeedCalm = cowTemplate.SpeedCalm;
-        this.SpeedAlert = cowTemplate.SpeedAlert;
+        this.alertRadius = cowTemplate.AlertRadius;
+        this.speedCalm = cowTemplate.SpeedCalm;
+        this.speedAlert = cowTemplate.SpeedAlert;
         this.score = cowTemplate.Score;
 
-        //TIMERS START AT 0. THE TEMPLATE IS USED TO "RESET" TIMERS WHEN NEEDED.
-        /*
-        this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
-        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
+        ///TIMERS
         this.TimerCalmMovement = cowTemplate.TimerCalmMovement;
         this.TimerCalmStill = cowTemplate.TimerCalmStill;
-        */
+        this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
+        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
         /// COMPLEX DATA
         this.FavouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;

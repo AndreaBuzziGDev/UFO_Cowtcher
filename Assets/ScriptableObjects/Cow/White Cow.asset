@@ -15,6 +15,7 @@ MonoBehaviour:
   UID: 1
   rarity: 0
   Name: Kevin
+  Description: 
   FuelRecoveryAmount: 1
   AlertRadius: 2
   SpeedCalm: 1
@@ -28,5 +29,5 @@ MonoBehaviour:
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 00000000
   Alteration: 0
-  movPatternCalm: {fileID: 0}
+  movPatternCalm: {fileID: 11400000, guid: 1e258e99e9f09b54bbfce1dda671594e, type: 2}
   movPatternAlert: {fileID: 0}

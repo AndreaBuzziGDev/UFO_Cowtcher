@@ -15,18 +15,19 @@ MonoBehaviour:
   UID: 0
   rarity: 0
   Name: Jamal
+  Description: 
   FuelRecoveryAmount: 1
-  AlertRadius: 2
+  AlertRadius: 100
   SpeedCalm: 1
   SpeedAlert: 1
   Score: 1
   TimerAlertToCalm: 1
-  TimerAlertToPanic: 1
+  TimerAlertToPanic: 10
   TimerCalmMovement: 2
   TimerCalmStill: 1
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 00000000
   Alteration: 0
-  movPatternCalm: {fileID: 0}
+  movPatternCalm: {fileID: 11400000, guid: 1e258e99e9f09b54bbfce1dda671594e, type: 2}
   movPatternAlert: {fileID: 0}
