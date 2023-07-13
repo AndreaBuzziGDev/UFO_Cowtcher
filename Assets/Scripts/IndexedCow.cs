@@ -40,9 +40,13 @@ public class IndexedCow
         List<IndexedCow> relatedCows = new();
 
         //TODO: IMPLEMENT MASS RETRIEVAL FUNCTIONALITY IN COWDEX INSTEAD?
-        foreach (ScriptableCow.UniqueID UID in referenceTemplate.SummoningRitual.RequiredCows)
+        if (referenceTemplate.SummoningRitual != null)
         {
-            relatedCows.Add(Cowdex.Instance.GetIndexedCow(UID));
+            foreach (ScriptableCow.UniqueID UID in referenceTemplate.SummoningRitual.RequiredCows)
+            {
+                relatedCows.Add(Cowdex.Instance.GetIndexedCow(UID));
+            }
+
         }
 
         //TODO: COWDEX MUST HANDLE THE ANY COW PROPERLY

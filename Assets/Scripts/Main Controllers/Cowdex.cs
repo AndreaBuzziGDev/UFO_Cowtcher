@@ -43,6 +43,8 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///INITIALIZATION
     public void BuildCowdex()
     {
+        Debug.Log("FullListOfExistingCows: " + FullListOfExistingCows.Count);
+
         foreach(Cow iteratedCow in FullListOfExistingCows)
         {
             //Cow
