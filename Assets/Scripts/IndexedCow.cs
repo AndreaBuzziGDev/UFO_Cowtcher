@@ -20,13 +20,33 @@ public class IndexedCow
     public ScriptableCow ReferenceTemplate { get { return referenceTemplate; } }
 
 
-    private List<IndexedCow> cowSummoningRitual;
-    public List<IndexedCow> CowSummoningRitual { get { return cowSummoningRitual; } }
 
+    //CONSTRUCTOR
+    public IndexedCow(CowKnowledgeState startingState, ScriptableCow template)
+    {
+        this.state = startingState;
+        this.referenceTemplate = template;
+    }
 
     //METHODS
+    public void ChangeState(CowKnowledgeState targetState)
+    {
+        //NB: MIGHT HOST FUTURE FUNCTIONALITY EXPANSIONS
+        this.state = targetState;
+    }
+
+    public List<IndexedCow> RitualCows()
+    {
+        //TODO: HANDLE SUMMONING RITUAL NULL
+        List<IndexedCow> relatedCows = Cowdex.Instance.GetIndexedCows(referenceTemplate.SummoningRitual.RequiredCows);
+
+        //TODO: COWDEX MUST HANDLE THE ANY COW PROPERLY
+        //      HANDLING OF THE "GENERICALLY-ALLOWED" COW TYPE HERE ?
 
 
+
+        return relatedCows;
+    }
 
 
 }

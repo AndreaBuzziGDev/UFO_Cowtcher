@@ -18,8 +18,8 @@ public class CowSummoningRitual
     private Dictionary<ScriptableCow.UniqueID, RitualModule> ritualDictionary = new();
 
 
-    private iRitualBehaviour behaviour;
-    public iRitualBehaviour Behaviour { get { return behaviour; } }
+    private IRitualBehaviour behaviour;
+    public IRitualBehaviour Behaviour { get { return behaviour; } }
 
     
 
@@ -61,7 +61,7 @@ public class CowSummoningRitual
 
 
     //RITUAL TYPE MAPPING
-    private iRitualBehaviour mapBehaviour(ScriptableRitual.ERitualType type)
+    private IRitualBehaviour mapBehaviour(ScriptableRitual.ERitualType type)
     {
         switch (type)
         {
