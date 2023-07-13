@@ -118,9 +118,6 @@ public class Cow : MonoBehaviour
     private void Update()
     {
         //STEP 1
-        bool isInRad = CowHelper.IsUFOWithinRadius(this);
-        Debug.Log("isInRad: " + isInRad);
-
         if (CowHelper.IsUFOWithinRadius(this))
         {
             if (IsCalm) this.currentState = State.Alert;
@@ -131,15 +128,12 @@ public class Cow : MonoBehaviour
             this.TimerAlertToCalm -= Time.deltaTime;
             if (this.TimerAlertToCalm <= 0.0f) this.currentState = State.Calm;
         }
-        Debug.Log("IsAlert: " + IsAlert);
 
 
         //STEP 2
         if (IsAlert)
         {
             this.TimerAlertToPanic -= Time.deltaTime;
-            Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
-
 
             if (this.TimerAlertToPanic > 0.0f)
             {
@@ -147,6 +141,8 @@ public class Cow : MonoBehaviour
                 //NB: THIS IS SPECIFICALLY THE "ALERT" MOVEMENT, DO NOT CONFUSE IT WITH PANIC (run for hideout) MOVEMENT.
                 if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this.transform.position);
                 else movementDirection = Vector3.zero;
+                Debug.Log("movementDirection: " + movementDirection);
+
             }
             else
             {

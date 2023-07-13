@@ -11,9 +11,9 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
         UFO menace = (UFO) FindObjectOfType<UFO>();
         Vector3 menacePosition = menace.transform.position;
         Vector3 desiredDirection = cowPosition - menacePosition;
+        Vector3 vertLessDirection = new Vector3(desiredDirection.x, 0, desiredDirection.z);
 
-
-        return desiredDirection.normalized;
+        return vertLessDirection.normalized;
     }
 
     public override Vector3 ManagePanic(Vector3 cowPosition)
