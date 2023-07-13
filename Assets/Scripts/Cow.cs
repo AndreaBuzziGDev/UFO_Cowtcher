@@ -179,15 +179,24 @@ public class Cow : MonoBehaviour
         }
         else
         {
-            //TODO: HANDLE CALM MOVEMENT PATTERN HERE
-            //calm movement timer handling...
+            if (TimerCalmMovement > 0.0f)
+            {
+                TimerCalmMovement -= Time.deltaTime;
+            } 
+            else if (TimerCalmStill > 0.0f)
+            {
+                TimerCalmStill -= Time.deltaTime;
+                movementDirection = Vector3.zero;
+            }
+            else
+            {
+                TimerCalmMovement = cowTemplate.TimerCalmMovement;
+                TimerCalmStill = cowTemplate.TimerCalmStill;
 
-            //calm quiet timer handling...
-
-            //use CALM movement pattern to effectively determine how to move cow.
-            //Vector3 myNewDirection = AbstractMovementPattern.ManageMovement();
-
-
+                //RESETTING THE MOVEMENT DIRECTION RANDOMLY BASED ON CALM PATTERN
+                movementDirection = movPatternCalm.ManageMovement();
+                Debug.Log("movementDirection: " + movementDirection);
+            }
         }
 
 

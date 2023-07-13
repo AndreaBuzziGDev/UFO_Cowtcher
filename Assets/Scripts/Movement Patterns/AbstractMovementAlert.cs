@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class AbstractMovementAlert : AbstractMovementPattern
 {
-    public abstract Vector3 ManagePanic();
+    public abstract Vector3 ManagePanic(Vector3 cowPosition);
 
 }

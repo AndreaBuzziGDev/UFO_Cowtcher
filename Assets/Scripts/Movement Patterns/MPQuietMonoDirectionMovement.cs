@@ -7,8 +7,10 @@ public class MPQuietMonoDirectionMovement : AbstractMovementPattern
 {
     [SerializeField] private List<Vector3> AllowedDirections = new();
 
-    public override Vector3 ManageMovement()
+    public override Vector3 ManageMovement(Vector3 cowPosition)
     {
+        //NB: cowPosition is ignored in this behaviour.
+
         if(AllowedDirections == null || AllowedDirections.Count == 0)
         {
             return Vector3.zero;

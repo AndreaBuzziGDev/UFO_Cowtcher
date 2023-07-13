@@ -6,14 +6,17 @@ using UnityEngine;
 public class MPAlertEscapeOpposite : AbstractMovementAlert
 {
 
-    public override Vector3 ManageMovement()
+    public override Vector3 ManageMovement(Vector3 cowPosition)
     {
-        //TODO: IMPLEMENT
+        UFO menace = (UFO) FindObjectOfType<UFO>();
+        Vector3 menacePosition = menace.transform.position;
+        Vector3 desiredDirection = cowPosition - menacePosition;
 
-        return Vector3.zero;
+
+        return desiredDirection.normalized;
     }
 
-    public override Vector3 ManagePanic()
+    public override Vector3 ManagePanic(Vector3 cowPosition)
     {
         //TODO: IMPLEMENT
 
