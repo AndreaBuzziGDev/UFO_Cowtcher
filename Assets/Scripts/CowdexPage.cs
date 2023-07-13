@@ -10,9 +10,13 @@ public class CowdexPage : MonoBehaviour
     private ScriptableCow.UniqueID cowUID;
     public ScriptableCow.UniqueID CowUID { get { return cowUID; } }
 
+    private IndexedCow myIndexedCow;
+
+
 
 
     //METHODS
+    //...
 
     // Start is called before the first frame update
     void Start()
@@ -25,4 +29,17 @@ public class CowdexPage : MonoBehaviour
     {
         
     }
+
+
+    //FUNCTIONALITIES
+    public void RetrieveIndexedCowData()
+    {
+        myIndexedCow = Cowdex.Instance.GetIndexedCow(this.CowUID);
+    }
+
+    
+
+    //TODO: METHOD TO HANDLE THE RITUAL "PROGRESSION" FROM IndexedCow TO SHOW UP ADEQUATELY IN THE GUI
+
+
 }
