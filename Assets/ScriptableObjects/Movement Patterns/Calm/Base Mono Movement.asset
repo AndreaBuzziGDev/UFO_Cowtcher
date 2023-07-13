@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9af403a7ceb6d14991324b43ef54169, type: 3}
   m_Name: Base Mono Movement
   m_EditorClassIdentifier: 
+  AllowedDirections:
+  - {x: 1, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  - {x: -1, y: 0, z: 0}
+  - {x: 0, y: 0, z: -1}
