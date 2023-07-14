@@ -41,33 +41,22 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     {
         if (allHideouts != null)
         {
-            for (int i = 0; i < allHideouts.Count; i++)
+            foreach(Hideout cycledHideout in allHideouts)
             {
-                if (!hideoutsByType.ContainsKey(allHideouts[i].Type))
+                if (!hideoutsByType.ContainsKey(cycledHideout.Type))
                 {
-                    hideoutsByType.Add(allHideouts[i].Type, new List<Hideout>());
+                    hideoutsByType.Add(cycledHideout.Type, new List<Hideout> { cycledHideout });
                 }
                 else
                 {
-                    continue;
+                    hideoutsByType[cycledHideout.Type].Add(cycledHideout);
                 }
-            }
-        }
+                Debug.Log("cycledHideout.Type: " + cycledHideout.Type + " Count: " + hideoutsByType[cycledHideout.Type].Count);
 
-        foreach (KeyValuePair<ScriptableHideout.Type, List<Hideout>> entry in hideoutsByType)
-        {
-            for (int i = 0; i < allHideouts.Count; i++)
-            {
-                if (hideoutsByType.ContainsKey(entry.Key))
-                {
-                    entry.Value.Add(allHideouts[i]);
-                }
-                else
-                {
-                    continue;
-                }
             }
         }
+        Debug.Log("hideoutsByType Count: " + hideoutsByType.Count);
+
     }
 
     //FUNCTIONALITIES
