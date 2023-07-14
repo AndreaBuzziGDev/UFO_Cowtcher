@@ -39,5 +39,15 @@ public class CowHelper
         }
     }
 
+    public static void EnterHideout(Cow interestedCow)
+    {
+        //NOTIFY THE HIDEOUT THAT THE COW WANTS TO ENTER INSIDE
+        //NB: SYNCHRONIZATION ISSUES!!!
+
+        //IF COW HAS ENTERED HIDEOUT, TRANSITION TO HIDDEN STATE
+        //IF COW HAS ENTERED HIDEOUT, DISABLE COW
+
+    }
+
 
 }
