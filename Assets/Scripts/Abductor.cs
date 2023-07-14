@@ -118,8 +118,8 @@ public class Abductor : MonoBehaviour
             float cowFuelRecoveryAmount = cow.FuelRecoveryAmount;
             float cowIncreaseScoreAmount = cow.Score;
 
-            UFO.FuelAmount += cowFuelRecoveryAmount;
-            UFO.ScoreAmount += cowIncreaseScoreAmount;
+            UFO.ChangeFuel(cowFuelRecoveryAmount);
+            UFO.ChangeScore(cowIncreaseScoreAmount);
 
             cowsInRange.Remove(cowsInRange[i]);
         }
