@@ -51,19 +51,10 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     //FUNCTIONALITIES
     private List<Hideout> GetHideouts(ScriptableHideout.Type type)
     {
-        if (hideoutsByType.ContainsKey(type))
-        {
-            foreach (KeyValuePair<ScriptableHideout.Type, List<Hideout>> entry in hideoutsByType)
-            {
-                if (entry.Key.Equals(type))
-                {
-                    return entry.Value;
-                }
-                else continue;
-            }
+        if (hideoutsByType.ContainsKey(type)) 
+            return hideoutsByType[type];
+        else 
             return null;
-        }
-        else return null;
     }
 
     private List<Hideout> GetAvailableHideouts(ScriptableHideout.Type type)
