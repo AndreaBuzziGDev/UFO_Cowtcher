@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Jamal
   Description: 
   FuelRecoveryAmount: 1
-  AlertRadius: 100
+  AlertRadius: 6
   SpeedCalm: 1
   SpeedAlert: 1
   Score: 1

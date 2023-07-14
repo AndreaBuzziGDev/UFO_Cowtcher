@@ -318,9 +318,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UFO: {fileID: 2316233886179570003}
-  captureTimer: 10
-  timeBeforeReduction: 5
-  maxRadius: 1.5
+  captureTimer: 3
+  timeBeforeReduction: 1.5
+  maxRadius: 2
+  cooldownTimer: 1
   circleSteps: 35
   outerCircle: {fileID: 8132337875915980716}
   innerCircle: {fileID: 576979319330301586}

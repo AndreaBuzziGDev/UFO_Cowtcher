@@ -10,6 +10,7 @@ public class Abductor : MonoBehaviour
     [SerializeField] private float captureTimer;
     [SerializeField] private float timeBeforeReduction;
     [SerializeField] private float maxRadius;
+    [SerializeField] private float cooldownTimer;//TODO: IMPLEMENT/USE
     [SerializeField] private int circleSteps;
     [SerializeField] private GameObject outerCircle;
     [SerializeField] private GameObject innerCircle;
