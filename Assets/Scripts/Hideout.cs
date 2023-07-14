@@ -5,7 +5,9 @@ using UnityEngine;
 public class Hideout : MonoBehaviour
 {
     //DATA
-    [SerializeField] private ScriptableHideout HideoutTemplate;
+    [SerializeField] private ScriptableHideout hideoutTemplate;
+    public ScriptableHideout HideoutTemplate { get { return hideoutTemplate; } }
+
     [SerializeField] private UFO ufo;
 
 
@@ -28,10 +30,10 @@ public class Hideout : MonoBehaviour
     private void Awake()
     {
         //DATA CLONED FROM SCRIPTABLE HIDEOUT
-        type = HideoutTemplate.type;
-        numberOfHideoutSlots = HideoutTemplate.numberOfHideoutSlots;
-        hideoutPermanenceTimer = HideoutTemplate.HideoutPermanenceTimer;
-        ufoDetectionRadius = HideoutTemplate.UFODetectionRadius;
+        type = hideoutTemplate.type;
+        numberOfHideoutSlots = hideoutTemplate.numberOfHideoutSlots;
+        hideoutPermanenceTimer = hideoutTemplate.HideoutPermanenceTimer;
+        ufoDetectionRadius = hideoutTemplate.UFODetectionRadius;
 
         //GET THE POSITION OF THE UFO AT THE HEIGHT OF THE HIDEOUT
         ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
@@ -60,7 +62,7 @@ public class Hideout : MonoBehaviour
                 if (hideoutSlots[i].SlotPermanenceTimer <= 0)
                 {
                     hideoutSlots[i].CanSpawn = true;
-                    hideoutSlots[i].SlotPermanenceTimer = HideoutTemplate.HideoutPermanenceTimer;
+                    hideoutSlots[i].SlotPermanenceTimer = hideoutTemplate.HideoutPermanenceTimer;
                     //REMEMBER TO PUT "CanSpawn" BACK TO FALSE AND SET ITS COW TO NULL WHEN THE COW IS SPAWNED
                 }
             }

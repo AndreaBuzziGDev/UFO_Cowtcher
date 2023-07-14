@@ -2749,7 +2749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324074a3df936594dab8b7062e01bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HideoutTemplate: {fileID: 11400000, guid: 4d38d13fbe928954c8818e09a372f9a8, type: 2}
+  hideoutTemplate: {fileID: 11400000, guid: 4d38d13fbe928954c8818e09a372f9a8, type: 2}
   ufo: {fileID: 7144739522841677776}
 --- !u!4 &1019768205 stripped
 Transform:
@@ -3556,7 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324074a3df936594dab8b7062e01bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HideoutTemplate: {fileID: 11400000, guid: 34ac69d400aa5be40af0aec1f77689af, type: 2}
+  hideoutTemplate: {fileID: 11400000, guid: a51b63db87ae501478e1da1c8d86e300, type: 2}
   ufo: {fileID: 7144739522841677776}
 --- !u!4 &1253015255 stripped
 Transform:
