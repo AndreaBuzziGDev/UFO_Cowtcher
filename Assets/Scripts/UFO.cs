@@ -45,6 +45,8 @@ public class UFO : MonoBehaviour
 
     //FUNCTIONALITIES
     public void HandleFuelLogic() {
+
+        Mathf.Clamp(fuelAmount, 0, maxFuelAmount);
         fuelAmount -= Time.deltaTime;
 
         if (fuelAmount <= 0)
