@@ -19,13 +19,6 @@ public class CowHelper
         return (distance < interestedCow.AlertRadius);//TODO: COW UNITS
     }
 
-    public static bool HasChosenHideout(Cow interestedCow)
-    {
-        //TODO: IMPLEMENT
-
-        return false;
-    }
-
     public static Hideout FindHideout(Cow interestedCow)
     {
         //TODO: IMPLEMENT

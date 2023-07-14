@@ -17,12 +17,12 @@ MonoBehaviour:
   Name: Jamal
   Description: 
   FuelRecoveryAmount: 1
-  AlertRadius: 6
+  AlertRadius: 8
   SpeedCalm: 1
   SpeedAlert: 1
   Score: 1
-  TimerAlertToCalm: 1
-  TimerAlertToPanic: 10
+  TimerAlertToCalm: 3
+  TimerAlertToPanic: 5
   TimerCalmMovement: 2
   TimerCalmStill: 1
   SummoningRitual: {fileID: 0}

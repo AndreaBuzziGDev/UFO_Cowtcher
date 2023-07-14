@@ -16,9 +16,10 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
         return vertLessDirection.normalized;
     }
 
-    public override Vector3 ManagePanic(Vector3 cowPosition)
+    public override Vector3 ManagePanic(Cow myCow)
     {
         //TODO: IMPLEMENT
+        //TODO: USE COW DATA TO KNOW WHICH HIDEOUTS
 
         return Vector3.zero;
     }

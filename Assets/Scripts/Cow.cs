@@ -27,6 +27,8 @@ public class Cow : MonoBehaviour
     public ScriptableCow CowTemplate { get { return cowTemplate; } }
 
     private Hideout targetHideout;
+    public Hideout TargetHideout { get { return targetHideout; } }
+    public bool HasChosenHideout { get { return (targetHideout != null); } }
 
 
 
@@ -135,40 +137,16 @@ public class Cow : MonoBehaviour
         {
             this.TimerAlertToPanic -= Time.deltaTime;
 
-            if (this.TimerAlertToPanic > 0.0f)
-            {
-                //use ALERT movement pattern to effectively determine how to move cow.
-                //NB: THIS IS SPECIFICALLY THE "ALERT" MOVEMENT, DO NOT CONFUSE IT WITH PANIC (run for hideout) MOVEMENT.
-                if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this.transform.position);
-                else movementDirection = Vector3.zero;
-                Debug.Log("movementDirection: " + movementDirection);
-
-            }
+            //ALERT SUB-STATE
+            if (this.TimerAlertToPanic > 0.0f) HandleAlertMovement();
+            //PANIC SUB-STATE
             else
             {
-                //NB: THIS HANDLES PANIC (run for hideout) BEHAVIOUR
-                if (!CowHelper.HasChosenHideout(this))
-                {
-                    //HELPER - CHOSE HIDEOUT...
-                    this.targetHideout = CowHelper.FindHideout(this);
+                this.targetHideout = CowHelper.FindHideout(this);
 
-                }
-                else
-                {
-                    if (!targetHideout.IsFull())
-                    {
-                        //use ALERT movement pattern to effectively determine how to move cow.
-                        //NB: THIS IS SPECIFICALLY THE "PANIC" MOVEMENT, DO NOT CONFUSE IT WITH ALERT (escape from UFO) MOVEMENT.
-                        //Vector3 myNewDirection = AbstractMovementPattern.ManageMovement();
-
-                    }
-                    else
-                    {
-                        Hideout newHideout = CowHelper.FindHideout(this);
-                        if (newHideout != null) this.targetHideout = newHideout;
-                        else this.targetHideout = null;//NB: THIS IS DIRTY. IMPLEMENT AS A CALL TO THE SAME CODE THAT ESSENTIALLY MOVES THE COW AS IF IT WERE IN ALERT STATE
-                    }
-                }
+                //REMAIN IN ALERT-SUBSTATE BEHAVIOUR
+                if (!HasChosenHideout) HandleAlertMovement();
+                else if (!targetHideout.IsFull()) HandlePanicMovement();
 
                 if (CowHelper.CanEnterHideout(this))
                 {
@@ -253,6 +231,21 @@ public class Cow : MonoBehaviour
         this.alteration = cowTemplate.Alteration;
         this.movPatternCalm = cowTemplate.movPatternCalm;
         this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert;
+    }
+
+
+    private void HandleAlertMovement()
+    {
+        if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this.transform.position);
+        else movementDirection = Vector3.zero;
+        Debug.Log("movementDirection (ALERT): " + movementDirection);
+    }
+
+    private void HandlePanicMovement()
+    {
+        if (movPatternAlert != null) movementDirection = movPatternAlert.ManagePanic(this);
+        else movementDirection = Vector3.zero;
+        Debug.Log("movementDirection (PANIC): " + movementDirection);
     }
 
 }
