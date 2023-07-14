@@ -61,6 +61,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     {
         for (int i = 0; i < GetHideouts(type).Count; i++)
         {
+            //ASK AN HIDEOUT IF IT IS AVAILABLE FOR HOSTING
 
         }
         return null;
