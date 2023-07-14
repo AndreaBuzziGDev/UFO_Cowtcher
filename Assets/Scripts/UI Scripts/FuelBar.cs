@@ -8,9 +8,11 @@ public class FuelBar : MonoBehaviour
 {
     public Image FuelBarImg;
 
+
+    //METHODS
     public void UpdateFuelBar(UFO ufo)
     {
-        float normalizedFuel = (float) ufo.FuelAmount / (float) ufo.ScoreAmount;
+        float normalizedFuel = (float) ufo.FuelAmount / (float) ufo.MaxFuelAmount;
         FuelBarImg.fillAmount = normalizedFuel;
     }    
    

@@ -8,7 +8,7 @@ public class UFO : MonoBehaviour
     [Min(0f)]public float FuelAmount;
     public float ScoreAmount;
     [SerializeField] private float maxFuelAmount;
-
+    public float MaxFuelAmount {get { return maxFuelAmount; }}
 
     //METHODS
 
