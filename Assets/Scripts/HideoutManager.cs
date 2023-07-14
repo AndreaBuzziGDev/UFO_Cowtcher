@@ -26,7 +26,6 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     private void initializeAllHidelouts()
     {
         allHideouts = FindObjectsOfType<Hideout>().ToList();
-
     }
 
     private void MakeDictionary()
@@ -57,13 +56,26 @@ public class HideoutManager : MonoSingleton<HideoutManager>
             return null;
     }
 
-    private List<Hideout> GetAvailableHideouts(ScriptableHideout.Type type)
+    public List<Hideout> GetAvailableHideouts(ScriptableHideout.Type type)
     {
+        List<Hideout> availableHideouts = new List<Hideout>();
+        List<HideoutSlot> tempHideoutSlots = new List<HideoutSlot>();
+
         for (int i = 0; i < GetHideouts(type).Count; i++)
         {
             //ASK AN HIDEOUT IF IT IS AVAILABLE FOR HOSTING
+            tempHideoutSlots = GetHideouts(type)[i].HideoutSlots;
 
+            for (int j = 0; j < tempHideoutSlots.Count; j++)
+            {
+                if (tempHideoutSlots[i].HostedCow == null)
+                    availableHideouts.Add(GetHideouts(type)[i]);
+                else 
+                    continue;
+            }
+
+            Debug.Log("Avaliable hideouts: " + availableHideouts[i].ToString());
         }
-        return null;
+        return availableHideouts;
     }
 }

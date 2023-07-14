@@ -12,6 +12,7 @@ public class Hideout : MonoBehaviour
 
 
     private List<HideoutSlot> hideoutSlots = new List<HideoutSlot>();
+    public List<HideoutSlot> HideoutSlots { get { return hideoutSlots; } }
 
     ///TEMPLATE CLONED DATA
     private ScriptableHideout.Type type = 0;
