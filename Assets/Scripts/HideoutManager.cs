@@ -6,19 +6,20 @@ public class HideoutManager : MonoSingleton<HideoutManager>
 {
     //DATA
     private List<Hideout> allHideouts = new();
-    private List<ScriptableHideout.Type> allHideoutTypes = new();
+    private Dictionary<ScriptableHideout.Type, List<Hideout>> hideoutsByType = new();
 
     //METHODS
     //...
     public override void Awake()
     {
         base.Awake();
+        SetHideoutArrayToList();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        SetHideoutArrayToList();
+        MakeDictionary();
     }
 
     // Update is called once per frame
@@ -36,52 +37,63 @@ public class HideoutManager : MonoSingleton<HideoutManager>
         }
     }
 
-    private void MakeListOfAllHideoutTypes()
+    private void MakeDictionary()
     {
-        for (int i = 0; i < allHideouts.Count; i++)
+        if (allHideouts != null)
         {
-            if(allHideoutTypes.Count == 0)
+            for (int i = 0; i < allHideouts.Count; i++)
             {
-                allHideoutTypes.Add(allHideouts[i].Type);
-            }
-            else if (allHideouts[i].Type != allHideouts[i - 1].Type)
-            {
-                allHideoutTypes.Add(allHideouts[i].Type);
-            }
-            else
-            {
-                continue;
-            }
-        }
-    }
-
-    private void CreateDictionaryByType()
-    {
-        Dictionary <ScriptableHideout.Type, List <Hideout>> dictionaryByType = new();
-        for(int i = 0; i < allHideouts.Count; i++)
-        {
-            for (int j = 0; j < allHideoutTypes.Count; j++)
-            {
-                if (allHideouts[i].Type == allHideoutTypes[j])
+                if (!hideoutsByType.ContainsKey(allHideouts[i].Type))
                 {
-                    dictionaryByType.Add(allHideoutTypes[j], new List<Hideout>());
+                    hideoutsByType.Add(allHideouts[i].Type, new List<Hideout>());
                 }
-                else 
-                { 
+                else
+                {
                     continue;
                 }
             }
+        }
 
-            foreach(KeyValuePair<ScriptableHideout.Type, List<Hideout>> entry in dictionaryByType)
+        foreach (KeyValuePair<ScriptableHideout.Type, List<Hideout>> entry in hideoutsByType)
+        {
+            for (int i = 0; i < allHideouts.Count; i++)
             {
-                for (int w = 0;  w < entry.Value.Count; w++)
+                if (!hideoutsByType.ContainsKey(entry.Key))
                 {
-                    entry.Value[w] = allHideouts[i];
+                    entry.Value.Add(allHideouts[i]);
+                }
+                else
+                {
+                    continue;
                 }
             }
         }
     }
 
     //FUNCTIONALITIES
+    private List<Hideout> GetHideouts(ScriptableHideout.Type type)
+    {
+        if (hideoutsByType.ContainsKey(type))
+        {
+            foreach (KeyValuePair<ScriptableHideout.Type, List<Hideout>> entry in hideoutsByType)
+            {
+                if (entry.Key.Equals(type))
+                {
+                    return entry.Value;
+                }
+                else continue;
+            }
+            return null;
+        }
+        else return null;
+    }
 
+    private List<Hideout> GetAvailableHideouts(ScriptableHideout.Type type)
+    {
+        for (int i = 0; i < GetHideouts(type).Count; i++)
+        {
+
+        }
+        return null;
+    }
 }
