@@ -72,6 +72,7 @@ public class Cowdex : MonoSingleton<Cowdex>
     }
     public Cow GetCow(ScriptableCow.UniqueID UID)
     {
+        //TRY & CATCH? THERE ARE NO COWS SUPPOSED TO BE MISSING IN THIS LIST. ERROR INTENDED?
         return CowArchive[UID];
     }
 
