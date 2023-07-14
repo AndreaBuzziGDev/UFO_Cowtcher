@@ -33,7 +33,7 @@ public class CowHelper
     public static bool CanEnterHideout(Cow interestedCow)
     {
         Hideout h = interestedCow.TargetHideout;
-        if (h != null && !h.IsFull())
+        if (h != null && !h.HasAvailableSlots())
         {
             return true;
         } 

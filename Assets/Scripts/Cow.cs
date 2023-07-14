@@ -146,7 +146,7 @@ public class Cow : MonoBehaviour
 
                 //REMAIN IN ALERT-SUBSTATE BEHAVIOUR
                 if (!HasChosenHideout) HandleAlertMovement();
-                else if (!targetHideout.IsFull()) HandlePanicMovement();
+                else if (!targetHideout.HasAvailableSlots()) HandlePanicMovement();
 
                 if (CowHelper.CanEnterHideout(this))
                 {
