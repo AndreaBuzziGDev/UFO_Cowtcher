@@ -28,9 +28,15 @@ public class CowHelper
 
     public static bool CanEnterHideout(Cow interestedCow)
     {
-        //TODO: IMPLEMENT
-
-        return false;
+        Hideout h = interestedCow.TargetHideout;
+        if (h != null && !h.IsFull())
+        {
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
     }
 
 

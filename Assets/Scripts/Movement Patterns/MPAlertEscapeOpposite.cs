@@ -18,10 +18,10 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
 
     public override Vector3 ManagePanic(Cow myCow)
     {
-        //TODO: IMPLEMENT
-        //TODO: USE COW DATA TO KNOW WHICH HIDEOUTS
+        Hideout targetHideout = myCow.TargetHideout;
+        Vector3 distance = targetHideout.transform.position - myCow.transform.position;
 
-        return Vector3.zero;
+        return distance.normalized;
     }
 
 }
