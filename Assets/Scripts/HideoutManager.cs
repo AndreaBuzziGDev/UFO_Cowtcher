@@ -58,7 +58,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
         {
             for (int i = 0; i < allHideouts.Count; i++)
             {
-                if (!hideoutsByType.ContainsKey(entry.Key))
+                if (hideoutsByType.ContainsKey(entry.Key))
                 {
                     entry.Value.Add(allHideouts[i]);
                 }
