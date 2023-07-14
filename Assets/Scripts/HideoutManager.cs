@@ -13,7 +13,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     // Start is called before the first frame update
     void Start()
     {
-        SetHideoutArrayToList();
+        initializeAllHidelouts();
         MakeDictionary();
     }
 
@@ -23,7 +23,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
         
     }
 
-    private void SetHideoutArrayToList()
+    private void initializeAllHidelouts()
     {
         allHideouts = FindObjectsOfType<Hideout>().ToList();
 
