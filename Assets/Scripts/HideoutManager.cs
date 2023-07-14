@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class HideoutManager : MonoSingleton<HideoutManager>
 {
@@ -9,16 +10,10 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     private Dictionary<ScriptableHideout.Type, List<Hideout>> hideoutsByType = new();
 
     //METHODS
-    //...
-    public override void Awake()
-    {
-        base.Awake();
-        SetHideoutArrayToList();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
+        SetHideoutArrayToList();
         MakeDictionary();
     }
 
@@ -30,11 +25,8 @@ public class HideoutManager : MonoSingleton<HideoutManager>
 
     private void SetHideoutArrayToList()
     {
-        Hideout[] array = FindObjectsOfType<Hideout>();
-        for (int i = 0; i < array.Length; i++)
-        {
-            allHideouts.Add(array[i]);
-        }
+        allHideouts = FindObjectsOfType<Hideout>().ToList();
+
     }
 
     private void MakeDictionary()
@@ -51,11 +43,8 @@ public class HideoutManager : MonoSingleton<HideoutManager>
                 {
                     hideoutsByType[cycledHideout.Type].Add(cycledHideout);
                 }
-                Debug.Log("cycledHideout.Type: " + cycledHideout.Type + " Count: " + hideoutsByType[cycledHideout.Type].Count);
-
             }
         }
-        Debug.Log("hideoutsByType Count: " + hideoutsByType.Count);
 
     }
 
