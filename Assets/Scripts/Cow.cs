@@ -148,10 +148,7 @@ public class Cow : MonoBehaviour
                 if (!HasChosenHideout) HandleAlertMovement();
                 else if (!targetHideout.HasAvailableSlots()) HandlePanicMovement();
 
-                if (CowHelper.CanEnterHideout(this))
-                {
-                    CowHelper.EnterHideout(this);
-                }
+                if (CowHelper.CanEnterHideout(this)) CowHelper.EnterHideout(this);
 
             }
         }
@@ -168,7 +165,6 @@ public class Cow : MonoBehaviour
             }
             else
             {
-                //TODO: CAN USE TERNARY OPERATORS?
                 TimerCalmMovement = cowTemplate.TimerCalmMovement;
                 TimerCalmStill = cowTemplate.TimerCalmStill;
 

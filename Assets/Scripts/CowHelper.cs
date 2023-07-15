@@ -33,14 +33,16 @@ public class CowHelper
     public static bool CanEnterHideout(Cow interestedCow)
     {
         Hideout h = interestedCow.TargetHideout;
-        if (h != null && !h.HasAvailableSlots())
+        if (h != null && h.HasAvailableSlots())
         {
-            return true;
-        } 
-        else
-        {
-            return false;
+            float distance = (interestedCow.transform.position - h.transform.position).magnitude;
+            if (distance <= h.HideoutTemplate.CowAllowedRadius)
+            {
+                return true;
+            }
         }
+
+        return false;
     }
 
     public static void EnterHideout(Cow interestedCow)
