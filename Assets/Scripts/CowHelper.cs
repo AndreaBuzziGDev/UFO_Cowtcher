@@ -26,6 +26,8 @@ public class CowHelper
             List<Hideout> avHideouts = HideoutManager.Instance.GetAvailableHideouts(interestedCow.CowTemplate.FavouriteHideoutTypes[0]);
             if (avHideouts.Count > 0)
             {
+                Debug.Log("Cow " + interestedCow.CowName + " has chosen the " + avHideouts[0] + " as a target Hideout.");
+
                 return avHideouts[0];
             }
 
@@ -56,7 +58,7 @@ public class CowHelper
 
         //IF COW HAS ENTERED HIDEOUT, TRANSITION TO HIDDEN STATE
         //IF COW HAS ENTERED HIDEOUT, DISABLE COW
-        Debug.Log("Cow " + interestedCow.CowName + " want to enter");
+        Debug.Log("Cow " + interestedCow.CowName + " want to enter hideout");
 
     }
 
