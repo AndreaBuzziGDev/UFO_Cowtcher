@@ -26,8 +26,6 @@ public class CowHelper
             List<Hideout> avHideouts = HideoutManager.Instance.GetAvailableHideouts(interestedCow.CowTemplate.FavouriteHideoutTypes[0]);
             if (avHideouts.Count > 0)
             {
-                Debug.Log("Cow " + interestedCow.CowName + " has chosen the " + avHideouts[0] + " as a target Hideout.");
-
                 return avHideouts[0];
             }
 

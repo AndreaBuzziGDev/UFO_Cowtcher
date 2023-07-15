@@ -37,7 +37,7 @@ public class Hideout : MonoBehaviour
         ufoDetectionRadius = hideoutTemplate.UFODetectionRadius;
 
         //UFO
-        ufo = FindObjectOfType<UFO>(); 
+        ufo = FindObjectOfType<UFO>();
         if (ufo != null) ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
 
         //HANDLE CONSTRUCTION OF hideoutSlots

@@ -119,6 +119,13 @@ public class Cow : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
+        Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
+        Debug.Log("TimerCalmMovement: " + TimerCalmMovement);
+        Debug.Log("TimerCalmStill: " + TimerCalmStill);
+        Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
+
+
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))
         {
@@ -148,7 +155,7 @@ public class Cow : MonoBehaviour
 
                 //REMAIN IN ALERT-SUBSTATE BEHAVIOUR
                 if (!HasChosenHideout) HandleAlertMovement();
-                else if (!targetHideout.HasAvailableSlots()) HandlePanicMovement();
+                else if (targetHideout.HasAvailableSlots()) HandlePanicMovement();
 
                 if (CowHelper.CanEnterHideout(this)) CowHelper.EnterHideout(this);
 
