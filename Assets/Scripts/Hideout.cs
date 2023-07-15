@@ -36,11 +36,13 @@ public class Hideout : MonoBehaviour
         hideoutPermanenceTimer = hideoutTemplate.HideoutPermanenceTimer;
         ufoDetectionRadius = hideoutTemplate.UFODetectionRadius;
 
-        //GET THE POSITION OF THE UFO AT THE HEIGHT OF THE HIDEOUT
-        ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
+        //UFO
+        ufo = FindObjectOfType<UFO>(); 
+        if (ufo != null) ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
 
         //HANDLE CONSTRUCTION OF hideoutSlots
         InitalizeHideoutSlots();
+
     }
 
     // Start is called before the first frame update
