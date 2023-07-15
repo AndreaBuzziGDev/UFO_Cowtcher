@@ -22,7 +22,8 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
         Vector3 hideoutDirection = targetHideout.transform.position - myCow.transform.position;
 
         UFO myUFO = FindObjectOfType<UFO>();
-        Vector3 ufoHideoutVector = targetHideout.transform.position - myUFO.transform.position;
+        Vector3 flatUfoVector = new Vector3(targetHideout.transform.position.x, 0, targetHideout.transform.position.z);
+        Vector3 ufoHideoutVector = targetHideout.transform.position - flatUfoVector;
 
         if (ufoHideoutVector.magnitude <= hideoutDirection.magnitude)
         {
