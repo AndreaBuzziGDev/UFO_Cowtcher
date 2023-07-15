@@ -94,7 +94,7 @@ public class Cow : MonoBehaviour
         else Debug.LogWarning("COW WITHOUT TEMPLATE (SCRIPTABLE COW) " + this.gameObject.name);
 
         //OTHER TECHNICAL AWAKE SETUP
-        sr = this.gameObject.GetComponent<SpriteRenderer>();
+        sr = this.gameObject.GetComponentInChildren<SpriteRenderer>();
         sr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         sr.receiveShadows = true;
 
@@ -156,6 +156,10 @@ public class Cow : MonoBehaviour
         }
         else
         {
+            //RESET PANIC TIMER
+            this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
+
+            //HANDLE CALM MOVEMENT PHASES
             if (TimerCalmMovement > 0.0f)
             {
                 TimerCalmMovement -= Time.deltaTime;
