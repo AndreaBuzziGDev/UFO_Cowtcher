@@ -19,10 +19,10 @@ MonoBehaviour:
   FuelRecoveryAmount: 1
   AlertRadius: 8
   SpeedCalm: 1
-  SpeedAlert: 3
+  SpeedAlert: 2
   Score: 1
   TimerAlertToCalm: 3
-  TimerAlertToPanic: 50
+  TimerAlertToPanic: 5
   TimerCalmMovement: 2
   TimerCalmStill: 1
   SummoningRitual: {fileID: 0}

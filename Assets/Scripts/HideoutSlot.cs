@@ -20,6 +20,7 @@ public class HideoutSlot
     public void Host(Cow interestedCow)
     {
         this.HostedCow = interestedCow;
+        interestedCow.gameObject.SetActive(false);
     }
 
     public Cow Vacate()

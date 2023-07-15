@@ -81,7 +81,7 @@ public class Hideout : MonoBehaviour
 
         for (int i = 0; i < hideoutSlots.Count; i++)
         {
-            if (hideoutSlots[i].HostedCow != null)
+            if (!hideoutSlots[i].IsHosting)
             {
                 numOfAvailableSlots++;
             }

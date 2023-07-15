@@ -137,7 +137,7 @@ public class Cow : MonoBehaviour
         {
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
             if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
-            Debug.Log("TimerAlertToPanic: " + this.TimerAlertToPanic);
+            //Debug.Log("TimerAlertToPanic: " + this.TimerAlertToPanic);
 
             //ALERT SUB-STATE
             if (this.TimerAlertToPanic > 0.0f) HandleAlertMovement();
@@ -176,7 +176,7 @@ public class Cow : MonoBehaviour
 
                 //RESETTING THE MOVEMENT DIRECTION RANDOMLY BASED ON CALM PATTERN
                 movementDirection = movPatternCalm.ManageMovement(this.transform.position);
-                Debug.Log("movementDirection: " + movementDirection);
+                //Debug.Log("movementDirection: " + movementDirection);
             }
         }
 
@@ -235,14 +235,14 @@ public class Cow : MonoBehaviour
     {
         if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this.transform.position);
         else movementDirection = Vector3.zero;
-        Debug.Log("movementDirection (ALERT): " + movementDirection);
+        //Debug.Log("movementDirection (ALERT): " + movementDirection);
     }
 
     private void HandlePanicMovement()
     {
         if (movPatternAlert != null) movementDirection = movPatternAlert.ManagePanic(this);
         else movementDirection = Vector3.zero;
-        Debug.Log("movementDirection (PANIC): " + movementDirection);
+        //Debug.Log("movementDirection (PANIC): " + movementDirection);
     }
 
 }
