@@ -55,10 +55,10 @@ public class Cow : MonoBehaviour
     public int Score { get { return score; } }
 
     ///TIMERS
-    private float TimerAlertToCalm;
-    private float TimerAlertToPanic;
-    private float TimerCalmMovement;
-    private float TimerCalmStill;
+    [Min(0f)] private float TimerAlertToCalm;
+    [Min(0f)] private float TimerAlertToPanic;
+    [Min(0f)] private float TimerCalmMovement;
+    [Min(0f)] private float TimerCalmStill;
 
 
 
@@ -94,7 +94,7 @@ public class Cow : MonoBehaviour
         else Debug.LogWarning("COW WITHOUT TEMPLATE (SCRIPTABLE COW) " + this.gameObject.name);
 
         //OTHER TECHNICAL AWAKE SETUP
-        sr = this.gameObject.GetComponent<SpriteRenderer>();
+        sr = this.gameObject.GetComponentInChildren<SpriteRenderer>();
         sr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         sr.receiveShadows = true;
 
@@ -135,7 +135,9 @@ public class Cow : MonoBehaviour
         //STEP 2
         if (IsAlert)
         {
-            this.TimerAlertToPanic -= Time.deltaTime;
+            Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
+            if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
+            //Debug.Log("TimerAlertToPanic: " + this.TimerAlertToPanic);
 
             //ALERT SUB-STATE
             if (this.TimerAlertToPanic > 0.0f) HandleAlertMovement();
@@ -146,17 +148,18 @@ public class Cow : MonoBehaviour
 
                 //REMAIN IN ALERT-SUBSTATE BEHAVIOUR
                 if (!HasChosenHideout) HandleAlertMovement();
-                else if (!targetHideout.HasAvailableSlots()) HandlePanicMovement();
+                else if (targetHideout.HasAvailableSlots()) HandlePanicMovement();
 
-                if (CowHelper.CanEnterHideout(this))
-                {
-                    CowHelper.EnterHideout(this);
-                }
+                if (CowHelper.CanEnterHideout(this)) CowHelper.EnterHideout(this);
 
             }
         }
         else
         {
+            //RESET PANIC TIMER
+            this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
+
+            //HANDLE CALM MOVEMENT PHASES
             if (TimerCalmMovement > 0.0f)
             {
                 TimerCalmMovement -= Time.deltaTime;
@@ -168,13 +171,12 @@ public class Cow : MonoBehaviour
             }
             else
             {
-                //TODO: CAN USE TERNARY OPERATORS?
                 TimerCalmMovement = cowTemplate.TimerCalmMovement;
                 TimerCalmStill = cowTemplate.TimerCalmStill;
 
                 //RESETTING THE MOVEMENT DIRECTION RANDOMLY BASED ON CALM PATTERN
                 movementDirection = movPatternCalm.ManageMovement(this.transform.position);
-                Debug.Log("movementDirection: " + movementDirection);
+                //Debug.Log("movementDirection: " + movementDirection);
             }
         }
 
@@ -233,14 +235,14 @@ public class Cow : MonoBehaviour
     {
         if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this.transform.position);
         else movementDirection = Vector3.zero;
-        Debug.Log("movementDirection (ALERT): " + movementDirection);
+        //Debug.Log("movementDirection (ALERT): " + movementDirection);
     }
 
     private void HandlePanicMovement()
     {
         if (movPatternAlert != null) movementDirection = movPatternAlert.ManagePanic(this);
         else movementDirection = Vector3.zero;
-        Debug.Log("movementDirection (PANIC): " + movementDirection);
+        //Debug.Log("movementDirection (PANIC): " + movementDirection);
     }
 
 }

@@ -21,11 +21,15 @@ public class CowHelper
 
     public static Hideout FindHideout(Cow interestedCow)
     {
-        //TODO: IMPLEMENT
-        //1 - CALL HideoutManager TO GET A LIST OF AVAILABLE HIDEOUTS
-        //2 - SORT Hideouts BASED ON THEIR DISTANCE FROM THE COW
-        //3 - CHECK THE FIRST Hideout THAT IS CLOSER TO THE COW THAN IT IS TO THE UFO
-        //4 - IF ALL HIDEOUTS ARE CLOSER TO THE UFO THAN THE COW, FALL BACK TO THE FIRST IN THE SORTED LIST (it's still the closest)
+        if (interestedCow.CowTemplate != null && interestedCow.CowTemplate.FavouriteHideoutTypes.Count > 0)
+        {
+            List<Hideout> avHideouts = HideoutManager.Instance.GetAvailableHideouts(interestedCow.CowTemplate.FavouriteHideoutTypes[0]);
+            if (avHideouts.Count > 0)
+            {
+                return avHideouts[0];
+            }
+
+        }
 
         return null;
     }
@@ -33,23 +37,23 @@ public class CowHelper
     public static bool CanEnterHideout(Cow interestedCow)
     {
         Hideout h = interestedCow.TargetHideout;
-        if (h != null && !h.HasAvailableSlots())
+        if (h != null && h.HasAvailableSlots())
         {
-            return true;
-        } 
-        else
-        {
-            return false;
+            float distance = (interestedCow.transform.position - h.transform.position).magnitude;
+            if (distance <= h.HideoutTemplate.CowAllowedRadius)
+            {
+                return true;
+            }
         }
+
+        return false;
     }
 
     public static void EnterHideout(Cow interestedCow)
     {
         //NOTIFY THE HIDEOUT THAT THE COW WANTS TO ENTER INSIDE
-        //NB: SYNCHRONIZATION ISSUES!!!
-
-        //IF COW HAS ENTERED HIDEOUT, TRANSITION TO HIDDEN STATE
-        //IF COW HAS ENTERED HIDEOUT, DISABLE COW
+        Hideout target = interestedCow.TargetHideout;
+        target.Host(interestedCow);
 
     }
 

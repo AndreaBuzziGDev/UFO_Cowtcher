@@ -19,9 +19,22 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
     public override Vector3 ManagePanic(Cow myCow)
     {
         Hideout targetHideout = myCow.TargetHideout;
-        Vector3 distance = targetHideout.transform.position - myCow.transform.position;
+        Vector3 hideoutDirection = targetHideout.transform.position - myCow.transform.position;
 
-        return distance.normalized;
+        UFO myUFO = FindObjectOfType<UFO>();
+        Vector3 flatUfoVector = new Vector3(myUFO.transform.position.x, targetHideout.transform.position.y, myUFO.transform.position.z);
+        Vector3 ufoHideoutVector = targetHideout.transform.position - flatUfoVector;
+
+        Debug.Log("hideoutDirection: " + hideoutDirection);
+        Debug.Log("ufoHideoutVector: " + ufoHideoutVector);
+
+        if (ufoHideoutVector.magnitude <= hideoutDirection.magnitude)
+        {
+            Debug.Log("UFO IS CLOSER TO HIDEOUT THAN COW!");
+            return ManageMovement(myCow.transform.position);
+        }
+
+        return hideoutDirection.normalized;
     }
 
 }

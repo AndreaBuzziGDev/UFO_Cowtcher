@@ -36,11 +36,13 @@ public class Hideout : MonoBehaviour
         hideoutPermanenceTimer = hideoutTemplate.HideoutPermanenceTimer;
         ufoDetectionRadius = hideoutTemplate.UFODetectionRadius;
 
-        //GET THE POSITION OF THE UFO AT THE HEIGHT OF THE HIDEOUT
-        ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
+        //UFO
+        ufo = FindObjectOfType<UFO>();
+        if (ufo != null) ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
 
         //HANDLE CONSTRUCTION OF hideoutSlots
         InitalizeHideoutSlots();
+
     }
 
     // Start is called before the first frame update
@@ -79,7 +81,7 @@ public class Hideout : MonoBehaviour
 
         for (int i = 0; i < hideoutSlots.Count; i++)
         {
-            if (hideoutSlots[i].HostedCow != null)
+            if (!hideoutSlots[i].IsHosting)
             {
                 numOfAvailableSlots++;
             }
@@ -109,6 +111,20 @@ public class Hideout : MonoBehaviour
             hideoutSlots[i].SlotPermanenceTimer = hideoutPermanenceTimer;
         }
     }
+
+
+    public void Host(Cow interestedCow)
+    {
+        foreach(HideoutSlot slot in hideoutSlots)
+        {
+            if (!slot.IsHosting)
+            {
+                slot.Host(interestedCow);
+                break;
+            }
+        }
+    }
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()

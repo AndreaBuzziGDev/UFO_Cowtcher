@@ -19,7 +19,7 @@ MonoBehaviour:
   FuelRecoveryAmount: 1
   AlertRadius: 8
   SpeedCalm: 1
-  SpeedAlert: 1
+  SpeedAlert: 2
   Score: 1
   TimerAlertToCalm: 3
   TimerAlertToPanic: 5

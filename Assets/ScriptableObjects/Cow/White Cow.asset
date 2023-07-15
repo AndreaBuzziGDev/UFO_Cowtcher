@@ -17,12 +17,12 @@ MonoBehaviour:
   Name: Kevin
   Description: 
   FuelRecoveryAmount: 1
-  AlertRadius: 2
-  SpeedCalm: 1
-  SpeedAlert: 1
+  AlertRadius: 8
+  SpeedCalm: 2
+  SpeedAlert: 2
   Score: 1
-  TimerAlertToCalm: 1
-  TimerAlertToPanic: 1
+  TimerAlertToCalm: 3
+  TimerAlertToPanic: 5
   TimerCalmMovement: 2
   TimerCalmStill: 1
   SummoningRitual: {fileID: 0}
