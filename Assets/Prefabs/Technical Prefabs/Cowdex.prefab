@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FullListOfExistingCows:
-  - {fileID: 2160316234089213197, guid: 0aaec60b54049714091e3929991dc36c, type: 3}
-  - {fileID: 3599538219799458376, guid: a8cff6da5fd09824681939feee3197a2, type: 3}
-  - {fileID: 4371643607752435080, guid: e6fae9e5560ca1b4d96e3435db70d122, type: 3}
+  - {fileID: 4849474545414189867, guid: 0aaec60b54049714091e3929991dc36c, type: 3}
+  - {fileID: 1656210940373056849, guid: cb1f72313484ac44485ceb541cada022, type: 3}
+  - {fileID: 3816354294917225438, guid: df0506ab1feff7b4086b1fb3b0cc9da4, type: 3}
