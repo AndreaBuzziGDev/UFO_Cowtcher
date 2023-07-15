@@ -55,10 +55,10 @@ public class Cow : MonoBehaviour
     public int Score { get { return score; } }
 
     ///TIMERS
-    private float TimerAlertToCalm;
-    private float TimerAlertToPanic;
-    private float TimerCalmMovement;
-    private float TimerCalmStill;
+    [Min(0f)] private float TimerAlertToCalm;
+    [Min(0f)] private float TimerAlertToPanic;
+    [Min(0f)] private float TimerCalmMovement;
+    [Min(0f)] private float TimerCalmStill;
 
 
 
