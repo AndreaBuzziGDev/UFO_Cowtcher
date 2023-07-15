@@ -112,6 +112,20 @@ public class Hideout : MonoBehaviour
         }
     }
 
+
+    public void Host(Cow interestedCow)
+    {
+        foreach(HideoutSlot slot in hideoutSlots)
+        {
+            if (!slot.IsHosting)
+            {
+                slot.Host(interestedCow);
+                break;
+            }
+        }
+    }
+
+
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
