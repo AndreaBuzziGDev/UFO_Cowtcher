@@ -135,7 +135,8 @@ public class Cow : MonoBehaviour
         //STEP 2
         if (IsAlert)
         {
-            if (CowHelper.IsUFOWithinRadius(this)) this.TimerAlertToPanic -= Time.deltaTime;
+            Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
+            if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
             Debug.Log("TimerAlertToPanic: " + this.TimerAlertToPanic);
 
             //ALERT SUB-STATE

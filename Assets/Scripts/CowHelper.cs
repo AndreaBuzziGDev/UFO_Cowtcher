@@ -21,11 +21,15 @@ public class CowHelper
 
     public static Hideout FindHideout(Cow interestedCow)
     {
-        //TODO: IMPLEMENT
-        //1 - CALL HideoutManager TO GET A LIST OF AVAILABLE HIDEOUTS
-        //2 - SORT Hideouts BASED ON THEIR DISTANCE FROM THE COW
-        //3 - CHECK THE FIRST Hideout THAT IS CLOSER TO THE COW THAN IT IS TO THE UFO
-        //4 - IF ALL HIDEOUTS ARE CLOSER TO THE UFO THAN THE COW, FALL BACK TO THE FIRST IN THE SORTED LIST (it's still the closest)
+        if (interestedCow.CowTemplate != null && interestedCow.CowTemplate.FavouriteHideoutTypes.Count > 0)
+        {
+            List<Hideout> avHideouts = HideoutManager.Instance.GetAvailableHideouts(interestedCow.CowTemplate.FavouriteHideoutTypes[0]);
+            if (avHideouts.Count > 0)
+            {
+                return avHideouts[0];
+            }
+
+        }
 
         return null;
     }
@@ -52,6 +56,7 @@ public class CowHelper
 
         //IF COW HAS ENTERED HIDEOUT, TRANSITION TO HIDDEN STATE
         //IF COW HAS ENTERED HIDEOUT, DISABLE COW
+        Debug.Log("Cow " + interestedCow.CowName + " want to enter");
 
     }
 
