@@ -119,13 +119,6 @@ public class Cow : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
-        Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
-        Debug.Log("TimerCalmMovement: " + TimerCalmMovement);
-        Debug.Log("TimerCalmStill: " + TimerCalmStill);
-        Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
-
-
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))
         {
