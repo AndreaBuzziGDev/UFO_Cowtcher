@@ -7,7 +7,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 {
     //DATA
     private List<SpawnPoint> allSpawnPoints = new();//NB: THIS WILL BE POPULATED AT THE LAUNCH OF THE SCENE, NOT MANUALLY IN THE EDITOR.
-
     public List<SpawnPoint> AllSpawnPoints { get { return allSpawnPoints; } }
 
 
@@ -45,6 +44,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     //FUNCTIONALITIES
 
     //TODO: DEVELOP A DEBUG FUNCTIONALITY THAT DETECTS DUPLICATES AMONG THE ScriptableRitual AND REPORTS THEM AS ERRORS ON THE GAME/EDITOR CONSOLE.
+
+
+    ///INITIALIZATION
     private void initializeAllSpawnPoints()
     {
         allSpawnPoints = FindObjectsOfType<SpawnPoint>().ToList();
@@ -68,5 +70,17 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         }
 
     }
+
+
+    ///GET HIDEOUT
+    private List<SpawnPoint> GetSpawnPoint(SpawnPoint.Type type)
+    {
+        if (spawnPointsByType.ContainsKey(type)) 
+            return spawnPointsByType[type];
+        else 
+            return null;
+    }
+
+
 
 }
