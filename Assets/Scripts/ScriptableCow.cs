@@ -59,6 +59,10 @@ public class ScriptableCow : ScriptableObject
     public float TimerCalmStill = 1.0f;
 
 
+    [Tooltip("Time before the cow will respawn after being caught")]
+    public float TimerRespawn = 5.0f;
+
+
     ///COMPLEX DATA
     public ScriptableRitual SummoningRitual;//TODO: MUST BE NULL-SAFE
     public List<ScriptableHideout.Type> FavouriteHideoutTypes = new();

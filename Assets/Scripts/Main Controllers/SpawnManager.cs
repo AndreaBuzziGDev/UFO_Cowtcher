@@ -16,7 +16,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     [SerializeField] private List<ScriptableRitual> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
     [SerializeField] private List<Cow> allowedCows;//PUT ALL PREFAB (GameObject) COWs INSIDE HERE.
 
-    private List<Cow> caughtCowWaitingForRespawn = new();
+    private List<SpawnQueuedCow> caughtCowWaitingForRespawn = new();
 
 
     //METHODS
@@ -33,7 +33,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     // Update is called once per frame
     void Update()
     {
-        
+        ManageDequeueingCows();
     }
 
 
@@ -70,7 +70,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     ///GET HIDEOUT
     ///
-    public List<SpawnPoint> GetSpawnPoint(List<SpawnPoint.Type> types)
+    public List<SpawnPoint> GetSpawnPoints(List<SpawnPoint.Type> types)
     {
         List<SpawnPoint> allSpawnPointsFromAllTypes = new();
         foreach(SpawnPoint.Type sType in types)
@@ -88,19 +88,41 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             return null;
     }
 
-
-    ///ADD COW TO "CAUGHT" COWS
-    public void MarkForRespawn(Cow caughtCow)
+    ///FUNCTIONALITY TO SPAWN COWS ACCESSIBLE FROM ANYWHERE
+    public void SpawnCow(Cow spawnedCow)
     {
-        caughtCowWaitingForRespawn.Add(caughtCow);
-        //TODO: DO SOME LOGIC ?
+        //TODO: THIS IS USEFUL FUNCTIONALITY THAT CAN BE RECYCLED.
+        List<SpawnPoint> possibleSpawnPoints = GetSpawnPoints(spawnedCow.AllowedSpawnPointTypes);
 
-
-
+        if (possibleSpawnPoints.Count > 0)
+        {
+            int randomSpawnSlot = Random.Range(0, possibleSpawnPoints.Count);
+            SpawnPoint sp = possibleSpawnPoints[randomSpawnSlot];
+            sp.Spawn(spawnedCow);
+        }
+        else
+        {
+            Debug.Log("No Valid Spawn Point found for Cow: " + spawnedCow.CowName);
+        }
     }
 
 
+    ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
+    public void MarkForRespawn(Cow caughtCow) => caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(caughtCow));
 
+
+    ///HANDLE THE DEQUEUEING OF COWS READY TO SPAWN
+    private void ManageDequeueingCows()
+    {
+        foreach (SpawnQueuedCow sqc in caughtCowWaitingForRespawn)
+        {
+            sqc.LowerTimer(Time.deltaTime);
+            if (sqc.IsReadyToSpawn)
+            {
+                sqc.Spawn();
+            }
+        }
+    }
 
 
 

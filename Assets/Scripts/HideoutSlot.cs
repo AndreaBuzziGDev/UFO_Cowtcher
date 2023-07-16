@@ -5,7 +5,7 @@ using UnityEngine;
 public class HideoutSlot
 {
     //DATA
-    public Cow HostedCow;
+    public Cow HostedCow;//TODO: MAKE PRIVATE AND USE IsHosting
     public bool IsHosting { get { return (HostedCow != null); } }
 
     public float SlotPermanenceTimer;
@@ -14,6 +14,7 @@ public class HideoutSlot
 
     //CONSTRUCTOR
     //NOT NEEDED
+    //TODO: CONSTRUCTOR MIGHT BE APPRECIABLE ONCE HostedCow IS PRIVATE
 
 
     //METHODS
