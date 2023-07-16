@@ -14,7 +14,7 @@ public class SpawnPoint : MonoBehaviour
 
 
     //DATA
-    private Type spawnType = Type.GenericEnvironment;
+    private Type spawnType = 0;
     public Type SpawnType { get { return spawnType; } }
 
 
