@@ -167,13 +167,13 @@ Transform:
   m_GameObject: {fileID: 7941655071495466051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6294619815631106068}
   - {fileID: 2573885485125725165}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1083418052433258214
 SpriteRenderer:
@@ -320,7 +320,6 @@ MonoBehaviour:
   timeBeforeReduction: 0
   maxRadius: 2
   cooldownTimer: 1
-  circleSteps: 35
   outerCircle: {fileID: 8132337875915980716}
   innerCircle: {fileID: 576979319330301586}
   cowPhysicsLayer:
