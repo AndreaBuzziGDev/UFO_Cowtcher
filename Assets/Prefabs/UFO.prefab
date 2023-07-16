@@ -173,7 +173,7 @@ Transform:
   - {fileID: 6294619815631106068}
   - {fileID: 2573885485125725165}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1083418052433258214
 SpriteRenderer:
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18d2f7c4e0241c4683aa2fbd11b1eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
+  MoveSpeed: 7
 --- !u!114 &1113527563185232423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UFO: {fileID: 2316233886179570003}
   captureTimer: 3
-  timeBeforeReduction: 1.5
+  timeBeforeReduction: 0
   maxRadius: 2
   cooldownTimer: 1
   circleSteps: 35
