@@ -73,7 +73,18 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
 
     ///GET HIDEOUT
-    private List<SpawnPoint> GetSpawnPoint(SpawnPoint.Type type)
+    ///
+    public List<SpawnPoint> GetSpawnPoint(List<SpawnPoint.Type> types)
+    {
+        List<SpawnPoint> allSpawnPointsFromAllTypes = new();
+        foreach(SpawnPoint.Type sType in types)
+        {
+            allSpawnPointsFromAllTypes.AddRange(GetSpawnPoint(sType));
+        }
+
+        return allSpawnPointsFromAllTypes;
+    }
+    public List<SpawnPoint> GetSpawnPoint(SpawnPoint.Type type)
     {
         if (spawnPointsByType.ContainsKey(type)) 
             return spawnPointsByType[type];

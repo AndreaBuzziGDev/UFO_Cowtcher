@@ -9,7 +9,7 @@ public class HideoutSlot
     public bool IsHosting { get { return (HostedCow != null); } }
 
     public float SlotPermanenceTimer;
-    public bool CanSpawn = false;
+    public bool CanSpawn { get { return (SlotPermanenceTimer <= 0.0f); } }
 
 
     //CONSTRUCTOR
@@ -23,11 +23,12 @@ public class HideoutSlot
         interestedCow.gameObject.SetActive(false);
     }
 
-    public Cow Vacate()
+    public Cow Vacate(float newPermanenceTimer)
     {
+        SlotPermanenceTimer = newPermanenceTimer;
+
         Cow toVacate = HostedCow;
         HostedCow = null;
-        CanSpawn = false;
 
         Debug.Log("Cow to be Vacated: " + toVacate);
 

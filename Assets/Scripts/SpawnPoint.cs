@@ -17,6 +17,8 @@ public class SpawnPoint : MonoBehaviour
     private Type spawnType = 0;
     public Type SpawnType { get { return spawnType; } }
 
+    [SerializeField] private float spawnRadius = 2.0f;
+
 
     //METHODS
 
@@ -35,6 +37,12 @@ public class SpawnPoint : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    public void Spawn(Cow interestedCow)
+    {
+        Vector3 newCowPosition = UtilsRadius.Vector3OnUnitCircle(spawnRadius);
+        interestedCow.transform.position = newCowPosition;
+        interestedCow.gameObject.SetActive(true);
+    }
 
 
 }

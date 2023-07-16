@@ -71,11 +71,16 @@ public class Hideout : MonoBehaviour
             {
                 hideoutSlots[i].SlotPermanenceTimer -= Time.deltaTime;
 
-                if (hideoutSlots[i].SlotPermanenceTimer <= 0)
+                if (hideoutSlots[i].CanSpawn)
                 {
-                    hideoutSlots[i].CanSpawn = true;
-                    hideoutSlots[i].SlotPermanenceTimer = hideoutTemplate.HideoutPermanenceTimer;
-                    //REMEMBER TO PUT "CanSpawn" BACK TO FALSE AND SET ITS COW TO NULL WHEN THE COW IS SPAWNED
+                    Cow respawnedCow = hideoutSlots[i].Vacate(hideoutPermanenceTimer);
+                    List<SpawnPoint> possibleSpawnPoints = SpawnManager.Instance.GetSpawnPoint(respawnedCow.AllowedSpawnPointTypes);
+
+                    if (possibleSpawnPoints.Count>0)
+                    {
+                        int randomSpawnSlot = Random.Range(0, possibleSpawnPoints.Count);
+                        SpawnPoint sp = possibleSpawnPoints[randomSpawnSlot];
+                    }
                 }
             }
 
