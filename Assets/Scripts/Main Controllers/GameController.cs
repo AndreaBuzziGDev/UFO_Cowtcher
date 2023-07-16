@@ -86,14 +86,12 @@ public class GameController : MonoSingleton<GameController>
     //PAUSING
     private static void PauseGame()
     {
-        //TODO: HIDE VIRTUAL CONTROLLER
         UIController.Instance.HideInputCanvas();
         Time.timeScale = 0;
     }
     private static void UnpauseGame()
     {
-        //TODO: UN-HIDE VIRTUAL CONTROLLER
-        UIController.Instance.ShowInputCanvas();
+        //UIController.Instance.ShowInputCanvas();
         Time.timeScale = 1;
     }
 

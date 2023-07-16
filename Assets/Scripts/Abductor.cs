@@ -11,7 +11,8 @@ public class Abductor : MonoBehaviour
     [SerializeField] private float timeBeforeReduction;
     [SerializeField] private float maxRadius;
     [SerializeField] private float cooldownTimer;//TODO: IMPLEMENT/USE
-    [SerializeField] private int circleSteps;
+
+    private int circleSteps = 35;
     [SerializeField] private GameObject outerCircle;
     [SerializeField] private GameObject innerCircle;
     [SerializeField] private LayerMask cowPhysicsLayer;
@@ -22,7 +23,7 @@ public class Abductor : MonoBehaviour
     private float currentCaptureTimer = 0f;
     private float captureDelta = 0f;
     private float timeBeforeReductionProgress = 0f;
-    private List<GameObject> cowsInRange = new List<GameObject>();
+    private List<GameObject> cowsInRange = new List<GameObject>();//TODO: POSSIBLE REFACTOR SO THAT THIS HOLDS Cow(s)
 
     //METHODS
     private void Awake()
@@ -74,18 +75,13 @@ public class Abductor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, cowPhysicsLayer);
-
-        foreach (RaycastHit cow in collidersHit)
-        {
-            if (cow.collider != null)
-            {
-                cowsInRange.Add(cow.transform.gameObject);
-            }
-        }
+        //CowDetectionLegacy();
+        CowDetectionEnhanced();
     }
 
+
+
+    //FUNCTIONALITIES
     private void DrawCircle(int steps, float radius, LineRenderer circleRenderer)
     {
         circleRenderer.positionCount = steps;
@@ -127,4 +123,42 @@ public class Abductor : MonoBehaviour
         
         currentCaptureTimer = 0.0f;
     }
+
+
+    ///COW DETECTION
+    public void CowDetectionLegacy()
+    {
+        cowsInRange.Clear();
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, cowPhysicsLayer);
+
+        foreach (RaycastHit cow in collidersHit)
+        {
+            if (cow.collider != null)
+            {
+                cowsInRange.Add(cow.transform.gameObject);
+            }
+        }
+    }
+
+    /// THIS CONTROLS THE DISTANCE BETWEEN THE UFO AND THE COWS
+    public void CowDetectionEnhanced()
+    {
+        cowsInRange.Clear();
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, cowPhysicsLayer);
+
+        Vector3 planeProjectedUFOPosition = new Vector3(transform.position.x, 0, transform.position.z);
+
+        foreach (RaycastHit cow in collidersHit)
+        {
+            Cow myCowObject = cow.transform.gameObject.GetComponent<Cow>();
+            if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= maxRadius)
+            {
+                cowsInRange.Add(cow.transform.gameObject);
+            }
+        }
+    }
+
+
+
+
 }

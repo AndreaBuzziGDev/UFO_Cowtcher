@@ -63,8 +63,12 @@ public class Cow : MonoBehaviour
 
 
     /// COMPLEX DATA
-    private List<ScriptableHideout.Type> FavouriteHideoutTypes = new();//TODO: MUST BE NULL-SAFE
-    private List<SpawnPoint.Type> AllowedSpawnPointTypes = new();
+    private List<ScriptableHideout.Type> favouriteHideoutTypes = new();
+    public List<ScriptableHideout.Type> FavouriteHideoutTypes { get { return favouriteHideoutTypes; } }
+
+    private List<SpawnPoint.Type> allowedSpawnPointTypes = new();
+    public List<SpawnPoint.Type> AllowedSpawnPointTypes { get { return allowedSpawnPointTypes; } }
+
 
 
     private AbstractAlteration.EBuffType alteration;
@@ -108,17 +112,15 @@ public class Cow : MonoBehaviour
     }
 
 
+    //TODO: CHANGE UPDATE AND FIXEDUPDATE SO THAT:
+    //      FIXEDUPDATE SEARCHS FOR THE AVAILABLE HIDEOUTS ACCORDING TO THE ALGORITHM DESCRIBED IN COW GDD
+    //      FIXEDUPDATE HANDLES THE COW MOVEMENT
+    //      UPDATE HANDLES ALL THE TIMERS AND BEHAVIOURS
     private void FixedUpdate()
     {
-        float mySpeed;
-        if (this.IsCalm) mySpeed = speedCalm;
-        else mySpeed = speedAlert;
+        //
+        HandleMovement();
 
-        rb.MovePosition(transform.position + movementDirection * Time.deltaTime * mySpeed);
-    }
-
-    private void Update()
-    {
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))
         {
@@ -189,6 +191,12 @@ public class Cow : MonoBehaviour
     {
         this.movementDirection = Vector3.zero;
         this.currentState = State.Calm;
+
+        //RESET TIMERS
+        this.TimerCalmMovement = cowTemplate.TimerCalmMovement;
+        this.TimerCalmStill = cowTemplate.TimerCalmStill;
+        this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
+        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
     }
 
     private void OnDisable()
@@ -200,6 +208,14 @@ public class Cow : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    private void HandleMovement()
+    {
+        float mySpeed;
+        if (this.IsCalm) mySpeed = speedCalm;
+        else mySpeed = speedAlert;
+
+        rb.MovePosition(transform.position + movementDirection * Time.deltaTime * mySpeed);
+    }
 
 
 
@@ -223,8 +239,8 @@ public class Cow : MonoBehaviour
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
         /// COMPLEX DATA
-        this.FavouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
-        this.AllowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
+        this.favouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
+        this.allowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
         this.alteration = cowTemplate.Alteration;
         this.movPatternCalm = cowTemplate.movPatternCalm;
         this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert;

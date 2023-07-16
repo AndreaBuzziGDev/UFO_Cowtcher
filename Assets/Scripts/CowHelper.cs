@@ -23,7 +23,7 @@ public class CowHelper
     {
         if (interestedCow.CowTemplate != null && interestedCow.CowTemplate.FavouriteHideoutTypes.Count > 0)
         {
-            List<Hideout> avHideouts = HideoutManager.Instance.GetAvailableHideouts(interestedCow.CowTemplate.FavouriteHideoutTypes[0]);
+            List<Hideout> avHideouts = HideoutManager.Instance.GetAvailableHideouts(interestedCow.FavouriteHideoutTypes[0]);
             if (avHideouts.Count > 0)
             {
                 return avHideouts[0];
