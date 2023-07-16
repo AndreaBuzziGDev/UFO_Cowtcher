@@ -289,8 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bbea98eb98fec4084667567816308e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FuelAmount: 0
-  ScoreAmount: 0
   maxFuelAmount: 50
 --- !u!114 &3824681213956448144
 MonoBehaviour:
@@ -321,7 +319,7 @@ MonoBehaviour:
   captureTimer: 3
   timeBeforeReduction: 1.5
   maxRadius: 2
-  cooldownTimer: 1
+  cooldownTimer: 0.1
   circleSteps: 35
   outerCircle: {fileID: 8132337875915980716}
   innerCircle: {fileID: 576979319330301586}
