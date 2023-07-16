@@ -59,22 +59,16 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     public List<Hideout> GetAvailableHideouts(ScriptableHideout.Type type)
     {
         List<Hideout> availableHideouts = new List<Hideout>();
-        List<HideoutSlot> tempHideoutSlots = new List<HideoutSlot>();
 
-        for (int i = 0; i < GetHideouts(type).Count; i++)
+        foreach (Hideout cycledHideout in GetHideouts(type))
         {
             //ASK AN HIDEOUT IF IT IS AVAILABLE FOR HOSTING
-            tempHideoutSlots = GetHideouts(type)[i].HideoutSlots;
-
-            for (int j = 0; j < tempHideoutSlots.Count; j++)
+            foreach (HideoutSlot hsl in cycledHideout.HideoutSlots)
             {
-                if (tempHideoutSlots[i].HostedCow == null)
-                    availableHideouts.Add(GetHideouts(type)[i]);
-                else 
-                    continue;
+                if (!hsl.IsHosting) availableHideouts.Add(cycledHideout);
             }
 
-            Debug.Log("Avaliable hideouts: " + availableHideouts[i].ToString());
+            Debug.Log("Hideout: " + cycledHideout.Type + "Avaliable hideouts: " + cycledHideout.ToString());
         }
         return availableHideouts;
     }
