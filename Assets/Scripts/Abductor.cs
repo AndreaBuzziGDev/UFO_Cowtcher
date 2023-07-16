@@ -12,7 +12,7 @@ public class Abductor : MonoBehaviour
     [SerializeField] private float maxRadius;
     [SerializeField] private float cooldownTimer;//TODO: IMPLEMENT/USE
 
-    private int circleSteps;
+    private int circleSteps = 35;
     [SerializeField] private GameObject outerCircle;
     [SerializeField] private GameObject innerCircle;
     [SerializeField] private LayerMask cowPhysicsLayer;
