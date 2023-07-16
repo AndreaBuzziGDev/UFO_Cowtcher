@@ -7,8 +7,7 @@ public class Hideout : MonoBehaviour
     //DATA
     [SerializeField] private ScriptableHideout hideoutTemplate;
     public ScriptableHideout HideoutTemplate { get { return hideoutTemplate; } }
-
-    [SerializeField] private UFO ufo;
+    private UFO ufo;
 
 
     private List<HideoutSlot> hideoutSlots = new List<HideoutSlot>();
@@ -23,6 +22,12 @@ public class Hideout : MonoBehaviour
     private float ufoDetectionRadius;
 
     private Vector3 ufoDistanceXZ = Vector3.zero;
+
+
+    //DEBUG FIELDS
+    [SerializeField] private int debugNumAvailSlots;
+
+
 
 
     //METHODS
@@ -54,6 +59,10 @@ public class Hideout : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        int availSlots = 0;
+
+        //TODO: EXPORT AS DEDICATED FUNCTIONALITY (updateHideoutSlot Timers and Statuses)
         ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
 
         for (int i = 0; i < hideoutSlots.Count; i++)
@@ -69,7 +78,18 @@ public class Hideout : MonoBehaviour
                     //REMEMBER TO PUT "CanSpawn" BACK TO FALSE AND SET ITS COW TO NULL WHEN THE COW IS SPAWNED
                 }
             }
+
+            //COUNT SLOTS THAT ARE AVAILABLE
+            if (hideoutSlots[i].HostedCow != null)
+            {
+                availSlots++;
+            }
         }
+
+
+        //UPDATE COUNT SLOTS THAT ARE AVAILABLE
+        debugNumAvailSlots = availSlots;
+
     }
 
 
