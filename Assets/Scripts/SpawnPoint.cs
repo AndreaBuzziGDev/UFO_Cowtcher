@@ -9,12 +9,13 @@ public class SpawnPoint : MonoBehaviour
     {
         GenericEnvironment,
         Granary,
-        Paddock
+        Paddock,
+        Tree
     }
 
 
     //DATA
-    private Type spawnType = 0;
+    [SerializeField] private Type spawnType = 0;
     public Type SpawnType { get { return spawnType; } }
 
     [SerializeField] private float spawnRadius = 2.0f;
@@ -39,7 +40,7 @@ public class SpawnPoint : MonoBehaviour
     //FUNCTIONALITIES
     public void Spawn(Cow interestedCow)
     {
-        Vector3 newCowPosition = UtilsRadius.Vector3OnUnitCircle(spawnRadius);
+        Vector3 newCowPosition = UtilsRadius.Vector3OnUnitCircle(spawnRadius) + transform.position;
         interestedCow.transform.position = newCowPosition;
         interestedCow.gameObject.SetActive(true);
     }

@@ -80,6 +80,7 @@ public class Hideout : MonoBehaviour
                     {
                         int randomSpawnSlot = Random.Range(0, possibleSpawnPoints.Count);
                         SpawnPoint sp = possibleSpawnPoints[randomSpawnSlot];
+                        sp.Spawn(respawnedCow);
                     }
                 }
             }
