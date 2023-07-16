@@ -110,15 +110,9 @@ public class Cow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float mySpeed;
-        if (this.IsCalm) mySpeed = speedCalm;
-        else mySpeed = speedAlert;
+        //
+        HandleMovement();
 
-        rb.MovePosition(transform.position + movementDirection * Time.deltaTime * mySpeed);
-    }
-
-    private void Update()
-    {
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))
         {
@@ -200,6 +194,16 @@ public class Cow : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    private void HandleMovement()
+    {
+
+        float mySpeed;
+        if (this.IsCalm) mySpeed = speedCalm;
+        else mySpeed = speedAlert;
+
+        rb.MovePosition(transform.position + movementDirection * Time.deltaTime * mySpeed);
+
+    }
 
 
 
