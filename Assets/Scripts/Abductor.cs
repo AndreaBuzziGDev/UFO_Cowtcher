@@ -106,19 +106,16 @@ public class Abductor : MonoBehaviour
 
     private void CatchCows()
     {
-        for (int i = cowsInRange.Count - 1; i >= 0; i--)
+        foreach(GameObject inRangeCow in cowsInRange)
         {
-            cowsInRange[i].SetActive(false);
-
             //PASS THE COW ATTRIBUTES TO THE RIGHT SCRIPTS
-            Cow cow = cowsInRange[i].GetComponent<Cow>();
-            float cowFuelRecoveryAmount = cow.FuelRecoveryAmount;
-            float cowIncreaseScoreAmount = cow.Score;
+            Cow cow = inRangeCow.GetComponent<Cow>();
+            cow.gameObject.SetActive(false);
 
-            UFO.ChangeFuel(cowFuelRecoveryAmount);
-            UFO.ChangeScore(cowIncreaseScoreAmount);
+            UFO.ChangeFuel(cow.FuelRecoveryAmount);
+            UFO.ChangeScore(cow.Score);
 
-            cowsInRange.Remove(cowsInRange[i]);
+            cowsInRange.Remove(inRangeCow);
         }
         
         currentCaptureTimer = 0.0f;
