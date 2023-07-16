@@ -6,20 +6,14 @@ using System.Linq;
 public class SpawnManager : MonoSingleton<SpawnManager>
 {
     //DATA
-    private List<SpawnPoint> allSpawnPoints = new();//NB: THIS WILL BE POPULATED AT THE LAUNCH OF THE SCENE, NOT MANUALLY IN THE EDITOR.
+    private Dictionary<SpawnPoint.Type, List<SpawnPoint>> spawnPointsByType = new();
+
+    private List<SpawnPoint> allSpawnPoints = new();
     public List<SpawnPoint> AllSpawnPoints { get { return allSpawnPoints; } }
 
 
-    private Dictionary<SpawnPoint.Type, List<SpawnPoint>> spawnPointsByType = new();
-
-
-
-
-    //TODO: VERIFY IF SERIALIZATION WORKS.
-    [SerializeField] private List<CowSummoningRitual> rituals;//NB: THIS WILL BE POPULATED AT RUNTIME. DO NOT EDIT MANUALLY IN THE EDITOR.
-
+    private List<CowSummoningRitual> rituals = new();
     [SerializeField] private List<ScriptableRitual> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
-
     [SerializeField] private List<Cow> allowedCows;//PUT ALL PREFAB (GameObject) COWs INSIDE HERE.
 
 
