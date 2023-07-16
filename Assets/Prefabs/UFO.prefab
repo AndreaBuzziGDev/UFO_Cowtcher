@@ -319,7 +319,7 @@ MonoBehaviour:
   captureTimer: 3
   timeBeforeReduction: 1.5
   maxRadius: 2
-  cooldownTimer: 0.1
+  cooldownTimer: 1
   circleSteps: 35
   outerCircle: {fileID: 8132337875915980716}
   innerCircle: {fileID: 576979319330301586}
