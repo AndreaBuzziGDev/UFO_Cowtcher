@@ -16,6 +16,8 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     [SerializeField] private List<ScriptableRitual> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
     [SerializeField] private List<Cow> allowedCows;//PUT ALL PREFAB (GameObject) COWs INSIDE HERE.
 
+    private List<Cow> caughtCowWaitingForRespawn = new();
+
 
     //METHODS
 
@@ -85,6 +87,20 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         else 
             return null;
     }
+
+
+    ///ADD COW TO "CAUGHT" COWS
+    public void MarkForRespawn(Cow caughtCow)
+    {
+        caughtCowWaitingForRespawn.Add(caughtCow);
+        //TODO: DO SOME LOGIC ?
+
+
+
+    }
+
+
+
 
 
 
