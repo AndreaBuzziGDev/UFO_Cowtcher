@@ -80,7 +80,7 @@ public class Hideout : MonoBehaviour
             }
 
             //COUNT SLOTS THAT ARE AVAILABLE
-            if (hideoutSlots[i].HostedCow != null)
+            if (hideoutSlots[i].HostedCow == null)
             {
                 availSlots++;
             }
