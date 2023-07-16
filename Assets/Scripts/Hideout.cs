@@ -121,7 +121,7 @@ public class Hideout : MonoBehaviour
 
     private void InitalizeHideoutSlots()
     {
-        for (int i = 0; i <= numberOfHideoutSlots; i++)
+        for (int i = 0; i < numberOfHideoutSlots; i++)
         {
             hideoutSlots.Add(new HideoutSlot());
         }
