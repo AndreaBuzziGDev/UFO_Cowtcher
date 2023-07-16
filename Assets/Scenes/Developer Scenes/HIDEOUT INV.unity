@@ -179,6 +179,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -244,6 +252,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -311,6 +327,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -376,6 +400,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -443,6 +475,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -509,6 +549,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -574,6 +622,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -702,6 +758,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -829,6 +893,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -894,6 +966,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -961,6 +1041,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1026,6 +1114,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1093,6 +1189,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1159,6 +1263,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1224,6 +1336,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1385,6 +1505,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1450,6 +1578,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1517,6 +1653,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1582,6 +1726,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1649,6 +1801,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1715,6 +1875,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1780,6 +1948,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1908,6 +2084,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1973,6 +2157,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2040,6 +2232,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2105,6 +2305,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2172,6 +2380,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2237,6 +2453,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2304,6 +2528,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2369,6 +2601,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2436,6 +2676,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2501,6 +2749,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2629,6 +2885,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2756,6 +3020,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2821,6 +3093,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2888,6 +3168,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2954,6 +3242,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2964,6 +3260,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3008297296413678391, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
   m_PrefabInstance: {fileID: 1004104570}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1042700977
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847961042174125579, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: m_Name
+      value: Barn (Cabbage) (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
 --- !u!1001 &1053976075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3019,6 +3376,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3085,6 +3450,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3225,6 +3598,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3290,6 +3671,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3357,6 +3746,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3422,6 +3819,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3489,6 +3894,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3554,6 +3967,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3621,6 +4042,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3686,6 +4115,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3753,6 +4190,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3819,6 +4264,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3884,6 +4337,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4012,6 +4473,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4078,6 +4547,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4143,6 +4620,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4283,6 +4768,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4348,6 +4841,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4459,6 +4960,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4524,6 +5033,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4591,6 +5108,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4657,6 +5182,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4722,6 +5255,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4882,6 +5423,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_01 (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4947,6 +5496,14 @@ PrefabInstance:
     - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
       propertyPath: m_Name
       value: Fence_01 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122731786849365601, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
