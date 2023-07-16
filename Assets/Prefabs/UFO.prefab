@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2573885485125725165}
   - component: {fileID: 3983880987564355499}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InnerAbductorCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 2316233886179570003}
   - component: {fileID: 3824681213956448144}
   - component: {fileID: 1113527563185232423}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UFO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -335,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6294619815631106068}
   - component: {fileID: 550158128258438461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OuterAbductorCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
