@@ -33,9 +33,13 @@ public class Cow : MonoBehaviour
 
 
     ///CLONED DATA
-    ///UNIQUE ID & ENUMS
-    private ScriptableCow.UniqueID UID;
+    ///UNIQUE ID
+    private ScriptableCow.UniqueID uid;
+    public ScriptableCow.UniqueID UID { get { return uid; } }
+    ///RARITY
     private ScriptableCow.Rarity rarity;
+    public ScriptableCow.Rarity Rarity { get { return rarity; } }
+
 
 
     /// SIMPLE DATA
@@ -223,7 +227,7 @@ public class Cow : MonoBehaviour
     private void CloneFromTemplate()
     {
         /// SIMPLE DATA
-        this.UID = cowTemplate.UID;
+        this.uid = cowTemplate.UID;
         this.rarity = cowTemplate.rarity;
         this.cowName = cowTemplate.Name;
         this.fuelRecoveryAmount = cowTemplate.FuelRecoveryAmount;

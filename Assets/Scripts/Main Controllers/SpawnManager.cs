@@ -14,7 +14,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     private List<CowSummoningRitual> rituals = new();
     [SerializeField] private List<ScriptableRitual> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
-    [SerializeField] private List<Cow> allowedCows;//PUT ALL PREFAB (GameObject) COWs INSIDE HERE.
 
     private List<SpawnQueuedCow> caughtCowWaitingForRespawn = new();
 
@@ -91,7 +90,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///FUNCTIONALITY TO SPAWN COWS ACCESSIBLE FROM ANYWHERE
     public void SpawnCow(Cow spawnedCow)
     {
-        //TODO: THIS IS USEFUL FUNCTIONALITY THAT CAN BE RECYCLED.
         List<SpawnPoint> possibleSpawnPoints = GetSpawnPoints(spawnedCow.AllowedSpawnPointTypes);
 
         if (possibleSpawnPoints.Count > 0)
@@ -108,7 +106,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
 
     ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
-    public void MarkForRespawn(Cow caughtCow) => caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(caughtCow));
+    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID) 
+    {
+        GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+        prefabCowGO.gameObject.SetActive(false);
+
+        caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>()));
+    }
 
 
     ///HANDLE THE DEQUEUEING OF COWS READY TO SPAWN
@@ -120,6 +124,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             if (sqc.IsReadyToSpawn)
             {
                 sqc.Spawn();
+                caughtCowWaitingForRespawn.Remove(sqc);
             }
         }
     }
