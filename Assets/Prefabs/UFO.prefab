@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2573885485125725165}
   - component: {fileID: 3983880987564355499}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InnerAbductorCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 2316233886179570003}
   - component: {fileID: 3824681213956448144}
   - component: {fileID: 1113527563185232423}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UFO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,8 +167,8 @@ Transform:
   m_GameObject: {fileID: 7941655071495466051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6294619815631106068}
   - {fileID: 2573885485125725165}
@@ -267,7 +267,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -289,8 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bbea98eb98fec4084667567816308e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FuelAmount: 0
-  ScoreAmount: 0
   maxFuelAmount: 50
 --- !u!114 &3824681213956448144
 MonoBehaviour:
@@ -304,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18d2f7c4e0241c4683aa2fbd11b1eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
+  MoveSpeed: 7
 --- !u!114 &1113527563185232423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,10 +317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UFO: {fileID: 2316233886179570003}
   captureTimer: 3
-  timeBeforeReduction: 1.5
+  timeBeforeReduction: 0
   maxRadius: 2
   cooldownTimer: 1
-  circleSteps: 35
   outerCircle: {fileID: 8132337875915980716}
   innerCircle: {fileID: 576979319330301586}
   cowPhysicsLayer:
@@ -338,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6294619815631106068}
   - component: {fileID: 550158128258438461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OuterAbductorCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
