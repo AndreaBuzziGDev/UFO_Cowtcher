@@ -13,13 +13,18 @@ public class UFO : MonoBehaviour
     [SerializeField] private float maxFuelAmount;
     public float MaxFuelAmount { get { return maxFuelAmount; } }
 
+    ///FUEL BOTTOM DELAY MANAGEMENT
+    [SerializeField] [Range(0.0f, 100.0f)] private float fuelEmergencyThreshold = 20.0f;
+    [SerializeField] private float fuelEmergencyExtensionFactor = 2.0f;
+
+
     ///SCORE
     private float scoreAmount;
     public float ScoreAmount { get { return scoreAmount; } }
 
 
-    //GUI LINKS
-    FuelBar fBar;
+
+
 
 
 
@@ -33,7 +38,7 @@ public class UFO : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fBar = FindAnyObjectByType<FuelBar>();
+
     }
 
     // Update is called once per frame
@@ -47,14 +52,23 @@ public class UFO : MonoBehaviour
     public void HandleFuelLogic() {
 
         Mathf.Clamp(fuelAmount, 0, maxFuelAmount);
-        fuelAmount -= Time.deltaTime;
 
+        //FUEL CHANGES
+        float extensionMultiplier = 1;
+        if (((fuelAmount/maxFuelAmount) * 100) <= fuelEmergencyThreshold)
+        {
+            extensionMultiplier = fuelEmergencyExtensionFactor;
+        }
+        fuelAmount -= Time.deltaTime * (1/extensionMultiplier);
+
+        //GUI UPDATE
+        UIController.Instance.IGPanel.PlayerFuelBar.UpdateFuelBar(this);
+
+        //IS THE GAME OVER?
         if (fuelAmount <= 0)
         {
-            Debug.Log("Player has no fuel, GAME OVER");
+            GameController.Instance.SetState(GameController.EGameState.GameOver);
         }
-
-        if (fBar != null) fBar.UpdateFuelBar(this);
 
     }
 
@@ -64,8 +78,13 @@ public class UFO : MonoBehaviour
 
 
     //CURRENT SCORE SETTER
-    public void ChangeScore(float delta) => scoreAmount += delta;
+    ///LEGACY
+    //NB: IT'S USING FLOAT INSTEAD OF INT
+    //public void ChangeScore(float delta) => scoreAmount += delta;
 
-
+    public void ChangeScore(int delta)
+    {
+        UIController.Instance.IGPanel.HighScoreBar.AddScore(delta);
+    }
 
 }

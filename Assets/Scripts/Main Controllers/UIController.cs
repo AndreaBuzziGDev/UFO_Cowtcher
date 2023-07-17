@@ -13,9 +13,14 @@ public class UIController : MonoSingleton<UIController>
     [SerializeField] private List<GameObject> AllMenuPanels;
 
     [SerializeField] private GameObject PauseGamePanel;
+    [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject CowdexPanel;
 
     [SerializeField] private GameObject GameplayInputCanvas;
+
+    //IN GAME PANEL - FUNCTIONALITIES USED BY OTHER CLASSES, UIController ACTS AS UNIQUE PROVIDER
+    [SerializeField] private InGamePanel igPanel;
+    public InGamePanel IGPanel { get { return igPanel; } }
 
 
     //METHODS
@@ -28,6 +33,7 @@ public class UIController : MonoSingleton<UIController>
     ///HIDE ALL
     public void HideAllMenuPanels()
     {
+        Debug.Log("AllMenuPanels size: " + AllMenuPanels.Count);
         foreach (GameObject go in AllMenuPanels)
         {
             if (go != null) go.SetActive(false);
@@ -44,10 +50,15 @@ public class UIController : MonoSingleton<UIController>
     public void ShowPause() => PauseGamePanel.SetActive(true);
     public void Hidepause() => PauseGamePanel.SetActive(false);
 
+
+    //GAMEOVER
+    public void ShowGameOver() => GameOverPanel.SetActive(true);
+    public void HideGameOver() => GameOverPanel.SetActive(false);
+
+
     //COWDEX
     public void ShowCowdex() => CowdexPanel.SetActive(true);
     public void HideCowdex() => CowdexPanel.SetActive(false);
-
 
 
 }

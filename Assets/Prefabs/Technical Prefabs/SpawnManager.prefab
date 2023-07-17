@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &714969314596704649
 MonoBehaviour:
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f10bb54a5d9e5749a6235074fb810dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allSpawnPoints: []
   allTemplateRituals: []
-  allowedCows: []
+  allowedCows:
+  - {fileID: 1656210940373056849, guid: cb1f72313484ac44485ceb541cada022, type: 3}
+  - {fileID: 3816354294917225438, guid: df0506ab1feff7b4086b1fb3b0cc9da4, type: 3}

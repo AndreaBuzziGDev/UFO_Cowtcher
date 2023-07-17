@@ -6,26 +6,24 @@ using System.Linq;
 public class SpawnManager : MonoSingleton<SpawnManager>
 {
     //DATA
-    private List<SpawnPoint> allSpawnPoints = new();//NB: THIS WILL BE POPULATED AT THE LAUNCH OF THE SCENE, NOT MANUALLY IN THE EDITOR.
+    private Dictionary<SpawnPoint.Type, List<SpawnPoint>> spawnPointsByType = new();
+
+    private List<SpawnPoint> allSpawnPoints = new();
     public List<SpawnPoint> AllSpawnPoints { get { return allSpawnPoints; } }
 
 
-    private Dictionary<SpawnPoint.Type, List<SpawnPoint>> spawnPointsByType = new();
-
-
-
-
-    //TODO: VERIFY IF SERIALIZATION WORKS.
-    [SerializeField] private List<CowSummoningRitual> rituals;//NB: THIS WILL BE POPULATED AT RUNTIME. DO NOT EDIT MANUALLY IN THE EDITOR.
-
+    private List<CowSummoningRitual> rituals = new();
     [SerializeField] private List<ScriptableRitual> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
 
-    [SerializeField] private List<Cow> allowedCows;//PUT ALL PREFAB (GameObject) COWs INSIDE HERE.
+    private List<SpawnQueuedCow> caughtCowWaitingForRespawn = new();
 
 
     //METHODS
 
     //...
+
+    //TODO: STUDY AND APPLY THE SAME CHANGES TO THE Awake METHOD MADE TO GameController IN THIS MONOSINGLETON AS WELL
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +35,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     // Update is called once per frame
     void Update()
     {
-        
+        ManageDequeueingCows();
     }
 
 
@@ -74,7 +72,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     ///GET HIDEOUT
     ///
-    public List<SpawnPoint> GetSpawnPoint(List<SpawnPoint.Type> types)
+    public List<SpawnPoint> GetSpawnPoints(List<SpawnPoint.Type> types)
     {
         List<SpawnPoint> allSpawnPointsFromAllTypes = new();
         foreach(SpawnPoint.Type sType in types)
@@ -90,6 +88,51 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             return spawnPointsByType[type];
         else 
             return null;
+    }
+
+    ///FUNCTIONALITY TO SPAWN COWS ACCESSIBLE FROM ANYWHERE
+    public void SpawnCow(Cow spawnedCow)
+    {
+        List<SpawnPoint> possibleSpawnPoints = GetSpawnPoints(spawnedCow.AllowedSpawnPointTypes);
+
+        if (possibleSpawnPoints.Count > 0)
+        {
+            int randomSpawnSlot = Random.Range(0, possibleSpawnPoints.Count);
+            SpawnPoint sp = possibleSpawnPoints[randomSpawnSlot];
+            sp.Spawn(spawnedCow);
+        }
+        else
+        {
+            Debug.Log("No Valid Spawn Point found for Cow: " + spawnedCow.CowName);
+        }
+    }
+
+
+    ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
+    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID) 
+    {
+        GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+        prefabCowGO.gameObject.SetActive(false);
+
+        caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>()));
+    }
+
+
+    ///HANDLE THE DEQUEUEING OF COWS READY TO SPAWN
+    private void ManageDequeueingCows()
+    {
+        List<SpawnQueuedCow> tempList = new();
+        foreach (SpawnQueuedCow sqc in caughtCowWaitingForRespawn)
+        {
+            sqc.LowerTimer(Time.deltaTime);
+            if (sqc.IsReadyToSpawn)
+            {
+                sqc.Spawn();
+                tempList.Add(sqc);
+            }
+        }
+
+        caughtCowWaitingForRespawn = caughtCowWaitingForRespawn.Except(tempList).ToList();
     }
 
 

@@ -16,7 +16,7 @@ MonoBehaviour:
   rarity: 0
   Name: Kevin
   Description: 
-  FuelRecoveryAmount: 1
+  FuelRecoveryAmount: 3
   AlertRadius: 8
   SpeedCalm: 2
   SpeedAlert: 2
@@ -25,6 +25,7 @@ MonoBehaviour:
   TimerAlertToPanic: 5
   TimerCalmMovement: 2
   TimerCalmStill: 1
+  TimerRespawn: 5
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 03000000

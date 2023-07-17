@@ -23,6 +23,10 @@ public class Cowdex : MonoSingleton<Cowdex>
     //METHODS
 
     //...
+
+    //TODO: STUDY AND APPLY THE SAME CHANGES TO THE Awake METHOD MADE TO GameController IN THIS MONOSINGLETON AS WELL
+
+
     // Start is called before the first frame update
     void Start()
     {
