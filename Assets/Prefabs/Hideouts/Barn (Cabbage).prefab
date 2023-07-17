@@ -222,7 +222,7 @@ Transform:
   - {fileID: 1331881486466175779}
   - {fileID: 7971376169870719352}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &1039704197200870992
 LODGroup:
@@ -260,4 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideoutTemplate: {fileID: 11400000, guid: a51b63db87ae501478e1da1c8d86e300, type: 2}
-  ufo: {fileID: 0}
+  shakeAmount: 0.005
+  shakeSpeed: 30
+  shakeTime: 1
+  debugNumAvailSlots: 0
