@@ -13,9 +13,17 @@ public class UFO : MonoBehaviour
     [SerializeField] private float maxFuelAmount;
     public float MaxFuelAmount { get { return maxFuelAmount; } }
 
+    ///FUEL BOTTOM DELAY MANAGEMENT
+    [SerializeField] private float fuelBottomThreshold = 10.0f;
+    [SerializeField] private float fuelExtensionFactor = 2.0f;
+
+
     ///SCORE
     private float scoreAmount;
     public float ScoreAmount { get { return scoreAmount; } }
+
+
+
 
 
 
@@ -44,14 +52,23 @@ public class UFO : MonoBehaviour
     public void HandleFuelLogic() {
 
         Mathf.Clamp(fuelAmount, 0, maxFuelAmount);
-        fuelAmount -= Time.deltaTime;
 
+        //FUEL CHANGES
+        float extensionMultiplier = 1;
+        if (fuelAmount/maxFuelAmount <= fuelBottomThreshold/maxFuelAmount)
+        {
+            extensionMultiplier = fuelExtensionFactor;
+        }
+        fuelAmount -= Time.deltaTime * (1/extensionMultiplier);
+
+        //GUI UPDATE
+        UIController.Instance.IGPanel.PlayerFuelBar.UpdateFuelBar(this);
+
+        //IS THE GAME OVER?
         if (fuelAmount <= 0)
         {
             GameController.Instance.SetState(GameController.EGameState.GameOver);
         }
-
-        UIController.Instance.IGPanel.PlayerFuelBar.UpdateFuelBar(this);
 
     }
 
