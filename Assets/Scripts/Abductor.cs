@@ -118,7 +118,7 @@ public class Abductor : MonoBehaviour
             //TODO: WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
             SpawnManager.Instance.MarkForRespawn(cow.UID);
 
-            cowsInRange.Remove(inRangeCow);
+            //cowsInRange.Remove(inRangeCow);
         }
         
         currentCaptureTimer = 0.0f;

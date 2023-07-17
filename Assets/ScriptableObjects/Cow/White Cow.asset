@@ -16,7 +16,7 @@ MonoBehaviour:
   rarity: 0
   Name: Kevin
   Description: 
-  FuelRecoveryAmount: 1
+  FuelRecoveryAmount: 3
   AlertRadius: 8
   SpeedCalm: 2
   SpeedAlert: 2

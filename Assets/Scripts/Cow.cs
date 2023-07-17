@@ -15,6 +15,7 @@ public class Cow : MonoBehaviour
 
 
     //DATA
+    private SpriteRenderer spriteRenderer;
     ///INNATE COW DATA
     private State currentState = State.Calm;
     public State CurrentState { get { return currentState; } }
@@ -102,9 +103,9 @@ public class Cow : MonoBehaviour
         else Debug.LogWarning("COW WITHOUT TEMPLATE (SCRIPTABLE COW) " + this.gameObject.name);
 
         //OTHER TECHNICAL AWAKE SETUP
-        sr = this.gameObject.GetComponentInChildren<SpriteRenderer>();
-        sr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        sr.receiveShadows = true;
+        spriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        spriteRenderer.receiveShadows = true;
 
         rb = this.gameObject.GetComponent<Rigidbody>();
 
@@ -113,6 +114,18 @@ public class Cow : MonoBehaviour
     private void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        if (movementDirection.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
 
