@@ -18,6 +18,14 @@ public class ScriptableCow : ScriptableObject
         C006,
         C007,
         C008,
+        R000,
+        R001,
+        R002,
+        R003,
+        L000,
+        L001,
+        L002,
+        L003,
         ANY
     }
 

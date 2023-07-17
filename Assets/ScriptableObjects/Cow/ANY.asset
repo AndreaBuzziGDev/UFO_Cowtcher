@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
   m_Name: ANY
   m_EditorClassIdentifier: 
-  UID: 9
+  UID: 17
   rarity: 0
   Name: Any cow
+  Description: 
   FuelRecoveryAmount: 1
   AlertRadius: 1
   SpeedCalm: 1
@@ -24,6 +25,7 @@ MonoBehaviour:
   TimerAlertToPanic: 1
   TimerCalmMovement: 1
   TimerCalmStill: 1
+  TimerRespawn: 5
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 
   AllowedSpawnPointTypes: 
