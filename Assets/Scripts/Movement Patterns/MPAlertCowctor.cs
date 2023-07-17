@@ -5,7 +5,7 @@ using UnityEngine;
 
 //TODO: IT COULD MAKE SENSE TO UNIFY THE BEHAVIOUR FOR LEGENDARY MOVEMENTS
 
-[CreateAssetMenu(fileName = "New MPAlertEscapeOpposite", menuName = "MovementPattern/Alert/Cowctor")]
+[CreateAssetMenu(fileName = "New Alert Cowctor", menuName = "MovementPattern/Alert/Cowctor")]
 public class MPAlertCowctor : AbstractMovementAlert
 {
 
@@ -14,13 +14,9 @@ public class MPAlertCowctor : AbstractMovementAlert
 
     public override Vector3 ManageMovement(Cow interestedCow)
     {
-        //PARAMS TO PUT ON THE COW
         Vector3 result;
 
         float randomChance = Random.Range(0, TimerAlertSpecialMovement - MinDirectionPersistenceSlider);
-        Debug.Log("TimerAlertSpecialMovement: " + interestedCow.TimerAlertSpecialMovement);
-        Debug.Log("randomChance: " + randomChance);
-
         if (interestedCow.TimerAlertSpecialMovement > randomChance)
         {
             result = interestedCow.MovementDirection;
@@ -28,7 +24,7 @@ public class MPAlertCowctor : AbstractMovementAlert
         else 
         {
             result = UtilsRadius.Vector3OnUnitCircle(1).normalized;
-            interestedCow.ResetTimerSpecialMovement();
+            interestedCow.ResetTimerAlertSpecialMovement();
         }
 
         return result.normalized;

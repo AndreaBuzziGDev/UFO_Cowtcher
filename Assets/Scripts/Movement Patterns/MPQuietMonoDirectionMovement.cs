@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New MPQuietMonoMovement", menuName = "MovementPattern/Calm Mono Direction")]
+[CreateAssetMenu(fileName = "New Random Mono Direction", menuName = "MovementPattern/Calm/Random Mono Direction")]
 public class MPQuietMonoDirectionMovement : AbstractMovementPattern
 {
     [SerializeField] private List<Vector3> AllowedDirections = new();

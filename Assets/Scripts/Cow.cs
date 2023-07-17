@@ -65,6 +65,11 @@ public class Cow : MonoBehaviour
     [Min(0f)] private float TimerCalmMovement;
     [Min(0f)] private float TimerCalmStill;
 
+    //SPECIAL MOVEMENT TIMERS
+    ///CALM
+    [Min(0f)] private float timerCalmSpecialMovement;
+    public float TimerCalmSpecialMovement { get { return timerCalmSpecialMovement; } }
+    ///ALERT
     [Min(0f)] private float timerAlertSpecialMovement;
     public float TimerAlertSpecialMovement { get { return timerAlertSpecialMovement; } }
 
@@ -158,8 +163,11 @@ public class Cow : MonoBehaviour
         //STEP 2
         if (IsAlert)
         {
-            //LOWER THE TIMER USED FOR SPECIAL MOVEMENTS
-            if(this.timerAlertSpecialMovement > 0.0f) this.timerAlertSpecialMovement -= Time.deltaTime;
+            //MUTALLY RESET TIMER SPECIAL MOVEMENT
+            this.timerCalmSpecialMovement = 0.0f;
+
+            //LOWER THE TIMER USED FOR SPECIAL ALERT MOVEMENTS
+            if (this.timerAlertSpecialMovement > 0.0f) this.timerAlertSpecialMovement -= Time.deltaTime;
 
 
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
@@ -183,6 +191,13 @@ public class Cow : MonoBehaviour
         }
         else
         {
+            //MUTALLY RESET TIMER SPECIAL MOVEMENT
+            this.timerAlertSpecialMovement = 0.0f;
+
+            //LOWER THE TIMER USED FOR SPECIAL CALM MOVEMENTS
+            if (this.timerCalmSpecialMovement > 0.0f) this.timerCalmSpecialMovement -= Time.deltaTime;
+
+
             //RESET PANIC TIMER
             this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
@@ -289,17 +304,8 @@ public class Cow : MonoBehaviour
 
 
     //PUBLIC FUNCTIONALITIES
-    public void ResetTimerSpecialMovement()
-    {
-        this.timerAlertSpecialMovement = cowTemplate.movPatternAlert.TimerAlertSpecialMovement;
-    }
-
-    private void ZeroTimerSpecialMovement()
-    {
-        this.timerAlertSpecialMovement = 0.0f;
-    }
-
-
+    public void ResetTimerAlertSpecialMovement() => this.timerAlertSpecialMovement = cowTemplate.movPatternAlert.TimerAlertSpecialMovement;
+    public void ResetTimerCalmSpecialMovement() => this.timerCalmSpecialMovement = cowTemplate.movPatternCalm.TimerCalmSpecialMovement;
 
 
 }

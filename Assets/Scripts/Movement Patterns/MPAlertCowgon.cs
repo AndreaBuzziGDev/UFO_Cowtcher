@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New MPAlertEscapeOpposite", menuName = "MovementPattern/Alert/Cowgon")]
+[CreateAssetMenu(fileName = "New Alert Cowgon", menuName = "MovementPattern/Alert/Cowgon")]
 public class MPAlertCowgon : AbstractMovementAlert
 {
     public override Vector3 ManageMovement(Cow interestedCow)
