@@ -90,6 +90,7 @@ public class Cow : MonoBehaviour
     private Rigidbody rb;
 
     private Vector3 movementDirection = Vector3.forward;
+    public Vector3 MovementDirection { get { return movementDirection; } }
 
 
 
