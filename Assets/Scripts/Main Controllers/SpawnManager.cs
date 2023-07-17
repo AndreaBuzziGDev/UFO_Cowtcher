@@ -118,8 +118,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///HANDLE THE DEQUEUEING OF COWS READY TO SPAWN
     private void ManageDequeueingCows()
     {
-        Debug.Log("caughtCowWaitingForRespawn size BEFORE: " + caughtCowWaitingForRespawn.Count);
-
         List<SpawnQueuedCow> tempList = new();
         foreach (SpawnQueuedCow sqc in caughtCowWaitingForRespawn)
         {
@@ -132,8 +130,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         }
 
         caughtCowWaitingForRespawn = caughtCowWaitingForRespawn.Except(tempList).ToList();
-        Debug.Log("caughtCowWaitingForRespawn size AFTER: " + caughtCowWaitingForRespawn.Count);
-
     }
 
 
