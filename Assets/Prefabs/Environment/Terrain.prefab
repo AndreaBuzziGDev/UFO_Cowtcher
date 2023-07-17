@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7825186135984476597
+--- !u!1 &7349270650581876743
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4552672229932782447}
-  - component: {fileID: 6178140775514116911}
-  - component: {fileID: 753017442910868404}
-  - component: {fileID: 564318381975829239}
-  - component: {fileID: 293205533157249886}
+  - component: {fileID: 1279337095044284665}
+  - component: {fileID: 3357090178705425550}
+  - component: {fileID: 3521783854725707253}
+  - component: {fileID: 6844925248635463146}
   m_Layer: 0
-  m_Name: Rock
+  m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4552672229932782447
+--- !u!4 &1279337095044284665
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7825186135984476597}
+  m_GameObject: {fileID: 7349270650581876743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.17, y: 0.5, z: -9.04}
-  m_LocalScale: {x: 2.2342732, y: 1.8677571, z: 1.7159}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 200, y: 1, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6178140775514116911
+--- !u!33 &3357090178705425550
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7825186135984476597}
-  m_Mesh: {fileID: 4300000, guid: 682bef71ca092ef49bfed7f1cef5b893, type: 3}
---- !u!23 &753017442910868404
+  m_GameObject: {fileID: 7349270650581876743}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3521783854725707253
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7825186135984476597}
+  m_GameObject: {fileID: 7349270650581876743}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 382e2b1b7fbf94945963320a17603c7c, type: 2}
+  - {fileID: 2100000, guid: 4f8ae86a2d16774498e3c60ec32e9b51, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +74,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -85,13 +84,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &564318381975829239
-MeshCollider:
+--- !u!65 &6844925248635463146
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7825186135984476597}
+  m_GameObject: {fileID: 7349270650581876743}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -103,24 +102,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 682bef71ca092ef49bfed7f1cef5b893, type: 3}
---- !u!114 &293205533157249886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7825186135984476597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 324074a3df936594dab8b7062e01bd07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hideoutTemplate: {fileID: 11400000, guid: 4d38d13fbe928954c8818e09a372f9a8, type: 2}
-  shakeAmount: 0.005
-  shakeSpeed: 30
-  shakeTime: 1
-  debugNumAvailSlots: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -21,6 +21,16 @@ public class Hideout : MonoBehaviour
     private float hideoutPermanenceTimer;
     private float ufoDetectionRadius;
 
+    private Vector3 hideoutPosition;
+
+    //SHAKE VARIABLES
+    [Header("Shake Variables")]
+    private bool shake = false;
+    [SerializeField] private float shakeAmount;
+    [SerializeField] private float shakeSpeed;
+    private float currentShakeTime;
+    [SerializeField] private float shakeTime;
+
     private Vector3 ufoDistanceXZ = Vector3.zero;
 
 
@@ -48,6 +58,8 @@ public class Hideout : MonoBehaviour
         //HANDLE CONSTRUCTION OF hideoutSlots
         InitalizeHideoutSlots();
 
+        currentShakeTime = shakeTime;
+        hideoutPosition = this.transform.position;
     }
 
     // Start is called before the first frame update
@@ -83,6 +95,19 @@ public class Hideout : MonoBehaviour
             {
                 availSlots++;
             }
+        }
+
+        if (shake)
+        {
+            currentShakeTime -= Time.deltaTime;
+            AnimateHideout();
+        }
+
+        if (currentShakeTime <= 0)
+        {
+            currentShakeTime = shakeTime;
+            shake = false;
+            transform.position = hideoutPosition;
         }
 
 
@@ -139,9 +164,16 @@ public class Hideout : MonoBehaviour
             if (!slot.IsHosting)
             {
                 slot.Host(interestedCow);
+                shake = true;
                 break;
             }
         }
+    }
+
+    private void AnimateHideout()
+    {
+        hideoutPosition = this.transform.position;
+        transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.time * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
     }
 
 
