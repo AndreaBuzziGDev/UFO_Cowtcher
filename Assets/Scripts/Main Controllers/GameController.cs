@@ -107,8 +107,7 @@ public class GameController : MonoSingleton<GameController>
     //START
     private static void HandleStart()
     {
-        UFO playerUFO = FindObjectOfType<UFO>();
-
+        UIController.Instance.IGPanel.HighScoreBar.ResetScore();
 
     }
 

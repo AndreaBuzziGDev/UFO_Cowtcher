@@ -5693,28 +5693,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6678651837923775677, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
-      propertyPath: AllMenuPanels.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6678651837923775677, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
-      propertyPath: AllMenuPanels.Array.data[1]
-      value: 
-      objectReference: {fileID: 2979830840764747741}
-    - target: {fileID: 6678651837923775677, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
-      propertyPath: AllMenuPanels.Array.data[2]
-      value: 
-      objectReference: {fileID: 2979830840764747741}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
---- !u!1 &2979830840764747741 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 980551416422809614, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
-  m_PrefabInstance: {fileID: 2979830840764747740}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3831804759275437022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5892,6 +5875,10 @@ PrefabInstance:
     - target: {fileID: 2213579584673786655, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316233886179570003, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: maxFuelAmount
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7941655071495466051, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: m_Name

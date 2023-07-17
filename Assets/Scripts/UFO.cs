@@ -61,8 +61,13 @@ public class UFO : MonoBehaviour
 
 
     //CURRENT SCORE SETTER
-    public void ChangeScore(float delta) => scoreAmount += delta;
+    ///LEGACY
+    //NB: IT'S USING FLOAT INSTEAD OF INT
+    //public void ChangeScore(float delta) => scoreAmount += delta;
 
-
+    public void ChangeScore(int delta)
+    {
+        UIController.Instance.IGPanel.HighScoreBar.AddScore(delta);
+    }
 
 }
