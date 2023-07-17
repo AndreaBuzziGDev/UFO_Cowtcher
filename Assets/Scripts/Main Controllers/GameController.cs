@@ -14,6 +14,7 @@ public class GameController : MonoSingleton<GameController>
         Start,
         Playing,
         Paused,
+        GameOver,
         Quitting,
         Exiting
     }
@@ -54,8 +55,7 @@ public class GameController : MonoSingleton<GameController>
         {
             case EGameState.Start:
                 //RESERVED FOR INITIALIZATION
-
-                //TODO: THE COWDEX NEEDS TO BE INITIALIZED BEFORE THE SPAWNMANAGER IS
+                //TODO: (FOR PROTOTYPE) - RESET/RELOAD SCENE
 
                 SetState(EGameState.Playing);
                 break;
@@ -69,6 +69,10 @@ public class GameController : MonoSingleton<GameController>
             case EGameState.Paused:
                 UIController.Instance.ShowPause();
                 PauseGame();
+                break;
+
+            case EGameState.GameOver:
+                GameOver();
                 break;
 
             case EGameState.Quitting:
@@ -93,6 +97,16 @@ public class GameController : MonoSingleton<GameController>
     {
         //UIController.Instance.ShowInputCanvas();
         Time.timeScale = 1;
+    }
+
+
+    //GAME OVER
+    private static void GameOver()
+    {
+
+        //UIController.Instance.ShowGameOver();
+
+
     }
 
 
