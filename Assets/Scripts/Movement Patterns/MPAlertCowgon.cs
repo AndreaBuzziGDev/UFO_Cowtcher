@@ -5,11 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New MPAlertEscapeOpposite", menuName = "MovementPattern/Alert/Cowgon")]
 public class MPAlertCowgon : AbstractMovementAlert
 {
-    public override Vector3 ManageMovement(Vector3 cowPosition)
+    public override Vector3 ManageMovement(Cow interestedCow)
     {
         UFO menace = (UFO)FindObjectOfType<UFO>();
         Vector3 menacePosition = menace.transform.position;
-        Vector3 desiredDirection = cowPosition - menacePosition;
+        Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
         Vector3 vertLessDirection = new Vector3(desiredDirection.x, 0, desiredDirection.z);
 
         //TODO: DEBUFF UFO WITH "STUN" FOR 1 SECOND EVERY 10 SECONDS

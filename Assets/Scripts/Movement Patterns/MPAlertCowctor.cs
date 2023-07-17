@@ -8,23 +8,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New MPAlertEscapeOpposite", menuName = "MovementPattern/Alert/Cowctor")]
 public class MPAlertCowctor : AbstractMovementAlert
 {
-    public override Vector3 ManageMovement(Vector3 cowPosition)
+    [SerializeField] float sameDirectionPersistenceTimer = 10.0f;
+
+
+    public override Vector3 ManageMovement(Cow interestedCow)
     {
         //PARAMS TO PUT ON THE COW
-        float sameDirectionTimer = 10.0f;
-
-        Vector3 lastDirection = Vector3.zero;
-        if (lastDirection.Equals(lastDirection))
-        {
-            sameDirectionTimer -= Time.deltaTime;
-        }
-
         Vector3 result;
+
         float randomChance = Random.Range(0, 10);
-        if (sameDirectionTimer < randomChance) result = lastDirection;
+        if (interestedCow.TimerAlertSpecialMovement < randomChance) result = interestedCow.MovementDirection;
         else result = UtilsRadius.Vector3OnUnitCircle(1).normalized;
 
-        return result;
+        return result.normalized;
 
     }
 
