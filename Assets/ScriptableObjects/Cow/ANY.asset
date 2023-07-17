@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
   m_Name: ANY
   m_EditorClassIdentifier: 
-  UID: 17
+  UID: 0
   rarity: 0
   Name: Any cow
   Description: 
