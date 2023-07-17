@@ -11,6 +11,9 @@ public class HideoutManager : MonoSingleton<HideoutManager>
 
     //METHODS
     // Start is called before the first frame update
+
+    //TODO: STUDY AND APPLY THE SAME CHANGES TO THE Awake METHOD MADE TO GameController IN THIS MONOSINGLETON AS WELL
+
     void Start()
     {
         initializeAllHidelouts();
