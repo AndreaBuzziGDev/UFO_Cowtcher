@@ -71,7 +71,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
                 if (!hsl.IsHosting) availableHideouts.Add(cycledHideout);
             }
 
-            Debug.Log("Hideout: " + cycledHideout.Type + "Avaliable hideouts: " + cycledHideout.ToString());
+            Debug.Log("Hideout: " + cycledHideout.Type + " avaliable hideouts: " + cycledHideout.ToString());
         }
         return availableHideouts;
     }
