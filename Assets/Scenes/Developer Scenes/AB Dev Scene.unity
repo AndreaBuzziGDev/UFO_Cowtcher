@@ -4654,18 +4654,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4676423567080358597, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
-      propertyPath: FullListOfExistingCows.Array.data[0]
-      value: 
-      objectReference: {fileID: 4849474545414189867, guid: 0aaec60b54049714091e3929991dc36c, type: 3}
-    - target: {fileID: 4676423567080358597, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
-      propertyPath: FullListOfExistingCows.Array.data[1]
-      value: 
-      objectReference: {fileID: 1656210940373056849, guid: cb1f72313484ac44485ceb541cada022, type: 3}
-    - target: {fileID: 4676423567080358597, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
-      propertyPath: FullListOfExistingCows.Array.data[2]
-      value: 
-      objectReference: {fileID: 3816354294917225438, guid: df0506ab1feff7b4086b1fb3b0cc9da4, type: 3}
     - target: {fileID: 8389924816354798681, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
       propertyPath: m_Name
       value: Cowdex

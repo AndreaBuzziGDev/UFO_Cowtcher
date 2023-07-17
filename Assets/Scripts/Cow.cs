@@ -159,8 +159,7 @@ public class Cow : MonoBehaviour
         if (IsAlert)
         {
             //LOWER THE TIMER USED FOR SPECIAL MOVEMENTS
-            this.timerAlertSpecialMovement -= Time.deltaTime;
-            if (this.timerAlertSpecialMovement <= 0.0f) ResetTimerSpecialMovement();
+            if(this.timerAlertSpecialMovement > 0.0f) this.timerAlertSpecialMovement -= Time.deltaTime;
 
 
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
@@ -186,9 +185,6 @@ public class Cow : MonoBehaviour
         {
             //RESET PANIC TIMER
             this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
-
-            //RESET ALERT SPECIAL MOVEMENT TIMER
-            ResetTimerSpecialMovement();
 
             //HANDLE CALM MOVEMENT PHASES
             if (TimerCalmMovement > 0.0f)
@@ -296,6 +292,11 @@ public class Cow : MonoBehaviour
     public void ResetTimerSpecialMovement()
     {
         this.timerAlertSpecialMovement = cowTemplate.movPatternAlert.TimerAlertSpecialMovement;
+    }
+
+    private void ZeroTimerSpecialMovement()
+    {
+        this.timerAlertSpecialMovement = 0.0f;
     }
 
 

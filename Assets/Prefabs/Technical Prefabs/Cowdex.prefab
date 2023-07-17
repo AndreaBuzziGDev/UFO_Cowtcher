@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4676423567080358597
 MonoBehaviour:
@@ -48,3 +48,4 @@ MonoBehaviour:
   - {fileID: 4849474545414189867, guid: 0aaec60b54049714091e3929991dc36c, type: 3}
   - {fileID: 1656210940373056849, guid: cb1f72313484ac44485ceb541cada022, type: 3}
   - {fileID: 3816354294917225438, guid: df0506ab1feff7b4086b1fb3b0cc9da4, type: 3}
+  - {fileID: 1095180708247441280, guid: 6a816b2196c8b824caf30eec06347009, type: 3}
