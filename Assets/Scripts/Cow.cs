@@ -65,6 +65,9 @@ public class Cow : MonoBehaviour
     [Min(0f)] private float TimerCalmMovement;
     [Min(0f)] private float TimerCalmStill;
 
+    [Min(0f)] private float timerAlertSpecialMovement;
+    public float TimerAlertSpecialMovement { get { return timerAlertSpecialMovement; } }
+
 
 
     /// COMPLEX DATA
@@ -90,6 +93,7 @@ public class Cow : MonoBehaviour
     private Rigidbody rb;
 
     private Vector3 movementDirection = Vector3.forward;
+    public Vector3 MovementDirection { get { return movementDirection; } }
 
 
 
@@ -137,6 +141,7 @@ public class Cow : MonoBehaviour
     {
         //
         HandleMovement();
+        timerAlertSpecialMovement -= Time.deltaTime;
 
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))
@@ -194,7 +199,7 @@ public class Cow : MonoBehaviour
                 TimerCalmStill = cowTemplate.TimerCalmStill;
 
                 //RESETTING THE MOVEMENT DIRECTION RANDOMLY BASED ON CALM PATTERN
-                movementDirection = movPatternCalm.ManageMovement(this.transform.position);
+                movementDirection = movPatternCalm.ManageMovement(this);
                 //Debug.Log("movementDirection: " + movementDirection);
             }
         }
@@ -266,7 +271,7 @@ public class Cow : MonoBehaviour
 
     private void HandleAlertMovement()
     {
-        if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this.transform.position);
+        if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this);
         else movementDirection = Vector3.zero;
         //Debug.Log("movementDirection (ALERT): " + movementDirection);
     }

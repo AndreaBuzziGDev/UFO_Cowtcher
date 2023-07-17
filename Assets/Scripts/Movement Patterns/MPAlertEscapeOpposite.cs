@@ -6,11 +6,11 @@ using UnityEngine;
 public class MPAlertEscapeOpposite : AbstractMovementAlert
 {
 
-    public override Vector3 ManageMovement(Vector3 cowPosition)
+    public override Vector3 ManageMovement(Cow interestedCow)
     {
         UFO menace = (UFO) FindObjectOfType<UFO>();
         Vector3 menacePosition = menace.transform.position;
-        Vector3 desiredDirection = cowPosition - menacePosition;
+        Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
         Vector3 vertLessDirection = new Vector3(desiredDirection.x, 0, desiredDirection.z);
 
         return vertLessDirection.normalized;
@@ -31,7 +31,7 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
         if (ufoHideoutVector.magnitude <= hideoutDirection.magnitude)
         {
             Debug.Log("UFO IS CLOSER TO HIDEOUT THAN COW!");
-            return ManageMovement(myCow.transform.position);
+            return ManageMovement(myCow);
         }
 
         return hideoutDirection.normalized;

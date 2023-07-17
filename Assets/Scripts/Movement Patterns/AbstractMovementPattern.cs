@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class AbstractMovementPattern : ScriptableObject
 {
-    public abstract Vector3 ManageMovement(Vector3 cowPosition);
+    public abstract Vector3 ManageMovement(Cow interestedCow);
 
 }
