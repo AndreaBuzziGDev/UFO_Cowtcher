@@ -141,7 +141,6 @@ public class Cow : MonoBehaviour
     {
         //
         HandleMovement();
-        timerAlertSpecialMovement -= Time.deltaTime;
 
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))
@@ -159,6 +158,11 @@ public class Cow : MonoBehaviour
         //STEP 2
         if (IsAlert)
         {
+            //LOWER THE TIMER USED FOR SPECIAL MOVEMENTS
+            this.timerAlertSpecialMovement -= Time.deltaTime;
+            if (this.timerAlertSpecialMovement <= 0.0f) ResetTimerSpecialMovement();
+
+
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
             if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
             //Debug.Log("TimerAlertToPanic: " + this.TimerAlertToPanic);
@@ -182,6 +186,9 @@ public class Cow : MonoBehaviour
         {
             //RESET PANIC TIMER
             this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
+
+            //RESET ALERT SPECIAL MOVEMENT TIMER
+            ResetTimerSpecialMovement();
 
             //HANDLE CALM MOVEMENT PHASES
             if (TimerCalmMovement > 0.0f)
@@ -282,5 +289,16 @@ public class Cow : MonoBehaviour
         else movementDirection = Vector3.zero;
         //Debug.Log("movementDirection (PANIC): " + movementDirection);
     }
+
+
+
+    //PUBLIC FUNCTIONALITIES
+    public void ResetTimerSpecialMovement()
+    {
+        this.timerAlertSpecialMovement = cowTemplate.movPatternAlert.TimerAlertSpecialMovement;
+    }
+
+
+
 
 }

@@ -83,6 +83,6 @@ public class ScriptableCow : ScriptableObject
 
     //TODO: EVALUATE FURTHER DIVERSIFICATION OF MOVEMENT PATTERNS
     public AbstractMovementPattern movPatternCalm;
-    public AbstractMovementPattern movPatternAlert;
+    public AbstractMovementAlert movPatternAlert;
 
 }
