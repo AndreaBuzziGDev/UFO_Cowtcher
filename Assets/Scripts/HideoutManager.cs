@@ -29,6 +29,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     private void initializeAllHidelouts()
     {
         allHideouts = FindObjectsOfType<Hideout>().ToList();
+        Debug.Log("allHideouts size: " + allHideouts.Count);
     }
 
     private void MakeDictionary()

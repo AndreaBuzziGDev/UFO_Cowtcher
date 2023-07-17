@@ -2894,6 +2894,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8637536818007847690, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: shakeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637536818007847690, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: shakeSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637536818007847690, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: shakeAmount
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 8847961042174125579, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
       propertyPath: m_Name
       value: Barn (Cabbage)
@@ -3250,6 +3262,18 @@ PrefabInstance:
     - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637536818007847690, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: shakeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637536818007847690, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: shakeSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637536818007847690, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: shakeAmount
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 8847961042174125579, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
       propertyPath: m_Name
