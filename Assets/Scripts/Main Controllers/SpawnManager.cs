@@ -118,15 +118,18 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///HANDLE THE DEQUEUEING OF COWS READY TO SPAWN
     private void ManageDequeueingCows()
     {
+        List<SpawnQueuedCow> tempList = new();
         foreach (SpawnQueuedCow sqc in caughtCowWaitingForRespawn)
         {
             sqc.LowerTimer(Time.deltaTime);
             if (sqc.IsReadyToSpawn)
             {
                 sqc.Spawn();
-                caughtCowWaitingForRespawn.Remove(sqc);
+                tempList.Add(sqc);
             }
         }
+
+        caughtCowWaitingForRespawn = caughtCowWaitingForRespawn.Except(tempList).ToList();
     }
 
 
