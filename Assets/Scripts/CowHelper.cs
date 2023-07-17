@@ -26,7 +26,25 @@ public class CowHelper
             List<Hideout> avHideouts = HideoutManager.Instance.GetAvailableHideouts(interestedCow.FavouriteHideoutTypes[0]);
             if (avHideouts.Count > 0)
             {
-                return avHideouts[0];
+                Hideout newTargetHideout = null;
+                foreach(Hideout hid in avHideouts)
+                {
+                    if(newTargetHideout != null)
+                    {
+                        Vector3 distanceCowHideoutOld = interestedCow.transform.position - newTargetHideout.transform.position;
+                        Vector3 distanceCowHideoutNew = interestedCow.transform.position - hid.transform.position;
+                        if (distanceCowHideoutNew.magnitude < distanceCowHideoutOld.magnitude)
+                        {
+                            newTargetHideout = hid;
+                        }
+
+                    }
+                    else
+                    {
+                        newTargetHideout = hid;
+                    }
+                }
+                return newTargetHideout;
             }
 
         }

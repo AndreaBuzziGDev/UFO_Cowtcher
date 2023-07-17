@@ -9,6 +9,7 @@ public class ScriptableCow : ScriptableObject
     //NB: "ANY" RESERVED FOR APPLICATIONS THAT DO NOT NEED SPECIFYING A COW (LIKE NON-SPECIFIC RITUALS)
     public enum UniqueID
     {
+        ANY,
         C000,
         C001,
         C002,
@@ -18,7 +19,16 @@ public class ScriptableCow : ScriptableObject
         C006,
         C007,
         C008,
-        ANY
+
+        R000,
+        R001,
+        R002,
+        R003,
+
+        L000,
+        L001,
+        L002,
+        L003
     }
 
     public enum Rarity

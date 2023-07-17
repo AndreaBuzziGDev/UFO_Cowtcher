@@ -16,7 +16,10 @@ public class FuelBar : MonoBehaviour
         FuelBarImg.fillAmount = normalizedFuel;
         if (normalizedFuel >= 0.5f)
         {
-            FuelBarImg.color = Color.Lerp(Color.white, Color.yellow, Mathf.Abs(ufo.MaxFuelAmount - ufo.FuelAmount));
+            float halfMax = ufo.MaxFuelAmount / 2.0f;
+            float awaitedValue = (halfMax - (ufo.MaxFuelAmount - ufo.FuelAmount)) / halfMax;
+
+            FuelBarImg.color = Color.Lerp(Color.yellow, Color.white, awaitedValue);
         }
         else
         {
