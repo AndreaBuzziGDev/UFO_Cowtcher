@@ -122,6 +122,7 @@ public class Abductor : MonoBehaviour
         }
         
         currentCaptureTimer = 0.0f;
+        DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
     }
 
 
