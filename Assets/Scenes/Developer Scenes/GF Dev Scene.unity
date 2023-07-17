@@ -591,6 +591,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8637536818007847690, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: debugNumAvailSlots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8847961042174125579, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
       propertyPath: m_Name
       value: Barn (Cabbage) (1)
@@ -5184,6 +5188,10 @@ PrefabInstance:
     - target: {fileID: 6365621987586576585, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637536818007847690, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
+      propertyPath: debugNumAvailSlots
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8847961042174125579, guid: 8bd2855e6ac3f8e46aae08de3eeecbf5, type: 3}
       propertyPath: m_Name
