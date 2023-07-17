@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoSingleton<GameController>
 {
@@ -34,12 +35,21 @@ public class GameController : MonoSingleton<GameController>
     //...
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Awake()
     {
+        base.Awake();
+
         //SHOULD HELP DRIVING THE OTHER CONTROLLERS THROUGH THEIR INITIALIZATION SEQUENTIALLY.
+        Debug.Log("GameController is Awaking.");
+        SetState(EGameState.Start);
+    }
+
+    private void Start()
+    {
+        Debug.Log("GameController is Starting.");
 
         //ENFORCES START SEQUENCE
-        SetState(EGameState.Playing);
+        //SetState(EGameState.Start);
     }
 
 
@@ -56,7 +66,7 @@ public class GameController : MonoSingleton<GameController>
             case EGameState.Start:
                 //RESERVED FOR INITIALIZATION
                 //TODO: (FOR PROTOTYPE) - RESET/RELOAD SCENE
-
+                HandleStart();
                 SetState(EGameState.Playing);
                 break;
 
@@ -72,7 +82,6 @@ public class GameController : MonoSingleton<GameController>
                 break;
 
             case EGameState.GameOver:
-                PauseGame();
                 GameOver();
                 break;
 
@@ -86,6 +95,23 @@ public class GameController : MonoSingleton<GameController>
 
         }
     }
+
+
+    //RE-START (NB: PROTOTYPING PHASE)
+    public void RestartScene()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+    //START
+    private static void HandleStart()
+    {
+        UFO playerUFO = FindObjectOfType<UFO>();
+
+
+    }
+
 
 
     //PAUSING
@@ -104,10 +130,8 @@ public class GameController : MonoSingleton<GameController>
     //GAME OVER
     private static void GameOver()
     {
-
-        //UIController.Instance.ShowGameOver();
-
-
+        UIController.Instance.ShowGameOver();
+        PauseGame();
     }
 
 

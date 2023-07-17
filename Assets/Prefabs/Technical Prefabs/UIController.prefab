@@ -513,10 +513,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllMenuPanels:
   - {fileID: 2999353713454031584}
+  - {fileID: 980551416422809614}
   PauseGamePanel: {fileID: 2999353713454031584}
-  GameOverPanel: {fileID: 0}
+  GameOverPanel: {fileID: 980551416422809614}
   CowdexPanel: {fileID: 0}
   GameplayInputCanvas: {fileID: 3456844090314703}
+  igPanel: {fileID: 2585924754644442337}
 --- !u!1 &2543551847586364141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,10 +2414,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4294004336950744081, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2585924754644442337}
   m_SourcePrefab: {fileID: 100100000, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+--- !u!114 &4355709565715215492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7278993586334137433, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+  m_PrefabInstance: {fileID: 6446543172111894749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39770a777e6cad64084c0520a6849324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6647067332822871417 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 381003154091779492, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
   m_PrefabInstance: {fileID: 6446543172111894749}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7125229993291717836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4294004336950744081, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+  m_PrefabInstance: {fileID: 6446543172111894749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2585924754644442337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125229993291717836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af43430b1857f540ab579cdc162523e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFuelBar: {fileID: 4355709565715215492}

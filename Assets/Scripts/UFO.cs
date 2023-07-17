@@ -18,9 +18,6 @@ public class UFO : MonoBehaviour
     public float ScoreAmount { get { return scoreAmount; } }
 
 
-    //GUI LINKS
-    FuelBar fBar;
-
 
 
     //METHODS
@@ -33,7 +30,7 @@ public class UFO : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fBar = FindAnyObjectByType<FuelBar>();
+
     }
 
     // Update is called once per frame
@@ -51,10 +48,10 @@ public class UFO : MonoBehaviour
 
         if (fuelAmount <= 0)
         {
-            Debug.Log("Player has no fuel, GAME OVER");
+            GameController.Instance.SetState(GameController.EGameState.GameOver);
         }
 
-        if (fBar != null) fBar.UpdateFuelBar(this);
+        UIController.Instance.IGPanel.PlayerFuelBar.UpdateFuelBar(this);
 
     }
 
