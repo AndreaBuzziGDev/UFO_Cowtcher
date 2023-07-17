@@ -14,8 +14,8 @@ public class UFO : MonoBehaviour
     public float MaxFuelAmount { get { return maxFuelAmount; } }
 
     ///FUEL BOTTOM DELAY MANAGEMENT
-    [SerializeField] private float fuelBottomThreshold = 10.0f;
-    [SerializeField] private float fuelExtensionFactor = 2.0f;
+    [SerializeField] [Range(0.0f, 100.0f)] private float fuelEmergencyThreshold = 20.0f;
+    [SerializeField] private float fuelEmergencyExtensionFactor = 2.0f;
 
 
     ///SCORE
@@ -55,9 +55,9 @@ public class UFO : MonoBehaviour
 
         //FUEL CHANGES
         float extensionMultiplier = 1;
-        if (fuelAmount/maxFuelAmount <= fuelBottomThreshold/maxFuelAmount)
+        if (((fuelAmount/maxFuelAmount) * 100) <= fuelEmergencyThreshold)
         {
-            extensionMultiplier = fuelExtensionFactor;
+            extensionMultiplier = fuelEmergencyExtensionFactor;
         }
         fuelAmount -= Time.deltaTime * (1/extensionMultiplier);
 
