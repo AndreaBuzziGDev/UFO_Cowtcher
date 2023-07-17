@@ -72,6 +72,7 @@ public class GameController : MonoSingleton<GameController>
                 break;
 
             case EGameState.GameOver:
+                PauseGame();
                 GameOver();
                 break;
 
