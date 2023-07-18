@@ -46,8 +46,30 @@ public abstract class RitualAbstract
         return requiredCows.Contains(UID);
     }
 
-    public 
+    public void ChangeCapturedCowAmount(ScriptableCow.UniqueID cowUID, int delta) => ritualDictionary[cowUID].ChangeAmount(delta);
 
+    public bool IsReadyToSpawn()
+    {
+        if (ritualDictionary.Count > 0)
+        {
+            foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
+            {
+                if (!entry.Value.IsReadyToSpawn) return false;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public void HandleCowSpawn()
+    {
+        foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
+        {
+            entry.Value.HandleCowSpawn();
+        }
+    }
 
     public abstract void DoRitual(ScriptableCow.UniqueID UID);
 
