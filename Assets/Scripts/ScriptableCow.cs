@@ -76,6 +76,6 @@ public class ScriptableCow : ScriptableObject
     public List<SpawnPoint.Type> AllowedSpawnPointTypes = new();
 
     //TODO: SWITCH TO SCRIPTABLE OBJECT VARIABLE?
-    public AbstractAlteration.EBuffType Alteration;
+    public SAAbstractSO Alteration;
 
 }

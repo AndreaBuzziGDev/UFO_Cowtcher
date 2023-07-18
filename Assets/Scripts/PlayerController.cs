@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,8 +20,14 @@ public class PlayerController : MonoBehaviour
     Rigidbody myRigidBody;
 
     ///OTHER DATA
-    private float stunDuration = 0.0f;
+    private float stunDuration = 0.0f;//NB: AFTER PROTOTYPE, REFACTOR THIS AS STATUS ALTERATION
     public bool IsStunned { get { return (stunDuration > 0); } }
+
+
+    ///STATUS ALTERATION DATA
+    private List<SAAbstract> statusAlterations = new();
+    private float movSpeedBonus;
+
 
 
 
@@ -36,16 +44,11 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (stunDuration > 0) stunDuration -= Time.deltaTime;
+        UpdateAlterationsTimers(Time.deltaTime);
+
         if (!GameController.Instance.IsPaused) Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
     }
 
-    /*
-    private void Update()
-    {
-        if(stunDuration > 0) stunDuration -= Time.deltaTime;
-        Debug.Log("stunDuration: " + stunDuration);
-    }
-    */
 
 
     //
@@ -103,13 +106,39 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            myRigidBody.velocity = (direction) * MoveSpeed;
+            myRigidBody.velocity = (1+(movSpeedBonus/100)) * MoveSpeed * (direction);
         }
     }
 
     public void ApplyStun(float inputDuration)
     {
         this.stunDuration = inputDuration;
+    }
+
+    public void AddStatusAlteration(SAAbstract newAlteration)
+    {
+        //TODO: REFACTOR AS DICTIONARY -> ONLY ONE TYPE AT A TIME (SUB-TODO: IMPLEMENT COMPARABLES SO THE BIGGER BUFF WINS)
+        statusAlterations.Add(newAlteration);
+    }
+
+    private void UpdateAlterationsTimers(float delta)
+    {
+        List<SAAbstract> expired = new();
+        foreach(SAAbstract alteration in statusAlterations)
+        {
+            alteration.UpdateTimers(delta);
+            if (!alteration.IsStillRunning())
+            {
+                expired.Add(alteration);
+            }
+        }
+
+        statusAlterations = statusAlterations.Except(expired).ToList();
+    }
+
+    public void SetBonusMovSpeed(float percentBonus)
+    {
+        movSpeedBonus = percentBonus;
     }
 
 }

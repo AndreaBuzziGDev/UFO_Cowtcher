@@ -79,8 +79,8 @@ public class Cow : MonoBehaviour
 
 
     ///BUFFS
-    private AbstractAlteration.EBuffType alteration;
-    public AbstractAlteration.EBuffType Alteration { get { return alteration; } }
+    private SAAbstract alteration;
+    public SAAbstract Alteration { get { return alteration; } }
 
 
     ///MOVEMENT PATTERNS
@@ -255,7 +255,7 @@ public class Cow : MonoBehaviour
         /// COMPLEX DATA
         this.favouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
         this.allowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
-        this.alteration = cowTemplate.Alteration;
+        this.alteration = cowTemplate.Alteration.GetBuff();
         this.movPatternCalm = cowTemplate.movPatternCalm.GetMovPattern();
         this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert.GetMovPattern();
     }
