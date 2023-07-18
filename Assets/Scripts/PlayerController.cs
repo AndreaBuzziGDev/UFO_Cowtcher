@@ -35,14 +35,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (stunDuration > 0) stunDuration -= Time.deltaTime;
         if (!GameController.Instance.IsPaused) Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
     }
 
+    /*
     private void Update()
     {
-        stunDuration -= Time.deltaTime;
+        if(stunDuration > 0) stunDuration -= Time.deltaTime;
+        Debug.Log("stunDuration: " + stunDuration);
     }
-
+    */
 
 
     //

@@ -37,6 +37,7 @@ public class MPCowgonAlert : AbstractMovementAlert
         {
             PlayerController pc = GameController.Instance.FindPlayerAnywhere();
             pc.ApplyStun(this.stunDuration);
+            ResetTimers();
         }
 
 
