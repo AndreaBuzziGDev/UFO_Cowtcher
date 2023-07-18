@@ -55,12 +55,13 @@ public class CowSummoningRitual
         }
 
         //
-        behaviour = mapBehaviour(sr.Type);
+        //behaviour = mapBehaviour(sr.Type);
     }
 
 
-
+    //TODO: DISCARD - USED ANOTHER DESIGN PATTERN
     //RITUAL TYPE MAPPING
+    /*
     private RitualAbstract mapBehaviour(RitualAbstractSO.ERitualType type)
     {
         switch (type)
@@ -77,7 +78,7 @@ public class CowSummoningRitual
         }
 
     }
-
+    */
 
 
 
