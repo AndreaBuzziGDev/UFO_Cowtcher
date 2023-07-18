@@ -12,7 +12,8 @@ public class RitualProximity : RitualAbstract
     public RitualProximity(RitualProximitySO inputTemplate)
     {
         this.template = inputTemplate;
-        requiredCows = template.RequiredCows;
+        this.requiredCows = template.RequiredCows;
+        this.targetSpawnedCow = template.targetSpawnedCow;
         BuildRitualModules(this.requiredCows);
     }
 

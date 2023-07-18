@@ -112,6 +112,31 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     public void HandleCowCapture(Cow interestedCow)
     {
         //
+        List<RitualAbstract> rituals = Cowdex.Instance.GetRitualsThatContainCow(interestedCow.UID);
+
+        //TODO: THIS CAN BE OPTIMIZED BY STORING UIDs AND LATER SINGLE-CALLING GetCows FROM Cowdex
+        foreach (RitualAbstract ritual in rituals)
+        {
+            if (ritual.HasCow(interestedCow.UID))
+            {
+                ritual.DoRitual(interestedCow.UID);
+                Debug.Log("IsReadyToSpawn: " + ritual.IsReadyToSpawn());
+
+                if (ritual.IsReadyToSpawn())
+                {
+                    ritual.HandleCowSpawn();
+                    //Cow toBeSpawnedRitualCompleteCow = Cowdex.Instance.GetCow(interestedCow.UID);
+
+                    GameObject toBeSpawnedRitualCompleteCow = Instantiate(Cowdex.Instance.GetCow(ritual.TargetSpawnedCow).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+
+                }
+            }
+
+            /*
+            CowSummoningRitualModule iteratedModule = new CowSummoningRitualModule(entry.Key, entry.Value);
+            ritualDictionary.Add(entry.Key, iteratedModule);
+            */
+        }
 
 
         //

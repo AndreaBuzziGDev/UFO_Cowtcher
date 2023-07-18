@@ -52,7 +52,7 @@ public class MPCalmRandMonoDir : AbstractMovementPattern
 
     public override void ResetTimers()
     {
-        this.timerStill = template.timerStill + Random.Range(0, this.randomizerSlider);
+        this.timerStill = template.timerStill + Random.Range(-0.5f, this.randomizerSlider);
         this.timerMoving = template.timerMoving;
 
         if (AllowedDirections != null || AllowedDirections.Count > 0) randomlyChosenDirection = AllowedDirections[Random.Range(0, AllowedDirections.Count)];

@@ -5,6 +5,11 @@ using UnityEngine;
 public abstract class RitualAbstract
 {
     //DATA
+    
+    protected ScriptableCow.UniqueID targetSpawnedCow;
+    public ScriptableCow.UniqueID TargetSpawnedCow { get { return targetSpawnedCow; } }
+
+
     protected List<ScriptableCow.UniqueID> requiredCows = new List<ScriptableCow.UniqueID>();
     public List<ScriptableCow.UniqueID> RequiredCows { get { return requiredCows; } }
 
@@ -46,18 +51,6 @@ public abstract class RitualAbstract
         return requiredCows.Contains(UID);
     }
 
-    public virtual void ChangeCapturedCowAmount(ScriptableCow.UniqueID cowUID, int delta)
-    {
-        Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + cowUID);
-        ritualDictionary[cowUID].ChangeAmount(delta);
-
-        //ALSO INCREASE "ANY" COUNTER.
-        if (HasCow(ScriptableCow.UniqueID.ANY))
-        {
-            Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + ScriptableCow.UniqueID.ANY);
-            ritualDictionary[ScriptableCow.UniqueID.ANY].ChangeAmount(delta);
-        }
-    }
 
     public virtual bool IsReadyToSpawn()
     {
@@ -65,6 +58,7 @@ public abstract class RitualAbstract
         {
             foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
             {
+                Debug.Log("Cow Module: " + entry.Key + " Ready to Spawn: " + entry.Value.IsReadyToSpawn);
                 if (!entry.Value.IsReadyToSpawn) return false;
             }
 
@@ -82,7 +76,34 @@ public abstract class RitualAbstract
         }
     }
 
+
+    //ABSTRACT METHODS
     public abstract void DoRitual(ScriptableCow.UniqueID UID);
+
+
+
+    //INTERNAL UTILITIES
+    //THIS MUST NOT BE DIRECTLY ACCESSIBLE FROM THE OUTSIDE
+    protected virtual void ChangeCapturedCowAmount(ScriptableCow.UniqueID cowUID, int delta)
+    {
+        if (cowUID == ScriptableCow.UniqueID.ANY)
+        {
+            Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + ScriptableCow.UniqueID.ANY);
+            ritualDictionary[ScriptableCow.UniqueID.ANY].ChangeAmount(delta);
+        }
+        else
+        {
+            Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + cowUID);
+            ritualDictionary[cowUID].ChangeAmount(delta);
+
+            //ALSO INCREASE "ANY" COW COUNTER
+            if (HasCow(ScriptableCow.UniqueID.ANY))
+            {
+                Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + ScriptableCow.UniqueID.ANY);
+                ritualDictionary[ScriptableCow.UniqueID.ANY].ChangeAmount(delta);
+            }
+        }
+    }
 
 
 }

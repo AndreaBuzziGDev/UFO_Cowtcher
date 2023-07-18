@@ -98,6 +98,8 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///RETRIEVE ANY Cow
     public List<Cow> GetCows(List<ScriptableCow.UniqueID> UIDs)
     {
+        //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
+
         List<Cow> requiredCows = new();
         foreach (ScriptableCow.UniqueID UID in UIDs) requiredCows.Add(GetCow(UID));
         return requiredCows;
@@ -111,6 +113,8 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///RETRIEVE ANY ScriptableCow
     public List<ScriptableCow> GetScriptableCows(List<ScriptableCow.UniqueID> UIDs)
     {
+        //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
+
         List<ScriptableCow> requiredScriptableCows = new();
         foreach (ScriptableCow.UniqueID UID in UIDs) requiredScriptableCows.Add(GetScriptableCow(UID));
         return requiredScriptableCows;
@@ -124,6 +128,8 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///RETRIEVE ANY IndexedCow
     public List<IndexedCow> GetIndexedCows(List<ScriptableCow.UniqueID> UIDs)
     {
+        //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
+
         List<IndexedCow> relatedCows = new();
         foreach (ScriptableCow.UniqueID UID in UIDs) relatedCows.Add(GetIndexedCow(UID));
         return relatedCows;
@@ -134,8 +140,39 @@ public class Cowdex : MonoSingleton<Cowdex>
     }
 
 
-    //TODO: IMPLEMENT FUNCTIONALITIES TO RETRIEVE DATA RELATIVE TO SUMMONING RITUALS
+    ///RETRIEVE ANY Scriptable Object Ritual
 
+
+
+
+
+    //TODO: IMPLEMENT FUNCTIONALITIES TO RETRIEVE DATA RELATIVE TO SUMMONING RITUALS
+    ///RETRIEVE ANY CONCRETE RITUAL - FEEDING THE "SPAWNED COW" UID AS ARGUMENT
+    public List<RitualAbstract> GetRituals(List<ScriptableCow.UniqueID> UIDs)
+    {
+        //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
+
+        List<RitualAbstract> interestedRituals = new();
+        foreach (ScriptableCow.UniqueID UID in UIDs) interestedRituals.Add(GetRitual(UID));
+        return interestedRituals;
+    }
+    public RitualAbstract GetRitual(ScriptableCow.UniqueID UID)
+    {
+        return AllRituals[UID];
+    }
+
+
+    ///RETRIEVE ANY CONCRETE RITUAL - BASED ON IF THEY CONTAIN THE INTERESTED COW UID
+    public List<RitualAbstract> GetRitualsThatContainCow(ScriptableCow.UniqueID UID)
+    {
+        List<RitualAbstract> involvedRituals = new();
+        foreach (KeyValuePair<ScriptableCow.UniqueID, RitualAbstract> entry in AllRituals)
+        {
+            if (entry.Value.HasCow(UID)) involvedRituals.Add(entry.Value);
+        }
+
+        return involvedRituals;
+    }
 
 
 
