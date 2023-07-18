@@ -34,9 +34,6 @@ public class MPCalmRandMonoDir : AbstractMovementPattern
     ///MOVEMENT
     public override Vector3 ManageMovement(Cow interestedCow)
     {
-        Debug.Log("timerStill: " + timerStill);
-        Debug.Log("timerMoving: " + timerMoving);
-
         Vector3 result = Vector3.zero;
         if (timerMoving > 0) return randomlyChosenDirection;
         return result;
