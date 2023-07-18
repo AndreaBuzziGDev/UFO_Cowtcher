@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "New Alert Cowgon", menuName = "MovementPattern/Calm/Cowgon Alert")]
+[CreateAssetMenu(fileName = "New Alert Cowgon", menuName = "MovementPattern/Alert/Cowgon Alert")]
 public class MPCowgonAlertSO : MPAbstractAlertSO
 {
     [SerializeField] public float timerToPlayerStun = 10.0f;

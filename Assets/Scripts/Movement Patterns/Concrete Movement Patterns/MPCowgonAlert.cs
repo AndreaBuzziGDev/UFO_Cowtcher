@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Alert Cowgon", menuName = "MovementPattern/Alert/Cowgon")]
 public class MPCowgonAlert : AbstractMovementAlert
 {
     //DATA
