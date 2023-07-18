@@ -115,7 +115,6 @@ public class Cow : MonoBehaviour
         spriteRenderer.receiveShadows = true;
 
         rb = this.gameObject.GetComponent<Rigidbody>();
-
     }
 
     private void Start()
@@ -142,8 +141,7 @@ public class Cow : MonoBehaviour
     //      UPDATE HANDLES ALL THE TIMERS AND BEHAVIOURS
     private void FixedUpdate()
     {
-        //
-        HandleMovement();
+        //COW AI
 
         //STEP 1
         if (CowHideoutHelper.IsUFOWithinRadius(this))
@@ -198,7 +196,10 @@ public class Cow : MonoBehaviour
 
         }
 
+        //ENDED COW AI
 
+        //MOVEMENT
+        HandleMovement();
     }
 
 
