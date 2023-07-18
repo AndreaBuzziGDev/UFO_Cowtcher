@@ -9,7 +9,6 @@ public class MPAlertEscapeOppositeSO : MPAbstractAlertSO
 
     public override AbstractMovementPattern GetMovPattern()
     {
-        if (movPattern == null) movPattern = new MPAlertEscapeOpposite(this);
-        return movPattern;
+        return new MPAlertEscapeOpposite(this);
     }
 }

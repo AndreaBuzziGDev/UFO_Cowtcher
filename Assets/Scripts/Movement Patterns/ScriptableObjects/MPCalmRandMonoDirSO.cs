@@ -10,11 +10,8 @@ public class MPCalmRandMonoDirSO : MPAbstractCalmSO
 
     [SerializeField] public List<Vector3> AllowedDirections = new();
 
-    MPCalmRandMonoDir movPattern;
-
     public override AbstractMovementPattern GetMovPattern()
     {
-        if (movPattern == null) movPattern = new MPCalmRandMonoDir(this);
-        return movPattern;
+        return new MPCalmRandMonoDir(this);
     }
 }
