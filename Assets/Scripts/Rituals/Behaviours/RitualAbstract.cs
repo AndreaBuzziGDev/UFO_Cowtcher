@@ -12,19 +12,12 @@ public abstract class RitualAbstract
 
 
     //METHODS
-    public virtual bool HasCow(ScriptableCow.UniqueID UID)
-    {
-        //TODO: THIS SHOULD NOT ALLOW "UID" TO BE "ANY" IN INPUT.
+    //TODO: EVENTUALLY CAN BE DRASTICALLY SIMPLIFIED BY USING A BASE CONSTRUCTOR FOR THIS ABSTRACT CLASS, TO BE CALLED IN CHILD CLASSES.
 
-        //IF RITUAL CONTAINS "ANY" COW --> DEFAULT TRUE
-        if (requiredCows.Contains(ScriptableCow.UniqueID.ANY)) return true;
-        return requiredCows.Contains(UID);
-    }
-
-    public void BuildRitualModules()
+    protected void BuildRitualModules(List<ScriptableCow.UniqueID> buildRequiredCows)
     {
         Dictionary<ScriptableCow.UniqueID, int> plottedRituals = new();
-        foreach (ScriptableCow.UniqueID uid in requiredCows)
+        foreach (ScriptableCow.UniqueID uid in buildRequiredCows)
         {
             if (plottedRituals.ContainsKey(uid))
             {
@@ -43,6 +36,17 @@ public abstract class RitualAbstract
             ritualDictionary.Add(entry.Key, iteratedModule);
         }
     }
+
+    public virtual bool HasCow(ScriptableCow.UniqueID UID)
+    {
+        //TODO: THIS SHOULD NOT ALLOW "UID" TO BE "ANY" IN INPUT.
+
+        //IF RITUAL CONTAINS "ANY" COW --> DEFAULT TRUE
+        if (requiredCows.Contains(ScriptableCow.UniqueID.ANY)) return true;
+        return requiredCows.Contains(UID);
+    }
+
+    public 
 
 
     public abstract void DoRitual(ScriptableCow.UniqueID UID);

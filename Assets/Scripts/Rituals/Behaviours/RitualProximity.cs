@@ -13,6 +13,7 @@ public class RitualProximity : RitualAbstract
     {
         this.template = inputTemplate;
         requiredCows = template.RequiredCows;
+        BuildRitualModules(this.requiredCows);
     }
 
     //METHODS
