@@ -16,7 +16,7 @@ public class RitualSequentialCapture : RitualAbstract
     }
 
     //METHODS
-    public override void DoRitual()
+    public override void DoRitual(ScriptableCow.UniqueID UID)
     {
         Debug.Log("RitSequentialCapture");
     }

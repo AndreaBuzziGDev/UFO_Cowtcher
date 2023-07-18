@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Sequential Ritual", menuName = "Rituals/Sequential")]
+//[CreateAssetMenu(fileName = "New Sequential Ritual", menuName = "Rituals/Sequential")]
 public class RitualSequentialCaptureSO : RitualAbstractSO
 {
     //DATA

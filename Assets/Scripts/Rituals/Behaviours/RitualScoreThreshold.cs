@@ -15,9 +15,8 @@ public class RitualScoreThreshold : RitualAbstract
         requiredCows = template.RequiredCows;
     }
 
-
     //METHODS
-    public override void DoRitual()
+    public override void DoRitual(ScriptableCow.UniqueID UID)
     {
         Debug.Log("RitScoreThreshold");
     }

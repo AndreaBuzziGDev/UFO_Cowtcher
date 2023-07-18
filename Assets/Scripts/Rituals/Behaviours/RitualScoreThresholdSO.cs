@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Threshold Ritual", menuName = "Rituals/Threshold")]
+//[CreateAssetMenu(fileName = "New Threshold Ritual", menuName = "Rituals/Threshold")]
 public class RitualScoreThresholdSO : RitualAbstractSO
 {
     //DATA

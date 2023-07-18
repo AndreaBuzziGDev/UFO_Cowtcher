@@ -16,8 +16,20 @@ public class RitualGeneric : RitualAbstract
     }
 
     //METHODS
-    public override void DoRitual()
+
+    public override void DoRitual(ScriptableCow.UniqueID UID)
     {
-        Debug.Log("RitualGeneric");
+        Debug.Log("RitualGeneric - Increasing counter for Cow: " + UID);
+
+        CowSummoningRitualModule module = ritualDictionary[UID];
+        module.ChangeAmount(1);
+
+        //ALSO INCREASE "ANY" COUNTER.
+        if (HasCow(ScriptableCow.UniqueID.ANY))
+        {
+            Debug.Log("RitualGeneric - ALSO Increasing counter for Cow: " + ScriptableCow.UniqueID.ANY);
+            ritualDictionary[ScriptableCow.UniqueID.ANY].ChangeAmount(1);
+        }
+
     }
 }
