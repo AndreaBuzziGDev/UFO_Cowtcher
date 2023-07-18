@@ -7,7 +7,7 @@ public class MPCalmRandMonoDirSO : MPAbstractCalmSO
 {
     [SerializeField] public float timerStill = 1;
     [SerializeField] public float timerMoving = 2;
-    [SerializeField] [Range(0.1f, 2.0f)] public float randomizerSlider = 2.0f;
+    [SerializeField] [Range(-0.5f, 1.0f)] public float randomizerSlider = 0.5f;
 
     [SerializeField] public List<Vector3> AllowedDirections = new();
 
