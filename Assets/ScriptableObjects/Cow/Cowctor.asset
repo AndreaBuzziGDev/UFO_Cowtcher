@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Cowctor
   Description: 
   FuelRecoveryAmount: 15
-  AlertRadius: 1
+  AlertRadius: 4
   SpeedCalm: 2
   SpeedAlert: 4
   Score: 100

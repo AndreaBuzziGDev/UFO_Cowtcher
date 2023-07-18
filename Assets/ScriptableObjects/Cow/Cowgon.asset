@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Cowgon
   Description: 
   FuelRecoveryAmount: 25
-  AlertRadius: 8
+  AlertRadius: 6
   SpeedCalm: 2
   SpeedAlert: 4
   Score: 100

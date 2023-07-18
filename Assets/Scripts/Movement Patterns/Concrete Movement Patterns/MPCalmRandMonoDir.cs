@@ -13,6 +13,7 @@ public class MPCalmRandMonoDir : AbstractMovementPattern
     [SerializeField] public float timerStill;
     [SerializeField] public float timerMoving;
     [SerializeField] public List<Vector3> AllowedDirections = new();
+    private Vector3 randomlyChosenDirection;
 
 
 
@@ -33,30 +34,29 @@ public class MPCalmRandMonoDir : AbstractMovementPattern
     ///MOVEMENT
     public override Vector3 ManageMovement(Cow interestedCow)
     {
-        //TODO: HANDLE MOVEMENT STUFF HERE (timerStill, timerMoving)
+        Debug.Log("timerStill: " + timerStill);
+        Debug.Log("timerMoving: " + timerMoving);
 
-        //TODO: EXPORT VECTOR LOGIC IN A DEDICATED METHOD?
-        if (AllowedDirections == null || AllowedDirections.Count == 0)
-        {
-            return Vector3.zero;
-        }
-
-        return AllowedDirections[Random.Range(0, AllowedDirections.Count)];
-
+        Vector3 result = Vector3.zero;
+        if (timerMoving > 0) return randomlyChosenDirection;
+        return result;
     }
 
 
     ///TIMERS
     public override void UpdateTimers(float delta)
     {
-        this.timerStill -= delta;
-        this.timerMoving -= delta;
+        if (timerMoving > 0) timerMoving -= delta;
+        else if (timerStill > 0) timerStill -= delta;
+        else ResetTimers();
     }
 
     public override void ResetTimers()
     {
         this.timerStill = template.timerStill;
         this.timerMoving = template.timerMoving;
+
+        if (AllowedDirections != null || AllowedDirections.Count > 0) randomlyChosenDirection = AllowedDirections[Random.Range(0, AllowedDirections.Count)];
     }
 
 }
