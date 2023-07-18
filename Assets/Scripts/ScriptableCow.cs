@@ -69,13 +69,14 @@ public class ScriptableCow : ScriptableObject
     public MPAbstractCalmSO movPatternCalm;
     public MPAbstractAlertSO movPatternAlert;
 
+    ///STATUS ALTERATION
+    public SAAbstractSO Alteration;
+
 
     ///SPAWN AND RESPAWN DATA
     public ScriptableRitual SummoningRitual;//TODO: MUST BE NULL-SAFE
     public List<ScriptableHideout.Type> FavouriteHideoutTypes = new();
     public List<SpawnPoint.Type> AllowedSpawnPointTypes = new();
 
-    //TODO: SWITCH TO SCRIPTABLE OBJECT VARIABLE?
-    public SAAbstractSO Alteration;
 
 }
