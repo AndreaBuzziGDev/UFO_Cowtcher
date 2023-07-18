@@ -7,6 +7,7 @@ public abstract class RitualAbstract
     //TODO: IMPLEMENT METHOD THAT CHECKS WETHER THIS RITUAL SHOULD "BE DONE" OR NO
 
     //ENUMS
+    //TODO: FOR NOW IGNORE RITUAL TYPE
     public enum ERitualType
     {
         SimpleCapture,
@@ -16,6 +17,7 @@ public abstract class RitualAbstract
     }
 
     //DATA
+
 
 
 
