@@ -31,7 +31,6 @@ public class MPKowbraAlert : AbstractMovementAlert
 
     public override Vector3 ManageMovement(Cow interestedCow)
     {
-
         Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().transform.position;
         Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
         Vector3 alertDirection = new Vector3(desiredDirection.x, 0, desiredDirection.z);
@@ -52,13 +51,21 @@ public class MPKowbraAlert : AbstractMovementAlert
         Hideout targetHideout = myCow.TargetHideout;
         Vector3 hideoutDirection = targetHideout.transform.position - myCow.transform.position;
 
+        if (directionChangeRate <= 0.0f)
+        {
+            ResetTimers();
+            Vector3 crossProduct = Vector3.Cross(hideoutDirection.normalized, myCow.transform.up);
+
+            hideoutDirection = myCow.MovementDirection + (magnitude * 2) * Mathf.Sin(Time.time * frequency) * crossProduct;
+        }
+
         //TODO: THIS CODE WILL EVENTUALLY BE MOVED ELSEWHERE
         UFO menace = GameController.Instance.FindUFOAnywhere();
         Vector3 flatUfoVector = new Vector3(menace.transform.position.x, targetHideout.transform.position.y, menace.transform.position.z);
         Vector3 ufoHideoutVector = targetHideout.transform.position - flatUfoVector;
 
-        Debug.Log("hideoutDirection: " + hideoutDirection);
-        Debug.Log("ufoHideoutVector: " + ufoHideoutVector);
+        //Debug.Log("hideoutDirection: " + hideoutDirection);
+        //Debug.Log("ufoHideoutVector: " + ufoHideoutVector);
 
         if (ufoHideoutVector.magnitude <= hideoutDirection.magnitude)
         {

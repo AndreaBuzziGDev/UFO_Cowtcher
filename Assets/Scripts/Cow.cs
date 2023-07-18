@@ -162,9 +162,9 @@ public class Cow : MonoBehaviour
             if (this.TimerAlertToCalm <= 0.0f) this.currentState = State.Calm;
             else this.TimerAlertToCalm -= Time.deltaTime;
         }
-        Debug.Log("IsAlert: " + IsAlert);
-        Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
-        Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
+        //Debug.Log("IsAlert: " + IsAlert);
+        //Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
+        //Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
 
         //STEP 2
         if (IsAlert)
