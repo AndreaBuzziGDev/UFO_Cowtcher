@@ -63,11 +63,13 @@ public class ScriptableCow : ScriptableObject
     [Tooltip("Time the cow will spend in alert state before transitioning to Panic (search Hideout)")]
     public float TimerAlertToPanic = 1.0f;
 
+    //NB: DELETED BECAUSE IT BECAME A CONCERN OF THE MOVEMENT PATTERN
+    /*
     [Tooltip("Time the cow will spend moving randomly while being in the calm state")]
     public float TimerCalmMovement = 1.0f;
     [Tooltip("Time the cow will spend moving standing still while being in the calm state")]
     public float TimerCalmStill = 1.0f;
-
+    */
 
     [Tooltip("Time before the cow will respawn after being caught")]
     public float TimerRespawn = 5.0f;

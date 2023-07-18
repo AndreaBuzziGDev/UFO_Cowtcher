@@ -65,13 +65,6 @@ public class Cow : MonoBehaviour
     [Min(0f)] private float TimerCalmMovement;
     [Min(0f)] private float TimerCalmStill;
 
-    //SPECIAL MOVEMENT TIMERS
-    ///CALM
-    [Min(0f)] private float timerCalmSpecialMovement;
-    public float TimerCalmSpecialMovement { get { return timerCalmSpecialMovement; } }
-    ///ALERT
-    [Min(0f)] private float timerAlertSpecialMovement;
-    public float TimerAlertSpecialMovement { get { return timerAlertSpecialMovement; } }
 
 
 
@@ -148,7 +141,7 @@ public class Cow : MonoBehaviour
         HandleMovement();
 
         //STEP 1
-        if (CowHelper.IsUFOWithinRadius(this))
+        if (CowHideoutHelper.IsUFOWithinRadius(this))
         {
             if (IsCalm) this.currentState = State.Alert;
             this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
@@ -163,63 +156,42 @@ public class Cow : MonoBehaviour
         //STEP 2
         if (IsAlert)
         {
-            //MUTALLY RESET TIMER SPECIAL MOVEMENT
-            this.timerCalmSpecialMovement = 0.0f;
-
-            //LOWER THE TIMER USED FOR SPECIAL ALERT MOVEMENTS
-            if (this.timerAlertSpecialMovement > 0.0f) this.timerAlertSpecialMovement -= Time.deltaTime;
-
 
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
-            if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
+            if (CowHideoutHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
             //Debug.Log("TimerAlertToPanic: " + this.TimerAlertToPanic);
 
+
             //ALERT SUB-STATE
-            if (this.TimerAlertToPanic > 0.0f) HandleAlertMovement();
-            //PANIC SUB-STATE
+            if (this.TimerAlertToPanic > 0.0f)
+            {
+                HandleAlertMovement();
+            }
             else
             {
-                this.targetHideout = CowHelper.FindHideout(this);
+                //PANIC SUB-STATE
+                this.targetHideout = CowHideoutHelper.FindHideout(this);
 
                 //REMAIN IN ALERT-SUBSTATE BEHAVIOUR
                 if (!HasChosenHideout) HandleAlertMovement();
                 else if (targetHideout.HasAvailableSlots()) HandlePanicMovement();
 
-                if (CowHelper.CanEnterHideout(this)) CowHelper.EnterHideout(this);
+                if (CowHideoutHelper.CanEnterHideout(this)) CowHideoutHelper.EnterHideout(this);
 
             }
         }
         else
         {
-            //MUTALLY RESET TIMER SPECIAL MOVEMENT
-            this.timerAlertSpecialMovement = 0.0f;
-
-            //LOWER THE TIMER USED FOR SPECIAL CALM MOVEMENTS
-            if (this.timerCalmSpecialMovement > 0.0f) this.timerCalmSpecialMovement -= Time.deltaTime;
-
-
             //RESET PANIC TIMER
             this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
-            //HANDLE CALM MOVEMENT PHASES
-            if (TimerCalmMovement > 0.0f)
-            {
-                TimerCalmMovement -= Time.deltaTime;
-            } 
-            else if (TimerCalmStill > 0.0f)
-            {
-                TimerCalmStill -= Time.deltaTime;
-                movementDirection = Vector3.zero;
-            }
-            else
-            {
-                TimerCalmMovement = cowTemplate.TimerCalmMovement;
-                TimerCalmStill = cowTemplate.TimerCalmStill;
+            //TODO: HANDLE CALM MOVEMENT HERE
 
-                //RESETTING THE MOVEMENT DIRECTION RANDOMLY BASED ON CALM PATTERN
-                movementDirection = movPatternCalm.ManageMovement(this);
-                //Debug.Log("movementDirection: " + movementDirection);
-            }
+
+
+            //UPDATING THE MOVEMENT DIRECTION BASED ON CALM PATTERN
+            movementDirection = movPatternCalm.ManageMovement(this);
+
         }
 
 
@@ -233,8 +205,6 @@ public class Cow : MonoBehaviour
         this.currentState = State.Calm;
 
         //RESET TIMERS
-        this.TimerCalmMovement = cowTemplate.TimerCalmMovement;
-        this.TimerCalmStill = cowTemplate.TimerCalmStill;
         this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
     }
@@ -273,8 +243,6 @@ public class Cow : MonoBehaviour
         this.score = cowTemplate.Score;
 
         ///TIMERS
-        this.TimerCalmMovement = cowTemplate.TimerCalmMovement;
-        this.TimerCalmStill = cowTemplate.TimerCalmStill;
         this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
@@ -300,12 +268,5 @@ public class Cow : MonoBehaviour
         else movementDirection = Vector3.zero;
         //Debug.Log("movementDirection (PANIC): " + movementDirection);
     }
-
-
-
-    //PUBLIC FUNCTIONALITIES
-    public void ResetTimerAlertSpecialMovement() => this.timerAlertSpecialMovement = cowTemplate.movPatternAlert.TimerAlertSpecialMovement;
-    public void ResetTimerCalmSpecialMovement() => this.timerCalmSpecialMovement = cowTemplate.movPatternCalm.TimerCalmSpecialMovement;
-
 
 }

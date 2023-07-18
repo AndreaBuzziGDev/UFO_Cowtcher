@@ -28,6 +28,10 @@ public class GameController : MonoSingleton<GameController>
     ///COMPLEX DATA
     public GameControllerHelper helper = new();
 
+    ///OTHER DATA...
+    UFO player;
+    PlayerController playerController;
+
 
 
 
@@ -161,10 +165,14 @@ public class GameController : MonoSingleton<GameController>
     ///OTHER FUNCTIONALITIES
     public UFO FindUFOAnywhere()
     {
-        return ((UFO) FindObjectOfType<UFO>());
+        if (player == null) player = ((UFO)FindObjectOfType<UFO>());
+        return player;
     }
 
-
-
+    public PlayerController FindPlayerAnywhere()
+    {
+        if (playerController == null) playerController = ((PlayerController) FindObjectOfType<PlayerController>());
+        return playerController;
+    }
 
 }

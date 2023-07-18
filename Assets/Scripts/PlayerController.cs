@@ -6,20 +6,20 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     //DATA
-    
-    //INPUT - EVENT-DRIVEN IMPLEMENTATION
+    ///INPUT - EVENT-DRIVEN IMPLEMENTATION
     private PlayerInput Input = null;
     private Vector2 MovementInputFactor = new(0,0);
 
 
-    //POSITION ETC
-
+    ///POSITION ETC
     //TODO: SET INITIAL PLAYER POSITION PROGRAMMATICALLY
     //public Vector3 InitialPosition = new Vector3(-10, 0, 0);
     [SerializeField] private float MoveSpeed = 5;
     Rigidbody myRigidBody;
 
-
+    ///OTHER DATA
+    private float stunDuration = 0.0f;
+    public bool IsStunned { get { return (stunDuration > 0); } }
 
 
 
@@ -33,26 +33,14 @@ public class PlayerController : MonoBehaviour
         myRigidBody = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    // Start is called before the first frame update
-    /*
-    void Start()
-    {
-        
-    }
-    */
-
-    // Update is called once per frame
-    /*
-    void Update()
-    {
-        
-    }
-    */
-
     private void FixedUpdate()
     {
-        
         if (!GameController.Instance.IsPaused) Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
+    }
+
+    private void Update()
+    {
+        stunDuration -= Time.deltaTime;
     }
 
 
@@ -104,6 +92,21 @@ public class PlayerController : MonoBehaviour
 
 
     //FUNCTIONALITIES
-    public void Move(Vector3 direction) => myRigidBody.velocity = (direction) * MoveSpeed;
+    public void Move(Vector3 direction)
+    {
+        if (IsStunned)
+        {
+            myRigidBody.velocity = Vector3.zero;
+        }
+        else
+        {
+            myRigidBody.velocity = (direction) * MoveSpeed;
+        }
+    }
+
+    public void ApplyStun(float inputDuration)
+    {
+        this.stunDuration = inputDuration;
+    }
 
 }

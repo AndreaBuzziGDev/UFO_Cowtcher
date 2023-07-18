@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CowHelper
+public class CowHideoutHelper
 {
 
     //CHECK IF PLAYER IS WITHIN ALERT RADIUS
