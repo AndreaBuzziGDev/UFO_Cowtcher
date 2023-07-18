@@ -77,7 +77,10 @@ public class Cowdex : MonoSingleton<Cowdex>
     {
         foreach (KeyValuePair<ScriptableCow.UniqueID, RitualAbstractSO> entry in AllSummoningRitualTemplates)
         {
-            AllRituals.Add(entry.Key, entry.Value.GetRitual());
+            if (entry.Value != null)
+            {
+                AllRituals.Add(entry.Key, entry.Value.GetRitual());
+            }
         }
         Debug.Log("Cowdex - AllRituals size:  " + AllRituals.Count);
     }
