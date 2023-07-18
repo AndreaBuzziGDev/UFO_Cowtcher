@@ -17,6 +17,9 @@ public class Cowdex : MonoSingleton<Cowdex>
     private Dictionary<ScriptableCow.UniqueID, Cow> CowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
     private Dictionary<ScriptableCow.UniqueID, ScriptableCow> ScriptableCowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
     private Dictionary<ScriptableCow.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
+    private Dictionary<ScriptableCow.UniqueID, RitualAbstractSO> AllSummoningRitualTemplates = new();//THE "ENCYCLOPEDIA OF TEMPLATE SUMMONING RITUALS"
+    private Dictionary<ScriptableCow.UniqueID, RitualAbstract> AllRituals = new();//THE "ENCYCLOPEDIA OF ACTUAL CONCRETE SUMMONING RITUALS"
+
 
 
 
@@ -31,20 +34,18 @@ public class Cowdex : MonoSingleton<Cowdex>
     void Start()
     {
         BuildCowdex();
+        BuildSummoningRituals();
 
         //TODO: INTRODUCE DEBUGGING FUNCTIONALITIES (FIND DUPLICATES ETC)
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
-    //FUNCTIONALITIES
-    ///INITIALIZATION
+
+
+    //INITIALIZATION
+    ///MAIN INITIALIZATION
     public void BuildCowdex()
     {
         Debug.Log("FullListOfExistingCows: " + FullListOfExistingCows.Count);
@@ -60,11 +61,35 @@ public class Cowdex : MonoSingleton<Cowdex>
             //IndexedCow
             IndexedCow ic = new IndexedCow(IndexedCow.CowKnowledgeState.Unknown, iteratedCow.CowTemplate);
             PlayableCowdex.Add(iteratedCow.CowTemplate.UID, ic);
+
+            //Summoning Ritual Templates
+            AllSummoningRitualTemplates.Add(iteratedCow.CowTemplate.UID, iteratedCow.CowTemplate.SummoningRitual);
         }
+        Debug.Log("Cowdex - CowArchive size:  " + CowArchive.Count);
+        Debug.Log("Cowdex - ScriptableCowArchive size:  " + ScriptableCowArchive.Count);
+        Debug.Log("Cowdex - PlayableCowdex size:  " + PlayableCowdex.Count);
+        Debug.Log("Cowdex - AllSummoningRitualTemplates size:  " + AllSummoningRitualTemplates.Count);
+    }
+
+
+    ///SUMMONING RITUAL INITIALIZATION
+    public void BuildSummoningRituals()
+    {
+        foreach (KeyValuePair<ScriptableCow.UniqueID, RitualAbstractSO> entry in AllSummoningRitualTemplates)
+        {
+            AllRituals.Add(entry.Key, entry.Value.GetRitual());
+        }
+        Debug.Log("Cowdex - AllRituals size:  " + AllRituals.Count);
     }
 
 
 
+
+
+
+
+
+    //FUNCTIONALITIES
     ///DATA RETRIEVAL
 
     ///RETRIEVE ANY Cow
@@ -104,6 +129,9 @@ public class Cowdex : MonoSingleton<Cowdex>
     {
         return PlayableCowdex[UID];
     }
+
+
+    //TODO: IMPLEMENT FUNCTIONALITIES TO RETRIEVE DATA RELATIVE TO SUMMONING RITUALS
 
 
 
