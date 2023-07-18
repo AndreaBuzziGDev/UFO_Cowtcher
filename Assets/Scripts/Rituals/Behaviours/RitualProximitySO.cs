@@ -11,6 +11,6 @@ public class RitualProximitySO : RitualAbstractSO
     //METHODS
     public override RitualAbstract GetRitual()
     {
-        new RitualProximity(this);
+        return new RitualProximity(this);
     }
 }

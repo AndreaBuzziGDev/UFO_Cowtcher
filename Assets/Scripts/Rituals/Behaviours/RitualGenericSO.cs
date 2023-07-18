@@ -11,6 +11,6 @@ public class RitualGenericSO : RitualAbstractSO
     //METHODS
     public override RitualAbstract GetRitual()
     {
-        new RitualGeneric(this);
+        return new RitualGeneric(this);
     }
 }

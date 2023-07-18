@@ -11,6 +11,6 @@ public class RitualSequentialCaptureSO : RitualAbstractSO
     //METHODS
     public override RitualAbstract GetRitual()
     {
-        new RitualSequentialCapture(this);
+        return new RitualSequentialCapture(this);
     }
 }

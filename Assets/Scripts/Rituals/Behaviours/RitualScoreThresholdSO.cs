@@ -11,6 +11,6 @@ public class RitualScoreThresholdSO : RitualAbstractSO
     //METHODS
     public override RitualAbstract GetRitual()
     {
-        new RitualScoreThreshold(this);
+        return new RitualScoreThreshold(this);
     }
 }
