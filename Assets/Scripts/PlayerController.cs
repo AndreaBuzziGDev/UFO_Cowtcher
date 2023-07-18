@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("movSpeedBonus: " + movSpeedBonus);
             myRigidBody.velocity = (1+(movSpeedBonus/100)) * MoveSpeed * (direction);
         }
     }

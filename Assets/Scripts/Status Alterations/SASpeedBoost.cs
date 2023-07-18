@@ -30,9 +30,6 @@ public class SASpeedBoost : SAAbstract
     ///BUFF
     public override void ApplyBuff()
     {
-        Debug.Log("SASpeedBoost IsStillRunning: " + IsStillRunning());
-        Debug.Log("SASpeedBoost speedBoostIntensity: " + speedBoostIntensity);
-
         if (IsStillRunning())
         {
             PlayerController pc = GameController.Instance.FindPlayerAnywhere();

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4654,6 +4654,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4676423567080358597, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
+      propertyPath: FullListOfExistingCows.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676423567080358597, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
+      propertyPath: FullListOfExistingCows.Array.data[3]
+      value: 
+      objectReference: {fileID: 5545884920791543627, guid: ba3f4d20dd76ab24eb1e1fbea294ae7a, type: 3}
+    - target: {fileID: 4676423567080358597, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
+      propertyPath: FullListOfExistingCows.Array.data[4]
+      value: 
+      objectReference: {fileID: 1095180708247441280, guid: 6a816b2196c8b824caf30eec06347009, type: 3}
+    - target: {fileID: 4676423567080358597, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
+      propertyPath: FullListOfExistingCows.Array.data[5]
+      value: 
+      objectReference: {fileID: 5489631595458194746, guid: 96620ed0c4990974f820ee0a30a89671, type: 3}
     - target: {fileID: 8389924816354798681, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
       propertyPath: m_Name
       value: Cowdex
