@@ -26,7 +26,7 @@ MonoBehaviour:
   TimerRespawn: 100
   movPatternCalm: {fileID: 11400000, guid: 2c10789586a038c418beaadb0a361797, type: 2}
   movPatternAlert: {fileID: 11400000, guid: 4330d5b1210ce76419d3002d1517b1b0, type: 2}
-  Alteration: {fileID: 11400000, guid: edb7438adb16a974a9def660fd5d4c91, type: 2}
+  Alteration: {fileID: 11400000, guid: 23ee7e8ea1a00c5419b94ae956580f14, type: 2}
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 
   AllowedSpawnPointTypes: 
