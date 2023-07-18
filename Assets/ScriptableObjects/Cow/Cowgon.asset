@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
+  m_Name: Cowgon
+  m_EditorClassIdentifier: 
+  UID: 15
+  rarity: 2
+  Name: Cowgon
+  Description: 
+  FuelRecoveryAmount: 25
+  AlertRadius: 6
+  SpeedCalm: 6
+  SpeedAlert: 4
+  Score: 100
+  TimerAlertToCalm: 300
+  TimerAlertToPanic: 30
+  TimerRespawn: 100
+  movPatternCalm: {fileID: 11400000, guid: 2c10789586a038c418beaadb0a361797, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: 4330d5b1210ce76419d3002d1517b1b0, type: 2}
+  Alteration: {fileID: 11400000, guid: 23ee7e8ea1a00c5419b94ae956580f14, type: 2}
+  SummoningRitual: {fileID: 0}
+  FavouriteHideoutTypes: 
+  AllowedSpawnPointTypes: 

@@ -15,7 +15,7 @@ public class Cow : MonoBehaviour
 
 
     //DATA
-    private SpriteRenderer spriteRenderer;
+
     ///INNATE COW DATA
     private State currentState = State.Calm;
     public State CurrentState { get { return currentState; } }
@@ -65,12 +65,12 @@ public class Cow : MonoBehaviour
     [Min(0f)] private float TimerCalmMovement;
     [Min(0f)] private float TimerCalmStill;
 
-    [Min(0f)] private float timerAlertSpecialMovement;
-    public float TimerAlertSpecialMovement { get { return timerAlertSpecialMovement; } }
 
 
 
-    /// COMPLEX DATA
+    ///COMPLEX DATA
+    
+    ///HIDEOUT
     private List<ScriptableHideout.Type> favouriteHideoutTypes = new();
     public List<ScriptableHideout.Type> FavouriteHideoutTypes { get { return favouriteHideoutTypes; } }
 
@@ -78,22 +78,33 @@ public class Cow : MonoBehaviour
     public List<SpawnPoint.Type> AllowedSpawnPointTypes { get { return allowedSpawnPointTypes; } }
 
 
+    ///BUFFS
+    private SAAbstractSO alteration;
+    public SAAbstract Alteration { 
+        get {
+            if (alteration != null)
+            {
+                alteration.GetBuff();
+            }
+            return null; 
+        } 
+    }
 
-    private AbstractAlteration.EBuffType alteration;
-    public AbstractAlteration.EBuffType Alteration { get { return alteration; } }
 
-
-    //TODO: EVALUATE FURTHER DIVERSIFICATION OF MOVEMENT PATTERNS
+    ///MOVEMENT PATTERNS
     private AbstractMovementPattern movPatternCalm;
     private AbstractMovementAlert movPatternAlert;
 
-
-    //TECHNICAL DATA FOR OTHER PURPOSES
-    private SpriteRenderer sr;
-    private Rigidbody rb;
-
+    ///MOVEMENT DIRECTION (AFFECTED BY MOVEMENT PATTERNS)
     private Vector3 movementDirection = Vector3.forward;
     public Vector3 MovementDirection { get { return movementDirection; } }
+
+
+
+    //TECHNICAL DATA FOR OTHER PURPOSES
+    private Rigidbody rb;
+    private SpriteRenderer spriteRenderer;
+
 
 
 
@@ -112,7 +123,6 @@ public class Cow : MonoBehaviour
         spriteRenderer.receiveShadows = true;
 
         rb = this.gameObject.GetComponent<Rigidbody>();
-
     }
 
     private void Start()
@@ -139,42 +149,46 @@ public class Cow : MonoBehaviour
     //      UPDATE HANDLES ALL THE TIMERS AND BEHAVIOURS
     private void FixedUpdate()
     {
-        //
-        HandleMovement();
-        timerAlertSpecialMovement -= Time.deltaTime;
+        //COW AI
 
         //STEP 1
-        if (CowHelper.IsUFOWithinRadius(this))
+        if (CowHideoutHelper.IsUFOWithinRadius(this))
         {
             if (IsCalm) this.currentState = State.Alert;
             this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
         }
         else
         {
-            this.TimerAlertToCalm -= Time.deltaTime;
             if (this.TimerAlertToCalm <= 0.0f) this.currentState = State.Calm;
+            else this.TimerAlertToCalm -= Time.deltaTime;
         }
-
+        //Debug.Log("IsAlert: " + IsAlert);
+        //Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
+        //Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
 
         //STEP 2
         if (IsAlert)
         {
+
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
-            if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
-            //Debug.Log("TimerAlertToPanic: " + this.TimerAlertToPanic);
+            if (CowHideoutHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
+
 
             //ALERT SUB-STATE
-            if (this.TimerAlertToPanic > 0.0f) HandleAlertMovement();
-            //PANIC SUB-STATE
+            if (this.TimerAlertToPanic > 0.0f)
+            {
+                HandleAlertMovement();
+            }
             else
             {
-                this.targetHideout = CowHelper.FindHideout(this);
+                //PANIC SUB-STATE
+                this.targetHideout = CowHideoutHelper.FindHideout(this);
 
                 //REMAIN IN ALERT-SUBSTATE BEHAVIOUR
                 if (!HasChosenHideout) HandleAlertMovement();
                 else if (targetHideout.HasAvailableSlots()) HandlePanicMovement();
 
-                if (CowHelper.CanEnterHideout(this)) CowHelper.EnterHideout(this);
+                if (CowHideoutHelper.CanEnterHideout(this)) CowHideoutHelper.EnterHideout(this);
 
             }
         }
@@ -183,28 +197,18 @@ public class Cow : MonoBehaviour
             //RESET PANIC TIMER
             this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
-            //HANDLE CALM MOVEMENT PHASES
-            if (TimerCalmMovement > 0.0f)
-            {
-                TimerCalmMovement -= Time.deltaTime;
-            } 
-            else if (TimerCalmStill > 0.0f)
-            {
-                TimerCalmStill -= Time.deltaTime;
-                movementDirection = Vector3.zero;
-            }
-            else
-            {
-                TimerCalmMovement = cowTemplate.TimerCalmMovement;
-                TimerCalmStill = cowTemplate.TimerCalmStill;
+            HandleCalmMovement();
 
-                //RESETTING THE MOVEMENT DIRECTION RANDOMLY BASED ON CALM PATTERN
-                movementDirection = movPatternCalm.ManageMovement(this);
-                //Debug.Log("movementDirection: " + movementDirection);
-            }
+
+            //UPDATING THE MOVEMENT DIRECTION BASED ON CALM PATTERN
+            movementDirection = movPatternCalm.ManageMovement(this);
+
         }
 
+        //ENDED COW AI
 
+        //MOVEMENT
+        HandleMovement();
     }
 
 
@@ -215,9 +219,7 @@ public class Cow : MonoBehaviour
         this.currentState = State.Calm;
 
         //RESET TIMERS
-        this.TimerCalmMovement = cowTemplate.TimerCalmMovement;
-        this.TimerCalmStill = cowTemplate.TimerCalmStill;
-        this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
+        this.TimerAlertToCalm = 0.0f;
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
     }
 
@@ -236,7 +238,7 @@ public class Cow : MonoBehaviour
         if (this.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
-        rb.MovePosition(transform.position + movementDirection * Time.deltaTime * mySpeed);
+        rb.MovePosition(transform.position + mySpeed * Time.deltaTime * movementDirection);
     }
 
 
@@ -255,8 +257,6 @@ public class Cow : MonoBehaviour
         this.score = cowTemplate.Score;
 
         ///TIMERS
-        this.TimerCalmMovement = cowTemplate.TimerCalmMovement;
-        this.TimerCalmStill = cowTemplate.TimerCalmStill;
         this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
@@ -264,21 +264,46 @@ public class Cow : MonoBehaviour
         this.favouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
         this.allowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
         this.alteration = cowTemplate.Alteration;
-        this.movPatternCalm = cowTemplate.movPatternCalm;
-        this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert;
+        this.movPatternCalm = cowTemplate.movPatternCalm.GetMovPattern();
+        this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert.GetMovPattern();
     }
 
 
+
+
+    //MOVEMENT PATTERNS
+    ///CALM
+    private void HandleCalmMovement()
+    {
+        if (movPatternCalm != null)
+        {
+            movementDirection = movPatternCalm.ManageMovement(this);
+            Debug.Log("Calm Movement Direction: " + movementDirection);
+            movPatternCalm.UpdateTimers(Time.deltaTime);
+        }
+        else movementDirection = Vector3.zero;
+
+    }
+
+    ///ALERT
     private void HandleAlertMovement()
     {
-        if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this);
+        if (movPatternAlert != null)
+        {
+            movementDirection = movPatternAlert.ManageMovement(this);
+            movPatternAlert.UpdateTimers(Time.deltaTime);
+        }
         else movementDirection = Vector3.zero;
-        //Debug.Log("movementDirection (ALERT): " + movementDirection);
     }
 
+    ///PANIC
     private void HandlePanicMovement()
     {
-        if (movPatternAlert != null) movementDirection = movPatternAlert.ManagePanic(this);
+        if (movPatternAlert != null) 
+        {
+            movementDirection = movPatternAlert.ManagePanic(this);
+            movPatternAlert.UpdateTimers(Time.deltaTime);
+        }
         else movementDirection = Vector3.zero;
         //Debug.Log("movementDirection (PANIC): " + movementDirection);
     }

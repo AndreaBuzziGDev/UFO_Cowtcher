@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2388964484425164700, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.456
+      objectReference: {fileID: 0}
     - target: {fileID: 2625790151766469665, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -60,6 +64,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowgon
       objectReference: {fileID: 0}
+    - target: {fileID: 5394048494833358103, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.456
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923396806548110374, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: cowTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: 0055c6f254af0754482e73bfe5a811e5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

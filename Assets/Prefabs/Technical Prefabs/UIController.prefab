@@ -497,7 +497,7 @@ Transform:
   - {fileID: 5315422403029401886}
   - {fileID: 5599165471962187967}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6678651837923775677
 MonoBehaviour:
@@ -1094,10 +1094,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2423,6 +2423,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4290707279
       objectReference: {fileID: 0}
+    - target: {fileID: 3508693497060361078, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4294004336950744081, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_Name
       value: InGamePanel
@@ -2469,15 +2473,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6068411259079350379, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -405
+      value: -722
       objectReference: {fileID: 0}
     - target: {fileID: 6068411259079350379, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55
+      value: -24.81
       objectReference: {fileID: 0}
     - target: {fileID: 6602209188992231634, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 422.2749
+      value: 519.1531
       objectReference: {fileID: 0}
     - target: {fileID: 6602209188992231634, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2485,11 +2489,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602209188992231634, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.000030518
       objectReference: {fileID: 0}
     - target: {fileID: 6602209188992231634, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55
+      value: -44.332
       objectReference: {fileID: 0}
     - target: {fileID: 7837237044243350168, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_SizeDelta.x

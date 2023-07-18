@@ -39,7 +39,6 @@ public class ScriptableCow : ScriptableObject
     }
 
 
-
     //DATA
     ///UNIQUE ID & ENUMS
     public UniqueID UID = UniqueID.C001;
@@ -62,27 +61,22 @@ public class ScriptableCow : ScriptableObject
     public float TimerAlertToCalm = 1.0f;
     [Tooltip("Time the cow will spend in alert state before transitioning to Panic (search Hideout)")]
     public float TimerAlertToPanic = 1.0f;
-
-    [Tooltip("Time the cow will spend moving randomly while being in the calm state")]
-    public float TimerCalmMovement = 1.0f;
-    [Tooltip("Time the cow will spend moving standing still while being in the calm state")]
-    public float TimerCalmStill = 1.0f;
-
-
     [Tooltip("Time before the cow will respawn after being caught")]
     public float TimerRespawn = 5.0f;
 
 
-    ///COMPLEX DATA
-    public ScriptableRitual SummoningRitual;//TODO: MUST BE NULL-SAFE
+    ///MOVEMENT PATTERNS
+    public MPAbstractCalmSO movPatternCalm;
+    public MPAbstractAlertSO movPatternAlert;
+
+    ///STATUS ALTERATION
+    public SAAbstractSO Alteration;
+
+
+    ///SPAWN AND RESPAWN DATA
+    public RitualAbstractSO SummoningRitual;//TODO: MUST BE NULL-SAFE
     public List<ScriptableHideout.Type> FavouriteHideoutTypes = new();
     public List<SpawnPoint.Type> AllowedSpawnPointTypes = new();
 
-    //TODO: SWITCH TO ENUM VARIABLE
-    public AbstractAlteration.EBuffType Alteration;
-
-    //TODO: EVALUATE FURTHER DIVERSIFICATION OF MOVEMENT PATTERNS
-    public AbstractMovementPattern movPatternCalm;
-    public AbstractMovementPattern movPatternAlert;
 
 }

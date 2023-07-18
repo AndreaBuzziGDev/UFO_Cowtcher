@@ -11,10 +11,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     private List<SpawnPoint> allSpawnPoints = new();
     public List<SpawnPoint> AllSpawnPoints { get { return allSpawnPoints; } }
 
-
-    private List<CowSummoningRitual> rituals = new();
-    [SerializeField] private List<ScriptableRitual> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
-
     private List<SpawnQueuedCow> caughtCowWaitingForRespawn = new();
 
 
@@ -29,7 +25,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     void Start()
     {
         initializeAllSpawnPoints();
-        MakeDictionary();
+        MakeDictionarySpawnPoints();
     }
 
     // Update is called once per frame
@@ -39,18 +35,18 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
 
 
-    //FUNCTIONALITIES
+    //INITIALIZATIONS
 
     //TODO: DEVELOP A DEBUG FUNCTIONALITY THAT DETECTS DUPLICATES AMONG THE ScriptableRitual AND REPORTS THEM AS ERRORS ON THE GAME/EDITOR CONSOLE.
 
 
-    ///INITIALIZATION
+    ///SPAWN POINTS DATA INITIALIZATION
     private void initializeAllSpawnPoints()
     {
         allSpawnPoints = FindObjectsOfType<SpawnPoint>().ToList();
     }
 
-    private void MakeDictionary()
+    private void MakeDictionarySpawnPoints()
     {
         if (allSpawnPoints != null)
         {
@@ -69,6 +65,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     }
 
+
+
+
+
+
+    //FUNCTIONALITIES
 
     ///GET HIDEOUT
     ///

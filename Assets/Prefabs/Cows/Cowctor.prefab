@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowctor
       objectReference: {fileID: 0}
+    - target: {fileID: 6923396806548110374, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: cowTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: 9210343a02dd1c2489a1e5453dd64041, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
