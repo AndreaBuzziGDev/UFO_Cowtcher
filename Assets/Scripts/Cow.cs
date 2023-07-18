@@ -79,8 +79,16 @@ public class Cow : MonoBehaviour
 
 
     ///BUFFS
-    private AbstractAlteration.EBuffType alteration;
-    public AbstractAlteration.EBuffType Alteration { get { return alteration; } }
+    private SAAbstractSO alteration;
+    public SAAbstract Alteration { 
+        get {
+            if (alteration != null)
+            {
+                alteration.GetBuff();
+            }
+            return null; 
+        } 
+    }
 
 
     ///MOVEMENT PATTERNS

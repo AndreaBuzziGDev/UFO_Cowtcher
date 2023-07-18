@@ -110,7 +110,6 @@ public class Abductor : MonoBehaviour
         {
             //PASS THE COW ATTRIBUTES TO THE RIGHT SCRIPTS
             Cow cow = inRangeCow.GetComponent<Cow>();
-            cow.gameObject.SetActive(false);
 
             UFO.ChangeFuel(cow.FuelRecoveryAmount);
             UFO.ChangeScore(cow.Score);
@@ -118,7 +117,12 @@ public class Abductor : MonoBehaviour
             //TODO: WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
             SpawnManager.Instance.MarkForRespawn(cow.UID);
 
-            //cowsInRange.Remove(inRangeCow);
+            if (cow.Alteration != null)
+            {
+                GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
+            }
+
+            cow.gameObject.SetActive(false);
         }
         
         currentCaptureTimer = 0.0f;
