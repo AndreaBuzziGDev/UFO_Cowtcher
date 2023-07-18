@@ -86,10 +86,10 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
     public List<SpawnPoint> GetSpawnPoint(SpawnPoint.Type type)
     {
-        if (spawnPointsByType.ContainsKey(type)) 
+        if (spawnPointsByType.ContainsKey(type))
             return spawnPointsByType[type];
-        else 
-            return null;
+        else
+            return new List<SpawnPoint>();
     }
 
     ///FUNCTIONALITY TO SPAWN COWS ACCESSIBLE FROM ANYWHERE
