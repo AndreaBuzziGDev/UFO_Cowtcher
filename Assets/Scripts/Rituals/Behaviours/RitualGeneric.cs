@@ -5,11 +5,11 @@ using UnityEngine;
 public class RitualGeneric : RitualAbstract
 {
     //DATA
-    RitualSequentialCaptureSO template;
+    RitualGenericSO template;
 
 
     //CONSTRUCTOR
-    public RitualGeneric(RitualSequentialCaptureSO inputTemplate)
+    public RitualGeneric(RitualGenericSO inputTemplate)
     {
         this.template = inputTemplate;
     }
