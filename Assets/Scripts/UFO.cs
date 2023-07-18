@@ -74,7 +74,11 @@ public class UFO : MonoBehaviour
 
 
     //CURRENT FUEL SETTER
-    public void ChangeFuel(float delta) => fuelAmount += delta;
+    public void ChangeFuel(float delta) 
+    {
+        fuelAmount += delta;
+        if (fuelAmount > MaxFuelAmount) fuelAmount = maxFuelAmount;
+    }
 
 
     //CURRENT SCORE SETTER
