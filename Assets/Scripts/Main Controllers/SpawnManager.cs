@@ -120,8 +120,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             if (ritual.HasCow(interestedCow.UID))
             {
                 ritual.DoRitual(interestedCow.UID);
-                Debug.Log("IsReadyToSpawn: " + ritual.IsReadyToSpawn());
-
                 if (ritual.IsReadyToSpawn())
                 {
                     ritual.HandleCowSpawn();

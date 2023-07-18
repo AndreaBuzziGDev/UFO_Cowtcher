@@ -58,7 +58,6 @@ public abstract class RitualAbstract
         {
             foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
             {
-                Debug.Log("Cow Module: " + entry.Key + " Ready to Spawn: " + entry.Value.IsReadyToSpawn);
                 if (!entry.Value.IsReadyToSpawn) return false;
             }
 
