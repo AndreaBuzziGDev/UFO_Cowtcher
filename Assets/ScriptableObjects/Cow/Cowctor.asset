@@ -22,13 +22,9 @@ MonoBehaviour:
   SpeedAlert: 4
   Score: 100
   TimerAlertToCalm: 300
-  TimerAlertToPanic: 10
-  TimerCalmMovement: 9
-  TimerCalmStill: 0
-  TimerRespawn: 5
+  TimerAlertToPanic: 30
+  TimerRespawn: 100
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 
   AllowedSpawnPointTypes: 
   Alteration: 0
-  movPatternCalm: {fileID: 11400000, guid: 53271a4b2b5a70741bf1e26515156508, type: 2}
-  movPatternAlert: {fileID: 11400000, guid: 9538c77c4225ba74db87c4ac8bfdfdda, type: 2}

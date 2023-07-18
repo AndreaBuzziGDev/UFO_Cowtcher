@@ -255,8 +255,8 @@ public class Cow : MonoBehaviour
         this.favouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
         this.allowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
         this.alteration = cowTemplate.Alteration;
-        this.movPatternCalm = cowTemplate.movPatternCalm;
-        this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert;
+        this.movPatternCalm = cowTemplate.movPatternCalm.GetMovPattern();
+        this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert.GetMovPattern();
     }
 
 

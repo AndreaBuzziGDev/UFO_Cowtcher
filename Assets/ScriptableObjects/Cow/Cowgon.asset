@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 15
   rarity: 2
-  Name: 
+  Name: Cowgon
   Description: 
-  FuelRecoveryAmount: 0
-  AlertRadius: 0
-  SpeedCalm: 0
-  SpeedAlert: 0
-  Score: 0
-  TimerAlertToCalm: 1
-  TimerAlertToPanic: 1
-  TimerRespawn: 5
+  FuelRecoveryAmount: 25
+  AlertRadius: 8
+  SpeedCalm: 2
+  SpeedAlert: 4
+  Score: 100
+  TimerAlertToCalm: 300
+  TimerAlertToPanic: 30
+  TimerRespawn: 100
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 
   AllowedSpawnPointTypes: 
