@@ -12,6 +12,7 @@ public class RitualProximity : RitualAbstract
     public RitualProximity(RitualProximitySO inputTemplate)
     {
         this.template = inputTemplate;
+        requiredCows = template.RequiredCows;
     }
 
     //METHODS

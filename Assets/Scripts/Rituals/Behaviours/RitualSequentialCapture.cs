@@ -12,6 +12,7 @@ public class RitualSequentialCapture : RitualAbstract
     public RitualSequentialCapture(RitualSequentialCaptureSO inputTemplate)
     {
         this.template = inputTemplate;
+        requiredCows = template.RequiredCows;
     }
 
     //METHODS

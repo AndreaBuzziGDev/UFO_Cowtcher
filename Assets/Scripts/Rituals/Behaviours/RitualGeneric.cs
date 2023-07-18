@@ -12,6 +12,7 @@ public class RitualGeneric : RitualAbstract
     public RitualGeneric(RitualGenericSO inputTemplate)
     {
         this.template = inputTemplate;
+        requiredCows = template.RequiredCows;
     }
 
     //METHODS
