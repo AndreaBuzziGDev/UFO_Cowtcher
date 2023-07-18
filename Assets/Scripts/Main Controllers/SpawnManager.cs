@@ -11,8 +11,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     private List<SpawnPoint> allSpawnPoints = new();
     public List<SpawnPoint> AllSpawnPoints { get { return allSpawnPoints; } }
 
+    //TODO: USE AbstractRitual INSTEAD
+    //private List<CowSummoningRitual> rituals = new();
 
-    private List<CowSummoningRitual> rituals = new();
     [SerializeField] private List<RitualAbstractSO> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
 
     private List<SpawnQueuedCow> caughtCowWaitingForRespawn = new();
