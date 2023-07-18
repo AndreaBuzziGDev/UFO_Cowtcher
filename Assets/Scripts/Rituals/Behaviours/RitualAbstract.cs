@@ -4,18 +4,6 @@ using UnityEngine;
 
 public abstract class RitualAbstract
 {
-    //TODO: IMPLEMENT METHOD THAT CHECKS WETHER THIS RITUAL SHOULD "BE DONE" OR NO
-
-    //ENUMS
-    //TODO: FOR NOW IGNORE RITUAL TYPE
-    public enum ERitualType
-    {
-        SimpleCapture,
-        SequentialCapture,
-        ItemProximity,
-        ScoreThreshold
-    }
-
     //DATA
 
 
@@ -23,5 +11,8 @@ public abstract class RitualAbstract
 
     //METHODS
     public abstract void DoRitual();
+
+    //TODO: IMPLEMENT METHOD THAT CHECKS WETHER THIS RITUAL SHOULD "BE DONE" OR NO
+
 
 }
