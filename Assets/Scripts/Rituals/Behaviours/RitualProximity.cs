@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitualProximity : IRitualBehaviour
+public class RitualProximity : RitualAbstract
 {
-    public void DoRitual()
+    public override void DoRitual()
     {
         Debug.Log("RitProximity");
     }

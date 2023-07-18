@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitualSequentialCapture : IRitualBehaviour
+public class RitualSequentialCapture : RitualAbstract
 {
-    public void DoRitual()
+    public override void DoRitual()
     {
         Debug.Log("RitSequentialCapture");
     }
