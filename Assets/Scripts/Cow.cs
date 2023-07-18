@@ -15,7 +15,7 @@ public class Cow : MonoBehaviour
 
 
     //DATA
-    private SpriteRenderer spriteRenderer;
+
     ///INNATE COW DATA
     private State currentState = State.Calm;
     public State CurrentState { get { return currentState; } }
@@ -68,7 +68,9 @@ public class Cow : MonoBehaviour
 
 
 
-    /// COMPLEX DATA
+    ///COMPLEX DATA
+    
+    ///HIDEOUT
     private List<ScriptableHideout.Type> favouriteHideoutTypes = new();
     public List<ScriptableHideout.Type> FavouriteHideoutTypes { get { return favouriteHideoutTypes; } }
 
@@ -76,22 +78,25 @@ public class Cow : MonoBehaviour
     public List<SpawnPoint.Type> AllowedSpawnPointTypes { get { return allowedSpawnPointTypes; } }
 
 
-
+    ///BUFFS
     private AbstractAlteration.EBuffType alteration;
     public AbstractAlteration.EBuffType Alteration { get { return alteration; } }
 
 
-    //TODO: EVALUATE FURTHER DIVERSIFICATION OF MOVEMENT PATTERNS
+    ///MOVEMENT PATTERNS
     private AbstractMovementPattern movPatternCalm;
     private AbstractMovementAlert movPatternAlert;
 
-
-    //TECHNICAL DATA FOR OTHER PURPOSES
-    private SpriteRenderer sr;
-    private Rigidbody rb;
-
+    ///MOVEMENT DIRECTION (AFFECTED BY MOVEMENT PATTERNS)
     private Vector3 movementDirection = Vector3.forward;
     public Vector3 MovementDirection { get { return movementDirection; } }
+
+
+
+    //TECHNICAL DATA FOR OTHER PURPOSES
+    private Rigidbody rb;
+    private SpriteRenderer spriteRenderer;
+
 
 
 
