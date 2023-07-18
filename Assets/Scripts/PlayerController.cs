@@ -127,7 +127,11 @@ public class PlayerController : MonoBehaviour
         foreach(SAAbstract alteration in statusAlterations)
         {
             alteration.UpdateTimers(delta);
-            if (!alteration.IsStillRunning())
+            if (alteration.IsStillRunning())
+            {
+                alteration.ApplyBuff();
+            }
+            else
             {
                 expired.Add(alteration);
             }

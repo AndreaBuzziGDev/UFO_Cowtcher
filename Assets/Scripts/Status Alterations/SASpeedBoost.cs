@@ -30,8 +30,11 @@ public class SASpeedBoost : SAAbstract
     ///BUFF
     public override void ApplyBuff()
     {
-        PlayerController pc = GameController.Instance.FindPlayerAnywhere();
-        pc.SetBonusMovSpeed(this.speedBoostIntensity);
+        if (IsStillRunning())
+        {
+            PlayerController pc = GameController.Instance.FindPlayerAnywhere();
+            pc.SetBonusMovSpeed(this.speedBoostIntensity);
+        }
     }
 
     ///TIMERS
