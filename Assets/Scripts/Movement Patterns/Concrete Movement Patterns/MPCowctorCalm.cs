@@ -19,7 +19,6 @@ public class MPCowctorCalm : AbstractMovementPattern
         this.template = inputTemplate;
         this.timerSameDirectionMovement = inputTemplate.TimerSameDirectionMovement;
         this.accelerationMultiplier = inputTemplate.accelerationMultiplier;
-        ResetTimers();
     }
 
 

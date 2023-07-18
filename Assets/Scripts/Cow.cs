@@ -151,10 +151,12 @@ public class Cow : MonoBehaviour
         }
         else
         {
-            this.TimerAlertToCalm -= Time.deltaTime;
             if (this.TimerAlertToCalm <= 0.0f) this.currentState = State.Calm;
+            else this.TimerAlertToCalm -= Time.deltaTime;
         }
-
+        Debug.Log("IsAlert: " + IsAlert);
+        Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
+        Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
 
         //STEP 2
         if (IsAlert)
@@ -162,7 +164,6 @@ public class Cow : MonoBehaviour
 
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
             if (CowHideoutHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
-            //Debug.Log("TimerAlertToPanic: " + this.TimerAlertToPanic);
 
 
             //ALERT SUB-STATE
@@ -210,7 +211,7 @@ public class Cow : MonoBehaviour
         this.currentState = State.Calm;
 
         //RESET TIMERS
-        this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
+        this.TimerAlertToCalm = 0.0f;
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
     }
 

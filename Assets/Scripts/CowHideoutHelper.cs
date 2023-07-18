@@ -11,12 +11,12 @@ public class CowHideoutHelper
         //TODO: UFO POSITION HAS TO BE PROJECTED TO THE GROUND
 
         Vector3 cowPos = interestedCow.transform.position;
-        Vector3 ufoPos = GameController.Instance.FindUFOAnywhere().transform.position;
+        UFO player = GameController.Instance.FindUFOAnywhere();
+        Vector3 ufoPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
 
         Vector3 distanceVec = cowPos - ufoPos;
-        float distance = distanceVec.magnitude;
 
-        return (distance < interestedCow.AlertRadius);//TODO: COW UNITS
+        return (distanceVec.magnitude < interestedCow.AlertRadius);//TODO: COW UNITS
     }
 
     public static Hideout FindHideout(Cow interestedCow)

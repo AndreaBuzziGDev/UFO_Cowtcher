@@ -19,7 +19,6 @@ public class MPCowctorAlert : AbstractMovementAlert
     {
         this.template = inputTemplate;
         this.MinDirectionPersistenceSlider = template.MinDirectionPersistenceSlider;
-        ResetTimers();
     }
 
     ///TEMPLATE
