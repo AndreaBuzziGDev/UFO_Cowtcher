@@ -109,6 +109,15 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         }
     }
 
+    public void HandleCowCapture(Cow interestedCow)
+    {
+        //
+
+
+        //
+        MarkForRespawn(interestedCow.UID);
+    }
+
 
     ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
     public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID) 

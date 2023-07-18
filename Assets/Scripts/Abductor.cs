@@ -115,7 +115,7 @@ public class Abductor : MonoBehaviour
             UFO.ChangeScore(cow.Score);
 
             //TODO: WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
-            SpawnManager.Instance.MarkForRespawn(cow.UID);
+            SpawnManager.Instance.HandleCowCapture(cow);
 
             if (cow.Alteration != null)
             {
