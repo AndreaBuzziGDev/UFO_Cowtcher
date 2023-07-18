@@ -119,7 +119,6 @@ public class Abductor : MonoBehaviour
 
             if (cow.Alteration != null)
             {
-                Debug.Log("Handling Alteration add: " + cow.Alteration.Type);
                 GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
             }
 
