@@ -17,18 +17,6 @@ public class RitualGeneric : RitualAbstract
     }
 
     //METHODS
+    public override void DoRitual(ScriptableCow.UniqueID UID) => ChangeCapturedCowAmount(UID, 1);
 
-    public override void DoRitual(ScriptableCow.UniqueID UID)
-    {
-        Debug.Log("RitualGeneric - Increasing counter for Cow: " + UID);
-        ChangeCapturedCowAmount(UID, 1);
-
-        //ALSO INCREASE "ANY" COUNTER.
-        if (HasCow(ScriptableCow.UniqueID.ANY))
-        {
-            Debug.Log("RitualGeneric - ALSO Increasing counter for Cow: " + ScriptableCow.UniqueID.ANY);
-            ChangeCapturedCowAmount(ScriptableCow.UniqueID.ANY, 1);
-        }
-
-    }
 }
