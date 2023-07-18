@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitualModule
+public class CowSummoningRitualModule
 {
     //DATA
     private ScriptableCow.UniqueID targetCowType;
@@ -13,7 +13,7 @@ public class RitualModule
 
 
     //CONSTRUCTORS
-    public RitualModule(ScriptableCow.UniqueID assignedCowType, int target)
+    public CowSummoningRitualModule(ScriptableCow.UniqueID assignedCowType, int target)
     {
         this.targetCowType = assignedCowType;
         this.targetAmount = target;

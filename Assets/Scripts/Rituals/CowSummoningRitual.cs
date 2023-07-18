@@ -15,7 +15,7 @@ public class CowSummoningRitual
 
 
     //DATA
-    private Dictionary<ScriptableCow.UniqueID, RitualModule> ritualDictionary = new();
+    private Dictionary<ScriptableCow.UniqueID, CowSummoningRitualModule> ritualDictionary = new();
 
 
     private RitualAbstract behaviour;
@@ -50,7 +50,7 @@ public class CowSummoningRitual
         //
         foreach (KeyValuePair<ScriptableCow.UniqueID, int> entry in plottedRituals)
         {
-            RitualModule iteratedModule = new RitualModule(entry.Key, entry.Value);
+            CowSummoningRitualModule iteratedModule = new CowSummoningRitualModule(entry.Key, entry.Value);
             ritualDictionary.Add(entry.Key, iteratedModule);
         }
 
@@ -91,7 +91,7 @@ public class CowSummoningRitual
 
     public void ChangeCapturedCowCount(ScriptableCow.UniqueID cowUID, int delta)
     {
-        RitualModule rm = ritualDictionary[cowUID];
+        CowSummoningRitualModule rm = ritualDictionary[cowUID];
         rm.ChangeAmount(delta);
     }
 
@@ -100,7 +100,7 @@ public class CowSummoningRitual
         //TODO: THIS MIGHT BE CLEANED UP
         if (ritualDictionary.Count > 0)
         {
-            foreach (KeyValuePair<ScriptableCow.UniqueID, RitualModule> entry in ritualDictionary)
+            foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
             {
                 if (!entry.Value.IsReadyToSpawn)
                 {
@@ -118,7 +118,7 @@ public class CowSummoningRitual
 
     public void HandleCowSpawn()
     {
-        foreach (KeyValuePair<ScriptableCow.UniqueID, RitualModule> entry in ritualDictionary)
+        foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
         {
             entry.Value.HandleCowSpawn();
         }
