@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitProximity : IRitualBehaviour
+public class RitualProximity : IRitualBehaviour
 {
     public void DoRitual()
     {

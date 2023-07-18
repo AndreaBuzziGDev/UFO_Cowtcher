@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Ritual", menuName = "Ritual")]
-public class ScriptableRitual : ScriptableObject
+//[CreateAssetMenu(fileName = "New Ritual", menuName = "Ritual")]
+public abstract class RitualAbstractSO : ScriptableObject
 {
     //DATA
     [SerializeField] private List<ScriptableCow.UniqueID> requiredCows = new List<ScriptableCow.UniqueID>();

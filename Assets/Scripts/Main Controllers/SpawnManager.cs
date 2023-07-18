@@ -13,7 +13,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
 
     private List<CowSummoningRitual> rituals = new();
-    [SerializeField] private List<ScriptableRitual> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
+    [SerializeField] private List<RitualAbstractSO> allTemplateRituals;//PUT ALL SCRIPTABLE OBJECT RITUALS INSIDE HERE.
 
     private List<SpawnQueuedCow> caughtCowWaitingForRespawn = new();
 

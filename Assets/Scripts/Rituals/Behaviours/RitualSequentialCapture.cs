@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitSequentialCapture : IRitualBehaviour
+public class RitualSequentialCapture : IRitualBehaviour
 {
     public void DoRitual()
     {

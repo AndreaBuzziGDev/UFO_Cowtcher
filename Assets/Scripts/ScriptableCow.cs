@@ -74,7 +74,7 @@ public class ScriptableCow : ScriptableObject
 
 
     ///SPAWN AND RESPAWN DATA
-    public ScriptableRitual SummoningRitual;//TODO: MUST BE NULL-SAFE
+    public RitualAbstractSO SummoningRitual;//TODO: MUST BE NULL-SAFE
     public List<ScriptableHideout.Type> FavouriteHideoutTypes = new();
     public List<SpawnPoint.Type> AllowedSpawnPointTypes = new();
 

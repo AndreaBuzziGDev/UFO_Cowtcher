@@ -31,7 +31,7 @@ public class CowSummoningRitual
         ScriptableCow sc = baseCowInformation.ReferenceTemplate;
 
         //2) Scriptable Cow -> Scriptable Ritual
-        ScriptableRitual sr = sc.SummoningRitual;
+        RitualAbstractSO sr = sc.SummoningRitual;
 
         //3) Ogni scriptable ritual -> N RitualModule DOVE: N è il numero di UniqueIDs di mucche diversi.
         Dictionary<ScriptableCow.UniqueID, int> plottedRituals = new();
@@ -61,16 +61,16 @@ public class CowSummoningRitual
 
 
     //RITUAL TYPE MAPPING
-    private IRitualBehaviour mapBehaviour(ScriptableRitual.ERitualType type)
+    private IRitualBehaviour mapBehaviour(RitualAbstractSO.ERitualType type)
     {
         switch (type)
         {
-            case ScriptableRitual.ERitualType.SequentialCapture:
-                return new RitSequentialCapture();
-            case ScriptableRitual.ERitualType.ItemProximity:
-                return new RitProximity();
-            case ScriptableRitual.ERitualType.ScoreThreshold:
-                return new RitScoreThreshold();
+            case RitualAbstractSO.ERitualType.SequentialCapture:
+                return new RitualSequentialCapture();
+            case RitualAbstractSO.ERitualType.ItemProximity:
+                return new RitualProximity();
+            case RitualAbstractSO.ERitualType.ScoreThreshold:
+                return new RitualScoreThreshold();
             default:
                 //HAS SimpleCapture EMBEDDED
                 return null;
