@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class RitualAbstract
 {
     //DATA
-
-
+    [SerializeField] private List<ScriptableCow.UniqueID> requiredCows = new List<ScriptableCow.UniqueID>();
+    public List<ScriptableCow.UniqueID> RequiredCows { get { return requiredCows; } }
 
 
     //METHODS
