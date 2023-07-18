@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitualProximitySO : MonoBehaviour
+[CreateAssetMenu(fileName = "New Proximity Ritual", menuName = "Rituals/Proximity")]
+public class RitualProximitySO : RitualAbstractSO
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //DATA
 
-    // Update is called once per frame
-    void Update()
+
+    //METHODS
+    public override RitualAbstract GetRitual()
     {
-        
+        new RitualProximity(this);
     }
 }

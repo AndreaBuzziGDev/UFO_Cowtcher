@@ -5,13 +5,13 @@ using UnityEngine;
 public class RitualSequentialCapture : RitualAbstract
 {
     //DATA
-
+    RitualSequentialCaptureSO template;
 
 
     //CONSTRUCTOR
-    public RitualSequentialCapture()
+    public RitualSequentialCapture(RitualSequentialCaptureSO inputTemplate)
     {
-
+        this.template = inputTemplate;
     }
 
     //METHODS

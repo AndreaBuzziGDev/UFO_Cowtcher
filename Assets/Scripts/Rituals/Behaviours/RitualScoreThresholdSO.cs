@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitualScoreThresholdSO : MonoBehaviour
+[CreateAssetMenu(fileName = "New Threshold Ritual", menuName = "Rituals/Threshold")]
+public class RitualScoreThresholdSO : RitualAbstractSO
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //DATA
 
-    // Update is called once per frame
-    void Update()
+
+    //METHODS
+    public override RitualAbstract GetRitual()
     {
-        
+        new RitualScoreThreshold(this);
     }
 }

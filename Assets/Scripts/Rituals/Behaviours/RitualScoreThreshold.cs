@@ -5,14 +5,15 @@ using UnityEngine;
 public class RitualScoreThreshold : RitualAbstract
 {
     //DATA
-
+    RitualScoreThresholdSO template;
 
 
     //CONSTRUCTOR
-    public RitualScoreThreshold()
+    public RitualScoreThreshold(RitualScoreThresholdSO inputTemplate)
     {
-
+        this.template = inputTemplate;
     }
+
 
     //METHODS
     public override void DoRitual()

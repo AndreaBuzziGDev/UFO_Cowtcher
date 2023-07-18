@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RitualSequentialCaptureSO : MonoBehaviour
+[CreateAssetMenu(fileName = "New Sequential Ritual", menuName = "Rituals/Sequential")]
+public class RitualSequentialCaptureSO : RitualAbstractSO
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //DATA
 
-    // Update is called once per frame
-    void Update()
+
+    //METHODS
+    public override RitualAbstract GetRitual()
     {
-        
+        new RitualSequentialCapture(this);
     }
 }

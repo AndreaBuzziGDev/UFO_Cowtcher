@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[CreateAssetMenu(fileName = "New Ritual", menuName = "Ritual")]
 public abstract class RitualAbstractSO : ScriptableObject
 {
     //DATA

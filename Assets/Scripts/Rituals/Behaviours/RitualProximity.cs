@@ -5,13 +5,13 @@ using UnityEngine;
 public class RitualProximity : RitualAbstract
 {
     //DATA
-
+    RitualProximitySO template;
 
 
     //CONSTRUCTOR
-    public RitualProximity()
+    public RitualProximity(RitualProximitySO inputTemplate)
     {
-
+        this.template = inputTemplate;
     }
 
     //METHODS
