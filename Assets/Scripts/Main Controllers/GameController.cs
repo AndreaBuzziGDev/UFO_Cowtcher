@@ -62,6 +62,7 @@ public class GameController : MonoSingleton<GameController>
     //...
 
     /// STATE-HANDLING FUNCTIONALITIES
+    //TODO: POSSIBLE VULNERABILITY ACCIDENTALLY CAUSED BY THE INVOCATIONS OF THIS METHOD BY OTHER COMPONENTS THAT RESULTS IN THE WRONG UI INITIALIZATION ON STARTUP.
     public void SetState(EGameState targetState)
     {
         state = targetState;

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68859be9156dce64da5d2a3edcc841c1, type: 3}
   m_Name: KowbraTemporary
   m_EditorClassIdentifier: 
+  targetSpawnedCow: 10
   requiredCows: 01000000

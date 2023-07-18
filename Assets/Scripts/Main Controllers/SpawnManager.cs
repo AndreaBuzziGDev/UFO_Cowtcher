@@ -86,10 +86,10 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
     public List<SpawnPoint> GetSpawnPoint(SpawnPoint.Type type)
     {
-        if (spawnPointsByType.ContainsKey(type)) 
+        if (spawnPointsByType.ContainsKey(type))
             return spawnPointsByType[type];
-        else 
-            return null;
+        else
+            return new List<SpawnPoint>();
     }
 
     ///FUNCTIONALITY TO SPAWN COWS ACCESSIBLE FROM ANYWHERE
@@ -107,6 +107,40 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         {
             Debug.Log("No Valid Spawn Point found for Cow: " + spawnedCow.CowName);
         }
+    }
+
+    public void HandleCowCapture(Cow interestedCow)
+    {
+        //
+        List<RitualAbstract> rituals = Cowdex.Instance.GetRitualsThatContainCow(interestedCow.UID);
+
+        //TODO: THIS CAN BE OPTIMIZED BY STORING UIDs AND LATER SINGLE-CALLING GetCows FROM Cowdex
+        foreach (RitualAbstract ritual in rituals)
+        {
+            if (ritual.HasCow(interestedCow.UID))
+            {
+                ritual.DoRitual(interestedCow.UID);
+                if (ritual.IsReadyToSpawn())
+                {
+                    ritual.HandleCowSpawn();
+                    //Cow toBeSpawnedRitualCompleteCow = Cowdex.Instance.GetCow(interestedCow.UID);
+
+                    GameObject toBeSpawnedRitualCompleteCow = Instantiate(Cowdex.Instance.GetCow(ritual.TargetSpawnedCow).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+
+                    //TODO: CHECK IF THERE ARE SPAWN POINTS AVAILABLE FOR THE COW. IF NOT, SPAWN AT ORIGIN?
+
+                }
+            }
+
+            /*
+            CowSummoningRitualModule iteratedModule = new CowSummoningRitualModule(entry.Key, entry.Value);
+            ritualDictionary.Add(entry.Key, iteratedModule);
+            */
+        }
+
+
+        //
+        MarkForRespawn(interestedCow.UID);
     }
 
 

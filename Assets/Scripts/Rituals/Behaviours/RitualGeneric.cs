@@ -13,6 +13,7 @@ public class RitualGeneric : RitualAbstract
     {
         this.template = inputTemplate;
         this.requiredCows = template.RequiredCows;
+        this.targetSpawnedCow = template.targetSpawnedCow;
         BuildRitualModules(this.requiredCows);
     }
 

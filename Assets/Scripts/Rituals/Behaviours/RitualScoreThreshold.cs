@@ -12,7 +12,8 @@ public class RitualScoreThreshold : RitualAbstract
     public RitualScoreThreshold(RitualScoreThresholdSO inputTemplate)
     {
         this.template = inputTemplate;
-        requiredCows = template.RequiredCows;
+        this.requiredCows = template.RequiredCows;
+        this.targetSpawnedCow = template.targetSpawnedCow;
         BuildRitualModules(this.requiredCows);
     }
 

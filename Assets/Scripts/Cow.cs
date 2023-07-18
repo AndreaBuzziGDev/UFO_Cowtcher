@@ -278,7 +278,6 @@ public class Cow : MonoBehaviour
         if (movPatternCalm != null)
         {
             movementDirection = movPatternCalm.ManageMovement(this);
-            Debug.Log("Calm Movement Direction: " + movementDirection);
             movPatternCalm.UpdateTimers(Time.deltaTime);
         }
         else movementDirection = Vector3.zero;
