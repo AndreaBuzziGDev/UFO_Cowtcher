@@ -20,7 +20,7 @@ public class SASpeedBoost : SAAbstract
         this.template = inputTemplate;
         this.type = template.buffType;
         this.buffDuration = template.buffDuration;
-        this.buffDuration = template.speedBoostIntensity;
+        this.speedBoostIntensity = template.speedBoostIntensity;
     }
 
     //METHODS
@@ -30,6 +30,9 @@ public class SASpeedBoost : SAAbstract
     ///BUFF
     public override void ApplyBuff()
     {
+        Debug.Log("SASpeedBoost IsStillRunning: " + IsStillRunning());
+        Debug.Log("SASpeedBoost speedBoostIntensity: " + speedBoostIntensity);
+
         if (IsStillRunning())
         {
             PlayerController pc = GameController.Instance.FindPlayerAnywhere();
