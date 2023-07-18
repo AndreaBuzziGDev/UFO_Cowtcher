@@ -185,8 +185,7 @@ public class Cow : MonoBehaviour
             //RESET PANIC TIMER
             this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
-            //TODO: HANDLE CALM MOVEMENT HERE
-
+            HandleCalmMovement();
 
 
             //UPDATING THE MOVEMENT DIRECTION BASED ON CALM PATTERN
@@ -224,7 +223,7 @@ public class Cow : MonoBehaviour
         if (this.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
-        rb.MovePosition(transform.position + movementDirection * Time.deltaTime * mySpeed);
+        rb.MovePosition(transform.position + mySpeed * Time.deltaTime * movementDirection);
     }
 
 
@@ -255,16 +254,39 @@ public class Cow : MonoBehaviour
     }
 
 
-    private void HandleAlertMovement()
+
+
+    //MOVEMENT PATTERNS
+    ///CALM
+    private void HandleCalmMovement()
     {
-        if (movPatternAlert != null) movementDirection = movPatternAlert.ManageMovement(this);
+        if (movPatternCalm != null)
+        {
+            movementDirection = movPatternCalm.ManageMovement(this);
+            movPatternAlert.UpdateTimers(Time.deltaTime);
+        }
         else movementDirection = Vector3.zero;
-        //Debug.Log("movementDirection (ALERT): " + movementDirection);
     }
 
+    ///ALERT
+    private void HandleAlertMovement()
+    {
+        if (movPatternAlert != null)
+        {
+            movementDirection = movPatternAlert.ManageMovement(this);
+            movPatternAlert.UpdateTimers(Time.deltaTime);
+        }
+        else movementDirection = Vector3.zero;
+    }
+
+    ///PANIC
     private void HandlePanicMovement()
     {
-        if (movPatternAlert != null) movementDirection = movPatternAlert.ManagePanic(this);
+        if (movPatternAlert != null) 
+        {
+            movementDirection = movPatternAlert.ManagePanic(this);
+            movPatternAlert.UpdateTimers(Time.deltaTime);
+        }
         else movementDirection = Vector3.zero;
         //Debug.Log("movementDirection (PANIC): " + movementDirection);
     }
