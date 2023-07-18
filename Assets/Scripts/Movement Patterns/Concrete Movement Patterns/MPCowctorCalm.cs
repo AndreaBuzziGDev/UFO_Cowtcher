@@ -17,8 +17,7 @@ public class MPCowctorCalm : AbstractMovementPattern
     public MPCowctorCalm(MPCowctorCalmSO inputTemplate)
     {
         this.template = inputTemplate;
-        this.timerSameDirectionMovement = inputTemplate.TimerSameDirectionMovement;
-        this.accelerationMultiplier = inputTemplate.accelerationMultiplier;
+        this.accelerationMultiplier = template.accelerationMultiplier;
     }
 
 
@@ -33,10 +32,13 @@ public class MPCowctorCalm : AbstractMovementPattern
         if (timerSameDirectionMovement <= 0.0f)
         {
             ResetTimers();
-            result = accelerationMultiplier * UtilsRadius.Vector3OnUnitCircle(1).normalized;
+
+            result = UtilsRadius.Vector3OnUnitCircle(1).normalized;
         }
-        float speedMultiplier = template.TimerSameDirectionMovement - timerSameDirectionMovement;
-        result = accelerationMultiplier * speedMultiplier * result;
+
+        //ADDED A MARGIN TO AVOID VECTOR 0 AS A RESULT
+        float speedMultiplier = (template.TimerSameDirectionMovement + 0.25f) - timerSameDirectionMovement;
+        result = accelerationMultiplier * speedMultiplier * result.normalized;
 
         return result;
     }

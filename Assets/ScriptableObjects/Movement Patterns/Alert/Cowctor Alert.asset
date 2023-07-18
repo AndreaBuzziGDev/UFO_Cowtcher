@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cowctor Alert
   m_EditorClassIdentifier: 
   timerSameDirectionMovement: 10
-  MinDirectionPersistenceSlider: 2
+  MinDirectionPersistenceSlider: 1

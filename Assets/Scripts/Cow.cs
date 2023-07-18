@@ -270,9 +270,11 @@ public class Cow : MonoBehaviour
         if (movPatternCalm != null)
         {
             movementDirection = movPatternCalm.ManageMovement(this);
-            movPatternAlert.UpdateTimers(Time.deltaTime);
+            Debug.Log("Calm Movement Direction: " + movementDirection);
+            movPatternCalm.UpdateTimers(Time.deltaTime);
         }
         else movementDirection = Vector3.zero;
+
     }
 
     ///ALERT

@@ -29,7 +29,11 @@ public class MPCowctorAlert : AbstractMovementAlert
     {
         Vector3 result;
 
-        float randomChance = Random.Range(0, timerSameDirectionMovement - MinDirectionPersistenceSlider);
+        float randomChance = Random.Range(0, template.timerSameDirectionMovement - MinDirectionPersistenceSlider);
+        Debug.Log("MinDirectionPersistenceSlider: " + MinDirectionPersistenceSlider);
+        Debug.Log("timerSameDirectionMovement: " + timerSameDirectionMovement);
+        Debug.Log("randomChance: " + randomChance);
+
         if (timerSameDirectionMovement > randomChance)
         {
             result = interestedCow.MovementDirection;
@@ -39,6 +43,7 @@ public class MPCowctorAlert : AbstractMovementAlert
             result = UtilsRadius.Vector3OnUnitCircle(1).normalized;
             ResetTimers();
         }
+        Debug.Log("result: " + result);
 
         return result.normalized;
 
