@@ -43,6 +43,8 @@ public class MPCowgonAlert : AbstractMovementAlert
             if ((cowPos-baseUFOPos).magnitude < interestedCow.AlertRadius )
             {
                 pc.ApplyStun(this.stunDuration);
+                BuffPanel buffpanel = UIController.Instance.IGPanel.BuffPanel.GetComponent<BuffPanel>();
+                buffpanel.fadeToTransparent = true;
             }
             ResetTimers();
         }
