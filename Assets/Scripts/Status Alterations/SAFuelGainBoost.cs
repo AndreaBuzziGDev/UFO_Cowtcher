@@ -2,27 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SASpeedBoost : SAAbstract
+public class SAFuelGainBoost : SAAbstract
 {
     //DATA
     ///USEFUL BUFF DATA
     public float buffDuration;
-    public float speedBoostIntensity;
-    PlayerController pc;
+    public float additionalFuelGainPercent;
+    UFO pc;
 
     ///TEMPLATE
-    SASpeedBoostSO template;
+    SAFuelGainBoostSO template;
 
 
 
     //CONSTRUCTOR
-    public SASpeedBoost(SASpeedBoostSO inputTemplate)
+    public SAFuelGainBoost(SAFuelGainBoostSO inputTemplate)
     {
         this.template = inputTemplate;
         this.type = template.buffType;
         this.buffDuration = template.buffDuration;
-        this.speedBoostIntensity = template.speedBoostIntensity;
-        pc = GameController.Instance.FindPlayerAnywhere();
+        this.additionalFuelGainPercent = template.additionalFuelGainPercent;
+        pc = GameController.Instance.FindUFOAnywhere();
     }
 
     //METHODS
@@ -32,12 +32,12 @@ public class SASpeedBoost : SAAbstract
     ///BUFF
     public override void ApplyBuff()
     {
-        pc.SetBonusMovSpeed(this.speedBoostIntensity);
+        pc.ChangeFuelBoostMultiplier(this.additionalFuelGainPercent);
     }
 
     public override void ExpireBuff()
     {
-        pc.SetBonusMovSpeed(0);
+        pc.ChangeFuelBoostMultiplier(-this.additionalFuelGainPercent);
     }
 
 
@@ -51,5 +51,4 @@ public class SASpeedBoost : SAAbstract
     {
         return (this.buffDuration > 0);
     }
-
 }

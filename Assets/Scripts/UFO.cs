@@ -96,10 +96,9 @@ public class UFO : MonoBehaviour
         UIController.Instance.IGPanel.HighScoreBar.AddScore(delta);
     }
 
-    public void ChangeFuelBoostMultiplier(int delta)
+    public void ChangeFuelBoostMultiplier(float delta)
     {
         fuelGainMultiplier += delta;
     }
-
 
 }
