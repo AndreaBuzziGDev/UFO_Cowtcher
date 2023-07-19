@@ -18,11 +18,11 @@ MonoBehaviour:
   Description: 
   FuelRecoveryAmount: 5
   AlertRadius: 5
-  SpeedCalm: 2
-  SpeedAlert: 2
+  SpeedCalm: 3
+  SpeedAlert: 3
   Score: 20
-  TimerAlertToCalm: 1
-  TimerAlertToPanic: 1
+  TimerAlertToCalm: 3
+  TimerAlertToPanic: 2
   TimerRespawn: 5
   movPatternCalm: {fileID: 11400000, guid: d0a60b24297a731498fcb936368bd754, type: 2}
   movPatternAlert: {fileID: 11400000, guid: df8fd1a2b4549b54291e164e8ad09ff7, type: 2}
