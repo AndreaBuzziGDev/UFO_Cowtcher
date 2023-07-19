@@ -29,7 +29,7 @@ public class MPAlertTowardsUFO : AbstractMovementAlert
         Vector3 planeProjectedUfoPos = new Vector3(ufoPos.x, 0, ufoPos.z);
 
 
-        return (planeProjectedUfoPos - interestedCow.transform.position);
+        return (planeProjectedUfoPos - interestedCow.transform.position).normalized;
     }
 
     public override Vector3 ManagePanic(Cow myCow)
