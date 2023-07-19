@@ -27,6 +27,6 @@ MonoBehaviour:
   movPatternCalm: {fileID: 11400000, guid: 6c71cfc2e1ec6dd41a598bdd4532160d, type: 2}
   movPatternAlert: {fileID: 11400000, guid: dff38ae395a91b54299c416719a22506, type: 2}
   Alteration: {fileID: 11400000, guid: 2ef9c97f981d5e64d850030395f8efcd, type: 2}
-  SummoningRitual: {fileID: 0}
+  SummoningRitual: {fileID: 11400000, guid: 5eed19db8b0ef0e4796e9439d0220e2d, type: 2}
   FavouriteHideoutTypes: 
-  AllowedSpawnPointTypes: 03000000
+  AllowedSpawnPointTypes: 
