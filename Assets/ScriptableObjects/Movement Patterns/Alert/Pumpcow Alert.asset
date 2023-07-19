@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60362dba62618b141bc88b804a46bb8b, type: 3}
   m_Name: Pumpcow Alert
   m_EditorClassIdentifier: 
-  DashSpeed: 3
+  DashSpeed: 4
   DashDuration: 1.1
