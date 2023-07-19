@@ -23,10 +23,10 @@ public class BuffPanel : MonoBehaviour
         imageToFade = GetComponent<Image>();
         panelColor = new Color(255, 0, 0, 0);
 
-        FastCatch.enabled = false;
-        FuelBoost.enabled = false;
-        FuelLoss.enabled = false;
-        SpeedBoost.enabled = false;
+        //FastCatch.enabled = false;
+        //FuelBoost.enabled = false;
+        //FuelLoss.enabled = false;
+        //SpeedBoost.enabled = false;
     }
 
     private void Update()
@@ -63,7 +63,7 @@ public class BuffPanel : MonoBehaviour
 
     public void ActivateFuelBoost()
     {
-        if (FastCatch != null)
+        if (FuelBoost != null)
         {
             FuelBoost.enabled = true;
         }
@@ -71,7 +71,7 @@ public class BuffPanel : MonoBehaviour
 
     public void ActivateFuelLoss()
     {
-        if (FastCatch != null)
+        if (FuelLoss != null)
         {
             FuelLoss.enabled = true;
         }
@@ -79,13 +79,13 @@ public class BuffPanel : MonoBehaviour
 
     public void ActivateSpeedBoost()
     {
-        if (FastCatch != null)
+        if (SpeedBoost != null)
         {
             SpeedBoost.enabled = true;
         }
     }
 
-    public void DeActivateFastCatch()
+    public void DeactivateFastCatch()
     {
         if (FastCatch != null)
         {
@@ -93,25 +93,25 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
-    public void DeActivateFuelBoost()
+    public void DeactivateFuelBoost()
     {
-        if (FastCatch != null)
+        if (FuelBoost != null)
         {
             FuelBoost.enabled = false;
         }
     }
 
-    public void DeActivateFuelLoss()
+    public void DeactivateFuelLoss()
     {
-        if (FastCatch != null)
+        if (FuelLoss != null)
         {
             FuelLoss.enabled = false;
         }
     }
 
-    public void DeActivateSpeedBoost()
+    public void DeactivateSpeedBoost()
     {
-        if (FastCatch != null)
+        if (SpeedBoost != null)
         {
             SpeedBoost.enabled = false;
         }

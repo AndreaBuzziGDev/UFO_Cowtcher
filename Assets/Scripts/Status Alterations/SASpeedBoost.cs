@@ -34,15 +34,7 @@ public class SASpeedBoost : SAAbstract
         {
             PlayerController pc = GameController.Instance.FindPlayerAnywhere();
             pc.SetBonusMovSpeed(this.speedBoostIntensity);
-            BuffPanel buffpanel = UIController.Instance.IGPanel.BuffPanel.GetComponent<BuffPanel>();
-            buffpanel.ActivateFuelBoost();
         }
-        else
-        {
-            BuffPanel buffpanel = UIController.Instance.IGPanel.BuffPanel.GetComponent<BuffPanel>();
-            buffpanel.DeActivateFuelBoost();
-        }
-
     }
 
     ///TIMERS
