@@ -83,6 +83,8 @@ public class UFO : MonoBehaviour
     {
         fuelAmount += delta * fuelGainMultiplier;
         if (fuelAmount > MaxFuelAmount) fuelAmount = maxFuelAmount;
+
+        UIController.Instance.IGPanel.PlayerFuelBar.SetShaking();
     }
 
 

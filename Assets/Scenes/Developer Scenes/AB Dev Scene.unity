@@ -866,7 +866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4552672229932782447, guid: ea822461577626e46812a9e7995cd6ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7016222
+      value: 8.01
       objectReference: {fileID: 0}
     - target: {fileID: 4552672229932782447, guid: ea822461577626e46812a9e7995cd6ac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -874,7 +874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4552672229932782447, guid: ea822461577626e46812a9e7995cd6ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.13000011
+      value: 8.89
       objectReference: {fileID: 0}
     - target: {fileID: 4552672229932782447, guid: ea822461577626e46812a9e7995cd6ac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5123,6 +5123,18 @@ PrefabInstance:
     - target: {fileID: 3820895101116159225, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355709565715215492, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
+      propertyPath: shakeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355709565715215492, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
+      propertyPath: shakeSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355709565715215492, guid: ceeb680b9e6c82c4f9d486afe2405fe8, type: 3}
+      propertyPath: shakeAmount
+      value: 0.005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
