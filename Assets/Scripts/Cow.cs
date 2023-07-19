@@ -62,8 +62,6 @@ public class Cow : MonoBehaviour
     ///TIMERS
     [Min(0f)] private float TimerAlertToCalm;
     [Min(0f)] private float TimerAlertToPanic;
-    [Min(0f)] private float TimerCalmMovement;
-    [Min(0f)] private float TimerCalmStill;
 
 
 
@@ -105,6 +103,7 @@ public class Cow : MonoBehaviour
     private Rigidbody rb;
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private ParticleSystem HasFledParticles;
 
 
 
@@ -306,5 +305,21 @@ public class Cow : MonoBehaviour
         else movementDirection = Vector3.zero;
         //Debug.Log("movementDirection (PANIC): " + movementDirection);
     }
+
+
+
+    //MAP FLEEING
+    public void Flee()
+    {
+        //PARTICLE EMISSION
+        ParticleSystem fleeParticlesInstance = Instantiate(HasFledParticles, spriteRenderer.transform.position, Quaternion.identity);
+        fleeParticlesInstance.Play();
+        Destroy(fleeParticlesInstance.gameObject, 3.0f);
+
+        //DESTROY COW (FLED)
+        Destroy(this.gameObject);
+
+    }
+
 
 }

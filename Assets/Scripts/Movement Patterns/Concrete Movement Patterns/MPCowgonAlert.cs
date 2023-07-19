@@ -36,7 +36,14 @@ public class MPCowgonAlert : AbstractMovementAlert
         if (timerToPlayerStun <= 0.0f)
         {
             PlayerController pc = GameController.Instance.FindPlayerAnywhere();
-            pc.ApplyStun(this.stunDuration);
+
+            //STUN IF WITHIN RADIUS
+            Vector3 cowPos = interestedCow.transform.position;
+            Vector3 baseUFOPos = new Vector3(pc.transform.position.x, 0, pc.transform.position.z);//TODO: THIS IS USED OFTEN. EXPORT AS FUNCTIONALITY/UTILITY?
+            if ((cowPos-baseUFOPos).magnitude < interestedCow.AlertRadius )
+            {
+                pc.ApplyStun(this.stunDuration);
+            }
             ResetTimers();
         }
 

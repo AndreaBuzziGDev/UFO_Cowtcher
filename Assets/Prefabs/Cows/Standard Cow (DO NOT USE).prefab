@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cowTemplate: {fileID: 0}
+  HasFledParticles: {fileID: 125600187380295368, guid: 861c6e89228ffe0468232c77072ed3d3, type: 3}
 --- !u!1 &6481535709489429120
 GameObject:
   m_ObjectHideFlags: 0
