@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
   m_Name: Cowttleman
   m_EditorClassIdentifier: 
-  UID: 1
-  rarity: 0
-  Name: Jamal
+  UID: 12
+  rarity: 1
+  Name: Cowttleman
   Description: 
   FuelRecoveryAmount: 5
   AlertRadius: 8
@@ -27,6 +27,6 @@ MonoBehaviour:
   movPatternCalm: {fileID: 11400000, guid: 5ee150804550d4d4aa388ba26fa8cae2, type: 2}
   movPatternAlert: {fileID: 11400000, guid: 6d65614ce7d3db34691ec04853afd574, type: 2}
   Alteration: {fileID: 11400000, guid: 23ee7e8ea1a00c5419b94ae956580f14, type: 2}
-  SummoningRitual: {fileID: 0}
+  SummoningRitual: {fileID: 11400000, guid: 5a99030049709ec4aaf9fcc45a3ef9e2, type: 2}
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 03000000
