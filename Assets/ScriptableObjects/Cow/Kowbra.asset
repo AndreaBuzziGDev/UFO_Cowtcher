@@ -29,4 +29,4 @@ MonoBehaviour:
   Alteration: {fileID: 11400000, guid: 23ee7e8ea1a00c5419b94ae956580f14, type: 2}
   SummoningRitual: {fileID: 11400000, guid: 76d200f63b931184cbf4cc729e8f5fd7, type: 2}
   FavouriteHideoutTypes: 01000000
-  AllowedSpawnPointTypes: 00000000
+  AllowedSpawnPointTypes: 04000000
