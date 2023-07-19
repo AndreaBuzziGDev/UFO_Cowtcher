@@ -23,6 +23,10 @@ public class UIController : MonoSingleton<UIController>
     public InGamePanel IGPanel { get { return igPanel; } }
 
 
+
+
+
+
     //METHODS
 
     //FUNCTIONALITIES

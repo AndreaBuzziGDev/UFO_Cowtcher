@@ -33,11 +33,13 @@ public class SAFuelGainBoost : SAAbstract
     public override void ApplyBuff()
     {
         pc.ChangeFuelBoostMultiplier(this.additionalFuelGainPercent);
+        UIController.Instance.IGPanel.BuffPanel.ActivateFuelBoost();
     }
 
     public override void ExpireBuff()
     {
         pc.ChangeFuelBoostMultiplier(1);
+        UIController.Instance.IGPanel.BuffPanel.DeactivateFuelBoost();
     }
 
 

@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
     {
         //TODO: REFACTOR AS DICTIONARY -> ONLY ONE TYPE AT A TIME (SUB-TODO: IMPLEMENT COMPARABLES SO THE BIGGER BUFF WINS)
         statusAlterations.Add(newAlteration);
+        UIController.Instance.IGPanel.BuffPanel.fadeToTransparent = true;
     }
 
     private void UpdateAlterationsTimers(float delta)

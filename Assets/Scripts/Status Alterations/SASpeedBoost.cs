@@ -33,11 +33,13 @@ public class SASpeedBoost : SAAbstract
     public override void ApplyBuff()
     {
         pc.SetBonusMovSpeed(this.speedBoostIntensity);
+        UIController.Instance.IGPanel.BuffPanel.ActivateSpeedBoost();
     }
 
     public override void ExpireBuff()
     {
         pc.SetBonusMovSpeed(0);
+        UIController.Instance.IGPanel.BuffPanel.DeactivateSpeedBoost();
     }
 
 
