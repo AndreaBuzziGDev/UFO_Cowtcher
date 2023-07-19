@@ -45,6 +45,7 @@ public class MPCowgonAlert : AbstractMovementAlert
                 pc.ApplyStun(this.stunDuration);
                 BuffPanel buffpanel = UIController.Instance.IGPanel.BuffPanel.GetComponent<BuffPanel>();
                 buffpanel.fadeToTransparent = true;
+                  
             }
             ResetTimers();
         }

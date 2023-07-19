@@ -22,11 +22,12 @@ public class BuffPanel : MonoBehaviour
     {
         imageToFade = GetComponent<Image>();
         panelColor = new Color(255, 0, 0, 0);
+        currentFadeTimer = TimeToFadeToTransparent;
 
-        //FastCatch.enabled = false;
-        //FuelBoost.enabled = false;
-        //FuelLoss.enabled = false;
-        //SpeedBoost.enabled = false;
+        if (FastCatch != null) FastCatch.enabled = false;
+        if (FuelBoost != null) FuelBoost.enabled = false;
+        if (FuelLoss != null) FuelLoss.enabled = false;
+        if (SpeedBoost != null) SpeedBoost.enabled = false;
     }
 
     private void Update()
