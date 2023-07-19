@@ -8,6 +8,7 @@ public class SASpeedBoost : SAAbstract
     ///USEFUL BUFF DATA
     public float buffDuration;
     public float speedBoostIntensity;
+    PlayerController pc;
 
     ///TEMPLATE
     SASpeedBoostSO template;
@@ -21,6 +22,7 @@ public class SASpeedBoost : SAAbstract
         this.type = template.buffType;
         this.buffDuration = template.buffDuration;
         this.speedBoostIntensity = template.speedBoostIntensity;
+        pc = GameController.Instance.FindPlayerAnywhere();
     }
 
     //METHODS
@@ -32,10 +34,16 @@ public class SASpeedBoost : SAAbstract
     {
         if (IsStillRunning())
         {
-            PlayerController pc = GameController.Instance.FindPlayerAnywhere();
             pc.SetBonusMovSpeed(this.speedBoostIntensity);
         }
     }
+
+    public override void ExpireBuff()
+    {
+        pc.SetBonusMovSpeed(0);
+    }
+
+
 
     ///TIMERS
     public override void UpdateTimers(float delta)

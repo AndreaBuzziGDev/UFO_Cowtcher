@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateAlterationsTimers(float delta)
     {
         List<SAAbstract> expired = new();
-        foreach(SAAbstract alteration in statusAlterations)
+        foreach (SAAbstract alteration in statusAlterations)
         {
             alteration.UpdateTimers(delta);
             if (alteration.IsStillRunning())
@@ -138,6 +138,13 @@ public class PlayerController : MonoBehaviour
         }
 
         statusAlterations = statusAlterations.Except(expired).ToList();
+
+        //HANDLE ALTERATIONS THAT NEED TO BE MANUALLY EXPIRED (NB: UNCLEAN CODE SOLUTION - BUT IT WORKS)
+        Debug.Log("Expired Alterations count: " + expired.Count);
+        foreach (SAAbstract alteration in expired)
+        {
+            alteration.ExpireBuff();
+        }
     }
 
     public void SetBonusMovSpeed(float percentBonus)
