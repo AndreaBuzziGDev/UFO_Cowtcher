@@ -9,7 +9,6 @@ public class Cow : MonoBehaviour
     {
         Calm,
         Alert,
-        Panic,
         Hidden
     }
 
@@ -20,8 +19,7 @@ public class Cow : MonoBehaviour
     private State currentState = State.Calm;
     public State CurrentState { get { return currentState; } }
     public bool IsCalm { get { return (currentState == State.Calm); } }
-    public bool IsAlert { get { return (currentState == State.Alert || currentState == State.Panic); } }
-    public bool IsPanicking { get { return (currentState == State.Panic); } }
+    public bool IsAlert { get { return (currentState == State.Alert); } }
 
 
 
@@ -63,12 +61,13 @@ public class Cow : MonoBehaviour
     ///TIMERS
     [Min(0f)] private float TimerAlertToCalm;
     [Min(0f)] private float TimerAlertToPanic;
+    public bool IsPanicking { get { return (TimerAlertToPanic <= 0.0f); } }
 
 
 
 
     ///COMPLEX DATA
-    
+
     ///HIDEOUT
     private List<ScriptableHideout.Type> favouriteHideoutTypes = new();
     public List<ScriptableHideout.Type> FavouriteHideoutTypes { get { return favouriteHideoutTypes; } }
@@ -162,9 +161,11 @@ public class Cow : MonoBehaviour
             if (this.TimerAlertToCalm <= 0.0f) this.currentState = State.Calm;
             else this.TimerAlertToCalm -= Time.deltaTime;
         }
-        //Debug.Log("IsAlert: " + IsAlert);
-        //Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
-        //Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
+        /*
+        Debug.Log("IsAlert: " + IsAlert);
+        Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
+        Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
+        */
 
         //STEP 2
         if (IsAlert)
