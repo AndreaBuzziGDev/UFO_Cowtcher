@@ -21,6 +21,7 @@ public class Cow : MonoBehaviour
     public State CurrentState { get { return currentState; } }
     public bool IsCalm { get { return (currentState == State.Calm); } }
     public bool IsAlert { get { return (currentState == State.Alert || currentState == State.Panic); } }
+    public bool IsPanicking { get { return (currentState == State.Panic); } }
 
 
 

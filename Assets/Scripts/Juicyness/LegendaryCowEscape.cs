@@ -10,7 +10,10 @@ public class LegendaryCowEscape : MonoBehaviour
         Cow compCow = otherGO.GetComponent<Cow>();
         if (compCow != null && (compCow.Rarity == ScriptableCow.Rarity.Legendary))
         {
-            compCow.Flee();
+            if (compCow.IsPanicking)
+            {
+                compCow.Flee();
+            }
         }
 
     }
