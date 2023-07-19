@@ -15,4 +15,4 @@ MonoBehaviour:
   buffType: 1
   LastsIndefinitely: 0
   buffDuration: 20
-  speedBoostIntensity: 50
+  speedBoostIntensity: 100
