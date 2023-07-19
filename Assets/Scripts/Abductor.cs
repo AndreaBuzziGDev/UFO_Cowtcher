@@ -10,6 +10,7 @@ public class Abductor : MonoBehaviour
     [SerializeField] private float captureTimer;
     [SerializeField] private float timeBeforeReduction;
     [SerializeField] private float maxRadius;
+    [SerializeField] private float excessCaptureRadius = 0.4f;
     [SerializeField] private float cooldownTimer;//TODO: IMPLEMENT/USE
 
     private int circleSteps = 35;
@@ -150,14 +151,14 @@ public class Abductor : MonoBehaviour
     public void CowDetectionEnhanced()
     {
         cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, cowPhysicsLayer);
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+excessCaptureRadius), Vector3.down, transform.position.y, cowPhysicsLayer);
 
         Vector3 planeProjectedUFOPosition = new Vector3(transform.position.x, 0, transform.position.z);
 
         foreach (RaycastHit cow in collidersHit)
         {
             Cow myCowObject = cow.transform.gameObject.GetComponent<Cow>();
-            if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= maxRadius)
+            if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))
             {
                 cowsInRange.Add(cow.transform.gameObject);
             }

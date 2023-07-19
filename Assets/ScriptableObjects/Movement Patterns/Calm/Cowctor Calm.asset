@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f844ba0de9dc74f879c1f5b9ae01f8, type: 3}
   m_Name: Cowctor Calm
   m_EditorClassIdentifier: 
-  TimerSameDirectionMovement: 3
+  TimerSameDirectionMovement: 2
   accelerationMultiplier: 0.5
