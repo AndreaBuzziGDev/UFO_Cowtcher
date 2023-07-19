@@ -62,8 +62,6 @@ public class Cow : MonoBehaviour
     ///TIMERS
     [Min(0f)] private float TimerAlertToCalm;
     [Min(0f)] private float TimerAlertToPanic;
-    [Min(0f)] private float TimerCalmMovement;
-    [Min(0f)] private float TimerCalmStill;
 
 
 
