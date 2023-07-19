@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9160beb4a4d027b4b9ff8024982e9014, type: 3}
-  m_Name: Temporary Cowgon Speed Boost
+  m_Script: {fileID: 11500000, guid: 58710e500dc823c4da54f60422108318, type: 3}
+  m_Name: 2x FuelGain
   m_EditorClassIdentifier: 
-  buffType: 1
+  buffType: 2
   LastsIndefinitely: 0
-  buffDuration: 20
-  speedBoostIntensity: 100
+  buffDuration: 10
+  fuelGainMultiplier: 2

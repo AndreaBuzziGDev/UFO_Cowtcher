@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9160beb4a4d027b4b9ff8024982e9014, type: 3}
-  m_Name: Temporary Cowgon Speed Boost
+  m_Script: {fileID: 11500000, guid: 1322a72f5c3246a4e95b283b79492716, type: 3}
+  m_Name: PumpCow Temporary
   m_EditorClassIdentifier: 
-  buffType: 1
-  LastsIndefinitely: 0
-  buffDuration: 20
-  speedBoostIntensity: 100
+  timerStill: 0.5
+  timerMoving: 3
+  randomizerSlider: 1
+  AllowedDirections:
+  - {x: 1, y: 0, z: 1}
+  - {x: -1, y: 0, z: 1}
+  - {x: -1, y: 0, z: -1}
+  - {x: 1, y: 0, z: -1}

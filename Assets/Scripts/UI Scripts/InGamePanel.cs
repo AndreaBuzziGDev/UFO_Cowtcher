@@ -12,8 +12,13 @@ public class InGamePanel : MonoBehaviour
     [SerializeField] private ScoreBar highScoreBar;
     public ScoreBar HighScoreBar { get { return highScoreBar; } }
 
-    [SerializeField] private GameObject buffPanel;
-    public GameObject BuffPanel { get { return buffPanel; } }
+    [SerializeField] private BuffPanel buffPanel;
+    [SerializeField] private BuffPanel debuffPanel;
+    [SerializeField] private BuffPanel ritualPanel;
+
+    public BuffPanel BuffPanel { get { return buffPanel; } }
+    public BuffPanel DebuffPanel { get { return debuffPanel; } }
+    public BuffPanel RitualPanel { get { return ritualPanel; } }
 
 
     //METHODS

@@ -21,12 +21,13 @@ public class BuffPanel : MonoBehaviour
     private void Awake()
     {
         imageToFade = GetComponent<Image>();
-        panelColor = new Color(255, 0, 0, 0);
+        panelColor = imageToFade.color;
+        currentFadeTimer = TimeToFadeToTransparent;
 
-        //FastCatch.enabled = false;
-        //FuelBoost.enabled = false;
-        //FuelLoss.enabled = false;
-        //SpeedBoost.enabled = false;
+        if (FastCatch != null) FastCatch.enabled = false;
+        if (FuelBoost != null) FuelBoost.enabled = false;
+        if (FuelLoss != null) FuelLoss.enabled = false;
+        if (SpeedBoost != null) SpeedBoost.enabled = false;
     }
 
     private void Update()
@@ -52,7 +53,7 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
-
+    //FAST CATCH
     public void ActivateFastCatch()
     {
         if (FastCatch != null)
@@ -61,6 +62,7 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
+    //FUEL BOOST
     public void ActivateFuelBoost()
     {
         if (FuelBoost != null)
@@ -69,6 +71,7 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
+    //FUEL LOSS
     public void ActivateFuelLoss()
     {
         if (FuelLoss != null)
@@ -77,6 +80,7 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
+    //SPEED BOOST
     public void ActivateSpeedBoost()
     {
         if (SpeedBoost != null)
@@ -85,6 +89,10 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
+
+
+
+    //FAST CATCH
     public void DeactivateFastCatch()
     {
         if (FastCatch != null)
@@ -93,6 +101,7 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
+    //FUEL BOOST
     public void DeactivateFuelBoost()
     {
         if (FuelBoost != null)
@@ -101,6 +110,7 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
+    //FUEL LOSS
     public void DeactivateFuelLoss()
     {
         if (FuelLoss != null)
@@ -109,6 +119,7 @@ public class BuffPanel : MonoBehaviour
         }
     }
 
+    //SPEED BOOST
     public void DeactivateSpeedBoost()
     {
         if (SpeedBoost != null)

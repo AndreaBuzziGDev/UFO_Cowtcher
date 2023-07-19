@@ -119,12 +119,20 @@ public class PlayerController : MonoBehaviour
     {
         //TODO: REFACTOR AS DICTIONARY -> ONLY ONE TYPE AT A TIME (SUB-TODO: IMPLEMENT COMPARABLES SO THE BIGGER BUFF WINS)
         statusAlterations.Add(newAlteration);
+        if(newAlteration.GetType() == typeof(SAFuelLossInstant))
+        {
+            UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
+        }
+        else
+        {
+            UIController.Instance.IGPanel.BuffPanel.fadeToTransparent = true;
+        }
     }
 
     private void UpdateAlterationsTimers(float delta)
     {
         List<SAAbstract> expired = new();
-        foreach(SAAbstract alteration in statusAlterations)
+        foreach (SAAbstract alteration in statusAlterations)
         {
             alteration.UpdateTimers(delta);
             if (alteration.IsStillRunning())
@@ -138,6 +146,13 @@ public class PlayerController : MonoBehaviour
         }
 
         statusAlterations = statusAlterations.Except(expired).ToList();
+
+        //HANDLE ALTERATIONS THAT NEED TO BE MANUALLY EXPIRED (NB: UNCLEAN CODE SOLUTION - BUT IT WORKS)
+        Debug.Log("Expired Alterations count: " + expired.Count);
+        foreach (SAAbstract alteration in expired)
+        {
+            alteration.ExpireBuff();
+        }
     }
 
     public void SetBonusMovSpeed(float percentBonus)

@@ -10,8 +10,8 @@ public class ScriptableCow : ScriptableObject
     public enum UniqueID
     {
         ANY,
-        C000,
-        C001,
+        C000Jamal,
+        C001Kevin,
         C002,
         C003,
         C004,
@@ -20,13 +20,13 @@ public class ScriptableCow : ScriptableObject
         C007,
         C008,
 
-        R000,
-        R001,
-        R002,
-        R003,
+        R000Kowbra,
+        R001PumpCow,
+        R002Cowttleman,
+        R003Scarecow,
 
-        L000,
-        L001,
+        L000Cowctor,
+        L001Cowgon,
         L002,
         L003
     }
@@ -41,7 +41,7 @@ public class ScriptableCow : ScriptableObject
 
     //DATA
     ///UNIQUE ID & ENUMS
-    public UniqueID UID = UniqueID.C001;
+    public UniqueID UID = UniqueID.C000Jamal;
     public Rarity rarity = Rarity.Common;
 
 

@@ -30,11 +30,19 @@ public class SAFuelLossInstant : SAAbstract
     public override void ApplyBuff()
     {
         UFO playerUFO = GameController.Instance.FindUFOAnywhere();
+        
         float instantFuelLossPercent = (playerUFO.FuelAmount / 100) * currentFuelPercentLoss;
         playerUFO.ChangeFuel(-instantFuelLossPercent);
 
         this.hasExpired = true;
+        UIController.Instance.IGPanel.BuffPanel.ActivateFuelLoss();
+
     }
+    public override void ExpireBuff()
+    {
+        UIController.Instance.IGPanel.BuffPanel.DeactivateFuelLoss();
+    }
+
 
     ///TIMERS
     public override void UpdateTimers(float delta)

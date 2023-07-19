@@ -13,6 +13,11 @@ public class UFO : MonoBehaviour
     [SerializeField] private float maxFuelAmount;
     public float MaxFuelAmount { get { return maxFuelAmount; } }
 
+    ///FUEL GAIN MULTIPLIER
+    private float fuelGainMultiplier = 1.0f;
+
+
+
     ///FUEL BOTTOM DELAY MANAGEMENT
     [SerializeField] [Range(0.0f, 100.0f)] private float fuelEmergencyThreshold = 20.0f;
     [SerializeField] private float fuelEmergencyExtensionFactor = 2.0f;
@@ -76,8 +81,10 @@ public class UFO : MonoBehaviour
     //CURRENT FUEL SETTER
     public void ChangeFuel(float delta) 
     {
-        fuelAmount += delta;
+        fuelAmount += delta * fuelGainMultiplier;
         if (fuelAmount > MaxFuelAmount) fuelAmount = maxFuelAmount;
+
+        UIController.Instance.IGPanel.PlayerFuelBar.SetShaking();
     }
 
 
@@ -89,6 +96,11 @@ public class UFO : MonoBehaviour
     public void ChangeScore(int delta)
     {
         UIController.Instance.IGPanel.HighScoreBar.AddScore(delta);
+    }
+
+    public void ChangeFuelBoostMultiplier(float newMultiplier)
+    {
+        fuelGainMultiplier = newMultiplier;
     }
 
 }

@@ -57,7 +57,7 @@ public abstract class RitualAbstract
     }
 
 
-public virtual bool IsReadyToSpawn()
+    public virtual bool IsReadyToSpawn()
     {
         if (ritualDictionary.Count > 0)
         {
@@ -77,6 +77,7 @@ public virtual bool IsReadyToSpawn()
         foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
         {
             entry.Value.HandleCowSpawn();
+            UIController.Instance.IGPanel.RitualPanel.fadeToTransparent = true;
         }
     }
 

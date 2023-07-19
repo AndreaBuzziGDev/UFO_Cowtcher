@@ -29,6 +29,13 @@ public abstract class SAAbstract
     ///BUFF
     public abstract void ApplyBuff();
 
+    public virtual void ExpireBuff()
+    {
+        //DEFAULT: DO NOTHING
+
+    }
+
+
     ///TIMERS
     public abstract void UpdateTimers(float delta);
     public abstract bool IsStillRunning();

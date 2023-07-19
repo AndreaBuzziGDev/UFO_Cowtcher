@@ -8,9 +8,10 @@ public class SpawnPoint : MonoBehaviour
     public enum Type
     {
         GenericEnvironment,
-        Granary,
+        Barn,
         Paddock,
-        Tree
+        Tree,
+        Rock
     }
 
 

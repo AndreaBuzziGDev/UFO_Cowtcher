@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cowttleman Temporary
   m_EditorClassIdentifier: 
   targetSpawnedCow: 12
-  requiredCows: 0100000001000000010000000100000001000000
+  requiredCows: 0b0000000b000000
