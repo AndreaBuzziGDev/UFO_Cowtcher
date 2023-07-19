@@ -21,7 +21,7 @@ public class SAFuelGainBoost : SAAbstract
         this.template = inputTemplate;
         this.type = template.buffType;
         this.buffDuration = template.buffDuration;
-        this.additionalFuelGainPercent = template.additionalFuelGainPercent;
+        this.additionalFuelGainPercent = template.fuelGainMultiplier;
         pc = GameController.Instance.FindUFOAnywhere();
     }
 
@@ -37,7 +37,7 @@ public class SAFuelGainBoost : SAAbstract
 
     public override void ExpireBuff()
     {
-        pc.ChangeFuelBoostMultiplier(-this.additionalFuelGainPercent);
+        pc.ChangeFuelBoostMultiplier(1);
     }
 
 
