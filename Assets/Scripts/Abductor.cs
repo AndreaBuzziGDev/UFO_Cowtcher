@@ -111,10 +111,11 @@ public class Abductor : MonoBehaviour
             //PASS THE COW ATTRIBUTES TO THE RIGHT SCRIPTS
             Cow cow = inRangeCow.GetComponent<Cow>();
 
+            //CAPTURE - FUEL RECOVERY
             UFO.ChangeFuel(cow.FuelRecoveryAmount);
             UFO.ChangeScore(cow.Score);
 
-            //TODO: WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
+            //WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
             SpawnManager.Instance.HandleCowCapture(cow);
 
             if (cow.Alteration != null)

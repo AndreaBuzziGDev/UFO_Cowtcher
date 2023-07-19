@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9160beb4a4d027b4b9ff8024982e9014, type: 3}
-  m_Name: Speed Boost base
+  m_Script: {fileID: 11500000, guid: 8b67ef5aaadd6ad44baebd9989cf34a1, type: 3}
+  m_Name: Scarecow Fuel Loss
   m_EditorClassIdentifier: 
-  buffType: 1
+  buffType: 4
   LastsIndefinitely: 0
-  buffDuration: 10
-  speedBoostIntensity: 200
+  currentFuelPercentLoss: 10

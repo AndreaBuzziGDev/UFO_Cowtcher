@@ -82,7 +82,7 @@ public class Cow : MonoBehaviour
         get {
             if (alteration != null)
             {
-                alteration.GetBuff();
+                return alteration.GetBuff();
             }
             return null; 
         } 
