@@ -299,6 +299,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FuelBarImg: {fileID: 1058408724155275373}
+  shakeAmount: 0.1
+  shakeSpeed: 30
+  shakeTime: 1
 --- !u!1 &2149665426863300923
 GameObject:
   m_ObjectHideFlags: 0
