@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
+  m_Name: ScareCow
+  m_EditorClassIdentifier: 
+  UID: 13
+  rarity: 1
+  Name: 
+  Description: 
+  FuelRecoveryAmount: 0
+  AlertRadius: 6
+  SpeedCalm: 1
+  SpeedAlert: 4
+  Score: 50
+  TimerAlertToCalm: 3
+  TimerAlertToPanic: 1
+  TimerRespawn: 5
+  movPatternCalm: {fileID: 11400000, guid: 6c71cfc2e1ec6dd41a598bdd4532160d, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: dff38ae395a91b54299c416719a22506, type: 2}
+  Alteration: {fileID: 11400000, guid: 2ef9c97f981d5e64d850030395f8efcd, type: 2}
+  SummoningRitual: {fileID: 11400000, guid: 5eed19db8b0ef0e4796e9439d0220e2d, type: 2}
+  FavouriteHideoutTypes: 
+  AllowedSpawnPointTypes: 

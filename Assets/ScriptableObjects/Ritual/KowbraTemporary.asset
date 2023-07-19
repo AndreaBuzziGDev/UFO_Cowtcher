@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: KowbraTemporary
   m_EditorClassIdentifier: 
   targetSpawnedCow: 10
-  requiredCows: 01000000
+  requiredCows: 010000000100000001000000

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
+  m_Name: Pumpcow
+  m_EditorClassIdentifier: 
+  UID: 11
+  rarity: 1
+  Name: Pumpcow
+  Description: 
+  FuelRecoveryAmount: 5
+  AlertRadius: 5
+  SpeedCalm: 2
+  SpeedAlert: 2
+  Score: 20
+  TimerAlertToCalm: 1
+  TimerAlertToPanic: 1
+  TimerRespawn: 5
+  movPatternCalm: {fileID: 11400000, guid: d0a60b24297a731498fcb936368bd754, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: df8fd1a2b4549b54291e164e8ad09ff7, type: 2}
+  Alteration: {fileID: 0}
+  SummoningRitual: {fileID: 0}
+  FavouriteHideoutTypes: 00000000
+  AllowedSpawnPointTypes: 00000000

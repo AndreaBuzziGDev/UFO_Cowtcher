@@ -44,12 +44,8 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
         Vector3 flatUfoVector = new Vector3(menace.transform.position.x, targetHideout.transform.position.y, menace.transform.position.z);
         Vector3 ufoHideoutVector = targetHideout.transform.position - flatUfoVector;
 
-        Debug.Log("hideoutDirection: " + hideoutDirection);
-        Debug.Log("ufoHideoutVector: " + ufoHideoutVector);
-
         if (ufoHideoutVector.magnitude <= hideoutDirection.magnitude)
         {
-            Debug.Log("UFO IS CLOSER TO HIDEOUT THAN COW!");
             return ManageMovement(myCow);
         }
 
