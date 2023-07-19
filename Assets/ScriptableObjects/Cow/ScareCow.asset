@@ -21,7 +21,7 @@ MonoBehaviour:
   SpeedCalm: 1
   SpeedAlert: 4
   Score: 50
-  TimerAlertToCalm: 5
+  TimerAlertToCalm: 3
   TimerAlertToPanic: 1
   TimerRespawn: 5
   movPatternCalm: {fileID: 11400000, guid: 6c71cfc2e1ec6dd41a598bdd4532160d, type: 2}
