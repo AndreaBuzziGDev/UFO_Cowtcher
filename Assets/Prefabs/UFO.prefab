@@ -173,7 +173,7 @@ Transform:
   - {fileID: 6294619815631106068}
   - {fileID: 2573885485125725165}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1083418052433258214
 SpriteRenderer:
@@ -321,6 +321,7 @@ MonoBehaviour:
   captureTimer: 3
   timeBeforeReduction: 0
   maxRadius: 2
+  excessCaptureRadius: 0.4
   cooldownTimer: 1
   outerCircle: {fileID: 8132337875915980716}
   innerCircle: {fileID: 576979319330301586}
