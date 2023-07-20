@@ -77,7 +77,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     public List<SpawnPoint> GetSpawnPoints(List<SpawnPoint.Type> types)
     {
         List<SpawnPoint> allSpawnPointsFromAllTypes = new();
-        foreach(SpawnPoint.Type sType in types)
+        foreach (SpawnPoint.Type sType in types)
         {
             allSpawnPointsFromAllTypes.AddRange(GetSpawnPoint(sType));
         }
@@ -145,7 +145,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
 
     ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
-    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID) 
+    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID)
     {
         GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
         prefabCowGO.gameObject.SetActive(false);

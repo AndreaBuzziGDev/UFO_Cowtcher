@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 6365621987586576585}
   - component: {fileID: 1039704197200870992}
   - component: {fileID: 8637536818007847690}
+  - component: {fileID: 6066383760333294612}
   m_Layer: 0
   m_Name: Barn (Cabbage)
   m_TagString: Untagged
@@ -264,3 +265,17 @@ MonoBehaviour:
   shakeSpeed: 30
   shakeTime: 1
   debugNumAvailSlots: 0
+--- !u!114 &6066383760333294612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847961042174125579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6d201efe1a29d4e8e76b8eaeefc939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnType: 1
+  spawnRadius: 2
