@@ -24,7 +24,7 @@ public class GameController : MonoSingleton<GameController>
     ///SIMPLE DATA
     private EGameState state = 0;
     public bool IsPaused { get { return this.state == EGameState.Paused; } }
-    private bool isFirstAwake = true;
+
 
     ///COMPLEX DATA
     public GameControllerHelper helper = new();
@@ -37,32 +37,15 @@ public class GameController : MonoSingleton<GameController>
 
 
     //METHODS
-    //...
-    protected override void Awake()
-    {
-        base.Awake();
-
-        //SHOULD HELP DRIVING THE OTHER CONTROLLERS THROUGH THEIR INITIALIZATION SEQUENTIALLY.
-        Debug.Log("GameController is Awaking.");
-        Debug.Log("GameController isFirstAwake: " + isFirstAwake);
-
-        //ENFORCES START SEQUENCE
-        //SetState(EGameState.Start);
-
-    }
 
     // Start is called before the first frame update
     private void Start()
     {
         Debug.Log("GameController is Starting.");
-        
+
         //ENFORCES START SEQUENCE
-        if (isFirstAwake)
-        {
-            SetState(EGameState.Start);
-            isFirstAwake = false;
-        }
-        
+        SetState(EGameState.Start);
+
     }
 
 
@@ -126,8 +109,6 @@ public class GameController : MonoSingleton<GameController>
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-        Debug.Log("GameController - Gukko");
-        isFirstAwake = false;
     }
 
 
