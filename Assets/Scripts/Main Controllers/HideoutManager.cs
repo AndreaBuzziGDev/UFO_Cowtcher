@@ -16,22 +16,41 @@ public class HideoutManager : MonoSingleton<HideoutManager>
 
     void Start()
     {
-        initializeAllHidelouts();
-        MakeDictionary();
+        //...
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //...
+
     }
 
-    private void initializeAllHidelouts()
+
+
+
+
+    //INITIALIZATION
+
+    ///OVERALL INITIALIZATION PROCEDURE
+    public void Initialization()
+    {
+        initializeAllHideouts();
+        MakeDictionary();
+
+        //TODO: INTRODUCE DEBUGGING FUNCTIONALITIES (FIND DUPLICATES ETC)
+
+    }
+
+    ///MAIN INITIALIZATION
+    private void initializeAllHideouts()
     {
         allHideouts = FindObjectsOfType<Hideout>().ToList();
         Debug.Log("allHideouts size: " + allHideouts.Count);
     }
 
+    ///HIDEOUTS INITIALIZATION
     private void MakeDictionary()
     {
         if (allHideouts != null)
@@ -51,7 +70,15 @@ public class HideoutManager : MonoSingleton<HideoutManager>
 
     }
 
+
+
+
+
+
     //FUNCTIONALITIES
+    ///DATA RETRIEVAL
+    ///
+    ///RETRIEVE ANY Hideout
     private List<Hideout> GetHideouts(ScriptableHideout.Type type)
     {
         if (hideoutsByType.ContainsKey(type)) 
@@ -60,6 +87,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
             return null;
     }
 
+    ///RETRIEVE HIDEOUTS THAT HAVE AVAILABLE SLOTS
     public List<Hideout> GetAvailableHideouts(ScriptableHideout.Type type)
     {
         List<Hideout> availableHideouts = new List<Hideout>();

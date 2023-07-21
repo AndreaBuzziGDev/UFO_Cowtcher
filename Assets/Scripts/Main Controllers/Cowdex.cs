@@ -33,10 +33,7 @@ public class Cowdex : MonoSingleton<Cowdex>
     // Start is called before the first frame update
     void Start()
     {
-        BuildCowdex();
-        BuildSummoningRituals();
-
-        //TODO: INTRODUCE DEBUGGING FUNCTIONALITIES (FIND DUPLICATES ETC)
+        //...
 
     }
 
@@ -45,6 +42,16 @@ public class Cowdex : MonoSingleton<Cowdex>
 
 
     //INITIALIZATION
+    ///OVERALL INITIALIZATION PROCEDURE
+    public void Initialization()
+    {
+        BuildCowdex();
+        BuildSummoningRituals();
+
+        //TODO: INTRODUCE DEBUGGING FUNCTIONALITIES (FIND DUPLICATES ETC)
+
+    }
+
     ///MAIN INITIALIZATION
     public void BuildCowdex()
     {
@@ -84,8 +91,6 @@ public class Cowdex : MonoSingleton<Cowdex>
         }
         Debug.Log("Cowdex - AllRituals size:  " + AllRituals.Count);
     }
-
-
 
 
 

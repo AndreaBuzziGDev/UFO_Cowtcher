@@ -24,6 +24,7 @@ public class GameController : MonoSingleton<GameController>
     ///SIMPLE DATA
     private EGameState state = 0;
     public bool IsPaused { get { return this.state == EGameState.Paused; } }
+    private bool isFirstAwake = true;
 
     ///COMPLEX DATA
     public GameControllerHelper helper = new();
@@ -31,29 +32,37 @@ public class GameController : MonoSingleton<GameController>
     ///OTHER DATA...
     UFO player;
     PlayerController playerController;
-
+    
 
 
 
     //METHODS
     //...
-
-    // Start is called before the first frame update
     protected override void Awake()
     {
         base.Awake();
 
         //SHOULD HELP DRIVING THE OTHER CONTROLLERS THROUGH THEIR INITIALIZATION SEQUENTIALLY.
         Debug.Log("GameController is Awaking.");
-        SetState(EGameState.Start);
-    }
-
-    private void Start()
-    {
-        Debug.Log("GameController is Starting.");
+        Debug.Log("GameController isFirstAwake: " + isFirstAwake);
 
         //ENFORCES START SEQUENCE
         //SetState(EGameState.Start);
+
+    }
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        Debug.Log("GameController is Starting.");
+        
+        //ENFORCES START SEQUENCE
+        if (isFirstAwake)
+        {
+            SetState(EGameState.Start);
+            isFirstAwake = false;
+        }
+        
     }
 
 
@@ -102,20 +111,24 @@ public class GameController : MonoSingleton<GameController>
     }
 
 
+    //START
+    private static void HandleStart()
+    {
+        UIController.Instance.IGPanel.HighScoreBar.ResetScore();
+        Cowdex.Instance.Initialization();
+        HideoutManager.Instance.Initialization();
+        SpawnManager.Instance.Initialization();
+    }
+
+
     //RE-START (NB: PROTOTYPING PHASE)
     public void RestartScene()
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        Debug.Log("GameController - Gukko");
+        isFirstAwake = false;
     }
-
-    //START
-    private static void HandleStart()
-    {
-        UIController.Instance.IGPanel.HighScoreBar.ResetScore();
-
-    }
-
 
 
     //PAUSING
