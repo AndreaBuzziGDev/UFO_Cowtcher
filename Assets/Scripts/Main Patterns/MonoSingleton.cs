@@ -10,12 +10,14 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
     {
         if (instance != null)
         {
-            //Debug.LogError("Instance of this singleton " + (T)this + " already exists, deleting!");
+            Debug.LogError("Instance of this singleton " + (T)this + " already exists, deleting!");
             Destroy(gameObject);
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            //COMMENTED: DESIRED BEHAVIOUR ACHIEVED BY LETTING THE START METHOD RE-PLAY.
+            //TODO: MIGHT IMPROVE IF IN THE FUTURE THE CODE HAS A LOAD ORDER IN PLACE.
+            //DontDestroyOnLoad(gameObject);
             instance = (T)this;
         }
     }

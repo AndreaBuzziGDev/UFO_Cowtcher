@@ -24,8 +24,8 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     // Start is called before the first frame update
     void Start()
     {
-        initializeAllSpawnPoints();
-        MakeDictionarySpawnPoints();
+        //...
+
     }
 
     // Update is called once per frame
@@ -35,17 +35,26 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
 
 
-    //INITIALIZATIONS
-
-    //TODO: DEVELOP A DEBUG FUNCTIONALITY THAT DETECTS DUPLICATES AMONG THE ScriptableRitual AND REPORTS THEM AS ERRORS ON THE GAME/EDITOR CONSOLE.
 
 
-    ///SPAWN POINTS DATA INITIALIZATION
+
+
+    //FUNCTIONALITIES
+
+    ///OVERALL INITIALIZATION PROCEDURE
+    public void Initialization()
+    {
+        initializeAllSpawnPoints();
+        MakeDictionarySpawnPoints();
+    }
+
+    ///MAIN INITIALIZATION
     private void initializeAllSpawnPoints()
     {
         allSpawnPoints = FindObjectsOfType<SpawnPoint>().ToList();
     }
 
+    ///SPAWN POINT INITIALIZATION
     private void MakeDictionarySpawnPoints()
     {
         if (allSpawnPoints != null)
@@ -62,7 +71,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
                 }
             }
         }
-
     }
 
 
@@ -77,7 +85,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     public List<SpawnPoint> GetSpawnPoints(List<SpawnPoint.Type> types)
     {
         List<SpawnPoint> allSpawnPointsFromAllTypes = new();
-        foreach(SpawnPoint.Type sType in types)
+        foreach (SpawnPoint.Type sType in types)
         {
             allSpawnPointsFromAllTypes.AddRange(GetSpawnPoint(sType));
         }
@@ -145,7 +153,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
 
     ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
-    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID) 
+    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID)
     {
         GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
         prefabCowGO.gameObject.SetActive(false);

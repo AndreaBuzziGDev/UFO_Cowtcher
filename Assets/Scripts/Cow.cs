@@ -239,7 +239,9 @@ public class Cow : MonoBehaviour
         if (this.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
-        rb.MovePosition(transform.position + mySpeed * Time.deltaTime * movementDirection);
+        rb.velocity = mySpeed * movementDirection;
+
+        //rb.MovePosition(transform.position + mySpeed * Time.deltaTime * movementDirection);
     }
 
 
