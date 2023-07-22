@@ -106,7 +106,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            myRigidBody.velocity = (1+(movSpeedBonus/100)) * MoveSpeed * (direction);
+            //myRigidBody.velocity = (1+(movSpeedBonus/100)) * MoveSpeed * (direction);
+
+            myRigidBody.AddForce((1 + (movSpeedBonus / 100)) * MoveSpeed * (direction), ForceMode.Impulse);
         }
     }
 
