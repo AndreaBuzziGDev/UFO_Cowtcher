@@ -5,8 +5,8 @@ using UnityEngine;
 public class Hideout : MonoBehaviour
 {
     //DATA
-    [SerializeField] private ScriptableHideout hideoutTemplate;
-    public ScriptableHideout HideoutTemplate { get { return hideoutTemplate; } }
+    [SerializeField] private HideoutSO hideoutTemplate;
+    public HideoutSO HideoutTemplate { get { return hideoutTemplate; } }
     private UFO ufo;
 
 
@@ -16,8 +16,8 @@ public class Hideout : MonoBehaviour
 
 
     ///TEMPLATE CLONED DATA
-    private ScriptableHideout.Type type = 0;
-    public ScriptableHideout.Type Type { get { return type; } }
+    private HideoutSO.Type type = 0;
+    public HideoutSO.Type Type { get { return type; } }
     private int numberOfHideoutSlots;
     private float hideoutPermanenceTimer;
     private float spawnRadius = 2.5f;

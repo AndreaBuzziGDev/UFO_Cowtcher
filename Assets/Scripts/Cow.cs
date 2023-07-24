@@ -69,8 +69,8 @@ public class Cow : MonoBehaviour
     ///COMPLEX DATA
 
     ///HIDEOUT
-    private List<ScriptableHideout.Type> favouriteHideoutTypes = new();
-    public List<ScriptableHideout.Type> FavouriteHideoutTypes { get { return favouriteHideoutTypes; } }
+    private List<HideoutSO.Type> favouriteHideoutTypes = new();
+    public List<HideoutSO.Type> FavouriteHideoutTypes { get { return favouriteHideoutTypes; } }
 
     private List<SpawnPoint.Type> allowedSpawnPointTypes = new();
     public List<SpawnPoint.Type> AllowedSpawnPointTypes { get { return allowedSpawnPointTypes; } }
