@@ -18,6 +18,15 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     private int currentNumOfCows = 0;
     [SerializeField] private int maxNumOfCows = 20;
 
+    ///NUMBER OF SIMULTANEOUSLY SPAWNED COWS
+    private int currentSpawnedCount = 0;
+    [SerializeField] private int maxSpawnedCount = 2;
+
+    ///SIMULTANEOUS SPAWN TIMER
+    private float simultaneousSpawnTimer = 0;
+    [SerializeField] private float maxSpawnTimer = 1.0f;
+
+
 
 
     //METHODS
@@ -38,6 +47,11 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     void Update()
     {
         ManageDequeueingCows();
+        if (simultaneousSpawnTimer > 0.0f)
+        {
+            simultaneousSpawnTimer -= Time.deltaTime;
+        }
+        currentSpawnedCount = 0;
     }
 
 
@@ -198,11 +212,25 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             sqc.LowerTimer(Time.deltaTime);
             if (sqc.IsReadyToSpawn && (currentNumOfCows < maxNumOfCows))
             {
-                currentNumOfCows++;
-                sqc.Spawn();
-                tempList.Add(sqc);//DE-QUEUEING
+                //TODO: COULD BE GREAT TO HAVE A SPAWNMANAGER HELPER TO HANDLE SOME OF THE DETAIL'S LOGIC
+                if ((currentSpawnedCount < maxSpawnedCount) && (simultaneousSpawnTimer <= 0.0f))
+                {
+                    currentNumOfCows++;
+                    currentSpawnedCount++;
+
+                    sqc.Spawn();
+                    tempList.Add(sqc);//DE-QUEUEING
+                }
             }
         }
+
+        if (currentSpawnedCount >= maxSpawnedCount)
+        {
+            //
+            simultaneousSpawnTimer = maxSpawnTimer;
+        }
+
+
 
         caughtCowWaitingForRespawn = caughtCowWaitingForRespawn.Except(tempList).ToList();
     }
