@@ -136,6 +136,8 @@ public class SpawnManager : MonoSingleton<SpawnManager>
                     GameObject toBeSpawnedRitualCompleteCow = Instantiate(Cowdex.Instance.GetCow(ritual.TargetSpawnedCow).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
 
                     //TODO: CHECK IF THERE ARE SPAWN POINTS AVAILABLE FOR THE COW. IF NOT, SPAWN AT ORIGIN?
+                    //TODO: SHOULD COWS SUMMONED BY RITUALS RATHER BE QUEUED WITH TIME 0?
+                    SpawnCow(toBeSpawnedRitualCompleteCow.GetComponent<Cow>());
 
                 }
             }
