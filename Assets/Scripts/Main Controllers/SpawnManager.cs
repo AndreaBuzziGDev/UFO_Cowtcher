@@ -11,7 +11,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     private List<SpawnPoint> allSpawnPoints = new();
     public List<SpawnPoint> AllSpawnPoints { get { return allSpawnPoints; } }
 
+    ///RESPAWNING COWS
     private List<SpawnQueuedCow> caughtCowWaitingForRespawn = new();
+
+    ///NUMBER OF COWS IN THE MAP
+    private int currentNumOfCows = 0;
+    [SerializeField] private int maxNumOfCows = 20;
+
 
 
     //METHODS
@@ -44,17 +50,29 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///OVERALL INITIALIZATION PROCEDURE
     public void Initialization()
     {
+        initializeCowCount();
+
         initializeAllSpawnPoints();
         MakeDictionarySpawnPoints();
     }
 
     ///MAIN INITIALIZATION
+    ///COW TRACKING INITIALIZATION
+    private void initializeCowCount()
+    {
+        List<Cow> cows = FindObjectsOfType<Cow>().ToList();
+        currentNumOfCows = cows.Count;
+        Debug.Log("SpawnManager - start num of cows: " + currentNumOfCows);
+    }
+    
+    
+    ///SPAWN POINTS INITIALIZATION
     private void initializeAllSpawnPoints()
     {
         allSpawnPoints = FindObjectsOfType<SpawnPoint>().ToList();
     }
 
-    ///SPAWN POINT INITIALIZATION
+    ///SPAWN POINT DICTIONARY INITIALIZATION
     private void MakeDictionarySpawnPoints()
     {
         if (allSpawnPoints != null)
@@ -80,8 +98,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     //FUNCTIONALITIES
 
-    ///GET HIDEOUT
-    ///
+    ///GET SPAWN POINTS
     public List<SpawnPoint> GetSpawnPoints(List<SpawnPoint.Type> types)
     {
         List<SpawnPoint> allSpawnPointsFromAllTypes = new();
@@ -99,6 +116,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         else
             return new List<SpawnPoint>();
     }
+
 
     ///FUNCTIONALITY TO SPAWN COWS ACCESSIBLE FROM ANYWHERE
     public void SpawnCow(Cow spawnedCow)
@@ -118,6 +136,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
 
 
+    ///FUNCTIONALITY TO CAPTURE COWS ACCESSIBLE FROM ANYWHERE
     public void HandleCowCapture(Cow interestedCow)
     {
         //
@@ -131,23 +150,20 @@ public class SpawnManager : MonoSingleton<SpawnManager>
                 ritual.DoRitual(interestedCow.UID);
                 if (ritual.IsReadyToSpawn())
                 {
+                    //UPDATE RITUAL PROGRESSION
                     ritual.HandleCowSpawn();
-                    GameObject toBeSpawnedRitualCompleteCow = Instantiate(Cowdex.Instance.GetCow(ritual.TargetSpawnedCow).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
-                    toBeSpawnedRitualCompleteCow.SetActive(false);
 
-                    caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(toBeSpawnedRitualCompleteCow.GetComponent<Cow>(), 0));
-
+                    //SUMMONING RITUAL TARGET COW IS AUTOMATICALLY ADDED TO RESPAWN QUEUE
+                    MarkForRespawn(ritual.TargetSpawnedCow, 0);
                 }
             }
-
-            /*
-            CowSummoningRitualModule iteratedModule = new CowSummoningRitualModule(entry.Key, entry.Value);
-            ritualDictionary.Add(entry.Key, iteratedModule);
-            */
         }
 
+        //LOWER COUNT OF CURRENT COWS
+        currentNumOfCows--;
 
-        //
+        //TODO: AS OF SPRINT IN WEEK 24 07 2023: COWS WILL NOT AUTOMATICALLY ENTER RESPAWN QUEUE WHEN CAPTURED.
+        //      DESIRED FEATURE IS: IF MAX NUMBER OF COWS IS NOT REACHED, RANDOMLY GENERATE COW BASED ON THEIR ADJUSTED PROBABILITY%
         MarkForRespawn(interestedCow.UID);
     }
 
@@ -161,6 +177,17 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>()));
     }
 
+    //TODO: HANDLE "EASY" OVERLOADING OF METHODS VIA NATIVE C# CAPABILITIES
+    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID, float customTimer)
+    {
+        GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+        prefabCowGO.gameObject.SetActive(false);
+        
+        caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>(), customTimer));
+    }
+
+
+
 
     ///HANDLE THE DEQUEUEING OF COWS READY TO SPAWN
     private void ManageDequeueingCows()
@@ -169,8 +196,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         foreach (SpawnQueuedCow sqc in caughtCowWaitingForRespawn)
         {
             sqc.LowerTimer(Time.deltaTime);
-            if (sqc.IsReadyToSpawn)
+            if (sqc.IsReadyToSpawn && (currentNumOfCows < maxNumOfCows))
             {
+                currentNumOfCows++;
                 sqc.Spawn();
                 tempList.Add(sqc);//DE-QUEUEING
             }

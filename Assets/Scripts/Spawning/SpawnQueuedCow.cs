@@ -27,7 +27,10 @@ public class SpawnQueuedCow
 
     //METHODS
     //FUNCTIONALITIES
-    public void LowerTimer(float delta) => this.respawnTimer -= delta;
+    public void LowerTimer(float delta)
+    {
+        if (!IsReadyToSpawn) this.respawnTimer -= delta;
+    }
 
     public void Spawn() => SpawnManager.Instance.SpawnCow(queued);
 
