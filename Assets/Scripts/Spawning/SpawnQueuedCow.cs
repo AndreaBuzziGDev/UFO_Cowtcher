@@ -14,9 +14,16 @@ public class SpawnQueuedCow
     //CONSTRUCTOR
     public SpawnQueuedCow(Cow respawnedCow)
     {
-        this.respawnTimer = respawnedCow.CowTemplate.TimerRespawn;
         this.queued = respawnedCow;
+        this.respawnTimer = respawnedCow.CowTemplate.TimerRespawn;
     }
+
+    public SpawnQueuedCow(Cow respawnedCow, float customTimer)
+    {
+        this.queued = respawnedCow;
+        this.respawnTimer = customTimer;
+    }
+
 
     //METHODS
     //FUNCTIONALITIES

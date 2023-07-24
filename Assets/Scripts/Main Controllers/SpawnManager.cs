@@ -131,12 +131,10 @@ public class SpawnManager : MonoSingleton<SpawnManager>
                 if (ritual.IsReadyToSpawn())
                 {
                     ritual.HandleCowSpawn();
-                    //Cow toBeSpawnedRitualCompleteCow = Cowdex.Instance.GetCow(interestedCow.UID);
-
                     GameObject toBeSpawnedRitualCompleteCow = Instantiate(Cowdex.Instance.GetCow(ritual.TargetSpawnedCow).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+                    toBeSpawnedRitualCompleteCow.SetActive(false);
 
-                    //TODO: SHOULD COWS SUMMONED BY RITUALS RATHER BE QUEUED WITH TIME 0?
-                    SpawnCow(toBeSpawnedRitualCompleteCow.GetComponent<Cow>());
+                    caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(toBeSpawnedRitualCompleteCow.GetComponent<Cow>(), 0));
 
                 }
             }
@@ -173,7 +171,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             if (sqc.IsReadyToSpawn)
             {
                 sqc.Spawn();
-                tempList.Add(sqc);
+                tempList.Add(sqc);//DE-QUEUEING
             }
         }
 
