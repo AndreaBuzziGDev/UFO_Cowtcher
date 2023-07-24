@@ -117,6 +117,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         }
     }
 
+
     public void HandleCowCapture(Cow interestedCow)
     {
         //

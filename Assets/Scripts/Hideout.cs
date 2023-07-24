@@ -10,31 +10,41 @@ public class Hideout : MonoBehaviour
     private UFO ufo;
 
 
+    ///HIDEOUT SLOTS
     private List<HideoutSlot> hideoutSlots = new List<HideoutSlot>();
     public List<HideoutSlot> HideoutSlots { get { return hideoutSlots; } }
+
 
     ///TEMPLATE CLONED DATA
     private ScriptableHideout.Type type = 0;
     public ScriptableHideout.Type Type { get { return type; } }
-
     private int numberOfHideoutSlots;
     private float hideoutPermanenceTimer;
+    private float spawnRadius = 2.5f;
+
+
+
+
+    ///NO HIDEOUT VACATION IF UFO IS WITHIN DISTANCE:
+    private Vector3 ufoDistanceXZ = Vector3.zero;
     private float ufoDetectionRadius;
 
-    private Vector3 hideoutPosition;
 
-    //SHAKE VARIABLES
-    [Header("Shake Variables")]
-    private bool shake = false;
+    ///SHAKE VARIABLES
+    [Header("Shake Settings")]
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
-    private float currentShakeTime;
     [SerializeField] private float shakeTime;
 
-    private Vector3 ufoDistanceXZ = Vector3.zero;
+    private bool shake = false;
+    private float currentShakeTime;
+    private Vector3 hideoutPosition;
 
 
-    //DEBUG FIELDS
+
+    ///DEBUG FIELDS
+    //TODO: DELETE
+    [Header("Debug")]
     [SerializeField] private int debugNumAvailSlots;
 
 
@@ -42,13 +52,14 @@ public class Hideout : MonoBehaviour
 
     //METHODS
     //...
-
     private void Awake()
     {
         //DATA CLONED FROM SCRIPTABLE HIDEOUT
         type = hideoutTemplate.type;
         numberOfHideoutSlots = hideoutTemplate.numberOfHideoutSlots;
         hideoutPermanenceTimer = hideoutTemplate.HideoutPermanenceTimer;
+        spawnRadius = hideoutTemplate.spawnRadius;
+
         ufoDetectionRadius = hideoutTemplate.UFODetectionRadius;
 
         //UFO
@@ -86,7 +97,8 @@ public class Hideout : MonoBehaviour
                 if (hideoutSlots[i].CanSpawn)
                 {
                     Cow respawnedCow = hideoutSlots[i].Vacate(hideoutPermanenceTimer);
-                    SpawnManager.Instance.SpawnCow(respawnedCow);
+                    VacateHideout(respawnedCow);
+
                 }
             }
 
@@ -118,6 +130,32 @@ public class Hideout : MonoBehaviour
 
 
 
+
+    //INITIALIZATION
+    private void InitalizeHideoutSlots()
+    {
+        for (int i = 0; i < numberOfHideoutSlots; i++)
+        {
+            hideoutSlots.Add(new HideoutSlot());
+        }
+
+        for (int i = 0; i < hideoutSlots.Count; i++)
+        {
+            hideoutSlots[i].SlotPermanenceTimer = hideoutPermanenceTimer;
+        }
+    }
+
+
+    //VACATE HIDEOUT
+    private void VacateHideout(Cow interestedCow)
+    {
+        Vector3 newCowPosition = UtilsRadius.Vector3OnUnitCircle(spawnRadius) + transform.position;
+        interestedCow.transform.position = newCowPosition;
+        interestedCow.gameObject.SetActive(true);
+    }
+
+
+
     //FUNCTIONALITIES
     public bool HasAvailableSlots()
     {
@@ -143,20 +181,6 @@ public class Hideout : MonoBehaviour
         return (distanceFromUFO <= ufoDetectionRadius);
     }
 
-    private void InitalizeHideoutSlots()
-    {
-        for (int i = 0; i < numberOfHideoutSlots; i++)
-        {
-            hideoutSlots.Add(new HideoutSlot());
-        }
-
-        for (int i = 0; i < hideoutSlots.Count; i++)
-        {
-            hideoutSlots[i].SlotPermanenceTimer = hideoutPermanenceTimer;
-        }
-    }
-
-
     public void Host(Cow interestedCow)
     {
         foreach(HideoutSlot slot in hideoutSlots)
@@ -170,6 +194,8 @@ public class Hideout : MonoBehaviour
         }
     }
 
+
+    //JUICYNESS
     private void AnimateHideout()
     {
         hideoutPosition = this.transform.position;
@@ -177,12 +203,15 @@ public class Hideout : MonoBehaviour
     }
 
 
+
+    //DEBUGGING & TOOLING
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
 
-        Gizmos.DrawWireSphere(transform.position, ufoDetectionRadius);
+        Gizmos.DrawWireSphere(transform.position, spawnRadius);
     }
 #endif
+
 }
