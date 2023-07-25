@@ -124,7 +124,9 @@ public class Abductor : MonoBehaviour
                 GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
             }
 
-            cow.gameObject.SetActive(false);
+            //TODO: IMPROVE CREATION AND DESTRUCTION OF COWS VIA OBJECT POOLING
+            //cow.gameObject.SetActive(false);
+            Destroy(cow.gameObject);//FIXED COWS SO THAT THEY ARE DESTROYED
         }
         
         currentCaptureTimer = 0.0f;

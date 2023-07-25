@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Hideout", menuName = "Hideout")]
-public class ScriptableHideout : ScriptableObject
+public class HideoutSO : ScriptableObject
 {
     //ENUMS
     public enum Type
@@ -27,5 +27,8 @@ public class ScriptableHideout : ScriptableObject
 
     [Tooltip("The Cow-Hideout distance under which a cow can enter the hideout")]
     public float CowAllowedRadius = 3.0f;
+
+    [Tooltip("Describes the distance from the hideout the vacated Cows will spawn on")]
+    public float spawnRadius = 2.5f;
 
 }

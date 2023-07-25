@@ -7,7 +7,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
 {
     //DATA
     private List<Hideout> allHideouts = new();
-    private Dictionary<ScriptableHideout.Type, List<Hideout>> hideoutsByType = new();
+    private Dictionary<HideoutSO.Type, List<Hideout>> hideoutsByType = new();
 
     //METHODS
     // Start is called before the first frame update
@@ -79,7 +79,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     ///DATA RETRIEVAL
     ///
     ///RETRIEVE ANY Hideout
-    private List<Hideout> GetHideouts(ScriptableHideout.Type type)
+    private List<Hideout> GetHideouts(HideoutSO.Type type)
     {
         if (hideoutsByType.ContainsKey(type)) 
             return hideoutsByType[type];
@@ -88,7 +88,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
     }
 
     ///RETRIEVE HIDEOUTS THAT HAVE AVAILABLE SLOTS
-    public List<Hideout> GetAvailableHideouts(ScriptableHideout.Type type)
+    public List<Hideout> GetAvailableHideouts(HideoutSO.Type type)
     {
         List<Hideout> availableHideouts = new List<Hideout>();
 
