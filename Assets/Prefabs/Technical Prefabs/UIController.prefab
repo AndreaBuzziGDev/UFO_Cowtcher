@@ -1494,7 +1494,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2878398653383032314}
         m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1628,7 +1628,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2878398653383032314}
         m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
