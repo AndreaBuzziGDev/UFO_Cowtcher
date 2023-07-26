@@ -155,6 +155,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     //TODO: SOME CODE COULD BE MOVED TO A SpawnManagerHelper Class for simplification and separation of concerns
     private void SpawnCowByGrid(Cow spawnedCow)
     {
+        Debug.Log("SpawnManager - Grid: " + SpawningGrid.Instance);
         if (SpawningGrid.Instance != null)
         {
             SpawningGrid.Instance.SpawnCowInsideGrid(spawnedCow);
@@ -255,6 +256,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
                     currentNumOfCows++;
                     currentSpawnedCount++;
 
+                    Debug.Log("SpawnManager - ManageDequeueingCows");
                     sqc.Spawn();
                     tempList.Add(sqc);//DE-QUEUEING
                 }
