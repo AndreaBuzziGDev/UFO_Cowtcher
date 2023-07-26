@@ -9,7 +9,7 @@ public class FollowCamera : MonoBehaviour
     public float UFOVerticalOffset;
     public float Damping = 1.0f;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!TargetUFO)
         {
