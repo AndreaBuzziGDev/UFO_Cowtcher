@@ -12,6 +12,9 @@ public class PausePanel : MonoBehaviour
     //UNPAUSE
     public void Resume() => GameController.Instance.SetState(GameController.EGameState.Playing);
 
+    //RESTART
+    public void Restart() => GameController.Instance.RestartScene();
+
     //QUIT
     public void Quit() => GameController.Instance.SetState(GameController.EGameState.Quitting);
 
