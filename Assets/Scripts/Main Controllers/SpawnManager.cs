@@ -27,6 +27,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     [SerializeField] private float maxSpawnTimer = 1.0f;
 
 
+    ///SPAWN MODE SETTINGS
+    [SerializeField] private bool isGridSpawnMode = false;
+
+
+
+
 
 
     //METHODS
@@ -135,6 +141,34 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///FUNCTIONALITY TO SPAWN COWS ACCESSIBLE FROM ANYWHERE
     public void SpawnCow(Cow spawnedCow)
     {
+        if (isGridSpawnMode)
+        {
+            SpawnCowByGrid(spawnedCow);
+        } 
+        else
+        {
+            SpawnCowBySpawnPoint(spawnedCow);
+        }
+    }
+
+
+    //TODO: SOME CODE COULD BE MOVED TO A SpawnManagerHelper Class for simplification and separation of concerns
+    private void SpawnCowByGrid(Cow spawnedCow)
+    {
+        if (SpawningGrid.Instance != null)
+        {
+            SpawningGrid.Instance.SpawnCowInsideGrid(spawnedCow);
+        }
+        else
+        {
+            //FALLBACK: SPAWN AT zero
+            Debug.Log("SpawnManager - No Spawning Grid Found");
+            SpawningGrid.SpawnCowAtZero(spawnedCow);
+        }
+    }
+
+    private void SpawnCowBySpawnPoint(Cow spawnedCow)
+    {
         List<SpawnPoint> possibleSpawnPoints = GetSpawnPoints(spawnedCow.AllowedSpawnPointTypes);
 
         if (possibleSpawnPoints.Count > 0)
@@ -148,6 +182,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             Debug.Log("No Valid Spawn Point found for Cow: " + spawnedCow.CowName);
         }
     }
+
+
+
 
 
     ///FUNCTIONALITY TO CAPTURE COWS ACCESSIBLE FROM ANYWHERE
