@@ -19,6 +19,33 @@ public class CowHideoutHelper
         return (distanceVec.magnitude < interestedCow.AlertRadius);//TODO: COW UNITS
     }
 
+    public static Vector3 HideoutDirection(Cow interestedCow)
+    {
+        return interestedCow.TargetHideout.transform.position - interestedCow.transform.position;
+    }
+
+
+
+    public static bool ShouldRunForHideout(Cow interestedCow)
+    {
+        Vector3 hideoutDirection = HideoutDirection(interestedCow);
+
+        //TODO: THIS CODE WILL EVENTUALLY BE MOVED ELSEWHERE
+        UFO menace = GameController.Instance.FindUFOAnywhere();
+        Vector3 flatUfoVector = new Vector3(menace.transform.position.x, interestedCow.TargetHideout.transform.position.y, menace.transform.position.z);
+        Vector3 ufoHideoutVector = interestedCow.TargetHideout.transform.position - flatUfoVector;
+
+        if(ufoHideoutVector.magnitude <= hideoutDirection.magnitude)
+        {
+            return IsWithinRunForHideRadius(interestedCow);
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
     public static Hideout FindHideout(Cow interestedCow)
     {
         if (interestedCow.CowTemplate != null && interestedCow.CowTemplate.FavouriteHideoutTypes.Count > 0)
@@ -52,6 +79,7 @@ public class CowHideoutHelper
         return null;
     }
 
+
     public static bool CanEnterHideout(Cow interestedCow)
     {
         Hideout h = interestedCow.TargetHideout;
@@ -67,6 +95,21 @@ public class CowHideoutHelper
         return false;
     }
 
+    public static bool IsWithinRunForHideRadius(Cow interestedCow)
+    {
+        Hideout h = interestedCow.TargetHideout;
+        if (h != null && h.HasAvailableSlots())
+        {
+            float distance = (interestedCow.transform.position - h.transform.position).magnitude;
+            if (distance <= h.HideoutTemplate.RunForHideoutRadius)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void EnterHideout(Cow interestedCow)
     {
         //NOTIFY THE HIDEOUT THAT THE COW WANTS TO ENTER INSIDE
@@ -74,6 +117,5 @@ public class CowHideoutHelper
         target.Host(interestedCow);
 
     }
-
 
 }

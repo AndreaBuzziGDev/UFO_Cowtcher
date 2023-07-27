@@ -35,21 +35,15 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
 
     public override Vector3 ManagePanic(Cow myCow)
     {
-        
-        Hideout targetHideout = myCow.TargetHideout;
-        Vector3 hideoutDirection = targetHideout.transform.position - myCow.transform.position;
-
-        //TODO: THIS CODE WILL EVENTUALLY BE MOVED ELSEWHERE
-        UFO menace = GameController.Instance.FindUFOAnywhere();
-        Vector3 flatUfoVector = new Vector3(menace.transform.position.x, targetHideout.transform.position.y, menace.transform.position.z);
-        Vector3 ufoHideoutVector = targetHideout.transform.position - flatUfoVector;
-
-        if (ufoHideoutVector.magnitude <= hideoutDirection.magnitude)
+        if (CowHideoutHelper.ShouldRunForHideout(myCow))
+        {
+            //
+            return CowHideoutHelper.HideoutDirection(myCow).normalized;
+        }
+        else
         {
             return ManageMovement(myCow);
         }
-
-        return hideoutDirection.normalized;
     }
 
     ///TIMERS
