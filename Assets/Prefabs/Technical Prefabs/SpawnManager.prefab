@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f10bb54a5d9e5749a6235074fb810dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allTemplateRituals: []
-  allowedCows:
-  - {fileID: 1656210940373056849, guid: cb1f72313484ac44485ceb541cada022, type: 3}
-  - {fileID: 3816354294917225438, guid: df0506ab1feff7b4086b1fb3b0cc9da4, type: 3}
+  maxNumOfCows: 30
+  maxSpawnedCount: 3
+  maxSpawnTimer: 1
+  isGridSpawnMode: 1
