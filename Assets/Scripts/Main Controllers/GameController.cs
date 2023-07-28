@@ -40,11 +40,13 @@ public class GameController : MonoSingleton<GameController>
     // Start is called before the first frame update
     private void Start()
     {
+#if UNITY_STANDALONE_WIN
         //SET SCREEN TO MOBILE ASPECT RATIO 
         int targetHeight = Screen.width * 16 / 9;
         int targetWidth = Screen.height * 9 / 16;
 
         Screen.SetResolution(targetWidth, targetHeight, true);
+#endif
 
         Debug.Log("GameController is Starting.");
 
