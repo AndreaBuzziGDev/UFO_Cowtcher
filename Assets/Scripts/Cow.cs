@@ -97,6 +97,10 @@ public class Cow : MonoBehaviour
     private Vector3 movementDirection = Vector3.forward;
     public Vector3 MovementDirection { get { return movementDirection; } }
 
+    ///BIRTH POINT
+    public Vector3 spawnCoords = Vector3.zero;
+    public Vector3 SpawnCoords { get { return spawnCoords; } }
+
 
 
     //TECHNICAL DATA FOR OTHER PURPOSES
@@ -222,6 +226,10 @@ public class Cow : MonoBehaviour
         //RESET TIMERS
         this.TimerAlertToCalm = 0.0f;
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
+
+        //SET BIRTH POINT
+        spawnCoords = transform.position;
+
     }
 
     private void OnDisable()
