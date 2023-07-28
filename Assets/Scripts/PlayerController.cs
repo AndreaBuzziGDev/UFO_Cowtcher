@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
         statusAlterations = statusAlterations.Except(expired).ToList();
 
         //HANDLE ALTERATIONS THAT NEED TO BE MANUALLY EXPIRED (NB: UNCLEAN CODE SOLUTION - BUT IT WORKS)
-        Debug.Log("Expired Alterations count: " + expired.Count);
+        //Debug.Log("Expired Alterations count: " + expired.Count);
         foreach (SAAbstract alteration in expired)
         {
             alteration.ExpireBuff();

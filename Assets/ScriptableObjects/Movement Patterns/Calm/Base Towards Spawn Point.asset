@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd9eed3dbde2fb44a40acddd4ec647d, type: 3}
-  m_Name: Barn
+  m_Script: {fileID: 11500000, guid: ca7a42a19bd393b4fad44339aed59ddc, type: 3}
+  m_Name: Base Towards Spawn Point
   m_EditorClassIdentifier: 
-  type: 0
-  numberOfHideoutSlots: 2
-  HideoutPermanenceTimer: 5
-  UFODetectionRadius: 0
-  CowAllowedRadius: 2
-  RunForHideoutRadius: 5
-  spawnRadius: 2.5
