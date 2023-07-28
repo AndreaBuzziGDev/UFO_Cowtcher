@@ -328,7 +328,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53
+  m_fontSize: 52.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -513,7 +513,7 @@ MonoBehaviour:
   PauseGamePanel: {fileID: 2999353713454031584}
   GameOverPanel: {fileID: 980551416422809614}
   CowdexPanel: {fileID: 0}
-  GameplayInputCanvas: {fileID: 3456844090314703}
+  gameplayInputCanvas: {fileID: 3456844090314703}
   igPanel: {fileID: 1146636784612208046}
 --- !u!1 &1922923966089697775
 GameObject:
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.85
+  m_fontSize: 49.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1717,7 +1717,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.95
+  m_fontSize: 49.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

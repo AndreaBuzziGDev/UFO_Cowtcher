@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour
         Input.Player.Movement.performed += OnMovementPerformed;
         Input.Player.Movement.canceled += OnMovementCanceled;
 
+        //JOYSTICK
+        Input.Player.ScreenTouch.started += OnScreenTouched;
+        Input.Player.ScreenTouch.canceled += OnScreenReleased;
 
         //ESCAPE
         Input.Player.Escape.performed += OnEscapePerformed;
@@ -70,17 +73,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        //DISABLE INPUT WHEN OBJECT DISABLED
-        Input.Disable();
-
         //MOVEMENT
         Input.Player.Movement.performed -= OnMovementPerformed;
         Input.Player.Movement.canceled -= OnMovementCanceled;
 
+        //JOYSTICK
+        Input.Player.ScreenTouch.started -= OnScreenTouched;
+        Input.Player.ScreenTouch.canceled -= OnScreenReleased;
 
         //ESCAPE
         Input.Player.Escape.performed -= OnEscapePerformed;
 
+        //DISABLE INPUT WHEN OBJECT DISABLED
+        Input.Disable();
     }
 
 
@@ -89,11 +94,21 @@ public class PlayerController : MonoBehaviour
     private void OnMovementPerformed(InputAction.CallbackContext value) => MovementInputFactor = value.ReadValue<Vector2>();
     private void OnMovementCanceled(InputAction.CallbackContext value) => MovementInputFactor = value.ReadValue<Vector2>();
 
+    //JOYSTICK
+    private void OnScreenTouched(InputAction.CallbackContext value)
+    {
+        Vector2 touchPosition = Input.Player.TouchPosition.ReadValue<Vector2>();
+        if (touchPosition.y <= Screen.height / 2)
+        {
+            UIController.Instance.ShowJoystick(touchPosition);
+        }
+    }
+
+    private void OnScreenReleased(InputAction.CallbackContext value) => UIController.Instance.HideJoystick();
+
+
     //ESCAPE
     private void OnEscapePerformed(InputAction.CallbackContext value) => GameController.Instance.helper.HandleEscInput();
-
-
-
 
 
 
