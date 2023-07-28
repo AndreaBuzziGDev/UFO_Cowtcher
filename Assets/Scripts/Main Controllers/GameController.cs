@@ -25,7 +25,6 @@ public class GameController : MonoSingleton<GameController>
     private EGameState state = 0;
     public bool IsPaused { get { return this.state == EGameState.Paused; } }
 
-
     ///COMPLEX DATA
     public GameControllerHelper helper = new();
 
@@ -41,13 +40,18 @@ public class GameController : MonoSingleton<GameController>
     // Start is called before the first frame update
     private void Start()
     {
+        //SET SCREEN TO MOBILE ASPECT RATIO 
+        int targetHeight = Screen.width * 16 / 9;
+        int targetWidth = Screen.height * 9 / 16;
+
+        Screen.SetResolution(targetWidth, targetHeight, true);
+
         Debug.Log("GameController is Starting.");
 
         //ENFORCES START SEQUENCE
         SetState(EGameState.Start);
 
     }
-
 
 
     //FUNCTIONALITIES
