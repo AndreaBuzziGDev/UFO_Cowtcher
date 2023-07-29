@@ -26,11 +26,19 @@ public class Abductor : MonoBehaviour
     private float timeBeforeReductionProgress = 0f;
     private List<GameObject> cowsInRange = new List<GameObject>();//TODO: POSSIBLE REFACTOR SO THAT THIS HOLDS Cow(s)
 
+
+    //OTHER DATA
+    private FollowCamera playerCamera;
+
+
+
     //METHODS
     private void Awake()
     {
         outerCircleRenderer = outerCircle.GetComponent<LineRenderer>();
         innerCircleRenderer = innerCircle.GetComponent<LineRenderer>();
+
+        playerCamera = Camera.main.GetComponent<FollowCamera>();
     }
 
     private void Start()
@@ -45,6 +53,10 @@ public class Abductor : MonoBehaviour
         DrawCircle(circleSteps, maxRadius, outerCircleRenderer);
         if (cowsInRange.Count > 0)
         {
+            //HANDLE ZOOM
+            playerCamera.SetIsZooming(true);
+
+            //HANDLE CAPTURE AND CIRCLE
             innerCircle.SetActive(true);
             currentCaptureTimer += Time.deltaTime;
             captureDelta = currentCaptureTimer / captureTimer;
@@ -63,6 +75,9 @@ public class Abductor : MonoBehaviour
 
             if (timeBeforeReductionProgress >= timeBeforeReduction)
             {
+                //HANDLE DE-ZOOM
+                playerCamera.SetIsZooming(false);
+
                 currentCaptureTimer -= Time.deltaTime;
                 captureDelta = currentCaptureTimer / captureTimer;
                 DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
