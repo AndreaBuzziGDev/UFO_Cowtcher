@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
 {
     //DATA
     ///INPUT - EVENT-DRIVEN IMPLEMENTATION
-    private PlayerInput Input = null;
+    private PlayerInput inputPlayer = null;
+    public PlayerInput InputPlayer { get { return inputPlayer; } }
+
     private Vector2 MovementInputFactor = new(0,0);
 
 
@@ -29,6 +31,24 @@ public class PlayerController : MonoBehaviour
     private float movSpeedBonus;
 
 
+    ///EXPERIMENTAL FEATURES
+    ///SPRINT AFTER CAPTURE
+    private bool sprintCapture = false;
+    [SerializeField] private float sprintCaptureSpeedMultiplier = 3;
+    [SerializeField] private float sprintCaptureTimerMax = 2;
+    private float sprintCaptureTimer = 0;
+
+    ///ALT SPRINT AFTER CAPTURE
+    private Vector3 sprintPulse = Vector3.zero;
+    [SerializeField] private float sprintTimerMax = 0.5f;
+    private float sprintTimerActual = 0.0f;
+    public void AddSprintPulse(Vector3 newSprintPulse)
+    {
+        sprintPulse = newSprintPulse;
+        sprintTimerActual = sprintTimerMax;
+    }
+
+
 
 
 
@@ -37,7 +57,7 @@ public class PlayerController : MonoBehaviour
     //...
     private void Awake()
     {
-        Input = new PlayerInput();
+        inputPlayer = new PlayerInput();
         myRigidBody = this.gameObject.GetComponent<Rigidbody>();
     }
 
@@ -46,7 +66,7 @@ public class PlayerController : MonoBehaviour
         if (stunDuration > 0) stunDuration -= Time.deltaTime;
         UpdateAlterationsTimers(Time.deltaTime);
 
-        if (!GameController.Instance.IsPaused) Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
+        if (!GameController.Instance.IsPaused) Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y) + sprintPulse);
     }
 
 
@@ -55,37 +75,37 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         //ENABLE INPUT WHEN OBJECT ENABLED
-        Input.Enable();
+        inputPlayer.Enable();
 
         //ACTION SUBSCRIPTIONS
         //MOVEMENT
-        Input.Player.Movement.performed += OnMovementPerformed;
-        Input.Player.Movement.canceled += OnMovementCanceled;
+        inputPlayer.Player.Movement.performed += OnMovementPerformed;
+        inputPlayer.Player.Movement.canceled += OnMovementCanceled;
 
         //JOYSTICK
-        Input.Player.ScreenTouch.started += OnScreenTouched;
-        Input.Player.ScreenTouch.canceled += OnScreenReleased;
+        inputPlayer.Player.ScreenTouch.started += OnScreenTouched;
+        inputPlayer.Player.ScreenTouch.canceled += OnScreenReleased;
 
         //ESCAPE
-        Input.Player.Escape.performed += OnEscapePerformed;
+        inputPlayer.Player.Escape.performed += OnEscapePerformed;
 
     }
 
     private void OnDisable()
     {
         //MOVEMENT
-        Input.Player.Movement.performed -= OnMovementPerformed;
-        Input.Player.Movement.canceled -= OnMovementCanceled;
+        inputPlayer.Player.Movement.performed -= OnMovementPerformed;
+        inputPlayer.Player.Movement.canceled -= OnMovementCanceled;
 
         //JOYSTICK
-        Input.Player.ScreenTouch.started -= OnScreenTouched;
-        Input.Player.ScreenTouch.canceled -= OnScreenReleased;
+        inputPlayer.Player.ScreenTouch.started -= OnScreenTouched;
+        inputPlayer.Player.ScreenTouch.canceled -= OnScreenReleased;
 
         //ESCAPE
-        Input.Player.Escape.performed -= OnEscapePerformed;
+        inputPlayer.Player.Escape.performed -= OnEscapePerformed;
 
         //DISABLE INPUT WHEN OBJECT DISABLED
-        Input.Disable();
+        inputPlayer.Disable();
     }
 
 
@@ -97,7 +117,7 @@ public class PlayerController : MonoBehaviour
     //JOYSTICK
     private void OnScreenTouched(InputAction.CallbackContext value)
     {
-        Vector2 touchPosition = Input.Player.TouchPosition.ReadValue<Vector2>();
+        Vector2 touchPosition = inputPlayer.Player.TouchPosition.ReadValue<Vector2>();
         if (touchPosition.y <= Screen.height / 2)
         {
             UIController.Instance.ShowJoystick(touchPosition);
@@ -121,9 +141,41 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            //OLD MOVEMENT - PRE-DRAG
             //myRigidBody.velocity = (1+(movSpeedBonus/100)) * MoveSpeed * (direction);
 
+
+            //EXPERIMENTAL MOVEMENT - SPRINT
+            if (sprintTimerActual > 0.0f)
+            {
+                sprintTimerActual -= Time.deltaTime;
+            }
+            else
+            {
+                sprintPulse = Vector3.zero;
+            }
             myRigidBody.AddForce((1 + (movSpeedBonus / 100)) * MoveSpeed * (direction), ForceMode.Impulse);
+
+            /*
+            if (sprintCapture)
+            {
+                myRigidBody.AddForce((1 + (movSpeedBonus / 100)) * MoveSpeed * sprintCaptureSpeedMultiplier * (direction), ForceMode.Impulse);
+                if(sprintCaptureTimer > 0)
+                {
+                    sprintCaptureTimer -= Time.deltaTime;
+                    //Time.timeScale = 0.2f;
+                }
+                else
+                {
+                    sprintCapture = false;
+                    //Time.timeScale = 1;
+                }
+            }
+            else
+            {
+                myRigidBody.AddForce((1 + (movSpeedBonus / 100)) * MoveSpeed * (direction), ForceMode.Impulse);
+            }
+            */
         }
     }
 
@@ -176,5 +228,16 @@ public class PlayerController : MonoBehaviour
     {
         movSpeedBonus = percentBonus;
     }
+
+
+
+    //EXPERIMENTAL FEATURE - SPRINT AFTER CAPTURE
+    public void SetCaptureSprint()
+    {
+        sprintCapture = true;
+        sprintCaptureTimer = sprintCaptureTimerMax;
+    }
+
+
 
 }

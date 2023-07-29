@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576979319330301586}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2213579584673786655}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &3983880987564355499
 LineRenderer:
@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 2316233886179570003}
   - component: {fileID: 3824681213956448144}
   - component: {fileID: 1113527563185232423}
+  - component: {fileID: 8178618650575810081}
   m_Layer: 7
   m_Name: UFO
   m_TagString: Untagged
@@ -165,6 +166,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7941655071495466051}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
@@ -173,7 +175,6 @@ Transform:
   - {fileID: 6294619815631106068}
   - {fileID: 2573885485125725165}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1083418052433258214
 SpriteRenderer:
@@ -305,6 +306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 0.9
+  sprintCaptureSpeedMultiplier: 3
+  sprintCaptureTimerMax: 2
+  sprintTimerMax: 0.15
 --- !u!114 &1113527563185232423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +332,20 @@ MonoBehaviour:
   cowPhysicsLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &8178618650575810081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941655071495466051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec95c7352ddeb0840993efaf182a0082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMult: 2.5
+  pauseTimerMax: 0.5
 --- !u!1 &8132337875915980716
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,13 +370,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8132337875915980716}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2213579584673786655}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &550158128258438461
 LineRenderer:

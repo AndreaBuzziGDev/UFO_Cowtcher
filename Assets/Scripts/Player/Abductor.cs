@@ -131,6 +131,13 @@ public class Abductor : MonoBehaviour
         
         currentCaptureTimer = 0.0f;
         DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
+
+        //EXPERIMENTAL FEATURE - CAPTURE SPRINT
+
+        //COMMENTED: EXPERIMENTING ANOTHER WAY TO HANDLE SPRINT
+        //GameController.Instance.FindPlayerAnywhere().SetCaptureSprint();
+        GameController.Instance.FindPlayerAnywhere().gameObject.GetComponent<SprintCaptureController>().SetCaptureSprint();
+
     }
 
 
