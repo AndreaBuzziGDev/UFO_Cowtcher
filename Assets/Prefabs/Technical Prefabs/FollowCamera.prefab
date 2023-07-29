@@ -109,6 +109,6 @@ MonoBehaviour:
   CameraOffset: {x: 0, y: 20, z: -30}
   UFOVerticalOffset: 2.5
   Damping: 5
-  ZoomMultiplier: 1.5
+  ZoomMultiplier: 1.4
   TimerToMaxZoom: 1
   TimerDeZoomMax: 0.5
