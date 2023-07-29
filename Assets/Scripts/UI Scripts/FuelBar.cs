@@ -71,7 +71,7 @@ public class FuelBar : MonoBehaviour
     private void AnimateShake()
     {
         barPosition = this.GetComponent<RectTransform>().transform.position;
-        this.GetComponent<RectTransform>().transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.time * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
+        this.GetComponent<RectTransform>().transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
     }
 
 }
