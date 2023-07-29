@@ -9,15 +9,15 @@ public class FollowCamera : MonoBehaviour
     public float UFOVerticalOffset;
     public float Damping = 1.0f;
 
-
-    public Transform parentObject;
-    public float zoomLevel;
-    public float maxZoom;
-
     //HANDLING ZOOM
-    [SerializeField] private float ZoomMultiplier = 2;
+    private bool isZooming;
+    [SerializeField] private float ZoomMultiplier = 1.5f;
+    [SerializeField] private float TimerToMaxZoom = 1f;
+    [SerializeField] private float TimerDeZoomMax = 1f;
+    private float timerDeZoom;
     private float baseFOV;
     private Camera cameraComp;
+    float refSpeed;
 
 
 
@@ -30,35 +30,37 @@ public class FollowCamera : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //HANDLING FOLLOW UFO
         if (!TargetUFO)
         {
             return;
         }
-
         transform.position = Vector3.Lerp(transform.position, TargetUFO.position + CameraOffset, Time.deltaTime * Damping);
-
         transform.LookAt(TargetUFO.position - new Vector3(0, UFOVerticalOffset, 0), Vector3.up);
 
-        //sets zoom in with float value
-        /*
-        //if()
-        //{
-            transform.position = parentObject.position + (transform.forward * zoomLevel);
-            zoomLevel = Mathf.Clamp(zoomLevel, 0, maxZoom);
-        //}
-        */
-    }
-
-    public void HandleZoom(bool zooming)
-    {
-        if (zooming)
+        //HANDLING ZOOM
+        if (isZooming)
         {
-            cameraComp.fieldOfView = baseFOV / ZoomMultiplier;
+            cameraComp.fieldOfView = Mathf.SmoothDamp(cameraComp.fieldOfView, baseFOV / ZoomMultiplier, ref refSpeed, TimerToMaxZoom);
+            timerDeZoom = TimerDeZoomMax;
         }
         else
         {
-            cameraComp.fieldOfView = baseFOV;
+            if(timerDeZoom > 0)
+            {
+                timerDeZoom -= Time.deltaTime;
+            }
+            else
+            {
+                cameraComp.fieldOfView = Mathf.SmoothDamp(cameraComp.fieldOfView, baseFOV, ref refSpeed, TimerToMaxZoom / 3);
+            }
         }
+
+    }
+
+    public void SetIsZooming(bool zooming)
+    {
+        this.isZooming = zooming;
     }
 
 

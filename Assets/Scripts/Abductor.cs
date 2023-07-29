@@ -54,7 +54,7 @@ public class Abductor : MonoBehaviour
         if (cowsInRange.Count > 0)
         {
             //HANDLE ZOOM
-            playerCamera.HandleZoom(true);
+            playerCamera.SetIsZooming(true);
 
             //HANDLE CAPTURE AND CIRCLE
             innerCircle.SetActive(true);
@@ -76,7 +76,7 @@ public class Abductor : MonoBehaviour
             if (timeBeforeReductionProgress >= timeBeforeReduction)
             {
                 //HANDLE DE-ZOOM
-                playerCamera.HandleZoom(false);
+                playerCamera.SetIsZooming(false);
 
                 currentCaptureTimer -= Time.deltaTime;
                 captureDelta = currentCaptureTimer / captureTimer;
