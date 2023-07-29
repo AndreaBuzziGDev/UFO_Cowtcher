@@ -126,7 +126,7 @@ public class GameController : MonoSingleton<GameController>
     }
     private static void UnpauseGame()
     {
-        //UIController.Instance.ShowInputCanvas();
+        UIController.Instance.ShowInputCanvas();
         Time.timeScale = 1;
     }
 
