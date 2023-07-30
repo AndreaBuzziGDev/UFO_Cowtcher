@@ -2969,10 +2969,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7278993586334137433, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: shakeAmount
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 7837237044243350168, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_SizeDelta.x
       value: 87.034
