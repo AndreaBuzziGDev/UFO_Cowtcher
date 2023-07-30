@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
 {
     //DATA
     ///INPUT - EVENT-DRIVEN IMPLEMENTATION
-    private PlayerInput Input = null;
+    private PlayerInput inputPlayer = null;
+    public PlayerInput InputPlayer { get { return inputPlayer; } }
+
     private Vector2 MovementInputFactor = new(0,0);
 
 
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour
     //...
     private void Awake()
     {
-        Input = new PlayerInput();
+        inputPlayer = new PlayerInput();
         myRigidBody = this.gameObject.GetComponent<Rigidbody>();
     }
 
@@ -55,37 +57,37 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         //ENABLE INPUT WHEN OBJECT ENABLED
-        Input.Enable();
+        inputPlayer.Enable();
 
         //ACTION SUBSCRIPTIONS
         //MOVEMENT
-        Input.Player.Movement.performed += OnMovementPerformed;
-        Input.Player.Movement.canceled += OnMovementCanceled;
+        inputPlayer.Player.Movement.performed += OnMovementPerformed;
+        inputPlayer.Player.Movement.canceled += OnMovementCanceled;
 
         //JOYSTICK
-        Input.Player.ScreenTouch.started += OnScreenTouched;
-        Input.Player.ScreenTouch.canceled += OnScreenReleased;
+        inputPlayer.Player.ScreenTouch.started += OnScreenTouched;
+        inputPlayer.Player.ScreenTouch.canceled += OnScreenReleased;
 
         //ESCAPE
-        Input.Player.Escape.performed += OnEscapePerformed;
+        inputPlayer.Player.Escape.performed += OnEscapePerformed;
 
     }
 
     private void OnDisable()
     {
         //MOVEMENT
-        Input.Player.Movement.performed -= OnMovementPerformed;
-        Input.Player.Movement.canceled -= OnMovementCanceled;
+        inputPlayer.Player.Movement.performed -= OnMovementPerformed;
+        inputPlayer.Player.Movement.canceled -= OnMovementCanceled;
 
         //JOYSTICK
-        Input.Player.ScreenTouch.started -= OnScreenTouched;
-        Input.Player.ScreenTouch.canceled -= OnScreenReleased;
+        inputPlayer.Player.ScreenTouch.started -= OnScreenTouched;
+        inputPlayer.Player.ScreenTouch.canceled -= OnScreenReleased;
 
         //ESCAPE
-        Input.Player.Escape.performed -= OnEscapePerformed;
+        inputPlayer.Player.Escape.performed -= OnEscapePerformed;
 
         //DISABLE INPUT WHEN OBJECT DISABLED
-        Input.Disable();
+        inputPlayer.Disable();
     }
 
 
