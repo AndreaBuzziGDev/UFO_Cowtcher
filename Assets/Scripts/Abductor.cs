@@ -16,7 +16,7 @@ public class Abductor : MonoBehaviour
     private int circleSteps = 35;
     [SerializeField] private GameObject outerCircle;
     [SerializeField] private GameObject innerCircle;
-    [SerializeField] private LayerMask cowPhysicsLayer;
+    [SerializeField] private LayerMask interactionPhysicsLayer;
 
     private LineRenderer outerCircleRenderer;
     private LineRenderer innerCircleRenderer;
@@ -153,7 +153,7 @@ public class Abductor : MonoBehaviour
     public void CowDetectionLegacy()
     {
         cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, cowPhysicsLayer);
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, interactionPhysicsLayer);
 
         foreach (RaycastHit cow in collidersHit)
         {
@@ -168,16 +168,19 @@ public class Abductor : MonoBehaviour
     public void CowDetectionEnhanced()
     {
         cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+excessCaptureRadius), Vector3.down, transform.position.y, cowPhysicsLayer);
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
 
         Vector3 planeProjectedUFOPosition = new Vector3(transform.position.x, 0, transform.position.z);
 
-        foreach (RaycastHit cow in collidersHit)
+        /// CONTROL TO DISTINGUISH COWS OR OBJECTS TO INTERACT WITH
+        foreach (RaycastHit collider in collidersHit)
         {
-            Cow myCowObject = cow.transform.gameObject.GetComponent<Cow>();
-            if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))
             {
-                cowsInRange.Add(cow.transform.gameObject);
+                Cow myCowObject = collider.transform.gameObject.GetComponent<Cow>();
+                if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))
+                {
+                    cowsInRange.Add(collider.transform.gameObject);
+                }
             }
         }
     }
