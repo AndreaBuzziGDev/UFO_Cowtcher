@@ -6,23 +6,23 @@ public abstract class RitualAbstract
 {
     //DATA
     
-    protected ScriptableCow.UniqueID targetSpawnedCow;
-    public ScriptableCow.UniqueID TargetSpawnedCow { get { return targetSpawnedCow; } }
+    protected CowSO.UniqueID targetSpawnedCow;
+    public CowSO.UniqueID TargetSpawnedCow { get { return targetSpawnedCow; } }
 
 
-    protected List<ScriptableCow.UniqueID> requiredCows = new List<ScriptableCow.UniqueID>();
-    public List<ScriptableCow.UniqueID> RequiredCows { get { return requiredCows; } }
+    protected List<CowSO.UniqueID> requiredCows = new List<CowSO.UniqueID>();
+    public List<CowSO.UniqueID> RequiredCows { get { return requiredCows; } }
 
-    protected Dictionary<ScriptableCow.UniqueID, CowSummoningRitualModule> ritualDictionary = new();
+    protected Dictionary<CowSO.UniqueID, CowSummoningRitualModule> ritualDictionary = new();
 
 
     //METHODS
     //TODO: EVENTUALLY CAN BE DRASTICALLY SIMPLIFIED BY USING A BASE CONSTRUCTOR FOR THIS ABSTRACT CLASS, TO BE CALLED IN CHILD CLASSES.
 
-    protected void BuildRitualModules(List<ScriptableCow.UniqueID> buildRequiredCows)
+    protected void BuildRitualModules(List<CowSO.UniqueID> buildRequiredCows)
     {
-        Dictionary<ScriptableCow.UniqueID, int> plottedRituals = new();
-        foreach (ScriptableCow.UniqueID uid in buildRequiredCows)
+        Dictionary<CowSO.UniqueID, int> plottedRituals = new();
+        foreach (CowSO.UniqueID uid in buildRequiredCows)
         {
             if (plottedRituals.ContainsKey(uid))
             {
@@ -35,23 +35,23 @@ public abstract class RitualAbstract
         }
 
         //
-        foreach (KeyValuePair<ScriptableCow.UniqueID, int> entry in plottedRituals)
+        foreach (KeyValuePair<CowSO.UniqueID, int> entry in plottedRituals)
         {
             CowSummoningRitualModule iteratedModule = new CowSummoningRitualModule(entry.Key, entry.Value);
             ritualDictionary.Add(entry.Key, iteratedModule);
         }
     }
 
-    public virtual bool HasCow(ScriptableCow.UniqueID UID)
+    public virtual bool HasCow(CowSO.UniqueID UID)
     {
         //TODO: THIS SHOULD NOT ALLOW "UID" TO BE "ANY" IN INPUT.
 
         //IF RITUAL CONTAINS "ANY" COW --> DEFAULT TRUE
-        if (requiredCows.Contains(ScriptableCow.UniqueID.ANY)) return true;
+        if (requiredCows.Contains(CowSO.UniqueID.ANY)) return true;
         return requiredCows.Contains(UID);
     }
 
-    public virtual bool StrictlyHasCow(ScriptableCow.UniqueID UID)
+    public virtual bool StrictlyHasCow(CowSO.UniqueID UID)
     {
         return requiredCows.Contains(UID);
     }
@@ -61,7 +61,7 @@ public abstract class RitualAbstract
     {
         if (ritualDictionary.Count > 0)
         {
-            foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
+            foreach (KeyValuePair<CowSO.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
             {
                 if (!entry.Value.IsReadyToSpawn) return false;
             }
@@ -74,7 +74,7 @@ public abstract class RitualAbstract
 
     public void HandleCowSpawn()
     {
-        foreach (KeyValuePair<ScriptableCow.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
+        foreach (KeyValuePair<CowSO.UniqueID, CowSummoningRitualModule> entry in ritualDictionary)
         {
             entry.Value.HandleCowSpawn();
             UIController.Instance.IGPanel.RitualPanel.fadeToTransparent = true;
@@ -83,18 +83,18 @@ public abstract class RitualAbstract
 
 
     //ABSTRACT METHODS
-    public abstract void DoRitual(ScriptableCow.UniqueID UID);
+    public abstract void DoRitual(CowSO.UniqueID UID);
 
 
 
     //INTERNAL UTILITIES
     //THIS MUST NOT BE DIRECTLY ACCESSIBLE FROM THE OUTSIDE
-    protected virtual void ChangeCapturedCowAmount(ScriptableCow.UniqueID cowUID, int delta)
+    protected virtual void ChangeCapturedCowAmount(CowSO.UniqueID cowUID, int delta)
     {
-        if (cowUID == ScriptableCow.UniqueID.ANY)
+        if (cowUID == CowSO.UniqueID.ANY)
         {
-            Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + ScriptableCow.UniqueID.ANY);
-            ritualDictionary[ScriptableCow.UniqueID.ANY].ChangeAmount(delta);
+            Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + CowSO.UniqueID.ANY);
+            ritualDictionary[CowSO.UniqueID.ANY].ChangeAmount(delta);
         }
         else
         {
@@ -105,10 +105,10 @@ public abstract class RitualAbstract
             }
 
             //ALSO INCREASE "ANY" COW COUNTER
-            if (HasCow(ScriptableCow.UniqueID.ANY))
+            if (HasCow(CowSO.UniqueID.ANY))
             {
-                Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + ScriptableCow.UniqueID.ANY);
-                ritualDictionary[ScriptableCow.UniqueID.ANY].ChangeAmount(delta);
+                Debug.Log("RitualAbstract - Changing counter by " + delta + " for Cow: " + CowSO.UniqueID.ANY);
+                ritualDictionary[CowSO.UniqueID.ANY].ChangeAmount(delta);
             }
         }
     }

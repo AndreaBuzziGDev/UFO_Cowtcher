@@ -18,6 +18,6 @@ public class RitualGeneric : RitualAbstract
     }
 
     //METHODS
-    public override void DoRitual(ScriptableCow.UniqueID UID) => ChangeCapturedCowAmount(UID, 1);
+    public override void DoRitual(CowSO.UniqueID UID) => ChangeCapturedCowAmount(UID, 1);
 
 }

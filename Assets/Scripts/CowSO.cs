@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Cow", menuName = "Cow")]
-public class ScriptableCow : ScriptableObject
+public class CowSO : ScriptableObject
 {
     //ENUMS
     //NB: "ANY" RESERVED FOR APPLICATIONS THAT DO NOT NEED SPECIFYING A COW (LIKE NON-SPECIFIC RITUALS)

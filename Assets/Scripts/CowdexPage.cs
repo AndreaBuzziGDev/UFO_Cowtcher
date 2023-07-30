@@ -7,8 +7,8 @@ public class CowdexPage : MonoBehaviour
     //FORECASTED THIS CLASS FOR FUTURE USAGES - EXPECTED TO BE A MONOBEHAVIOUR TO ATTACH TO A GameObject TO HANDLE UI-USED DATA
 
     //DATA
-    private ScriptableCow.UniqueID cowUID;
-    public ScriptableCow.UniqueID CowUID { get { return cowUID; } }
+    private CowSO.UniqueID cowUID;
+    public CowSO.UniqueID CowUID { get { return cowUID; } }
 
     private IndexedCow myIndexedCow;
 

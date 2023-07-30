@@ -16,13 +16,13 @@ public class IndexedCow
     private CowKnowledgeState state = CowKnowledgeState.Unknown;
     public CowKnowledgeState State { get { return state; } }
 
-    private ScriptableCow referenceTemplate;
-    public ScriptableCow ReferenceTemplate { get { return referenceTemplate; } }
+    private CowSO referenceTemplate;
+    public CowSO ReferenceTemplate { get { return referenceTemplate; } }
 
 
 
     //CONSTRUCTOR
-    public IndexedCow(CowKnowledgeState startingState, ScriptableCow template)
+    public IndexedCow(CowKnowledgeState startingState, CowSO template)
     {
         this.state = startingState;
         this.referenceTemplate = template;

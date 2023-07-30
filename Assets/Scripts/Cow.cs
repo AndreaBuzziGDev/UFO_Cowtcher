@@ -23,8 +23,8 @@ public class Cow : MonoBehaviour
 
 
 
-    [SerializeField] private ScriptableCow cowTemplate;
-    public ScriptableCow CowTemplate { get { return cowTemplate; } }
+    [SerializeField] private CowSO cowTemplate;
+    public CowSO CowTemplate { get { return cowTemplate; } }
 
     private Hideout targetHideout;
     public Hideout TargetHideout { get { return targetHideout; } }
@@ -34,11 +34,11 @@ public class Cow : MonoBehaviour
 
     ///CLONED DATA
     ///UNIQUE ID
-    private ScriptableCow.UniqueID uid;
-    public ScriptableCow.UniqueID UID { get { return uid; } }
+    private CowSO.UniqueID uid;
+    public CowSO.UniqueID UID { get { return uid; } }
     ///RARITY
-    private ScriptableCow.Rarity rarity;
-    public ScriptableCow.Rarity Rarity { get { return rarity; } }
+    private CowSO.Rarity rarity;
+    public CowSO.Rarity Rarity { get { return rarity; } }
 
 
 

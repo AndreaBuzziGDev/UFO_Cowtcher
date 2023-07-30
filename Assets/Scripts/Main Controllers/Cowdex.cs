@@ -14,11 +14,11 @@ public class Cowdex : MonoSingleton<Cowdex>
     [SerializeField] private List<Cow> FullListOfExistingCows = new();//PUT ALL "PREFAB" COWS INSIDE HERE.
 
     ///DATA STRUCTURES
-    private Dictionary<ScriptableCow.UniqueID, Cow> CowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
-    private Dictionary<ScriptableCow.UniqueID, ScriptableCow> ScriptableCowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
-    private Dictionary<ScriptableCow.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
-    private Dictionary<ScriptableCow.UniqueID, RitualAbstractSO> AllSummoningRitualTemplates = new();//THE "ENCYCLOPEDIA OF TEMPLATE SUMMONING RITUALS"
-    private Dictionary<ScriptableCow.UniqueID, RitualAbstract> AllRituals = new();//THE "ENCYCLOPEDIA OF ACTUAL CONCRETE SUMMONING RITUALS"
+    private Dictionary<CowSO.UniqueID, Cow> CowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
+    private Dictionary<CowSO.UniqueID, CowSO> ScriptableCowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
+    private Dictionary<CowSO.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
+    private Dictionary<CowSO.UniqueID, RitualAbstractSO> AllSummoningRitualTemplates = new();//THE "ENCYCLOPEDIA OF TEMPLATE SUMMONING RITUALS"
+    private Dictionary<CowSO.UniqueID, RitualAbstract> AllRituals = new();//THE "ENCYCLOPEDIA OF ACTUAL CONCRETE SUMMONING RITUALS"
 
 
 
@@ -82,7 +82,7 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///SUMMONING RITUAL INITIALIZATION
     public void BuildSummoningRituals()
     {
-        foreach (KeyValuePair<ScriptableCow.UniqueID, RitualAbstractSO> entry in AllSummoningRitualTemplates)
+        foreach (KeyValuePair<CowSO.UniqueID, RitualAbstractSO> entry in AllSummoningRitualTemplates)
         {
             if (entry.Value != null)
             {
@@ -101,45 +101,45 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///DATA RETRIEVAL
 
     ///RETRIEVE ANY Cow
-    public List<Cow> GetCows(List<ScriptableCow.UniqueID> UIDs)
+    public List<Cow> GetCows(List<CowSO.UniqueID> UIDs)
     {
         //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
 
         List<Cow> requiredCows = new();
-        foreach (ScriptableCow.UniqueID UID in UIDs) requiredCows.Add(GetCow(UID));
+        foreach (CowSO.UniqueID UID in UIDs) requiredCows.Add(GetCow(UID));
         return requiredCows;
     }
-    public Cow GetCow(ScriptableCow.UniqueID UID)
+    public Cow GetCow(CowSO.UniqueID UID)
     {
         //TRY & CATCH? THERE ARE NO COWS SUPPOSED TO BE MISSING IN THIS LIST. ERROR INTENDED?
         return CowArchive[UID];
     }
 
     ///RETRIEVE ANY ScriptableCow
-    public List<ScriptableCow> GetScriptableCows(List<ScriptableCow.UniqueID> UIDs)
+    public List<CowSO> GetScriptableCows(List<CowSO.UniqueID> UIDs)
     {
         //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
 
-        List<ScriptableCow> requiredScriptableCows = new();
-        foreach (ScriptableCow.UniqueID UID in UIDs) requiredScriptableCows.Add(GetScriptableCow(UID));
+        List<CowSO> requiredScriptableCows = new();
+        foreach (CowSO.UniqueID UID in UIDs) requiredScriptableCows.Add(GetScriptableCow(UID));
         return requiredScriptableCows;
     }
-    public ScriptableCow GetScriptableCow(ScriptableCow.UniqueID UID)
+    public CowSO GetScriptableCow(CowSO.UniqueID UID)
     {
         return ScriptableCowArchive[UID];
     }
 
 
     ///RETRIEVE ANY IndexedCow
-    public List<IndexedCow> GetIndexedCows(List<ScriptableCow.UniqueID> UIDs)
+    public List<IndexedCow> GetIndexedCows(List<CowSO.UniqueID> UIDs)
     {
         //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
 
         List<IndexedCow> relatedCows = new();
-        foreach (ScriptableCow.UniqueID UID in UIDs) relatedCows.Add(GetIndexedCow(UID));
+        foreach (CowSO.UniqueID UID in UIDs) relatedCows.Add(GetIndexedCow(UID));
         return relatedCows;
     }
-    public IndexedCow GetIndexedCow(ScriptableCow.UniqueID UID)
+    public IndexedCow GetIndexedCow(CowSO.UniqueID UID)
     {
         return PlayableCowdex[UID];
     }
@@ -153,25 +153,25 @@ public class Cowdex : MonoSingleton<Cowdex>
 
     //TODO: IMPLEMENT FUNCTIONALITIES TO RETRIEVE DATA RELATIVE TO SUMMONING RITUALS
     ///RETRIEVE ANY CONCRETE RITUAL - FEEDING THE "SPAWNED COW" UID AS ARGUMENT
-    public List<RitualAbstract> GetRituals(List<ScriptableCow.UniqueID> UIDs)
+    public List<RitualAbstract> GetRituals(List<CowSO.UniqueID> UIDs)
     {
         //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
 
         List<RitualAbstract> interestedRituals = new();
-        foreach (ScriptableCow.UniqueID UID in UIDs) interestedRituals.Add(GetRitual(UID));
+        foreach (CowSO.UniqueID UID in UIDs) interestedRituals.Add(GetRitual(UID));
         return interestedRituals;
     }
-    public RitualAbstract GetRitual(ScriptableCow.UniqueID UID)
+    public RitualAbstract GetRitual(CowSO.UniqueID UID)
     {
         return AllRituals[UID];
     }
 
 
     ///RETRIEVE ANY CONCRETE RITUAL - BASED ON IF THEY CONTAIN THE INTERESTED COW UID
-    public List<RitualAbstract> GetRitualsThatContainCow(ScriptableCow.UniqueID UID)
+    public List<RitualAbstract> GetRitualsThatContainCow(CowSO.UniqueID UID)
     {
         List<RitualAbstract> involvedRituals = new();
-        foreach (KeyValuePair<ScriptableCow.UniqueID, RitualAbstract> entry in AllRituals)
+        foreach (KeyValuePair<CowSO.UniqueID, RitualAbstract> entry in AllRituals)
         {
             if (entry.Value.HasCow(UID)) involvedRituals.Add(entry.Value);
         }

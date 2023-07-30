@@ -221,7 +221,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
 
     ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
-    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID)
+    public void MarkForRespawn(CowSO.UniqueID caughtCowUID)
     {
         GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
         prefabCowGO.gameObject.SetActive(false);
@@ -230,7 +230,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
 
     //TODO: HANDLE "EASY" OVERLOADING OF METHODS VIA NATIVE C# CAPABILITIES
-    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID, float customTimer)
+    public void MarkForRespawn(CowSO.UniqueID caughtCowUID, float customTimer)
     {
         GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
         prefabCowGO.gameObject.SetActive(false);
