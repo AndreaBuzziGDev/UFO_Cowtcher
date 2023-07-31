@@ -50,6 +50,9 @@ public class CowSO : ScriptableObject
     public string Name;
     public string Description;
 
+    [Tooltip("the probability for this cow type to spawn randomly after being unlocked.")]
+    [Range(0, 100f)] public float spawnProbability = 20.0f;
+
     public int FuelRecoveryAmount;
     public float AlertRadius;
     public float SpeedCalm;
