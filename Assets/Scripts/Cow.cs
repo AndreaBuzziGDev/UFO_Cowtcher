@@ -259,6 +259,9 @@ public class Cow : MonoBehaviour
     {
         /// SIMPLE DATA
         this.uid = cowTemplate.UID;
+        Debug.Log("Cow - CloneFromTemplate - uid: " + this.uid);
+        Debug.Log("Cow - CloneFromTemplate - UID: " + UID);
+
         this.rarity = cowTemplate.rarity;
         this.cowName = cowTemplate.Name;
         this.fuelRecoveryAmount = cowTemplate.FuelRecoveryAmount;

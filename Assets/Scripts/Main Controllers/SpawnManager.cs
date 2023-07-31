@@ -116,6 +116,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         //TODO: PERHAPS A SYSTEM THAT TAKES INTO ACCOUNT THE SPAWN CHANCE OF EACH OF THE EXISTING COWS ON THE MAP CAN BE TAKEN INTO ACCOUNT?
         List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal, CowSO.UniqueID.C001Kevin };
+        //List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal };
         TrackSpawnProbability(UIDs);
     }
 
@@ -326,7 +327,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
         foreach (Cow prefabCow in cowPrefabs)
         {
-            spawnChances.Add(prefabCow.UID, prefabCow.CowTemplate.spawnProbability);
+            Debug.Log("SpawnManager TrackSpawnProbability - prefabCow Name: " + prefabCow.name);
+            Debug.Log("SpawnManager TrackSpawnProbability - prefabCow UID: " + prefabCow.CowTemplate.UID);
+            spawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnProbability);
         }
 
         CalculateWeightedProbabilities();
@@ -384,6 +387,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             prefabCowGO.SetActive(false);
 
             SpawnCow(prefabCowGO.GetComponentInChildren<Cow>());
+            currentNumOfCows++;
 
         }
 

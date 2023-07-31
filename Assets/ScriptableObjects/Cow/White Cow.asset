@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: White Cow
   m_EditorClassIdentifier: 
   UID: 2
   rarity: 0
   Name: Kevin
   Description: 
+  spawnProbability: 20
   FuelRecoveryAmount: 3
   AlertRadius: 4
   SpeedCalm: 2
