@@ -30,7 +30,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///SPAWN MODE SETTINGS
     [SerializeField] private bool isGridSpawnMode = false;
 
+    ///SPAWN
+    //TODO: INTRODUCE FLAG TO DETERMINE WETHER THE SYSTEM WILL USE WEIGHTED CHANCE OR SOMETHING ELSE
+    [Tooltip("If checked, this uses the random spawn percentage instead of respawning the captured cow with a cooldown")]
+    [SerializeField] private bool isRandomizedSpawnMode = false;
 
+    private Dictionary<CowSO.UniqueID, float> spawnChances = new();
+    private Dictionary<CowSO.UniqueID, float> weightedSpawnChances = new();
 
 
 
@@ -52,12 +58,25 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     // Update is called once per frame
     void Update()
     {
+        //TODO: WILL PROBABLY REQUIRE A DIFFERENT IF INNESTATION
         ManageDequeueingCows();
         if (simultaneousSpawnTimer > 0.0f)
         {
             simultaneousSpawnTimer -= Time.deltaTime;
         }
         currentSpawnedCount = 0;
+
+
+
+
+
+        if (isRandomizedSpawnMode)
+        {
+            //MODE: SPAWN BASED ON RANDOM CHANCE + RITUAL SUMMONED COW
+            ManageRandomlySpawnCows();
+
+        }
+
     }
 
 
@@ -71,9 +90,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     public void Initialization()
     {
         initializeCowCount();
+        initializeSpawnProbabilityDictionary();
 
         initializeAllSpawnPoints();
         MakeDictionarySpawnPoints();
+
+
     }
 
     ///MAIN INITIALIZATION
@@ -84,8 +106,18 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         currentNumOfCows = cows.Count;
         Debug.Log("SpawnManager - start num of cows: " + currentNumOfCows);
     }
-    
-    
+
+    ///INITIALIZE SPAWN PROBABILITY DICTIONARY
+    private void initializeSpawnProbabilityDictionary()
+    {
+        //TODO: PERHAPS A SYSTEM THAT TAKES INTO ACCOUNT THE SPAWN CHANCE OF EACH OF THE EXISTING COWS ON THE MAP CAN BE TAKEN INTO ACCOUNT?
+        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal, CowSO.UniqueID.C001Kevin };
+        TrackSpawnProbability(UIDs);
+    }
+
+
+
+
     ///SPAWN POINTS INITIALIZATION
     private void initializeAllSpawnPoints()
     {
@@ -275,5 +307,53 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
 
 
+
+
+
+
+
+
+    ///PROBABILITY-BASED SPAWN FUNCTIONALITIES
+    private void TrackSpawnProbability(List<CowSO.UniqueID> UIDs)
+    {
+        List<Cow> cowPrefabs = Cowdex.Instance.GetCows(UIDs);
+
+        foreach (Cow prefabCow in cowPrefabs)
+        {
+            spawnChances.Add(prefabCow.UID, prefabCow.CowTemplate.spawnProbability);
+        }
+
+        CalculateWeightedProbabilities();
+    }
+
+    private void CalculateWeightedProbabilities()
+    {
+        float totalSum = 0;
+        foreach (KeyValuePair<CowSO.UniqueID, float> entry in spawnChances)
+        {
+            totalSum += entry.Value;
+        }
+
+        float weightCoefficient = 100 / totalSum;
+        Debug.Log("SpawnManager Randomly - weightCoefficient: " + weightCoefficient);
+
+        foreach (KeyValuePair<CowSO.UniqueID, float> entry in spawnChances)
+        {
+            weightedSpawnChances.Add(entry.Key, entry.Value * weightCoefficient);
+            Debug.Log("SpawnManager Randomly - Base Probability for Cow: " + entry.Key + " is: " + entry.Value);
+            Debug.Log("SpawnManager Randomly - Weighted Probability for Cow: " + entry.Key + " is: " + entry.Value * weightCoefficient);
+        }
+
+    }
+
+
+
+
+
+    private void ManageRandomlySpawnCows()
+    {
+        //...
+
+    }
 
 }
