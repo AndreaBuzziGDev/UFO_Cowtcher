@@ -327,8 +327,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
         foreach (Cow prefabCow in cowPrefabs)
         {
-            Debug.Log("SpawnManager TrackSpawnProbability - prefabCow Name: " + prefabCow.name);
-            Debug.Log("SpawnManager TrackSpawnProbability - prefabCow UID: " + prefabCow.CowTemplate.UID);
+            //NB: REFERENCING TEMPLATE. THIS IS A PREFAB, WHICH HAS NOT-YET RUN THE "Awake" METHOD
             spawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnProbability);
         }
 
@@ -364,14 +363,14 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         //...
         //MODE: WEIGHTED CHANCE
         float randomFloat = Random.Range(0, 100);
-        Debug.Log("SpawnManager ManageRandomlySpawnCows - randomFloat: " + randomFloat);
+        //Debug.Log("SpawnManager ManageRandomlySpawnCows - randomFloat: " + randomFloat);
 
         float chanceTally = 0;
         CowSO.UniqueID choice = CowSO.UniqueID.ANY;
         foreach (KeyValuePair<CowSO.UniqueID, float> entry in weightedSpawnChances)
         {
             chanceTally += entry.Value;
-            Debug.Log("SpawnManager ManageRandomlySpawnCows - chanceTally: " + chanceTally);
+            //Debug.Log("SpawnManager ManageRandomlySpawnCows - chanceTally: " + chanceTally);
 
             if (randomFloat <= chanceTally)
             {
