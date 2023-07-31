@@ -255,17 +255,17 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
         //TODO: AS OF SPRINT IN WEEK 24 07 2023: COWS WILL NOT AUTOMATICALLY ENTER RESPAWN QUEUE WHEN CAPTURED.
         //      DESIRED FEATURE IS: IF MAX NUMBER OF COWS IS NOT REACHED, RANDOMLY GENERATE COW BASED ON THEIR ADJUSTED PROBABILITY%
-        MarkForRespawn(interestedCow.UID);
+        if (!isRandomizedSpawnMode)
+        {
+            MarkForRespawn(interestedCow.UID);
+        }
     }
 
 
     ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
     public void MarkForRespawn(CowSO.UniqueID caughtCowUID)
     {
-        GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
-        prefabCowGO.gameObject.SetActive(false);
-
-        caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>()));
+        MarkForRespawn(caughtCowUID, Cowdex.Instance.GetCow(caughtCowUID).CowTemplate.TimerRespawn);
     }
 
     //TODO: HANDLE "EASY" OVERLOADING OF METHODS VIA NATIVE C# CAPABILITIES
@@ -273,8 +273,21 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
         prefabCowGO.gameObject.SetActive(false);
-        
-        caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>(), customTimer));
+
+        if (isRandomizedSpawnMode)
+        {
+            //MODE: RANDOMIZED SPAWN - RITUAL COWS ARE SPAWNED IMMEDIATELY AND THEIR PROBABILITY GETS TRACKED.
+            if (!spawnChances.ContainsKey(caughtCowUID))
+            {
+                TrackSpawnProbability(new List<CowSO.UniqueID>{ caughtCowUID });
+            }
+            SpawnCow(prefabCowGO.GetComponentInChildren<Cow>());
+        }
+        else
+        {
+            //MODE: QUEUED SPAWN - RITUAL COWS AND CAPTURED COWS ARE ADDED TO THE RESPAWN QUEUE
+            caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>(), customTimer));
+        }
     }
 
 
@@ -312,10 +325,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
         caughtCowWaitingForRespawn = caughtCowWaitingForRespawn.Except(tempList).ToList();
     }
-
-
-
-
 
 
 
