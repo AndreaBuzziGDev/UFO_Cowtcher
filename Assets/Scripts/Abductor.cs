@@ -175,6 +175,7 @@ public class Abductor : MonoBehaviour
         /// CONTROL TO DISTINGUISH COWS OR OBJECTS TO INTERACT WITH
         foreach (RaycastHit collider in collidersHit)
         {
+            
             {
                 Cow myCowObject = collider.transform.gameObject.GetComponent<Cow>();
                 if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))

@@ -70,7 +70,7 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
 
     //FUNCTIONALITIES
     public Vector3 GetRandomPointInsideSpawnGrid()
-    {
+    { 
         int randomX = (int)Random.Range(southWest.transform.position.x, northEast.transform.position.x);
         int randomZ = (int)Random.Range(southWest.transform.position.z, northEast.transform.position.z);
 
@@ -96,5 +96,10 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
     }
 
     //SPAWN OBJECTS INTERACTION
+    public void SpawnObjectInsideGrid(Cow interestedObject)
+    {
+        interestedObject.transform.position = GetRandomPointInsideSpawnGrid();
+        interestedObject.gameObject.SetActive(true);
+    }
 
 }
