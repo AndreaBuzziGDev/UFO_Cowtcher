@@ -354,6 +354,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         float weightCoefficient = 100 / totalSum;
         Debug.Log("SpawnManager Randomly - weightCoefficient: " + weightCoefficient);
 
+        weightedSpawnChances = new Dictionary<CowSO.UniqueID, float>();
         foreach (KeyValuePair<CowSO.UniqueID, float> entry in spawnChances)
         {
             weightedSpawnChances.Add(entry.Key, entry.Value * weightCoefficient);
@@ -372,14 +373,14 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         //...
         //MODE: WEIGHTED CHANCE
         float randomFloat = Random.Range(0, 100);
-        //Debug.Log("SpawnManager ManageRandomlySpawnCows - randomFloat: " + randomFloat);
+        Debug.Log("SpawnManager ManageRandomlySpawnCows - randomFloat: " + randomFloat);
 
         float chanceTally = 0;
         CowSO.UniqueID choice = CowSO.UniqueID.ANY;
         foreach (KeyValuePair<CowSO.UniqueID, float> entry in weightedSpawnChances)
         {
             chanceTally += entry.Value;
-            //Debug.Log("SpawnManager ManageRandomlySpawnCows - chanceTally: " + chanceTally);
+            Debug.Log("SpawnManager ManageRandomlySpawnCows - chanceTally: " + chanceTally);
 
             if (randomFloat <= chanceTally)
             {

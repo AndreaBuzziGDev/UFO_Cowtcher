@@ -16,7 +16,7 @@ MonoBehaviour:
   rarity: 0
   Name: Kevin
   Description: 
-  spawnProbability: 20
+  spawnProbability: 50
   FuelRecoveryAmount: 3
   AlertRadius: 4
   SpeedCalm: 2
