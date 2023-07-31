@@ -6304,6 +6304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1113527563185232423, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: interactionPhysicsLayer.m_Bits
+      value: 576
+      objectReference: {fileID: 0}
     - target: {fileID: 2213579584673786655, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: m_RootOrder
       value: 8

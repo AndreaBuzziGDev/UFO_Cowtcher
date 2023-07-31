@@ -96,10 +96,5 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
     }
 
     //SPAWN OBJECTS INTERACTION
-    //public void SpawnObjectInteractionInsideGrid(Cow interestedObject)
-    //{
-  //      interestedObject.transform.position = GetRandomPointInsideSpawnGrid();
-  //      interestedObject.gameObject.SetActive(true);
-   // }
 
 }
