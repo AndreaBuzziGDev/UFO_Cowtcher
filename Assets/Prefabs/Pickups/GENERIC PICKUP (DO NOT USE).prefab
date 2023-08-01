@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5109034705212894059}
   - component: {fileID: 7544958186759497162}
   m_Layer: 9
-  m_Name: Speed_Boost
+  m_Name: GENERIC PICKUP (DO NOT USE)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73194daa19cc5643b80dab15362a4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Alteration: {fileID: 11400000, guid: 23ee7e8ea1a00c5419b94ae956580f14, type: 2}
+  Alteration: {fileID: 0}
