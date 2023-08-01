@@ -66,7 +66,7 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
 
     //FUNCTIONALITIES
     public Vector3 GetRandomPointInsideSpawnGrid()
-    {
+    { 
         int randomX = (int)Random.Range(southWest.transform.position.x, northEast.transform.position.x);
         int randomZ = (int)Random.Range(southWest.transform.position.z, northEast.transform.position.z);
 
@@ -91,5 +91,12 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
         interestedCow.gameObject.SetActive(true);
     }
 
+    //SPAWN OBJECTS INTERACTION
+    //TODO: USE THIS TO SPAWN "ASTEROID" STUFF ON THE MAP
+    public void SpawnObjectInsideGrid(ItemPickup interestedObject)
+    {
+        interestedObject.transform.position = GetRandomPointInsideSpawnGrid();
+        interestedObject.gameObject.SetActive(true);
+    }
 
 }
