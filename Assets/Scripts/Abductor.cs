@@ -143,7 +143,8 @@ public class Abductor : MonoBehaviour
             //WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
             SpawnManager.Instance.HandleCowCapture(cow);
 
-            if (cow.Alteration != null)
+            //TODO: MAYBE A CHECKBOX SOMEWHERE IN ONE OF THE MAIN CONTROLLERS CAN ENABLE THE POSSIBILITY TO GO BACK TO THE PREVIOUS BUFF APPLICATION MODE.
+            if (cow.CowTemplate.PickupItemToBeSpawned != null)
             {
                 //COMMENTED IN FEATURES ASTEROID: NOW PICKUPS DELIVED THE DESIRED BUFF
                 //GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
