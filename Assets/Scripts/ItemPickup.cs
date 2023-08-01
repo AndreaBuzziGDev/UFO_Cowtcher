@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
+    //DATA
+    ///STATUS ALTERATION
+    public SAAbstractSO Alteration;
+
+
+
+    //METHODS
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +22,11 @@ public class ItemPickup : MonoBehaviour
     {
         
     }
+
+    //FUNCTIONALITIES
+    public SAAbstract getStatusAlteration()
+    {
+        return Alteration.GetBuff();
+    }
+
 }
