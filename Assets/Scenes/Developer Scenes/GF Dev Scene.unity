@@ -1117,7 +1117,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2446204817090840254, guid: cc089067635a27e4eab8aee36116c037, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 2446204817090840254, guid: cc089067635a27e4eab8aee36116c037, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1125,7 +1125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2446204817090840254, guid: cc089067635a27e4eab8aee36116c037, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8.18
       objectReference: {fileID: 0}
     - target: {fileID: 2446204817090840254, guid: cc089067635a27e4eab8aee36116c037, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6304,6 +6304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1113527563185232423, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: captureTimer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1113527563185232423, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: interactionPhysicsLayer.m_Bits
       value: 576

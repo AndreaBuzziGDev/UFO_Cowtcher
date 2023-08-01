@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2446204817090840254}
   - component: {fileID: 2641711987203644661}
-  - component: {fileID: 217659265938520362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Speed_Boost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &217659265938520362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5755845425069914449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee9b7761081c8cb4c9472378df29eb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
