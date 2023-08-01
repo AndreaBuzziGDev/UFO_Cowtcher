@@ -17,6 +17,10 @@ public class Abductor : MonoBehaviour
     [SerializeField] private GameObject outerCircle;
     [SerializeField] private GameObject innerCircle;
     [SerializeField] private LayerMask interactionPhysicsLayer;
+    private int cowLayer;
+    private int pickupLayer;
+
+
 
     private LineRenderer outerCircleRenderer;
     private LineRenderer innerCircleRenderer;
@@ -39,6 +43,11 @@ public class Abductor : MonoBehaviour
         innerCircleRenderer = innerCircle.GetComponent<LineRenderer>();
 
         playerCamera = Camera.main.GetComponent<FollowCamera>();
+
+        ///LAYER INITIALIZATION
+        cowLayer = LayerMask.NameToLayer("CowPhysicsLayer");
+        pickupLayer = LayerMask.NameToLayer("ObjectInteractionPhysicsLayer");
+
     }
 
     private void Start()
@@ -175,13 +184,18 @@ public class Abductor : MonoBehaviour
         /// CONTROL TO DISTINGUISH COWS OR OBJECTS TO INTERACT WITH
         foreach (RaycastHit collider in collidersHit)
         {
-            
+            if(collider.transform.gameObject.layer == cowLayer)
             {
                 Cow myCowObject = collider.transform.gameObject.GetComponent<Cow>();
                 if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))
                 {
                     cowsInRange.Add(collider.transform.gameObject);
                 }
+            } 
+            else if (collider.transform.gameObject.layer == pickupLayer)
+            {
+                //DEBUG
+                Debug.Log("Picking Up Item");
             }
         }
     }
