@@ -60,15 +60,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         if (isRandomizedSpawnMode)
         {
-            //MODE: SPAWN BASED ON RANDOM CHANCE (+ RITUAL SUMMONED COW)
-            //TODO: THIS ONLY RANDOMLY SPAWN COWS
-
+            //MODE: SPAWN BASED ON RANDOM CHANCE + RITUAL SUMMONED COW
             //TODO: ADJUST PARAMETERS AND STUFF...
-            if (currentNumOfCows < maxNumOfCows)
-            {
-                //TODO: THIS CURRENTLY ONLY RANDOMLY SPAWN COWS (COWS DON'T GET DEQUEUED)
-                ManageRandomlySpawnCow();
-            }
+            ManageRandomlySpawnCow();
         }
         else
         {
@@ -253,10 +247,17 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         //LOWER COUNT OF CURRENT COWS
         currentNumOfCows--;
 
-        //TODO: AS OF SPRINT IN WEEK 24 07 2023: COWS WILL NOT AUTOMATICALLY ENTER RESPAWN QUEUE WHEN CAPTURED.
-        //      DESIRED FEATURE IS: IF MAX NUMBER OF COWS IS NOT REACHED, RANDOMLY GENERATE COW BASED ON THEIR ADJUSTED PROBABILITY%
-        if (!isRandomizedSpawnMode)
+        //
+        if (isRandomizedSpawnMode)
         {
+            if (!spawnChances.ContainsKey(interestedCow.UID))
+            {
+                TrackSpawnProbability(new List<CowSO.UniqueID> { interestedCow.UID });
+            }
+        }
+        else
+        {
+            //QUEUED BEHAVIOUR: RESPAWN CAUGHT COWS
             MarkForRespawn(interestedCow.UID);
         }
     }
@@ -276,12 +277,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
         if (isRandomizedSpawnMode)
         {
-            //MODE: RANDOMIZED SPAWN - RITUAL COWS ARE SPAWNED IMMEDIATELY AND THEIR PROBABILITY GETS TRACKED.
-            if (!spawnChances.ContainsKey(caughtCowUID))
-            {
-                TrackSpawnProbability(new List<CowSO.UniqueID>{ caughtCowUID });
-            }
+            //MODE: RANDOMIZED SPAWN - RITUAL COWS ARE SPAWNED IMMEDIATELY
             SpawnCow(prefabCowGO.GetComponentInChildren<Cow>());
+            currentNumOfCows++;
         }
         else
         {
@@ -370,8 +368,19 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     private void ManageRandomlySpawnCow()
     {
-        //...
-        //MODE: WEIGHTED CHANCE
+        if (currentNumOfCows < maxNumOfCows)
+        {
+            //MODE: WEIGHTED CHANCE
+            SpawnRandomlyWeightedChance();
+
+            //MODE: SOMETHING ELSE
+        }
+    }
+
+
+    //WEIGHTED CHANCE: CHANCE WILL CHANGE BASED ON HOW MANY ARE INPUT, COLLECTIVE CHANCE WILL ALWAYS BE 100%
+    private void SpawnRandomlyWeightedChance()
+    {
         float randomFloat = Random.Range(0, 100);
         Debug.Log("SpawnManager ManageRandomlySpawnCows - randomFloat: " + randomFloat);
 
@@ -390,20 +399,16 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             }
         }
 
-        if(choice != CowSO.UniqueID.ANY)
+        if (choice != CowSO.UniqueID.ANY)
         {
             GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(choice).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
             prefabCowGO.SetActive(false);
 
             SpawnCow(prefabCowGO.GetComponentInChildren<Cow>());
             currentNumOfCows++;
-
         }
 
-
-
-        //MODE: SOMETHING ELSE
-
     }
+
 
 }
