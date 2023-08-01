@@ -8,9 +8,12 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
 {
     //DATA
     private List<SpawningCorner> boundaries = new();
+
+    //SPAWN GRID TRACKING CORNERS
     private SpawningCorner southWest;
     private SpawningCorner northEast;
 
+    //ADDITIONAL CORNERS
 
 
     //METHODS
@@ -23,43 +26,36 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
         boundaries = GetComponentsInChildren<SpawningCorner>().ToList();
 
         //CONVENTION: TAKES THE SOUTH WEST AND NORTH EAST DUO
-        ///SOUTH WEST
-        //TODO: MOVE INTO A DEDICATED METHOD
         foreach(SpawningCorner sc in boundaries)
         {
-            if(southWest != null)
+            float weight = sc.getWeight();
+
+            ///SOUTH WEST
+            if (southWest != null)
             {
-                if(sc.transform.position.x < southWest.transform.position.x)
+                if (sc.getWeight() < southWest.getWeight())
                 {
-                    if (sc.transform.position.z < southWest.transform.position.z)
-                    {
-                        southWest = sc;
-                    }
+                    southWest = sc;
                 }
             }
             else
             {
                 southWest = sc;
             }
-        }
 
-        ///NORTH EAST
-        foreach (SpawningCorner sc in boundaries)
-        {
+            ///NORTH EAST
             if (northEast != null)
             {
-                if (sc.transform.position.x > northEast.transform.position.x)
+                if (sc.getWeight() > northEast.getWeight())
                 {
-                    if (sc.transform.position.z > northEast.transform.position.z)
-                    {
-                        northEast = sc;
-                    }
+                    northEast = sc;
                 }
             }
             else
             {
                 northEast = sc;
             }
+
         }
 
         Debug.Log("SpawningGrid - southWest: " + southWest.transform.position);
