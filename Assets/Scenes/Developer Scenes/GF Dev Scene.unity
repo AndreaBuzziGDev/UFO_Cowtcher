@@ -3343,7 +3343,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 626510673722159619, guid: ec516109a8efd2842af6e67e3228e316, type: 3}
       propertyPath: m_Name
-      value: Corners
+      value: Spawning Grid
       objectReference: {fileID: 0}
     - target: {fileID: 1231369630954453687, guid: ec516109a8efd2842af6e67e3228e316, type: 3}
       propertyPath: m_LocalPosition.x

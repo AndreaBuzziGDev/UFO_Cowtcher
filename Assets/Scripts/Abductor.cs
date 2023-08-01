@@ -159,7 +159,7 @@ public class Abductor : MonoBehaviour
                 prefabPickupItem.SetActive(false);
 
                 //TODO: DEVELOP A FUNCTIONALITY ON COWDEX + CowSO THAT ALLOWS TO IDENTIFY "MALICIOUS" COWS THAT DROP THEIR INTENDED ALTERATION ItemPickup AT THEIR OWN FEET WHEN CAPTURED.
-                if (cow.CowTemplate.UID.Equals(ScriptableCow.UniqueID.R003Scarecow))
+                if (cow.CowTemplate.UID.Equals(CowSO.UniqueID.R003Scarecow))
                 {
                     prefabPickupItem.GetComponent<ItemPickup>().Spawn(cow.transform.position);
                 }
