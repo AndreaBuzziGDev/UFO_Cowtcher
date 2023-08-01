@@ -31,8 +31,15 @@ public class ItemPickup : MonoBehaviour
 
 
     //SPAWN ITEM
+    ///SPAWN ON DEFINED POSITION
+    public void Spawn(Vector3 intendedPosition)
+    {
+        this.transform.position = intendedPosition;
+        this.gameObject.SetActive(true);
+    }
+
     ///SPAWN ITEM RANDOMLY ON SPAWN GRID
-    public void Spawn()
+    public void SpawnRandomly()
     {
         SpawningGrid.Instance.SpawnObjectInsideGrid(this);
     }

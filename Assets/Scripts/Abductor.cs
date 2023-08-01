@@ -158,7 +158,14 @@ public class Abductor : MonoBehaviour
                 GameObject prefabPickupItem = Instantiate(cow.CowTemplate.PickupItemToBeSpawned.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
                 prefabPickupItem.SetActive(false);
 
-                prefabPickupItem.GetComponent<ItemPickup>().Spawn();
+                if (cow.CowTemplate.UID.Equals(ScriptableCow.UniqueID.R003Scarecow))
+                {
+                    prefabPickupItem.GetComponent<ItemPickup>().Spawn(cow.transform.position);
+                }
+                else
+                {
+                    prefabPickupItem.GetComponent<ItemPickup>().SpawnRandomly();
+                }
 
             }
 
