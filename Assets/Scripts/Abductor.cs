@@ -145,7 +145,8 @@ public class Abductor : MonoBehaviour
 
             if (cow.Alteration != null)
             {
-                GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
+                //COMMENTED IN FEATURES ASTEROID: NOW PICKUPS DELIVED THE DESIRED BUFF
+                //GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
             }
 
             //TODO: IMPROVE CREATION AND DESTRUCTION OF COWS VIA OBJECT POOLING
@@ -196,6 +197,8 @@ public class Abductor : MonoBehaviour
             {
                 //DEBUG
                 Debug.Log("Picking Up Item");
+                //DELIVER BUFF TO THE PLAYER UFO
+                //GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
             }
         }
     }
