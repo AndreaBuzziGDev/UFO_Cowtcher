@@ -24,7 +24,7 @@ public class ItemPickup : MonoBehaviour
     }
 
     //FUNCTIONALITIES
-    public SAAbstract getStatusAlteration()
+    public SAAbstract GetStatusAlteration()
     {
         return Alteration.GetBuff();
     }
