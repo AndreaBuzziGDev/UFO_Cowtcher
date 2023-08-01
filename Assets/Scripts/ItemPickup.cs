@@ -29,4 +29,13 @@ public class ItemPickup : MonoBehaviour
         return Alteration.GetBuff();
     }
 
+
+    //SPAWN ITEM
+    ///SPAWN ITEM RANDOMLY ON SPAWN GRID
+    public void Spawn()
+    {
+        SpawningGrid.Instance.SpawnObjectInsideGrid(this);
+    }
+
+
 }

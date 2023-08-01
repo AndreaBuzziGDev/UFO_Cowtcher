@@ -147,6 +147,18 @@ public class Abductor : MonoBehaviour
             {
                 //COMMENTED IN FEATURES ASTEROID: NOW PICKUPS DELIVED THE DESIRED BUFF
                 //GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
+
+                //TODO: RESTORE SCARECOW (AND FURTHER "MALICIOUS" COWS) FUNCTIONALITY (DEBUFF DELIVERY)
+
+
+
+                //FEATURES ASTEROID: COW DOESN'T GIVE BUFF/DEBUFF ON PICKUP, IT SPAWNS A METEOR SHOWER
+                //TODO: THIS CODE PORTION CAN BE SAFELY REFACTORED AND MOVED INSIDE THE Spawn METHOD OF ItemPickup.
+                GameObject prefabPickupItem = Instantiate(cow.CowTemplate.PickupItemToBeSpawned.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+                prefabPickupItem.SetActive(false);
+
+                prefabPickupItem.GetComponent<ItemPickup>().Spawn();
+
             }
 
             //TODO: IMPROVE CREATION AND DESTRUCTION OF COWS VIA OBJECT POOLING

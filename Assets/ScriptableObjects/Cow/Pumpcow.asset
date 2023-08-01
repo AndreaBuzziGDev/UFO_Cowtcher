@@ -27,6 +27,7 @@ MonoBehaviour:
   movPatternCalm: {fileID: 11400000, guid: 969b793287744d84fb389d0767e54a78, type: 2}
   movPatternAlert: {fileID: 11400000, guid: 6d65614ce7d3db34691ec04853afd574, type: 2}
   Alteration: {fileID: 11400000, guid: b451a026d18ed7942b34911c301f9a98, type: 2}
+  PickupItemToBeSpawned: {fileID: 7544958186759497162, guid: cc089067635a27e4eab8aee36116c037, type: 3}
   SummoningRitual: {fileID: 11400000, guid: d0756914f7fa0654282294cf5ec31b49, type: 2}
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 00000000

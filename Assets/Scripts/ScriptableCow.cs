@@ -71,6 +71,7 @@ public class ScriptableCow : ScriptableObject
 
     ///STATUS ALTERATION
     public SAAbstractSO Alteration;
+    public ItemPickup PickupItemToBeSpawned;
 
 
     ///SPAWN AND RESPAWN DATA

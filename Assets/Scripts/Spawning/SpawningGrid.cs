@@ -97,7 +97,7 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
 
     //SPAWN OBJECTS INTERACTION
     //TODO: USE THIS TO SPAWN "ASTEROID" STUFF ON THE MAP
-    public void SpawnObjectInsideGrid(Cow interestedObject)
+    public void SpawnObjectInsideGrid(ItemPickup interestedObject)
     {
         interestedObject.transform.position = GetRandomPointInsideSpawnGrid();
         interestedObject.gameObject.SetActive(true);
