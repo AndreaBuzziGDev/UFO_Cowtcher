@@ -201,6 +201,9 @@ public class Abductor : MonoBehaviour
                 //DELIVER BUFF TO THE PLAYER UFO
                 GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(myItemPickup.GetStatusAlteration());
 
+                //DESTROY PICKED UP ITEM
+                Destroy(myItemPickup.gameObject);
+
             }
         }
     }
