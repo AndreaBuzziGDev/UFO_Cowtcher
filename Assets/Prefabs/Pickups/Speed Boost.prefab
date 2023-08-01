@@ -50,8 +50,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755845425069914449, guid: cc089067635a27e4eab8aee36116c037, type: 3}
       propertyPath: m_Name
-      value: Speed_Boost
+      value: Speed Boost
       objectReference: {fileID: 0}
+    - target: {fileID: 7544958186759497162, guid: cc089067635a27e4eab8aee36116c037, type: 3}
+      propertyPath: Alteration
+      value: 
+      objectReference: {fileID: 11400000, guid: 23ee7e8ea1a00c5419b94ae956580f14, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

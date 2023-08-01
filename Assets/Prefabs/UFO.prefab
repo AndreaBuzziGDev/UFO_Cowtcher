@@ -325,9 +325,9 @@ MonoBehaviour:
   cooldownTimer: 1
   outerCircle: {fileID: 8132337875915980716}
   innerCircle: {fileID: 576979319330301586}
-  cowPhysicsLayer:
+  interactionPhysicsLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
 --- !u!1 &8132337875915980716
 GameObject:
   m_ObjectHideFlags: 0
