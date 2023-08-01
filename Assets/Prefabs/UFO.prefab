@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bbea98eb98fec4084667567816308e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFuelAmount: 50
+  maxFuelAmount: 45
   fuelEmergencyThreshold: 10
   fuelEmergencyExtensionFactor: 2
 --- !u!114 &3824681213956448144
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UFO: {fileID: 2316233886179570003}
-  captureTimer: 3
+  captureTimer: 1
   timeBeforeReduction: 0
   maxRadius: 2
   excessCaptureRadius: 0.4
