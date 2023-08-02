@@ -217,6 +217,7 @@ public class Abductor : MonoBehaviour
             else if (collider.transform.gameObject.layer == pickupLayer)
             {
                 //INTERACT WITH ItemPickup
+                //TODO: THIS MIGHT BE UPGRADEABLE AND AGNOSTIFIABLE VIA THE IInteractible Interface.
                 collider.transform.gameObject.GetComponent<ItemPickup>().Interact();
 
             }
