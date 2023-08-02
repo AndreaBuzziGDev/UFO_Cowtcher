@@ -19,7 +19,7 @@ public class RitualProximity : RitualAbstract
 
     //METHODS
 
-    public override void DoRitual(ScriptableCow.UniqueID UID)
+    public override void DoRitual(CowSO.UniqueID UID)
     {
         Debug.Log("RitProximity");
     }

@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: Cowctor
   m_EditorClassIdentifier: 
   UID: 14
   rarity: 2
   Name: Cowctor
   Description: 
+  spawnProbability: 20
   FuelRecoveryAmount: 15
   AlertRadius: 4
   SpeedCalm: 7
@@ -27,6 +28,7 @@ MonoBehaviour:
   movPatternCalm: {fileID: 11400000, guid: 78359f55f8ef89d4e9e12d37ad3d78c2, type: 2}
   movPatternAlert: {fileID: 11400000, guid: d31eb371d0e575646bc90ed67c44eee8, type: 2}
   Alteration: {fileID: 11400000, guid: 23ee7e8ea1a00c5419b94ae956580f14, type: 2}
+  PickupItemToBeSpawned: {fileID: 8402732589097762740, guid: 6e04ef3384098ea4ca48d0b25fe6d247, type: 3}
   SummoningRitual: {fileID: 11400000, guid: ee1812dba8ed99244bafd60ed403cc96, type: 2}
   FavouriteHideoutTypes: 
   AllowedSpawnPointTypes: 01000000

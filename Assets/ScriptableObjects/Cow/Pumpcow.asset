@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: Pumpcow
   m_EditorClassIdentifier: 
   UID: 11
   rarity: 1
   Name: Pumpcow
   Description: 
+  spawnProbability: 20
   FuelRecoveryAmount: 5
   AlertRadius: 5
   SpeedCalm: 1
@@ -27,6 +28,7 @@ MonoBehaviour:
   movPatternCalm: {fileID: 11400000, guid: 969b793287744d84fb389d0767e54a78, type: 2}
   movPatternAlert: {fileID: 11400000, guid: 6d65614ce7d3db34691ec04853afd574, type: 2}
   Alteration: {fileID: 11400000, guid: b451a026d18ed7942b34911c301f9a98, type: 2}
+  PickupItemToBeSpawned: {fileID: 1424810079913189593, guid: a5083aa0b3febfb4cb1d21703f397e07, type: 3}
   SummoningRitual: {fileID: 11400000, guid: d0756914f7fa0654282294cf5ec31b49, type: 2}
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 00000000

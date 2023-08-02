@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f9022c3dcff6049a488659227726b0, type: 3}
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: Black Cow
   m_EditorClassIdentifier: 
   UID: 1
   rarity: 0
   Name: Jamal
   Description: 
+  spawnProbability: 50
   FuelRecoveryAmount: 3
   AlertRadius: 4
   SpeedCalm: 2
@@ -27,6 +28,7 @@ MonoBehaviour:
   movPatternCalm: {fileID: 11400000, guid: 5ee150804550d4d4aa388ba26fa8cae2, type: 2}
   movPatternAlert: {fileID: 11400000, guid: 6d65614ce7d3db34691ec04853afd574, type: 2}
   Alteration: {fileID: 0}
+  PickupItemToBeSpawned: {fileID: 0}
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 03000000

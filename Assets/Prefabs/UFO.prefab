@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bbea98eb98fec4084667567816308e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFuelAmount: 50
+  maxFuelAmount: 45
   fuelEmergencyThreshold: 10
   fuelEmergencyExtensionFactor: 2
 --- !u!114 &3824681213956448144
@@ -329,7 +329,7 @@ MonoBehaviour:
   cooldownTimer: 1
   outerCircle: {fileID: 8132337875915980716}
   innerCircle: {fileID: 576979319330301586}
-  cowPhysicsLayer:
+  interactionPhysicsLayer:
     serializedVersion: 2
     m_Bits: 64
 --- !u!114 &8178618650575810081

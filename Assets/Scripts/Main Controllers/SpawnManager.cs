@@ -30,7 +30,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///SPAWN MODE SETTINGS
     [SerializeField] private bool isGridSpawnMode = false;
 
+    ///SPAWN
+    //TODO: INTRODUCE FLAG TO DETERMINE WETHER THE SYSTEM WILL USE WEIGHTED CHANCE OR SOMETHING ELSE
+    [Tooltip("If checked, this uses the random spawn percentage instead of respawning the captured cow with a cooldown")]
+    [SerializeField] private bool isRandomizedSpawnMode = false;
 
+    private Dictionary<CowSO.UniqueID, float> spawnChances = new();
+    private Dictionary<CowSO.UniqueID, float> weightedSpawnChances = new();
 
 
 
@@ -52,12 +58,23 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     // Update is called once per frame
     void Update()
     {
-        ManageDequeueingCows();
-        if (simultaneousSpawnTimer > 0.0f)
+        if (isRandomizedSpawnMode)
         {
-            simultaneousSpawnTimer -= Time.deltaTime;
+            //MODE: SPAWN BASED ON RANDOM CHANCE + RITUAL SUMMONED COW
+            //TODO: ADJUST PARAMETERS AND STUFF...
+            ManageRandomlySpawnCow();
         }
-        currentSpawnedCount = 0;
+        else
+        {
+            //MODE: RESPAWN BASED ON CAPTURED COWS + RITUAL SUMMONED COW
+            ManageDequeueingCows();
+            if (simultaneousSpawnTimer > 0.0f)
+            {
+                simultaneousSpawnTimer -= Time.deltaTime;
+            }
+            currentSpawnedCount = 0;
+        }
+
     }
 
 
@@ -71,9 +88,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     public void Initialization()
     {
         initializeCowCount();
+        initializeSpawnProbabilityDictionary();
 
         initializeAllSpawnPoints();
         MakeDictionarySpawnPoints();
+
+
     }
 
     ///MAIN INITIALIZATION
@@ -84,8 +104,19 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         currentNumOfCows = cows.Count;
         Debug.Log("SpawnManager - start num of cows: " + currentNumOfCows);
     }
-    
-    
+
+    ///INITIALIZE SPAWN PROBABILITY DICTIONARY
+    private void initializeSpawnProbabilityDictionary()
+    {
+        //TODO: PERHAPS A SYSTEM THAT TAKES INTO ACCOUNT THE SPAWN CHANCE OF EACH OF THE EXISTING COWS ON THE MAP CAN BE TAKEN INTO ACCOUNT?
+        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal, CowSO.UniqueID.C001Kevin };
+        //List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal };
+        TrackSpawnProbability(UIDs);
+    }
+
+
+
+
     ///SPAWN POINTS INITIALIZATION
     private void initializeAllSpawnPoints()
     {
@@ -180,7 +211,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         }
         else
         {
+            //FALLBACK: SPAWN AT zero
             Debug.Log("No Valid Spawn Point found for Cow: " + spawnedCow.CowName);
+            SpawningGrid.SpawnCowAtZero(spawnedCow);
         }
     }
 
@@ -214,28 +247,45 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         //LOWER COUNT OF CURRENT COWS
         currentNumOfCows--;
 
-        //TODO: AS OF SPRINT IN WEEK 24 07 2023: COWS WILL NOT AUTOMATICALLY ENTER RESPAWN QUEUE WHEN CAPTURED.
-        //      DESIRED FEATURE IS: IF MAX NUMBER OF COWS IS NOT REACHED, RANDOMLY GENERATE COW BASED ON THEIR ADJUSTED PROBABILITY%
-        MarkForRespawn(interestedCow.UID);
+        //
+        if (isRandomizedSpawnMode)
+        {
+            if (!spawnChances.ContainsKey(interestedCow.UID))
+            {
+                TrackSpawnProbability(new List<CowSO.UniqueID> { interestedCow.UID });
+            }
+        }
+        else
+        {
+            //QUEUED BEHAVIOUR: RESPAWN CAUGHT COWS
+            MarkForRespawn(interestedCow.UID);
+        }
     }
 
 
     ///ADD COW TO "CAUGHT" COWS THAT WANT TO RESPAWN
-    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID)
+    public void MarkForRespawn(CowSO.UniqueID caughtCowUID)
     {
-        GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
-        prefabCowGO.gameObject.SetActive(false);
-
-        caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>()));
+        MarkForRespawn(caughtCowUID, Cowdex.Instance.GetCow(caughtCowUID).CowTemplate.TimerRespawn);
     }
 
     //TODO: HANDLE "EASY" OVERLOADING OF METHODS VIA NATIVE C# CAPABILITIES
-    public void MarkForRespawn(ScriptableCow.UniqueID caughtCowUID, float customTimer)
+    public void MarkForRespawn(CowSO.UniqueID caughtCowUID, float customTimer)
     {
         GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(caughtCowUID).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
         prefabCowGO.gameObject.SetActive(false);
-        
-        caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>(), customTimer));
+
+        if (isRandomizedSpawnMode)
+        {
+            //MODE: RANDOMIZED SPAWN - RITUAL COWS ARE SPAWNED IMMEDIATELY
+            SpawnCow(prefabCowGO.GetComponentInChildren<Cow>());
+            currentNumOfCows++;
+        }
+        else
+        {
+            //MODE: QUEUED SPAWN - RITUAL COWS AND CAPTURED COWS ARE ADDED TO THE RESPAWN QUEUE
+            caughtCowWaitingForRespawn.Add(new SpawnQueuedCow(prefabCowGO.GetComponentInChildren<Cow>(), customTimer));
+        }
     }
 
 
@@ -274,6 +324,91 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         caughtCowWaitingForRespawn = caughtCowWaitingForRespawn.Except(tempList).ToList();
     }
 
+
+
+
+    ///PROBABILITY-BASED SPAWN FUNCTIONALITIES
+    private void TrackSpawnProbability(List<CowSO.UniqueID> UIDs)
+    {
+        List<Cow> cowPrefabs = Cowdex.Instance.GetCows(UIDs);
+
+        foreach (Cow prefabCow in cowPrefabs)
+        {
+            //NB: REFERENCING TEMPLATE. THIS IS A PREFAB, WHICH HAS NOT-YET RUN THE "Awake" METHOD
+            spawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnProbability);
+        }
+
+        CalculateWeightedProbabilities();
+    }
+
+    private void CalculateWeightedProbabilities()
+    {
+        float totalSum = 0;
+        foreach (KeyValuePair<CowSO.UniqueID, float> entry in spawnChances)
+        {
+            totalSum += entry.Value;
+        }
+
+        float weightCoefficient = 100 / totalSum;
+        Debug.Log("SpawnManager Randomly - weightCoefficient: " + weightCoefficient);
+
+        weightedSpawnChances = new Dictionary<CowSO.UniqueID, float>();
+        foreach (KeyValuePair<CowSO.UniqueID, float> entry in spawnChances)
+        {
+            weightedSpawnChances.Add(entry.Key, entry.Value * weightCoefficient);
+            Debug.Log("SpawnManager Randomly - Base Probability for Cow: " + entry.Key + " is: " + entry.Value);
+            Debug.Log("SpawnManager Randomly - Weighted Probability for Cow: " + entry.Key + " is: " + entry.Value * weightCoefficient);
+        }
+
+    }
+
+
+
+
+
+    private void ManageRandomlySpawnCow()
+    {
+        if (currentNumOfCows < maxNumOfCows)
+        {
+            //MODE: WEIGHTED CHANCE
+            SpawnRandomlyWeightedChance();
+
+            //MODE: SOMETHING ELSE
+        }
+    }
+
+
+    //WEIGHTED CHANCE: CHANCE WILL CHANGE BASED ON HOW MANY ARE INPUT, COLLECTIVE CHANCE WILL ALWAYS BE 100%
+    private void SpawnRandomlyWeightedChance()
+    {
+        float randomFloat = Random.Range(0, 100);
+        Debug.Log("SpawnManager ManageRandomlySpawnCows - randomFloat: " + randomFloat);
+
+        float chanceTally = 0;
+        CowSO.UniqueID choice = CowSO.UniqueID.ANY;
+        foreach (KeyValuePair<CowSO.UniqueID, float> entry in weightedSpawnChances)
+        {
+            chanceTally += entry.Value;
+            Debug.Log("SpawnManager ManageRandomlySpawnCows - chanceTally: " + chanceTally);
+
+            if (randomFloat <= chanceTally)
+            {
+                //THIS IS THE RANDOMLY CHOSEN COW
+                choice = entry.Key;
+                break;
+            }
+        }
+
+        if (choice != CowSO.UniqueID.ANY)
+        {
+            GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(choice).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+            prefabCowGO.SetActive(false);
+
+            SpawnCow(prefabCowGO.GetComponentInChildren<Cow>());
+            currentNumOfCows++;
+        }
+
+    }
 
 
 }

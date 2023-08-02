@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Cow", menuName = "Cow")]
-public class ScriptableCow : ScriptableObject
+public class CowSO : ScriptableObject
 {
     //ENUMS
     //NB: "ANY" RESERVED FOR APPLICATIONS THAT DO NOT NEED SPECIFYING A COW (LIKE NON-SPECIFIC RITUALS)
@@ -50,6 +50,9 @@ public class ScriptableCow : ScriptableObject
     public string Name;
     public string Description;
 
+    [Tooltip("the probability for this cow type to spawn randomly after being unlocked.")]
+    [Range(0, 100f)] public float spawnProbability = 20.0f;
+
     public int FuelRecoveryAmount;
     public float AlertRadius;
     public float SpeedCalm;
@@ -71,6 +74,7 @@ public class ScriptableCow : ScriptableObject
 
     ///STATUS ALTERATION
     public SAAbstractSO Alteration;
+    public ItemPickup PickupItemToBeSpawned;
 
 
     ///SPAWN AND RESPAWN DATA

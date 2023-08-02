@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SpawningCorner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //DATA
+
+
+
+    //METHODS
+    public float getWeight()
     {
-        
+        Vector3 position = transform.position;
+        return position.x + position.z;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -118,10 +118,10 @@ public class PlayerController : MonoBehaviour
     private void OnScreenTouched(InputAction.CallbackContext value)
     {
         Vector2 touchPosition = inputPlayer.Player.TouchPosition.ReadValue<Vector2>();
-        if (touchPosition.y <= Screen.height / 2)
-        {
+        //if (touchPosition.y <= Screen.height / 2)
+        //{
             UIController.Instance.ShowJoystick(touchPosition);
-        }
+        //}
     }
 
     private void OnScreenReleased(InputAction.CallbackContext value) => UIController.Instance.HideJoystick();

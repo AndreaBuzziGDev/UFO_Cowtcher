@@ -16,7 +16,11 @@ public class Abductor : MonoBehaviour
     private int circleSteps = 35;
     [SerializeField] private GameObject outerCircle;
     [SerializeField] private GameObject innerCircle;
-    [SerializeField] private LayerMask cowPhysicsLayer;
+    [SerializeField] private LayerMask interactionPhysicsLayer;
+    private int cowLayer;
+    private int pickupLayer;
+
+
 
     private LineRenderer outerCircleRenderer;
     private LineRenderer innerCircleRenderer;
@@ -39,6 +43,11 @@ public class Abductor : MonoBehaviour
         innerCircleRenderer = innerCircle.GetComponent<LineRenderer>();
 
         playerCamera = Camera.main.GetComponent<FollowCamera>();
+
+        ///LAYER INITIALIZATION
+        cowLayer = LayerMask.NameToLayer("CowPhysicsLayer");
+        pickupLayer = LayerMask.NameToLayer("ObjectInteractionPhysicsLayer");
+
     }
 
     private void Start()
@@ -134,9 +143,31 @@ public class Abductor : MonoBehaviour
             //WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
             SpawnManager.Instance.HandleCowCapture(cow);
 
-            if (cow.Alteration != null)
+            //TODO: MAYBE A CHECKBOX SOMEWHERE IN ONE OF THE MAIN CONTROLLERS CAN ENABLE THE POSSIBILITY TO GO BACK TO THE PREVIOUS BUFF APPLICATION MODE.
+            if (cow.CowTemplate.PickupItemToBeSpawned != null)
             {
-                GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
+                //COMMENTED IN FEATURES ASTEROID: NOW PICKUPS DELIVED THE DESIRED BUFF
+                //GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
+
+                //TODO: RESTORE SCARECOW (AND FURTHER "MALICIOUS" COWS) FUNCTIONALITY (DEBUFF DELIVERY)
+
+
+
+                //FEATURES ASTEROID: COW DOESN'T GIVE BUFF/DEBUFF ON PICKUP, IT SPAWNS A METEOR SHOWER
+                //TODO: THIS CODE PORTION CAN BE SAFELY REFACTORED AND MOVED INSIDE THE Spawn METHOD OF ItemPickup.
+                GameObject prefabPickupItem = Instantiate(cow.CowTemplate.PickupItemToBeSpawned.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+                prefabPickupItem.SetActive(false);
+
+                //TODO: DEVELOP A FUNCTIONALITY ON COWDEX + CowSO THAT ALLOWS TO IDENTIFY "MALICIOUS" COWS THAT DROP THEIR INTENDED ALTERATION ItemPickup AT THEIR OWN FEET WHEN CAPTURED.
+                if (cow.CowTemplate.UID.Equals(CowSO.UniqueID.R003Scarecow))
+                {
+                    prefabPickupItem.GetComponent<ItemPickup>().Spawn(cow.transform.position);
+                }
+                else
+                {
+                    prefabPickupItem.GetComponent<ItemPickup>().SpawnRandomly();
+                }
+
             }
 
             //TODO: IMPROVE CREATION AND DESTRUCTION OF COWS VIA OBJECT POOLING
@@ -160,7 +191,7 @@ public class Abductor : MonoBehaviour
     public void CowDetectionLegacy()
     {
         cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, cowPhysicsLayer);
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, interactionPhysicsLayer);
 
         foreach (RaycastHit cow in collidersHit)
         {
@@ -175,16 +206,27 @@ public class Abductor : MonoBehaviour
     public void CowDetectionEnhanced()
     {
         cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+excessCaptureRadius), Vector3.down, transform.position.y, cowPhysicsLayer);
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
 
         Vector3 planeProjectedUFOPosition = new Vector3(transform.position.x, 0, transform.position.z);
 
-        foreach (RaycastHit cow in collidersHit)
+        /// CONTROL TO DISTINGUISH COWS OR OBJECTS TO INTERACT WITH
+        foreach (RaycastHit collider in collidersHit)
         {
-            Cow myCowObject = cow.transform.gameObject.GetComponent<Cow>();
-            if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))
+            if(collider.transform.gameObject.layer == cowLayer)
             {
-                cowsInRange.Add(cow.transform.gameObject);
+                Cow myCowObject = collider.transform.gameObject.GetComponent<Cow>();
+                if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))
+                {
+                    cowsInRange.Add(collider.transform.gameObject);
+                }
+            }
+            else if (collider.transform.gameObject.layer == pickupLayer)
+            {
+                //INTERACT WITH ItemPickup
+                //TODO: THIS MIGHT BE UPGRADEABLE AND AGNOSTIFIABLE VIA THE IInteractible Interface.
+                collider.transform.gameObject.GetComponent<ItemPickup>().Interact();
+
             }
         }
     }

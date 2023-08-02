@@ -8,7 +8,7 @@ public class LegendaryCowEscape : MonoBehaviour
     {
         GameObject otherGO = collision.gameObject;
         Cow compCow = otherGO.GetComponent<Cow>();
-        if (compCow != null && (compCow.Rarity == ScriptableCow.Rarity.Legendary))
+        if (compCow != null && (compCow.Rarity == CowSO.Rarity.Legendary))
         {
             Debug.Log("compCow.IsPanicking: " + compCow.IsPanicking);
             if (compCow.IsPanicking)
