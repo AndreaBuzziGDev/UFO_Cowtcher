@@ -216,14 +216,8 @@ public class Abductor : MonoBehaviour
             }
             else if (collider.transform.gameObject.layer == pickupLayer)
             {
-                //GET COMPONENT ItemPickup FROM COLLIDED OBJECT
-                ItemPickup myItemPickup = collider.transform.gameObject.GetComponent<ItemPickup>();
-
-                //DELIVER BUFF TO THE PLAYER UFO
-                GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(myItemPickup.GetStatusAlteration());
-
-                //DESTROY PICKED UP ITEM
-                Destroy(myItemPickup.gameObject);
+                //INTERACT WITH ItemPickup
+                collider.transform.gameObject.GetComponent<ItemPickup>().Interact();
 
             }
         }

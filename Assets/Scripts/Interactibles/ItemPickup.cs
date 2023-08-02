@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickup : MonoBehaviour
+public class ItemPickup : MonoBehaviour, IInteractible
 {
     //DATA
     ///STATUS ALTERATION
@@ -22,6 +22,20 @@ public class ItemPickup : MonoBehaviour
     {
         
     }
+
+
+    //IMPLEMENTING IInteractible
+
+    public void Interact()
+    {
+        //DELIVER BUFF TO THE PLAYER UFO
+        GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(this.GetStatusAlteration());
+
+        //DESTROY PICKED UP ITEM
+        Destroy(this.gameObject);
+    }
+
+
 
     //FUNCTIONALITIES
     public SAAbstract GetStatusAlteration()
