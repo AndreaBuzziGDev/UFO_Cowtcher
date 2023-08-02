@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Iterations/Iteration 4.unity
     guid: 7b179e16a42a92c4da6f9104bb94a176
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Iterations/Iteration 5.unity
     guid: a6f41cb1fc9067141bc8f992bd5aa1b6
+  - enabled: 1
+    path: Assets/Scenes/Iterations/Iteration 6.unity
+    guid: f04905463d066af46887e7631e3cf1c1
   m_configObjects: {}
