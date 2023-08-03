@@ -8,6 +8,7 @@ public class SASpeedBoost : SAAbstract
     ///USEFUL BUFF DATA
     public float buffDuration;
     public float speedBoostIntensity;
+    public bool isDebuff;
     PlayerController pc;
 
     ///TEMPLATE
@@ -22,6 +23,7 @@ public class SASpeedBoost : SAAbstract
         this.type = template.buffType;
         this.buffDuration = template.buffDuration;
         this.speedBoostIntensity = template.speedBoostIntensity;
+        this.isDebuff = template.isDebuff;
         pc = GameController.Instance.FindPlayerAnywhere();
     }
 
@@ -32,7 +34,8 @@ public class SASpeedBoost : SAAbstract
     ///BUFF
     public override void ApplyBuff()
     {
-        pc.SetBonusMovSpeed(this.speedBoostIntensity);
+        if (isDebuff) pc.SetBonusMovSpeed(-this.speedBoostIntensity);
+        else pc.SetBonusMovSpeed(this.speedBoostIntensity);
         UIController.Instance.IGPanel.BuffPanel.ActivateSpeedBoost();
     }
 
