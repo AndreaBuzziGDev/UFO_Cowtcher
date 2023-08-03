@@ -5,8 +5,10 @@ using UnityEngine;
 public abstract class StructureSOAbstract : ScriptableObject
 {
     //THIS WILL BE USED TO REPLICATE THE PATTERN USED ELSEWHERE
+    //DATA
 
 
-
+    //METHODS
+    public abstract SAAbstract GetStructure();
 
 }
