@@ -52,8 +52,11 @@ public class Cow : MonoBehaviour
     private float alertRadius;
     public float AlertRadius { get { return alertRadius; } }//TODO: HAS TO BE MORPHED IN COW UNITS
 
+    ///SPEED DATA
     private float speedCalm;
     private float speedAlert;
+    private float speedBuffMultiplier;//EXPERIMENT TO SLOW DOWN COWS INDIVIDUALLY (NOT YET USED)
+
 
     private int score;
     public int Score { get { return score; } }
@@ -247,7 +250,7 @@ public class Cow : MonoBehaviour
         if (this.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
-        rb.velocity = mySpeed * movementDirection;
+        rb.velocity = mySpeed * movementDirection * CowManager.Instance.GlobalSpeedMultiplier;
 
         //rb.MovePosition(transform.position + mySpeed * Time.deltaTime * movementDirection);
     }
