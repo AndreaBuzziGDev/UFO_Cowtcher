@@ -26,7 +26,7 @@ public class ItemPickup : MonoBehaviour, IInteractible
 
     //IMPLEMENTING IInteractible
 
-    public void Interact()
+    public void Interact(GameObject interactionSource)
     {
         //DELIVER BUFF TO THE PLAYER UFO
         GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(this.GetStatusAlteration());

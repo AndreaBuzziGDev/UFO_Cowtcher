@@ -218,7 +218,7 @@ public class Abductor : MonoBehaviour
             {
                 //INTERACT WITH ItemPickup
                 //TODO: THIS MIGHT BE UPGRADEABLE AND AGNOSTIFIABLE VIA THE IInteractible Interface.
-                collider.transform.gameObject.GetComponent<ItemPickup>().Interact();
+                collider.transform.gameObject.GetComponent<ItemPickup>().Interact(this.gameObject);
 
             }
         }

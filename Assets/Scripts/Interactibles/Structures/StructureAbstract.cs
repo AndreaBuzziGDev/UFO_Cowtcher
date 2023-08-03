@@ -4,18 +4,33 @@ using UnityEngine;
 
 public abstract class StructureAbstract
 {
-    //DATA
-    protected StructureAbstractSO template;
+    //ENUMS
+    public enum eActivationSource
+    {
+        UFO,
+        Cow
+    }
 
+
+    //DATA
+    ///
+    public eActivationSource activationSource;
+
+    ///SIMPLE DATA
     private float operativeRadius;
     public float OperativeRadius { get { return operativeRadius; } }
+
+
+
+
+    ///TEMPLATE
+    protected StructureAbstractSO template;
 
 
     //CONSTRUCTOR
     ///TO BE IMPLEMENTED/EXTENDED IN CHILD CLASS
     public StructureAbstract(StructureAbstractSO templateSO)
     {
-        Debug.Log("FEATURE_STRUCTURE - Calling the StructureAbstract Constructor");
         this.template = templateSO;
         this.operativeRadius = template.operativeRadius;
     }

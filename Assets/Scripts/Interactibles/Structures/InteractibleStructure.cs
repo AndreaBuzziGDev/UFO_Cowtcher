@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractibleStructure : MonoBehaviour
+public class InteractibleStructure : MonoBehaviour, IInteractible
 {
     //DATA
     ///
-    private bool isOperative = false;
-    public bool IsOperative { get { return isOperative; } }
+    private bool hasBeenActivated = false;
+    public bool HasBeenActivated { get { return hasBeenActivated; } }
+
+
 
     ///STRUCTURE DATA
     [SerializeField] private StructureAbstractSO StructureScriptableObject;
@@ -34,12 +36,36 @@ public class InteractibleStructure : MonoBehaviour
 
 
     //FUNCTIONALITIES
+
+    ///ENABLE TURRET
+
+
+
+    ///INTERACT
+    public void Interact(GameObject interactionSource)
+    {
+        //TODO: ENABLE TURRET WITH CAPTURE
+
+
+        //IF SOURCE UFO
+        if (IsObjectWithinOperativeRadius(interactionSource))
+        {
+            //TODO: SHOULD BE REFACTORED TO INTERVIEW THE StructureAbstract OBJECT, IN ORDER TO ALLOW DIFFERENT BEHAVIOURS
+            if (!hasBeenActivated)
+            {
+                myStructure.DoBehaviour();
+                hasBeenActivated = true;
+            }
+        }
+    }
+
+
+
+    //UTILITIES
     public bool IsObjectWithinOperativeRadius(GameObject within)
     {
         float distance = (this.transform.position - within.transform.position).magnitude;
         return distance < myStructure.OperativeRadius;
     }
-
-
 
 }
