@@ -6,9 +6,9 @@ public abstract class StructureSOAbstract : ScriptableObject
 {
     //THIS WILL BE USED TO REPLICATE THE PATTERN USED ELSEWHERE
     //DATA
-
+    [SerializeField] [Range(1.0f, 50.0f)] public float operativeRadius = 5.0f;
 
     //METHODS
-    public abstract SAAbstract GetStructure();
+    public abstract Structure GetStructure();
 
 }
