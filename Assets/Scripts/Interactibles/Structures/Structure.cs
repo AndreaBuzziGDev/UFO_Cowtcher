@@ -12,7 +12,7 @@ public abstract class Structure
 
 
     //CONSTRUCTOR
-    ///TO BE IMPLEMENTED IN CHILD CLASS
+    ///TO BE IMPLEMENTED/EXTENDED IN CHILD CLASS
     public Structure(StructureSOAbstract templateSO)
     {
         this.template = templateSO;
@@ -23,7 +23,10 @@ public abstract class Structure
     //METHODS
 
     ///TEMPLATE
-    public abstract SAAbstractSO Template();
+    public StructureSOAbstract Template()
+    {
+        return template;
+    }
 
     ///
 
