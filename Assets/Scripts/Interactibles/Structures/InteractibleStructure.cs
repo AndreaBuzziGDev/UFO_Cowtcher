@@ -5,7 +5,12 @@ using UnityEngine;
 public class InteractibleStructure : MonoBehaviour
 {
     //DATA
-    [SerializeField] private StructureSOAbstract StructureScriptableObject;
+    ///
+    private bool isOperative = false;
+    public bool IsOperative { get { return isOperative; } }
+
+    ///STRUCTURE DATA
+    [SerializeField] private StructureAbstractSO StructureScriptableObject;
     StructureAbstract myStructure;
 
 
@@ -22,14 +27,14 @@ public class InteractibleStructure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //HANDLEM THE STRUCTURE'S LOGIC
+        //HANDLE THE STRUCTURE'S LOGIC
         
     }
 
 
 
     //FUNCTIONALITIES
-    public bool WithinOperativeRadius(GameObject within)
+    public bool IsObjectWithinOperativeRadius(GameObject within)
     {
         float distance = (this.transform.position - within.transform.position).magnitude;
         return distance < myStructure.OperativeRadius;

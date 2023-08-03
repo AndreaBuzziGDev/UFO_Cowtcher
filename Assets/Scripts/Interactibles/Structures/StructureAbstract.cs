@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class StructureAbstract
 {
     //DATA
-    protected StructureSOAbstract template;
+    protected StructureAbstractSO template;
 
     private float operativeRadius;
     public float OperativeRadius { get { return operativeRadius; } }
@@ -13,7 +13,7 @@ public abstract class StructureAbstract
 
     //CONSTRUCTOR
     ///TO BE IMPLEMENTED/EXTENDED IN CHILD CLASS
-    public StructureAbstract(StructureSOAbstract templateSO)
+    public StructureAbstract(StructureAbstractSO templateSO)
     {
         Debug.Log("FEATURE_STRUCTURE - Calling the StructureAbstract Constructor");
         this.template = templateSO;
@@ -24,12 +24,11 @@ public abstract class StructureAbstract
     //METHODS
 
     ///TEMPLATE
-    public StructureSOAbstract Template()
-    {
-        return template;
-    }
+    //TODO: CAN BE MOVED ELSEWHERE
+    public StructureAbstractSO Template() => template;
 
-    ///
+    ///STRUCTURE FUNCTIONALITIES
+    public abstract void DoBehaviour();
 
 
 }
