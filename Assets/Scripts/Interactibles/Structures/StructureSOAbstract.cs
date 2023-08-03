@@ -9,6 +9,6 @@ public abstract class StructureSOAbstract : ScriptableObject
     [SerializeField] [Range(1.0f, 50.0f)] public float operativeRadius = 5.0f;
 
     //METHODS
-    public abstract Structure GetStructure();
+    public abstract StructureAbstract GetStructure();
 
 }

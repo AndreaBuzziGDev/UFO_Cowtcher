@@ -6,7 +6,7 @@ public class InteractibleStructure : MonoBehaviour
 {
     //DATA
     [SerializeField] private StructureSOAbstract StructureScriptableObject;
-    Structure myStructure;
+    StructureAbstract myStructure;
 
 
     //METHODS

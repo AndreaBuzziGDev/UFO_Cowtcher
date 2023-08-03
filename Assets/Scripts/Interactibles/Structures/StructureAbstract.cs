@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Structure
+public abstract class StructureAbstract
 {
     //DATA
     protected StructureSOAbstract template;
@@ -13,8 +13,9 @@ public abstract class Structure
 
     //CONSTRUCTOR
     ///TO BE IMPLEMENTED/EXTENDED IN CHILD CLASS
-    public Structure(StructureSOAbstract templateSO)
+    public StructureAbstract(StructureSOAbstract templateSO)
     {
+        Debug.Log("FEATURE_STRUCTURE - Calling the StructureAbstract Constructor");
         this.template = templateSO;
         this.operativeRadius = template.operativeRadius;
     }
