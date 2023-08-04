@@ -25,7 +25,12 @@ public class StructureSlowing : StructureAbstract
         {
             //THIS VERSION = SLOW DOWN ALL COWS ON THE MAP BY THE SAME AMOUNT FOR A GIVEN TIME
             CowManager.Instance.ApplyGlobalSpeedChange(-slowDownPercentage, slowDownDuration);
+            wrappingStructure.HasBeenDepleted = true;
 
+        }
+        else
+        {
+            //...
 
         }
 

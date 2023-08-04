@@ -7,7 +7,7 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
     //DATA
     ///
     private bool hasBeenDepleted = false;
-    public bool HasBeenDepleted { get { return hasBeenDepleted; } }
+    public bool HasBeenDepleted { get { return hasBeenDepleted; } set { hasBeenDepleted = value; } }
 
 
 
@@ -65,5 +65,6 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
         float distance = (this.transform.position - basePosition).magnitude;
         return distance < myStructure.OperativeRadius;
     }
+
 
 }

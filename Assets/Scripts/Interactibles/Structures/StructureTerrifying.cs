@@ -32,6 +32,7 @@ public class StructureTerrifying : StructureAbstract
 
         }
 
+        wrappingStructure.HasBeenDepleted = true;
     }
 
 }
