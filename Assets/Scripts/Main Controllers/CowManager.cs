@@ -16,6 +16,12 @@ public class CowManager : MonoSingleton<CowManager>
     private float globalSpeedTimer;
 
 
+    ///EXPERIMENTAL GLOBAL DATA TO MAKE 
+
+    private float globalTerrifyTimer;
+    public bool IsGlobalTerrify { get { return globalTerrifyTimer > 0; } }
+
+
 
     //METHODS
     //...
@@ -78,6 +84,14 @@ public class CowManager : MonoSingleton<CowManager>
 
         globalSpeedTimer = duration;
     }
+
+
+    ///TERRIFY
+    public void ApplyGlobalTerrify(float duration)
+    {
+        globalTerrifyTimer = duration;
+    }
+
 
 
 }
