@@ -22,7 +22,7 @@ public class Cow : MonoBehaviour
     public bool IsAlert { get { return (currentState == State.Alert); } }
 
 
-
+    ///COW BEHAVIOURAL DATA
     [SerializeField] private CowSO cowTemplate;
     public CowSO CowTemplate { get { return cowTemplate; } }
 
@@ -65,6 +65,13 @@ public class Cow : MonoBehaviour
     [Min(0f)] private float TimerAlertToCalm;
     [Min(0f)] private float TimerAlertToPanic;
     public bool IsPanicking { get { return (TimerAlertToPanic <= 0.0f); } }
+
+
+    //JUICYNESS DATA
+    [SerializeField] private float shakeAmount;
+    [SerializeField] private float shakeSpeed;
+
+
 
 
 
@@ -160,7 +167,7 @@ public class Cow : MonoBehaviour
         {
             //BEHAVIOUR IS BEING TERRIFIED
             //TODO: COWS SHAKE WHEN TERRIFIED
-
+            AnimateTerror();
         }
         else
         {
@@ -367,6 +374,19 @@ public class Cow : MonoBehaviour
         Destroy(this.gameObject);
 
     }
+
+
+
+
+    //JUICYNESS
+    private void AnimateTerror()
+    {
+        transform.position = new Vector3(
+            transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, 
+            transform.position.y, 
+            transform.position.z + Mathf.Cos(Time.unscaledTime * shakeSpeed) * shakeAmount);
+    }
+
 
 
 }
