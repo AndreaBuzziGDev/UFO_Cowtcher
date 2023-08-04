@@ -47,6 +47,7 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
         //IF SOURCE UFO
         if (IsObjectWithinOperativeRadius(interactionSource))
         {
+            Debug.Log("hasBeenDepleted: " + hasBeenDepleted);
             //TODO: SHOULD BE REFACTORED TO INTERVIEW THE StructureAbstract OBJECT, IN ORDER TO ALLOW DIFFERENT BEHAVIOURS
             if (!hasBeenDepleted)
             {
