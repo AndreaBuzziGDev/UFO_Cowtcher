@@ -155,7 +155,50 @@ public class Cow : MonoBehaviour
     //      UPDATE HANDLES ALL THE TIMERS AND BEHAVIOURS
     private void FixedUpdate()
     {
-        //COW AI
+        //IsGlobalTerrify
+        if (CowManager.Instance.IsGlobalTerrify)
+        {
+            //BEHAVIOUR IS BEING TERRIFIED
+            //TODO: COWS SHAKE WHEN TERRIFIED
+
+        }
+        else
+        {
+            //COW AI
+            CowAI();
+
+            //MOVEMENT
+            HandleMovement();
+        }
+    }
+
+
+    //ENABLEMENT/DISABLEMENT
+    private void OnEnable()
+    {
+        this.movementDirection = Vector3.zero;
+        this.currentState = State.Calm;
+
+        //RESET TIMERS
+        this.TimerAlertToCalm = 0.0f;
+        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
+
+        //SET BIRTH POINT
+        spawnCoords = transform.position;
+
+    }
+
+    private void OnDisable()
+    {
+
+    }
+
+
+
+
+    //COW AI
+    private void CowAI()
+    {
 
         //STEP 1
         if (CowHideoutHelper.IsUFOWithinRadius(this))
@@ -215,30 +258,15 @@ public class Cow : MonoBehaviour
 
         //ENDED COW AI
 
-        //MOVEMENT
-        HandleMovement();
     }
 
 
-    //ENABLEMENT/DISABLEMENT
-    private void OnEnable()
-    {
-        this.movementDirection = Vector3.zero;
-        this.currentState = State.Calm;
 
-        //RESET TIMERS
-        this.TimerAlertToCalm = 0.0f;
-        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
-        //SET BIRTH POINT
-        spawnCoords = transform.position;
 
-    }
 
-    private void OnDisable()
-    {
 
-    }
+
 
 
 
