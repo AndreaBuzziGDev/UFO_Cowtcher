@@ -5,26 +5,27 @@ using UnityEngine;
 public class StructureSlowing : StructureAbstract
 {
     //DATA
-    private float SlowDownPercentage;
+    private float slowDownPercentage;
+    private float slowDownDuration;
 
     //CONSTRUCTOR
     public StructureSlowing(StructureSlowingSO templateSO) : base(templateSO)
     {
-        SlowDownPercentage = templateSO.SlowDownPercentage;
+        slowDownPercentage = templateSO.SlowDownPercentage;
+        slowDownDuration = templateSO.SlowDownDuration;
     }
 
     //METHODS
 
     ///STRUCTURE FUNCTIONALITIES
-    public override void DoBehaviour()
+    public override void DoBehaviour(InteractibleStructure wrappingStructure)
     {
         //DO SOMETHING...
         if(activationSource == eActivationSource.UFO)
         {
-            //THIS VERSION = SLOW DOWN ALL COWS ON THE MAP
-            List<Cow> allCows = CowManager.Instance.getAllCows();
-            //APPLY DEBUFF...
-            //IT'S FUNDAMENTALLY BETTER TO IMPLEMENT A DEDICATED STATUS ALTERATION
+            //THIS VERSION = SLOW DOWN ALL COWS ON THE MAP BY THE SAME AMOUNT FOR A GIVEN TIME
+            CowManager.Instance.ApplyGlobalSpeedChange(-slowDownPercentage, slowDownDuration);
+
 
         }
 

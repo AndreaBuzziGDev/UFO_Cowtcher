@@ -7,6 +7,7 @@ public class StructureSlowingSO : StructureAbstractSO
 {
     //DATA
     [SerializeField] [Range(1.0f, 100.0f)] public float SlowDownPercentage = 15.0f;
+    [SerializeField] [Range(1.0f, 100.0f)] public float SlowDownDuration = 10.0f;
 
 
     //METHODS

@@ -11,7 +11,7 @@ public class CowManager : MonoSingleton<CowManager>
 
     ///EXPERIMENTAL GLOBAL DATA TO MAKE STRUCTURES WORK
     private float globalSpeedMultiplier = 100.0f;
-    public float GlobalSpeedMultiplier { get { return globalSpeedMultiplier/100; } }
+    public float GlobalSpeedMultiplier { get { return globalSpeedMultiplier/100.0f; } }
 
     private float globalSpeedTimer;
 
@@ -56,6 +56,9 @@ public class CowManager : MonoSingleton<CowManager>
     ///SPEED MULTIPLIER STUFF
     private void HandleGlobalSpeedLogic()
     {
+        Debug.Log("CowManager - globalSpeedTimer: " + globalSpeedTimer);
+        Debug.Log("CowManager - globalSpeedMultiplier: " + globalSpeedMultiplier);
+
         if (globalSpeedTimer > 0)
         {
             globalSpeedTimer -= Time.deltaTime;
@@ -69,8 +72,9 @@ public class CowManager : MonoSingleton<CowManager>
 
     public void ApplyGlobalSpeedChange(float speedChangePercent, float duration)
     {
-        globalSpeedMultiplier -= speedChangePercent;
+        globalSpeedMultiplier += speedChangePercent;
         if (globalSpeedMultiplier < 0) globalSpeedMultiplier = 0;//NO NEGATIVE SPEED
+        Debug.Log("CowManager - globalSpeedMultiplier: " + globalSpeedMultiplier +"%");
 
         globalSpeedTimer = duration;
     }

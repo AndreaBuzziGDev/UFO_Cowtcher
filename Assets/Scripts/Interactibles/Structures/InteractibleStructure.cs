@@ -6,8 +6,8 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
 {
     //DATA
     ///
-    private bool hasBeenActivated = false;
-    public bool HasBeenActivated { get { return hasBeenActivated; } }
+    private bool hasBeenDepleted = false;
+    public bool HasBeenDepleted { get { return hasBeenDepleted; } }
 
 
 
@@ -44,17 +44,14 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
     ///INTERACT
     public void Interact(GameObject interactionSource)
     {
-        //TODO: ENABLE TURRET WITH CAPTURE
-
-
         //IF SOURCE UFO
         if (IsObjectWithinOperativeRadius(interactionSource))
         {
             //TODO: SHOULD BE REFACTORED TO INTERVIEW THE StructureAbstract OBJECT, IN ORDER TO ALLOW DIFFERENT BEHAVIOURS
-            if (!hasBeenActivated)
+            if (!hasBeenDepleted)
             {
-                myStructure.DoBehaviour();
-                hasBeenActivated = true;
+                myStructure.DoBehaviour(this);
+                hasBeenDepleted = true;
             }
         }
     }
@@ -64,7 +61,8 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
     //UTILITIES
     public bool IsObjectWithinOperativeRadius(GameObject within)
     {
-        float distance = (this.transform.position - within.transform.position).magnitude;
+        Vector3 basePosition = new Vector3(within.transform.position.x, 0, within.transform.position.z);
+        float distance = (this.transform.position - basePosition).magnitude;
         return distance < myStructure.OperativeRadius;
     }
 

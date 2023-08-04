@@ -250,7 +250,8 @@ public class Cow : MonoBehaviour
         if (this.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
-        rb.velocity = mySpeed * movementDirection * CowManager.Instance.GlobalSpeedMultiplier;
+        Debug.Log("Multiplier: " + CowManager.Instance.GlobalSpeedMultiplier);
+        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * movementDirection;
 
         //rb.MovePosition(transform.position + mySpeed * Time.deltaTime * movementDirection);
     }

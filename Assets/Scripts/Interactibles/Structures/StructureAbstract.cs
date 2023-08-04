@@ -43,7 +43,7 @@ public abstract class StructureAbstract
     public StructureAbstractSO Template() => template;
 
     ///STRUCTURE FUNCTIONALITIES
-    public abstract void DoBehaviour();
+    public abstract void DoBehaviour(InteractibleStructure wrappingStructure);
 
 
 }
