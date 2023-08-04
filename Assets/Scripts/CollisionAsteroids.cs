@@ -13,12 +13,17 @@ public class CollisionAsteroids : MonoBehaviour
         //TODO: EDIT ASTEROID PREFAB SO THAT IT HAS A DEDICATED LAYER THAT DOES NOT COLLIDE WITH THE BOX COLLIDER ON THE FENCES (no mid-air impact)
         bool isWithinGrid = SpawningGrid.Instance.IsPointWithinGrid(this.transform.position);
 
+        //IF IMPACTED WITHIN SPAWNIN GRID DEPLOY CONTENT
         if (isWithinGrid && myAsteroidContent != null)
         {
+            //TODO: DEVELOP RANDOM CHANCE TO DEPLOY ITEM ON IMPACT
+
             Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
-            Destroy(this.gameObject);
         }
 
+        //TODO: DEVELOP EXPLOSION ON IMPACT
+
+        Destroy(this.gameObject);
 
         /*
         GameObject otherGO = collision.gameObject;
