@@ -2350,6 +2350,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e115be471b7c4408507ae8319bae2c, type: 3}
+--- !u!1001 &762735082387853918
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954443558050688349, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988291294998368757, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
+      propertyPath: m_Name
+      value: TEST STRUCTURE - Giant Mushroom Terror
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ba5deee5e489144ea9cf321013b9c5b, type: 3}
 --- !u!1001 &2015725543821356242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2995,3 +3052,4 @@ SceneRoots:
   - {fileID: 1912666064}
   - {fileID: 583389112}
   - {fileID: 6525439274025229507}
+  - {fileID: 762735082387853918}

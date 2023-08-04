@@ -32,6 +32,8 @@ public class CowManager : MonoSingleton<CowManager>
         //RESET PARAMS
         globalSpeedMultiplier = 100;
         globalSpeedTimer = 0;
+        globalTerrifyTimer = 0;
+
 
         //TODO: IMPLEMENT RESET allCows???
 
@@ -42,7 +44,7 @@ public class CowManager : MonoSingleton<CowManager>
     void Update()
     {
         HandleGlobalSpeedLogic();
-
+        HandleGlobalTerrifyLogic();
     }
 
 
@@ -62,9 +64,6 @@ public class CowManager : MonoSingleton<CowManager>
     ///SPEED MULTIPLIER STUFF
     private void HandleGlobalSpeedLogic()
     {
-        Debug.Log("CowManager - globalSpeedTimer: " + globalSpeedTimer);
-        Debug.Log("CowManager - globalSpeedMultiplier: " + globalSpeedMultiplier);
-
         if (globalSpeedTimer > 0)
         {
             globalSpeedTimer -= Time.deltaTime;
@@ -80,13 +79,23 @@ public class CowManager : MonoSingleton<CowManager>
     {
         globalSpeedMultiplier += speedChangePercent;
         if (globalSpeedMultiplier < 0) globalSpeedMultiplier = 0;//NO NEGATIVE SPEED
-        Debug.Log("CowManager - globalSpeedMultiplier: " + globalSpeedMultiplier +"%");
 
         globalSpeedTimer = duration;
     }
 
 
     ///TERRIFY
+    private void HandleGlobalTerrifyLogic()
+    {
+        if (globalTerrifyTimer > 0)
+        {
+            globalTerrifyTimer -= Time.deltaTime;
+        }
+        else
+        {
+            globalTerrifyTimer = 0.0f;
+        }
+    }
     public void ApplyGlobalTerrify(float duration)
     {
         globalTerrifyTimer = duration;
