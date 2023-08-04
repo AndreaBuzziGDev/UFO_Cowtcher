@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5315422403029401886
 RectTransform:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.9
+  m_fontSize: 53
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -388,7 +388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7391335099218418810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ MonoBehaviour:
   - {fileID: 980551416422809614}
   PauseGamePanel: {fileID: 2999353713454031584}
   GameOverPanel: {fileID: 980551416422809614}
-  CowdexPanel: {fileID: 0}
+  CowdexPanel: {fileID: 4799944364165482422}
   gameplayInputCanvas: {fileID: 3456844090314703}
   igPanel: {fileID: 1146636784612208046}
 --- !u!1 &1922923966089697775
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.8
+  m_fontSize: 49.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.9
+  m_fontSize: 49.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2045,7 +2045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5000234787422068076
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2148,9 +2148,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2878398653383032314}
-        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 6678651837923775677}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ShowCowdex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2510,6 +2510,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3820895101116159225}
     m_Modifications:
+    - target: {fileID: 3234970159591180430, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234970159591180430, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234970159591180430, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6678651837923775677}
+    - target: {fileID: 3234970159591180430, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234970159591180430, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideCowdex
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234970159591180430, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234970159591180430, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4081327604495384276, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2594,6 +2622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowdex Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6047521770348608401, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2602,6 +2634,11 @@ PrefabInstance:
 --- !u!224 &3013478937357992691 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4081327604495384276, guid: a015934febda95a449607a87e109c6fa, type: 3}
+  m_PrefabInstance: {fileID: 1257013324867517479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4799944364165482422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6047521770348608401, guid: a015934febda95a449607a87e109c6fa, type: 3}
   m_PrefabInstance: {fileID: 1257013324867517479}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6446543172111894749
