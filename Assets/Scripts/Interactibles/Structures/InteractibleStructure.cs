@@ -51,7 +51,6 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
             if (!hasBeenDepleted)
             {
                 myStructure.DoBehaviour(this);
-                hasBeenDepleted = true;
             }
         }
     }
