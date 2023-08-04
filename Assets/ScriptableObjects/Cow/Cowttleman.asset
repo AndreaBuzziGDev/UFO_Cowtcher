@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Cowttleman
   Description: 
   spawnProbability: 20
-  FuelRecoveryAmount: 5
+  FuelRecoveryAmount: 3
   AlertRadius: 8
   SpeedCalm: 3
   SpeedAlert: 2

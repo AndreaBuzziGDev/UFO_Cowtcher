@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Cowgon
   Description: 
   spawnProbability: 20
-  FuelRecoveryAmount: 25
+  FuelRecoveryAmount: 5
   AlertRadius: 6
   SpeedCalm: 7
   SpeedAlert: 5

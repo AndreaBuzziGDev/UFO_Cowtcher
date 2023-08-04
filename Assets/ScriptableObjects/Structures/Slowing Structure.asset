@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Slowing Structure
   m_EditorClassIdentifier: 
   operativeRadius: 5
-  SlowDownPercentage: 25
+  SlowDownPercentage: 75
   SlowDownDuration: 10

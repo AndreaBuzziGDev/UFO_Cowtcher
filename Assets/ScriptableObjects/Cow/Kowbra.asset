@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Kowbra
   Description: 
   spawnProbability: 20
-  FuelRecoveryAmount: 15
+  FuelRecoveryAmount: 3
   AlertRadius: 4
   SpeedCalm: 3
   SpeedAlert: 7
