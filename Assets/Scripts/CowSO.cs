@@ -74,7 +74,7 @@ public class CowSO : ScriptableObject
 
     ///STATUS ALTERATION
     public SAAbstractSO Alteration;
-    public ItemPickup PickupItemToBeSpawned;
+    public CollisionAsteroids AssociatedAsteroid;
 
 
     ///SPAWN AND RESPAWN DATA

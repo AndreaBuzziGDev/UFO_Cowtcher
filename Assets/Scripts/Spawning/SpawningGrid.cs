@@ -94,6 +94,10 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
 
 
     //SPAWNING FUNCTIONALITIES
+
+    //TODO: FUNCTIONALITIES CAN BE OPTIMIZED SO THAT THEY USE A GameObject/MonoBehaviour INSTEAD OF EXPLODING FOR EACH TYPE
+
+    ///COW SPAWNING
     public void SpawnCowInsideGrid(Cow interestedCow)
     {
         interestedCow.transform.position = GetRandomPointInsideSpawnGrid();
@@ -109,10 +113,23 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
 
     //SPAWN OBJECTS INTERACTION
     //TODO: USE THIS TO SPAWN "ASTEROID" STUFF ON THE MAP
+    ///ITEM PICKUP SPAWNING
     public void SpawnObjectInsideGrid(ItemPickup interestedObject)
     {
         interestedObject.transform.position = GetRandomPointInsideSpawnGrid();
         interestedObject.gameObject.SetActive(true);
     }
+
+    ///ASTEROID SPAWNING
+    public void SpawnAsteroidInsideGrid(CollisionAsteroids interestedObject)
+    {
+        Vector3 randomPos = GetRandomPointInsideSpawnGrid();
+        randomPos.y = 15.0f;
+
+        GameObject asteroidGO = Instantiate(interestedObject.gameObject, randomPos, Quaternion.identity);
+        asteroidGO.SetActive(true);
+    }
+
+
 
 }

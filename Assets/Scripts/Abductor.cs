@@ -144,7 +144,7 @@ public class Abductor : MonoBehaviour
             SpawnManager.Instance.HandleCowCapture(cow);
 
             //TODO: MAYBE A CHECKBOX SOMEWHERE IN ONE OF THE MAIN CONTROLLERS CAN ENABLE THE POSSIBILITY TO GO BACK TO THE PREVIOUS BUFF APPLICATION MODE.
-            if (cow.CowTemplate.PickupItemToBeSpawned != null)
+            if (cow.CowTemplate.AssociatedAsteroid != null)
             {
                 //COMMENTED IN FEATURES ASTEROID: NOW PICKUPS DELIVED THE DESIRED BUFF
                 //GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
@@ -154,11 +154,20 @@ public class Abductor : MonoBehaviour
 
 
                 //FEATURES ASTEROID: COW DOESN'T GIVE BUFF/DEBUFF ON PICKUP, IT SPAWNS A METEOR SHOWER
+
                 //TODO: THIS CODE PORTION CAN BE SAFELY REFACTORED AND MOVED INSIDE THE Spawn METHOD OF ItemPickup.
+                /*
                 GameObject prefabPickupItem = Instantiate(cow.CowTemplate.PickupItemToBeSpawned.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
                 prefabPickupItem.SetActive(false);
+                */
+                //RANDOM SPAWN OF ASTEROIDS
+                SpawningGrid.Instance.SpawnAsteroidInsideGrid(cow.CowTemplate.AssociatedAsteroid);
+
 
                 //TODO: DEVELOP A FUNCTIONALITY ON COWDEX + CowSO THAT ALLOWS TO IDENTIFY "MALICIOUS" COWS THAT DROP THEIR INTENDED ALTERATION ItemPickup AT THEIR OWN FEET WHEN CAPTURED.
+                //TODO: RESTORE FUNCTIONALITY FOR MALICIOUS COWS. MAKE SURE THAT THERE IS AN INSTANTLY-DEPLOYED ITEMPICKUP THAT IS SPECIFIED AS A VARIABLE ON CowSO.
+
+                /*
                 if (cow.CowTemplate.UID.Equals(CowSO.UniqueID.R003Scarecow))
                 {
                     prefabPickupItem.GetComponent<ItemPickup>().Spawn(cow.transform.position);
@@ -167,6 +176,7 @@ public class Abductor : MonoBehaviour
                 {
                     prefabPickupItem.GetComponent<ItemPickup>().SpawnRandomly();
                 }
+                */
 
             }
 
