@@ -9,11 +9,14 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
     private bool hasBeenDepleted = false;
     public bool HasBeenDepleted { get { return hasBeenDepleted; } set { hasBeenDepleted = value; } }
 
-
-
     ///STRUCTURE DATA
     [SerializeField] private StructureAbstractSO StructureScriptableObject;
     StructureAbstract myStructure;
+
+
+    ///JUICYNESS
+    [SerializeField] private ParticleSystem ExpirationParticles;
+    private bool hasPlayedExpirationParticles;
 
 
     //METHODS
@@ -30,7 +33,10 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
     void Update()
     {
         //HANDLE THE STRUCTURE'S LOGIC
-        
+        if (hasBeenDepleted)
+        {
+            ExpireStructure();
+        }
     }
 
 
@@ -64,6 +70,25 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
         Vector3 basePosition = new Vector3(within.transform.position.x, 0, within.transform.position.z);
         float distance = (this.transform.position - basePosition).magnitude;
         return distance < myStructure.OperativeRadius;
+    }
+
+
+    //JUICYNESS
+    private void ExpireStructure()
+    {
+        //PARTICLE EMISSION
+        if (!hasPlayedExpirationParticles && ExpirationParticles != null)
+        {
+            ParticleSystem expirationParticlesInstance = Instantiate(ExpirationParticles, transform.position + new Vector3(0,1,0), Quaternion.identity);
+            expirationParticlesInstance.Play();
+            Destroy(expirationParticlesInstance.gameObject, 3.0f);
+
+            hasPlayedExpirationParticles = true;
+        }
+
+        //DESTROY EXPIRED STRUCTURE
+        Destroy(this.gameObject, 3.0f);
+
     }
 
 

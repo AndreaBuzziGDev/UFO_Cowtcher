@@ -259,3 +259,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StructureScriptableObject: {fileID: 11400000, guid: 3e571a92085dd154a9f7eec0b413f120, type: 2}
+  ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}

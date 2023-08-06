@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StructureScriptableObject: {fileID: 11400000, guid: 83807cc0fd2bb08429804f75aecc90f8, type: 2}
+  ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}
 --- !u!1 &7366496065353133557
 GameObject:
   m_ObjectHideFlags: 0
