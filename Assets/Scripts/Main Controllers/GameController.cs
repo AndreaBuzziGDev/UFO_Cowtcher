@@ -107,6 +107,7 @@ public class GameController : MonoSingleton<GameController>
         Cowdex.Instance.Initialization();
         HideoutManager.Instance.Initialization();
         SpawnManager.Instance.Initialization();
+        DifficultyManager.Instance.Initialization();
     }
 
 

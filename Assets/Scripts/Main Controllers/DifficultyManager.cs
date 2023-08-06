@@ -24,8 +24,6 @@ public class DifficultyManager : MonoSingleton<DifficultyManager>
     // Start is called before the first frame update
     void Start()
     {
-        //TODO: GET THIS INITIALIZED BY THE GameController
-        Initialization();
 
     }
 
