@@ -62,7 +62,6 @@ public class DifficultyManager : MonoSingleton<DifficultyManager>
         if (CapturedCowsCounter.ContainsKey(interestedCowUID))
         {
             CapturedCowsCounter[interestedCowUID]++;
-            Debug.Log("CapturedCowsCounter - " + interestedCowUID + " Count: " + CapturedCowsCounter[interestedCowUID]);
         }
         else
             CapturedCowsCounter.Add(interestedCowUID, 1);
