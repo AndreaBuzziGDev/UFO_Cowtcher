@@ -79,6 +79,24 @@ public class UFO : MonoBehaviour
 
 
     //CURRENT FUEL SETTER
+    public void ChangeFuelCapture(CowSO cowTemplate)
+    {
+        float factoredFuel = cowTemplate.FuelRecoveryAmount / (1 + DifficultyManager.Instance.GetCountCapturedCow(cowTemplate.UID));
+        Debug.Log("UFO - factoredFuel: " + factoredFuel);
+
+        float ceiledFuel = Mathf.Ceil(factoredFuel);
+        Debug.Log("UFO - ceiledFuel: " + ceiledFuel);
+
+        int intFuel = (int) ceiledFuel;
+        Debug.Log("UFO - intFuel: " + intFuel);
+
+        ChangeFuel(intFuel);
+
+        //INCREASE CAPTURED COW COUNT ON DIFFICULTY MANAGER
+        DifficultyManager.Instance.CountCapturedCow(cowTemplate.UID);
+
+    }
+
     public void ChangeFuel(float delta) 
     {
         fuelAmount += delta * fuelGainMultiplier;
