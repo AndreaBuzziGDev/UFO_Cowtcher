@@ -33,10 +33,7 @@ public class MainMenuController : MonoBehaviour
     public void Initialize()
     {
         MainMenuCanvas.gameObject.SetActive(true);
-
         //SET EVERY OTHER CANVAS INACTIVE
-
-
     }
 
 
