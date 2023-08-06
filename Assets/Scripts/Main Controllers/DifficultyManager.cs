@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class DifficultyManager : MonoSingleton<DifficultyManager>
 {
+    //ENUMS
+    public enum eFuelPenaltyMode
+    {
+        ModeFraction
+    }
+
+
     //DATA
     ///FUNCTIONALITY DATA
     [SerializeField] private bool captureScalingDifficulty;
     public bool IsCaptureScaling { get { return captureScalingDifficulty; } }
+
+
+    ///FUEL RECOVERY PENALTY MODE
+    [SerializeField] private eFuelPenaltyMode fuelPenaltyMode = 0;
+    public eFuelPenaltyMode FuelPenaltyMode { get { return fuelPenaltyMode; } }
+
+
 
 
     ///STRUCTURAL DATA
