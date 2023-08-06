@@ -81,6 +81,7 @@ public class UFO : MonoBehaviour
     //CURRENT FUEL SETTER
     public void ChangeFuelCapture(CowSO cowTemplate)
     {
+        //CHANGE FUEL SUMMONING THE HELPER
         ChangeFuel(UFOFuelHelper.HandleFuelRecoveryAmount(cowTemplate));
 
         //INCREASE CAPTURED COW COUNT ON DIFFICULTY MANAGER
