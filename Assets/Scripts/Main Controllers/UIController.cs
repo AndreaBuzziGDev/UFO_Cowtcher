@@ -40,10 +40,22 @@ public class UIController : MonoSingleton<UIController>
     //INITIALIZATION
     public void Initialize()
     {
+        //
         AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel, CowdexPanel };
         HideAllMenuPanels();
         IGPanel.HighScoreBar.ResetScore();
+
+        //INITIALIZE COWDEX PAGES
+
+
     }
+
+
+
+
+
+
+
 
 
     //GUI PANELS MANAGEMENT
