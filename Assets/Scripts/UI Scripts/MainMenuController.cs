@@ -40,11 +40,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
         Initialize();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
 
 
@@ -62,7 +58,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
         allCanvas = new List<Canvas> { MainMenuCanvas, StageSelectCanvas, GarageCanvas, CowdexCanvas, OptionsCanvas };
     }
 
-    private void DisableAllCanvas()
+    private void DisableAllCanvas() 
     {
         foreach (Canvas c in allCanvas) c.gameObject.SetActive(false);
     }
@@ -75,7 +71,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
         if (targetCanvas == eMainMenuCanvas.Quit) ExitGame();
         else DisableAllCanvas();
 
-
+        //SWITCH
         switch (targetCanvas)
         {
             case eMainMenuCanvas.Main:
