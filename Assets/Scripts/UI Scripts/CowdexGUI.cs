@@ -8,8 +8,14 @@ public class CowdexGUI : MonoBehaviour
 
 
     //DATA
+    ///SIMPLE DATA
     private int pageIndex;
     public int PageIndex { get { return pageIndex; } }
+
+
+    ///COMPLEX DATA
+    private List<CowdexPage> CowdexPages = new();
+    private Dictionary<CowSO.UniqueID, CowdexPage> CowdexPagesDictionary = new();
 
 
 
@@ -36,9 +42,17 @@ public class CowdexGUI : MonoBehaviour
     public void Initialize()
     {
         pageIndex = 0;
-        Debug.Log("CowdexGUI - creating CowdexPage, Cow UID: " + CowSO.UniqueID.C000Jamal);
+        List<Cow> allCows = Cowdex.Instance.GetAllCows();
+        foreach(Cow c in allCows)
+        {
+            CowdexPage cp = new CowdexPage(c);
+            CowdexPages.Add(cp);
+            CowdexPagesDictionary.Add(c.CowTemplate.UID, cp);
+        }
 
-        CowdexPage cp = new CowdexPage(CowSO.UniqueID.C000Jamal);
+        Debug.Log("CowdexGUI - CowdexPages size: " + CowdexPages.Count);
+        Debug.Log("CowdexGUI - CowdexPagesDictionary size: " + CowdexPagesDictionary.Count);
+
     }
 
 
@@ -67,6 +81,8 @@ public class CowdexGUI : MonoBehaviour
         //TODO: SET TARGET WITHIN MAXIMUM
         Debug.Log("CowdexGUI - pageIndex: " + pageIndex);
     }
+
+    public CowdexPage GetCurrentPage() => CowdexPages[pageIndex];
 
 
 

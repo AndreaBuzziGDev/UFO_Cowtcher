@@ -6,20 +6,39 @@ using UnityEngine.UI;
 public class CowdexPage
 {
     //DATA
-    public Sprite cowSprite;
+    //TODO: USE GETTERS
+
+    ///FOUNDATIONAL DATA
     public Cow myCow;
+
+    private CowSO.UniqueID myCowUID;
+    public CowSO.UniqueID MyCowUID { get { return myCowUID; } }
+
+    ///DATA TO BE USED ON THE UI
+    public Sprite cowSprite;
+    public string cowName;
+    public string cowDescription;
+    public string cowBuff;//TODO: THIS IS A COMPLEX DATA TO HANDLE AND NEEDS SAFETIES
+
+    //TODO: OTHER DATA, LIKE IF THE COW HAS BEEN DISCOVERED OR NOT... (use getters to get updated info from the cowdex itself)
+
 
 
     //CONSTRUCTOR
-    public CowdexPage(CowSO.UniqueID cowUID)
+    public CowdexPage(Cow myCowPrefab)
     {
-        myCow = Cowdex.Instance.GetCow(cowUID);
+        ///
+        myCow = myCowPrefab;
+        myCowUID = myCowPrefab.CowTemplate.UID;
 
         GameObject visualChild = myCow.gameObject.transform.Find("VisualChild").gameObject;
-        Debug.Log("CowdexPage - visualChild: " + visualChild.name);
 
+        ///
         cowSprite = visualChild.GetComponent<SpriteRenderer>().sprite;
-        Debug.Log("CowdexPage - visualChild cowImage: " + cowSprite);
+
+        cowName = myCow.CowTemplate.Name;
+        cowDescription = myCow.CowTemplate.Description;
+        cowBuff = "PLACEHOLDER";
 
     }
 
