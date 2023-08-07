@@ -20,6 +20,7 @@ public class UIController : MonoSingleton<UIController>
     [SerializeField] private GameObject gameplayInputCanvas;
     public GameObject GameplayInputCanvas { get { return gameplayInputCanvas; } }
 
+
     //IN GAME PANEL - FUNCTIONALITIES USED BY OTHER CLASSES, UIController ACTS AS UNIQUE PROVIDER
     [SerializeField] private InGamePanel igPanel;
     public InGamePanel IGPanel { get { return igPanel; } }
@@ -40,6 +41,8 @@ public class UIController : MonoSingleton<UIController>
     public void Initialize()
     {
         AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel, CowdexPanel };
+        HideAllMenuPanels();
+        IGPanel.HighScoreBar.ResetScore();
     }
 
 

@@ -328,7 +328,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53
+  m_fontSize: 52.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -508,9 +508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461ad2ae926a62245a91a77fa015f1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllMenuPanels:
-  - {fileID: 2999353713454031584}
-  - {fileID: 980551416422809614}
   PauseGamePanel: {fileID: 2999353713454031584}
   GameOverPanel: {fileID: 980551416422809614}
   CowdexPanel: {fileID: 4799944364165482422}
@@ -608,7 +605,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.85
+  m_fontSize: 49.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2624,7 +2621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6047521770348608401, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
