@@ -1028,6 +1028,7 @@ GameObject:
   - component: {fileID: 4730634499184542831}
   - component: {fileID: 5670817198470545375}
   - component: {fileID: 2911759625090344365}
+  - component: {fileID: 1912368528973531154}
   m_Layer: 5
   m_Name: Start Game
   m_TagString: Untagged
@@ -1136,7 +1137,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5670817198470545375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1912368528973531154}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: GoToCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1912368528973531154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886019543573868584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTargetCanvas: 1
 --- !u!1 &1887674295227425581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,7 +1174,7 @@ GameObject:
   - component: {fileID: 178865507817931110}
   - component: {fileID: 5875600279460516002}
   m_Layer: 0
-  m_Name: UI Main Menu
+  m_Name: UIMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,14 +1189,14 @@ Transform:
   m_GameObject: {fileID: 1887674295227425581}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 421.1518, y: 885.31854, z: 709.1289}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6593822357000997339}
   - {fileID: 4433152061252965288}
   - {fileID: 4724332956896735741}
-  - {fileID: 8441181430857449505}
+  - {fileID: 7563585635731146260}
   - {fileID: 3049271661397101572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1187,6 +1213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainMenuCanvas: {fileID: 5806489727003370524}
+  StageSelectCanvas: {fileID: 2352505462292243640}
+  GarageCanvas: {fileID: 3429600480413757714}
+  CowdexCanvas: {fileID: 8397416774045357912}
+  OptionsCanvas: {fileID: 4094442925116974205}
 --- !u!1 &2010108994979764375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1535,7 @@ GameObject:
   - component: {fileID: 804808252684393360}
   - component: {fileID: 5142551386403020543}
   - component: {fileID: 54678606137247924}
+  - component: {fileID: 134497569684118880}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1613,7 +1644,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5142551386403020543}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 134497569684118880}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: GoToCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &134497569684118880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463422844908638699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTargetCanvas: 4
 --- !u!1 &2475886934893265484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,6 +2590,7 @@ GameObject:
   - component: {fileID: 1350975622652170875}
   - component: {fileID: 8735732214919937208}
   - component: {fileID: 929007120931766816}
+  - component: {fileID: 828543093387885258}
   m_Layer: 5
   m_Name: Quit Game
   m_TagString: Untagged
@@ -2642,7 +2699,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8735732214919937208}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 828543093387885258}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: GoToCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &828543093387885258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081689720091644198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTargetCanvas: 5
 --- !u!1 &3227552449387117055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,37 +2846,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &3294693374635397615
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8441181430857449505}
-  m_Layer: 0
-  m_Name: PLACEHOLDER COWDEX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8441181430857449505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3294693374635397615}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 178865507817931110}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3513365268842042928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,6 +2858,7 @@ GameObject:
   - component: {fileID: 9127431856852162777}
   - component: {fileID: 4323402215344373427}
   - component: {fileID: 3857058718737602305}
+  - component: {fileID: 5542651410841471433}
   m_Layer: 5
   m_Name: Garage
   m_TagString: Untagged
@@ -2915,7 +2967,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4323402215344373427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5542651410841471433}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: GoToCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5542651410841471433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513365268842042928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTargetCanvas: 2
 --- !u!1 &3533075980730491139
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,6 +3404,107 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &4334089959964112005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7563585635731146260}
+  - component: {fileID: 8397416774045357912}
+  - component: {fileID: 6182458855610293529}
+  - component: {fileID: 1107864566115152336}
+  m_Layer: 0
+  m_Name: PLACEHOLDER COWDEX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7563585635731146260
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334089959964112005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 178865507817931110}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!223 &8397416774045357912
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334089959964112005}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &6182458855610293529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334089959964112005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &1107864566115152336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334089959964112005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &4457313609441179519
 GameObject:
   m_ObjectHideFlags: 0
@@ -6368,6 +6546,7 @@ GameObject:
   - component: {fileID: 668166166533235509}
   - component: {fileID: 5452881707726329244}
   - component: {fileID: 6939652985358316264}
+  - component: {fileID: 4831829839625404872}
   m_Layer: 5
   m_Name: Cowdex
   m_TagString: Untagged
@@ -6476,7 +6655,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5452881707726329244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4831829839625404872}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: GoToCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4831829839625404872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093007311602993490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTargetCanvas: 3
 --- !u!1 &8179912344865188988
 GameObject:
   m_ObjectHideFlags: 0
