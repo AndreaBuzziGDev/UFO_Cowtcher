@@ -5724,6 +5724,7 @@ GameObject:
   - component: {fileID: 2126366383376514781}
   - component: {fileID: 3428079803700292502}
   - component: {fileID: 4523213484452275297}
+  - component: {fileID: 4676038509205585311}
   m_Layer: 5
   m_Name: UFO
   m_TagString: Untagged
@@ -5788,6 +5789,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4676038509205585311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020039114451583486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7773c2b116ef544b96d5321a9d04ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAmount: 0.1
+  shakeSpeed: 5
 --- !u!1 &7057956415085728704
 GameObject:
   m_ObjectHideFlags: 0
@@ -6767,6 +6782,7 @@ GameObject:
   - component: {fileID: 8959140486158014933}
   - component: {fileID: 6081827974077246623}
   - component: {fileID: 2124885410230035470}
+  - component: {fileID: 8419609035636604148}
   m_Layer: 5
   m_Name: UFO Personal
   m_TagString: Untagged
@@ -6831,6 +6847,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8419609035636604148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190909696540655963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7773c2b116ef544b96d5321a9d04ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAmount: 0.1
+  shakeSpeed: 5
 --- !u!1 &8269779410898555973
 GameObject:
   m_ObjectHideFlags: 0
