@@ -11,7 +11,7 @@ public class UIController : MonoSingleton<UIController>
 
     //DATA
     //TODO: MIGHT BE SIMPLIFIED BY USING DEDICATED CLASSES
-    [SerializeField] private List<GameObject> AllMenuPanels;
+    private List<GameObject> AllMenuPanels = new();
 
     [SerializeField] private GameObject PauseGamePanel;
     [SerializeField] private GameObject GameOverPanel;
@@ -33,12 +33,14 @@ public class UIController : MonoSingleton<UIController>
 
     //...
 
-    //TODO: INTRODUCE GUI INITIALIZATION?
-
-
 
 
     //FUNCTIONALITIES
+    //INITIALIZATION
+    public void Initialize()
+    {
+        AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel, CowdexPanel };
+    }
 
 
     //GUI PANELS MANAGEMENT
