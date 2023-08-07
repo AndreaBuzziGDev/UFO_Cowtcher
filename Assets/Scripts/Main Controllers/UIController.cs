@@ -46,7 +46,7 @@ public class UIController : MonoSingleton<UIController>
         IGPanel.HighScoreBar.ResetScore();
 
         //INITIALIZE COWDEX PAGES
-
+        CowdexPanel.GetComponent<CowdexGUI>().Initialize();
 
     }
 

@@ -21,7 +21,7 @@ public class CowdexGUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pageIndex = 0;
+
     }
 
     // Update is called once per frame
@@ -32,6 +32,15 @@ public class CowdexGUI : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    ///INITIALIZATION
+    public void Initialize()
+    {
+        pageIndex = 0;
+        Debug.Log("CowdexGUI - creating CowdexPage, Cow UID: " + CowSO.UniqueID.C000Jamal);
+
+        CowdexPage cp = new CowdexPage(CowSO.UniqueID.C000Jamal);
+    }
+
 
     //TODO: A "CowdexPage" CLASS COULD HANDLE THESE?
     ///PAGE-RELATED FUNCTIONALITIES
