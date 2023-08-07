@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Cowctor
   Description: 
   spawnProbability: 20
-  FuelRecoveryAmount: 15
+  FuelRecoveryAmount: 5
   AlertRadius: 4
   SpeedCalm: 7
   SpeedAlert: 6

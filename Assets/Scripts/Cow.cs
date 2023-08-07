@@ -22,7 +22,7 @@ public class Cow : MonoBehaviour
     public bool IsAlert { get { return (currentState == State.Alert); } }
 
 
-
+    ///COW BEHAVIOURAL DATA
     [SerializeField] private CowSO cowTemplate;
     public CowSO CowTemplate { get { return cowTemplate; } }
 
@@ -52,8 +52,11 @@ public class Cow : MonoBehaviour
     private float alertRadius;
     public float AlertRadius { get { return alertRadius; } }//TODO: HAS TO BE MORPHED IN COW UNITS
 
+    ///SPEED DATA
     private float speedCalm;
     private float speedAlert;
+    private float speedBuffMultiplier;//EXPERIMENT TO SLOW DOWN COWS INDIVIDUALLY (NOT YET USED)
+
 
     private int score;
     public int Score { get { return score; } }
@@ -62,6 +65,13 @@ public class Cow : MonoBehaviour
     [Min(0f)] private float TimerAlertToCalm;
     [Min(0f)] private float TimerAlertToPanic;
     public bool IsPanicking { get { return (TimerAlertToPanic <= 0.0f); } }
+
+
+    //JUICYNESS DATA
+    [SerializeField] private float shakeAmount;
+    [SerializeField] private float shakeSpeed;
+
+
 
 
 
@@ -152,7 +162,50 @@ public class Cow : MonoBehaviour
     //      UPDATE HANDLES ALL THE TIMERS AND BEHAVIOURS
     private void FixedUpdate()
     {
-        //COW AI
+        //IsGlobalTerrify
+        if (CowManager.Instance.IsGlobalTerrify)
+        {
+            //BEHAVIOUR IS BEING TERRIFIED
+            //TODO: COWS SHAKE WHEN TERRIFIED
+            AnimateTerror();
+        }
+        else
+        {
+            //COW AI
+            CowAI();
+
+            //MOVEMENT
+            HandleMovement();
+        }
+    }
+
+
+    //ENABLEMENT/DISABLEMENT
+    private void OnEnable()
+    {
+        this.movementDirection = Vector3.zero;
+        this.currentState = State.Calm;
+
+        //RESET TIMERS
+        this.TimerAlertToCalm = 0.0f;
+        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
+
+        //SET BIRTH POINT
+        spawnCoords = transform.position;
+
+    }
+
+    private void OnDisable()
+    {
+
+    }
+
+
+
+
+    //COW AI
+    private void CowAI()
+    {
 
         //STEP 1
         if (CowHideoutHelper.IsUFOWithinRadius(this))
@@ -212,30 +265,15 @@ public class Cow : MonoBehaviour
 
         //ENDED COW AI
 
-        //MOVEMENT
-        HandleMovement();
     }
 
 
-    //ENABLEMENT/DISABLEMENT
-    private void OnEnable()
-    {
-        this.movementDirection = Vector3.zero;
-        this.currentState = State.Calm;
 
-        //RESET TIMERS
-        this.TimerAlertToCalm = 0.0f;
-        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
-        //SET BIRTH POINT
-        spawnCoords = transform.position;
 
-    }
 
-    private void OnDisable()
-    {
 
-    }
+
 
 
 
@@ -247,7 +285,8 @@ public class Cow : MonoBehaviour
         if (this.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
-        rb.velocity = mySpeed * movementDirection;
+        Debug.Log("Multiplier: " + CowManager.Instance.GlobalSpeedMultiplier);
+        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * movementDirection;
 
         //rb.MovePosition(transform.position + mySpeed * Time.deltaTime * movementDirection);
     }
@@ -335,6 +374,19 @@ public class Cow : MonoBehaviour
         Destroy(this.gameObject);
 
     }
+
+
+
+
+    //JUICYNESS
+    private void AnimateTerror()
+    {
+        transform.position = new Vector3(
+            transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, 
+            transform.position.y, 
+            transform.position.z + Mathf.Cos(Time.unscaledTime * shakeSpeed) * shakeAmount);
+    }
+
 
 
 }

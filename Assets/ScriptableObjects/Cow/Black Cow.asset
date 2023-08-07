@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Jamal
   Description: 
   spawnProbability: 50
-  FuelRecoveryAmount: 3
+  FuelRecoveryAmount: 2
   AlertRadius: 4
   SpeedCalm: 2
   SpeedAlert: 3

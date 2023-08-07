@@ -6,27 +6,29 @@ public class ItemPickup : MonoBehaviour, IInteractible
 {
     //DATA
     ///STATUS ALTERATION
-    public SAAbstractSO Alteration;
+    [SerializeField] private SAAbstractSO Alteration;
+
+    ///JUICYNESS STUFF
+    ///SHAKE VARIABLES
+    [Header("Shake Settings")]
+    [SerializeField] private float shakeAmount;
+    [SerializeField] private float shakeSpeed;
 
 
 
     //METHODS
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //...
 
     // Update is called once per frame
     void Update()
     {
-        
+        AnimateItemPickup();
     }
 
 
     //IMPLEMENTING IInteractible
 
-    public void Interact()
+    public void Interact(GameObject interactionSource)
     {
         //DELIVER BUFF TO THE PLAYER UFO
         GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(this.GetStatusAlteration());
@@ -58,5 +60,19 @@ public class ItemPickup : MonoBehaviour, IInteractible
         SpawningGrid.Instance.SpawnObjectInsideGrid(this);
     }
 
+
+
+
+    //JUICYNESS
+    private void AnimateItemPickup()
+    {
+
+        transform.position = new Vector3(
+            transform.position.x,
+            0.5f + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount,
+            transform.position.z
+            );
+
+    }
 
 }

@@ -137,7 +137,7 @@ public class Abductor : MonoBehaviour
             Cow cow = inRangeCow.GetComponent<Cow>();
 
             //CAPTURE - FUEL RECOVERY
-            UFO.ChangeFuel(cow.FuelRecoveryAmount);
+            UFO.ChangeFuelCapture(cow.CowTemplate);
             UFO.ChangeScore(cow.Score);
 
             //WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
@@ -218,7 +218,7 @@ public class Abductor : MonoBehaviour
             {
                 //INTERACT WITH ItemPickup
                 //TODO: THIS MIGHT BE UPGRADEABLE AND AGNOSTIFIABLE VIA THE IInteractible Interface.
-                collider.transform.gameObject.GetComponent<ItemPickup>().Interact();
+                collider.transform.gameObject.GetComponent<IInteractible>().Interact(this.gameObject);
 
             }
         }

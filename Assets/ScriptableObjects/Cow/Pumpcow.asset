@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Pumpcow
   Description: 
   spawnProbability: 20
-  FuelRecoveryAmount: 5
+  FuelRecoveryAmount: 3
   AlertRadius: 5
   SpeedCalm: 1
   SpeedAlert: 4
