@@ -29,7 +29,7 @@ public class StageSelectionController : MonoBehaviour
     private void Update()
     {
         //DISABLE PLAY BUTTON IF INVALID
-        playButton.gameObject.SetActive(isSceneSet);
+        playButton.interactable = isSceneSet;
 
     }
 
