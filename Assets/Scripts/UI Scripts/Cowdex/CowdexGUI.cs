@@ -45,7 +45,7 @@ public class CowdexGUI : MonoBehaviour
 
     //FUNCTIONALITIES
     ///INITIALIZATION
-    public void Initialize()
+    public void Initialization()
     {
         pageIndex = 0;
         List<Cow> allCows = Cowdex.Instance.GetAllActualCows();
@@ -59,7 +59,7 @@ public class CowdexGUI : MonoBehaviour
         Debug.Log("CowdexGUI - CowdexPages size: " + CowdexPages.Count);
         Debug.Log("CowdexGUI - CowdexPagesDictionary size: " + CowdexPagesDictionary.Count);
 
-        myCowdexPageGUI.Initialize(this);
+        myCowdexPageGUI.Initialization(this);
         GoToPage(0);
     }
 

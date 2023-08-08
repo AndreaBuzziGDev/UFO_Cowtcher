@@ -37,7 +37,7 @@ public class CowdexPageGUI : MonoBehaviour
 
     //METHODS
     ///INITIALIZATION
-    public void Initialize(CowdexGUI parentReference)
+    public void Initialization(CowdexGUI parentReference)
     {
         parentCowdexGUI = parentReference;
     }

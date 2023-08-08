@@ -37,7 +37,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
+        Initialization();
     }
 
 
@@ -47,7 +47,21 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     //FUNCTIONALITIES
 
     ///INITIALIZATION
-    public void Initialize()
+    public void Initialization()
+    {
+        InitializeImportantPrefabs();
+        InitializeGUI();
+    }
+
+    ///IMPORTANT PREFAB INITIALIZATION
+    private void InitializeImportantPrefabs()
+    {
+        Cowdex.Instance.Initialization();
+    }
+
+
+    ///GUI INITIALIZATION
+    private void InitializeGUI()
     {
         BuildAllCanvas();
         SetTargetCanvas(lastTargetCanvas);
