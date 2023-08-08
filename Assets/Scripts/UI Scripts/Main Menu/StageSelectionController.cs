@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageSelectionController : MonoBehaviour
 {
     //DATA
-    [SerializeField] private List<string> SceneNamesList = new();
+    
+    ///STRUCTURAL DATA
+    [SerializeField] private List<SceneNavigationController.eStageSceneName> SceneNamesList = new();
 
-    private string targetScene;
+    private bool isSceneSet;
+    private SceneNavigationController.eStageSceneName targetStageScene;
+
+
+    ///GUI REFERENCES
+    [SerializeField] private Image scenePreview;
+
+
 
 
     //METHODS
@@ -16,7 +26,7 @@ public class StageSelectionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isSceneSet = false;
     }
 
     // Update is called once per frame
@@ -27,11 +37,35 @@ public class StageSelectionController : MonoBehaviour
 
 
     //FUNCTIONALITIES
-    public void SetTargetScene(string targetScene)
+    public void UnsetTargetScene()
     {
-
-
+        isSceneSet = false;
+        SetTargetSceneGUI();
     }
+
+    public void SetTargetScene(SceneNavigationController.eStageSceneName targetScene)
+    {
+        isSceneSet = true;
+        targetStageScene = targetScene;
+
+        SetTargetSceneGUI();
+    }
+
+    public void SetTargetSceneGUI()
+    {
+        if (scenePreview != null)
+        {
+            if (isSceneSet)
+            {
+                //scenePreview.sprite = 
+            }
+            else
+            {
+                //scenePreview.sprite =
+            }
+        }
+    }
+
 
 
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManager : MonoSingleton<SceneManager>
+public class SceneNavigationController : MonoSingleton<SceneNavigationController>
 {
     //ENUMS
     public enum eTechnicalSceneName
@@ -14,6 +14,7 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     public enum eStageSceneName
     {
+        UnsetScene,
         Stage1,
         Stage2,
         Stage3,
@@ -22,7 +23,7 @@ public class SceneManager : MonoSingleton<SceneManager>
 
 
     //DATA
-
+    public List<Sprite> SceneSprites = new();
 
 
 
