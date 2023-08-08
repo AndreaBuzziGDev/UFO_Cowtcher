@@ -2,12 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageSelectionController : MonoBehaviour
+public class SceneManager : MonoSingleton<SceneManager>
 {
-    //DATA
-    [SerializeField] private List<string> SceneNamesList = new();
+    //ENUMS
+    public enum eTechnicalSceneName
+    {
+        Opening,
+        MainMenu,
+        Credits
+    }
 
-    private string targetScene;
+    public enum eStageSceneName
+    {
+        Stage1,
+        Stage2,
+        Stage3,
+        Stage4
+    }
+
+
+    //DATA
+
+
 
 
     //METHODS
@@ -27,11 +43,5 @@ public class StageSelectionController : MonoBehaviour
 
 
     //FUNCTIONALITIES
-    public void SetTargetScene(string targetScene)
-    {
-
-
-    }
-
 
 }
