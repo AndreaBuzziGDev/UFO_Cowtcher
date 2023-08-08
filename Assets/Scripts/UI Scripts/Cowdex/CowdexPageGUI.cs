@@ -40,7 +40,6 @@ public class CowdexPageGUI : MonoBehaviour
     public void Initialize(CowdexGUI parentReference)
     {
         parentCowdexGUI = parentReference;
-        SetPage()
     }
 
 
