@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Unset Scene
   m_EditorClassIdentifier: 
   associatedSceneName: UnsetScene
-  associatedSprite: {fileID: 0}
+  associatedSprite: {fileID: 21300000, guid: e7aa0d94e99a67840a99e343a807e54c, type: 3}
   stageID: 0

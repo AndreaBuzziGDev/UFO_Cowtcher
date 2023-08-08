@@ -8,15 +8,12 @@ public class StageSelectionController : MonoBehaviour
     //DATA
     
     ///STRUCTURAL DATA
-    [SerializeField] private List<SceneNavigationController.eStageSceneName> SceneNamesList = new();
-
     private bool isSceneSet;
     private SceneNavigationController.eStageSceneName targetStageScene;
 
-
     ///GUI REFERENCES
     [SerializeField] private Image scenePreview;
-
+    [SerializeField] private Button playButton;
 
 
 
@@ -29,14 +26,18 @@ public class StageSelectionController : MonoBehaviour
         isSceneSet = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        //DISABLE PLAY BUTTON IF INVALID
+        playButton.gameObject.SetActive(isSceneSet);
+
     }
 
 
+
     //FUNCTIONALITIES
+
+    ///TARGET SETTING
     public void UnsetTargetScene()
     {
         isSceneSet = false;
@@ -55,17 +56,21 @@ public class StageSelectionController : MonoBehaviour
     {
         if (scenePreview != null)
         {
-            if (isSceneSet)
-            {
-                //scenePreview.sprite = 
-            }
-            else
-            {
-                //scenePreview.sprite =
-            }
+            Sprite intendedSprite;
+
+            if (isSceneSet) intendedSprite = SceneNavigationController.Instance.GetAssociatedSprite(targetStageScene);
+            else intendedSprite = SceneNavigationController.Instance.GetAssociatedSprite(SceneNavigationController.eStageSceneName.UnsetScene);
+
+            scenePreview.sprite = intendedSprite;
         }
     }
 
+
+    ///TARGET REACHING
+    public void LoadSelectedScene()
+    {
+        if (isSceneSet) SceneNavigationController.Instance.LoadScene(targetStageScene);
+    }
 
 
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed817b8541b312244bb21310ff2fa058, type: 3}
   m_Name: Stage 2
   m_EditorClassIdentifier: 
-  associatedSceneName: Stage2
+  associatedSceneName: Stage 2
   associatedSprite: {fileID: 21300000, guid: e167340e3ff2af346a49452727c3895f, type: 3}
   stageID: 2
