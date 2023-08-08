@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Cowdex : MonoSingleton<Cowdex>
 {
@@ -101,6 +102,21 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///DATA RETRIEVAL
 
     ///RETRIEVE ANY Cow
+    
+    ///ALL
+    public List<Cow> GetAllCows() => CowArchive.Values.ToList();
+
+    ///ALL BUT "ANY" COW
+    public List<Cow> GetAllActualCows()
+    {
+        List<Cow> allCowsExceptANY = GetAllCows();
+        allCowsExceptANY.Remove(CowArchive[CowSO.UniqueID.ANY]);
+
+        return allCowsExceptANY;
+    }
+
+
+    ///SOME
     public List<Cow> GetCows(List<CowSO.UniqueID> UIDs)
     {
         //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
@@ -109,6 +125,8 @@ public class Cowdex : MonoSingleton<Cowdex>
         foreach (CowSO.UniqueID UID in UIDs) requiredCows.Add(GetCow(UID));
         return requiredCows;
     }
+
+    ///ONE
     public Cow GetCow(CowSO.UniqueID UID)
     {
         //TRY & CATCH? THERE ARE NO COWS SUPPOSED TO BE MISSING IN THIS LIST. ERROR INTENDED?

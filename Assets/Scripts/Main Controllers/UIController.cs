@@ -11,7 +11,7 @@ public class UIController : MonoSingleton<UIController>
 
     //DATA
     //TODO: MIGHT BE SIMPLIFIED BY USING DEDICATED CLASSES
-    [SerializeField] private List<GameObject> AllMenuPanels;
+    private List<GameObject> AllMenuPanels = new();
 
     [SerializeField] private GameObject PauseGamePanel;
     [SerializeField] private GameObject GameOverPanel;
@@ -19,6 +19,7 @@ public class UIController : MonoSingleton<UIController>
 
     [SerializeField] private GameObject gameplayInputCanvas;
     public GameObject GameplayInputCanvas { get { return gameplayInputCanvas; } }
+
 
     //IN GAME PANEL - FUNCTIONALITIES USED BY OTHER CLASSES, UIController ACTS AS UNIQUE PROVIDER
     [SerializeField] private InGamePanel igPanel;
@@ -33,12 +34,28 @@ public class UIController : MonoSingleton<UIController>
 
     //...
 
-    //TODO: INTRODUCE GUI INITIALIZATION?
-
-
 
 
     //FUNCTIONALITIES
+    //INITIALIZATION
+    public void Initialize()
+    {
+        //
+        AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel, CowdexPanel };
+        HideAllMenuPanels();
+        IGPanel.HighScoreBar.ResetScore();
+
+        //INITIALIZE COWDEX PAGES
+        CowdexPanel.GetComponent<CowdexGUI>().Initialize();
+
+    }
+
+
+
+
+
+
+
 
 
     //GUI PANELS MANAGEMENT

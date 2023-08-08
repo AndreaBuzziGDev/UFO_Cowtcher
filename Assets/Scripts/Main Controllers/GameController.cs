@@ -103,11 +103,13 @@ public class GameController : MonoSingleton<GameController>
     //START
     private static void HandleStart()
     {
-        UIController.Instance.IGPanel.HighScoreBar.ResetScore();
         Cowdex.Instance.Initialization();
         HideoutManager.Instance.Initialization();
         SpawnManager.Instance.Initialization();
         DifficultyManager.Instance.Initialization();
+
+        //INITIALIZE GUI LAST
+        UIController.Instance.Initialize();
     }
 
 
