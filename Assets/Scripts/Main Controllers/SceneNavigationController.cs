@@ -78,13 +78,13 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
         switch (targetScene)
         {
             case eTechnicalSceneName.MainMenu:
-                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.MainMenu].AssociatedScene.name;
+                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.MainMenu].AssociatedSceneName;
                 break;
             case eTechnicalSceneName.Opening:
-                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.Opening].AssociatedScene.name;
+                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.Opening].AssociatedSceneName;
                 break;
             case eTechnicalSceneName.Credits:
-                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.Credits].AssociatedScene.name;
+                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.Credits].AssociatedSceneName;
                 break;
         }
 
@@ -129,16 +129,16 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
         switch (targetScene)
         {
             case eStageSceneName.Stage1:
-                intendedScene = StageSceneDictionary[eStageSceneName.Stage1].AssociatedScene.name;
+                intendedScene = StageSceneDictionary[eStageSceneName.Stage1].AssociatedSceneName;
                 break;
             case eStageSceneName.Stage2:
-                intendedScene = StageSceneDictionary[eStageSceneName.Stage2].AssociatedScene.name;
+                intendedScene = StageSceneDictionary[eStageSceneName.Stage2].AssociatedSceneName;
                 break;
             case eStageSceneName.Stage3:
-                intendedScene = StageSceneDictionary[eStageSceneName.Stage3].AssociatedScene.name;
+                intendedScene = StageSceneDictionary[eStageSceneName.Stage3].AssociatedSceneName;
                 break;
             case eStageSceneName.Stage4:
-                intendedScene = StageSceneDictionary[eStageSceneName.Stage4].AssociatedScene.name;
+                intendedScene = StageSceneDictionary[eStageSceneName.Stage4].AssociatedSceneName;
                 break;
             default:
                 intendedScene = "";

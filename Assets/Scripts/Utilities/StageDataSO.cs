@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class StageDataSO : ScriptableObject
 {
     //ASSOCIATED SCENE
-    [SerializeField] private Scene associatedScene;
-    public Scene AssociatedScene { get { return associatedScene; } }
+    [SerializeField] private string associatedSceneName;
+    public string AssociatedSceneName { get { return associatedSceneName; } }
 
 
     //ASSOCIATED PREVIEW SPRITE

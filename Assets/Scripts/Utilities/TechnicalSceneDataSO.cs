@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class TechnicalSceneDataSO : ScriptableObject
 {
     //ASSOCIATED SCENE
-    [SerializeField] private Scene associatedScene;
-    public Scene AssociatedScene { get { return associatedScene; } }
+    [SerializeField] private string associatedSceneName;
+    public string AssociatedSceneName { get { return associatedSceneName; } }
 
 
     //ENUM IDENTIFIER
