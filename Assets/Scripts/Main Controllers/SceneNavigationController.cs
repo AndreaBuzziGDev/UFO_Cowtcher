@@ -24,14 +24,15 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
 
 
     //DATA
-    [SerializeField] private List<Scene> TechnicalScenes = new();
+    [SerializeField] private List<TechnicalSceneDataSO> TechnicalScenes = new();
     [SerializeField] private List<StageDataSO> StageData = new();
 
 
     //
-    private Dictionary<eTechnicalSceneName, Scene> TechnicalSceneDictionary = new();
+    private Dictionary<eTechnicalSceneName, TechnicalSceneDataSO> TechnicalSceneDictionary = new();
 
-    private Dictionary<eStageSceneName, Scene> StageSceneDictionary = new();
+    private Dictionary<eStageSceneName, StageDataSO> StageSceneDictionary = new();
+
     private Dictionary<eStageSceneName, Sprite> SceneSpritesDictionary = new();
 
 
@@ -42,18 +43,17 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Scene s in TechnicalScenes)
+        foreach (TechnicalSceneDataSO s in TechnicalScenes)
         {
-            TechnicalSceneDictionary.Add(s.name, s);
+            TechnicalSceneDictionary.Add(s.TechnicalSceneID, s);
         }
 
-        foreach (Scene s in StageScenes)
+        foreach (StageDataSO s in StageData)
         {
-            StageSceneDictionary.Add(s.name, s);
+            StageSceneDictionary.Add(s.StageID, s);
+            SceneSpritesDictionary.Add(s.StageID, s.AssociatedSprite);
+
         }
-
-        //SCENE SPRITES? (MIGHT NOT BE NECESSARY WITH MORE COMPLEX IMPLEMENTATION
-
     }
 
     // Update is called once per frame
@@ -73,17 +73,18 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
     ///TECHNICAL SCENES
     public void LoadScene(eTechnicalSceneName targetScene)
     {
+        //TODO: THIS CAN BE ENORMOUSLY SIMPLIFIED.
         string intendedScene = "";
         switch (targetScene)
         {
             case eTechnicalSceneName.MainMenu:
-                intendedScene = "";//TODO: 
+                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.MainMenu].AssociatedScene.name;
                 break;
             case eTechnicalSceneName.Opening:
-                intendedScene = "";//TODO: 
+                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.Opening].AssociatedScene.name;
                 break;
             case eTechnicalSceneName.Credits:
-                intendedScene = "";//TODO: 
+                intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.Credits].AssociatedScene.name;
                 break;
         }
 
@@ -97,26 +98,24 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
     ///STAGE SCENES
     public Sprite GetAssociatedSprite(eStageSceneName targetScene)
     {
+        //TODO: THIS CAN BE ENORMOUSLY SIMPLIFIED.
         Sprite intendedSprite;
-
         switch (targetScene)
         {
-            //TODO: USE A COMPLEX DATA STRUCTURE (SCRIPTABLEOBJECTS OR PREFABS) TO HANDLE THIS IN A BETTER WAY
-
             case eStageSceneName.Stage1:
-                intendedSprite = SceneSprites[1];
+                intendedSprite = StageSceneDictionary[eStageSceneName.Stage1].AssociatedSprite;
                 break;
             case eStageSceneName.Stage2:
-                intendedSprite = SceneSprites[2];
+                intendedSprite = StageSceneDictionary[eStageSceneName.Stage2].AssociatedSprite;
                 break;
             case eStageSceneName.Stage3:
-                intendedSprite = SceneSprites[3];
+                intendedSprite = StageSceneDictionary[eStageSceneName.Stage3].AssociatedSprite;
                 break;
             case eStageSceneName.Stage4:
-                intendedSprite = SceneSprites[4];
+                intendedSprite = StageSceneDictionary[eStageSceneName.Stage4].AssociatedSprite;
                 break;
             default:
-                intendedSprite = SceneSprites[0];
+                intendedSprite = StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSprite;
                 break;
         }
 
@@ -125,20 +124,21 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
 
     public void LoadScene(eStageSceneName targetScene)
     {
+        //TODO: THIS CAN BE ENORMOUSLY SIMPLIFIED.
         string intendedScene;
         switch (targetScene)
         {
             case eStageSceneName.Stage1:
-                intendedScene = "";//TODO: 
+                intendedScene = StageSceneDictionary[eStageSceneName.Stage1].AssociatedScene.name;
                 break;
             case eStageSceneName.Stage2:
-                intendedScene = "";//TODO: 
+                intendedScene = StageSceneDictionary[eStageSceneName.Stage2].AssociatedScene.name;
                 break;
             case eStageSceneName.Stage3:
-                intendedScene = "";//TODO: 
+                intendedScene = StageSceneDictionary[eStageSceneName.Stage3].AssociatedScene.name;
                 break;
             case eStageSceneName.Stage4:
-                intendedScene = "";//TODO: 
+                intendedScene = StageSceneDictionary[eStageSceneName.Stage4].AssociatedScene.name;
                 break;
             default:
                 intendedScene = "";
