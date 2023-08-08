@@ -17,6 +17,12 @@ public class CowdexGUI : MonoBehaviour
     private List<CowdexPage> CowdexPages = new();
     private Dictionary<CowSO.UniqueID, CowdexPage> CowdexPagesDictionary = new();
 
+    public int NumberOfPages { get { return CowdexPages.Count; } }
+
+
+
+    ///GUI REFERENCES
+    [SerializeField] private CowdexPageGUI myCowdexPageGUI;
 
 
 
@@ -53,33 +59,37 @@ public class CowdexGUI : MonoBehaviour
         Debug.Log("CowdexGUI - CowdexPages size: " + CowdexPages.Count);
         Debug.Log("CowdexGUI - CowdexPagesDictionary size: " + CowdexPagesDictionary.Count);
 
+        myCowdexPageGUI.Initialize(this);
+        GoToPage(0);
     }
 
 
-    //TODO: A "CowdexPage" CLASS COULD HANDLE THESE?
+
+    //TODO: EVALUATE IF CODE SHOULD BE MOVED INSIDE CowdexPageGUI
+
     ///PAGE-RELATED FUNCTIONALITIES
     public void NextPage()
     {
-        //CHECK IF PAGE INDEX IS NOT MAXED OUT...
-        pageIndex++;
+        GoToPage(pageIndex + 1);
         Debug.Log("CowdexGUI - pageIndex: " + pageIndex);
-
     }
 
     public void PreviousPage()
     {
-        if (pageIndex > 0) pageIndex--;
+        GoToPage(pageIndex - 1);
         Debug.Log("CowdexGUI - pageIndex: " + pageIndex);
     }
 
     public void GoToPage(int targetIndexPage)
     {
+        //GRANT INDEX IS WITHIN BOUNDARY
         if (targetIndexPage < 0) pageIndex = 0;
+        else if (pageIndex >= CowdexPages.Count) pageIndex = CowdexPages.Count - 1;
         else pageIndex = targetIndexPage;
 
+        //UPDATE THE COWDEXPAGE
+        myCowdexPageGUI.SetPage(CowdexPages[pageIndex]);
 
-        //TODO: SET TARGET WITHIN MAXIMUM
-        Debug.Log("CowdexGUI - pageIndex: " + pageIndex);
     }
 
     public CowdexPage GetCurrentPage() => CowdexPages[pageIndex];
