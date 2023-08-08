@@ -749,6 +749,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7533903953459813115, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8612450999744871794}
+    - target: {fileID: 7533903953459813115, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSelectedScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533903953459813115, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StageSelectionController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533903953459813115, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7860392608165234573, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
