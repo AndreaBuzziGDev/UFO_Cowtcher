@@ -498,6 +498,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7883382402846591270, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
+      propertyPath: SceneNamesList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
