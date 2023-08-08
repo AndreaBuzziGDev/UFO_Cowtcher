@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 13
   rarity: 1
-  Name: 
+  Name: Scarecow
   Description: 
   spawnProbability: 20
   FuelRecoveryAmount: 0

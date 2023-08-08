@@ -375,8 +375,8 @@ MonoBehaviour:
   cowDescription: {fileID: 216565073823038192}
   cowBuff: {fileID: 6614292430638311522}
   generalButton: {fileID: 3234970159591180430}
-  previousButton: {fileID: 5469187739527477082}
-  nextButton: {fileID: 6916684189052174767}
+  previousButton: {fileID: 1430126350747175910}
+  nextButton: {fileID: 5456316509464573109}
 --- !u!1 &2083023004133696414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,6 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43601ef082152d488520dd5044b8402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCowdexPageGUI: {fileID: 484079875627011429}
 --- !u!1 &6095564404901153060
 GameObject:
   m_ObjectHideFlags: 0

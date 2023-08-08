@@ -106,6 +106,16 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///ALL
     public List<Cow> GetAllCows() => CowArchive.Values.ToList();
 
+    ///ALL BUT "ANY" COW
+    public List<Cow> GetAllActualCows()
+    {
+        List<Cow> allCowsExceptANY = GetAllCows();
+        allCowsExceptANY.Remove(CowArchive[CowSO.UniqueID.ANY]);
+
+        return allCowsExceptANY;
+    }
+
+
     ///SOME
     public List<Cow> GetCows(List<CowSO.UniqueID> UIDs)
     {
