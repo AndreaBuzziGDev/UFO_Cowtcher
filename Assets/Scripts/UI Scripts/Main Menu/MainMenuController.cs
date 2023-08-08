@@ -57,6 +57,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     private void InitializeImportantPrefabs()
     {
         Cowdex.Instance.Initialization();
+        CowdexCanvas.GetComponent<CowdexGUI>().Initialization();
     }
 
 
