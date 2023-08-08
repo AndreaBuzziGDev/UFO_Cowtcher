@@ -7,8 +7,8 @@ public class SceneManager : MonoSingleton<SceneManager>
     //ENUMS
     public enum eTechnicalSceneName
     {
-        Opening,
         MainMenu,
+        Opening,
         Credits
     }
 
