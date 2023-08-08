@@ -24,14 +24,15 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
 
 
     //DATA
-    [SerializeField] private List<Sprite> SceneSprites = new();
     [SerializeField] private List<Scene> TechnicalScenes = new();
-    [SerializeField] private List<Scene> StageScenes = new();
+    [SerializeField] private List<StageDataSO> StageData = new();
+
 
     //
-    private Dictionary<string, Scene> TechnicalSceneDictionary = new();
-    private Dictionary<string, Scene> StageSceneDictionary = new();
-    private Dictionary<string, Sprite> SceneSpritesDictionary = new();//TODO: IMPLEMENT DATA STRUCTURE TO EASILY USE THIS
+    private Dictionary<eTechnicalSceneName, Scene> TechnicalSceneDictionary = new();
+
+    private Dictionary<eStageSceneName, Scene> StageSceneDictionary = new();
+    private Dictionary<eStageSceneName, Sprite> SceneSpritesDictionary = new();
 
 
 
