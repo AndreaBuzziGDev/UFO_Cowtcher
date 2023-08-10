@@ -4,7 +4,25 @@ using UnityEngine;
 
 public class PausePanel : MonoBehaviour
 {
+    //DATA
+
+    ///GUI REFERENCES
+    [SerializeField] private QuitSubPanel QuitSubPanel;
+
+
+
     //METHODS
+    private void Start()
+    {
+        QuitSubPanel.gameObject.SetActive(false);
+    }
+
+
+    private void OnDisable()
+    {
+        QuitSubPanel.gameObject.SetActive(false);
+    }
+
 
     //OPEN COWDEX
     public void OpenCowdex() => Resume();//TODO: CHANGE
@@ -16,6 +34,10 @@ public class PausePanel : MonoBehaviour
     public void Restart() => GameController.Instance.RestartScene();
 
     //QUIT
-    public void Quit() => GameController.Instance.SetState(GameController.EGameState.Quitting);
+    public void Quit()
+    {
+        //
+        QuitSubPanel.gameObject.SetActive(true);
+    }
 
 }
