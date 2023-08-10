@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PausePanel : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PausePanel : MonoBehaviour
 
     ///GUI REFERENCES
     [SerializeField] private QuitSubPanel QuitSubPanel;
+    [SerializeField] private GameObject PauseTitle;
+    [SerializeField] private GameObject Buttons;
 
 
 
@@ -17,6 +20,11 @@ public class PausePanel : MonoBehaviour
         QuitSubPanel.gameObject.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        PauseTitle.gameObject.SetActive(true);
+        Buttons.gameObject.SetActive(true);
+    }
 
     private void OnDisable()
     {
@@ -37,6 +45,8 @@ public class PausePanel : MonoBehaviour
     public void Quit()
     {
         //
+        PauseTitle.gameObject.SetActive(false);
+        Buttons.gameObject.SetActive(false);
         QuitSubPanel.gameObject.SetActive(true);
     }
 

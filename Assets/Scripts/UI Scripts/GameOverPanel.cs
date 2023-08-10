@@ -8,6 +8,8 @@ public class GameOverPanel : MonoBehaviour
 
     ///GUI REFERENCES
     [SerializeField] private QuitSubPanel QuitSubPanel;
+    [SerializeField] private HooveringGUIComponent HooveringGameOverTitle;
+
 
 
     //METHODS
@@ -30,6 +32,7 @@ public class GameOverPanel : MonoBehaviour
     public void Quit()
     {
         //
+        HooveringGameOverTitle.gameObject.SetActive(false);
         QuitSubPanel.gameObject.SetActive(true);
     }
 }
