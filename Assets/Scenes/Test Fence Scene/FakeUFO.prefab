@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2173677784879891126}
   - component: {fileID: 687013026270943206}
   - component: {fileID: 3450803241816242136}
+  - component: {fileID: 3328110116868717765}
   m_Layer: 0
   m_Name: FakeUFO
   m_TagString: Untagged
@@ -134,3 +135,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.068, y: 1.364, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3328110116868717765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683373251512492572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d80e35f40e6d63499841115786a3eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
