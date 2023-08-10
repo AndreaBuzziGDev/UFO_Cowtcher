@@ -204,7 +204,7 @@ public class Cow : MonoBehaviour
     {
 
         //STEP 1
-        if (CowHideoutHelper.IsUFOWithinRadius(this))
+        if (CowHelper.IsUFOWithinRadius(this))
         {
             if (IsCalm) this.currentState = State.Alert;
             this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
@@ -220,7 +220,7 @@ public class Cow : MonoBehaviour
         {
 
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
-            if (CowHideoutHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
+            if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
 
 
             //ALERT SUB-STATE

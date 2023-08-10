@@ -20,6 +20,7 @@ public class CowMovement : MonoBehaviour
     public Vector3 MovementDirection { get { return movementDirection; } }
 
 
+
     ///SPEED DATA
     private float speedCalm;
     private float speedAlert;
@@ -38,7 +39,7 @@ public class CowMovement : MonoBehaviour
 
     ///FENCE DODGING
     [SerializeField] private float fenceDetectionRadius;
-    private Fence closestFence;
+    [SerializeField] private Fence closestFence;
 
 
 
@@ -89,12 +90,10 @@ public class CowMovement : MonoBehaviour
 
             case Cow.MovementState.Alert:
                 //TODO: TURN IF TOO CLOSE TO FENCE
-
                 HandleAlertMovement();
                 break;
             case Cow.MovementState.Panic:
                 //TODO: TURN IF TOO CLOSE TO FENCE
-
                 HandlePanicMovement();
                 break;
         }
@@ -151,18 +150,22 @@ public class CowMovement : MonoBehaviour
         if (myCow.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
-        //TODO: A SIMPLE WAY TO GET THEM FAR AWAY FROM FENCES WOULD BE:
-        //1: FIND CLOSEST FENCE
+        //TURNING
+        Debug.Log("CowMovement - movementDirection: " + movementDirection);
 
-
-        //2: "ROTATE" THE SPEED/VELOCITY VECTOR (COULD BE movementDirection)
-
-
-        //3: DO IT "MORE" THE CLOSER IT IS TO SAID FENCE
-
+        Vector3 reflectedDirection;
+        if (IsReflectingAgainstFence())
+        {
+            reflectedDirection = Vector3.Reflect(movementDirection, closestFence.transform.forward);
+        }
+        else
+        {
+            reflectedDirection = movementDirection;
+        }
+        Debug.Log("CowMovement - reflectedDirection: " + reflectedDirection);
 
         //GLOBAL SPEED MULTIPLIER
-        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * movementDirection;
+        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * reflectedDirection;
     }
     
 
@@ -226,22 +229,25 @@ public class CowMovement : MonoBehaviour
             );
     }
 
-    ///FENCE DODGING
-    public void CheckFence(Fence newFence)
+    ///FENCE DETECTION
+    public void CheckClosestFence(Fence newFence)
     {
         //TODO: IMPLEMENT LOGIC
-        if(closestFence != null && closestFence != newFence)
+        if(closestFence != null)
         {
-            float closestFenceDistance = (this.transform.position - closestFence.transform.position).magnitude;
-            Debug.Log("CheckFence - closestFenceDistance: " + closestFenceDistance);
-
-            float newFenceDistance = (this.transform.position - newFence.transform.position).magnitude;
-            Debug.Log("CheckFence - newFenceDistance: " + newFenceDistance);
-
-            if (newFenceDistance < closestFenceDistance)
+            if(closestFence != newFence)
             {
-                closestFence = newFence;
-                Debug.Log("CheckFence - new closest fence: " + closestFence.gameObject.name);
+                float closestFenceDistance = (this.transform.position - closestFence.transform.position).magnitude;
+                Debug.Log("CheckFence - closestFenceDistance: " + closestFenceDistance);
+
+                float newFenceDistance = (this.transform.position - newFence.transform.position).magnitude;
+                Debug.Log("CheckFence - newFenceDistance: " + newFenceDistance);
+
+                if (newFenceDistance < closestFenceDistance)
+                {
+                    closestFence = newFence;
+                    Debug.Log("CheckFence - new closest fence: " + closestFence.gameObject.name);
+                }
             }
         }
         else
@@ -251,6 +257,18 @@ public class CowMovement : MonoBehaviour
 
     }
 
+    ///FENCE DODGING
+    public bool IsReflectingAgainstFence()
+    {
+        if(closestFence != null)
+        {
+            return CowHelper.IsUFOWithinRadius(this.CowScript) && closestFence.GetTurningFactor(this);
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 
 }

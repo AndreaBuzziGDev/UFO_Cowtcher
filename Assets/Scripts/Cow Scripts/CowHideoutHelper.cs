@@ -5,20 +5,7 @@ using UnityEngine;
 public class CowHideoutHelper
 {
 
-    //CHECK IF PLAYER IS WITHIN ALERT RADIUS
-    public static bool IsUFOWithinRadius(Cow interestedCow)
-    {
-        //TODO: UFO POSITION HAS TO BE PROJECTED TO THE GROUND
-
-        Vector3 cowPos = interestedCow.transform.position;
-        UFO player = GameController.Instance.FindUFOAnywhere();
-        Vector3 ufoPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
-
-        Vector3 distanceVec = cowPos - ufoPos;
-
-        return (distanceVec.magnitude < interestedCow.AlertRadius);//TODO: COW UNITS
-    }
-
+    //
     public static Vector3 HideoutDirection(Cow interestedCow)
     {
         return interestedCow.TargetHideout.transform.position - interestedCow.transform.position;

@@ -66,9 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c9e4c38650904439eaac7b975e5b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outerTurnDistance: 2
-  innerTurnDistance: 1
-  maxRotation: 180
+  outerTurnDistance: 5
+  maxRotation: 120
 --- !u!1 &3008297296414033687
 GameObject:
   m_ObjectHideFlags: 0

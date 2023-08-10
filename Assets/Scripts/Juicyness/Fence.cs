@@ -6,9 +6,9 @@ public class Fence : MonoBehaviour
 {
 
     //DATA
-    [SerializeField] float outerTurnDistance = 2.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
-    [SerializeField] float innerTurnDistance = 0.5f;//DISTANCE AT WHICH TURN IS 180 DEGREES
-    [SerializeField] private float maxRotation = 180f;
+    [SerializeField] float outerTurnDistance = 3.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
+    [SerializeField] float cowBonusOffset = 1.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
+
 
     //METHODS
     //...
@@ -24,7 +24,7 @@ public class Fence : MonoBehaviour
 
         if (compCowMovement != null)
         {
-            compCowMovement.CheckFence(this);
+            compCowMovement.CheckClosestFence(this);
         }
 
     }
@@ -33,36 +33,28 @@ public class Fence : MonoBehaviour
 
 
     //FUNCTIONALITIES
-    public float GetTurningFactor(CowMovement approachingCowMovement)
+    public bool GetTurningFactor(CowMovement approachingCowMovement)
     {
-        float distance = (this.transform.position - approachingCowMovement.transform.position).magnitude;
+        //TODO: INTRODUCE A "MODULATOR" TO ALLOW SOME MARGIN TO DETERMINE WETHER THE UFO IS CLOSER THAN COW OR NOT
+        Vector3 ufoPos = GameController.Instance.FindUFOAnywhere().transform.position;
+        Vector3 vectorUFO = new Vector3(ufoPos.x, 0, ufoPos.z);
+        float distanceUFO = (transform.position - vectorUFO).magnitude;
 
-        float turningFactor = 0;
-
-        //IF WITHIN TURN DISTANCE
-        if (distance < outerTurnDistance)
+        bool isUFOWithinDistance = distanceUFO < outerTurnDistance;
+        if (isUFOWithinDistance)
         {
-            //DEBUGGING
-            Debug.Log("Fence - distance: " + distance);
-            Debug.Log("Fence - outerTurnDistance: " + outerTurnDistance);
-            Debug.Log("Fence - innerTurnDistance: " + innerTurnDistance);
+            float distanceCow = (this.transform.position - approachingCowMovement.transform.position).magnitude;
+            bool isCowWithinDistance = (distanceCow < outerTurnDistance);
 
-            //CLAMPING
-            float clampedDistance = Mathf.Clamp(distance, innerTurnDistance, outerTurnDistance);
-            Debug.Log("Fence - clampedDistance: " + clampedDistance);
+            bool isUFOCloserThanCow = (distanceCow + cowBonusOffset > distanceUFO);
 
-            //THE CLOSER THE COW IS TO THE FENCE, THE STRONGER THE TURN
-            float coefficient = ((outerTurnDistance - innerTurnDistance) - (clampedDistance - innerTurnDistance)) / (outerTurnDistance - innerTurnDistance);
-            Debug.Log("Fence - coefficient: " + coefficient);
-
-            turningFactor = maxRotation * coefficient;
-            Debug.Log("Fence - turningFactor: " + turningFactor);
+            return (isCowWithinDistance && !isUFOCloserThanCow);
+            //return isCowWithinDistance;
         }
-
-        //TODO: HANDLE HERE IF UFO IS LEFT OR RIGHT? OR LET THE COW MOVEMENT HANDLE IT?
-
-        //TURNING
-        return turningFactor;
+        else
+        {
+            return false;
+        }
     }
 
 }
