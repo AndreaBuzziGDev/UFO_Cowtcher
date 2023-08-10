@@ -504,8 +504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2e60f44c274b54e8a71987f62bfcfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalStretch: 10
-  horizontalStretchSpeed: 10
+  horizontalStretchPercent: 5
+  horizontalStretchSpeed: 5
 --- !u!1 &7284974077190716542
 GameObject:
   m_ObjectHideFlags: 0

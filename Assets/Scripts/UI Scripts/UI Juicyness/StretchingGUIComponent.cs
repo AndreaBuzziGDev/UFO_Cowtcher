@@ -5,19 +5,31 @@ using UnityEngine;
 public class StretchingGUIComponent : MonoBehaviour
 {
     //DATA
+    ///REFERENCE VARIABLES
+    private float originalScaleX;
+    private float originalScaleY;
+    private float originalScaleZ;
+
 
     ///SHAKE VARIABLES
     [Header("Stretching Settings")]
     //[SerializeField] private float stretchAmount;//UN-IMPLEMENTED VERTICAL STRETCH
-    [SerializeField] private float horizontalStretch;//X Axis
+    [SerializeField] [Range(1.0f, 100.0f)] private float horizontalStretchPercent;//X Axis
     [SerializeField] private float horizontalStretchSpeed;
+
+
 
 
 
     //METHODS
     //...
+    private void Start()
+    {
+        originalScaleX = transform.localScale.x;
+        originalScaleY = transform.localScale.y;
+        originalScaleZ = transform.localScale.z;
+    }
 
-    // Update is called once per frame
     void Update()
     {
         animateStretchingGUI();
@@ -28,11 +40,12 @@ public class StretchingGUIComponent : MonoBehaviour
     //JUICYNESS
     private void animateStretchingGUI()
     {
-        
-        transform.position = new Vector3(
-            transform.localScale.x + Mathf.Sin(Time.unscaledTime * horizontalStretchSpeed) * horizontalStretch,
-            transform.localScale.y,
-            transform.localScale.z
+        float horizontalStretchFactor = Mathf.Sin(Time.unscaledTime * horizontalStretchSpeed) * (horizontalStretchPercent / 100);
+
+        transform.localScale = new Vector3(
+            originalScaleX * (1 + horizontalStretchFactor),
+            originalScaleY,
+            originalScaleZ
             );
         
     }
