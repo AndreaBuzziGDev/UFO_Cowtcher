@@ -27,7 +27,7 @@ public class MPPumpcowAlert : AbstractMovementAlert
     public override IMovementPattern Template() => template;
 
     ///MOVEMENT
-    public override Vector3 ManageMovement(Cow interestedCow)
+    public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().transform.position;
         Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
@@ -41,10 +41,10 @@ public class MPPumpcowAlert : AbstractMovementAlert
         return vertLessDirection.normalized * dashSpeed * dashDuration;
     }
 
-    public override Vector3 ManagePanic(Cow myCow)
+    public override Vector3 ManagePanic(CowMovement myCow)
     {
 
-        Hideout targetHideout = myCow.TargetHideout;
+        Hideout targetHideout = myCow.CowScript.TargetHideout;
         Vector3 hideoutDirection = targetHideout.transform.position - myCow.transform.position;
 
         //TODO: THIS CODE WILL EVENTUALLY BE MOVED ELSEWHERE

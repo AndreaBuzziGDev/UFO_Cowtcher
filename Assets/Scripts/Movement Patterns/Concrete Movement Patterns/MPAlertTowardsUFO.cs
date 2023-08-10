@@ -23,7 +23,7 @@ public class MPAlertTowardsUFO : AbstractMovementAlert
     public override IMovementPattern Template() => template;
 
     ///MOVEMENT
-    public override Vector3 ManageMovement(Cow interestedCow)
+    public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         Vector3 ufoPos = GameController.Instance.FindUFOAnywhere().transform.position;
         Vector3 planeProjectedUfoPos = new Vector3(ufoPos.x, 0, ufoPos.z);
@@ -39,7 +39,7 @@ public class MPAlertTowardsUFO : AbstractMovementAlert
         }
     }
 
-    public override Vector3 ManagePanic(Cow myCow)
+    public override Vector3 ManagePanic(CowMovement myCow)
     {
         return ManageMovement(myCow);
     }

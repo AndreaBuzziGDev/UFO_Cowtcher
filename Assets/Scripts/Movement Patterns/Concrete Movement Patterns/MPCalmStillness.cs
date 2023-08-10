@@ -19,7 +19,7 @@ public class MPCalmStillness : AbstractMovementPattern
     public override IMovementPattern Template() => template;
 
     ///MOVEMENT
-    public override Vector3 ManageMovement(Cow interestedCow)
+    public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         return Vector3.zero;
     }

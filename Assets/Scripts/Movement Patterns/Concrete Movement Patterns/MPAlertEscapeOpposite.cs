@@ -24,7 +24,7 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
     public override IMovementPattern Template() => template;
 
     ///MOVEMENT
-    public override Vector3 ManageMovement(Cow interestedCow)
+    public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().transform.position;
         Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
@@ -33,12 +33,12 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
         return vertLessDirection.normalized;
     }
 
-    public override Vector3 ManagePanic(Cow myCow)
+    public override Vector3 ManagePanic(CowMovement myCow)
     {
-        if (CowHideoutHelper.ShouldRunForHideout(myCow))
+        if (CowHideoutHelper.ShouldRunForHideout(myCow.CowScript))
         {
             //
-            return CowHideoutHelper.HideoutDirection(myCow).normalized;
+            return CowHideoutHelper.HideoutDirection(myCow.CowScript).normalized;
         }
         else
         {
