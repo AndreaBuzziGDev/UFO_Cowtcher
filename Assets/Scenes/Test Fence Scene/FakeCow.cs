@@ -43,6 +43,6 @@ public class FakeCow : MonoBehaviour
         Debug.Log("FakeCow - newIntendedDirection: " + newIntendedDirection);
 
         //TODO: CHANGE myDirection TO newIntendedDirection
-        myRB.velocity = mySpeed * myDirection;
+        myRB.velocity = mySpeed * newIntendedDirection;
     }
 }

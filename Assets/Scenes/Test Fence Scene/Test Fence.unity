@@ -201,7 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCow: {fileID: 7552232272430362945}
-  turnDistance: 1
+  outerTurnDistance: 5
+  innerTurnDistance: 1
   maxRotation: 180
 --- !u!1 &1142263323
 GameObject:
@@ -560,6 +561,10 @@ PrefabInstance:
       propertyPath: myUFO
       value: 
       objectReference: {fileID: 5488416430407931810}
+    - target: {fileID: 6236910566960965302, guid: a13d252b801ffc644a917b36ad3d31d9, type: 3}
+      propertyPath: mySpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
