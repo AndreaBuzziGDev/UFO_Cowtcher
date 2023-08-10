@@ -115,14 +115,7 @@ public class Cow : MonoBehaviour
     }
 
 
-    ///MOVEMENT PATTERNS
-    private AbstractMovementPattern movPatternCalm;
-    private AbstractMovementAlert movPatternAlert;
-
     ///MOVEMENT DIRECTION (AFFECTED BY MOVEMENT PATTERNS)
-    private Vector3 movementDirection = Vector3.forward;
-    public Vector3 MovementDirection { get { return movementDirection; } }
-
     ///BIRTH POINT
     public Vector3 spawnCoords = Vector3.zero;
     public Vector3 SpawnCoords { get { return spawnCoords; } }
@@ -186,7 +179,6 @@ public class Cow : MonoBehaviour
     //ENABLEMENT/DISABLEMENT
     private void OnEnable()
     {
-        this.movementDirection = Vector3.zero;
         this.currentState = State.Calm;
         this.movState = MovementState.Calm;
 
@@ -222,11 +214,6 @@ public class Cow : MonoBehaviour
             if (this.TimerAlertToCalm <= 0.0f) this.currentState = State.Calm;
             else this.TimerAlertToCalm -= Time.deltaTime;
         }
-        /*
-        Debug.Log("IsAlert: " + IsAlert);
-        Debug.Log("TimerAlertToCalm: " + TimerAlertToCalm);
-        Debug.Log("TimerAlertToPanic: " + TimerAlertToPanic);
-        */
 
         //STEP 2
         if (IsAlert)
@@ -273,39 +260,7 @@ public class Cow : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-    //FUNCTIONALITIES
-    private void HandleMovement()
-    {
-        float mySpeed;
-        if (this.IsCalm) mySpeed = speedCalm;
-        else mySpeed = speedAlert;
-
-        //TODO: A SIMPLE WAY TO GET THEM FAR AWAY FROM FENCES WOULD BE:
-        //1: FIND CLOSEST FENCE
-
-
-        //2: "ROTATE" THE SPEED/VELOCITY VECTOR (COULD BE movementDirection)
-
-
-        //3: DO IT "MORE" THE CLOSER IT IS TO SAID FENCE
-
-
-
-        Debug.Log("Multiplier: " + CowManager.Instance.GlobalSpeedMultiplier);
-        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * movementDirection;
-
-        //rb.MovePosition(transform.position + mySpeed * Time.deltaTime * movementDirection);
-    }
-
-
-
+    //INITIALIZATION
     ///CLONE SCRIPTABLE COW
     private void CloneFromTemplate()
     {
@@ -330,50 +285,13 @@ public class Cow : MonoBehaviour
         this.favouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
         this.allowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
         this.alteration = cowTemplate.Alteration;
-        this.movPatternCalm = cowTemplate.movPatternCalm.GetMovPattern();
-        this.movPatternAlert = (AbstractMovementAlert) cowTemplate.movPatternAlert.GetMovPattern();
     }
 
 
 
 
-    //MOVEMENT PATTERNS
-    ///CALM
-    private void HandleCalmMovement()
-    {
-        if (movPatternCalm != null)
-        {
-            movementDirection = movPatternCalm.ManageMovement(this);
-            movPatternCalm.UpdateTimers(Time.deltaTime);
-        }
-        else movementDirection = Vector3.zero;
 
-    }
-
-    ///ALERT
-    private void HandleAlertMovement()
-    {
-        if (movPatternAlert != null)
-        {
-            movementDirection = movPatternAlert.ManageMovement(this);
-            movPatternAlert.UpdateTimers(Time.deltaTime);
-        }
-        else movementDirection = Vector3.zero;
-    }
-
-    ///PANIC
-    private void HandlePanicMovement()
-    {
-        if (movPatternAlert != null) 
-        {
-            movementDirection = movPatternAlert.ManagePanic(this);
-            movPatternAlert.UpdateTimers(Time.deltaTime);
-        }
-        else movementDirection = Vector3.zero;
-        //Debug.Log("movementDirection (PANIC): " + movementDirection);
-    }
-
-
+    //FUNCTIONALITIES
 
     //MAP FLEEING
     public void Flee()
@@ -387,19 +305,5 @@ public class Cow : MonoBehaviour
         Destroy(this.gameObject);
 
     }
-
-
-
-
-    //JUICYNESS
-    private void AnimateTerror()
-    {
-        transform.position = new Vector3(
-            transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, 
-            transform.position.y, 
-            transform.position.z + Mathf.Cos(Time.unscaledTime * shakeSpeed) * shakeAmount);
-    }
-
-
 
 }

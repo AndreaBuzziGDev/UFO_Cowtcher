@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 51620534516586991}
   - component: {fileID: 4687243823262481106}
   - component: {fileID: 6923396806548110374}
+  - component: {fileID: 2271979305478991426}
   m_Layer: 6
   m_Name: Standard Cow (DO NOT USE)
   m_TagString: Untagged
@@ -132,6 +133,21 @@ MonoBehaviour:
   shakeSpeed: 50
   spawnCoords: {x: 0, y: 0, z: 0}
   HasFledParticles: {fileID: 125600187380295368, guid: 861c6e89228ffe0468232c77072ed3d3, type: 3}
+--- !u!114 &2271979305478991426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259244113235226185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d9dfc2b588569418a06ca81fbf7850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCow: {fileID: 6923396806548110374}
+  shakeAmount: 0.035
+  shakeSpeed: 50
 --- !u!1 &6481535709489429120
 GameObject:
   m_ObjectHideFlags: 0

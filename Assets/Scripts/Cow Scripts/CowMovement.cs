@@ -6,7 +6,8 @@ public class CowMovement : MonoBehaviour
 {
     //DATA
     ///COW REFERENCE
-     [SerializeField] private Cow myCow;
+    [SerializeField] private Cow myCow;
+
 
     ///MOVEMENT PATTERNS
     private AbstractMovementPattern movPatternCalm;
