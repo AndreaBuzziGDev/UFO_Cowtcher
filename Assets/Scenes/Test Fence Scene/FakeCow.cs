@@ -14,9 +14,9 @@ public class FakeCow : MonoBehaviour
 
     //DIRECTION
     private Vector3 myDirection;
-    
-    //ROTATION FOR THAT DIRECTION
 
+    //ROTATION FOR THAT DIRECTION
+    public float myDirectionRotation;
 
 
     // Start is called before the first frame update
@@ -34,6 +34,15 @@ public class FakeCow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //TODO: ROTATE BY myDirectionRotation
+        Vector3 intendedDirection = mySpeed * myDirection;
+        Debug.Log("FakeCow - intendedDirection: " + intendedDirection);
+
+        //TODO: ROTATE BY myDirectionRotation
+        Vector3 newIntendedDirection = Quaternion.AngleAxis(myDirectionRotation, Vector3.up) * intendedDirection;
+        Debug.Log("FakeCow - newIntendedDirection: " + newIntendedDirection);
+
+        //TODO: CHANGE myDirection TO newIntendedDirection
         myRB.velocity = mySpeed * myDirection;
     }
 }
