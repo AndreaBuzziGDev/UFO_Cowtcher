@@ -29,7 +29,7 @@ public class MPKowbraCalm : AbstractMovementPattern
     public override IMovementPattern Template() => template;
 
 
-    public override Vector3 ManageMovement(Cow interestedCow)
+    public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         Vector3 result = interestedCow.MovementDirection;
 

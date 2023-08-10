@@ -11,7 +11,7 @@ public abstract class AbstractMovementPattern
     public abstract IMovementPattern Template();
 
     ///MOVEMENT
-    public abstract Vector3 ManageMovement(Cow interestedCow);
+    public abstract Vector3 ManageMovement(CowMovement myCowMovement);
 
     ///TIMERS
     public abstract void UpdateTimers(float delta);

@@ -25,7 +25,7 @@ public class MPCowctorAlert : AbstractMovementAlert
     public override IMovementPattern Template() => template;
 
     ///MOVEMENT
-    public override Vector3 ManageMovement(Cow interestedCow)
+    public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         Vector3 result;
 
@@ -49,7 +49,7 @@ public class MPCowctorAlert : AbstractMovementAlert
 
     }
 
-    public override Vector3 ManagePanic(Cow myCow)
+    public override Vector3 ManagePanic(CowMovement myCow)
     {
         //TODO: IMPLEMENT SO THAT COW WILL RANDOMLY DECIDE ONE DIRECTION AND KEEP IT
         //NB: COULD BE A "FLEE DIRECTION" VECTOR THAT IS HANDLED BY THE ManageMovement Alert CODE

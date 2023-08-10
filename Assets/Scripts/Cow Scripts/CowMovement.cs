@@ -7,6 +7,7 @@ public class CowMovement : MonoBehaviour
     //DATA
     ///COW REFERENCE
     [SerializeField] private Cow myCow;
+    public Cow CowScript { get { return myCow; } }
 
 
     ///MOVEMENT PATTERNS
@@ -162,7 +163,7 @@ public class CowMovement : MonoBehaviour
     {
         if (movPatternCalm != null)
         {
-            movementDirection = movPatternCalm.ManageMovement(this.myCow);
+            movementDirection = movPatternCalm.ManageMovement(this);
             movPatternCalm.UpdateTimers(Time.deltaTime);
         }
         else movementDirection = Vector3.zero;
@@ -174,7 +175,7 @@ public class CowMovement : MonoBehaviour
     {
         if (movPatternAlert != null)
         {
-            movementDirection = movPatternAlert.ManageMovement(this.myCow);
+            movementDirection = movPatternAlert.ManageMovement(this);
             movPatternAlert.UpdateTimers(Time.deltaTime);
         }
         else movementDirection = Vector3.zero;
@@ -185,7 +186,7 @@ public class CowMovement : MonoBehaviour
     {
         if (movPatternAlert != null)
         {
-            movementDirection = movPatternAlert.ManagePanic(this.myCow);
+            movementDirection = movPatternAlert.ManagePanic(this);
             movPatternAlert.UpdateTimers(Time.deltaTime);
         }
         else movementDirection = Vector3.zero;

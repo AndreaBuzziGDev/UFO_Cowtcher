@@ -26,10 +26,10 @@ public class MPCowgonAlert : AbstractMovementAlert
     public override IMovementPattern Template() => template;
 
     ///MOVEMENT
-    public override Vector3 ManageMovement(Cow interestedCow)
+    public override Vector3 ManageMovement(CowMovement myCowMovement)
     {
         Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().transform.position;
-        Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
+        Vector3 desiredDirection = myCowMovement.transform.position - menacePosition;
         Vector3 vertLessDirection = new Vector3(desiredDirection.x, 0, desiredDirection.z);
 
         //TODO: DEBUFF UFO WITH "STUN" FOR 1 SECOND EVERY 10 SECONDS
@@ -38,9 +38,9 @@ public class MPCowgonAlert : AbstractMovementAlert
             PlayerController pc = GameController.Instance.FindPlayerAnywhere();
 
             //STUN IF WITHIN RADIUS
-            Vector3 cowPos = interestedCow.transform.position;
+            Vector3 cowPos = myCowMovement.transform.position;
             Vector3 baseUFOPos = new Vector3(pc.transform.position.x, 0, pc.transform.position.z);//TODO: THIS IS USED OFTEN. EXPORT AS FUNCTIONALITY/UTILITY?
-            if ((cowPos-baseUFOPos).magnitude < interestedCow.AlertRadius )
+            if ((cowPos-baseUFOPos).magnitude < myCowMovement.CowScript.AlertRadius )
             {
                 pc.ApplyStun(this.stunDuration);
                 UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
@@ -53,7 +53,7 @@ public class MPCowgonAlert : AbstractMovementAlert
         return vertLessDirection.normalized;
     }
 
-    public override Vector3 ManagePanic(Cow myCow)
+    public override Vector3 ManagePanic(CowMovement myCow)
     {
         //TODO: IMPLEMENT SO THAT COW WILL RANDOMLY DECIDE ONE DIRECTION AND KEEP IT
         //NB: COULD BE A "FLEE DIRECTION" VECTOR THAT IS HANDLED BY THE ManageMovement Alert CODE
