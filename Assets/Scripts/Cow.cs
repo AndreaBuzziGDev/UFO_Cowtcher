@@ -285,6 +285,12 @@ public class Cow : MonoBehaviour
         if (this.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
+        //TODO: A SIMPLE WAY TO GET THEM FAR AWAY FROM FENCES WOULD BE:
+        //1: FIND CLOSEST FENCE
+        //2: "ROTATE" THE SPEED/VELOCITY VECTOR (COULD BE movementDirection)
+        //3: DO IT "MORE" THE CLOSER IT IS TO SAID FENCE
+
+
         Debug.Log("Multiplier: " + CowManager.Instance.GlobalSpeedMultiplier);
         rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * movementDirection;
 
