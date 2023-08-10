@@ -4,25 +4,6 @@ using UnityEngine;
 
 public class QuitSubPanel : MonoBehaviour
 {
-    //DATA
-
-
-    ///GUI REFERENCES
-    [SerializeField] private GameObject QuitTitleText;
-
-
-
-
-    //METHODS
-    //...
-
-    private void Update()
-    {
-
-
-    }
-
-
     //FUNCTIONALITIES
 
     ///MAIN MENU

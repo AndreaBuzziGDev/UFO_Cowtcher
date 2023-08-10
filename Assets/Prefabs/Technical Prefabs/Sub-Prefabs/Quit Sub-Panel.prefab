@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 687861129139583342}
   - component: {fileID: 1491655132444747211}
   - component: {fileID: 1438717129239436501}
+  - component: {fileID: 126300705700510684}
   m_Layer: 0
   m_Name: Quit Sub-Panel Title
   m_TagString: Untagged
@@ -491,6 +492,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &126300705700510684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889890863978290591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2e60f44c274b54e8a71987f62bfcfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalStretch: 10
+  horizontalStretchSpeed: 10
 --- !u!1 &7284974077190716542
 GameObject:
   m_ObjectHideFlags: 0
