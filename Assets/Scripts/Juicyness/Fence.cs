@@ -9,11 +9,25 @@ public class Fence : MonoBehaviour
     [SerializeField] float outerTurnDistance = 3.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
     [SerializeField] float cowBonusOffset = 1.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
 
+    [SerializeField] float unchangeTimer = 2.0f;
+    private float actualTimer;
+    public bool CanBeChanged { get { return (actualTimer <= 0); } }
+
+
+    //TODO: DO SOME GIZMO/GUI STUFF FOR AIDING AND BETTER VISUALIZING THE MAP BOUNDARIES.
 
     //METHODS
     //...
 
-    //TODO: DO SOME GIZMO/GUI STUFF FOR AIDING AND BETTER VISUALIZING THE MAP BOUNDARIES.
+    private void Update()
+    {
+        if (!CanBeChanged)
+        {
+            actualTimer -= Time.deltaTime;
+        }
+    }
+
+
 
 
     //COLLISION HANDLING
@@ -31,8 +45,13 @@ public class Fence : MonoBehaviour
 
 
 
-
     //FUNCTIONALITIES
+    public void ActivateFence()
+    {
+        actualTimer = unchangeTimer;
+    }
+
+
     public bool GetTurningFactor(CowMovement approachingCowMovement)
     {
         //TODO: INTRODUCE A "MODULATOR" TO ALLOW SOME MARGIN TO DETERMINE WETHER THE UFO IS CLOSER THAN COW OR NOT
