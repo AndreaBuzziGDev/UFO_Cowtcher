@@ -85,12 +85,14 @@ public class CowMovement : MonoBehaviour
             //FIND CLOSEST FENCE
             //TODO: HANDLE MOVEMENT PATTERN EVOLUTION TO DETERMINE IF COW SHOULD ATTEMPT DODGING THE FENCE BASED ON PATTERN INSTEAD OF COW CODE
 
+            //TODO: THERE SHOULD BE A POSSIBILITY TO GO TOWARDS THE FENCE IF THE UFO IS NOT NEAR ENOUGH
+
             case Cow.MovementState.Alert:
-                FindClosestFence();
+                CheckFence();
                 HandleAlertMovement();
                 break;
             case Cow.MovementState.Panic:
-                FindClosestFence();
+                CheckFence();
                 HandlePanicMovement();
                 break;
         }
