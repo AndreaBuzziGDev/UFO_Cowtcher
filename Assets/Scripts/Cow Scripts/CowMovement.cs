@@ -31,9 +31,14 @@ public class CowMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
 
-    ///JUICYNESS DATA
+    //JUICYNESS DATA
+    ///TERROR
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
+
+    ///FENCE DODGING
+    private Fence closestFence;
+
 
 
 
@@ -80,11 +85,11 @@ public class CowMovement : MonoBehaviour
             //TODO: HANDLE MOVEMENT PATTERN EVOLUTION TO DETERMINE IF COW SHOULD ATTEMPT DODGING THE FENCE BASED ON PATTERN INSTEAD OF COW CODE
 
             case Cow.MovementState.Alert:
-
+                FindClosestFence();
                 HandleAlertMovement();
                 break;
             case Cow.MovementState.Panic:
-
+                FindClosestFence();
                 HandlePanicMovement();
                 break;
         }
@@ -206,8 +211,7 @@ public class CowMovement : MonoBehaviour
 
     //JUICYNESS
 
-    //TODO: THIS MIGHT NOT BE OK TO BE PUT HERE
-
+    ///TERROR
     private void AnimateTerror()
     {
         transform.position = new Vector3(
@@ -216,6 +220,25 @@ public class CowMovement : MonoBehaviour
             transform.position.z + Mathf.Cos(Time.unscaledTime * shakeSpeed) * shakeAmount
             );
     }
+
+    ///FENCE DODGING
+    private void FindClosestFence()
+    {
+        //DO A RAYCAST
+
+        //FOR ALL RAYCASTED FENCES, GET THE CLOSEST
+
+        //ASK THE CLOSEST FENCE THE TURNING FACTOR
+
+        //DEBUG TURNING FACTOR
+
+        //FLIP THE TURNING FACTOR BASED ON UFO'S RELATIVE POSITION
+        
+        //TODO: APPLY TURNING FACTOR
+
+
+    }
+
 
 
 
