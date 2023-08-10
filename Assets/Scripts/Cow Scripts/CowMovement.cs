@@ -67,7 +67,24 @@ public class CowMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //IsGlobalTerrify
-        if (CowManager.Instance.IsGlobalTerrify) AnimateTerror();
+        switch (myCow.MovState)
+        {
+            case Cow.MovementState.Calm:
+                HandleCalmMovement();
+                break;
+            case Cow.MovementState.Alert:
+                HandleAlertMovement();
+                break;
+            case Cow.MovementState.Panic:
+                HandlePanicMovement();
+                break;
+        }
+
+        //TODO: COULD THIS BE IMPROVED FURTHER?
+
+        //IF TERROR: SHAKE
+        if (myCow.MovState == Cow.MovementState.Terror) AnimateTerror();
+        //ELSE: MOVE
         else HandleMovement();
     }
 
@@ -78,16 +95,6 @@ public class CowMovement : MonoBehaviour
     private void OnEnable()
     {
         this.movementDirection = Vector3.zero;
-        /*
-        this.currentState = State.Calm;
-
-        //RESET TIMERS
-        this.TimerAlertToCalm = 0.0f;
-        this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
-
-        //SET BIRTH POINT
-        spawnCoords = transform.position;
-        */
     }
 
     private void OnDisable()

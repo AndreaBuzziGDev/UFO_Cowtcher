@@ -12,6 +12,15 @@ public class Cow : MonoBehaviour
         Hidden
     }
 
+    public enum MovementState
+    {
+        Calm,
+        Alert,
+        Panic,
+        Terror
+    }
+
+
 
     //DATA
 
@@ -20,6 +29,13 @@ public class Cow : MonoBehaviour
     public State CurrentState { get { return currentState; } }
     public bool IsCalm { get { return (currentState == State.Calm); } }
     public bool IsAlert { get { return (currentState == State.Alert); } }
+
+
+    ///MOVEMENT STATE
+    private MovementState movState = MovementState.Calm;
+    public MovementState MovState { get { return movState; } }
+
+
 
 
     ///COW BEHAVIOURAL DATA
@@ -153,19 +169,16 @@ public class Cow : MonoBehaviour
     private void FixedUpdate()
     {
         //IsGlobalTerrify
+        //TODO: THIS CAN BE REFACTORED AND IMPROVED
         if (CowManager.Instance.IsGlobalTerrify)
         {
-            //BEHAVIOUR IS BEING TERRIFIED
-            //TODO: COWS SHAKE WHEN TERRIFIED
-            AnimateTerror();
+            //MOVEMENT STATE IS BEING TERRIFIED
+            movState = MovementState.Terror;
         }
         else
         {
             //COW AI
             CowAI();
-
-            //MOVEMENT
-            HandleMovement();
         }
     }
 
@@ -175,6 +188,7 @@ public class Cow : MonoBehaviour
     {
         this.movementDirection = Vector3.zero;
         this.currentState = State.Calm;
+        this.movState = MovementState.Calm;
 
         //RESET TIMERS
         this.TimerAlertToCalm = 0.0f;
@@ -225,7 +239,8 @@ public class Cow : MonoBehaviour
             //ALERT SUB-STATE
             if (this.TimerAlertToPanic > 0.0f)
             {
-                HandleAlertMovement();
+                movState = MovementState.Alert;
+
             }
             else
             {
@@ -233,8 +248,9 @@ public class Cow : MonoBehaviour
                 this.targetHideout = CowHideoutHelper.FindHideout(this);
 
                 //REMAIN IN ALERT-SUBSTATE BEHAVIOUR
-                if (!HasChosenHideout) HandleAlertMovement();
-                else if (targetHideout.HasAvailableSlots()) HandlePanicMovement();
+                if (!HasChosenHideout) movState = MovementState.Alert;
+                //DO PANIC MOVEMENT
+                else if (targetHideout.HasAvailableSlots()) movState = MovementState.Panic;
 
                 if (CowHideoutHelper.CanEnterHideout(this)) CowHideoutHelper.EnterHideout(this);
 
@@ -245,11 +261,7 @@ public class Cow : MonoBehaviour
             //RESET PANIC TIMER
             this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
-            HandleCalmMovement();
-
-
-            //UPDATING THE MOVEMENT DIRECTION BASED ON CALM PATTERN
-            movementDirection = movPatternCalm.ManageMovement(this);
+            movState = MovementState.Calm;
 
         }
 
