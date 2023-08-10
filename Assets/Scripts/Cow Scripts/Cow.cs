@@ -145,21 +145,11 @@ public class Cow : MonoBehaviour
 
     private void Update()
     {
-        if (movementDirection.x > 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else
-        {
-            spriteRenderer.flipX = false;
-        }
+
     }
 
 
-    //TODO: CHANGE UPDATE AND FIXEDUPDATE SO THAT:
-    //      FIXEDUPDATE SEARCHS FOR THE AVAILABLE HIDEOUTS ACCORDING TO THE ALGORITHM DESCRIBED IN COW GDD
-    //      FIXEDUPDATE HANDLES THE COW MOVEMENT
-    //      UPDATE HANDLES ALL THE TIMERS AND BEHAVIOURS
+
     private void FixedUpdate()
     {
         //IsGlobalTerrify
