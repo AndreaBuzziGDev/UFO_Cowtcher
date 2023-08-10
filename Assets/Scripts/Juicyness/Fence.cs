@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FakeFence : MonoBehaviour
+public class Fence : MonoBehaviour
 {
+
     //DATA
-    [SerializeField] FakeCow myCow;
-    [SerializeField] float outerTurnDistance = 2.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
-    [SerializeField] float innerTurnDistance = 1.0f;//DISTANCE AT WHICH TURN IS 180 DEGREES
+    [SerializeField] float outerTurnDistance = 3.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
+    [SerializeField] float innerTurnDistance = 0.5f;//DISTANCE AT WHICH TURN IS 180 DEGREES
     [SerializeField] private float maxRotation = 180f;
 
     //METHODS
+    //...
 
-    // Update is called once per frame
-    void Update()
+
+    //FUNCTIONALITIES
+    public float GetTurningFactor(CowMovement approachingCowMovement)
     {
-        float distance = (this.transform.position - myCow.transform.position).magnitude;
+        float distance = (this.transform.position - approachingCowMovement.transform.position).magnitude;
 
         float turningFactor = 0;
 
@@ -32,15 +34,17 @@ public class FakeFence : MonoBehaviour
             Debug.Log("Fence - clampedDistance: " + clampedDistance);
 
             //THE CLOSER THE COW IS TO THE FENCE, THE STRONGER THE TURN
-            float coefficient = ( (outerTurnDistance - innerTurnDistance) - (clampedDistance - innerTurnDistance)) / (outerTurnDistance - innerTurnDistance);
+            float coefficient = ((outerTurnDistance - innerTurnDistance) - (clampedDistance - innerTurnDistance)) / (outerTurnDistance - innerTurnDistance);
             Debug.Log("Fence - coefficient: " + coefficient);
 
             turningFactor = maxRotation * coefficient;
             Debug.Log("Fence - turningFactor: " + turningFactor);
         }
 
-        //TURNING
-        myCow.myDirectionRotation = turningFactor;
+        //TODO: HANDLE HERE IF UFO IS LEFT OR RIGHT? OR LET THE COW MOVEMENT HANDLE IT?
 
+        //TURNING
+        return turningFactor;
     }
+
 }

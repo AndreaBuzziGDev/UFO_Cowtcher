@@ -23,7 +23,7 @@ public class FakeCow : MonoBehaviour
     void Start()
     {
         Vector3 ufoPos = myUFO.transform.position;
-        Vector3 ufoProjectedPos = new Vector3(ufoPos.x, 0, ufoPos.z);
+        Vector3 ufoProjectedPos = new(ufoPos.x, 0, ufoPos.z);
 
         myDirection = this.transform.position - ufoProjectedPos;
 
