@@ -88,11 +88,13 @@ public class CowMovement : MonoBehaviour
             //TODO: THERE SHOULD BE A POSSIBILITY TO GO TOWARDS THE FENCE IF THE UFO IS NOT NEAR ENOUGH
 
             case Cow.MovementState.Alert:
-                CheckFence();
+                //TODO: TURN IF TOO CLOSE TO FENCE
+
                 HandleAlertMovement();
                 break;
             case Cow.MovementState.Panic:
-                CheckFence();
+                //TODO: TURN IF TOO CLOSE TO FENCE
+
                 HandlePanicMovement();
                 break;
         }
