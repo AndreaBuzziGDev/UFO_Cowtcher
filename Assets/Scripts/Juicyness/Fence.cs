@@ -16,6 +16,21 @@ public class Fence : MonoBehaviour
     //TODO: DO SOME GIZMO/GUI STUFF FOR AIDING AND BETTER VISUALIZING THE MAP BOUNDARIES.
 
 
+    //COLLISION HANDLING
+    void OnCollisionStay(Collision collision)
+    {
+        Debug.Log("Fence");
+
+        GameObject otherGO = collision.gameObject;
+        CowMovement compCowMovement = otherGO.GetComponent<CowMovement>();
+        if (compCowMovement != null)
+        {
+            compCowMovement.CheckFence(this);
+        }
+
+    }
+
+
 
 
     //FUNCTIONALITIES

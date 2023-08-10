@@ -225,9 +225,28 @@ public class CowMovement : MonoBehaviour
     }
 
     ///FENCE DODGING
+    //TODO: SHOULD THIS METHOD BE ON FENCE INSTEAD?
     public void CheckFence(Fence newFence)
     {
         //TODO: IMPLEMENT LOGIC
+        if(closestFence != null && closestFence != newFence)
+        {
+            float closestFenceDistance = (this.transform.position - closestFence.transform.position).magnitude;
+            Debug.Log("CheckFence - closestFenceDistance: " + closestFenceDistance);
+
+            float newFenceDistance = (this.transform.position - newFence.transform.position).magnitude;
+            Debug.Log("CheckFence - newFenceDistance: " + newFenceDistance);
+
+            if (newFenceDistance < closestFenceDistance)
+            {
+                closestFence = newFence;
+                Debug.Log("CheckFence - new closest fence: " + closestFence.gameObject.name);
+            }
+        }
+        else
+        {
+            closestFence = newFence;
+        }
 
     }
 
