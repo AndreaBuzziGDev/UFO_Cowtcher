@@ -68,16 +68,23 @@ public class CowMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //IsGlobalTerrify
+
+        //HANDLE MOVEMENT BASED ON COW AI STATE
         switch (myCow.MovState)
         {
             case Cow.MovementState.Calm:
                 HandleCalmMovement();
                 break;
+
+            //FIND CLOSEST FENCE
+            //TODO: HANDLE MOVEMENT PATTERN EVOLUTION TO DETERMINE IF COW SHOULD ATTEMPT DODGING THE FENCE BASED ON PATTERN INSTEAD OF COW CODE
+
             case Cow.MovementState.Alert:
+
                 HandleAlertMovement();
                 break;
             case Cow.MovementState.Panic:
+
                 HandlePanicMovement();
                 break;
         }

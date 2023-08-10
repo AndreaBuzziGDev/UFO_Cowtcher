@@ -6,7 +6,7 @@ public class Fence : MonoBehaviour
 {
 
     //DATA
-    [SerializeField] float outerTurnDistance = 3.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
+    [SerializeField] float outerTurnDistance = 2.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
     [SerializeField] float innerTurnDistance = 0.5f;//DISTANCE AT WHICH TURN IS 180 DEGREES
     [SerializeField] private float maxRotation = 180f;
 
