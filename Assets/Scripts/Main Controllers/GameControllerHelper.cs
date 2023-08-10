@@ -17,7 +17,7 @@ public class GameControllerHelper
         {
             GameController.Instance.SetState(GameController.EGameState.Playing);
         }
-        else
+        else if(!GameController.Instance.IsGameOver)
         {
             GameController.Instance.SetState(GameController.EGameState.Paused);
         }

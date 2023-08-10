@@ -24,6 +24,7 @@ public class GameController : MonoSingleton<GameController>
     ///SIMPLE DATA
     private EGameState state = 0;
     public bool IsPaused { get { return this.state == EGameState.Paused; } }
+    public bool IsGameOver { get { return this.state == EGameState.GameOver; } }
 
     ///COMPLEX DATA
     public GameControllerHelper helper = new();
