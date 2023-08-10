@@ -13,6 +13,10 @@ public class Fence : MonoBehaviour
     //METHODS
     //...
 
+    //TODO: DO SOME GIZMO/GUI STUFF FOR AIDING AND BETTER VISUALIZING THE MAP BOUNDARIES.
+
+
+
 
     //FUNCTIONALITIES
     public float GetTurningFactor(CowMovement approachingCowMovement)

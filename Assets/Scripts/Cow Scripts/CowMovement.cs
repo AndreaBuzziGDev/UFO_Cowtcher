@@ -37,6 +37,7 @@ public class CowMovement : MonoBehaviour
     [SerializeField] private float shakeSpeed;
 
     ///FENCE DODGING
+    [SerializeField] private float fenceDetectionRadius;
     private Fence closestFence;
 
 
@@ -222,24 +223,11 @@ public class CowMovement : MonoBehaviour
     }
 
     ///FENCE DODGING
-    private void FindClosestFence()
+    public void CheckFence(Fence newFence)
     {
-        //DO A RAYCAST
-
-        //FOR ALL RAYCASTED FENCES, GET THE CLOSEST
-
-        //ASK THE CLOSEST FENCE THE TURNING FACTOR
-
-        //DEBUG TURNING FACTOR
-
-        //FLIP THE TURNING FACTOR BASED ON UFO'S RELATIVE POSITION
-        
-        //TODO: APPLY TURNING FACTOR
-
+        //TODO: IMPLEMENT LOGIC
 
     }
-
-
 
 
 
