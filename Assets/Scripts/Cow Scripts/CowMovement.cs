@@ -227,7 +227,6 @@ public class CowMovement : MonoBehaviour
     }
 
     ///FENCE DODGING
-    //TODO: SHOULD THIS METHOD BE ON FENCE INSTEAD?
     public void CheckFence(Fence newFence)
     {
         //TODO: IMPLEMENT LOGIC

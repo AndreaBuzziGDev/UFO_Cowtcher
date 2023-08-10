@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5394048494833358103}
   - component: {fileID: 8587956528279091364}
+  - component: {fileID: 9140162415606493877}
   m_Layer: 6
   m_Name: ColliderChild
   m_TagString: Untagged
@@ -53,6 +54,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 0.5713425}
   m_Center: {x: 0, y: 0.5, z: 0.2631748}
+--- !u!114 &9140162415606493877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857438951660153527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97680d4349a736b4ca24b559e1b733c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentCow: {fileID: 6923396806548110374}
 --- !u!1 &5259244113235226185
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +162,7 @@ MonoBehaviour:
   myCow: {fileID: 6923396806548110374}
   shakeAmount: 0.035
   shakeSpeed: 50
+  fenceDetectionRadius: 0
 --- !u!1 &6481535709489429120
 GameObject:
   m_ObjectHideFlags: 0

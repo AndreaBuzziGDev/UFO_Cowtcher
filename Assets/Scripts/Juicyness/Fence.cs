@@ -17,12 +17,11 @@ public class Fence : MonoBehaviour
 
 
     //COLLISION HANDLING
-    void OnCollisionStay(Collision collision)
+    void OnTriggerStay(Collider other)
     {
-        Debug.Log("Fence");
+        GameObject otherGO = other.gameObject;
+        CowMovement compCowMovement = otherGO.GetComponent<CowCollider>().GetMovement();
 
-        GameObject otherGO = collision.gameObject;
-        CowMovement compCowMovement = otherGO.GetComponent<CowMovement>();
         if (compCowMovement != null)
         {
             compCowMovement.CheckFence(this);
