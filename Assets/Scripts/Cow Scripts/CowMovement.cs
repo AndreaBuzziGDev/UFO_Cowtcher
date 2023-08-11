@@ -235,7 +235,7 @@ public class CowMovement : MonoBehaviour
         //TODO: IMPLEMENT LOGIC
         if(closestFence != null)
         {
-            if(closestFence != newFence)
+            if(closestFence != newFence && closestFence.CanBeChanged)
             {
                 float closestFenceDistance = (this.transform.position - closestFence.transform.position).magnitude;
                 Debug.Log("CheckFence - closestFenceDistance: " + closestFenceDistance);
@@ -246,6 +246,7 @@ public class CowMovement : MonoBehaviour
                 if (newFenceDistance < closestFenceDistance)
                 {
                     closestFence = newFence;
+                    closestFence.ActivateFence();
                     Debug.Log("CheckFence - new closest fence: " + closestFence.gameObject.name);
                 }
             }
@@ -253,6 +254,7 @@ public class CowMovement : MonoBehaviour
         else
         {
             closestFence = newFence;
+            closestFence.ActivateFence();
         }
 
     }

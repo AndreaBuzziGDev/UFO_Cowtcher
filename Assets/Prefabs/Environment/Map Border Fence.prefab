@@ -67,7 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outerTurnDistance: 5
-  maxRotation: 120
+  cowBonusOffset: 1
+  unchangeTimer: 0.5
 --- !u!1 &3008297296414033687
 GameObject:
   m_ObjectHideFlags: 0
