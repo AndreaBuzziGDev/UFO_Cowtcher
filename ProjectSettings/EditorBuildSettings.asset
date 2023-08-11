@@ -23,15 +23,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Iterations/Iteration 5.unity
     guid: a6f41cb1fc9067141bc8f992bd5aa1b6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Iterations/Iteration 6.unity
     guid: f04905463d066af46887e7631e3cf1c1
   - enabled: 1
-    path: Assets/Scenes/Game Scenes/Technical Scenes/Credits.unity
-    guid: 3054f3b80916f6f4f91e6726a4323fb3
-  - enabled: 1
     path: Assets/Scenes/Game Scenes/Technical Scenes/Main Menu.unity
     guid: 9204945d35ee23e4aacb76dab7f0e19b
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Technical Scenes/Credits.unity
+    guid: 3054f3b80916f6f4f91e6726a4323fb3
   - enabled: 1
     path: Assets/Scenes/Game Scenes/Technical Scenes/Opening.unity
     guid: 4fe5824b258eb834894c05cb3afe80d9
