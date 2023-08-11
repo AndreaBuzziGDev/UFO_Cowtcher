@@ -40,6 +40,7 @@ public class CowMovement : MonoBehaviour
     ///FENCE DODGING
     [SerializeField] private float fenceDetectionRadius;
     [SerializeField] private Fence closestFence;
+    private Vector3 previousFenceNormal;
 
 
 
@@ -156,7 +157,14 @@ public class CowMovement : MonoBehaviour
         Vector3 reflectedDirection;
         if (IsReflectingAgainstFence())
         {
+            //LAST FORWARD VECTOR
             reflectedDirection = Vector3.Reflect(movementDirection, closestFence.transform.forward);
+            Debug.Log("CowMovement - previous normal is different: " + (previousFenceNormal != closestFence.transform.forward));
+
+            if (previousFenceNormal != closestFence.transform.forward)
+            {
+                reflectedDirection = Vector3.Reflect(reflectedDirection, previousFenceNormal);
+            }
         }
         else
         {
@@ -245,6 +253,9 @@ public class CowMovement : MonoBehaviour
 
                 if (newFenceDistance < closestFenceDistance)
                 {
+                    previousFenceNormal = closestFence.transform.forward;
+                    Debug.Log("CheckFence - previousFenceNormal: " + previousFenceNormal);
+
                     closestFence = newFence;
                     closestFence.ActivateFence();
                     Debug.Log("CheckFence - new closest fence: " + closestFence.gameObject.name);
