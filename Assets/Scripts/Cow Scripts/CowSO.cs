@@ -72,8 +72,11 @@ public class CowSO : ScriptableObject
     public MPAbstractCalmSO movPatternCalm;
     public MPAbstractAlertSO movPatternAlert;
 
-    ///STATUS ALTERATION
+    ///INSTANTLY-PROVIDED STATUS ALTERATION
     public ItemPickup InstantlyDeployedItemPickup;
+
+    ///ENQUEUED ASTEROID
+
 
 
     ///SPAWN AND RESPAWN DATA
