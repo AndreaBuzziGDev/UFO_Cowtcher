@@ -26,7 +26,7 @@ public class Asteroid : MonoBehaviour
     ///AESTETHIC
     //TODO:
     //"FALLING" PARTICLE EFFECT
-    //"EXPLOSION" ON IMPACT
+    [SerializeField] private GameObject ImpactExplosion;
 
 
 
@@ -62,6 +62,11 @@ public class Asteroid : MonoBehaviour
 
         //TODO: DEVELOP EXPLOSION ON IMPACT
         //EXPLOSION ON IMPACT
+        if(ImpactExplosion != null)
+        {
+            GameObject explosionPrefab = Instantiate(ImpactExplosion, this.transform.position, Quaternion.identity);
+            //TODO: DESTROY DELAYED OR SOMEHOW STOP EXPLOSION FROM OCCURRING
+        }
 
 
         //DESTROY ASTEROID
