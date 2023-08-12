@@ -10,12 +10,12 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     private Dictionary<string, AsteroidCollision> asteroidDictionary = new();
 
 
-    ///ASTEROID SHOWER
+    ///ASTEROID SHOWER ITSELF
     private Queue<AsteroidCollision> queuedAsteroids = new();
-    [SerializeField] private int asteroidShowerThreshold;
+    [SerializeField] private int asteroidShowerThreshold = 5;
     public bool HasReachedThreshold { get { return queuedAsteroids.Count >= asteroidShowerThreshold; } }
 
-
+    ///ASTEROID SHOWER TIMER
     [SerializeField] private float asteroidShowerTimerMax = 5.0f;
     private float asteroidShowerTimer;
     public bool IsDoingAsteroidShower { get { return asteroidShowerTimer > 0.0f; } }
@@ -29,7 +29,9 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     // Start is called before the first frame update
     void Start()
     {
-        
+        //INITIALIZATION
+
+
     }
 
     // Update is called once per frame
@@ -68,11 +70,11 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
 
 
-    public void AddAsteroid(List<AsteroidCollision> asteroids)
+    public void EnqueueAsteroid(List<AsteroidCollision> asteroids)
     {
-        foreach (AsteroidCollision ac in asteroids) AddAsteroid(ac);
+        foreach (AsteroidCollision ac in asteroids) EnqueueAsteroid(ac);
     }
-    public void AddAsteroid(AsteroidCollision asteroid) => queuedAsteroids.Enqueue(asteroid);
+    public void EnqueueAsteroid(AsteroidCollision asteroid) => queuedAsteroids.Enqueue(asteroid);
 
 
     //
