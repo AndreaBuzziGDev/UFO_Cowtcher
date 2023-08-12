@@ -19,7 +19,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     public bool HasReachedThreshold { get { return queuedAsteroids.Count >= asteroidShowerThreshold; } }
 
     ///ASTEROID SHOWER TIMER
-    [SerializeField] private float asteroidShowerTimerMax = 5.0f;
+    [SerializeField] private float asteroidShowerCooldown = 5.0f;
     private float asteroidShowerTimer;
     public bool IsDoingAsteroidShower { get { return asteroidShowerTimer > 0.0f; } }
 
@@ -64,13 +64,17 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     public void DoAsteroidShower()
     {
         //BUILD AN ASTEROID SHOWER
-
+        GameObject instance = Instantiate(shower.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
 
         //ENQUEUE ASTEROID SHOWER
+        Queue<AsteroidCollision> tempQueue = new();
 
+        //TODO: CAN THIS BE SIMPLIFIED?
+        for(int i = 0; i < asteroidShowerThreshold; i++) tempQueue.Enqueue(queuedAsteroids.Dequeue());
+        instance.GetComponent<AsteroidShower>().SetAsteroidQueue(tempQueue);
 
         //RESET ASTEROID SHOWER TIMER
-        asteroidShowerTimer = asteroidShowerTimerMax;
+        asteroidShowerTimer = asteroidShowerCooldown;
 
     }
 

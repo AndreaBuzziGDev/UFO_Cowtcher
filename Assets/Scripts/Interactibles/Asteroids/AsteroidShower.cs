@@ -8,9 +8,11 @@ public class AsteroidShower : MonoBehaviour
     ///TEMPLATE
     [SerializeField] private AsteroidShowerData template;
 
+
     ///SHOWER DATA
     private float timeBetweenAsteroids;
     public bool IsBetweenAsteroids { get { return timeBetweenAsteroids > 0; } }
+
 
     ///QUEUED ASTEROIDS
     private Queue<AsteroidCollision> queuedAsteroids = new();
@@ -63,6 +65,7 @@ public class AsteroidShower : MonoBehaviour
             nextAsteroidPosition = new Vector3(nextAsteroidPosition.x, template.AsteroidStartingAltitude, nextAsteroidPosition.z);
 
             //INSTANCIATE ASTEROID
+            AsteroidCollision asteroid = Instantiate(queuedAsteroids.Dequeue(), nextAsteroidPosition, Quaternion.identity);
 
             //TODO: IMPLEMENT
 
