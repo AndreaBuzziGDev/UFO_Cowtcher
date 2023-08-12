@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AsteroidCollision : MonoBehaviour
 {
-    
     //DATA
     [SerializeField] private MonoInteractible myAsteroidContent;
 
+    //METHODS
 
     //COLLISION
     void OnCollisionEnter(Collision collision)

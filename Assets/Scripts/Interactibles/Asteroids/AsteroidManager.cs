@@ -5,7 +5,11 @@ using UnityEngine;
 public class AsteroidManager : MonoSingleton<AsteroidManager>
 {
     //DATA
-    //Dictionary<>
+    ///ASTEROIDS WITH THEIR CONTENT
+    [SerializeField] private List<AsteroidCollision> allAsteroids = new();
+    private Dictionary<string, AsteroidCollision> asteroidDictionary = new();
+
+
 
 
     //METHODS
@@ -26,12 +30,20 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
 
     //INITIALIZATION
-
+    ///INIZIALIZE ASTEROID DICTIONARY
 
 
 
 
     //FUNCTIONALITIES
+    public void DoAsteroidShower()
+    {
+        //BUILD AN ASTEROID SHOWER
 
+
+        //ENQUEUE ASTEROID SHOWER
+
+
+    }
 
 }
