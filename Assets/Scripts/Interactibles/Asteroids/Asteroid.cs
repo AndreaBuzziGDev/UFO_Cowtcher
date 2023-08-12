@@ -10,10 +10,9 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private float angleX = 10;
     [SerializeField] private float angleZ = 10;
 
-
     ///GAMEPLAY PROPERTIES
     [SerializeField] [Range(1f, 100f)] private float contentSpawnChance = 30;
-
+    [SerializeField] [Range(1, 10)] private int quantityOnCapture = 5;
 
     ///ASTEROID CONTENT
     [SerializeField] private MonoInteractible myAsteroidContent;
