@@ -28,6 +28,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
 
     ///TESTING
+    [SerializeField] private bool enableAsteroidTest;
     [SerializeField] private AsteroidCollision testAsteroidPrefab;
     [SerializeField] private float testAsteroidCooldown = 1.0f;
     private float testAsteroidTimer;
@@ -53,14 +54,17 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     // Update is called once per frame
     void Update()
     {
-        TestFeature();
+        //MANUAL TEST DONE TO VERIFY FUNCTIONALITY OF THE TEST
+        if(enableAsteroidTest) TestFeature();
 
+
+        //ASTEROID SHOWER
         if (HasReachedThreshold && !IsDoingAsteroidShower)
         {
-            //DO ASTEROID SHOWER
             DoAsteroidShower();
         }
 
+        //UPDATE INNER TIMER
         UpdateAsteroidTimer();
     }
 
