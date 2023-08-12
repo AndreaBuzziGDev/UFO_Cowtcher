@@ -19,6 +19,7 @@ public class CowCollider : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    public Cow GetCow() => parentCow;
     public CowMovement GetMovement() => mov;
 
 }
