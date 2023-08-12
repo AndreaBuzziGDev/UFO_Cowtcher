@@ -22,7 +22,10 @@ public class AsteroidCollision : MonoBehaviour
         {
             //TODO: DEVELOP RANDOM CHANCE TO DEPLOY ITEM ON IMPACT
 
-            Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
+            if (myAsteroidContent != null)
+            {
+                Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
+            }
         }
 
         //TODO: DEVELOP EXPLOSION ON IMPACT
