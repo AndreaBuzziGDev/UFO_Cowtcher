@@ -144,7 +144,7 @@ public class Abductor : MonoBehaviour
             SpawnManager.Instance.HandleCowCapture(cow);
 
             //TODO: MAYBE A CHECKBOX SOMEWHERE IN ONE OF THE MAIN CONTROLLERS CAN ENABLE THE POSSIBILITY TO GO BACK TO THE PREVIOUS BUFF APPLICATION MODE.
-            if (cow.CowTemplate.PickupItemToBeSpawned != null)
+            if (cow.CowTemplate.InstantlyDeployedItemPickup != null)
             {
                 //COMMENTED IN FEATURES ASTEROID: NOW PICKUPS DELIVED THE DESIRED BUFF
                 //GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
@@ -157,7 +157,7 @@ public class Abductor : MonoBehaviour
 
                 //FEATURES ASTEROID: COW DOESN'T GIVE BUFF/DEBUFF ON PICKUP, IT SPAWNS A METEOR SHOWER
                 //TODO: THIS CODE PORTION CAN BE SAFELY REFACTORED AND MOVED INSIDE THE Spawn METHOD OF ItemPickup.
-                GameObject prefabPickupItem = Instantiate(cow.CowTemplate.PickupItemToBeSpawned.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+                GameObject prefabPickupItem = Instantiate(cow.CowTemplate.InstantlyDeployedItemPickup.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
                 prefabPickupItem.SetActive(false);
 
                 //TODO: DEVELOP A FUNCTIONALITY ON COWDEX + CowSO THAT ALLOWS TO IDENTIFY "MALICIOUS" COWS THAT DROP THEIR INTENDED ALTERATION ItemPickup AT THEIR OWN FEET WHEN CAPTURED.

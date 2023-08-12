@@ -73,7 +73,7 @@ public class CowSO : ScriptableObject
     public MPAbstractAlertSO movPatternAlert;
 
     ///STATUS ALTERATION
-    public ItemPickup PickupItemToBeSpawned;
+    public ItemPickup InstantlyDeployedItemPickup;
 
 
     ///SPAWN AND RESPAWN DATA
