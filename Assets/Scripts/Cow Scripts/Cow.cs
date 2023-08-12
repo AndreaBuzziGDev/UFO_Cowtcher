@@ -282,7 +282,7 @@ public class Cow : MonoBehaviour
         /// COMPLEX DATA
         this.favouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
         this.allowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
-        this.alteration = cowTemplate.Alteration;
+        this.alteration = cowTemplate.InstantAlteration;
     }
 
 
