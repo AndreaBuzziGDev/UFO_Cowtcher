@@ -6861,6 +6861,10 @@ PrefabInstance:
       propertyPath: testAsteroidPrefab
       value: 
       objectReference: {fileID: 4664246506702472115, guid: 1f5500db42b36ef4f8b57efeebf9d694, type: 3}
+    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
+      propertyPath: asteroidShowerCooldown
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4906664377828189850, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: m_RootOrder
       value: 12
