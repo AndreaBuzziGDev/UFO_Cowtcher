@@ -77,7 +77,22 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
         return new Vector3(randomX, 0, randomZ);
     }
 
+    public bool IsPointWithinGrid(Vector3 interestedPoint)
+    {
+        bool withinSouthWestX = interestedPoint.x > southWest.transform.position.x;
+        bool withinSouthWestZ = interestedPoint.z > southWest.transform.position.z;
 
+        bool withinNorthEastX = interestedPoint.x < northEast.transform.position.x;
+        bool withinNorthEastZ = interestedPoint.z < northEast.transform.position.z;
+
+        return (withinSouthWestX && withinSouthWestZ && withinNorthEastX && withinNorthEastZ);
+    }
+
+
+
+
+
+    //SPAWNING FUNCTIONALITIES
     public void SpawnCowInsideGrid(Cow interestedCow)
     {
         interestedCow.transform.position = GetRandomPointInsideSpawnGrid();
