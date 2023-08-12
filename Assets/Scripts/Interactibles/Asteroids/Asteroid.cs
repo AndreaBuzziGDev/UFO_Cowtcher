@@ -30,15 +30,9 @@ public class Asteroid : MonoBehaviour
 
     //METHODS
     //...
-    private void Awake()
-    {
-        if (myAsteroidContent == null) Debug.LogError("Asteroid " + this.gameObject.name + " has no content assigned.");
-    }
-
     private void Start()
     {
-
-
+        if (myAsteroidContent == null) Debug.LogError("Asteroid " + this.gameObject.name + " has no content assigned.");
     }
 
 
