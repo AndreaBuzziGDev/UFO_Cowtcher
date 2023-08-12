@@ -9,6 +9,10 @@ Link: https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-
 Low Poly Rock Pack
 Link: https://assetstore.unity.com/packages/3d/environments/low-poly-rock-pack-57874#description
 
+ToonExplosion v1.0
+Link: https://assetstore.unity.com/packages/2d/textures-materials/2d-flat-explosion-66932
+
+
 
 Cow shader for sprites to cast shadows
 https://www.youtube.com/watch?v=d_OBjV7c1CY&t=34s
