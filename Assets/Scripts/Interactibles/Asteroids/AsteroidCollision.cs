@@ -12,7 +12,6 @@ public class AsteroidCollision : MonoBehaviour
     //COLLISION
     void OnCollisionEnter(Collision collision)
     {
-        //TODO: EDIT ASTEROID PREFAB SO THAT IT HAS A DEDICATED LAYER THAT DOES NOT COLLIDE WITH THE BOX COLLIDER ON THE FENCES (no mid-air impact)
         bool isWithinGrid = SpawningGrid.Instance.IsPointWithinGrid(this.transform.position);
 
         //IF IMPACTED WITHIN SPAWNIN GRID DEPLOY CONTENT
