@@ -153,6 +153,8 @@ public class Abductor : MonoBehaviour
 
 
 
+                //TODO: THIS CODE SHOULD BE MOVED SOMEWHERE ELSE
+
                 //FEATURES ASTEROID: COW DOESN'T GIVE BUFF/DEBUFF ON PICKUP, IT SPAWNS A METEOR SHOWER
                 //TODO: THIS CODE PORTION CAN BE SAFELY REFACTORED AND MOVED INSIDE THE Spawn METHOD OF ItemPickup.
                 GameObject prefabPickupItem = Instantiate(cow.CowTemplate.PickupItemToBeSpawned.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
