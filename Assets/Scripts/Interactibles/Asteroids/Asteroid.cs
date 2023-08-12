@@ -13,6 +13,10 @@ public class Asteroid : MonoBehaviour
     ///GAMEPLAY PROPERTIES
     [SerializeField] [Range(1f, 100f)] private float contentSpawnChance = 30;
     [SerializeField] [Range(1, 10)] private int quantityOnCapture = 5;
+    //TODO:
+    //ADDITIONAL "FREE" ASTEROID CHANCE?
+    //ADDITIONAL "FREE" ASTEROID MAX QUANTITY?
+    //GRANT AT LEAST ONE DROP?
 
     ///ASTEROID CONTENT
     [SerializeField] private MonoInteractible myAsteroidContent;
