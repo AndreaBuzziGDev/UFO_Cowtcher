@@ -152,14 +152,11 @@ public class CowMovement : MonoBehaviour
         else mySpeed = speedAlert;
 
         //TURNING
-        Debug.Log("CowMovement - movementDirection: " + movementDirection);
-
         Vector3 reflectedDirection;
         if (IsReflectingAgainstFence())
         {
-            //LAST FORWARD VECTOR
+            //LAST FORWARD VECTOR (HANDLING CORNERS OF THE MAP)
             reflectedDirection = Vector3.Reflect(movementDirection, closestFence.transform.forward);
-            Debug.Log("CowMovement - previous normal is different: " + (previousFenceNormal != closestFence.transform.forward));
 
             if (previousFenceNormal != closestFence.transform.forward)
             {
@@ -170,7 +167,6 @@ public class CowMovement : MonoBehaviour
         {
             reflectedDirection = movementDirection;
         }
-        Debug.Log("CowMovement - reflectedDirection: " + reflectedDirection);
 
         //GLOBAL SPEED MULTIPLIER
         rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * reflectedDirection;
@@ -218,7 +214,6 @@ public class CowMovement : MonoBehaviour
             movPatternAlert.UpdateTimers(Time.deltaTime);
         }
         else movementDirection = Vector3.zero;
-        //Debug.Log("movementDirection (PANIC): " + movementDirection);
     }
 
 
@@ -246,19 +241,15 @@ public class CowMovement : MonoBehaviour
             if(closestFence != newFence && closestFence.CanBeChanged)
             {
                 float closestFenceDistance = (this.transform.position - closestFence.transform.position).magnitude;
-                Debug.Log("CheckFence - closestFenceDistance: " + closestFenceDistance);
 
                 float newFenceDistance = (this.transform.position - newFence.transform.position).magnitude;
-                Debug.Log("CheckFence - newFenceDistance: " + newFenceDistance);
 
                 if (newFenceDistance < closestFenceDistance)
                 {
                     previousFenceNormal = closestFence.transform.forward;
-                    Debug.Log("CheckFence - previousFenceNormal: " + previousFenceNormal);
 
                     closestFence = newFence;
                     closestFence.ActivateFence();
-                    Debug.Log("CheckFence - new closest fence: " + closestFence.gameObject.name);
                 }
             }
         }
