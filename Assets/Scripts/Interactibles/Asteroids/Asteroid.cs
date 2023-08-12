@@ -21,6 +21,10 @@ public class Asteroid : MonoBehaviour
     ///ASTEROID CONTENT
     [SerializeField] private MonoInteractible myAsteroidContent;
 
+    ///AESTETHIC
+    //TODO:
+    //"FALLING" PARTICLE EFFECT
+    //"EXPLOSION" ON IMPACT
 
 
 
