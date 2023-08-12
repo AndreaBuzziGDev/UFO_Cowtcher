@@ -6,6 +6,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 {
     //DATA
     ///ASTEROIDS WITH THEIR CONTENT
+    ///NB: UNUSED AND NEEDS TO BE POLISHED TO WORK
     [SerializeField] private List<AsteroidCollision> allAsteroids = new();
     private Dictionary<string, AsteroidCollision> asteroidDictionary = new();
 
@@ -13,15 +14,24 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     ///ASTEROID SHOWER ITSELF
     [SerializeField] private AsteroidShower shower;
 
+
     ///ASTEROID QUEUE
     private Queue<AsteroidCollision> queuedAsteroids = new();
     [SerializeField] private int asteroidShowerThreshold = 5;
     public bool HasReachedThreshold { get { return queuedAsteroids.Count >= asteroidShowerThreshold; } }
 
+
     ///ASTEROID SHOWER TIMER
     [SerializeField] private float asteroidShowerCooldown = 5.0f;
     private float asteroidShowerTimer;
     public bool IsDoingAsteroidShower { get { return asteroidShowerTimer > 0.0f; } }
+
+
+    ///TESTING
+    [SerializeField] private AsteroidCollision testAsteroidPrefab;
+    [SerializeField] private float testAsteroidCooldown = 1.0f;
+    private float testAsteroidTimer;
+
 
 
 
@@ -43,6 +53,8 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     // Update is called once per frame
     void Update()
     {
+        TestFeature();
+
         if (HasReachedThreshold && !IsDoingAsteroidShower)
         {
             //DO ASTEROID SHOWER
@@ -56,6 +68,26 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
     //INITIALIZATION
     ///INIZIALIZE ASTEROID DICTIONARY
+
+
+
+
+    ///FOR TESTING
+    private void TestFeature()
+    {
+        if(testAsteroidTimer <= 0)
+        {
+            EnqueueAsteroid(testAsteroidPrefab);
+            testAsteroidTimer = testAsteroidCooldown;
+        }
+        else
+        {
+            testAsteroidTimer -= Time.deltaTime;
+        }
+    }
+
+
+
 
 
 
