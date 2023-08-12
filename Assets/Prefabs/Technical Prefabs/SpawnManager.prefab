@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c97e2a09439f24481833680f3f771c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allAsteroids: []
+  shower: {fileID: 2233992847269552230, guid: b3201b10cfaedf1409fa236088b0314d, type: 3}
+  asteroidShowerThreshold: 5
+  asteroidShowerCooldown: 15
+  testAsteroidPrefab: {fileID: 4664246506702472115, guid: 1f5500db42b36ef4f8b57efeebf9d694, type: 3}
+  testAsteroidCooldown: 1
 --- !u!1 &7523718914153947584
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,11 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f10bb54a5d9e5749a6235074fb810dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumOfCows: 30
+  maxNumOfCows: 15
   maxSpawnedCount: 3
   maxSpawnTimer: 1
   isGridSpawnMode: 1
-  isRandomizedSpawnMode: 0
+  isRandomizedSpawnMode: 1
 --- !u!114 &8799728402212874293
 MonoBehaviour:
   m_ObjectHideFlags: 0
