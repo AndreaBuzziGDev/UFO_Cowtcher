@@ -34,11 +34,14 @@ public class Fence : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         GameObject otherGO = other.gameObject;
-        CowMovement compCowMovement = otherGO.GetComponent<CowCollider>().GetMovement();
-
-        if (compCowMovement != null)
+        CowCollider cowCollider = otherGO.GetComponent<CowCollider>();
+        if (cowCollider != null)
         {
-            compCowMovement.CheckClosestFence(this);
+            CowMovement compCowMovement = cowCollider.GetMovement();
+            if (compCowMovement != null)
+            {
+                compCowMovement.CheckClosestFence(this);
+            }
         }
 
     }

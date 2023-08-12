@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionAsteroids : MonoBehaviour
+public class AsteroidCollision : MonoBehaviour
 {
     
     //DATA
