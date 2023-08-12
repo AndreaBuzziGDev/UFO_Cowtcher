@@ -13,7 +13,6 @@ public class Asteroid : MonoBehaviour
 
     ///GAMEPLAY PROPERTIES
     [SerializeField] [Range(1f, 100f)] private float contentSpawnChance = 30;
-    [SerializeField] private bool grantAtLeastOne;
 
 
     ///ASTEROID CONTENT
@@ -48,7 +47,11 @@ public class Asteroid : MonoBehaviour
 
             if (myAsteroidContent != null)
             {
-                Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
+                float randomChance = Random.Range(1, 100);
+                if(randomChance >= contentSpawnChance)
+                {
+                    Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
+                }
             }
         }
 
