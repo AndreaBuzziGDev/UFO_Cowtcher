@@ -14,11 +14,9 @@ public class AsteroidCollision : MonoBehaviour
     {
         //TODO: EDIT ASTEROID PREFAB SO THAT IT HAS A DEDICATED LAYER THAT DOES NOT COLLIDE WITH THE BOX COLLIDER ON THE FENCES (no mid-air impact)
         bool isWithinGrid = SpawningGrid.Instance.IsPointWithinGrid(this.transform.position);
-        Debug.Log("CollisionAsteroids - OnCollisionEnter");
 
         //IF IMPACTED WITHIN SPAWNIN GRID DEPLOY CONTENT
         if (isWithinGrid && myAsteroidContent != null)
-            Debug.Log("CollisionAsteroids - OnCollisionEnter: IS VALID POINT OF COLLISION");
         {
             //TODO: DEVELOP RANDOM CHANCE TO DEPLOY ITEM ON IMPACT
 
