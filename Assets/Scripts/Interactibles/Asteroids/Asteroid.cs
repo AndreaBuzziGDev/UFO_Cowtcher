@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidCollision : MonoBehaviour
+public class Asteroid : MonoBehaviour
 {
     //DATA
     [SerializeField] private MonoInteractible myAsteroidContent;

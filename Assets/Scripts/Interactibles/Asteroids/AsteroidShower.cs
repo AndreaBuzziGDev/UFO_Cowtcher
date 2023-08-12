@@ -15,7 +15,7 @@ public class AsteroidShower : MonoBehaviour
 
 
     ///QUEUED ASTEROIDS
-    private Queue<AsteroidCollision> queuedAsteroids = new();
+    private Queue<Asteroid> queuedAsteroids = new();
 
 
 
@@ -34,7 +34,7 @@ public class AsteroidShower : MonoBehaviour
 
     //FUNCTIONALITIES
     ///
-    public void SetAsteroidQueue(Queue<AsteroidCollision> asteroids)
+    public void SetAsteroidQueue(Queue<Asteroid> asteroids)
     {
         queuedAsteroids = asteroids;
     }
@@ -62,7 +62,7 @@ public class AsteroidShower : MonoBehaviour
             nextAsteroidPosition = new Vector3(nextAsteroidPosition.x, template.AsteroidStartingAltitude, nextAsteroidPosition.z);
 
             //INSTANCIATE ASTEROID
-            AsteroidCollision asteroid = Instantiate(queuedAsteroids.Dequeue(), nextAsteroidPosition, Quaternion.identity);
+            Asteroid asteroid = Instantiate(queuedAsteroids.Dequeue(), nextAsteroidPosition, Quaternion.identity);
 
             //TODO: IMPLEMENT
 

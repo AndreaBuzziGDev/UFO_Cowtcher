@@ -7,8 +7,8 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     //DATA
     ///ASTEROIDS WITH THEIR CONTENT
     ///NB: UNUSED AND NEEDS TO BE POLISHED TO WORK
-    [SerializeField] private List<AsteroidCollision> allAsteroids = new();
-    private Dictionary<string, AsteroidCollision> asteroidDictionary = new();
+    [SerializeField] private List<Asteroid> allAsteroids = new();
+    private Dictionary<string, Asteroid> asteroidDictionary = new();
 
 
     ///ASTEROID SHOWER ITSELF
@@ -16,7 +16,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
 
     ///ASTEROID QUEUE
-    private Queue<AsteroidCollision> queuedAsteroids = new();
+    private Queue<Asteroid> queuedAsteroids = new();
     [SerializeField] private int asteroidShowerThreshold = 5;
     public bool HasReachedThreshold { get { return queuedAsteroids.Count >= asteroidShowerThreshold; } }
 
@@ -29,7 +29,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
     ///TESTING
     [SerializeField] private bool enableAsteroidTest;
-    [SerializeField] private AsteroidCollision testAsteroidPrefab;
+    [SerializeField] private Asteroid testAsteroidPrefab;
     [SerializeField] private float testAsteroidCooldown = 1.0f;
     private float testAsteroidTimer;
 
@@ -103,7 +103,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
         GameObject instance = Instantiate(shower.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
 
         //ENQUEUE ASTEROID SHOWER
-        Queue<AsteroidCollision> tempQueue = new();
+        Queue<Asteroid> tempQueue = new();
 
         //TODO: CAN THIS BE SIMPLIFIED?
         for(int i = 0; i < asteroidShowerThreshold; i++) tempQueue.Enqueue(queuedAsteroids.Dequeue());
@@ -116,11 +116,11 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
 
 
-    public void EnqueueAsteroid(List<AsteroidCollision> asteroids)
+    public void EnqueueAsteroid(List<Asteroid> asteroids)
     {
-        foreach (AsteroidCollision ac in asteroids) EnqueueAsteroid(ac);
+        foreach (Asteroid ac in asteroids) EnqueueAsteroid(ac);
     }
-    public void EnqueueAsteroid(AsteroidCollision asteroid) => queuedAsteroids.Enqueue(asteroid);
+    public void EnqueueAsteroid(Asteroid asteroid) => queuedAsteroids.Enqueue(asteroid);
 
 
     //
