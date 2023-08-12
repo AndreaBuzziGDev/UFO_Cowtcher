@@ -44,15 +44,10 @@ public class Asteroid : MonoBehaviour
         //IF IMPACTED WITHIN SPAWNIN GRID DEPLOY CONTENT
         if (isWithinGrid && myAsteroidContent != null)
         {
-            //TODO: DEVELOP RANDOM CHANCE TO DEPLOY ITEM ON IMPACT
-
-            if (myAsteroidContent != null)
+            float randomChance = Random.Range(1, 100);
+            if (randomChance >= contentSpawnChance)
             {
-                float randomChance = Random.Range(1, 100);
-                if(randomChance >= contentSpawnChance)
-                {
-                    Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
-                }
+                Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
             }
         }
 
