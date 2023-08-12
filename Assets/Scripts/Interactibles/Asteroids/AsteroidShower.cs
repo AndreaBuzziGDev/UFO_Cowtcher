@@ -27,11 +27,7 @@ public class AsteroidShower : MonoBehaviour
     {
         UpdateAsteroidTimer();
 
-        if(!IsBetweenAsteroids)
-        {
-            Debug.Log("Asteroid Shower Has: " + queuedAsteroids.Count + " more asteroids to go");
-            DeployNextAsteroid();
-        }
+        if(!IsBetweenAsteroids) DeployNextAsteroid();
     }
 
 
@@ -59,6 +55,7 @@ public class AsteroidShower : MonoBehaviour
         //CHECK IF THE QUEUE STILL HAS ASTEROIDS
         if(queuedAsteroids.Count > 0)
         {
+            Debug.Log("Asteroid Shower Has: " + queuedAsteroids.Count + " more asteroids to go");
 
             //ASTEROID POSITION
             Vector3 nextAsteroidPosition = SpawningGrid.Instance.GetRandomPointInsideSpawnGrid();
