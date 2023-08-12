@@ -6,13 +6,15 @@ public class Asteroid : MonoBehaviour
 {
     //DATA
     ///JUICYNESS - ASTEROID DIRECTION AND SPEED PROPERTIES
+    /*
     [SerializeField] private float speed = 10.0f;
     [SerializeField] private float angleX = 10;
     [SerializeField] private float angleZ = 10;
+    */
 
     ///GAMEPLAY PROPERTIES
     [SerializeField] [Range(1f, 100f)] private float contentSpawnChance = 30;
-    [SerializeField] [Range(1, 10)] private int quantityOnCapture = 5;
+    [SerializeField] [Range(1, 10)] private int quantityOnCapture = 5;//TODO: USE
     //TODO:
     //ADDITIONAL "FREE" ASTEROID CHANCE?
     //ADDITIONAL "FREE" ASTEROID MAX QUANTITY?
