@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionAsteroids : MonoBehaviour
 {
-    /*
+    
     //DATA
     [SerializeField] private MonoInteractible myAsteroidContent;
 
@@ -28,19 +28,6 @@ public class CollisionAsteroids : MonoBehaviour
         //TODO: DEVELOP EXPLOSION ON IMPACT
 
         Destroy(this.gameObject);
-
-
-        //GameObject otherGO = collision.gameObject;
-        //Cow compCow = otherGO.GetComponent<Cow>();
-        //if (compCow != null && (compCow.Rarity == CowSO.Rarity.Legendary))
-        //{
-        //Debug.Log("compCow.IsPanicking: " + compCow.IsPanicking);
-        //if (compCow.IsPanicking)
-        //{
-        //compCow.Flee();
-        //}
-        //}
-
     }
-    */
+    
 }
