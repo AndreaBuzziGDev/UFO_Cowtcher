@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractibleStructure : MonoBehaviour, IInteractible
+public class InteractibleStructure : MonoInteractible
 {
     //DATA
     ///
@@ -48,7 +48,7 @@ public class InteractibleStructure : MonoBehaviour, IInteractible
 
 
     ///INTERACT
-    public void Interact(GameObject interactionSource)
+    public override void Interact(GameObject interactionSource)
     {
         //IF SOURCE UFO
         if (IsObjectWithinOperativeRadius(interactionSource))

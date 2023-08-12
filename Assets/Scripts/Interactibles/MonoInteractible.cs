@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class MonoInteractible : MonoBehaviour
 {
-    public abstract void Interact();
+    public abstract void Interact(GameObject interactionSource);
 
 }
