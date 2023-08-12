@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4400587465267656452}
   - component: {fileID: 7575283742510952029}
   m_Layer: 0
-  m_Name: GENERIC ASTEROID (DO NOT USE)
+  m_Name: GENERIC INSTANT PICKUP (DO NOT USE)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
