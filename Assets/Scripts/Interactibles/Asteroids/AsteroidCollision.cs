@@ -7,6 +7,9 @@ public class AsteroidCollision : MonoBehaviour
     //DATA
     [SerializeField] private MonoInteractible myAsteroidContent;
 
+
+
+
     //METHODS
 
     //COLLISION
@@ -29,5 +32,9 @@ public class AsteroidCollision : MonoBehaviour
 
         Destroy(this.gameObject);
     }
+
+    //FUNCTIONALITIES
+
+
     
 }
