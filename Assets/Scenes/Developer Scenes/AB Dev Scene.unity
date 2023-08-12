@@ -6841,34 +6841,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: maxNumOfCows
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: isGridSpawnMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: isRandomizedSpawnMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: shower
-      value: 
-      objectReference: {fileID: 2233992847269552230, guid: b3201b10cfaedf1409fa236088b0314d, type: 3}
-    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: testAsteroidPrefab
-      value: 
-      objectReference: {fileID: 4664246506702472115, guid: 1f5500db42b36ef4f8b57efeebf9d694, type: 3}
-    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: asteroidShowerCooldown
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4906664377828189850, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 4906664377828189850, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 655.1431
