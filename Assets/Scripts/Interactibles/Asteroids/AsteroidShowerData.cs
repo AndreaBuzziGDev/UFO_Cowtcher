@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Asteroid Shower Data", menuName = "Asteroid Shower Data")]
 public class AsteroidShowerData : ScriptableObject
 {
     //DATA
