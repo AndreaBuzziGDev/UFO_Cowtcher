@@ -102,18 +102,6 @@ public class Cow : MonoBehaviour
     public List<SpawnPoint.Type> AllowedSpawnPointTypes { get { return allowedSpawnPointTypes; } }
 
 
-    ///BUFFS
-    private SAAbstractSO alteration;
-    public SAAbstract Alteration { 
-        get {
-            if (alteration != null)
-            {
-                return alteration.GetBuff();
-            }
-            return null; 
-        } 
-    }
-
 
     ///MOVEMENT DIRECTION (AFFECTED BY MOVEMENT PATTERNS)
     ///BIRTH POINT
@@ -282,7 +270,6 @@ public class Cow : MonoBehaviour
         /// COMPLEX DATA
         this.favouriteHideoutTypes = cowTemplate.FavouriteHideoutTypes;
         this.allowedSpawnPointTypes = cowTemplate.AllowedSpawnPointTypes;
-        this.alteration = cowTemplate.InstantAlteration;
     }
 
 
