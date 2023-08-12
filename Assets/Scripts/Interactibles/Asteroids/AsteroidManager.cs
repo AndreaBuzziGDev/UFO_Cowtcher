@@ -11,6 +11,9 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
 
     ///ASTEROID SHOWER ITSELF
+    [SerializeField] private AsteroidShower shower;
+
+    ///ASTEROID QUEUE
     private Queue<AsteroidCollision> queuedAsteroids = new();
     [SerializeField] private int asteroidShowerThreshold = 5;
     public bool HasReachedThreshold { get { return queuedAsteroids.Count >= asteroidShowerThreshold; } }
@@ -30,7 +33,10 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     void Start()
     {
         //INITIALIZATION
-
+        if (shower == null)
+        {
+            Debug.LogError("NO ASTEROID SHOWER PREFAB SET!");
+        }
 
     }
 
