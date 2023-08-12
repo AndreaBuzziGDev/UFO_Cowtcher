@@ -51,13 +51,20 @@ public class Asteroid : MonoBehaviour
             }
         }
 
-        //TODO: DEVELOP EXPLOSION ON IMPACT
-
-        Destroy(this.gameObject);
+        HandleImpact();
     }
 
     //FUNCTIONALITIES
+    private void HandleImpact()
+    {
 
+        //TODO: DEVELOP EXPLOSION ON IMPACT
+        //EXPLOSION ON IMPACT
+
+
+        //DESTROY ASTEROID
+        Destroy(this.gameObject);
+    }
 
     
 }
