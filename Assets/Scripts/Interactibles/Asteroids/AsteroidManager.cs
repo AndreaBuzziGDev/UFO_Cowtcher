@@ -5,14 +5,15 @@ using UnityEngine;
 public class AsteroidManager : MonoSingleton<AsteroidManager>
 {
     //DATA
-    ///ASTEROIDS WITH THEIR CONTENT
-    ///NB: UNUSED AND NEEDS TO BE POLISHED TO WORK
-    [SerializeField] private List<Asteroid> allAsteroids = new();
-    private Dictionary<string, Asteroid> asteroidDictionary = new();
 
-
-    ///ASTEROID SHOWER ITSELF
+    ///ASTEROID SHOWER
     [SerializeField] private AsteroidShower shower;
+
+    ///ASTEROID SHOWER TIMER
+    [SerializeField] private float asteroidShowerCooldown = 5.0f;
+    private float asteroidShowerTimer;
+    public bool IsDoingAsteroidShower { get { return asteroidShowerTimer > 0.0f; } }
+
 
 
     ///ASTEROID QUEUE
@@ -20,11 +21,6 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     [SerializeField] private int asteroidShowerThreshold = 5;
     public bool HasReachedThreshold { get { return queuedAsteroids.Count >= asteroidShowerThreshold; } }
 
-
-    ///ASTEROID SHOWER TIMER
-    [SerializeField] private float asteroidShowerCooldown = 5.0f;
-    private float asteroidShowerTimer;
-    public bool IsDoingAsteroidShower { get { return asteroidShowerTimer > 0.0f; } }
 
 
     ///TESTING
