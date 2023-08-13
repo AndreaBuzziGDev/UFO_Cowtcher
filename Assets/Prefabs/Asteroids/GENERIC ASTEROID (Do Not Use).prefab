@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4400587465267656452}
   - component: {fileID: 7575283742510952029}
   m_Layer: 0
-  m_Name: GENERIC INSTANT PICKUP (DO NOT USE)
+  m_Name: GENERIC ASTEROID (Do Not Use)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,4 +150,4 @@ MonoBehaviour:
   quantityOnCapture: 5
   myAsteroidContent: {fileID: 0}
   additionalTranslate: {x: 0, y: 1, z: -1}
-  ImpactExplosion: {fileID: 0}
+  ImpactExplosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
