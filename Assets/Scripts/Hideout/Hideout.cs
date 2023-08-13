@@ -5,10 +5,13 @@ using UnityEngine;
 public class Hideout : MonoBehaviour
 {
     //DATA
-
-
+    ///TEMPLATE
     [SerializeField] private HideoutSO hideoutTemplate;
     public HideoutSO HideoutTemplate { get { return hideoutTemplate; } }
+
+    ///HIDEOUT INFOS
+    [SerializeField] private HideoutInfos myInfos;
+
 
     ///UFO
     private UFO playerUFO;
@@ -86,6 +89,7 @@ public class Hideout : MonoBehaviour
         //TODO: EXPORT AS DEDICATED FUNCTIONALITY (updateHideoutSlot Timers and Statuses)
         ufoDistanceXZ = new Vector3(playerUFO.transform.position.x, 0, playerUFO.transform.position.z);
 
+        //HIDEOUT SLOTS LOGIC
         for (int i = 0; i < hideoutSlots.Count; i++)
         {
             if (!IsUFONear() && hideoutSlots[i].HostedCow != null)
@@ -107,6 +111,13 @@ public class Hideout : MonoBehaviour
             }
         }
 
+        //
+        ddd
+
+
+
+
+        //TODO: THIS CAN BE EXPORTED IN A METHOD
         if (shake)
         {
             currentShakeTime -= Time.deltaTime;
