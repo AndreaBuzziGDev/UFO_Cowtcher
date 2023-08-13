@@ -54,7 +54,11 @@ public class Asteroid : MonoBehaviour
             float randomChance = Random.Range(1, 100);
             if (randomChance >= contentSpawnChance)
             {
-                Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
+                if (this.transform.position.y <= badImpactCoordY)
+                {
+                    //SPAWN ASTEROID CONTENT
+                    Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
+                }
             }
         }
 
