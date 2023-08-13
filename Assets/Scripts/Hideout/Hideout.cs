@@ -5,9 +5,13 @@ using UnityEngine;
 public class Hideout : MonoBehaviour
 {
     //DATA
+
+
     [SerializeField] private HideoutSO hideoutTemplate;
     public HideoutSO HideoutTemplate { get { return hideoutTemplate; } }
-    private UFO ufo;
+
+    ///UFO
+    private UFO playerUFO;
 
 
     ///HIDEOUT SLOTS
@@ -21,8 +25,6 @@ public class Hideout : MonoBehaviour
     private int numberOfHideoutSlots;
     private float hideoutPermanenceTimer;
     private float spawnRadius = 2.5f;
-
-
 
 
     ///NO HIDEOUT VACATION IF UFO IS WITHIN DISTANCE:
@@ -39,13 +41,6 @@ public class Hideout : MonoBehaviour
     private bool shake = false;
     private float currentShakeTime;
     private Vector3 hideoutPosition;
-
-
-
-    ///DEBUG FIELDS
-    //TODO: DELETE
-    [Header("Debug")]
-    [SerializeField] private int debugNumAvailSlots;
 
 
 
@@ -78,8 +73,8 @@ public class Hideout : MonoBehaviour
     void Start()
     {
         //UFO
-        ufo = GameController.Instance.FindUFOAnywhere();
-        if (ufo != null) ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
+        playerUFO = GameController.Instance.FindUFOAnywhere();
+        if (playerUFO != null) ufoDistanceXZ = new Vector3(playerUFO.transform.position.x, 0, playerUFO.transform.position.z);
     }
 
     // Update is called once per frame
@@ -89,7 +84,7 @@ public class Hideout : MonoBehaviour
         int availSlots = 0;
 
         //TODO: EXPORT AS DEDICATED FUNCTIONALITY (updateHideoutSlot Timers and Statuses)
-        ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
+        ufoDistanceXZ = new Vector3(playerUFO.transform.position.x, 0, playerUFO.transform.position.z);
 
         for (int i = 0; i < hideoutSlots.Count; i++)
         {
@@ -124,10 +119,6 @@ public class Hideout : MonoBehaviour
             shake = false;
             transform.position = hideoutPosition;
         }
-
-
-        //UPDATE COUNT SLOTS THAT ARE AVAILABLE
-        debugNumAvailSlots = availSlots;
 
     }
 
