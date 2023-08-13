@@ -15,6 +15,7 @@ public class Asteroid : MonoBehaviour
     ///GAMEPLAY PROPERTIES
     [SerializeField] [Range(1f, 100f)] private float contentSpawnChance = 30;
     [SerializeField] [Range(1, 10)] private int quantityOnCapture = 5;//TODO: USE
+    public int QuantityOnCapture { get { return quantityOnCapture; } }
 
     ///GAMEPLAY PROPERTIES - ADDITIONAL CONTROL FEATURES
     [SerializeField] private bool spawnsOnBadImpact;

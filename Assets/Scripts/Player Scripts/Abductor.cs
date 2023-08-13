@@ -143,36 +143,24 @@ public class Abductor : MonoBehaviour
             //WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
             SpawnManager.Instance.HandleCowCapture(cow);
 
-            //TODO: MAYBE A CHECKBOX SOMEWHERE IN ONE OF THE MAIN CONTROLLERS CAN ENABLE THE POSSIBILITY TO GO BACK TO THE PREVIOUS BUFF APPLICATION MODE.
+
+
+            //INSTANTLY DEPLOYED ITEM
             if (cow.CowTemplate.InstantlyDeployedItemPickup != null)
             {
-                //COMMENTED IN FEATURES ASTEROID: NOW PICKUPS DELIVED THE DESIRED BUFF
-                //GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(cow.Alteration);
-
-                //TODO: RESTORE SCARECOW (AND FURTHER "MALICIOUS" COWS) FUNCTIONALITY (DEBUFF DELIVERY)
-
-
-
-                //TODO: THIS CODE SHOULD BE MOVED SOMEWHERE ELSE
-
-                //TODO: THIS CODE PORTION CAN BE SAFELY REFACTORED AND MOVED INSIDE THE Spawn METHOD OF ItemPickup.
+                //TODO: THIS COULD EASILY BE A "Cow" METHOD.
                 GameObject prefabPickupItem = Instantiate(cow.CowTemplate.InstantlyDeployedItemPickup.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
                 prefabPickupItem.SetActive(false);
-
-                //TODO: DEVELOP A FUNCTIONALITY ON COWDEX + CowSO THAT ALLOWS TO IDENTIFY "MALICIOUS" COWS THAT DROP THEIR INTENDED ALTERATION ItemPickup AT THEIR OWN FEET WHEN CAPTURED.
-
-                //TODO: UPDATE SO THAT IT USES InstantlyDeployedItemPickup
-
-                if (cow.CowTemplate.UID.Equals(CowSO.UniqueID.R003Scarecow))
-                {
-                    prefabPickupItem.GetComponent<ItemPickup>().Spawn(cow.transform.position);
-                }
-                else
-                {
-                    prefabPickupItem.GetComponent<ItemPickup>().SpawnRandomly();
-                }
-
+                prefabPickupItem.GetComponent<ItemPickup>().Spawn(cow.transform.position);
             }
+
+
+            //ASTEROID 
+            if (cow.CowTemplate.associatedAsteroid != null)
+            {
+                AsteroidManager.Instance.EnqueueAsteroid(cow.CowTemplate.associatedAsteroid, cow.CowTemplate.associatedAsteroid.QuantityOnCapture);
+            }
+
 
             //TODO: IMPROVE CREATION AND DESTRUCTION OF COWS VIA OBJECT POOLING
             //cow.gameObject.SetActive(false);

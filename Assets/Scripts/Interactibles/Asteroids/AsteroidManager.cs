@@ -93,6 +93,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
 
 
     //FUNCTIONALITIES
+    ///ASTEROID SHOWER
     public void DoAsteroidShower()
     {
         //BUILD AN ASTEROID SHOWER
@@ -111,6 +112,13 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     }
 
 
+
+    ///ASTEROID ADDITION TO QUEUE
+    public void EnqueueAsteroid(Asteroid asteroid, int copies)
+    {
+        Debug.Log("AsteroidManager - Enqueueing " + copies + " asteroids " + asteroid.name);
+        for(int i=0; i<copies; i++) EnqueueAsteroid(asteroid);
+    }
 
     public void EnqueueAsteroid(List<Asteroid> asteroids)
     {
