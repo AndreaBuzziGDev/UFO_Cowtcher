@@ -6,14 +6,9 @@ using UnityEngine.UI;
 public class HideoutInfos : MonoBehaviour
 {
     //DATA
-    ///PARENT REFERENCE
-    [SerializeField] private Hideout parentHideout;
-
     ///UI REFERENCE
     [SerializeField] private SpriteRenderer cowLogo;
-    [SerializeField] private TMPro.TextMeshProUGUI hideoutCounter;
-
-
+    [SerializeField] private TMPro.TextMeshPro hideoutCounter;
 
     //METHODS
     //FUNCTIONALITIES

@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfc7286c1c96844286ab3d8a6059fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cowLogo: {fileID: 2569712655364935544}
+  hideoutCounter: {fileID: 1072986438428351955}
 --- !u!1 &6400058872723423676
 GameObject:
   m_ObjectHideFlags: 0
