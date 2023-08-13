@@ -62,21 +62,24 @@ public class Hideout : MonoBehaviour
 
         ufoDetectionRadius = hideoutTemplate.UFODetectionRadius;
 
-        //UFO
-        ufo = FindObjectOfType<UFO>();
-        if (ufo != null) ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
-
         //HANDLE CONSTRUCTION OF hideoutSlots
         InitalizeHideoutSlots();
 
+        //SETTING SHAKING
         currentShakeTime = shakeTime;
         hideoutPosition = this.transform.position;
+
+        //
+
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //UFO
+        ufo = GameController.Instance.FindUFOAnywhere();
+        if (ufo != null) ufoDistanceXZ = new Vector3(ufo.transform.position.x, this.transform.position.y, ufo.transform.position.z);
     }
 
     // Update is called once per frame
