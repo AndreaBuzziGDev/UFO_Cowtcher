@@ -27,8 +27,8 @@ MonoBehaviour:
   TimerRespawn: 5
   movPatternCalm: {fileID: 11400000, guid: 8bd28f98848d3db4d98342e1982cd091, type: 2}
   movPatternAlert: {fileID: 11400000, guid: dff38ae395a91b54299c416719a22506, type: 2}
-  Alteration: {fileID: 11400000, guid: 2ef9c97f981d5e64d850030395f8efcd, type: 2}
-  PickupItemToBeSpawned: {fileID: 7926208514392685230, guid: a433a9cbcb3505b4eaecd10575007fdb, type: 3}
+  InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: a433a9cbcb3505b4eaecd10575007fdb, type: 3}
+  associatedAsteroid: {fileID: 0}
   SummoningRitual: {fileID: 11400000, guid: 5eed19db8b0ef0e4796e9439d0220e2d, type: 2}
   FavouriteHideoutTypes: 
   AllowedSpawnPointTypes: 00000000
