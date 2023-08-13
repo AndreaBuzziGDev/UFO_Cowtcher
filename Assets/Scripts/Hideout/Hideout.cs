@@ -111,8 +111,8 @@ public class Hideout : MonoBehaviour
             }
         }
 
-        //
-        ddd
+        //UPDATE INFOS
+        myInfos.UpdateCounter(availSlots, numberOfHideoutSlots);
 
 
 

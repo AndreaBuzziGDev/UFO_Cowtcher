@@ -565,10 +565,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideoutTemplate: {fileID: 11400000, guid: a51b63db87ae501478e1da1c8d86e300, type: 2}
+  myInfos: {fileID: 5613871200363568800}
   shakeAmount: 0.005
   shakeSpeed: 30
   shakeTime: 1
-  debugNumAvailSlots: 0
 --- !u!114 &6066383760333294612
 MonoBehaviour:
   m_ObjectHideFlags: 0
