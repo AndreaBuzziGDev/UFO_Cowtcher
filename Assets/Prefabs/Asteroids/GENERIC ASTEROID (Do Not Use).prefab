@@ -149,6 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentSpawnChance: 30
   quantityOnCapture: 5
+  spawnsOnBadImpact: 0
+  badImpactCoordY: 2
   myAsteroidContent: {fileID: 0}
   additionalTranslate: {x: 0, y: 1, z: -1}
   ImpactExplosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
@@ -162,7 +164,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1741693452841693106, guid: c4ed38c72957f2241ad144a1614956d9, type: 3}
       propertyPath: m_Intensity
-      value: 2.9436274
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8764043878647920493, guid: c4ed38c72957f2241ad144a1614956d9, type: 3}
       propertyPath: m_Name
