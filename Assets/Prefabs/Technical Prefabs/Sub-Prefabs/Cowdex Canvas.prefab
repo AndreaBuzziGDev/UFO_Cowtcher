@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4039305347981642278}
   m_Layer: 0
-  m_Name: Buffs
+  m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 5919172001109154689}
   - component: {fileID: 6614292430638311522}
   m_Layer: 0
-  m_Name: Buff Content
+  m_Name: Effect Desc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -904,7 +904,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4039305347981642278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3, y: 0}
+  m_AnchorMin: {x: 0.4, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -1303,7 +1303,7 @@ GameObject:
   - component: {fileID: 6018720485646887906}
   - component: {fileID: 589723193849647465}
   m_Layer: 0
-  m_Name: Buff Tag
+  m_Name: Effect Tag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1324,7 +1324,7 @@ RectTransform:
   m_Father: {fileID: 4039305347981642278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.3, y: 1}
+  m_AnchorMax: {x: 0.4, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Buff</b>:'
+  m_text: '<b>Effect</b>:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3b3394eb49060f4c8a849c5955a5744, type: 2}
   m_sharedMaterial: {fileID: 6432765898481609733, guid: b3b3394eb49060f4c8a849c5955a5744, type: 2}
