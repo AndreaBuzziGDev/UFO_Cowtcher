@@ -48,9 +48,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7575283742510952029, guid: 12288831212fdd040a018a46a4cf6b03, type: 3}
+      propertyPath: myAsteroidContent
+      value: 
+      objectReference: {fileID: 8402732589097762740, guid: 6e04ef3384098ea4ca48d0b25fe6d247, type: 3}
     - target: {fileID: 8812802538021501980, guid: 12288831212fdd040a018a46a4cf6b03, type: 3}
       propertyPath: m_Name
-      value: GENERIC ASTEROID (Do Not Use)
+      value: Speedbuff Cowgon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
