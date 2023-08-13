@@ -38,7 +38,14 @@ public class CowdexPage
 
         cowName = myCow.CowTemplate.Name;
         cowDescription = myCow.CowTemplate.Description;
-        cowBuff = "PLACEHOLDER";
+        if (string.IsNullOrEmpty(myCow.CowTemplate.effect))
+        {
+            cowBuff = "---";
+        }
+        else
+        {
+            cowBuff = myCow.CowTemplate.effect;
+        }
 
     }
 

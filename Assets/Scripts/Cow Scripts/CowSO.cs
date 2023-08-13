@@ -48,6 +48,8 @@ public class CowSO : ScriptableObject
 
     /// SIMPLE DATA
     public string Name;
+
+    [TextAreaAttribute]
     public string Description;
 
     [Tooltip("the probability for this cow type to spawn randomly after being unlocked.")]
@@ -75,7 +77,7 @@ public class CowSO : ScriptableObject
 
     //EFFECTS
     ///
-    public string effect = "None";
+    public string effect;
 
     ///INSTANTLY-PROVIDED STATUS ALTERATION
     public ItemPickup InstantlyDeployedItemPickup;
