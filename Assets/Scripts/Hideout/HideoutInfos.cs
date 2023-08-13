@@ -10,8 +10,40 @@ public class HideoutInfos : MonoBehaviour
     [SerializeField] private SpriteRenderer cowLogo;
     [SerializeField] private TMPro.TextMeshPro hideoutCounter;
 
+
+    ///JUICYNESS
+    //FADE IN
+
+
+    //FADE OUT
+
+
+    //FADE OUT TIMER
+
+
+    //FADE DISTANCE
+
+
+
+
+
     //METHODS
+    //...
+    //START
+    //TODO: FIND UFO
+
+    //UPDATE
+    //
+
+
     //FUNCTIONALITIES
     public void UpdateCounter(int currentCount, int maxCapacity) => hideoutCounter.text = currentCount + "/" + maxCapacity;
+
+
+
+    //JUICYNESS
+    //FADING WHEN UFO IS FAR
+
+
 
 }

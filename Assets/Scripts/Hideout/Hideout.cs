@@ -112,7 +112,7 @@ public class Hideout : MonoBehaviour
         }
 
         //UPDATE INFOS
-        myInfos.UpdateCounter(availSlots, numberOfHideoutSlots);
+        if(myInfos != null) myInfos.UpdateCounter(numberOfHideoutSlots-availSlots, numberOfHideoutSlots);
 
 
 
