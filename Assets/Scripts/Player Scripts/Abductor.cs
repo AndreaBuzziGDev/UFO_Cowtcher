@@ -155,12 +155,14 @@ public class Abductor : MonoBehaviour
 
                 //TODO: THIS CODE SHOULD BE MOVED SOMEWHERE ELSE
 
-                //FEATURES ASTEROID: COW DOESN'T GIVE BUFF/DEBUFF ON PICKUP, IT SPAWNS A METEOR SHOWER
                 //TODO: THIS CODE PORTION CAN BE SAFELY REFACTORED AND MOVED INSIDE THE Spawn METHOD OF ItemPickup.
                 GameObject prefabPickupItem = Instantiate(cow.CowTemplate.InstantlyDeployedItemPickup.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
                 prefabPickupItem.SetActive(false);
 
                 //TODO: DEVELOP A FUNCTIONALITY ON COWDEX + CowSO THAT ALLOWS TO IDENTIFY "MALICIOUS" COWS THAT DROP THEIR INTENDED ALTERATION ItemPickup AT THEIR OWN FEET WHEN CAPTURED.
+
+                //TODO: UPDATE SO THAT IT USES InstantlyDeployedItemPickup
+
                 if (cow.CowTemplate.UID.Equals(CowSO.UniqueID.R003Scarecow))
                 {
                     prefabPickupItem.GetComponent<ItemPickup>().Spawn(cow.transform.position);
