@@ -15,6 +15,12 @@ public class Asteroid : MonoBehaviour
     ///GAMEPLAY PROPERTIES
     [SerializeField] [Range(1f, 100f)] private float contentSpawnChance = 30;
     [SerializeField] [Range(1, 10)] private int quantityOnCapture = 5;//TODO: USE
+
+    ///GAMEPLAY PROPERTIES - ADDITIONAL CONTROL FEATURES
+    [SerializeField] private bool spawnsOnBadImpact;
+    [SerializeField] private float badImpactCoordY = 2;
+
+
     //TODO:
     //ADDITIONAL "FREE" ASTEROID CHANCE?
     //ADDITIONAL "FREE" ASTEROID MAX QUANTITY?
