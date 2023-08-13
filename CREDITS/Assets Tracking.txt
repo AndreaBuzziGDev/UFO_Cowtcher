@@ -12,6 +12,9 @@ Link: https://assetstore.unity.com/packages/3d/environments/low-poly-rock-pack-5
 ToonExplosion v1.0
 Link: https://assetstore.unity.com/packages/2d/textures-materials/2d-flat-explosion-66932
 
+Cartoon FX remaster Free
+Link: https://assetstore.unity.com/packages/vfx/particles/cartoon-fx-remaster-free-109565
+
 
 
 Cow shader for sprites to cast shadows
