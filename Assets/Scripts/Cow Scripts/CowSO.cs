@@ -72,6 +72,11 @@ public class CowSO : ScriptableObject
     public MPAbstractCalmSO movPatternCalm;
     public MPAbstractAlertSO movPatternAlert;
 
+
+    //EFFECTS
+    ///
+    public string effect = "None";
+
     ///INSTANTLY-PROVIDED STATUS ALTERATION
     public ItemPickup InstantlyDeployedItemPickup;
 
