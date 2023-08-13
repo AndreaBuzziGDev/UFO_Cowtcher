@@ -146,4 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adaf2a98b5ba9e488c23aa385863d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contentSpawnChance: 30
+  quantityOnCapture: 5
   myAsteroidContent: {fileID: 0}
+  additionalTranslate: {x: 0, y: 1, z: -1}
+  ImpactExplosion: {fileID: 0}
