@@ -15,7 +15,7 @@ MonoBehaviour:
   UID: 10
   rarity: 1
   Name: Kowbra
-  Description: 
+  Description: A sneaky cow that likes to move in a serpentine way.
   spawnProbability: 20
   FuelRecoveryAmount: 3
   AlertRadius: 4

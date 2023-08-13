@@ -15,7 +15,9 @@ MonoBehaviour:
   UID: 12
   rarity: 1
   Name: Cowttleman
-  Description: 
+  Description: 'A herdmastering cow.
+
+    It may lead a herd and make it move faster.'
   spawnProbability: 20
   FuelRecoveryAmount: 3
   AlertRadius: 8

@@ -15,7 +15,7 @@ MonoBehaviour:
   UID: 13
   rarity: 1
   Name: Scarecow
-  Description: 
+  Description: A dangerous cow that may harm the fuel reservoir.
   spawnProbability: 20
   FuelRecoveryAmount: 0
   AlertRadius: 6
