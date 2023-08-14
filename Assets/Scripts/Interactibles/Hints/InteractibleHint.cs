@@ -11,6 +11,7 @@ public class InteractibleHint : MonoInteractible
     ///
     [SerializeField] private float cooldown = 30;
     private float cooldownTimer;
+    public bool IsCoolingDown { get { return cooldownTimer > 0; } }
 
 
 
@@ -26,7 +27,14 @@ public class InteractibleHint : MonoInteractible
     // Update is called once per frame
     void Update()
     {
-        
+        if (IsCoolingDown)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+        else
+        {
+            Reset();
+        }
     }
 
 
@@ -34,14 +42,23 @@ public class InteractibleHint : MonoInteractible
     public override void Interact(GameObject interactionSource)
     {
         //TODO: THIS MIGHT MAKE GOOD USE OF AN INTERACTION CONDITION THAT ALLOWS FOR A BETTER CONTROL (NOT NEEDED FOR NOW)
+        if (!IsCoolingDown)
+        {
+            foreach (HintAbstract h in hints) h.Play();
 
-        foreach (HintAbstract h in hints) h.Play();
+            cooldownTimer = cooldown;
+        }
+
     }
 
 
 
     //FUNCTIONALITIES
+    public void Reset()
+    {
+        //TODO: RESET HINTS TO THEIR ORIGINAL STATE
 
+    }
 
 
 
