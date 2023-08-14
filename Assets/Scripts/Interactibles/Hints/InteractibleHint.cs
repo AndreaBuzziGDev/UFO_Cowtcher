@@ -9,7 +9,7 @@ public class InteractibleHint : MonoInteractible
     [SerializeField] private List<HintAbstract> hints = new();
 
     ///
-    [SerializeField] private float cooldown = 30;
+    [SerializeField] private float cooldownMax = 30;
     private float cooldownTimer;
     public bool IsCoolingDown { get { return cooldownTimer > 0; } }
 
@@ -46,7 +46,7 @@ public class InteractibleHint : MonoInteractible
         {
             foreach (HintAbstract h in hints) h.Play();
 
-            cooldownTimer = cooldown;
+            cooldownTimer = cooldownMax;
             hasReset = false;
         }
 
@@ -58,7 +58,7 @@ public class InteractibleHint : MonoInteractible
     public void Reset()
     {
         //APPLY RESET TO ALL HINTS
-        foreach (HintAbstract h in hints) h.Reset();
+        foreach (HintAbstract h in hints) h.ResetHint();
         hasReset = true;
     }
 

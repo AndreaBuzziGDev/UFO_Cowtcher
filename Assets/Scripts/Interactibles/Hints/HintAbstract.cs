@@ -9,7 +9,7 @@ public abstract class HintAbstract : MonoBehaviour
     public abstract void Play();
 
     ///RESET
-    public abstract void Reset();
+    public abstract void ResetHint();
 
 
 }

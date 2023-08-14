@@ -12,17 +12,17 @@ public class HintBirdTree : HintAbstract
 
     ///FEATURE SETTINGS
     
-    ///
+    ///TIME SPENT FLYING IN THE DIRECTION OF THE COW
     [SerializeField] private float usefulFlightTimerMax = 1.0f;
     private float usefulFlightTimer;
     public bool IsStillFlyingUseful { get { return usefulFlightTimer > 0; } }
 
-    ///
+    ///TIME SPENT FLYING OVERALL (FLYING UPWARDS) BEFORE THE BIRDS ARE DISABLED.
     [SerializeField] private float flightTimerMax = 5.0f;
     private float flightTimer;
     public bool IsStillFlying { get { return flightTimer > 0; } }
 
-    ///
+    ///SPEED
     [SerializeField] private float horizontalSpeed = 5.0f;
     [SerializeField] private float upwardsSpeed = 5.0f;
 
@@ -53,6 +53,7 @@ public class HintBirdTree : HintAbstract
     // Update is called once per frame
     void Update()
     {
+        //IF IT'S STILL WITHIN FIST TIMER
         if (IsStillFlyingUseful)
         {
             //TIMERS
@@ -62,7 +63,8 @@ public class HintBirdTree : HintAbstract
             //MOVE ABOVE TOWARDS COW
             rb.velocity = (horizontalSpeed * flightDirection) + (upwardsSpeed/ upwardsSpeed * Vector3.up);
 
-        } 
+        }
+        //IF IT'S STILL WITHIN GENERAL TIMER
         else if(IsStillFlying)
         {
             //TIMERS
@@ -82,6 +84,7 @@ public class HintBirdTree : HintAbstract
 
 
         //FLIP HORIZONTALLY
+        HorizontalFlip();
 
     }
 
@@ -91,7 +94,7 @@ public class HintBirdTree : HintAbstract
     {
         if (spriteRenderer != null)
         {
-            if (flightDirection.x > 0)
+            if (flightDirection.x >= 0)
             {
                 spriteRenderer.flipX = false;
             }
@@ -132,8 +135,10 @@ public class HintBirdTree : HintAbstract
     }
 
     ///RESET
-    public override void Reset()
+    public override void ResetHint()
     {
+        Debug.Log("HintBirdTree - ResetHint: " + this.name);
+
         //SET INITIAL POSITION
         this.transform.position = startingPosition;
 
@@ -143,6 +148,12 @@ public class HintBirdTree : HintAbstract
 
         //REMOVE TARGET COW
         targetCow = null;
+
+        //ZERO VELOCITY
+        rb.velocity = Vector3.zero;
+
+        Debug.Log("HintBirdTree - IsStillFlyingUseful: " + IsStillFlyingUseful);
+        Debug.Log("HintBirdTree - IsStillFlying: " + IsStillFlying);
 
         //ENABLE
         this.gameObject.SetActive(true);
@@ -154,11 +165,13 @@ public class HintBirdTree : HintAbstract
 
     //FUNCTIONALITIES
     ///FINDS AND SETS THE CLOSEST MATCHING TYPE COW
+    
+    //TODO: IF THIS IS MOVED INTO InteractibleHint THEN IT IS AN OPTIMIZATION
     private void findAndSetClosestCow()
     {
         Vector3 myPosition = this.transform.position;
 
-        //TODO: THIS CAN BE DRASTICALLY OPTIMIZED BY DEVELOPING A DEDICATED FUNCTIONALITY SOMEWHERE ELSE
+        //TODO: THIS CAN BE DRASTICALLY OPTIMIZED BY DEVELOPING A DEDICATED COW SEARCH BY UID FUNCTIONALITY SOMEWHERE ELSE
 
         foreach(Cow c in FindObjectsOfType<Cow>().ToList())
         {
