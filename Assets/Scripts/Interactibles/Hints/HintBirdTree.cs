@@ -125,7 +125,6 @@ public class HintBirdTree : HintAbstract
         else
         {
             flightDirection = UtilsRadius.RandomPositionOnCircleRadius(1).normalized;
-            Debug.Log("HintBirdTree - Random Direction: " + flightDirection);
         }
 
         //RESET TIMERS
@@ -137,8 +136,6 @@ public class HintBirdTree : HintAbstract
     ///RESET
     public override void ResetHint()
     {
-        Debug.Log("HintBirdTree - ResetHint: " + this.name);
-
         //SET INITIAL POSITION
         this.transform.position = startingPosition;
 
@@ -151,9 +148,6 @@ public class HintBirdTree : HintAbstract
 
         //ZERO VELOCITY
         rb.velocity = Vector3.zero;
-
-        Debug.Log("HintBirdTree - IsStillFlyingUseful: " + IsStillFlyingUseful);
-        Debug.Log("HintBirdTree - IsStillFlying: " + IsStillFlying);
 
         //ENABLE
         this.gameObject.SetActive(true);
