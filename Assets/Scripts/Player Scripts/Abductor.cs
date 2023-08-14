@@ -18,7 +18,7 @@ public class Abductor : MonoBehaviour
     [SerializeField] private GameObject innerCircle;
     [SerializeField] private LayerMask interactionPhysicsLayer;
     private int cowLayer;
-    private int pickupLayer;
+    private int interactionLayer;
 
 
 
@@ -46,7 +46,7 @@ public class Abductor : MonoBehaviour
 
         ///LAYER INITIALIZATION
         cowLayer = LayerMask.NameToLayer("CowPhysicsLayer");
-        pickupLayer = LayerMask.NameToLayer("ObjectInteractionPhysicsLayer");
+        interactionLayer = LayerMask.NameToLayer("ObjectInteractionPhysicsLayer");
 
     }
 
@@ -206,11 +206,14 @@ public class Abductor : MonoBehaviour
                     cowsInRange.Add(collider.transform.gameObject);
                 }
             }
-            else if (collider.transform.gameObject.layer == pickupLayer)
+            else if (collider.transform.gameObject.layer == interactionLayer)
             {
                 //INTERACT WITH MonoInteractible
 
-                collider.transform.gameObject.GetComponent<MonoInteractible>().Interact(this.gameObject);
+                MonoInteractible interactible = collider.transform.gameObject.GetComponent<MonoInteractible>();
+                Debug.Log("Abductor - interactible: " + interactible);
+
+                if(interactible != null) interactible.Interact(this.gameObject);
 
             }
         }
