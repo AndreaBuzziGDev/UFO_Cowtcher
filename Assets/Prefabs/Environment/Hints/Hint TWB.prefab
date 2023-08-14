@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: hints.Array.data[2]
       value: 
       objectReference: {fileID: 814572446851521558}
+    - target: {fileID: 5058187730780663137, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8997616730241943394, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
