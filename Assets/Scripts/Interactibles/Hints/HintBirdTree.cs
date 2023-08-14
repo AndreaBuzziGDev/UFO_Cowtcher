@@ -28,6 +28,7 @@ public class HintBirdTree : HintAbstract
 
 
     ///FLIGHT
+    private Vector3 startingPosition;
     private Vector3 flightDirection = Vector3.zero;
 
 
@@ -45,6 +46,7 @@ public class HintBirdTree : HintAbstract
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        startingPosition = this.transform.position;
     }
 
     // Update is called once per frame
@@ -112,7 +114,11 @@ public class HintBirdTree : HintAbstract
     public override void Reset()
     {
         //SET INITIAL POSITION
+        this.transform.position = startingPosition;
 
+        //ZERO-TIMERS
+        usefulFlightTimer = 0;
+        flightTimer = 0;
 
         //REMOVE TARGET COW
         targetCow = null;
