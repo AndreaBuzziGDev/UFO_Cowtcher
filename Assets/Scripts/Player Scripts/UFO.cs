@@ -113,4 +113,15 @@ public class UFO : MonoBehaviour
         fuelGainMultiplier = newMultiplier;
     }
 
+
+
+    //UTILITIES
+    public Vector3 GetPositionXZ()
+    {
+        return new Vector3(this.transform.position.x, 0, this.transform.position.z);
+    }
+
+
+
+
 }

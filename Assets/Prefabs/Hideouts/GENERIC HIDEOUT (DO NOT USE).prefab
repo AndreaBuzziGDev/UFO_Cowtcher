@@ -105,6 +105,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1446165033477130417}
     m_Modifications:
+    - target: {fileID: 95535862356598444, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
+      propertyPath: innerDistanceMinFading
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 95535862356598444, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
+      propertyPath: outerDistanceMaxFading
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6643198033141641687, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

@@ -303,3 +303,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cowLogo: {fileID: 8003573060261007220}
   hideoutCounter: {fileID: 4782559178037222879}
+  outerDistanceMaxFading: 3.5
