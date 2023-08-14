@@ -13,6 +13,8 @@ public class InteractibleHint : MonoInteractible
     private float cooldownTimer;
     public bool IsCoolingDown { get { return cooldownTimer > 0; } }
 
+    private bool hasReset;
+
 
 
     //METHODS
@@ -21,7 +23,7 @@ public class InteractibleHint : MonoInteractible
     // Start is called before the first frame update
     void Start()
     {
-        
+        hasReset = true;
     }
 
     // Update is called once per frame
@@ -31,10 +33,8 @@ public class InteractibleHint : MonoInteractible
         {
             cooldownTimer -= Time.deltaTime;
         }
-        else
-        {
-            Reset();
-        }
+        else if(!hasReset) Reset();
+
     }
 
 
@@ -47,6 +47,7 @@ public class InteractibleHint : MonoInteractible
             foreach (HintAbstract h in hints) h.Play();
 
             cooldownTimer = cooldown;
+            hasReset = false;
         }
 
     }
@@ -57,6 +58,7 @@ public class InteractibleHint : MonoInteractible
     public void Reset()
     {
         //TODO: RESET HINTS TO THEIR ORIGINAL STATE
+        hasReset = true;
 
     }
 
