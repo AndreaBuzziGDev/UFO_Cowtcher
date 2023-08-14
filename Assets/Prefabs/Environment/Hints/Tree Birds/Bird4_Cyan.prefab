@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3493047188374647941}
   - component: {fileID: 3339752475578934999}
   - component: {fileID: 8522379148634348479}
+  - component: {fileID: -3344924482315927036}
   m_Layer: 0
   m_Name: Bird4_Cyan
   m_TagString: Untagged
@@ -106,3 +107,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3344924482315927036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297405543558975068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942e4f63369f246438b56040d36678ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCowUID: 0
+  usefulFlightTimerMax: 5
+  flightTimerMax: 15
+  horizontalSpeed: 5
+  upwardsSpeed: 2
