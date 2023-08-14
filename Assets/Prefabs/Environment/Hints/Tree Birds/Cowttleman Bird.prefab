@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3614531980314593193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2761187782202646812}
+    m_Modifications:
+    - target: {fileID: 297405543558975068, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_Name
+      value: Cowttleman Birds
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659258
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.2588191
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+--- !u!4 &166824803314938668 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+  m_PrefabInstance: {fileID: 3614531980314593193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5975761866561337361
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3944596243743698854, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_Name
+      value: Cowttleman Bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8412616803345291533, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 166824803314938668}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+--- !u!4 &2761187782202646812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8412616803345291533, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+  m_PrefabInstance: {fileID: 5975761866561337361}
+  m_PrefabAsset: {fileID: 0}
