@@ -145,7 +145,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 41307646016299603, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: m_Name
-      value: Tree With Birds
+      value: Hint TWB
       objectReference: {fileID: 0}
     - target: {fileID: 4893135105638448859, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: hints.Array.size
