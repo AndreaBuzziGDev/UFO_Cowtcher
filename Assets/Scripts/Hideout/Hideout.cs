@@ -154,7 +154,7 @@ public class Hideout : MonoBehaviour
     //VACATE HIDEOUT
     private void VacateHideout(Cow interestedCow)
     {
-        Vector3 newCowPosition = UtilsRadius.Vector3OnUnitCircle(spawnRadius) + transform.position;
+        Vector3 newCowPosition = UtilsRadius.RandomPositionOnCircleRadius(spawnRadius) + transform.position;
         interestedCow.transform.position = newCowPosition;
         interestedCow.gameObject.SetActive(true);
     }

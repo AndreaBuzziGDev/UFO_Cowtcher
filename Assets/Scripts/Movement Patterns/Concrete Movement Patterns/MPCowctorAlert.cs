@@ -40,7 +40,7 @@ public class MPCowctorAlert : AbstractMovementAlert
         }
         else 
         {
-            result = UtilsRadius.Vector3OnUnitCircle(1).normalized;
+            result = UtilsRadius.RandomPositionOnCircleRadius(1).normalized;
             ResetTimers();
         }
         Debug.Log("result: " + result);

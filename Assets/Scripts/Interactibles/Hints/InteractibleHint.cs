@@ -6,7 +6,7 @@ public class InteractibleHint : MonoInteractible
 {
     //DATA
     ///HINTS
-    [SerializeField] private List<IHintable> hints = new();
+    [SerializeField] private List<IHint> hints = new();
 
     ///
     [SerializeField] private float cooldown = 30;
@@ -44,7 +44,7 @@ public class InteractibleHint : MonoInteractible
         //TODO: THIS MIGHT MAKE GOOD USE OF AN INTERACTION CONDITION THAT ALLOWS FOR A BETTER CONTROL (NOT NEEDED FOR NOW)
         if (!IsCoolingDown)
         {
-            foreach (IHintable h in hints) h.Play();
+            foreach (IHint h in hints) h.Play();
 
             cooldownTimer = cooldown;
             hasReset = false;

@@ -41,7 +41,7 @@ public class SpawnPoint : MonoBehaviour
     //FUNCTIONALITIES
     public void Spawn(Cow interestedCow)
     {
-        Vector3 newCowPosition = UtilsRadius.Vector3OnUnitCircle(spawnRadius) + transform.position;
+        Vector3 newCowPosition = UtilsRadius.RandomPositionOnCircleRadius(spawnRadius) + transform.position;
         interestedCow.transform.position = newCowPosition;
         interestedCow.gameObject.SetActive(true);
     }

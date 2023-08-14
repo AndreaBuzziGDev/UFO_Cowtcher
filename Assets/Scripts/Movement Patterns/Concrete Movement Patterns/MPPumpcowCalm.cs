@@ -32,7 +32,7 @@ public class MPPumpcowCalm : AbstractMovementPattern
         if (dashDuration <= 0f)
         {
             ResetTimers();
-            result = UtilsRadius.Vector3OnUnitCircle(1);
+            result = UtilsRadius.RandomPositionOnCircleRadius(1);
         }
 
         return result.normalized * dashSpeed * dashDuration;

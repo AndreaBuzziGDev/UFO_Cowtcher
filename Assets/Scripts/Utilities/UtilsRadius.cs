@@ -5,7 +5,7 @@ using UnityEngine;
 public class UtilsRadius
 {
 
-    public static Vector3 Vector3OnUnitCircle(float radius)
+    public static Vector3 RandomPositionOnCircleRadius(float radius)
     {
         var angle = Random.value * (2f * Mathf.PI);
         var direction = new Vector3(Mathf.Cos(angle), 0f, Mathf.Sin(angle));

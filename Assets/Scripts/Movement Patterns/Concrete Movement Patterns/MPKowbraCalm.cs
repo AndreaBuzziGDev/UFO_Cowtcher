@@ -44,7 +44,7 @@ public class MPKowbraCalm : AbstractMovementPattern
 
         if (timerSameDirectionMovement <= 0.0f)
         {
-            result = UtilsRadius.Vector3OnUnitCircle(1).normalized;
+            result = UtilsRadius.RandomPositionOnCircleRadius(1).normalized;
             ResetSameDirectionTimer();
         }
 

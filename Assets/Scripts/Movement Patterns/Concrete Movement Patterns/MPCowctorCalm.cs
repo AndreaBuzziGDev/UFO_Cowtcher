@@ -33,7 +33,7 @@ public class MPCowctorCalm : AbstractMovementPattern
         {
             ResetTimers();
 
-            result = UtilsRadius.Vector3OnUnitCircle(1).normalized;
+            result = UtilsRadius.RandomPositionOnCircleRadius(1).normalized;
         }
 
         //ADDED A MARGIN TO AVOID VECTOR 0 AS A RESULT
