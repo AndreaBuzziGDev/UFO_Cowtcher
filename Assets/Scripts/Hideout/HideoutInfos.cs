@@ -51,7 +51,6 @@ public class HideoutInfos : MonoBehaviour
     {
         hideoutCounter.text = currentCount + "/" + maxCapacity;
         isHosting = currentCount > 0;
-        Debug.Log("isHosting: " + isHosting);
     }
 
 
