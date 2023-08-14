@@ -57,9 +57,9 @@ public class InteractibleHint : MonoInteractible
     //FUNCTIONALITIES
     public void Reset()
     {
-        //TODO: RESET HINTS TO THEIR ORIGINAL STATE
+        //APPLY RESET TO ALL HINTS
+        foreach (IHint h in hints) h.Reset();
         hasReset = true;
-
     }
 
 
