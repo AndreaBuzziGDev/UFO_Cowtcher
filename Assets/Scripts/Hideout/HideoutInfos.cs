@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class HideoutInfos : MonoBehaviour
 {
     //DATA
+    ///RENDERER
+    Renderer rend;
+
     ///UI REFERENCE
     [SerializeField] private SpriteRenderer cowLogo;
     [SerializeField] private TMPro.TextMeshPro hideoutCounter;
@@ -21,7 +24,8 @@ public class HideoutInfos : MonoBehaviour
     [SerializeField] private float maxFadingXZDistance = 3;
     [SerializeField] private float minFadingXZDistance = 1;
 
-    //CURRENT FADING
+    //FADING TRANSPARENCE
+    [SerializeField] private float opacity = 0.1f;
 
 
 
@@ -32,6 +36,7 @@ public class HideoutInfos : MonoBehaviour
     //START
     private void Start()
     {
+        rend = gameObject.GetComponent<Renderer>();
         myUFO = GameController.Instance.FindUFOAnywhere();
     }
 
@@ -51,7 +56,7 @@ public class HideoutInfos : MonoBehaviour
     //FADING WHEN UFO IS FAR
     private void HandleFading()
     {
-
+        rend.material.color = new Color(255, 255, 255, opacity);
     }
 
 }
