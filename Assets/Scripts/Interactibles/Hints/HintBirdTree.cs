@@ -37,6 +37,7 @@ public class HintBirdTree : HintAbstract
 
     ///TECHNICAL DATA
     Rigidbody rb;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
 
 
@@ -78,6 +79,18 @@ public class HintBirdTree : HintAbstract
             }
 
         }
+
+
+        //FLIP HORIZONTALLY
+        if (flightDirection.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
+
     }
 
 

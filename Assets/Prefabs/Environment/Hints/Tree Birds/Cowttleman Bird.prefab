@@ -62,6 +62,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
   m_PrefabInstance: {fileID: 3614531980314593193}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &2049219752448876926 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3339752475578934999, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
+  m_PrefabInstance: {fileID: 3614531980314593193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5975761866561337361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,6 +79,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowttleman Bird
       objectReference: {fileID: 0}
+    - target: {fileID: 4425771495017324238, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 2049219752448876926}
+    - target: {fileID: 4425771495017324238, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 2049219752448876926}
     - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
