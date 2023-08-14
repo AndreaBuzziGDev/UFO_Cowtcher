@@ -59,6 +59,7 @@ public class HintBirdTree : HintAbstract
             flightTimer -= Time.deltaTime;
 
             //MOVE ABOVE TOWARDS COW
+            flightDirection = GetDirectionToTargetCow();
             rb.velocity = horizontalSpeed * flightDirection;
 
         } 
@@ -94,9 +95,7 @@ public class HintBirdTree : HintAbstract
         //SET TARGET DIRECTION
         if(targetCow != null)
         {
-            Vector3 cowPos = targetCow.transform.position;
-            flightDirection = (new Vector3(cowPos.x, this.transform.position.y, cowPos.z)).normalized;
-            Debug.Log("HintBirdTree - Cow Direction: " + flightDirection);
+            flightDirection = GetDirectionToTargetCow();
         }
         else
         {
@@ -166,6 +165,23 @@ public class HintBirdTree : HintAbstract
         Debug.Log("HintBirdTree - targetCow: " + targetCow);
 
     }
+
+
+    ///GET DIRECTION TO THE TARGETED COW
+    public Vector3 GetDirectionToTargetCow()
+    {
+        if(targetCow != null)
+        {
+            Vector3 cowPos = targetCow.transform.position;
+            Vector3 elevatedCowPosition = (new Vector3(cowPos.x, this.transform.position.y, cowPos.z)).normalized;
+            return (elevatedCowPosition - this.transform.position);
+        }
+        else
+        {
+            return flightDirection;
+        }
+    }
+
 
 
 }
