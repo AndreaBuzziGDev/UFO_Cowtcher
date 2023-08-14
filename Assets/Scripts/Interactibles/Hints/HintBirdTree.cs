@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HintBirdTree : HintAbstract
+public class HintBirdTree : MonoBehaviour, IHintable
 {
     //DATA
 
@@ -20,6 +20,13 @@ public class HintBirdTree : HintAbstract
     {
         
     }
+
+    //IMPLEMENTING HintAbstract
+    public void Play()
+    {
+
+    }
+
 
 
     //FUNCTIONALITIES
