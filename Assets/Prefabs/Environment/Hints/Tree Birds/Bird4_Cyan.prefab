@@ -121,10 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCowUID: 14
-  usefulFlightTimerMax: 5
-  flightTimerMax: 15
-  horizontalSpeed: 5
-  upwardsSpeed: 2
+  usefulFlightTimerMax: 1
+  flightTimerMax: 5
+  horizontalSpeed: 7.5
+  upwardsSpeed: 10
 --- !u!54 &-4986194591738754747
 Rigidbody:
   m_ObjectHideFlags: 0

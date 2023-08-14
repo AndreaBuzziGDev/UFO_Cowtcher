@@ -13,7 +13,7 @@ public class HintBirdTree : HintAbstract
     ///FEATURE SETTINGS
     
     ///
-    [SerializeField] private float usefulFlightTimerMax = 2.0f;
+    [SerializeField] private float usefulFlightTimerMax = 1.0f;
     private float usefulFlightTimer;
     public bool IsStillFlyingUseful { get { return usefulFlightTimer > 0; } }
 
@@ -24,7 +24,7 @@ public class HintBirdTree : HintAbstract
 
     ///
     [SerializeField] private float horizontalSpeed = 5.0f;
-    [SerializeField] private float upwardsSpeed = 4.0f;
+    [SerializeField] private float upwardsSpeed = 5.0f;
 
 
     ///FLIGHT
@@ -59,7 +59,7 @@ public class HintBirdTree : HintAbstract
             flightTimer -= Time.deltaTime;
 
             //MOVE ABOVE TOWARDS COW
-            rb.velocity = horizontalSpeed * flightDirection;
+            rb.velocity = (horizontalSpeed * flightDirection) + (upwardsSpeed/ upwardsSpeed * Vector3.up);
 
         } 
         else if(IsStillFlying)
@@ -67,7 +67,7 @@ public class HintBirdTree : HintAbstract
             //TIMERS
             flightTimer -= Time.deltaTime;
 
-            //FLY UPWARDS
+            //FLY UPWARDS Intensely
             rb.velocity = (horizontalSpeed * flightDirection) + (upwardsSpeed * Vector3.up);
 
             //DISAPPEAR
