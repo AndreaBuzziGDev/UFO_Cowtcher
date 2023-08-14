@@ -134,9 +134,6 @@ public class HintBirdTree : HintAbstract
 
         foreach(Cow c in FindObjectsOfType<Cow>().ToList())
         {
-            //FINDING COWS OF TYPE
-            Debug.Log("HintBirdTree - Finding Cows: " + targetCowUID);
-
             //CHECK ONLY ACTIVE COWS OF MATCHING TYPE
             if(c.CowTemplate.UID == targetCowUID && c.gameObject.activeSelf)
             {
@@ -157,6 +154,10 @@ public class HintBirdTree : HintAbstract
                 }
             }
         }
+
+        //FINDING COWS OF TYPE
+        Debug.Log("HintBirdTree - targetCow: " + targetCow);
+
     }
 
 

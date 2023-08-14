@@ -211,7 +211,6 @@ public class Abductor : MonoBehaviour
                 //INTERACT WITH MonoInteractible
 
                 MonoInteractible interactible = collider.transform.gameObject.GetComponent<MonoInteractible>();
-                Debug.Log("Abductor - interactible: " + interactible);
 
                 if(interactible != null) interactible.Interact(this.gameObject);
 
