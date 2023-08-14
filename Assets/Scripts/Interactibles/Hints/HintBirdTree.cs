@@ -65,16 +65,17 @@ public class HintBirdTree : HintAbstract
             //TIMERS
             flightTimer -= Time.deltaTime;
 
-            //FLY UPWARDS AND DISAPPEAR
+            //FLY UPWARDS
             rb.velocity = (horizontalSpeed * flightDirection) + (upwardsSpeed * Vector3.up);
 
-        }
-        else
-        {
-            //Disable
-            this.gameObject.SetActive(false);
-        }
+            //DISAPPEAR
+            if (!IsStillFlying)
+            {
+                //Disable
+                this.gameObject.SetActive(false);
+            }
 
+        }
     }
 
 
