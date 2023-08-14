@@ -13,18 +13,18 @@ public class HintBirdTree : HintAbstract
     ///FEATURE SETTINGS
     
     ///
-    [SerializeField] private float usefulFlightTimerMax = 5.0f;
+    [SerializeField] private float usefulFlightTimerMax = 2.0f;
     private float usefulFlightTimer;
     public bool IsStillFlyingUseful { get { return usefulFlightTimer > 0; } }
 
     ///
-    [SerializeField] private float flightTimerMax = 15.0f;
+    [SerializeField] private float flightTimerMax = 5.0f;
     private float flightTimer;
     public bool IsStillFlying { get { return flightTimer > 0; } }
 
     ///
     [SerializeField] private float horizontalSpeed = 5.0f;
-    [SerializeField] private float upwardsSpeed = 2.0f;
+    [SerializeField] private float upwardsSpeed = 4.0f;
 
 
     ///FLIGHT
