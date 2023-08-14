@@ -25,6 +25,7 @@ public class HintBirdTree : HintAbstract
     ///SPEED
     [SerializeField] private float horizontalSpeed = 5.0f;
     [SerializeField] private float upwardsSpeed = 5.0f;
+    [SerializeField] private float targetDirectionSpread = 1.0f;
 
 
     ///FLIGHT
@@ -203,6 +204,7 @@ public class HintBirdTree : HintAbstract
         {
             Vector3 cowPos = targetCow.transform.position;
             Vector3 elevatedCowPosition = new Vector3(cowPos.x, this.transform.position.y, cowPos.z);
+            elevatedCowPosition = elevatedCowPosition + UtilsRadius.RandomPositionOnCircleRadius(targetDirectionSpread);
             return (elevatedCowPosition - this.transform.position).normalized;
         }
         else

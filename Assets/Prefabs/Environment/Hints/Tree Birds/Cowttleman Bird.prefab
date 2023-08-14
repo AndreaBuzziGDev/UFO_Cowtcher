@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 2049219752448876926}
+    - target: {fileID: 4425771495017324238, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: targetDirectionSpread
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8425133632224992487, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
