@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IHint
+public abstract class HintAbstract : MonoBehaviour
 {
     //FUNCTIONALITIES
     ///PLAY
-    public void Play();
+    public abstract void Play();
 
     ///RESET
-    public void Reset();
+    public abstract void Reset();
 
 
 }

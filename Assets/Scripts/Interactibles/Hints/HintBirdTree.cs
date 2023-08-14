@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class HintBirdTree : MonoBehaviour, IHint
+public class HintBirdTree : HintAbstract
 {
     //DATA
     ///TARGET COW
@@ -84,7 +84,7 @@ public class HintBirdTree : MonoBehaviour, IHint
 
     //IMPLEMENTING HintAbstract
     ///PLAY
-    public void Play()
+    public override void Play()
     {
         findAndSetClosestCow();
 
@@ -108,7 +108,7 @@ public class HintBirdTree : MonoBehaviour, IHint
     }
 
     ///RESET
-    public void Reset()
+    public override void Reset()
     {
         //SET INITIAL POSITION
 
