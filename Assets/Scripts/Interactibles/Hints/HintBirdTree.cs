@@ -144,7 +144,7 @@ public class HintBirdTree : HintAbstract
             //CHECK ONLY ACTIVE COWS OF MATCHING TYPE
             if(c.CowTemplate.UID == targetCowUID && c.gameObject.activeSelf)
             {
-                if(targetCow = null)
+                if(targetCow == null)
                 {
                     targetCow = c;
                 }
