@@ -11,17 +11,17 @@ public class HideoutInfos : MonoBehaviour
     [SerializeField] private TMPro.TextMeshPro hideoutCounter;
 
 
+
+
     ///JUICYNESS
-    //FADE IN
-
-
-    //FADE OUT
-
-
-    //FADE OUT TIMER
-
+    //UFO
+    private UFO myUFO;
 
     //FADE DISTANCE
+    [SerializeField] private float maxFadingXZDistance = 3;
+    [SerializeField] private float minFadingXZDistance = 1;
+
+    //CURRENT FADING
 
 
 
@@ -30,10 +30,16 @@ public class HideoutInfos : MonoBehaviour
     //METHODS
     //...
     //START
-    //TODO: FIND UFO
+    private void Start()
+    {
+        myUFO = GameController.Instance.FindUFOAnywhere();
+    }
 
     //UPDATE
-    //
+    private void Update()
+    {
+        HandleFading();
+    }
 
 
     //FUNCTIONALITIES
@@ -43,7 +49,9 @@ public class HideoutInfos : MonoBehaviour
 
     //JUICYNESS
     //FADING WHEN UFO IS FAR
+    private void HandleFading()
+    {
 
-
+    }
 
 }
