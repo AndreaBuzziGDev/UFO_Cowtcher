@@ -11,7 +11,7 @@ public class HideoutInfos : MonoBehaviour
     [SerializeField] private TMPro.TextMeshPro hideoutCounter;
 
 
-    ///JUICYNESS
+    ///JUICYNESS - FADING
     //UFO
     private UFO myUFO;
 
@@ -22,6 +22,9 @@ public class HideoutInfos : MonoBehaviour
     //FADE COLOR
     private Color cowLogoBaseColor;
     private Color textInfoBaseColor;
+
+    //IS HOSTING?
+    private bool isHosting;
 
 
 
@@ -44,7 +47,12 @@ public class HideoutInfos : MonoBehaviour
 
 
     //FUNCTIONALITIES
-    public void UpdateCounter(int currentCount, int maxCapacity) => hideoutCounter.text = currentCount + "/" + maxCapacity;
+    public void UpdateCounter(int currentCount, int maxCapacity)
+    {
+        hideoutCounter.text = currentCount + "/" + maxCapacity;
+        isHosting = currentCount > 0;
+        Debug.Log("isHosting: " + isHosting);
+    }
 
 
 
@@ -56,29 +64,39 @@ public class HideoutInfos : MonoBehaviour
         float distanceXZ = (GetPositionXZ() - myUFO.GetPositionXZ()).magnitude;
 
         //
-        if (distanceXZ > outerDistanceMaxFading)
+        if (isHosting)
         {
-
-            cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, 0);
-            hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, 0);
+            //
+            cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, 1);
+            hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, 1);
         }
         else
         {
-            //
-            float baseDistanceDiff = outerDistanceMaxFading - innerDistanceMinFading;
 
-            //
-            float ufoDistanceDiff = (distanceXZ < innerDistanceMinFading) ? innerDistanceMinFading : distanceXZ;
-            
-            //
-            float differenceBetweenTwo = outerDistanceMaxFading - ufoDistanceDiff;
+            if (distanceXZ > outerDistanceMaxFading)
+            {
 
-            //
-            float opacity = 1 - ((baseDistanceDiff - differenceBetweenTwo)/ baseDistanceDiff);
+                cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, 0);
+                hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, 0);
+            }
+            else
+            {
+                //
+                float baseDistanceDiff = outerDistanceMaxFading - innerDistanceMinFading;
 
-            //
-            cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, opacity);
-            hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, opacity);
+                //
+                float ufoDistanceDiff = (distanceXZ < innerDistanceMinFading) ? innerDistanceMinFading : distanceXZ;
+
+                //
+                float differenceBetweenTwo = outerDistanceMaxFading - ufoDistanceDiff;
+
+                //
+                float opacity = 1 - ((baseDistanceDiff - differenceBetweenTwo) / baseDistanceDiff);
+
+                //
+                cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, opacity);
+                hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, opacity);
+            }
         }
 
     }
@@ -90,6 +108,5 @@ public class HideoutInfos : MonoBehaviour
     {
         return new Vector3(this.transform.position.x, 0, this.transform.position.z);
     }
-
 
 }
