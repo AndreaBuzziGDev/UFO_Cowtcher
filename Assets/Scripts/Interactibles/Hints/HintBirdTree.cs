@@ -82,16 +82,26 @@ public class HintBirdTree : HintAbstract
 
 
         //FLIP HORIZONTALLY
-        if (flightDirection.x > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-        else
-        {
-            spriteRenderer.flipX = true;
-        }
 
     }
+
+
+    //HORIZONTAL FLIP
+    private void HorizontalFlip()
+    {
+        if (spriteRenderer != null)
+        {
+            if (flightDirection.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+    }
+
 
 
 
