@@ -6,7 +6,7 @@ using System.Linq;
 public class MoossionsPanel : MonoBehaviour
 {
     //DATA
-    List<MoossionsInformations> informations = new();
+    private List<MoossionsInformations> informations = new();
 
 
 
