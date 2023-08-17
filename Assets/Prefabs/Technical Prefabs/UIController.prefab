@@ -412,6 +412,7 @@ MonoBehaviour:
   PauseGamePanel: {fileID: 2999353713454031584}
   GameOverPanel: {fileID: 980551416422809614}
   CowdexPanel: {fileID: 4799944364165482422}
+  MoossionsPanel: {fileID: 0}
   gameplayInputCanvas: {fileID: 3456844090314703}
   igPanel: {fileID: 5171458789816014601}
 --- !u!1 &1922923966089697775
@@ -2296,7 +2297,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6678651837923775677}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ShowCowdex
+        m_MethodName: ShowMoossions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
