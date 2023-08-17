@@ -16,6 +16,7 @@ public class UIController : MonoSingleton<UIController>
     [SerializeField] private GameObject PauseGamePanel;
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject CowdexPanel;
+    [SerializeField] private GameObject MoossionsPanel;
 
     [SerializeField] private GameObject gameplayInputCanvas;
     public GameObject GameplayInputCanvas { get { return gameplayInputCanvas; } }
@@ -41,12 +42,15 @@ public class UIController : MonoSingleton<UIController>
     public void Initialize()
     {
         //
-        AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel, CowdexPanel };
+        AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel, CowdexPanel, MoossionsPanel };
         HideAllMenuPanels();
         IGPanel.HighScoreBar.ResetScore();
 
         //INITIALIZE COWDEX PAGES
         CowdexPanel.GetComponent<CowdexGUI>().Initialization();
+
+        //INITIALIZE MOOSSIONS VISUALLY
+
 
     }
 
@@ -89,6 +93,11 @@ public class UIController : MonoSingleton<UIController>
     //COWDEX
     public void ShowCowdex() => CowdexPanel.SetActive(true);
     public void HideCowdex() => CowdexPanel.SetActive(false);
+
+
+    //MOOSSIONS
+    public void ShowMoossions() => MoossionsPanel.SetActive(true);
+    public void HideMoossions() => MoossionsPanel.SetActive(false);
 
     //JOYSTICK
     public void ShowJoystick(Vector2 position)
