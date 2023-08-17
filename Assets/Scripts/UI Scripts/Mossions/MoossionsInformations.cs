@@ -19,6 +19,13 @@ public class MoossionsInformations : MonoBehaviour
 
     //TODO: DEVELOP GUI UPDATE FUNCTIONALITIES
 
+    //PLACEHOLDER FUNCTIONALITY
+    private void Start()
+    {
+        MoossionDescription.text = "Desc Replaced by Code.";
+        MoossionProgressBar.fillAmount = 0.5f;
+    }
+
 
 
 }
