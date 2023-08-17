@@ -398,7 +398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MOSSIONS
+  m_text: MOOSSIONS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -899,7 +899,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4668805505544047422, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
       propertyPath: m_Name
-      value: Mossion Informations
+      value: Moossion Informations
       objectReference: {fileID: 0}
     - target: {fileID: 7756075901344333981, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
       propertyPath: m_Pivot.x
