@@ -31,6 +31,7 @@ public class MoossionsPanel : MonoBehaviour
 
         //APPLY UPDATED INFO TO MoossionsInformations
 
+        //TODO: DEVELOP
 
     }
 
