@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoossionsInformations : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //DATA
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    ///GUI REFERENCES
+    [SerializeField] private Image MoossionTypeIcon;
+    [SerializeField] private TMPro.TextMeshProUGUI MoossionDescription;
+    [SerializeField] private Image MoossionProgressBar;
+
+
+    //METHODS
+
+    //FUNCTIONALITIES
+
+    //TODO: DEVELOP GUI UPDATE FUNCTIONALITIES
+
+
+
 }
