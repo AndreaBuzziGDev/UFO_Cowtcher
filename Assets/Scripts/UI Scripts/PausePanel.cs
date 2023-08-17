@@ -31,8 +31,33 @@ public class PausePanel : MonoBehaviour
         QuitSubPanel.gameObject.SetActive(false);
     }
 
+    //OPEN MOOSSIONS
+    public void OpenMoossions()
+    {
+        //DISABLE GUI STUFF
+        PauseTitle.gameObject.SetActive(false);
+        Buttons.gameObject.SetActive(false);
+
+        //ENABLE GUI STUFF
+        UIController.Instance.ShowMoossions();
+    }
+
+    public void CloseMoossions()
+    {
+        //ENABLE GUI STUFF
+        PauseTitle.gameObject.SetActive(true);
+        Buttons.gameObject.SetActive(true);
+
+        //DISABLE GUI STUFF
+        UIController.Instance.HideMoossions();
+    }
+
+
+
+
 
     //OPEN COWDEX
+    //TODO: THIS IS NOT USED, BECAUSE THE GUI IS USING UICONTROLLER INSTEAD
     public void OpenCowdex() => Resume();//TODO: CHANGE
 
     //UNPAUSE
