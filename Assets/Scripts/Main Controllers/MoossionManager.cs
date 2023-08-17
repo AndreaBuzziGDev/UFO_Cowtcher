@@ -6,6 +6,8 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 {
     //DATA
 
+    [SerializeField] private int completedMoossionCount;
+
 
 
     //METHODS
@@ -22,6 +24,19 @@ public class MoossionManager : MonoSingleton<MoossionManager>
     {
         
     }
+
+
+
+    //INITIALIZATION
+    public void Initialization()
+    {
+        //TODO: IMPLEMENT
+
+        //1 - CREATE A LIST OF MOOSSIONS
+
+
+    }
+
 
 
     //FUNCTIONALITIES
