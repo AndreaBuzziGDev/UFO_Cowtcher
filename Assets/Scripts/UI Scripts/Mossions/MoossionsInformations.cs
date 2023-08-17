@@ -27,5 +27,17 @@ public class MoossionsInformations : MonoBehaviour
     }
 
 
+    //
+    public void UpdateInfos()
+    {
+        //TODO: DEVELOP
+
+
+        //TODO: CHANGE METHOD SIGNATURE
+
+
+
+    }
+
 
 }
