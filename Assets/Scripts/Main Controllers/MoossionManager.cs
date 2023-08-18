@@ -63,17 +63,16 @@ public class MoossionManager : MonoSingleton<MoossionManager>
     // Update is called once per frame
     void Update()
     {
-        foreach(Moossion moo in activeMoossions)
+        for(int i=0; i<activeMoossions.Count; i++)
         {
+            Moossion moo = activeMoossions[i];
             if (moo.IsComplete)
             {
                 //COMPLETE MOOSSION
                 CompleteMoossion(moo);
 
-
                 //ASSIGN NEW MOOSSION
-                //TODO: COMPLETE
-                //moo = ...
+                activeMoossions[i] = CreateRandomMoossion();
             }
         }
     }
@@ -83,13 +82,15 @@ public class MoossionManager : MonoSingleton<MoossionManager>
     //INITIALIZATION
     public void Initialization()
     {
+        //IN THIS VERSION, SYSTEM STARTS WITH A DEFAULT SETUP OF MOOSSIONS
+        moossionOne = FactoryMoossion(Moossion.Type.CaptureGeneric);
+
+        moossionTwo = FactoryMoossion(Moossion.Type.CaptureSpecific);
+
+        moossionThree = FactoryMoossion(Moossion.Type.CaptureBuff);
+
+        //LISTING MOOSSIONS
         activeMoossions = new List<Moossion> { moossionOne, moossionTwo, moossionThree };
-
-        //TODO: IMPLEMENT
-
-        //1 - CREATE A LIST OF MOOSSIONS
-
-
     }
 
 
@@ -127,15 +128,14 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 
     }
 
-    public Moossion CreateMoossion()
+    public Moossion CreateRandomMoossion()
     {
-        Moossion.Type chosenType = randomlyChooseType();
+        Moossion.Type chosenType = RandomlyChooseType();
 
         Moossion result = FactoryMoossion(chosenType);
 
-        //DECREASE COUNTER OF THAT TYPE
+        //INCREASE COUNTER OF THAT TYPE
         HandleCount(result.MoossionType, true);
-
 
         return result;
     }
@@ -143,7 +143,7 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 
 
     //UTILITIES
-    public Moossion.Type randomlyChooseType()
+    public Moossion.Type RandomlyChooseType()
     {
         Moossion.Type chosenType;
         while (true)
