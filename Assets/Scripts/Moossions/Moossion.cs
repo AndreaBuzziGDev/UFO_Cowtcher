@@ -20,6 +20,7 @@ public abstract class Moossion
     ///
     private string name;
     public static int MoossionCounter = 1;
+    public string Name { get { return name; } }
 
     ///
     private Type moossionType = 0;

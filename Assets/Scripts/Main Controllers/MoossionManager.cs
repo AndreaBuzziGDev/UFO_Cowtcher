@@ -103,6 +103,12 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 
         //LISTING MOOSSIONS
         activeMoossions = new List<Moossion> { moossionOne, moossionTwo, moossionThree };
+
+        foreach(Moossion moo in activeMoossions)
+        {
+            Debug.Log("MoossionManager - Initial Active moossion: " + moo.Name);
+        }
+
     }
 
 
