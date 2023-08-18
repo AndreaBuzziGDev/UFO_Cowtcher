@@ -33,6 +33,9 @@ public class ScoreBar : MonoBehaviour
         scoreText.text = scoreValue.ToString();
     }
 
+
+    //TODO: NICE TO HAVE FEATURE THAT ALLOWS TO KNOW THE "SOURCE" OF A SCORE INCREASE
+
     public void AddScore(int delta)
     {
         scoreValue += delta;

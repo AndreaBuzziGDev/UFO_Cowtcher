@@ -86,6 +86,7 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 
 
         //ADD SCORE TO THE SCOREBOARD
+        UIController.Instance.IGPanel.HighScoreBar.AddScore(score);
 
 
     }
