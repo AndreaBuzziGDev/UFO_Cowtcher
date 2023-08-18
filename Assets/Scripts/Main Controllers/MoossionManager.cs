@@ -255,6 +255,7 @@ public class MoossionManager : MonoSingleton<MoossionManager>
             //
             case Moossion.Type.CaptureGeneric:
                 //TODO: RANDOMIZE QUANTITY
+                //int randomQuantity = 
                 return new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
             case Moossion.Type.CaptureSpecific:
                 //TODO: RANDOMIZE QUANTITY
@@ -263,12 +264,14 @@ public class MoossionManager : MonoSingleton<MoossionManager>
             //
             case Moossion.Type.CaptureBuff:
                 //TODO: RANDOMIZE QUANTITY
+
                 //TODO: RANDOMIZE TARGET BUFF
                 //TODO: MOVE THE SOUGHT BUFF AWAY, USE ANOTHER CLASS' VALUE (RELATED TO BUFFS)
                 return new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.FuelGainBoost);
             //
             case Moossion.Type.CaptureTurret:
                 //TODO: RANDOMIZE QUANTITY
+
                 //TODO: RANDOMIZE TARGET TURRET
                 //TODO: MOVE THE SOUGHT TURRET AWAY, USE ANOTHER CLASS' VALUE (RELATED TO TURRETS)
                 return new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.SlowingTurret);

@@ -55,14 +55,35 @@ public abstract class Moossion
 
 
     //METHODS
+    ///PROGRESSION HANDLING
     public void Progress(int progressQuantity)
     {
         currentQuantity += progressQuantity;
     }
 
 
-    //
-    public abstract int GetDifficultyBasedRandomQuantity(int difficultyCoefficient);
+    ///DIFFICULTY REGULATION
+    public static int GetDifficultyBasedRandomQuantity(int difficultyCoefficient, Type handledType)
+    {
+        switch (handledType)
+        {
+            case Type.CaptureGeneric:
+                return 2 + difficultyCoefficient;
+
+            case Type.CaptureSpecific:
+                return 1 + difficultyCoefficient;
+
+            case Type.CaptureBuff:
+                return 2 + difficultyCoefficient;
+
+            case Type.CaptureTurret:
+                return 3 + difficultyCoefficient;
+
+            default:
+                return 1;
+        }
+    }
+    
     
 
 
