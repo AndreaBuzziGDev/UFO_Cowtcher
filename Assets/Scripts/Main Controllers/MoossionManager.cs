@@ -32,10 +32,6 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 
 
 
-    ///STRUCTURAL DATA (DICTIONARIES)
-    //private Dictionary<>
-
-
     ///STRUCTURAL DATA (ACTIVE MOOSSIONS)
 
     ///1

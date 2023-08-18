@@ -60,4 +60,26 @@ public abstract class Moossion
         currentQuantity += progressQuantity;
     }
 
+
+    //
+    public abstract int GetDifficultyBasedRandomQuantity(int difficultyCoefficient);
+    
+
+
+
+    //UTILITIES
+    public static int GetDifficultyCoefficient()
+    {
+        int moossionCount = MoossionManager.Instance.CompletedMoossionCount;
+
+        int moossionDifficultyCoefficient = (int) moossionCount / 3;
+
+        if (moossionDifficultyCoefficient > 5) moossionDifficultyCoefficient = 5;
+
+        Debug.Log("Moossion - moossionDifficultyCoefficient: " + moossionDifficultyCoefficient);
+
+        return moossionDifficultyCoefficient;
+    }
+
+
 }

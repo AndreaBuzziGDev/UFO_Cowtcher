@@ -14,4 +14,17 @@ public class MoossCaptGeneric : Moossion
 
     }
 
+
+
+    //METHODS
+
+    public override int GetDifficultyBasedRandomQuantity(int difficultyCoefficient)
+    {
+        //TODO: SOME DEGREE OF RANDOMIZATION
+
+
+        //
+        return 2 + difficultyCoefficient;
+    }
+
 }

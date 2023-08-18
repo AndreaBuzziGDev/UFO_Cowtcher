@@ -15,4 +15,19 @@ public class MoossCaptSpecific : Moossion
         this.targetUID = cowUID;
     }
 
+
+
+    //METHODS
+
+    public override int GetDifficultyBasedRandomQuantity(int difficultyCoefficient)
+    {
+        //TODO: SOME DEGREE OF RANDOMIZATION
+
+        //TODO: SOME DEGREE OF CONTROL (QUANTITY IS ADJUSTED BASED ON RARITY)
+
+
+        //
+        return 1 + difficultyCoefficient;
+    }
+
 }
