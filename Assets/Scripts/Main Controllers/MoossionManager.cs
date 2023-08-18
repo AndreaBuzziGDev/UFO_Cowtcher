@@ -5,8 +5,10 @@ using UnityEngine;
 public class MoossionManager : MonoSingleton<MoossionManager>
 {
     //DATA
-
     [SerializeField] private int completedMoossionCount;
+
+    //
+
 
 
 
