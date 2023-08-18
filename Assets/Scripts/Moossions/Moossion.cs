@@ -11,12 +11,16 @@ public abstract class Moossion
         CaptureSpecific,
         CaptureBuff,
         CaptureTurret,
-        PickupBuff,
-        InteractTurret
+        PickupBuff,//UNUSED
+        InteractTurret//UNUSED
     }
 
 
     //DATA
+    ///
+    private string name;
+    public static int MoossionCounter = 1;
+
     ///
     private Type moossionType = 0;
     public Type MoossionType { get { return moossionType; } }
@@ -38,6 +42,11 @@ public abstract class Moossion
     //CONSTRUCTOR
     public Moossion(Type type, int quantity)
     {
+        //NAME IS AUTONUMBER
+        name = "Moossion #" + MoossionCounter;
+        MoossionCounter++;
+
+        //PROPERTIES
         moossionType = type;
         targetQuantity = quantity;
         currentQuantity = 0;
