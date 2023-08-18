@@ -63,6 +63,7 @@ public class MoossionManager : MonoSingleton<MoossionManager>
     // Update is called once per frame
     void Update()
     {
+        //CHANGE MOOSSIONS THAT HAVE BEEN COMPLETED
         for(int i=0; i<activeMoossions.Count; i++)
         {
             Moossion moo = activeMoossions[i];
@@ -71,8 +72,19 @@ public class MoossionManager : MonoSingleton<MoossionManager>
                 //COMPLETE MOOSSION
                 CompleteMoossion(moo);
 
+
+                //TODO: INFORM THE FEED THAT THE MOOSSIONS HAVE BEEN UPDATED
+                //1) Completed
+                //2) New enabled
+
+
                 //ASSIGN NEW MOOSSION
                 activeMoossions[i] = CreateRandomMoossion();
+
+                //TODO: INFORM THE GUI THAT THE MOOSSIONS HAVE BEEN UPDATED
+
+
+
             }
         }
     }
