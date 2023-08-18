@@ -250,31 +250,32 @@ public class MoossionManager : MonoSingleton<MoossionManager>
     //MOOSSION FACTORY
     public Moossion FactoryMoossion(Moossion.Type chosenType)
     {
+        int difficultyCoefficient = Moossion.GetDifficultyCoefficient();
+        int randomQuantity = Moossion.GetDifficultyBasedRandomQuantity(difficultyCoefficient, chosenType);
+
         switch (chosenType)
         {
             //
             case Moossion.Type.CaptureGeneric:
-                //TODO: RANDOMIZE QUANTITY
-                //int randomQuantity = 
-                return new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
+                return new MoossCaptGeneric(Moossion.Type.CaptureGeneric, randomQuantity);
+
+            //
             case Moossion.Type.CaptureSpecific:
-                //TODO: RANDOMIZE QUANTITY
                 //TODO: RANDOMIZE TARGET COW
-                return new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, CowSO.UniqueID.C000Jamal);
+                return new MoossCaptSpecific(Moossion.Type.CaptureSpecific, randomQuantity, CowSO.UniqueID.C000Jamal);
+
             //
             case Moossion.Type.CaptureBuff:
-                //TODO: RANDOMIZE QUANTITY
-
                 //TODO: RANDOMIZE TARGET BUFF
                 //TODO: MOVE THE SOUGHT BUFF AWAY, USE ANOTHER CLASS' VALUE (RELATED TO BUFFS)
-                return new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.FuelGainBoost);
+                return new MoossCaptBuff(Moossion.Type.CaptureBuff, randomQuantity, MoossCaptBuff.SoughtBuff.FuelGainBoost);
+
             //
             case Moossion.Type.CaptureTurret:
-                //TODO: RANDOMIZE QUANTITY
-
                 //TODO: RANDOMIZE TARGET TURRET
                 //TODO: MOVE THE SOUGHT TURRET AWAY, USE ANOTHER CLASS' VALUE (RELATED TO TURRETS)
-                return new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.SlowingTurret);
+                return new MoossCaptTurret(Moossion.Type.CaptureTurret, randomQuantity, MoossCaptTurret.SoughtTurret.SlowingTurret);
+
             //
             default:
                 Debug.Log("MoossionManager - FactoryMoossion - Invalid Type: " + chosenType + " - Using default generic capture 1");
