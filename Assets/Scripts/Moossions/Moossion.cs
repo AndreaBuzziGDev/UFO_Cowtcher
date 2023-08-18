@@ -2,8 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Moossion
+public abstract class Moossion
 {
+    //ENUMS
+
+
+    //DATA
+
+
+
+    //CONSTRUCTOR
+
+
+
+
+    //METHODS
+
+
 
 
 
