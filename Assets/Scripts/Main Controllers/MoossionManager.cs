@@ -144,6 +144,8 @@ public class MoossionManager : MonoSingleton<MoossionManager>
         //INCREASING COUNTER COMPLETED
         completedMoossionCount++;
 
+        //DEBUG
+        Debug.Log("MoossionManager - Completed Moossion: " + targetMoossion.Name);
     }
 
     public Moossion CreateRandomMoossion()
@@ -154,6 +156,8 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 
         //INCREASE COUNTER OF THAT TYPE
         HandleCount(result.MoossionType, true);
+
+        Debug.Log("MoossionManager - Created new Moossion: " + result.Name);
 
         return result;
     }
