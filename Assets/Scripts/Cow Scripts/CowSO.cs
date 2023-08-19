@@ -87,7 +87,7 @@ public class CowSO : ScriptableObject
     public ItemPickup InstantlyDeployedItemPickup;
 
     ///ENQUEUED ASTEROID
-    public Asteroid associatedAsteroid;
+    //public Asteroid associatedAsteroid;
 
 
     ///SPAWN AND RESPAWN DATA

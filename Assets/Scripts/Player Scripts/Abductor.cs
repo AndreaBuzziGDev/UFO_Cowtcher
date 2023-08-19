@@ -155,11 +155,14 @@ public class Abductor : MonoBehaviour
             }
 
 
-            //ASTEROID 
+            //ASTEROID
+            //(ASTEROID SYSTEM HAS BEEN MODIFIED AND NOW WORKS AS AN INDIPENDENT FEATURE, KEPT THIS COMMENTED FOR FALLBACK REASONS)
+            /*
             if (cow.CowTemplate.associatedAsteroid != null)
             {
                 AsteroidManager.Instance.EnqueueAsteroid(cow.CowTemplate.associatedAsteroid, cow.CowTemplate.associatedAsteroid.QuantityOnCapture);
             }
+            */
 
 
             //TODO: IMPROVE CREATION AND DESTRUCTION OF COWS VIA OBJECT POOLING
