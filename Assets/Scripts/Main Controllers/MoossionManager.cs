@@ -261,7 +261,6 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 
             //
             case Moossion.Type.CaptureSpecific:
-                //TODO: RANDOMIZE TARGET COW
                 return new MoossCaptSpecific(Moossion.Type.CaptureSpecific, randomQuantity, MoossCaptSpecific.GetRandomTarget());
 
             //
