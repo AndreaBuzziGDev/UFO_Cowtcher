@@ -6,7 +6,7 @@ using System.Linq;
 public class CowManager : MonoSingleton<CowManager>
 {
     //DATA
-    private List<Cow> allCows = new();
+    private List<Cow> allCows = new();//UNUSED
 
 
     ///EXPERIMENTAL GLOBAL DATA TO MAKE STRUCTURES WORK
