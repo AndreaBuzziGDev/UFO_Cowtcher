@@ -8,7 +8,16 @@ public class SpawnManagerHelper
 
     
     //TALLY CHANCE SYSTEM
+    public int GetTally(Dictionary<CowSO.UniqueID, int> tallySpawnChances)
+    {
+        int result = 0;
+        foreach (KeyValuePair<CowSO.UniqueID, int> entry in tallySpawnChances)
+        {
+            result += entry.Value;
+        }
 
+        return result;
+    }
 
 
 
