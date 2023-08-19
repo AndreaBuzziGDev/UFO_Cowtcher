@@ -6,7 +6,15 @@ using System.Linq;
 public class MoossionsPanel : MonoBehaviour
 {
     //DATA
+    ///GUI REFERENCES
     private List<MoossionsInformations> informations = new();
+
+    ///MOOSSION ICONS
+    [SerializeField] private Sprite IconCaptureGeneric;
+    [SerializeField] private Sprite IconCaptureSpecific;
+    [SerializeField] private Sprite IconCaptureBuff;
+    [SerializeField] private Sprite IconCaptureTurret;
+
 
 
 
@@ -34,6 +42,26 @@ public class MoossionsPanel : MonoBehaviour
         //TODO: DEVELOP
 
     }
+
+    public Sprite GetMatchingIcon(Moossion inputMoossion)
+    {
+        switch (inputMoossion.MoossionType)
+        {
+            case Moossion.Type.CaptureGeneric:
+                return IconCaptureGeneric;
+            case Moossion.Type.CaptureSpecific:
+                return IconCaptureSpecific;
+            case Moossion.Type.CaptureBuff:
+                return IconCaptureBuff;
+            case Moossion.Type.CaptureTurret:
+                return IconCaptureTurret;
+            default:
+                Debug.LogError("MATCHING ICON NOT FOUND FOR TYPE: " + inputMoossion.MoossionType);
+                return IconCaptureGeneric;
+        }
+
+    }
+
 
 
 
