@@ -17,6 +17,7 @@ MonoBehaviour:
   Name: Scarecow
   Description: A dangerous cow that may harm the fuel reservoir.
   spawnProbability: 20
+  spawnChanceTally: 15
   FuelRecoveryAmount: 0
   AlertRadius: 6
   SpeedCalm: 3
