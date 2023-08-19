@@ -20,6 +20,7 @@ MonoBehaviour:
     When panicked,
     it may deliver a stun.'
   spawnProbability: 20
+  spawnChanceTally: 2
   FuelRecoveryAmount: 5
   AlertRadius: 6
   SpeedCalm: 7

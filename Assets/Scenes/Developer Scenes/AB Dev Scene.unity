@@ -6852,22 +6852,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: enableAsteroidTest
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: testAsteroidPrefab
-      value: 
-      objectReference: {fileID: 6831133052796865536, guid: abb7ae8d4bbd88b4faeb3e22462e8c6e, type: 3}
-    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: testAsteroidCooldown
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: asteroidShowerCooldown
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4906664377828189850, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 655.1431

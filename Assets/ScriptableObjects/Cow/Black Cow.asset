@@ -17,6 +17,7 @@ MonoBehaviour:
   Name: Jamal
   Description: A very common cow that likes to graze.
   spawnProbability: 50
+  spawnChanceTally: 25
   FuelRecoveryAmount: 2
   AlertRadius: 4
   SpeedCalm: 2

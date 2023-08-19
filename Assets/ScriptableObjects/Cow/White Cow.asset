@@ -19,6 +19,7 @@ MonoBehaviour:
 
     Comes in a white paint.'
   spawnProbability: 50
+  spawnChanceTally: 25
   FuelRecoveryAmount: 2
   AlertRadius: 4
   SpeedCalm: 2

@@ -17,6 +17,7 @@ MonoBehaviour:
   Name: Cowctor
   Description: A cow that moves at an ever-increasing speed until she changes direction.
   spawnProbability: 20
+  spawnChanceTally: 3
   FuelRecoveryAmount: 5
   AlertRadius: 4
   SpeedCalm: 7
