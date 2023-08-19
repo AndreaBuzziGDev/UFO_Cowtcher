@@ -31,9 +31,18 @@ public class MoossCaptTurret : Moossion
 
 
 
+    //ABSTRACT METHODS CONCRETIZATION
+    ///DESCRIPTION
+    public override string GetDescription()
+    {
+        return "Capture " + TargetQuantity + " cows while under the effect of a " + GetTurretForDesc(turret) + " Turret.";
+    }
+
+
 
 
     //UTILITIES
+    ///
     public static SoughtTurret GetRandomTarget()
     {
         //TODO: IMPLEMENT A COW-TYPE TRACKING SYSTEM
@@ -47,5 +56,26 @@ public class MoossCaptTurret : Moossion
 
         return uniqueIDs[randomIndex];
     }
+
+
+
+    ///
+    public static string GetTurretForDesc(SoughtTurret sought)
+    {
+        switch (sought)
+        {
+            case SoughtTurret.TerrorTurret:
+                return "Terror-Inflicting";
+
+            case SoughtTurret.SlowingTurret:
+                return "Slowing";
+
+            default:
+                return "INVALID TYPE " + sought;
+        }
+
+    }
+
+
 
 }
