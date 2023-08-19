@@ -358,6 +358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e482cee28eede4da08d9839df459de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Info_1: {fileID: 7493063573508615320}
+  Info_2: {fileID: 2561618436890090346}
+  Info_3: {fileID: 8304635296086514730}
   IconCaptureGeneric: {fileID: 21300000, guid: 51b4078297befea48bd3046a7e047264, type: 3}
   IconCaptureSpecific: {fileID: 21300000, guid: 47fcb947220c22e4aaabe5cf3998c6a6, type: 3}
   IconCaptureBuff: {fileID: 21300000, guid: c540c0e7abf3cca4bbe4a4595d958182, type: 3}
@@ -724,7 +727,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4668805505544047422, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
       propertyPath: m_Name
-      value: Moossion Informations
+      value: Moossion Informations 2
       objectReference: {fileID: 0}
     - target: {fileID: 7756075901344333981, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
       propertyPath: m_Pivot.x
@@ -811,6 +814,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
+--- !u!114 &2561618436890090346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1235810412234800493, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
+  m_PrefabInstance: {fileID: 3650951865347548679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ff04b73139b0e4ea5c2274faa7269f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6415892861598819994 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7756075901344333981, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
@@ -826,7 +840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4668805505544047422, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
       propertyPath: m_Name
-      value: Moossion Informations
+      value: Moossion Informations 3
       objectReference: {fileID: 0}
     - target: {fileID: 7756075901344333981, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
       propertyPath: m_Pivot.x
@@ -918,6 +932,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7756075901344333981, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
   m_PrefabInstance: {fileID: 7068829287890264391}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8304635296086514730 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1235810412234800493, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
+  m_PrefabInstance: {fileID: 7068829287890264391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ff04b73139b0e4ea5c2274faa7269f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8564384808470155765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -928,7 +953,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4668805505544047422, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
       propertyPath: m_Name
-      value: Moossion Informations
+      value: Moossion Informations 1
       objectReference: {fileID: 0}
     - target: {fileID: 7756075901344333981, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
       propertyPath: m_Pivot.x
@@ -1020,3 +1045,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7756075901344333981, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
   m_PrefabInstance: {fileID: 8564384808470155765}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7493063573508615320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1235810412234800493, guid: a8536cbdc9c4c224cbca71c165736de7, type: 3}
+  m_PrefabInstance: {fileID: 8564384808470155765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ff04b73139b0e4ea5c2274faa7269f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

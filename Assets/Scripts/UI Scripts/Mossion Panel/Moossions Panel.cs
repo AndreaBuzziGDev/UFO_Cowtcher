@@ -7,7 +7,12 @@ public class MoossionsPanel : MonoBehaviour
 {
     //DATA
     ///GUI REFERENCES
+    [SerializeField] private MoossionsInformations Info_1;
+    [SerializeField] private MoossionsInformations Info_2;
+    [SerializeField] private MoossionsInformations Info_3;
+
     private List<MoossionsInformations> informations = new();
+
 
     ///MOOSSION ICONS
     [SerializeField] private Sprite IconCaptureGeneric;
@@ -18,11 +23,12 @@ public class MoossionsPanel : MonoBehaviour
 
 
 
+    //METHODS
+
     // Start is called before the first frame update
     void Start()
     {
-        //TODO: BETTER TO CHANGE DIRECTLY INTO A BAKED GUI REFERENCE?
-        informations = this.gameObject.GetComponentsInChildren<MoossionsInformations>().ToList();
+        informations = new List<MoossionsInformations> { Info_1, Info_2, Info_3};
     }
 
     // Update is called once per frame
