@@ -374,12 +374,10 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         if (currentNumOfCows < maxNumOfCows)
         {
             //MODE: WEIGHTED CHANCE
-            //TODO: COMMENT
             SpawnRandomlyWeightedChance();
 
             //MODE: SOMETHING ELSE
-            //TODO: UNCOMMENT
-            //SpawnRandomlyTallyChance();
+            SpawnRandomlyTallyChance();
 
         }
     }
