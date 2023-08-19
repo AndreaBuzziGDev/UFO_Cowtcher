@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoossionManagerV2 : MonoBehaviour
+public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
 {
     //DATA
     [SerializeField] List<Moossion> moossionPool = new();

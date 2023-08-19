@@ -108,7 +108,8 @@ public class GameController : MonoSingleton<GameController>
         HideoutManager.Instance.Initialization();
         SpawnManager.Instance.Initialization();
         DifficultyManager.Instance.Initialization();
-        MoossionManager.Instance.Initialization();
+        //MoossionManager.Instance.Initialization();
+        MoossionManagerV2.Instance.Initialization();
 
         //INITIALIZE GUI LAST
         UIController.Instance.Initialize();

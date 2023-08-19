@@ -6859,7 +6859,7 @@ PrefabInstance:
     - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: testAsteroidPrefab
       value: 
-      objectReference: {fileID: 5823417047264269255, guid: c070ded55266ca4459b6077bf15975e8, type: 3}
+      objectReference: {fileID: 6831133052796865536, guid: abb7ae8d4bbd88b4faeb3e22462e8c6e, type: 3}
     - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: testAsteroidCooldown
       value: 0.1

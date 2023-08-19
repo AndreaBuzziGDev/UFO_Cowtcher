@@ -3613,32 +3613,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2693714359321872527, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1951788906826178335, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5739305431358187962}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
---- !u!1 &5739305431358187961 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1951788906826178335, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-  m_PrefabInstance: {fileID: 5739305431358187960}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5739305431358187962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5739305431358187961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 496cc4f2227e9174abdc6c5b38926222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5847061216887290169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4002,6 +3981,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: isRandomizedSpawnMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773554639175974339, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
+      propertyPath: enableAsteroidTest
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4906664377828189850, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
