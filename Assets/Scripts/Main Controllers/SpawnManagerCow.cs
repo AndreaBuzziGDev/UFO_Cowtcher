@@ -10,6 +10,8 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
 
     ///ALLOWED COW TYPES
     [SerializeField] private List<CowSO.UniqueID> allowedCowIDs = new();
+    public List<CowSO.UniqueID> AllowedCowIDs { get { return allowedCowIDs; } }
+
 
     ///SCRIPTABLE OBJECTS TO TRACK ALLOWED COW SPAWNS
     [SerializeField] private AllowedCowsSO allowedStage1;
@@ -21,12 +23,6 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
     //METHODS
     //...
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -36,7 +32,10 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
 
 
     //INITIALIZATION
-
+    public void Initialization()
+    {
+        allowedCowIDs = GetAllowedCowsForMyScene().AllowedCowsUIDList;
+    }
 
 
     //FUNCTIONALITY
