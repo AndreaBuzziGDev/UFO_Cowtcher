@@ -17,6 +17,7 @@ MonoBehaviour:
   Name: Kowbra
   Description: A sneaky cow that likes to move in a serpentine way.
   spawnProbability: 20
+  spawnChanceTally: 10
   FuelRecoveryAmount: 3
   AlertRadius: 4
   SpeedCalm: 3
@@ -30,6 +31,6 @@ MonoBehaviour:
   effect: +Mov Speed
   InstantlyDeployedItemPickup: {fileID: 0}
   associatedAsteroid: {fileID: 0}
-  SummoningRitual: {fileID: 11400000, guid: 76d200f63b931184cbf4cc729e8f5fd7, type: 2}
+  SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 01000000
   AllowedSpawnPointTypes: 04000000

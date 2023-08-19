@@ -34,6 +34,6 @@ MonoBehaviour:
   effect: 
   InstantlyDeployedItemPickup: {fileID: 0}
   associatedAsteroid: {fileID: 0}
-  SummoningRitual: {fileID: 11400000, guid: ec70da00bc8ede345857b263be1c9d81, type: 2}
+  SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 
   AllowedSpawnPointTypes: 04000000

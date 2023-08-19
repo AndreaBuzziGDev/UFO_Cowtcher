@@ -17,6 +17,7 @@ MonoBehaviour:
   Name: Pumpcow
   Description: A cow that may jump and bounce its way around.
   spawnProbability: 20
+  spawnChanceTally: 10
   FuelRecoveryAmount: 3
   AlertRadius: 5
   SpeedCalm: 1
@@ -30,6 +31,6 @@ MonoBehaviour:
   effect: +Fuel Recovery
   InstantlyDeployedItemPickup: {fileID: 0}
   associatedAsteroid: {fileID: 0}
-  SummoningRitual: {fileID: 11400000, guid: d0756914f7fa0654282294cf5ec31b49, type: 2}
+  SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 00000000

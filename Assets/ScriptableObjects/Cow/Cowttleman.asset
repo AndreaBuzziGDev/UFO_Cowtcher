@@ -19,6 +19,7 @@ MonoBehaviour:
 
     It may lead a herd and make it move faster.'
   spawnProbability: 20
+  spawnChanceTally: 10
   FuelRecoveryAmount: 3
   AlertRadius: 8
   SpeedCalm: 3
@@ -32,6 +33,6 @@ MonoBehaviour:
   effect: 
   InstantlyDeployedItemPickup: {fileID: 0}
   associatedAsteroid: {fileID: 0}
-  SummoningRitual: {fileID: 11400000, guid: 5a99030049709ec4aaf9fcc45a3ef9e2, type: 2}
+  SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 00000000
   AllowedSpawnPointTypes: 01000000
