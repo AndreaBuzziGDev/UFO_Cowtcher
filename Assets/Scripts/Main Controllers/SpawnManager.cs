@@ -35,8 +35,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     [Tooltip("If checked, this uses the random spawn percentage instead of respawning the captured cow with a cooldown")]
     [SerializeField] private bool isRandomizedSpawnMode = false;
 
-    private Dictionary<CowSO.UniqueID, float> spawnChances = new();
+    private Dictionary<CowSO.UniqueID, float> baseSpawnChances = new();
     private Dictionary<CowSO.UniqueID, float> weightedSpawnChances = new();
+    private Dictionary<CowSO.UniqueID, int> tallySpawnChances = new();
 
 
 
@@ -247,7 +248,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         //
         if (isRandomizedSpawnMode)
         {
-            if (!spawnChances.ContainsKey(interestedCow.UID))
+            if (!baseSpawnChances.ContainsKey(interestedCow.UID))
             {
                 TrackSpawnProbability(new List<CowSO.UniqueID> { interestedCow.UID });
             }
@@ -332,7 +333,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         foreach (Cow prefabCow in cowPrefabs)
         {
             //NB: REFERENCING TEMPLATE. THIS IS A PREFAB, WHICH HAS NOT-YET RUN THE "Awake" METHOD
-            spawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnProbability);
+            baseSpawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnProbability);
+            tallySpawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnChanceTally);
+
         }
 
         CalculateWeightedProbabilities();
@@ -341,7 +344,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     private void CalculateWeightedProbabilities()
     {
         float totalSum = 0;
-        foreach (KeyValuePair<CowSO.UniqueID, float> entry in spawnChances)
+        foreach (KeyValuePair<CowSO.UniqueID, float> entry in baseSpawnChances)
         {
             totalSum += entry.Value;
         }
@@ -350,7 +353,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         Debug.Log("SpawnManager Randomly - weightCoefficient: " + weightCoefficient);
 
         weightedSpawnChances = new Dictionary<CowSO.UniqueID, float>();
-        foreach (KeyValuePair<CowSO.UniqueID, float> entry in spawnChances)
+        foreach (KeyValuePair<CowSO.UniqueID, float> entry in baseSpawnChances)
         {
             weightedSpawnChances.Add(entry.Key, entry.Value * weightCoefficient);
             Debug.Log("SpawnManager Randomly - Base Probability for Cow: " + entry.Key + " is: " + entry.Value);
