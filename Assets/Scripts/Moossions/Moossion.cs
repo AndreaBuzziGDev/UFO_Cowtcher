@@ -55,12 +55,33 @@ public abstract class Moossion
 
 
     //METHODS
+    ///DESCRIPTION
+    public abstract string GetDescription();
+
+
     ///PROGRESSION HANDLING
-    public void Progress(int progressQuantity)
+    public void DoProgress(int progressQuantity)
     {
         currentQuantity += progressQuantity;
     }
+    
+    
+    //UTILITIES
+    //NB: PROCEDURAL "DIFFICULTY" FEATURES ARE WORKING, BUT HAVE BEEN SCRAPPED FOR NOW
 
+    ///DIFFICULTY COEFFICIENT
+    public static int GetDifficultyCoefficient()
+    {
+        int moossionCount = MoossionManager.Instance.CompletedMoossionCount;
+
+        int moossionDifficultyCoefficient = (int) moossionCount / 3;
+
+        if (moossionDifficultyCoefficient > 5) moossionDifficultyCoefficient = 5;
+
+        Debug.Log("Moossion - moossionDifficultyCoefficient: " + moossionDifficultyCoefficient);
+
+        return moossionDifficultyCoefficient;
+    }
 
     ///DIFFICULTY REGULATION
     public static int GetDifficultyBasedRandomQuantity(int difficultyCoefficient, Type handledType)
@@ -82,21 +103,6 @@ public abstract class Moossion
             default:
                 return 1;
         }
-    }
-    
-    
-    //UTILITIES
-    public static int GetDifficultyCoefficient()
-    {
-        int moossionCount = MoossionManager.Instance.CompletedMoossionCount;
-
-        int moossionDifficultyCoefficient = (int) moossionCount / 3;
-
-        if (moossionDifficultyCoefficient > 5) moossionDifficultyCoefficient = 5;
-
-        Debug.Log("Moossion - moossionDifficultyCoefficient: " + moossionDifficultyCoefficient);
-
-        return moossionDifficultyCoefficient;
     }
 
 
