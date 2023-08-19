@@ -56,7 +56,7 @@ public class CowSO : ScriptableObject
     [Range(0, 100f)] public float spawnProbability = 20.0f;
 
     [Tooltip("the chance tally for this cow type to spawn randomly after being unlocked.")]
-    [Range(0, 100f)] public int spawnChanceTally = 10;
+    public int spawnChanceTally = 10;
 
 
     public int FuelRecoveryAmount;
