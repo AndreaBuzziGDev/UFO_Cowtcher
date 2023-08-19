@@ -9,6 +9,11 @@ public class CowManager : MonoSingleton<CowManager>
     private List<Cow> allCows = new();//UNUSED
 
 
+    ///ALLOWED COW TYPES
+    
+
+
+
     ///EXPERIMENTAL GLOBAL DATA TO MAKE STRUCTURES WORK
     private float globalSpeedMultiplier = 100.0f;
     public float GlobalSpeedMultiplier { get { return globalSpeedMultiplier/100.0f; } }
