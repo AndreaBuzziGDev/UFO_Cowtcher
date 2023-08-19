@@ -103,6 +103,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         List<Cow> cows = FindObjectsOfType<Cow>().ToList();
         currentNumOfCows = cows.Count;
         Debug.Log("SpawnManager - start num of cows: " + currentNumOfCows);
+
+        //TODO: UPGRADE SO THAT IT TRACKS THE DIFFERENT TYPES OF COWS THAT EXIST ON THE MAP
+
+
+        //
+
+
     }
 
     ///INITIALIZE SPAWN PROBABILITY DICTIONARY
