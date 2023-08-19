@@ -84,10 +84,12 @@ public class CowSO : ScriptableObject
     public string effect;
 
     ///INSTANTLY-PROVIDED STATUS ALTERATION
+    [Tooltip("Instantly-Provided Status Alteration (Intended for Malicious Cows)")]
     public ItemPickup InstantlyDeployedItemPickup;
 
     ///ENQUEUED ASTEROID
-    //public Asteroid associatedAsteroid;
+    [Tooltip("UNUSED!")]
+    public Asteroid associatedAsteroid;
 
 
     ///SPAWN AND RESPAWN DATA
