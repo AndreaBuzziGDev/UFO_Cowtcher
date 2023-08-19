@@ -16,6 +16,8 @@ public class SpawnManagerHelper
         {
             result += entry.Value;
         }
+        Debug.Log("SpawnManagerHelper - Chance tally is " + result);
+
 
         return result;
     }
