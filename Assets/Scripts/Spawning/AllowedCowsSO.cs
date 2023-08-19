@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Allowed Cows List", menuName = "Allowed Cows List")]
 public class AllowedCowsSO : ScriptableObject
 {
     //DATA
