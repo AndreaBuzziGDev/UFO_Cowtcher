@@ -48,8 +48,14 @@ public class MoossionsPanel : MonoBehaviour
 
         //APPLY UPDATED INFO TO MoossionsInformations
         ///MOOSSION 1
-        
-        ///
+        Info_1.UpdateInfos(moo_1, GetMatchingIcon(moo_1));
+
+        ///MOOSSION 2
+        Info_1.UpdateInfos(moo_2, GetMatchingIcon(moo_2));
+
+        ///MOOSSION 3
+        Info_1.UpdateInfos(moo_3, GetMatchingIcon(moo_3));
+
 
         //TODO: DEVELOP
 

@@ -17,7 +17,7 @@ public class MoossionsInformations : MonoBehaviour
 
     //FUNCTIONALITIES
     ///UPDATE THE CONTENT
-    public void UpdateInfos(Sprite targetSprite, Moossion referenceMoossion)
+    public void UpdateInfos(Moossion referenceMoossion, Sprite targetSprite)
     {
         //UPDATE SPRITE
         MoossionTypeIcon.sprite = targetSprite;
