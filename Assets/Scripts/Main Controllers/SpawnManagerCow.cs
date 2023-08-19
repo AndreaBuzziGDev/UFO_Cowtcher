@@ -31,14 +31,6 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
     //METHODS
     //...
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
     //INITIALIZATION
     public void Initialization()
     {
