@@ -9,20 +9,6 @@ public class CowManager : MonoSingleton<CowManager>
     private List<Cow> allCows = new();//UNUSED
 
 
-    ///ALLOWED COW TYPES
-    [SerializeField] private List<CowSO.UniqueID> allowedCowIDs = new();
-
-
-
-    ///SCRIPTABLE OBJECTS TO TRACK ALLOWED COW SPAWNS
-    [SerializeField] private AllowedCowsSO allowedStage1;
-    [SerializeField] private AllowedCowsSO allowedStage2;
-    [SerializeField] private AllowedCowsSO allowedStage3;
-    [SerializeField] private AllowedCowsSO allowedStage4;
-
-
-
-
     ///EXPERIMENTAL GLOBAL DATA TO MAKE STRUCTURES WORK
     private float globalSpeedMultiplier = 100.0f;
     public float GlobalSpeedMultiplier { get { return globalSpeedMultiplier/100.0f; } }
