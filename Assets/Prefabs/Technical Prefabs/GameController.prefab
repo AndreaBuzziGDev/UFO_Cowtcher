@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6799201944780330774}
-  - component: {fileID: 2693714359321872527}
+  - component: {fileID: 8132591788604188889}
   m_Layer: 0
   m_Name: MoossionManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5687211359725146770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2693714359321872527
+--- !u!114 &8132591788604188889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1951788906826178335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c35546ecb0bdcbc48ba30d6d5f53cdd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 496cc4f2227e9174abdc6c5b38926222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3794221563109191352
