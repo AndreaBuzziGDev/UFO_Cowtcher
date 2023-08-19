@@ -225,10 +225,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///FUNCTIONALITY TO CAPTURE COWS ACCESSIBLE FROM ANYWHERE
     public void HandleCowCapture(Cow interestedCow)
     {
-        //
+        //DISABLED RITUALS AS REQUESTED FOR VERTICAL SLICE
+        /*
         List<RitualAbstract> rituals = Cowdex.Instance.GetRitualsThatContainCow(interestedCow.UID);
 
         //TODO: THIS CAN BE OPTIMIZED BY STORING UIDs AND LATER SINGLE-CALLING GetCows FROM Cowdex
+        
         foreach (RitualAbstract ritual in rituals)
         {
             if (ritual.HasCow(interestedCow.UID))
@@ -244,6 +246,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
                 }
             }
         }
+        */
 
         //LOWER COUNT OF CURRENT COWS
         currentNumOfCows--;
