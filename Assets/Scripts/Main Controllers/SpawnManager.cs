@@ -422,7 +422,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         //TODO: USE THE FUNCTIONALITIES PROVIDED BY SpawnManagerCow
 
         //1) OBTAIN RANDOM INT - USE THE TALLY CALCULATED BY SpawnManagerCow AS THE UPPER BOUNDARY
-        int randomChance = Random.Range(0, SpawnManagerHelper.GetTally(tallySpawnChances));
+        int randomChance = Random.Range(1, SpawnManagerHelper.GetTally(tallySpawnChances));
 
         //2) OBTAIN THE MATCHING RANDOM COW FROM THE SpawnManagerCow
         CowSO.UniqueID randomChoice = SpawnManagerHelper.GetCorrespondingCowFromTally(tallySpawnChances, randomChance);
