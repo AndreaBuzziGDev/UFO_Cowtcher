@@ -13,6 +13,7 @@ public class MoossionPoolGeneric
     //TODO: USE ANOTHER SCRIPT
 
 
+
     //METHODS
     //...
 
@@ -20,7 +21,16 @@ public class MoossionPoolGeneric
     //INITIALIZATION
     public static void BakeMoossionPool()
     {
-        //
+        moossionPool.Add(Moossion1());
+        moossionPool.Add(Moossion2());
+        moossionPool.Add(Moossion3());
+        moossionPool.Add(Moossion4());
+        moossionPool.Add(Moossion5());
+        moossionPool.Add(Moossion6());
+        moossionPool.Add(Moossion7());
+        moossionPool.Add(Moossion8());
+        moossionPool.Add(Moossion9());
+        moossionPool.Add(Moossion10());
     }
 
 

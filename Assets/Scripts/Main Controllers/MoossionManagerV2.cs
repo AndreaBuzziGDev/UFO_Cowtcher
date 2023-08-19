@@ -48,12 +48,6 @@ public class MoossionManagerV2 : MonoBehaviour
     //METHODS
     //...
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -85,7 +79,8 @@ public class MoossionManagerV2 : MonoBehaviour
         //TODO: ENFORCE THE PRESENCE OF UP TO 1 TARGET CAPTURE MOOSSION IF THE CONDITIONS ALLOW IT
 
         //TODO: COPY FROM EXISTING CODE
-
+        MoossionPoolGeneric.BakeMoossionPool();
+        moossionPool = MoossionPoolGeneric.MoossionPool;
 
     }
 
