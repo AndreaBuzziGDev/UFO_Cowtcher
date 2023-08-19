@@ -45,16 +45,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     //...
 
-    //TODO: STUDY AND APPLY THE SAME CHANGES TO THE Awake METHOD MADE TO GameController IN THIS MONOSINGLETON AS WELL
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //...
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -378,9 +368,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         if (currentNumOfCows < maxNumOfCows)
         {
             //MODE: WEIGHTED CHANCE
+            //TODO: COMMENT
             SpawnRandomlyWeightedChance();
 
             //MODE: SOMETHING ELSE
+            //TODO: UNCOMMENT
+            //SpawnRandomlyTallyChance();
+
         }
     }
 
@@ -414,6 +408,15 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             SpawnCow(prefabCowGO.GetComponentInChildren<Cow>());
             currentNumOfCows++;
         }
+
+    }
+
+
+    //TALLY CHANCE: SIMILAR TO WEIGHTED CHANCE, BUT A CHANCE TALLY WILL BE USED INSTEAD
+    private void SpawnRandomlyTallyChance()
+    {
+        //TODO: USE THE FUNCTIONALITIES PROVIDED BY SpawnManagerCow
+
 
     }
 
