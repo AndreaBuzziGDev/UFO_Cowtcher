@@ -21,6 +21,7 @@ public class MoossionsPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //TODO: BETTER TO CHANGE DIRECTLY INTO A BAKED GUI REFERENCE?
         informations = this.gameObject.GetComponentsInChildren<MoossionsInformations>().ToList();
     }
 
