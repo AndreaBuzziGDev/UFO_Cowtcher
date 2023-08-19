@@ -427,11 +427,17 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         int randomChance = Random.Range(0, SpawnManagerHelper.GetTally(tallySpawnChances));
 
         //2) OBTAIN THE MATCHING RANDOM COW FROM THE SpawnManagerCow
-
-
+        CowSO.UniqueID randomChoice = SpawnManagerHelper.GetCorrespondingCowFromTally(tallySpawnChances, randomChance);
 
         //3) SPAWN COW
+        if (randomChoice != CowSO.UniqueID.ANY)
+        {
+            GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(randomChoice).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+            prefabCowGO.SetActive(false);
 
+            SpawnCow(prefabCowGO.GetComponentInChildren<Cow>());
+            currentNumOfCows++;
+        }
     }
 
 

@@ -27,7 +27,7 @@ public class SpawnManagerHelper
 
         foreach (KeyValuePair<CowSO.UniqueID, int> entry in tallySpawnChances)
         {
-            if (randomChance < entry.Value)
+            if (randomChance <= entry.Value)
             {
                 choice = entry.Key;
                 Debug.Log("SpawnManagerHelper - Found matching cow UID " + entry.Key +" for randomChance: " + randomChance + " from Tally-Based System");
