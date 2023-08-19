@@ -16,25 +16,19 @@ public class MoossionsInformations : MonoBehaviour
     //METHODS
 
     //FUNCTIONALITIES
-
-    //TODO: DEVELOP GUI UPDATE FUNCTIONALITIES
-
-    //PLACEHOLDER FUNCTIONALITY
-    private void Start()
+    ///UPDATE THE CONTENT
+    public void UpdateInfos(Sprite targetSprite, Moossion referenceMoossion)
     {
-        MoossionDescription.text = "Desc Replaced by Code.";
-        MoossionProgressBar.fillAmount = 0.5f;
-    }
+        //UPDATE SPRITE
+        MoossionTypeIcon.sprite = targetSprite;
+
+        //UPDATE DESCRIPTION
 
 
-    //
-    public void UpdateInfos()
-    {
-        //TODO: DEVELOP
+        //UPDATE PROGRESS BAR
 
 
-        //TODO: CHANGE METHOD SIGNATURE
-
+        //TODO: MARK MOOSSION AS COMPLETE IF APPLICABLE
 
 
     }

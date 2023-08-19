@@ -42,9 +42,14 @@ public class MoossionsPanel : MonoBehaviour
     public void UpdateInformations()
     {
         //RETRIEVE CURRENT MOOSSIONS
-
+        Moossion moo_1 = MoossionManagerV2.Instance.MoossionOne;
+        Moossion moo_2 = MoossionManagerV2.Instance.MoossionTwo;
+        Moossion moo_3 = MoossionManagerV2.Instance.MoossionThree;
 
         //APPLY UPDATED INFO TO MoossionsInformations
+        ///MOOSSION 1
+        
+        ///
 
         //TODO: DEVELOP
 
