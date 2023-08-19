@@ -23,9 +23,10 @@ public class MoossionsInformations : MonoBehaviour
         MoossionTypeIcon.sprite = targetSprite;
 
         //UPDATE DESCRIPTION
-
+        MoossionDescription.text = referenceMoossion.GetDescription();
 
         //UPDATE PROGRESS BAR
+        MoossionProgressBar.fillAmount = referenceMoossion.CurrentQuantity / referenceMoossion.TargetQuantity;
 
 
         //TODO: MARK MOOSSION AS COMPLETE IF APPLICABLE

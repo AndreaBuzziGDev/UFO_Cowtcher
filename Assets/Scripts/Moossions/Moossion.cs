@@ -85,9 +85,6 @@ public abstract class Moossion
     }
     
     
-
-
-
     //UTILITIES
     public static int GetDifficultyCoefficient()
     {
