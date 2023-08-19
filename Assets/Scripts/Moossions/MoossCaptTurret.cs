@@ -35,7 +35,7 @@ public class MoossCaptTurret : Moossion
     ///DESCRIPTION
     public override string GetDescription()
     {
-        return "Capture " + TargetQuantity + " cows while under the effect of a " + GetTurretForDesc(turret) + " Turret.";
+        return "Capture " + TargetQuantity + " cows while under the effect of a " + GetTurretNameForDesc(turret) + " Turret.";
     }
 
 
@@ -60,7 +60,7 @@ public class MoossCaptTurret : Moossion
 
 
     ///
-    public static string GetTurretForDesc(SoughtTurret sought)
+    public static string GetTurretNameForDesc(SoughtTurret sought)
     {
         switch (sought)
         {
