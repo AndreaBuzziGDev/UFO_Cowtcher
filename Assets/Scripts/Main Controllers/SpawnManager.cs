@@ -428,6 +428,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         CowSO.UniqueID randomChoice = SpawnManagerHelper.GetCorrespondingCowFromTally(tallySpawnChances, randomChance);
 
         //3) SPAWN COW
+        //TODO: THIS COULD BE EXPORTED
         if (randomChoice != CowSO.UniqueID.ANY)
         {
             GameObject prefabCowGO = Instantiate(Cowdex.Instance.GetCow(randomChoice).gameObject, new Vector3(0, 0, 0), Quaternion.identity);
