@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
 {
@@ -38,6 +40,22 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
 
 
     //FUNCTIONALITY
+    public AllowedCowsSO GetAllowedCowsForMyScene()
+    {
+        return GetMatchingAllowedCows(SceneManager.GetActiveScene().name);
+    }
+    public AllowedCowsSO GetMatchingAllowedCows(string sceneName)
+    {
+
+        return sceneName switch
+        {
+            "Stage 1" => allowedStage1,
+            "Stage 2" => allowedStage2,
+            "Stage 3" => allowedStage3,
+            "Stage 4" => allowedStage4,
+            _ => null,
+        };
+    }
 
 
 
