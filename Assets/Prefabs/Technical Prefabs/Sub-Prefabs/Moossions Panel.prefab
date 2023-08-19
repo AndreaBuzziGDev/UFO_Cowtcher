@@ -358,6 +358,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e482cee28eede4da08d9839df459de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IconCaptureGeneric: {fileID: 21300000, guid: 51b4078297befea48bd3046a7e047264, type: 3}
+  IconCaptureSpecific: {fileID: 21300000, guid: 47fcb947220c22e4aaabe5cf3998c6a6, type: 3}
+  IconCaptureBuff: {fileID: 21300000, guid: c540c0e7abf3cca4bbe4a4595d958182, type: 3}
+  IconCaptureTurret: {fileID: 21300000, guid: fd2627ac7f5bdb746b0db279b8c0049b, type: 3}
 --- !u!1 &4108580322607801525
 GameObject:
   m_ObjectHideFlags: 0
