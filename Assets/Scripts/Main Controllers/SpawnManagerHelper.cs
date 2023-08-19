@@ -26,10 +26,12 @@ public class SpawnManagerHelper
     public static CowSO.UniqueID GetCorrespondingCowFromTally(Dictionary<CowSO.UniqueID, int> tallySpawnChances, int randomChance)
     {
         CowSO.UniqueID choice = CowSO.UniqueID.ANY;
+        int totalTally = 1;
 
         foreach (KeyValuePair<CowSO.UniqueID, int> entry in tallySpawnChances)
         {
-            if (randomChance <= entry.Value)
+            totalTally += entry.Value;
+            if (randomChance <= totalTally)
             {
                 choice = entry.Key;
                 Debug.Log("SpawnManagerHelper - Found matching cow UID " + entry.Key +" for randomChance: " + randomChance + " from Tally-Based System");
