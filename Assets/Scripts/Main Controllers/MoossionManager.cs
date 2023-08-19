@@ -262,19 +262,19 @@ public class MoossionManager : MonoSingleton<MoossionManager>
             //
             case Moossion.Type.CaptureSpecific:
                 //TODO: RANDOMIZE TARGET COW
-                return new MoossCaptSpecific(Moossion.Type.CaptureSpecific, randomQuantity, CowSO.UniqueID.C000Jamal);
+                return new MoossCaptSpecific(Moossion.Type.CaptureSpecific, randomQuantity, MoossCaptSpecific.GetRandomTarget());
 
             //
             case Moossion.Type.CaptureBuff:
                 //TODO: RANDOMIZE TARGET BUFF
                 //TODO: MOVE THE SOUGHT BUFF AWAY, USE ANOTHER CLASS' VALUE (RELATED TO BUFFS)
-                return new MoossCaptBuff(Moossion.Type.CaptureBuff, randomQuantity, MoossCaptBuff.SoughtBuff.FuelGainBoost);
+                return new MoossCaptBuff(Moossion.Type.CaptureBuff, randomQuantity, MoossCaptBuff.GetRandomTarget());
 
             //
             case Moossion.Type.CaptureTurret:
                 //TODO: RANDOMIZE TARGET TURRET
                 //TODO: MOVE THE SOUGHT TURRET AWAY, USE ANOTHER CLASS' VALUE (RELATED TO TURRETS)
-                return new MoossCaptTurret(Moossion.Type.CaptureTurret, randomQuantity, MoossCaptTurret.SoughtTurret.SlowingTurret);
+                return new MoossCaptTurret(Moossion.Type.CaptureTurret, randomQuantity, MoossCaptTurret.GetRandomTarget());
 
             //
             default:

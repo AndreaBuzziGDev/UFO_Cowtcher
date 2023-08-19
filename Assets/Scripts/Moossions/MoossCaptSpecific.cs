@@ -22,4 +22,21 @@ public class MoossCaptSpecific : Moossion
     //THE CONTENT OF THIS EVENT SHOULD BE CHECKED AND THE MISSION SHOULD PROGRESS IF THE CHECK IS PASSED.
 
 
+
+
+    //UTILITIES
+    public static CowSO.UniqueID GetRandomTarget()
+    {
+        //TODO: IMPLEMENT A COW-TYPE TRACKING SYSTEM
+        //TODO: WAIT FOR SpawnManager TO BE COMPLETE FOR THIS
+
+
+        //TODO: RANDOMIZE EVEN FURTHER
+        List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal, CowSO.UniqueID.C001Kevin };
+
+        int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
+
+        return uniqueIDs[randomIndex];
+    }
+
 }
