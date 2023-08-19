@@ -266,13 +266,11 @@ public class MoossionManager : MonoSingleton<MoossionManager>
 
             //
             case Moossion.Type.CaptureBuff:
-                //TODO: RANDOMIZE TARGET BUFF
                 //TODO: MOVE THE SOUGHT BUFF AWAY, USE ANOTHER CLASS' VALUE (RELATED TO BUFFS)
                 return new MoossCaptBuff(Moossion.Type.CaptureBuff, randomQuantity, MoossCaptBuff.GetRandomTarget());
 
             //
             case Moossion.Type.CaptureTurret:
-                //TODO: RANDOMIZE TARGET TURRET
                 //TODO: MOVE THE SOUGHT TURRET AWAY, USE ANOTHER CLASS' VALUE (RELATED TO TURRETS)
                 return new MoossCaptTurret(Moossion.Type.CaptureTurret, randomQuantity, MoossCaptTurret.GetRandomTarget());
 
