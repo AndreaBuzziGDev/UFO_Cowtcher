@@ -21,12 +21,6 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private bool spawnsOnBadImpact;
     [SerializeField] private float badImpactCoordY = 2;
 
-
-    //TODO:
-    //ADDITIONAL "FREE" ASTEROID CHANCE?
-    //ADDITIONAL "FREE" ASTEROID MAX QUANTITY?
-    //GRANT AT LEAST ONE DROP?
-
     ///ASTEROID CONTENT
     [SerializeField] private MonoInteractible myAsteroidContent;
 
@@ -69,8 +63,6 @@ public class Asteroid : MonoBehaviour
     //FUNCTIONALITIES
     private void HandleImpact()
     {
-
-        //TODO: DEVELOP EXPLOSION ON IMPACT
         //EXPLOSION ON IMPACT
         if(ImpactExplosion != null)
         {
@@ -78,7 +70,6 @@ public class Asteroid : MonoBehaviour
             //TODO: DESTROY DELAYED OR SOMEHOW STOP EXPLOSION FROM OCCURRING
             Destroy(explosionPrefab, 1);
         }
-
 
         //DESTROY ASTEROID
         Destroy(this.gameObject);
