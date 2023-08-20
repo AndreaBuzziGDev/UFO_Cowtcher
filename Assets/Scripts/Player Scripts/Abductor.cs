@@ -203,6 +203,8 @@ public class Abductor : MonoBehaviour
         {
             if(collider.transform.gameObject.layer == cowLayer)
             {
+                //INTERACT WITH Cow
+
                 Cow myCowObject = collider.transform.gameObject.GetComponent<Cow>();
                 if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))
                 {
