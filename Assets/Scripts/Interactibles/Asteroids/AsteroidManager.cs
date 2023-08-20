@@ -8,8 +8,9 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     [SerializeField] private List<Asteroid> asteroidTypes = new();
     [SerializeField] [Range(2.0f, 20.0f)] private float asteroidStartingAltitude = 10.0f;
 
+    [SerializeField] [Range(1.0f, 100.0f)] private float asteroidChanceMultiplier = 10.0f;
     private float asteroidTimer;
-    private int asteroidChanceMultiplier = 0;
+    private int asteroidPhaseMultiplier = 0;
 
 
 
@@ -49,11 +50,11 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
         }
         else
         {
-            asteroidChanceMultiplier++;
-            int randomInt = Random.Range(1, 10);
+            asteroidPhaseMultiplier++;
+            float randomFloat = Random.Range(1, 100);
 
-            //IF CHANCE PASSED, DO ASTEROID
-            if (randomInt <= asteroidChanceMultiplier)
+            //IF CHANCE PASSED, DO ASTEROID (EG: 1 x 10 = 10%)
+            if (randomFloat <= asteroidPhaseMultiplier * asteroidChanceMultiplier)
             {
                 //CHOOSE RANDOM ASTEROID
                 int randomIndex = Random.Range(0, asteroidTypes.Count-1);
@@ -62,7 +63,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
                 ReleaseAsteroid(asteroidTypes[randomIndex]);
 
                 //RESET CHANCE
-                asteroidChanceMultiplier = 0;
+                asteroidPhaseMultiplier = 0;
 
             }
 
