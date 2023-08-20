@@ -444,6 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoossionTypeIcon: {fileID: 5069450765406976601}
+  MoossionTargetCowGUI: {fileID: 4105685796228404848}
   MoossionDescription: {fileID: 8918347681465508246}
   MoossionProgressBar: {fileID: 3827606014064926450}
 --- !u!1 &8546299084360491899
