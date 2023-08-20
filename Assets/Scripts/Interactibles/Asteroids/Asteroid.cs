@@ -45,13 +45,8 @@ public class Asteroid : MonoBehaviour
         //IF IMPACTED WITHIN SPAWNIN GRID DEPLOY CONTENT
         if (isWithinGrid && myAsteroidContent != null)
         {
-            /*
-            if (this.transform.position.y <= badImpactCoordY || spawnsOnBadImpact)
-            {
-            */
-                //SPAWN ASTEROID CONTENT
-                Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
-            /*}*/
+            Debug.Log("Asteroid - Content is: " + myAsteroidContent.gameObject.name);
+            Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
         }
 
         HandleImpact();

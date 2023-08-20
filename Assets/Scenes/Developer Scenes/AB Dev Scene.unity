@@ -4321,7 +4321,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1815920664150541163, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.58
+      value: -5.26
       objectReference: {fileID: 0}
     - target: {fileID: 1815920664150541163, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4329,7 +4329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1815920664150541163, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.25
+      value: -7.6
       objectReference: {fileID: 0}
     - target: {fileID: 1815920664150541163, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4365,12 +4365,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7101791686162252786, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1134998861233119760, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
 --- !u!1001 &1335209958
 PrefabInstance:
@@ -6852,10 +6855,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
-      propertyPath: maxNumOfCows
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 4906664377828189850, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 655.1431

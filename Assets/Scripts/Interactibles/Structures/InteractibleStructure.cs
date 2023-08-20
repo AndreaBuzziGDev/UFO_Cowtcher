@@ -30,6 +30,8 @@ public class InteractibleStructure : MonoInteractible
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("InteractibleStructure - Start: " + this.gameObject.name);
+
         if (StructureScriptableObject != null) myStructure = StructureScriptableObject.GetStructure();
         else Debug.LogError("Structure " + this.gameObject.name + " is missing Data. Assign Scriptable Object.");
     }
