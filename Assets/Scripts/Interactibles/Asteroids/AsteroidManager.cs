@@ -5,29 +5,14 @@ using UnityEngine;
 public class AsteroidManager : MonoSingleton<AsteroidManager>
 {
     //DATA
+    [SerializeField] private List<Asteroid> asteroidTypes = new();
+    [SerializeField] [Range(2.0f, 20.0f)] private float asteroidStartingAltitude = 10.0f;
 
-    ///ASTEROID SHOWER
-    [SerializeField] private AsteroidShower shower;
-
-    ///ASTEROID SHOWER TIMER
-    [SerializeField] private float asteroidShowerCooldown = 5.0f;
-    private float asteroidShowerTimer;
-    public bool IsDoingAsteroidShower { get { return asteroidShowerTimer > 0.0f; } }
+    private float asteroidTimer;
+    private int asteroidChanceMultiplier = 0;
 
 
 
-    ///ASTEROID QUEUE
-    private Queue<Asteroid> queuedAsteroids = new();
-    [SerializeField] private int asteroidShowerThreshold = 5;
-    public bool HasReachedThreshold { get { return queuedAsteroids.Count >= asteroidShowerThreshold; } }
-
-
-
-    ///TESTING
-    [SerializeField] private bool enableAsteroidTest;
-    [SerializeField] private Asteroid testAsteroidPrefab;
-    [SerializeField] private float testAsteroidCooldown = 1.0f;
-    private float testAsteroidTimer;
 
 
 
@@ -40,9 +25,9 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     void Start()
     {
         //INITIALIZATION
-        if (shower == null)
+        if (asteroidTypes.Count == 0)
         {
-            Debug.LogError("NO ASTEROID SHOWER PREFAB SET!");
+            Debug.LogError("AsteroidManager - NO ASTEROIDS SET!");
         }
 
     }
@@ -50,93 +35,59 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     // Update is called once per frame
     void Update()
     {
-        //MANUAL TEST DONE TO VERIFY FUNCTIONALITY OF THE TEST
-        if(enableAsteroidTest) TestFeature();
+        HandleTimer();
 
-
-        //ASTEROID SHOWER
-        if (HasReachedThreshold && !IsDoingAsteroidShower)
-        {
-            DoAsteroidShower();
-        }
-
-        //UPDATE INNER TIMER
-        UpdateAsteroidTimer();
     }
 
 
 
     //INITIALIZATION
-    ///INIZIALIZE ASTEROID DICTIONARY
-
-
-
-
-    ///FOR TESTING
-    private void TestFeature()
-    {
-        if(testAsteroidTimer <= 0)
-        {
-            EnqueueAsteroid(testAsteroidPrefab);
-            testAsteroidTimer = testAsteroidCooldown;
-        }
-        else
-        {
-            testAsteroidTimer -= Time.deltaTime;
-        }
-    }
-
-
-
-
 
 
 
     //FUNCTIONALITIES
-    ///ASTEROID SHOWER
-    public void DoAsteroidShower()
+    private void HandleTimer()
     {
-        //BUILD AN ASTEROID SHOWER
-        GameObject instance = Instantiate(shower.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
-
-        //ENQUEUE ASTEROID SHOWER
-        Queue<Asteroid> tempQueue = new();
-
-        //TODO: CAN THIS BE SIMPLIFIED?
-        for(int i = 0; i < asteroidShowerThreshold; i++) tempQueue.Enqueue(queuedAsteroids.Dequeue());
-        instance.GetComponent<AsteroidShower>().SetAsteroidQueue(tempQueue);
-
-        //RESET ASTEROID SHOWER TIMER
-        asteroidShowerTimer = asteroidShowerCooldown;
-
-    }
-
-
-
-    ///ASTEROID ADDITION TO QUEUE
-    public void EnqueueAsteroid(Asteroid asteroid, int copies)
-    {
-        Debug.Log("AsteroidManager - Enqueueing " + copies + " asteroids " + asteroid.name);
-        for(int i=0; i<copies; i++) EnqueueAsteroid(asteroid);
-    }
-
-    public void EnqueueAsteroid(List<Asteroid> asteroids)
-    {
-        foreach (Asteroid ac in asteroids) EnqueueAsteroid(ac);
-    }
-    public void EnqueueAsteroid(Asteroid asteroid) => queuedAsteroids.Enqueue(asteroid);
-
-
-    //
-    private void UpdateAsteroidTimer()
-    {
-        if (IsDoingAsteroidShower)
+        if(asteroidTimer > 0)
         {
-            asteroidShowerTimer -= Time.deltaTime;
+            asteroidTimer -= Time.deltaTime;
+        }
+        else
+        {
+            asteroidChanceMultiplier++;
+            int randomInt = Random.Range(1, 10);
+
+            //IF CHANCE PASSED, DO ASTEROID
+            if (randomInt <= asteroidChanceMultiplier)
+            {
+                //CHOOSE RANDOM ASTEROID
+                int randomIndex = Random.Range(0, asteroidTypes.Count-1);
+
+                //RELEASE ASTEROID
+                ReleaseAsteroid(asteroidTypes[randomIndex]);
+
+                //RESET CHANCE
+                asteroidChanceMultiplier = 0;
+
+            }
+
+            //RESET TIMER
+            asteroidTimer = 1.0f;
+
         }
     }
 
 
+    //UTILITIES
+    public void ReleaseAsteroid(Asteroid interestedAsteroid)
+    {
+        // ASTEROID POSITION
+        Vector3 nextAsteroidPosition = SpawningGrid.Instance.GetRandomPointInsideSpawnGrid();
+        nextAsteroidPosition = new Vector3(nextAsteroidPosition.x, asteroidStartingAltitude, nextAsteroidPosition.z);
 
+        //INSTANCIATE ASTEROID
+        Asteroid asteroid = Instantiate(interestedAsteroid, nextAsteroidPosition, Quaternion.identity);
+
+    }
 
 }
