@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c97e2a09439f24481833680f3f771c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shower: {fileID: 2233992847269552230, guid: b3201b10cfaedf1409fa236088b0314d, type: 3}
-  asteroidShowerCooldown: 3
-  asteroidShowerThreshold: 5
-  enableAsteroidTest: 0
-  testAsteroidPrefab: {fileID: 6831133052796865536, guid: abb7ae8d4bbd88b4faeb3e22462e8c6e, type: 3}
-  testAsteroidCooldown: 0.1
+  asteroidTypes:
+  - {fileID: 6831133052796865536, guid: 77e61b3fb94d016499eb1463c682e790, type: 3}
+  - {fileID: 6831133052796865536, guid: abb7ae8d4bbd88b4faeb3e22462e8c6e, type: 3}
+  - {fileID: 5823417047264269255, guid: c070ded55266ca4459b6077bf15975e8, type: 3}
+  - {fileID: 5395549189990602532, guid: 54cd35a5f82e56f4f8f52b2c4b63e99f, type: 3}
+  - {fileID: 7620196952299980768, guid: 39b2ebd50da704a488242c6fd18df82d, type: 3}
+  asteroidStartingAltitude: 10
+  asteroidChanceMultiplier: 10
 --- !u!1 &7523718914153947584
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f10bb54a5d9e5749a6235074fb810dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumOfCows: 15
+  maxNumOfCows: 25
   maxSpawnedCount: 3
   maxSpawnTimer: 1
   isGridSpawnMode: 1
