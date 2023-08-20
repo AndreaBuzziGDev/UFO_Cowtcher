@@ -13,7 +13,6 @@ public class Asteroid : MonoBehaviour
     */
 
     ///GAMEPLAY PROPERTIES
-    [SerializeField] [Range(1f, 100f)] private float contentSpawnChance = 30;
     [SerializeField] [Range(1, 10)] private int quantityOnCapture = 5;//TODO: USE
     public int QuantityOnCapture { get { return quantityOnCapture; } }
 
@@ -46,14 +45,10 @@ public class Asteroid : MonoBehaviour
         //IF IMPACTED WITHIN SPAWNIN GRID DEPLOY CONTENT
         if (isWithinGrid && myAsteroidContent != null)
         {
-            float randomChance = Random.Range(1, 100);
-            if (randomChance >= contentSpawnChance)
+            if (this.transform.position.y <= badImpactCoordY || spawnsOnBadImpact)
             {
-                if (this.transform.position.y <= badImpactCoordY || spawnsOnBadImpact)
-                {
-                    //SPAWN ASTEROID CONTENT
-                    Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
-                }
+                //SPAWN ASTEROID CONTENT
+                Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
             }
         }
 
