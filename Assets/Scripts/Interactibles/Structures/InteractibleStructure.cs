@@ -9,6 +9,14 @@ public class InteractibleStructure : MonoInteractible
     private bool hasBeenDepleted = false;
     public bool HasBeenDepleted { get { return hasBeenDepleted; } set { hasBeenDepleted = value; } }
 
+    ///SPRITE REFERENCES
+    [SerializeField] private Sprite turnedOffSprite;
+    [SerializeField] private Sprite turnedOnSprite;
+
+    ///SPRITE RENDERER REFERENCES
+    [SerializeField] private SpriteRenderer childPedestalRenderer;
+
+
     ///STRUCTURE DATA
     [SerializeField] private StructureAbstractSO StructureScriptableObject;
     StructureAbstract myStructure;
@@ -30,6 +38,8 @@ public class InteractibleStructure : MonoInteractible
     // Start is called before the first frame update
     void Start()
     {
+        childPedestalRenderer.sprite = turnedOffSprite;
+
         lifetimeCurrent = lifetimeMax;
         if (StructureScriptableObject != null) myStructure = StructureScriptableObject.GetStructure();
         else Debug.LogError("Structure " + this.gameObject.name + " is missing Data. Assign Scriptable Object.");
@@ -69,6 +79,9 @@ public class InteractibleStructure : MonoInteractible
                 myStructure.DoBehaviour(this);
             }
         }
+
+        //CHANGE SPRITE FOR ACTIVATION
+
     }
 
 

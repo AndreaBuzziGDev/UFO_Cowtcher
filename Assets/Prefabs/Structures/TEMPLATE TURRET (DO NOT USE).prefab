@@ -215,6 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6e8c531bd76064997df7a999647985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnedOffSprite: {fileID: 21300000, guid: a4a9ece601a2d2f4fa3c83198fbc95f1, type: 3}
+  turnedOnSprite: {fileID: 21300000, guid: 6978fb76436c1ef47ab09db98e354567, type: 3}
+  childPedestalRenderer: {fileID: 7758115590238631724}
   StructureScriptableObject: {fileID: 0}
   ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}
   lifetimeMax: 20
