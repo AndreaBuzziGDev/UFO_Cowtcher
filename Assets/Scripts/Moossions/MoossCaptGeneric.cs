@@ -21,4 +21,18 @@ public class MoossCaptGeneric : Moossion
     //THE CONTENT OF THIS EVENT SHOULD BE CHECKED AND THE MISSION SHOULD PROGRESS IF THE CHECK IS PASSED.
 
 
+
+    //ABSTRACT METHODS CONCRETIZATION
+    ///DESCRIPTION
+    public override string GetDescription()
+    {
+        return "Capture " + TargetQuantity + " cows of any type.";
+    }
+
+
+
+
+    //UTILITIES
+
+
 }
