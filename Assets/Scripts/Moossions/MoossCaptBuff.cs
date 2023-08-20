@@ -31,6 +31,15 @@ public class MoossCaptBuff : Moossion
 
 
 
+    //ABSTRACT METHODS CONCRETIZATION
+    ///DESCRIPTION
+    public override string GetDescription()
+    {
+        return "Capture " + TargetQuantity + " cows while under the effect of a " + GetBuffNameForDesc(buff) + " Boost.";
+    }
+
+
+
 
     //UTILITIES
     public static SoughtBuff GetRandomTarget()
@@ -45,6 +54,23 @@ public class MoossCaptBuff : Moossion
         int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
 
         return uniqueIDs[randomIndex];
+    }
+
+    ///
+    public static string GetBuffNameForDesc(SoughtBuff sought)
+    {
+        switch (sought)
+        {
+            case SoughtBuff.SpeedMovementBoost:
+                return "Movement Speed";
+
+            case SoughtBuff.FuelGainBoost:
+                return "Fuel Recovery Increase";
+
+            default:
+                return "INVALID TYPE " + sought;
+        }
+
     }
 
 }

@@ -23,6 +23,15 @@ public class MoossCaptSpecific : Moossion
 
 
 
+    //ABSTRACT METHODS CONCRETIZATION
+    ///DESCRIPTION
+    public override string GetDescription()
+    {
+        return "Capture " + TargetQuantity + " " + Cowdex.Instance.GetCow(targetUID).CowTemplate.CowName +" cows.";
+    }
+
+
+
 
     //UTILITIES
     public static CowSO.UniqueID GetRandomTarget()

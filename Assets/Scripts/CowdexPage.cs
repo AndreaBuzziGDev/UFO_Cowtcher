@@ -36,7 +36,7 @@ public class CowdexPage
         ///
         cowSprite = visualChild.GetComponent<SpriteRenderer>().sprite;
 
-        cowName = myCow.CowTemplate.Name;
+        cowName = myCow.CowTemplate.CowName;
         cowDescription = myCow.CowTemplate.Description;
         if (string.IsNullOrEmpty(myCow.CowTemplate.effect))
         {

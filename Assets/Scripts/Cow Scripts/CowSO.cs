@@ -47,7 +47,7 @@ public class CowSO : ScriptableObject
 
 
     /// SIMPLE DATA
-    public string Name;
+    public string CowName;
 
     [TextAreaAttribute]
     public string Description;

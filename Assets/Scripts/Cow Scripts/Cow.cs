@@ -256,7 +256,7 @@ public class Cow : MonoBehaviour
         this.uid = cowTemplate.UID;
 
         this.rarity = cowTemplate.rarity;
-        this.cowName = cowTemplate.Name;
+        this.cowName = cowTemplate.CowName;
         this.fuelRecoveryAmount = cowTemplate.FuelRecoveryAmount;
         this.alertRadius = cowTemplate.AlertRadius;
         this.speedCalm = cowTemplate.SpeedCalm;
