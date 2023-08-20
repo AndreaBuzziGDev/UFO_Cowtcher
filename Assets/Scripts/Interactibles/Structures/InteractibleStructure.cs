@@ -15,6 +15,7 @@ public class InteractibleStructure : MonoInteractible
 
     ///SPRITE RENDERER REFERENCES
     [SerializeField] private SpriteRenderer childPedestalRenderer;
+    private bool turnedOn;
 
 
     ///STRUCTURE DATA
@@ -81,6 +82,11 @@ public class InteractibleStructure : MonoInteractible
         }
 
         //CHANGE SPRITE FOR ACTIVATION
+        if (!turnedOn)
+        {
+            childPedestalRenderer.sprite = turnedOnSprite;
+            turnedOn = true;
+        }
 
     }
 
