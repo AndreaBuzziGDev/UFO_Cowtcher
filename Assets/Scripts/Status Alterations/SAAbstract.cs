@@ -9,14 +9,13 @@ public abstract class SAAbstract
     //DATA
     public enum EBuffType
     {
-        None,
+        None,//SUPPOSEDLY UNUSED/USELESS
         SpeedBoost,
         FuelBoost2X,
         FastCatch,
         FuelLoss,
-        Acceleration,
-        ScreenTerror,
-        LevelTerror
+        Radar,
+        CaptureRadius
     }
 
     protected EBuffType type = 0;

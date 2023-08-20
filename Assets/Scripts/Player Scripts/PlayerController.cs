@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     ///STATUS ALTERATION DATA
     private List<SAAbstract> statusAlterations = new();
+    public List<SAAbstract> StatusAlterations { get { return statusAlterations; } }
+
     private float movSpeedBonus;
 
 
