@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 7575283742510952029, guid: 12288831212fdd040a018a46a4cf6b03, type: 3}
       propertyPath: myAsteroidContent
       value: 
-      objectReference: {fileID: -1905210977476053208, guid: e2b7431d84436f54e8dd19d90764627d, type: 3}
+      objectReference: {fileID: 7285834158696678458, guid: 9480a62782a84fc449b71255ce6b30cc, type: 3}
     - target: {fileID: 8812802538021501980, guid: 12288831212fdd040a018a46a4cf6b03, type: 3}
       propertyPath: m_Name
       value: Slowing

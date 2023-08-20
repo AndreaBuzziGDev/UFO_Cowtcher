@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 7575283742510952029, guid: 12288831212fdd040a018a46a4cf6b03, type: 3}
       propertyPath: myAsteroidContent
       value: 
-      objectReference: {fileID: 4562722955713447786, guid: d79ddd60077451640b5de4d4b3bc5cb3, type: 3}
+      objectReference: {fileID: 1771390505395762737, guid: 4bb43dd194950004b934f72d7e5aef79, type: 3}
     - target: {fileID: 8812802538021501980, guid: 12288831212fdd040a018a46a4cf6b03, type: 3}
       propertyPath: m_Name
       value: Refueling
