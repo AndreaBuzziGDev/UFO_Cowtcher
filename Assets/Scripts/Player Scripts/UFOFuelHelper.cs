@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class UFOFuelHelper
 {
-    public enum eFuelPenaltyMode
-    {
-        ModeFraction
-    }
-
-
     public static int HandleFuelRecoveryAmount(CowSO cowTemplate)
     {
         switch (DifficultyManager.Instance.FuelPenaltyMode)
