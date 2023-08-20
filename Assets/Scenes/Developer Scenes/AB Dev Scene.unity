@@ -6838,9 +6838,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2469648296422726837, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468288639870243499, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041088163514971228, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074833851336306259, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7941655071495466051, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 8035438668784491012, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
