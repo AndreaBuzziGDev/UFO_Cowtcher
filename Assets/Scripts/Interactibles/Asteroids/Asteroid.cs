@@ -18,7 +18,7 @@ public class Asteroid : MonoBehaviour
 
     ///GAMEPLAY PROPERTIES - ADDITIONAL CONTROL FEATURES
     [SerializeField] private bool spawnsOnBadImpact;
-    [SerializeField] private float badImpactCoordY = 2;
+    //[SerializeField] private float badImpactCoordY = 2;
 
     ///ASTEROID CONTENT
     [SerializeField] private MonoInteractible myAsteroidContent;
@@ -45,11 +45,13 @@ public class Asteroid : MonoBehaviour
         //IF IMPACTED WITHIN SPAWNIN GRID DEPLOY CONTENT
         if (isWithinGrid && myAsteroidContent != null)
         {
+            /*
             if (this.transform.position.y <= badImpactCoordY || spawnsOnBadImpact)
             {
+            */
                 //SPAWN ASTEROID CONTENT
                 Instantiate(myAsteroidContent.gameObject, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.identity);
-            }
+            /*}*/
         }
 
         HandleImpact();
