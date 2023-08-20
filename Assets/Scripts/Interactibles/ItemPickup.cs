@@ -8,6 +8,11 @@ public class ItemPickup : MonoInteractible
     ///STATUS ALTERATION
     [SerializeField] private SAAbstractSO Alteration;
 
+    ///LIFETIME
+    [SerializeField] private float lifetimeMax = 10.0f;
+    private float lifetimeCurrent;
+
+
     ///JUICYNESS STUFF
     ///SHAKE VARIABLES
     [Header("Shake Settings")]
@@ -16,13 +21,21 @@ public class ItemPickup : MonoInteractible
 
 
 
+
     //METHODS
     //...
+    private void Start()
+    {
+        lifetimeCurrent = lifetimeMax;
+    }
 
     // Update is called once per frame
     void Update()
     {
         AnimateItemPickup();
+
+        HandleLifetime();
+
     }
 
 
@@ -64,6 +77,7 @@ public class ItemPickup : MonoInteractible
 
 
     //JUICYNESS
+    ///ANIMATION
     private void AnimateItemPickup()
     {
 
@@ -74,5 +88,20 @@ public class ItemPickup : MonoInteractible
             );
 
     }
+
+
+    ///LIFETIME
+    private void HandleLifetime()
+    {
+        if(lifetimeCurrent > 0)
+        {
+            lifetimeCurrent -= Time.deltaTime;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 
 }

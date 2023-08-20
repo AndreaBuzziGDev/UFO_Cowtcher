@@ -13,10 +13,15 @@ public class InteractibleStructure : MonoInteractible
     [SerializeField] private StructureAbstractSO StructureScriptableObject;
     StructureAbstract myStructure;
 
-
-    ///JUICYNESS
+    ///JUICYNESS STUFF
+    ///PARTICLES
     [SerializeField] private ParticleSystem ExpirationParticles;
     private bool hasPlayedExpirationParticles;
+
+    ///LIFETIME
+    [SerializeField] private float lifetimeMax = 20.0f;
+    private float lifetimeCurrent;
+
 
 
     //METHODS
@@ -37,6 +42,9 @@ public class InteractibleStructure : MonoInteractible
         {
             ExpireStructure();
         }
+
+        HandleLifetime();
+
     }
 
 
@@ -74,6 +82,7 @@ public class InteractibleStructure : MonoInteractible
 
 
     //JUICYNESS
+    ///EXPIRATION
     private void ExpireStructure()
     {
         //PARTICLE EMISSION
@@ -89,6 +98,20 @@ public class InteractibleStructure : MonoInteractible
         //DESTROY EXPIRED STRUCTURE
         Destroy(this.gameObject, 3.0f);
 
+    }
+
+    ///LIFETIME
+    private void HandleLifetime()
+    {
+        if (lifetimeCurrent > 0)
+        {
+            lifetimeCurrent -= Time.deltaTime;
+        }
+        else
+        {
+            //TODO: CHANGE SO THAT THE STRUCTURE IS EXPIRED INSTEAD?
+            Destroy(this.gameObject);
+        }
     }
 
 
