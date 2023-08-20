@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2871382618478964565}
   - component: {fileID: -1905210977476053208}
+  - component: {fileID: 3827693660343077909}
   m_Layer: 9
   m_Name: TEMPLATE TURRET (DO NOT USE)
   m_TagString: Untagged
@@ -217,3 +218,24 @@ MonoBehaviour:
   StructureScriptableObject: {fileID: 0}
   ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}
   lifetimeMax: 20
+--- !u!65 &3827693660343077909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000384660636271075}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.55759656, y: 0.81402224, z: 0.12984432}
+  m_Center: {x: -0.009558499, y: 0.41067317, z: -0.0036947578}
