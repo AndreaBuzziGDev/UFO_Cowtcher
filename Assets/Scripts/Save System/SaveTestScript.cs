@@ -104,14 +104,14 @@ public class SaveTestScript : MonoBehaviour
     ///TEST LOAD STAGE LEVEL
     public void TestLoadStageLevel()
     {
-        int result = SaveSystem.LoadStageEXPInfo(testStageName);
+        int result = SaveSystem.LoadStageLevelInfo(testStageName);
         Debug.Log("Stage name " + testStageName + " Level: " + result);
     }
 
     ///TEST RESET STAGE LEVEL
     public void TestResetStageLevel()
     {
-        SaveSystem.ResetStageExpInfo();
+        SaveSystem.ResetStageLevelInfo();
         Debug.Log("Reset All Stages Levels");
     }
 
