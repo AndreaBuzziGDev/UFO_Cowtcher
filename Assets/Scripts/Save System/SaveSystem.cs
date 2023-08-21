@@ -9,8 +9,16 @@ public class SaveSystem
     //SAVE SYSTEM IS DRIVEN BY STATIC CODE
 
     //DATA
+    ///
     public const string MoossionAddress = "Moossions/";
+
+    ///
     public const string StageAddress = "Stages/";
+    public const string StageUnlock = "/UnlockInfo";
+    public const string StageLevel = "/Level";
+    public const string StageExp = "/Experience";
+
+    ///
     public const string HSAddress = "HighScore";
     public const string CowAddress = "Cows/";
 
@@ -22,30 +30,75 @@ public class SaveSystem
     {
         if (unlocked)
         {
-            PlayerPrefs.SetInt(StageAddress + stageName, 1);//ANY VALUE ABOVE 0 = UNLOCKED
+            PlayerPrefs.SetInt(StageAddress + stageName + StageUnlock, 1);//ANY VALUE ABOVE 0 = UNLOCKED
         }
         else
         {
-            PlayerPrefs.SetInt(StageAddress + stageName, 0);//0 - STAGE LOCKED
+            PlayerPrefs.SetInt(StageAddress + stageName + StageUnlock, 0);//0 - STAGE LOCKED
         }
         PlayerPrefs.Save();
     }
 
     public static bool IsStageUnlocked(string stageName)
     {
-        return PlayerPrefs.GetInt(StageAddress + stageName, 0) > 0;//0 - STAGE LOCKED, ANY ABOVE = UNLOCKED
+        return PlayerPrefs.GetInt(StageAddress + stageName + StageUnlock, 0) > 0;//0 - STAGE LOCKED, ANY ABOVE = UNLOCKED
     }
 
     public static void ResetStagesUnlock()
     {
         //STAGE 1 IS ALWAYS UNLOCKED.
         //PlayerPrefs.SetInt(StageAddress + "Stage 1", 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 2", 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 3", 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 4", 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageUnlock, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageUnlock, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageUnlock, 0);
         PlayerPrefs.Save();
     }
 
+
+
+
+    //STAGE EXPERIENCE INFO
+    public static void SetStageEXPInfo(string stageName, int experience)
+    {
+        PlayerPrefs.SetInt(StageAddress + stageName + StageExp, experience);
+    }
+
+    public static int LoadStageEXPInfo(string stageName)
+    {
+        return PlayerPrefs.GetInt(StageAddress + stageName + StageExp, 0);
+    }
+
+    public static void ResetStageExpInfo()
+    {
+        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageExp, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageExp, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageExp, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageExp, 0);
+        PlayerPrefs.Save();
+    }
+
+
+
+
+    //STAGE EXPERIENCE INFO
+    public static void SetStageLevelInfo(string stageName, int level)
+    {
+        PlayerPrefs.SetInt(StageAddress + stageName + StageLevel, level);
+    }
+
+    public static int LoadStageLevelInfo(string stageName)
+    {
+        return PlayerPrefs.GetInt(StageAddress + stageName + StageLevel, 0);
+    }
+
+    public static void ResetStageLevelInfo()
+    {
+        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageLevel, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageLevel, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageLevel, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageLevel, 0);
+        PlayerPrefs.Save();
+    }
 
 
 
