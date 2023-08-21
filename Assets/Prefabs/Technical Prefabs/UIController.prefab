@@ -3263,6 +3263,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gameplay Input Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8692800145072291167, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692800145072291167, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692800145072291167, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
