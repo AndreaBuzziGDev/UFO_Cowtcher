@@ -7,8 +7,10 @@ public class SaveSystem
     //SAVE SYSTEM IS DRIVEN BY STATIC CODE
 
     //DATA
-    public const string HSAddress = "HighScore";
+    public const string MoossionAddress = "Moossions/";
     public const string StageAddress = "Stages/";
+    public const string HSAddress = "HighScore";
+    public const string CowAddress = "Cows/";
 
 
 
@@ -84,7 +86,7 @@ public class SaveSystem
 
 
     //COW PROGRESS INFO
-    public static void SaveCowProgress()//TODO: USE A CLASS TO REPRESENT DATA
+    public static void SaveCowProgress(SaveInfoCow saveCow)//TODO: USE A CLASS TO REPRESENT DATA
     {
         //TODO: USE A CLASS TO REPRESENT DATA
     }
