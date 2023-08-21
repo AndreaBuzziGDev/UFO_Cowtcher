@@ -19,13 +19,20 @@ public class SaveSystem
     }
 
     //SAVE STAGE UNLOCKS
-    public static void SaveStage(string stageName, int knowledgeValue)
+    public static void SetStageUnlocked(string stageName, bool unlocked)
     {
-        PlayerPrefs.SetInt(StageAddress + stageName, knowledgeValue);//0 - STAGE LOCKED, ANY ABOVE = UNLOCKED
+        if (unlocked)
+        {
+            PlayerPrefs.SetInt(StageAddress + stageName, 1);//ANY VALUE ABOVE 0 = UNLOCKED
+        }
+        else
+        {
+            PlayerPrefs.SetInt(StageAddress + stageName, 0);//0 - STAGE LOCKED
+        }
         PlayerPrefs.Save();
     }
 
-    public static bool LoadStage(string stageName)
+    public static bool IsStageUnlocked(string stageName)
     {
         return PlayerPrefs.GetInt(StageAddress + stageName, 0) > 0;//0 - STAGE LOCKED, ANY ABOVE = UNLOCKED
     }
