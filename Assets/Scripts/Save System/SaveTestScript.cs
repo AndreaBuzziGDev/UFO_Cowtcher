@@ -34,7 +34,9 @@ public class SaveTestScript : MonoBehaviour
     //TEST RESET COW
     public void TestResetCow()
     {
-
+        SaveSystem.ResetCowProgress();
+        Debug.Log("reset cow with UID: " + testCowUID);
+        TestLoadCow();
     }
 
 

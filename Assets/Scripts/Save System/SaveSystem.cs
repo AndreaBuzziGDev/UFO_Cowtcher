@@ -111,6 +111,7 @@ public class SaveSystem
         foreach(CowSO.UniqueID interestedID in Enum.GetValues(typeof(CowSO.UniqueID)).Cast<CowSO.UniqueID>().ToList())
         {
             PlayerPrefs.SetInt(CowAddress + interestedID, 0);
+            Debug.Log("SaveSystem - Reset Cow with UID: " + interestedID);
         }
         PlayerPrefs.Save();
     }

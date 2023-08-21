@@ -1114,7 +1114,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 547766529}
         m_TargetAssemblyTypeName: SaveTestScript, Assembly-CSharp
-        m_MethodName: TestLoadCow
+        m_MethodName: TestResetCow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
