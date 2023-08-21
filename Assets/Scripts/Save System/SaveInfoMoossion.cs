@@ -19,7 +19,7 @@ public class SaveInfoMoossion
     //CONSTRUCTOR
     private SaveInfoMoossion()
     {
-        //PRIVATE EMPTY CONSTRUCTOR TO AVOID INSTANCIATION
+        //PRIVATE EMPTY CONSTRUCTOR TO AVOID INSTANCIATION OF AN EMPTY DATA CLASS
 
     }
 
