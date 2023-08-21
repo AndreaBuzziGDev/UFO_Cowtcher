@@ -13,10 +13,14 @@ public class SaveSystem
 
 
     //MOOSSION PROGRESS INFO
-    public static void SaveMoossion()
+    public static void SaveMoossion(int moossionIndex, int moossionProgress)//TODO: USE A CLASS TO REPRESENT DATA
     {
+        //TODO: USE A CLASS TO REPRESENT DATA
 
     }
+
+
+
 
     //SAVE STAGE UNLOCKS
     public static void SetStageUnlocked(string stageName, bool unlocked)
@@ -80,9 +84,9 @@ public class SaveSystem
 
 
     //COW PROGRESS INFO
-    public static void SaveCowProgress()
+    public static void SaveCowProgress()//TODO: USE A CLASS TO REPRESENT DATA
     {
-
+        //TODO: USE A CLASS TO REPRESENT DATA
     }
 
 
