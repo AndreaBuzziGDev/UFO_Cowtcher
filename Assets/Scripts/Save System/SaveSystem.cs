@@ -36,9 +36,10 @@ public class SaveSystem
         return PlayerPrefs.GetInt(StageAddress + stageName, 0) > 0;//0 - STAGE LOCKED, ANY ABOVE = UNLOCKED
     }
 
-    public static void ResetStages()
+    public static void ResetStagesUnlock()
     {
-        PlayerPrefs.SetInt(StageAddress + "Stage 1", 0);
+        //STAGE 1 IS ALWAYS UNLOCKED.
+        //PlayerPrefs.SetInt(StageAddress + "Stage 1", 0);
         PlayerPrefs.SetInt(StageAddress + "Stage 2", 0);
         PlayerPrefs.SetInt(StageAddress + "Stage 3", 0);
         PlayerPrefs.SetInt(StageAddress + "Stage 4", 0);

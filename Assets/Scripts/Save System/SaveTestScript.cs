@@ -62,7 +62,7 @@ public class SaveTestScript : MonoBehaviour
     ///TEST RESET LEVEL UNLOCK
     public void TestResetLevelUnlock()
     {
-        SaveSystem.ResetStages();
+        SaveSystem.ResetStagesUnlock();
         Debug.Log("Reset All Stages");
     }
 
