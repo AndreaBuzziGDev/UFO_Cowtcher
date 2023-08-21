@@ -6,12 +6,14 @@ public class SaveTestScript : MonoBehaviour
 {
     //DATA
     [SerializeField] private CowSO.UniqueID testCowUID = CowSO.UniqueID.C002;
+    [SerializeField] private string testStageName = "Stage 1";
 
 
     //METHODS
     //...
 
-    //TEST SAVE COW
+    //COWS
+    ///TEST SAVE COW
     public void TestSaveCow()
     {
         SaveSystem.SaveCowProgress(testCowUID, SaveInfoCow.Knowledge.Known);
@@ -19,7 +21,7 @@ public class SaveTestScript : MonoBehaviour
     }
 
 
-    //TEST LOAD COW
+    ///TEST LOAD COW
     public void TestLoadCow()
     {
         SaveInfoCow cowSI = SaveSystem.LoadCowProgress(testCowUID);
@@ -31,7 +33,7 @@ public class SaveTestScript : MonoBehaviour
     }
 
 
-    //TEST RESET COW
+    ///TEST RESET COW
     public void TestResetCow()
     {
         SaveSystem.ResetCowProgress();
@@ -41,8 +43,32 @@ public class SaveTestScript : MonoBehaviour
 
 
 
+    //LEVELS
+    ///TEST SAVE LEVEL UNLOCK
+    public void TestSaveLevelUnlock()
+    {
+        //testStageName
+        SaveSystem.SetStageUnlocked(testStageName, true);
+        Debug.Log("Saved Stage: " + testStageName);
+    }
+
+    ///TEST LOAD LEVEL UNLOCK
+    public void TestLoadLevelUnlock()
+    {
+        bool result = SaveSystem.IsStageUnlocked(testStageName);
+        Debug.Log("Stage name " + testStageName + " is Unlocked: " + result);
+    }
+
+    ///TEST RESET LEVEL UNLOCK
+    public void TestResetLevelUnlock()
+    {
+        SaveSystem.ResetStages();
+        Debug.Log("Reset All Stages");
+    }
+
+
+
 
     //...
-
 
 }
