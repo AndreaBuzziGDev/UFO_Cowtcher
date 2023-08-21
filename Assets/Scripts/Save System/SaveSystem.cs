@@ -61,6 +61,7 @@ public class SaveSystem
     public static void SetStageEXPInfo(string stageName, int experience)
     {
         PlayerPrefs.SetInt(StageAddress + stageName + StageExp, experience);
+        PlayerPrefs.Save();
     }
 
     public static int LoadStageEXPInfo(string stageName)
@@ -84,6 +85,7 @@ public class SaveSystem
     public static void SetStageLevelInfo(string stageName, int level)
     {
         PlayerPrefs.SetInt(StageAddress + stageName + StageLevel, level);
+        PlayerPrefs.Save();
     }
 
     public static int LoadStageLevelInfo(string stageName)
