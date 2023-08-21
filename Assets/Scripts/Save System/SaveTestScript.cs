@@ -44,28 +44,76 @@ public class SaveTestScript : MonoBehaviour
 
 
     //LEVELS
-    ///TEST SAVE LEVEL UNLOCK
-    public void TestSaveLevelUnlock()
+    ///UNLOCK
+    ///TEST SAVE STAGE UNLOCK
+    public void TestSaveStageUnlock()
     {
         //testStageName
         SaveSystem.SetStageUnlocked(testStageName, true);
         Debug.Log("Saved Stage: " + testStageName);
     }
 
-    ///TEST LOAD LEVEL UNLOCK
-    public void TestLoadLevelUnlock()
+    ///TEST LOAD STAGE UNLOCK
+    public void TestLoadStageUnlock()
     {
         bool result = SaveSystem.IsStageUnlocked(testStageName);
         Debug.Log("Stage name " + testStageName + " is Unlocked: " + result);
     }
 
-    ///TEST RESET LEVEL UNLOCK
-    public void TestResetLevelUnlock()
+    ///TEST RESET STAGE UNLOCK
+    public void TestResetStageUnlock()
     {
         SaveSystem.ResetStagesUnlock();
         Debug.Log("Reset All Stages");
     }
 
+
+
+    ///EXP
+    ///TEST SAVE STAGE EXP
+    public void TestSaveStageEXP()
+    {
+        SaveSystem.SetStageEXPInfo(testStageName, 10);
+        Debug.Log("Saved Stage EXP" + testStageName);
+    }
+
+    ///TEST LOAD STAGE EXP
+    public void TestLoadStageEXP()
+    {
+        int result = SaveSystem.LoadStageEXPInfo(testStageName);
+        Debug.Log("Stage name " + testStageName + " EXP: " + result);
+    }
+
+    ///TEST RESET STAGE EXP
+    public void TestResetStageEXP()
+    {
+        SaveSystem.ResetStageExpInfo();
+        Debug.Log("Reset All Stages EXP");
+    }
+
+
+
+    ///LEVEL
+    ///TEST SAVE STAGE LEVEL
+    public void TestSaveStageLevel()
+    {
+        SaveSystem.SetStageLevelInfo(testStageName, 2);
+        Debug.Log("Saved Stage Level: " + testStageName);
+    }
+
+    ///TEST LOAD STAGE LEVEL
+    public void TestLoadStageLevel()
+    {
+        int result = SaveSystem.LoadStageEXPInfo(testStageName);
+        Debug.Log("Stage name " + testStageName + " Level: " + result);
+    }
+
+    ///TEST RESET STAGE LEVEL
+    public void TestResetStageLevel()
+    {
+        SaveSystem.ResetStageExpInfo();
+        Debug.Log("Reset All Stages Levels");
+    }
 
 
 
