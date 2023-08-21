@@ -91,6 +91,7 @@ public class SaveSystem
     {
         int interestedID = (int)cowUID;
         PlayerPrefs.SetInt(CowAddress + interestedID, (int) knowValue);
+        PlayerPrefs.Save();
     }
 
     public static SaveInfoCow LoadCowProgress(CowSO.UniqueID cowUID)
@@ -101,6 +102,16 @@ public class SaveSystem
         int knowValue = PlayerPrefs.GetInt(CowAddress + interestedID, 0);
 
         return new SaveInfoCow(interestedID, knowValue);
+    }
+
+    public static void ResetCowProgress()
+    {
+        /*
+        foreach(CowSO.UniqueID id in CowSO.UniqueID)
+        {
+
+        }
+        */
     }
 
 }
