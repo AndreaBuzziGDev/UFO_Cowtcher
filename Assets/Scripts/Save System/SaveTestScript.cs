@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaveTestScript : MonoBehaviour
 {
     //DATA
-    CowSO.UniqueID testCowUID = CowSO.UniqueID.C001Kevin;
+    CowSO.UniqueID testCowUID = CowSO.UniqueID.C002;
 
 
     //METHODS
