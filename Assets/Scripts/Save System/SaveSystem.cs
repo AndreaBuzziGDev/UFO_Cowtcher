@@ -103,6 +103,4 @@ public class SaveSystem
         return new SaveInfoCow(interestedID, knowValue);
     }
 
-
-
 }

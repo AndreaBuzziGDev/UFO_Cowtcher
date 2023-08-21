@@ -26,6 +26,8 @@ public class SaveInfoMoossion
     public SaveInfoMoossion(int index, int progress, int target)
     {
         this.index = index;
+        //TODO: NEEDS TO SAVE OTHER INFOs TO RE-BUILD MOOSSIONS PROGRAMMATICALLY
+
         this.progress = progress;
         this.target = target;
     }
