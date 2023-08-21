@@ -21,8 +21,8 @@ public class SaveInfoCow
 
     public Knowledge KnowledgeValue { get { return knowledgeValue; } }
 
-    public bool IsKnown { get { return 1 >= (int)knowledgeValue; } }
-    public bool IsCaptured { get { return 2 == (int)knowledgeValue; } }
+    public bool IsKnown { get { return 1 <= (int)knowledgeValue; } }
+    public bool IsCaptured { get { return 2 <= (int)knowledgeValue; } }
 
 
 

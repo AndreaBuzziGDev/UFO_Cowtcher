@@ -14,7 +14,7 @@ public class SaveTestScript : MonoBehaviour
     //TEST SAVE COW
     public void TestSaveCow()
     {
-        SaveSystem.SaveCowProgress(testCowUID, SaveInfoCow.Knowledge.Known);
+        SaveSystem.SaveCowProgress(testCowUID, SaveInfoCow.Knowledge.Captured);
         Debug.Log("Saved Cow with UID: " + testCowUID);
     }
 
