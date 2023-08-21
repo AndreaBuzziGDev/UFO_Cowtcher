@@ -23,10 +23,10 @@ public class SaveTestScript : MonoBehaviour
     public void TestLoadCow()
     {
         SaveInfoCow cowSI = SaveSystem.LoadCowProgress(testCow);
-        Debug.Log("cowSI CowUID" + cowSI.CowUID);
-        Debug.Log("cowSI KnowledgeValue" + cowSI.KnowledgeValue);
-        Debug.Log("cowSI IsKnown" + cowSI.IsKnown);
-        Debug.Log("cowSI IsCaptured" + cowSI.IsCaptured);
+        Debug.Log("cowSI CowUID: " + cowSI.CowUID);
+        Debug.Log("cowSI KnowledgeValue: " + cowSI.KnowledgeValue);
+        Debug.Log("cowSI IsKnown: " + cowSI.IsKnown);
+        Debug.Log("cowSI IsCaptured: " + cowSI.IsCaptured);
 
     }
 
