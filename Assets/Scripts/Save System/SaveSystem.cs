@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
 
 public class SaveSystem
 {
@@ -106,12 +108,11 @@ public class SaveSystem
 
     public static void ResetCowProgress()
     {
-        /*
-        foreach(CowSO.UniqueID id in CowSO.UniqueID)
+        foreach(CowSO.UniqueID interestedID in Enum.GetValues(typeof(CowSO.UniqueID)).Cast<CowSO.UniqueID>().ToList())
         {
-
+            PlayerPrefs.SetInt(CowAddress + interestedID, 0);
         }
-        */
+        PlayerPrefs.Save();
     }
 
 }

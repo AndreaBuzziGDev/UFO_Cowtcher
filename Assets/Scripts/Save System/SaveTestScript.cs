@@ -31,7 +31,16 @@ public class SaveTestScript : MonoBehaviour
     }
 
 
-    //TEST ...
+    //TEST RESET COW
+    public void TestResetCow()
+    {
+
+    }
+
+
+
+
+    //...
 
 
 }
