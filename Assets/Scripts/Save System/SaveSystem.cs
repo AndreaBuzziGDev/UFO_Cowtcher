@@ -14,6 +14,7 @@ public class SaveSystem
 
 
 
+
     //MOOSSION PROGRESS INFO
     public static void SaveMoossion(int moossionIndex, int moossionProgress)//TODO: USE A CLASS TO REPRESENT DATA
     {
@@ -86,9 +87,20 @@ public class SaveSystem
 
 
     //COW PROGRESS INFO
-    public static void SaveCowProgress(SaveInfoCow saveCow)//TODO: USE A CLASS TO REPRESENT DATA
+    public static void SaveCowProgress(CowSO.UniqueID cowUID, SaveInfoCow.Knowledge knowValue)//TODO: USE A CLASS TO REPRESENT DATA
     {
-        //TODO: USE A CLASS TO REPRESENT DATA
+        int interestedID = (int)cowUID;
+        PlayerPrefs.SetInt(CowAddress + interestedID, (int) knowValue);
+    }
+
+    public static SaveInfoCow LoadCowProgress(CowSO.UniqueID cowUID)
+    {
+
+        int interestedID = (int) cowUID;
+
+        int knowValue = PlayerPrefs.GetInt(CowAddress + interestedID, 0);
+
+        return new SaveInfoCow(interestedID, knowValue);
     }
 
 
