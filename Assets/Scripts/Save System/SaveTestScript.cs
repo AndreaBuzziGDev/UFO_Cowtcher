@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaveTestScript : MonoBehaviour
 {
     //DATA
-    CowSO.UniqueID testCowUID = CowSO.UniqueID.C000Jamal;
+    CowSO.UniqueID testCowUID = CowSO.UniqueID.C001Kevin;
 
 
     //METHODS
@@ -14,7 +14,7 @@ public class SaveTestScript : MonoBehaviour
     //TEST SAVE COW
     public void TestSaveCow()
     {
-        SaveSystem.SaveCowProgress(testCowUID, SaveInfoCow.Knowledge.Captured);
+        SaveSystem.SaveCowProgress(testCowUID, SaveInfoCow.Knowledge.Known);
         Debug.Log("Saved Cow with UID: " + testCowUID);
     }
 
