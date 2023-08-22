@@ -2356,6 +2356,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3008297296413678391, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
   m_PrefabInstance: {fileID: 715438996}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &725066812 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7804580733662872598, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+  m_PrefabInstance: {fileID: 7144739522841677775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &729657142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5949,6 +5954,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3008297296413678391, guid: c58d0d396efdff142bf50ac51a381318, type: 3}
   m_PrefabInstance: {fileID: 1826419366}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1861155307 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5701248588092350614, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+  m_PrefabInstance: {fileID: 7144739522841677775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1863853806 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3545828347779314450, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
@@ -6866,9 +6876,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4058901690669759143, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: radarUFO
+      value: 
+      objectReference: {fileID: 725066812}
+    - target: {fileID: 4058901690669759143, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: fastCatchUFO
       value: 
       objectReference: {fileID: 1863853806}
+    - target: {fileID: 4058901690669759143, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: fuelBoostUFO
+      value: 
+      objectReference: {fileID: 2040027459}
     - target: {fileID: 4058901690669759143, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: speedBoostUFO
       value: 
@@ -6877,6 +6895,10 @@ PrefabInstance:
       propertyPath: fuelBoostX2UFO
       value: 
       objectReference: {fileID: 2040027459}
+    - target: {fileID: 4058901690669759143, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
+      propertyPath: captureRadiusUFO
+      value: 
+      objectReference: {fileID: 1861155307}
     - target: {fileID: 4074833851336306259, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: m_IsActive
       value: 0

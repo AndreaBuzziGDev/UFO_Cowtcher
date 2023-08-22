@@ -12,6 +12,8 @@ public class UFOAccessoriesBuffs : MonoBehaviour
     [SerializeField] private SpriteRenderer speedBoostUFO;
     [SerializeField] private SpriteRenderer fastCatchUFO;
     [SerializeField] private SpriteRenderer fuelBoostUFO;
+    [SerializeField] private SpriteRenderer radarUFO;
+    [SerializeField] private SpriteRenderer captureRadiusUFO;
 
     // Update is called once per frame
     void Update()
@@ -38,6 +40,22 @@ public class UFOAccessoriesBuffs : MonoBehaviour
             fuelBoostUFO.gameObject.SetActive(true);
         }
         else
-            fuelBoostUFO.gameObject.SetActive(false); 
+            fuelBoostUFO.gameObject.SetActive(false);
+        
+        //BUFF RADAR
+        if (UFOStatusAlterationHelper.HasBuffRadar() == true)
+        {
+            radarUFO.gameObject.SetActive(true);
+        }
+        else
+            radarUFO.gameObject.SetActive(false);
+
+        //BUFF CAPTURE RADIUS
+        if (UFOStatusAlterationHelper.HasBuffCaptureRadius() == true)
+        {
+            captureRadiusUFO.gameObject.SetActive(true);
+        }
+        else
+            captureRadiusUFO.gameObject.SetActive(false);
     }
 }
