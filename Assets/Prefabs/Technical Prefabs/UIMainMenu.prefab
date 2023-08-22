@@ -254,8 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7741d71128b2ed429cf353cf904d371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intendedTargetScene: 0
-  parentController: {fileID: 0}
+  intendedTargetScene: 4
+  parentController: {fileID: 7883382402846591270}
 --- !u!1 &1225116622614024979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,8 +2505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7741d71128b2ed429cf353cf904d371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intendedTargetScene: 0
-  parentController: {fileID: 0}
+  intendedTargetScene: 1
+  parentController: {fileID: 7883382402846591270}
 --- !u!1 &4102609461636713749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,8 +4745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7741d71128b2ed429cf353cf904d371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intendedTargetScene: 0
-  parentController: {fileID: 0}
+  intendedTargetScene: 2
+  parentController: {fileID: 7883382402846591270}
 --- !u!1 &7957502337376996100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,8 +4881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7741d71128b2ed429cf353cf904d371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intendedTargetScene: 0
-  parentController: {fileID: 0}
+  intendedTargetScene: 3
+  parentController: {fileID: 7883382402846591270}
 --- !u!1 &8093007311602993490
 GameObject:
   m_ObjectHideFlags: 0
