@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8bcf32aeede6c4e93afe22fc475ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unknownCowSprite: {fileID: 21300000, guid: f30c92e6e925efd4abf2b9e5f77f619d, type: 3}
   cowImage: {fileID: 2755322693304024019}
   cowName: {fileID: 6780247220326347951}
   cowDescription: {fileID: 216565073823038192}
@@ -1078,7 +1079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00024414062, y: -0.00012207031}
+  m_AnchoredPosition: {x: 0.00024414062, y: -0.00024414062}
   m_SizeDelta: {x: 0.00012207, y: 0.00012207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3518656613617281786
@@ -2010,7 +2011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.016}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.22045898, y: 0.00012207031}
+  m_AnchoredPosition: {x: 0.22045898, y: 0.00024414062}
   m_SizeDelta: {x: -0.9893, y: -0.30896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8044015637509754322
@@ -2048,7 +2049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00012207031}
+  m_AnchoredPosition: {x: 0, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5922482570274411410
@@ -2123,7 +2124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.16000001, y: 0.156}
   m_AnchorMax: {x: 0.8403976, y: 0.4161459}
-  m_AnchoredPosition: {x: -0.12695312, y: 0.088012695}
+  m_AnchoredPosition: {x: -0.12695312, y: 0.087890625}
   m_SizeDelta: {x: -0.5710144, y: -0.8079834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2333187239376341238

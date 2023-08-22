@@ -16,7 +16,11 @@ public class CowdexPageGUI : MonoBehaviour
     //COWDEX GUI
     private CowdexGUI parentCowdexGUI;//TODO: HANDLING VIA MANUAL REFERENCE?
 
-    //SPRITE
+    //DEFAULT UNKNOWN COW SPRITE
+    [SerializeField] private Sprite unknownCowSprite;
+
+
+    //COW IMAGE
     [SerializeField] private Image cowImage;
 
     //DETAIL AREA
@@ -69,15 +73,8 @@ public class CowdexPageGUI : MonoBehaviour
 
     private void UpdateCowImage()
     {
-        if (1 <= (int)currentPage.Indexed.KnowledgeState)
-        {
-            cowImage.sprite = currentPage.cowSprite;
-        }
-        else
-        {
-            //TODO: SET UNKNOWN COW SPRITE
-
-        }
+        if (1 <= (int)currentPage.Indexed.KnowledgeState) cowImage.sprite = currentPage.cowSprite;
+        else cowImage.sprite = unknownCowSprite;
     }
 
 
