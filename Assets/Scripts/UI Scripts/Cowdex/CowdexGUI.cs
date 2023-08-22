@@ -48,12 +48,12 @@ public class CowdexGUI : MonoBehaviour
     public void Initialization()
     {
         pageIndex = 0;
-        List<Cow> allCows = Cowdex.Instance.GetAllActualCows();
-        foreach(Cow c in allCows)
+        List<IndexedCow> allCows = Cowdex.Instance.GetAllIndexedCows();
+        foreach(IndexedCow c in allCows)
         {
             CowdexPage cp = new CowdexPage(c);
             CowdexPages.Add(cp);
-            CowdexPagesDictionary.Add(c.CowTemplate.UID, cp);
+            CowdexPagesDictionary.Add(c.ReferenceTemplate.UID, cp);
         }
 
         Debug.Log("CowdexGUI - CowdexPages size: " + CowdexPages.Count);
@@ -84,7 +84,7 @@ public class CowdexGUI : MonoBehaviour
     {
         //GRANT INDEX IS WITHIN BOUNDARY
         if (targetIndexPage < 0) pageIndex = 0;
-        else if (pageIndex >= CowdexPages.Count) pageIndex = CowdexPages.Count - 1;
+        else if (pageIndex >= NumberOfPages) pageIndex = CowdexPages.Count - 1;
         else pageIndex = targetIndexPage;
 
         //UPDATE THE COWDEXPAGE

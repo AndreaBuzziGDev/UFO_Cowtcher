@@ -4,35 +4,19 @@ using UnityEngine;
 
 public class IndexedCow
 {
-    //ENUMS
-    public enum CowKnowledgeState
-    {
-        Unknown,
-        Known,
-        Captured
-    }
-
     //DATA
-    private CowKnowledgeState state = CowKnowledgeState.Unknown;
-    public CowKnowledgeState State { get { return state; } }
+    public SaveInfoCow.Knowledge KnowledgeState { get { return SaveSystem.LoadCowProgress(ReferenceTemplate.UID).KnowledgeValue; } }
 
-    private CowSO referenceTemplate;
-    public CowSO ReferenceTemplate { get { return referenceTemplate; } }
+    private Cow prefabCow;
+    public Cow PrefabCow { get { return prefabCow; } }
+    public CowSO ReferenceTemplate { get { return prefabCow.CowTemplate; } }
 
 
 
     //CONSTRUCTOR
-    public IndexedCow(CowKnowledgeState startingState, CowSO template)
+    public IndexedCow(Cow referenceCow)
     {
-        this.state = startingState;
-        this.referenceTemplate = template;
-    }
-
-    //METHODS
-    public void ChangeState(CowKnowledgeState targetState)
-    {
-        //NB: MIGHT HOST FUTURE FUNCTIONALITY EXPANSIONS
-        this.state = targetState;
+        this.prefabCow = referenceCow;
     }
 
 }

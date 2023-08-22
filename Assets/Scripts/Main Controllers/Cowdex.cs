@@ -9,9 +9,11 @@ public class Cowdex : MonoSingleton<Cowdex>
     [SerializeField] private List<Cow> FullListOfExistingCows = new();//PUT ALL "PREFAB" COWS INSIDE HERE.
 
     ///DATA STRUCTURES
-    private Dictionary<CowSO.UniqueID, Cow> CowArchive = new();//A MAP FOR EACH PREFAB COW
-    private Dictionary<CowSO.UniqueID, CowSO> ScriptableCowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
-    private Dictionary<CowSO.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
+    private Dictionary<CowSO.UniqueID, Cow> cowArchive = new();//A MAP FOR EACH PREFAB COW
+    private Dictionary<CowSO.UniqueID, CowSO> scriptableCowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
+
+    ///DATA STRUCTURE ACTUALLY USED BY COWDEX GUI
+    private Dictionary<CowSO.UniqueID, IndexedCow> playableCowdex = new();
 
 
 
@@ -48,19 +50,20 @@ public class Cowdex : MonoSingleton<Cowdex>
         foreach(Cow iteratedCow in FullListOfExistingCows)
         {
             //Cow
-            CowArchive.Add(iteratedCow.CowTemplate.UID, iteratedCow);
+            cowArchive.Add(iteratedCow.CowTemplate.UID, iteratedCow);
 
             //ScriptableCow
-            ScriptableCowArchive.Add(iteratedCow.CowTemplate.UID, iteratedCow.CowTemplate);
+            scriptableCowArchive.Add(iteratedCow.CowTemplate.UID, iteratedCow.CowTemplate);
 
-            //IndexedCow
-            IndexedCow ic = new IndexedCow(IndexedCow.CowKnowledgeState.Unknown, iteratedCow.CowTemplate);
-            PlayableCowdex.Add(iteratedCow.CowTemplate.UID, ic);
+
+            //BUILDING IndexedCow
+            IndexedCow ic = new IndexedCow(iteratedCow);
+            playableCowdex.Add(iteratedCow.CowTemplate.UID, ic);
 
         }
-        Debug.Log("Cowdex - CowArchive size:  " + CowArchive.Count);
-        Debug.Log("Cowdex - ScriptableCowArchive size:  " + ScriptableCowArchive.Count);
-        Debug.Log("Cowdex - PlayableCowdex size:  " + PlayableCowdex.Count);
+        Debug.Log("Cowdex - CowArchive size:  " + cowArchive.Count);
+        Debug.Log("Cowdex - ScriptableCowArchive size:  " + scriptableCowArchive.Count);
+        Debug.Log("Cowdex - PlayableCowdex size:  " + playableCowdex.Count);
     }
 
 
@@ -74,13 +77,13 @@ public class Cowdex : MonoSingleton<Cowdex>
     ///RETRIEVE ANY Cow
     
     ///ALL
-    public List<Cow> GetAllCows() => CowArchive.Values.ToList();
+    public List<Cow> GetAllCows() => cowArchive.Values.ToList();
 
     ///ALL BUT "ANY" COW
     public List<Cow> GetAllActualCows()
     {
         List<Cow> allCowsExceptANY = GetAllCows();
-        allCowsExceptANY.Remove(CowArchive[CowSO.UniqueID.ANY]);
+        allCowsExceptANY.Remove(cowArchive[CowSO.UniqueID.ANY]);
 
         return allCowsExceptANY;
     }
@@ -100,7 +103,7 @@ public class Cowdex : MonoSingleton<Cowdex>
     public Cow GetCow(CowSO.UniqueID UID)
     {
         //TRY & CATCH? THERE ARE NO COWS SUPPOSED TO BE MISSING IN THIS LIST. ERROR INTENDED?
-        return CowArchive[UID];
+        return cowArchive[UID];
     }
 
     ///RETRIEVE ANY ScriptableCow
@@ -114,11 +117,12 @@ public class Cowdex : MonoSingleton<Cowdex>
     }
     public CowSO GetScriptableCow(CowSO.UniqueID UID)
     {
-        return ScriptableCowArchive[UID];
+        return scriptableCowArchive[UID];
     }
 
 
     ///RETRIEVE ANY IndexedCow
+    public List<IndexedCow> GetAllIndexedCows() => playableCowdex.Values.ToList();
     public List<IndexedCow> GetIndexedCows(List<CowSO.UniqueID> UIDs)
     {
         //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
@@ -129,7 +133,7 @@ public class Cowdex : MonoSingleton<Cowdex>
     }
     public IndexedCow GetIndexedCow(CowSO.UniqueID UID)
     {
-        return PlayableCowdex[UID];
+        return playableCowdex[UID];
     }
 
 

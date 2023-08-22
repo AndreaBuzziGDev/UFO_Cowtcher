@@ -9,7 +9,7 @@ public class CowdexPage
     //TODO: USE GETTERS
 
     ///FOUNDATIONAL DATA
-    public Cow myCow;
+    public IndexedCow myIndexedCow;
 
     private CowSO.UniqueID myCowUID;
     public CowSO.UniqueID MyCowUID { get { return myCowUID; } }
@@ -25,26 +25,26 @@ public class CowdexPage
 
 
     //CONSTRUCTOR
-    public CowdexPage(Cow myCowPrefab)
+    public CowdexPage(IndexedCow myIndexedCow)
     {
         ///
-        myCow = myCowPrefab;
-        myCowUID = myCowPrefab.CowTemplate.UID;
+        this.myIndexedCow = myIndexedCow;
+        myCowUID = myIndexedCow.ReferenceTemplate.UID;
 
-        GameObject visualChild = myCow.gameObject.transform.Find("VisualChild").gameObject;
+        GameObject visualChild = this.myIndexedCow.PrefabCow.gameObject.transform.Find("VisualChild").gameObject;
 
         ///
         cowSprite = visualChild.GetComponent<SpriteRenderer>().sprite;
 
-        cowName = myCow.CowTemplate.CowName;
-        cowDescription = myCow.CowTemplate.Description;
-        if (string.IsNullOrEmpty(myCow.CowTemplate.effect))
+        cowName = this.myIndexedCow.ReferenceTemplate.CowName;
+        cowDescription = this.myIndexedCow.ReferenceTemplate.Description;
+        if (string.IsNullOrEmpty(this.myIndexedCow.ReferenceTemplate.effect))
         {
             cowBuff = "---";
         }
         else
         {
-            cowBuff = myCow.CowTemplate.effect;
+            cowBuff = this.myIndexedCow.ReferenceTemplate.effect;
         }
 
     }
