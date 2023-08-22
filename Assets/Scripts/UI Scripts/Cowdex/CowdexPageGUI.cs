@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class CowdexPageGUI : MonoBehaviour
 {
     //DATA
+    ///GUI REFERENCES
+    private CowdexGUI parentCowdexGUI;//TODO: HANDLING VIA MANUAL REFERENCE?
+
     ///FUNCTIONAL DATA
     private CowdexPage currentPage;
     public CowdexPage GetPage { get { return currentPage; } }
-
-    private CowdexGUI parentCowdexGUI;
 
 
 
