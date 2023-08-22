@@ -23,6 +23,12 @@ public class StageExpBar : MonoBehaviour
         //TODO: UPGRADE TO MAKE BAR 0% ON UNSETSCENE
         int expMax = SceneNavigationController.Instance.GetAssociatedLevelExperienceCap(targetScene, lvlInfo);
 
+        if (expInfo == expMax) expInfo = expMax;
+
+        //UPDATING GUI
+        levelCounterText.text = lvlInfo.ToString();
+        experienceBar.fillAmount = expInfo / expMax;
+
     }
 
 }
