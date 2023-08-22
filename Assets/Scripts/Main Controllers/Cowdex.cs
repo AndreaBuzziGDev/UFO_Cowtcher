@@ -6,12 +6,6 @@ using System.Linq;
 public class Cowdex : MonoSingleton<Cowdex>
 {
     //DATA
-    /*
-     * NOTE: This might benefit from a refactor, that further separates each class' concerns.
-     * Specifically, another component/prefab/class could handle the list of cows that a specific level/scene can manage.
-     * This could separate the nature of the controller from the nature of what is being controlled.
-     */
-
     [SerializeField] private List<Cow> FullListOfExistingCows = new();//PUT ALL "PREFAB" COWS INSIDE HERE.
 
     ///DATA STRUCTURES
