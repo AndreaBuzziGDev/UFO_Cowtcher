@@ -6,7 +6,7 @@ public class SaveTestScript : MonoBehaviour
 {
     //DATA
     [SerializeField] private CowSO.UniqueID testCowUID = CowSO.UniqueID.C002;
-    [SerializeField] private string testStageName = "Stage 1";
+    [SerializeField] private string testStageName = "Stage 2";
 
 
     //METHODS
