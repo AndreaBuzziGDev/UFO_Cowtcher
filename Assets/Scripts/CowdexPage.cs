@@ -22,11 +22,11 @@ public class CowdexPage
 
 
     //CONSTRUCTOR
-    public CowdexPage(IndexedCow myIndexedCow)
+    public CowdexPage(IndexedCow targetIndexedCow)
     {
         ///
-        this.myIndexedCow = myIndexedCow;
-        myCowUID = myIndexedCow.ReferenceTemplate.UID;
+        this.myIndexedCow = targetIndexedCow;
+        myCowUID = targetIndexedCow.ReferenceTemplate.UID;
 
         GameObject visualChild = this.myIndexedCow.PrefabCow.gameObject.transform.Find("VisualChild").gameObject;
 

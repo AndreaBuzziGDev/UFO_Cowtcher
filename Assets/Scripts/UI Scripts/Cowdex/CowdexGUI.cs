@@ -15,7 +15,6 @@ public class CowdexGUI : MonoBehaviour
 
     ///COMPLEX DATA
     private List<CowdexPage> CowdexPages = new();
-    private Dictionary<CowSO.UniqueID, CowdexPage> CowdexPagesDictionary = new();
 
     public int NumberOfPages { get { return CowdexPages.Count; } }
 
@@ -53,11 +52,9 @@ public class CowdexGUI : MonoBehaviour
         {
             CowdexPage cp = new CowdexPage(c);
             CowdexPages.Add(cp);
-            CowdexPagesDictionary.Add(c.ReferenceTemplate.UID, cp);
         }
 
         Debug.Log("CowdexGUI - CowdexPages size: " + CowdexPages.Count);
-        Debug.Log("CowdexGUI - CowdexPagesDictionary size: " + CowdexPagesDictionary.Count);
 
         myCowdexPageGUI.Initialization(this);
         GoToPage(0);
