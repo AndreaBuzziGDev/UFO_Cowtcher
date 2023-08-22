@@ -12,9 +12,6 @@ public class Cowdex : MonoSingleton<Cowdex>
     private Dictionary<CowSO.UniqueID, Cow> CowArchive = new();//A MAP FOR EACH PREFAB COW
     private Dictionary<CowSO.UniqueID, CowSO> ScriptableCowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
     private Dictionary<CowSO.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
-    //private Dictionary<CowSO.UniqueID, RitualAbstractSO> AllSummoningRitualTemplates = new();//THE "ENCYCLOPEDIA OF TEMPLATE SUMMONING RITUALS"
-    //private Dictionary<CowSO.UniqueID, RitualAbstract> AllRituals = new();//THE "ENCYCLOPEDIA OF ACTUAL CONCRETE SUMMONING RITUALS"
-
 
 
 

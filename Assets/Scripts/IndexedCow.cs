@@ -35,18 +35,4 @@ public class IndexedCow
         this.state = targetState;
     }
 
-    public List<IndexedCow> RitualCows()
-    {
-        //TODO: HANDLE SUMMONING RITUAL NULL
-        List<IndexedCow> relatedCows = Cowdex.Instance.GetIndexedCows(referenceTemplate.SummoningRitual.RequiredCows);
-
-        //TODO: COWDEX MUST HANDLE THE ANY COW PROPERLY
-        //      HANDLING OF THE "GENERICALLY-ALLOWED" COW TYPE HERE ?
-
-
-
-        return relatedCows;
-    }
-
-
 }
