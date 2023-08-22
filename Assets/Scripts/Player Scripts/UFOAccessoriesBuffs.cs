@@ -19,7 +19,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
     void Update()
     {
         //BUFF SPEED BOOST
-        if (UFOStatusAlterationHelper.HasBuffMoveSpeed() == true)
+        if (UFOStatusAlterationHelper.HasBuffMoveSpeed())
         {
             speedBoostUFO.gameObject.SetActive(true);
         }
@@ -27,7 +27,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
             speedBoostUFO.gameObject.SetActive(false);
 
         //BUFF FAST CATCH
-        if (UFOStatusAlterationHelper.HasBuffCaptureSpeed() == true)
+        if (UFOStatusAlterationHelper.HasBuffCaptureSpeed())
         {
             fastCatchUFO.gameObject.SetActive(true);
         }
@@ -35,7 +35,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
             fastCatchUFO.gameObject.SetActive(false);
 
         //BUFF FUEL BOOST
-        if (UFOStatusAlterationHelper.HasBuffFuelGain() == true)
+        if (UFOStatusAlterationHelper.HasBuffFuelGain())
         {
             fuelBoostUFO.gameObject.SetActive(true);
         }
@@ -43,7 +43,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
             fuelBoostUFO.gameObject.SetActive(false);
         
         //BUFF RADAR
-        if (UFOStatusAlterationHelper.HasBuffRadar() == true)
+        if (UFOStatusAlterationHelper.HasBuffRadar())
         {
             radarUFO.gameObject.SetActive(true);
         }
@@ -51,7 +51,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
             radarUFO.gameObject.SetActive(false);
 
         //BUFF CAPTURE RADIUS
-        if (UFOStatusAlterationHelper.HasBuffCaptureRadius() == true)
+        if (UFOStatusAlterationHelper.HasBuffCaptureRadius())
         {
             captureRadiusUFO.gameObject.SetActive(true);
         }
