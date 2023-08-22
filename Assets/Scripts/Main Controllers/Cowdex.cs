@@ -118,6 +118,13 @@ public class Cowdex : MonoSingleton<Cowdex>
 
 
     ///RETRIEVE ANY IndexedCow
+    public List<IndexedCow> GetAllIndexedActualCows()
+    {
+        List<IndexedCow> allCowsExceptANY = GetAllIndexedCows();
+        allCowsExceptANY.Remove(playableCowdex[CowSO.UniqueID.ANY]);
+
+        return allCowsExceptANY;
+    }
     public List<IndexedCow> GetAllIndexedCows() => playableCowdex.Values.ToList();
     public List<IndexedCow> GetIndexedCows(List<CowSO.UniqueID> UIDs)
     {

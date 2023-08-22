@@ -47,7 +47,7 @@ public class CowdexGUI : MonoBehaviour
     public void Initialization()
     {
         pageIndex = 0;
-        List<IndexedCow> allCows = Cowdex.Instance.GetAllIndexedCows();
+        List<IndexedCow> allCows = Cowdex.Instance.GetAllIndexedActualCows();
         foreach(IndexedCow c in allCows)
         {
             CowdexPage cp = new CowdexPage(c);
