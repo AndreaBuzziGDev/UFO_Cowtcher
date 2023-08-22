@@ -49,6 +49,9 @@ public class UIController : MonoSingleton<UIController>
         //INITIALIZE COWDEX PAGES
         CowdexPanel.GetComponent<CowdexGUI>().Initialization();
 
+        //HIDE JOYSTICK
+        HideJoystick();
+
         //INITIALIZE MOOSSIONS VISUALLY
 
 
