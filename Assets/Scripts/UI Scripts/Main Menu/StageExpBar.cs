@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class StageExpBar : MonoBehaviour
 {
     //DATA
-    [SerializeField] private TMPro.TextMeshProUGUI scoreText;
-    [SerializeField] private Image scoreBar;
+    [SerializeField] private TMPro.TextMeshProUGUI levelCounterText;
+    [SerializeField] private Image experienceBar;
 
 
 
