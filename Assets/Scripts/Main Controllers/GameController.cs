@@ -141,10 +141,6 @@ public class GameController : MonoSingleton<GameController>
     private static void GameOver()
     {
         UIController.Instance.ShowGameOver();
-
-        //SAVE HIGHSCORE
-        SaveSystem.SaveHighScore(UIController.Instance.IGPanel.HighScoreBar.Score);
-
         PauseGame();
     }
 

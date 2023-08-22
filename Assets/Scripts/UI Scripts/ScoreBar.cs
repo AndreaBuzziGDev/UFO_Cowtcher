@@ -42,6 +42,9 @@ public class ScoreBar : MonoBehaviour
     {
         scoreValue += delta;
         scoreText.text = scoreValue.ToString();
+
+        //SAVE HIGHSCORE
+        SaveSystem.SaveHighScore(scoreValue);
     }
 
 }
