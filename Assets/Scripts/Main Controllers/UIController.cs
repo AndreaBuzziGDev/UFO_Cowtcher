@@ -60,11 +60,6 @@ public class UIController : MonoSingleton<UIController>
 
 
 
-
-
-
-
-
     //GUI PANELS MANAGEMENT
 
     ///HIDE ALL
@@ -99,8 +94,16 @@ public class UIController : MonoSingleton<UIController>
 
 
     //MOOSSIONS
-    public void ShowMoossions() => MoossionsPanel.SetActive(true);
-    public void HideMoossions() => MoossionsPanel.SetActive(false);
+    public void ShowMoossions() 
+    {
+        MoossionsPanel.SetActive(true);
+        HideInputCanvas();
+    }
+    public void HideMoossions()
+    {
+        MoossionsPanel.SetActive(false);
+        ShowInputCanvas();
+    }
 
     //JOYSTICK
     public void ShowJoystick(Vector2 position)
