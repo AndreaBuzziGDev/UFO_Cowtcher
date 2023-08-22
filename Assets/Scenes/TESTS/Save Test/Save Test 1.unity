@@ -1091,8 +1091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcfc4c8a561ba54dbf18b3d7157f300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testCowUID: 3
-  testStageName: Stage 1
+  testCowUID: 1
+  testStageName: Stage 2
 --- !u!114 &547766530
 MonoBehaviour:
   m_ObjectHideFlags: 0

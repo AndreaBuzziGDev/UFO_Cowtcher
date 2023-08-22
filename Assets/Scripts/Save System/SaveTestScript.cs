@@ -6,7 +6,7 @@ public class SaveTestScript : MonoBehaviour
 {
     //DATA
     [SerializeField] private CowSO.UniqueID testCowUID = CowSO.UniqueID.C002;
-    [SerializeField] private string testStageName = "Stage 2";
+    [SerializeField] private string testStageName = "Stage 3";
 
 
     //METHODS
@@ -74,7 +74,7 @@ public class SaveTestScript : MonoBehaviour
     public void TestSaveStageEXP()
     {
         SaveSystem.SetStageEXPInfo(testStageName, 10);
-        Debug.Log("Saved Stage EXP" + testStageName);
+        Debug.Log("Saved Stage EXP: " + testStageName);
     }
 
     ///TEST LOAD STAGE EXP
