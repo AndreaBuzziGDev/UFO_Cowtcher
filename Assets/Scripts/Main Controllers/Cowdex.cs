@@ -12,8 +12,8 @@ public class Cowdex : MonoSingleton<Cowdex>
     private Dictionary<CowSO.UniqueID, Cow> CowArchive = new();//A MAP FOR EACH PREFAB COW
     private Dictionary<CowSO.UniqueID, CowSO> ScriptableCowArchive = new();//A MAP FOR EACH SCRIPTABLE COW
     private Dictionary<CowSO.UniqueID, IndexedCow> PlayableCowdex = new();//THE ACTUAL "ENCYCLOPEDIA OF COWS"
-    private Dictionary<CowSO.UniqueID, RitualAbstractSO> AllSummoningRitualTemplates = new();//THE "ENCYCLOPEDIA OF TEMPLATE SUMMONING RITUALS"
-    private Dictionary<CowSO.UniqueID, RitualAbstract> AllRituals = new();//THE "ENCYCLOPEDIA OF ACTUAL CONCRETE SUMMONING RITUALS"
+    //private Dictionary<CowSO.UniqueID, RitualAbstractSO> AllSummoningRitualTemplates = new();//THE "ENCYCLOPEDIA OF TEMPLATE SUMMONING RITUALS"
+    //private Dictionary<CowSO.UniqueID, RitualAbstract> AllRituals = new();//THE "ENCYCLOPEDIA OF ACTUAL CONCRETE SUMMONING RITUALS"
 
 
 
@@ -41,10 +41,6 @@ public class Cowdex : MonoSingleton<Cowdex>
     public void Initialization()
     {
         BuildCowdex();
-        BuildSummoningRituals();
-
-        //TODO: INTRODUCE DEBUGGING FUNCTIONALITIES (FIND DUPLICATES ETC)
-
     }
 
     ///MAIN INITIALIZATION
@@ -64,27 +60,10 @@ public class Cowdex : MonoSingleton<Cowdex>
             IndexedCow ic = new IndexedCow(IndexedCow.CowKnowledgeState.Unknown, iteratedCow.CowTemplate);
             PlayableCowdex.Add(iteratedCow.CowTemplate.UID, ic);
 
-            //Summoning Ritual Templates
-            AllSummoningRitualTemplates.Add(iteratedCow.CowTemplate.UID, iteratedCow.CowTemplate.SummoningRitual);
         }
         Debug.Log("Cowdex - CowArchive size:  " + CowArchive.Count);
         Debug.Log("Cowdex - ScriptableCowArchive size:  " + ScriptableCowArchive.Count);
         Debug.Log("Cowdex - PlayableCowdex size:  " + PlayableCowdex.Count);
-        Debug.Log("Cowdex - AllSummoningRitualTemplates size:  " + AllSummoningRitualTemplates.Count);
-    }
-
-
-    ///SUMMONING RITUAL INITIALIZATION
-    public void BuildSummoningRituals()
-    {
-        foreach (KeyValuePair<CowSO.UniqueID, RitualAbstractSO> entry in AllSummoningRitualTemplates)
-        {
-            if (entry.Value != null)
-            {
-                AllRituals.Add(entry.Key, entry.Value.GetRitual());
-            }
-        }
-        Debug.Log("Cowdex - AllRituals size:  " + AllRituals.Count);
     }
 
 
@@ -156,40 +135,6 @@ public class Cowdex : MonoSingleton<Cowdex>
         return PlayableCowdex[UID];
     }
 
-
-    ///RETRIEVE ANY Scriptable Object Ritual
-
-
-
-
-
-    //TODO: IMPLEMENT FUNCTIONALITIES TO RETRIEVE DATA RELATIVE TO SUMMONING RITUALS
-    ///RETRIEVE ANY CONCRETE RITUAL - FEEDING THE "SPAWNED COW" UID AS ARGUMENT
-    public List<RitualAbstract> GetRituals(List<CowSO.UniqueID> UIDs)
-    {
-        //TODO: IMPROVE: THIS SHOULD HANDLE PROPERLY EVENTUAL DUPLICATE UIDs
-
-        List<RitualAbstract> interestedRituals = new();
-        foreach (CowSO.UniqueID UID in UIDs) interestedRituals.Add(GetRitual(UID));
-        return interestedRituals;
-    }
-    public RitualAbstract GetRitual(CowSO.UniqueID UID)
-    {
-        return AllRituals[UID];
-    }
-
-
-    ///RETRIEVE ANY CONCRETE RITUAL - BASED ON IF THEY CONTAIN THE INTERESTED COW UID
-    public List<RitualAbstract> GetRitualsThatContainCow(CowSO.UniqueID UID)
-    {
-        List<RitualAbstract> involvedRituals = new();
-        foreach (KeyValuePair<CowSO.UniqueID, RitualAbstract> entry in AllRituals)
-        {
-            if (entry.Value.HasCow(UID)) involvedRituals.Add(entry.Value);
-        }
-
-        return involvedRituals;
-    }
 
 
 
