@@ -6,17 +6,16 @@ using UnityEngine.UI;
 public class CowdexPageGUI : MonoBehaviour
 {
     //DATA
-    ///GUI REFERENCES
-    private CowdexGUI parentCowdexGUI;//TODO: HANDLING VIA MANUAL REFERENCE?
-
     ///FUNCTIONAL DATA
     private CowdexPage currentPage;
-    public CowdexPage GetPage { get { return currentPage; } }
 
 
 
 
     ///GUI REFERENCES
+    //COWDEX GUI
+    private CowdexGUI parentCowdexGUI;//TODO: HANDLING VIA MANUAL REFERENCE?
+
     //SPRITE
     [SerializeField] private Image cowImage;
 
@@ -68,14 +67,34 @@ public class CowdexPageGUI : MonoBehaviour
 
     }
 
-    private void UpdateCowImage() => cowImage.sprite = currentPage.cowSprite;
+    private void UpdateCowImage()
+    {
+        if (1 <= (int)currentPage.Indexed.KnowledgeState)
+        {
+            cowImage.sprite = currentPage.cowSprite;
+        }
+        else
+        {
+            //TODO: SET UNKNOWN COW SPRITE
+
+        }
+    }
 
 
     private void UpdateDetailSection()
     {
-        cowName.text = currentPage.cowName;
-        cowDescription.text = currentPage.cowDescription;
-        cowBuff.text = currentPage.cowBuff;
+        if (2 <= (int)currentPage.Indexed.KnowledgeState)
+        {
+            cowName.text = currentPage.cowName;
+            cowDescription.text = currentPage.cowDescription;
+            cowBuff.text = currentPage.cowBuff;
+        }
+        else
+        {
+            cowName.text = "???";
+            cowDescription.text = "???";
+            cowBuff.text = "???";
+        }
     }
 
     private void UpdateButtonStates()

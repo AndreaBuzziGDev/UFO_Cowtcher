@@ -9,7 +9,8 @@ public class CowdexPage
     //TODO: USE GETTERS
 
     ///FOUNDATIONAL DATA
-    public IndexedCow myIndexedCow;
+    private IndexedCow myIndexedCow;
+    public IndexedCow Indexed { get { return myIndexedCow; } }
 
     private CowSO.UniqueID myCowUID;
     public CowSO.UniqueID MyCowUID { get { return myCowUID; } }
