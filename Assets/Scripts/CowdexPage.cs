@@ -18,10 +18,7 @@ public class CowdexPage
     public Sprite cowSprite;
     public string cowName;
     public string cowDescription;
-    public string cowBuff;//TODO: THIS IS A COMPLEX DATA TO HANDLE AND NEEDS SAFETIES
-
-    //TODO: OTHER DATA, LIKE IF THE COW HAS BEEN DISCOVERED OR NOT... (use getters to get updated info from the cowdex itself)
-
+    public string cowBuff;
 
 
     //CONSTRUCTOR
