@@ -20,4 +20,10 @@ public class StageDataSO : ScriptableObject
     [SerializeField] private SceneNavigationController.eStageSceneName stageID;
     public SceneNavigationController.eStageSceneName StageID { get { return stageID; } }
 
+    //ASSOCIATED LEVEL EXPERIENCE CAPS
+    [SerializeField] private List<int> associatedLevelExperienceCaps = new();
+    public List<int> AssociatedLevelExperienceCaps { get { return associatedLevelExperienceCaps; } }
+
+
+
 }

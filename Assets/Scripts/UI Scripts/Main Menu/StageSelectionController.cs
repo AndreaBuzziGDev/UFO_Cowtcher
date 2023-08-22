@@ -14,6 +14,7 @@ public class StageSelectionController : MonoBehaviour
     ///GUI REFERENCES
     [SerializeField] private Image scenePreview;
     [SerializeField] private Button playButton;
+    //[SerializeField] private
 
 
 
@@ -58,10 +59,19 @@ public class StageSelectionController : MonoBehaviour
         {
             Sprite intendedSprite;
 
-            if (isSceneSet) intendedSprite = SceneNavigationController.Instance.GetAssociatedSprite(targetStageScene);
-            else intendedSprite = SceneNavigationController.Instance.GetAssociatedSprite(SceneNavigationController.eStageSceneName.UnsetScene);
+            if (isSceneSet)
+            {
+                //SET INTENDED PREVIEW SCENE
+                scenePreview.sprite = SceneNavigationController.Instance.GetAssociatedSprite(targetStageScene);
 
-            scenePreview.sprite = intendedSprite;
+                //
+
+
+            }
+            else
+            {
+                scenePreview.sprite = SceneNavigationController.Instance.GetAssociatedSprite(SceneNavigationController.eStageSceneName.UnsetScene);
+            }
         }
     }
 

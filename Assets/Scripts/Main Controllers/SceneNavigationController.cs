@@ -56,14 +56,6 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
 
 
     //FUNCTIONALITIES
@@ -86,22 +78,45 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
     ///STAGE SCENES
     public Sprite GetAssociatedSprite(eStageSceneName targetScene)
     {
-        //TODO: THIS CAN BE ENORMOUSLY SIMPLIFIED.
-        Sprite intendedSprite;
         switch (targetScene)
         {
             case eStageSceneName.Stage1:
             case eStageSceneName.Stage2:
             case eStageSceneName.Stage3:
             case eStageSceneName.Stage4:
-                intendedSprite = StageSceneDictionary[targetScene].AssociatedSprite;
-                break;
+                return StageSceneDictionary[targetScene].AssociatedSprite;
             default:
-                intendedSprite = StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSprite;
-                break;
+                return StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSprite;
         }
 
-        return intendedSprite;
+    }
+
+    public string GetAssociatedName(eStageSceneName targetScene)
+    {
+        switch (targetScene)
+        {
+            case eStageSceneName.Stage1:
+            case eStageSceneName.Stage2:
+            case eStageSceneName.Stage3:
+            case eStageSceneName.Stage4:
+                return StageSceneDictionary[targetScene].AssociatedSceneName;
+            default:
+                return StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSceneName;
+        }
+    }
+
+    public int GetAssociatedLevelExperienceCap(eStageSceneName targetScene, int levelIndex)
+    {
+        switch (targetScene)
+        {
+            case eStageSceneName.Stage1:
+            case eStageSceneName.Stage2:
+            case eStageSceneName.Stage3:
+            case eStageSceneName.Stage4:
+                return StageSceneDictionary[targetScene].AssociatedLevelExperienceCaps[levelIndex];
+            default:
+                return 0;
+        }
     }
 
     public void LoadScene(eStageSceneName targetScene)
