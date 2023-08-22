@@ -117,6 +117,25 @@ public class SaveTestScript : MonoBehaviour
 
 
 
-    //...
+    //HIGHSCORE
+    public void TestSaveHighscore()
+    {
+        SaveSystem.SaveHighScore(20000);
+        Debug.Log("Saved Highscore");
+    }
+
+    ///TEST LOAD STAGE LEVEL
+    public void TestLoadHighscore()
+    {
+        int result = SaveSystem.LoadHighScore();
+        Debug.Log("Load Highscore: " + result);
+    }
+
+    ///TEST RESET STAGE LEVEL
+    public void TestResetHighscore()
+    {
+        SaveSystem.ResetHighScore();
+        Debug.Log("Reset Highscore");
+    }
 
 }
