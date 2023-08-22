@@ -76,6 +76,7 @@ public class GameController : MonoSingleton<GameController>
 
             case EGameState.Playing:
                 UIController.Instance.HideAllMenuPanels();
+                UIController.Instance.ShowIGPanel();
                 UnpauseGame();
 
                 break;
