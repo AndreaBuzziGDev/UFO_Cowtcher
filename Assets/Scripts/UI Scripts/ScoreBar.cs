@@ -7,6 +7,8 @@ public class ScoreBar : MonoBehaviour
 {
     //DATA
     private int scoreValue = 0;
+    public int Score { get { return scoreValue; } }
+
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
 
@@ -41,7 +43,5 @@ public class ScoreBar : MonoBehaviour
         scoreValue += delta;
         scoreText.text = scoreValue.ToString();
     }
-
-
 
 }
