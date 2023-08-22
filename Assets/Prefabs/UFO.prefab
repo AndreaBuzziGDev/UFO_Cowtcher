@@ -682,6 +682,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c411453454f044ea57b1c5272b4e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedBoostUFO: {fileID: 921114208150684161}
+  fastCatchUFO: {fileID: 3545828347779314450}
+  fuelBoostUFO: {fileID: 7459200439220754802}
+  radarUFO: {fileID: 7804580733662872598}
+  captureRadiusUFO: {fileID: 5701248588092350614}
 --- !u!1 &8035438668784491012
 GameObject:
   m_ObjectHideFlags: 0
