@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 11
   rarity: 1
-  Name: Pumpcow
+  CowName: Pumpcow
   Description: A cow that may jump and bounce its way around.
   spawnProbability: 20
   spawnChanceTally: 10

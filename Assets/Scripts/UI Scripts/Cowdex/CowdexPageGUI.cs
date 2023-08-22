@@ -89,8 +89,7 @@ public class CowdexPageGUI : MonoBehaviour
         else
         {
             //DEBUG VERSION
-            cowName.text = currentPage.cowName;
-            //cowName.text = "???";
+            cowName.text = "???";
             cowDescription.text = "???";
             cowBuff.text = "???";
         }

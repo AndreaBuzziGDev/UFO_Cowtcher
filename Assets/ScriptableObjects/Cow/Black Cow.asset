@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 1
   rarity: 0
-  Name: Jamal
+  CowName: Jamal
   Description: A very common cow that likes to graze.
   spawnProbability: 50
   spawnChanceTally: 25

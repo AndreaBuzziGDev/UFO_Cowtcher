@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 15
   rarity: 2
-  Name: Cowgon
+  CowName: Cowgon
   Description: 'A flying cow that moves at a very high speed.
 
     When panicked,

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 12
   rarity: 1
-  Name: Cowttleman
+  CowName: Cowttleman
   Description: 'A herdmastering cow.
 
     It may lead a herd and make it move faster.'

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 10
   rarity: 1
-  Name: Kowbra
+  CowName: Kowbra
   Description: A sneaky cow that likes to move in a serpentine way.
   spawnProbability: 20
   spawnChanceTally: 10

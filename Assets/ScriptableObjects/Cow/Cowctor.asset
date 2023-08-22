@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 14
   rarity: 2
-  Name: Cowctor
+  CowName: Cowctor
   Description: A cow that moves at an ever-increasing speed until she changes direction.
   spawnProbability: 20
   spawnChanceTally: 3
