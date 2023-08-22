@@ -1491,8 +1491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f7d197c0f06c448815229720d9ff23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenePreview: {fileID: 0}
-  playButton: {fileID: 0}
+  scenePreview: {fileID: 2826147035107828641}
+  playButton: {fileID: 7533903953459813115}
 --- !u!1 &2808917266339653206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3199,8 +3199,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6829822137761475532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: -0.05, y: -0.05}
-  m_AnchorMax: {x: 1.05, y: 1.05}
+  m_AnchorMin: {x: 0.05, y: -0.05}
+  m_AnchorMax: {x: 0.95, y: 1.05}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3234,7 +3234,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 03e7246d317cd9a4981b8222ae071d2e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4802,7 +4802,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 00a2878a4f10b474d827fbeec1c56fac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 554f9a94205feb6408e10f0a22ba637d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
