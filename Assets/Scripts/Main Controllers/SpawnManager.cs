@@ -248,6 +248,14 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         }
         */
 
+        //NOTIFY SYSTEMS THAT COW HAS BEEN CAPTURED
+        SaveInfoCow cowSI = SaveSystem.LoadCowProgress(interestedCow.UID);
+        if (!cowSI.IsCaptured)
+        {
+            SaveSystem.SaveCowProgress(interestedCow.UID, SaveInfoCow.Knowledge.Captured);
+        }
+
+
         //LOWER COUNT OF CURRENT COWS
         currentNumOfCows--;
 
