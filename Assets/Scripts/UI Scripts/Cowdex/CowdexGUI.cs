@@ -91,7 +91,4 @@ public class CowdexGUI : MonoBehaviour
 
     public CowdexPage GetCurrentPage() => CowdexPages[pageIndex];
 
-
-
-
 }
