@@ -44,7 +44,7 @@ public class UIController : MonoSingleton<UIController>
         //
         AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel, CowdexPanel, MoossionsPanel };
         HideAllMenuPanels();
-        IGPanel.HighScoreBar.ResetScore();
+        igPanel.HighScoreBar.ResetScore();
 
         //INITIALIZE COWDEX PAGES
         CowdexPanel.GetComponent<CowdexGUI>().Initialization();
@@ -91,6 +91,11 @@ public class UIController : MonoSingleton<UIController>
     //COWDEX
     public void ShowCowdex() => CowdexPanel.SetActive(true);
     public void HideCowdex() => CowdexPanel.SetActive(false);
+
+
+    //IN-GAME PANEL
+    public void ShowIGPanel() => igPanel.gameObject.SetActive(true);
+    public void HigeIGPanel() => igPanel.gameObject.SetActive(false);
 
 
     //MOOSSIONS
