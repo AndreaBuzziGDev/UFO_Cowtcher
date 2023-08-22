@@ -73,7 +73,46 @@ public class UIController : MonoSingleton<UIController>
     }
 
     ///INDIVIDUALS
-    //GAMEPLAY INPUT GUI
+
+    //IN-GAME PANEL
+    public void ShowIGPanel() => igPanel.gameObject.SetActive(true);
+    public void HigeIGPanel() => igPanel.gameObject.SetActive(false);
+
+    //JOYSTICK
+    public void ShowJoystick(Vector2 position)
+    {
+        Image joystick = null;
+
+        Image[] joysticks = gameplayInputCanvas.GetComponentsInChildren<Image>(true);
+
+        foreach (Image image in joysticks)
+        {
+            if (image.transform.parent == gameplayInputCanvas.transform)
+            {
+                joystick = image;
+            }
+            else
+                image.enabled = true;
+        }
+
+        RectTransform joystickRect = joystick.GetComponent<RectTransform>();
+        joystickRect.position = position;
+        joystick.enabled = true;
+    }
+
+    public void HideJoystick()
+    {
+        Image[] joysticks = gameplayInputCanvas.GetComponentsInChildren<Image>(true);
+
+        foreach (Image image in joysticks)
+        {
+            image.enabled = false;
+        }
+    }
+
+
+
+    //INPUT CANVAS
     public void ShowInputCanvas() => gameplayInputCanvas.SetActive(true);
     public void HideInputCanvas() => gameplayInputCanvas.SetActive(false);
 
@@ -93,52 +132,17 @@ public class UIController : MonoSingleton<UIController>
     public void HideCowdex() => CowdexPanel.SetActive(false);
 
 
-    //IN-GAME PANEL
-    public void ShowIGPanel() => igPanel.gameObject.SetActive(true);
-    public void HigeIGPanel() => igPanel.gameObject.SetActive(false);
-
 
     //MOOSSIONS
     public void ShowMoossions() 
     {
         MoossionsPanel.SetActive(true);
-        HideInputCanvas();
+        HigeIGPanel();
     }
     public void HideMoossions()
     {
         MoossionsPanel.SetActive(false);
-        ShowInputCanvas();
+        ShowIGPanel();
     }
 
-    //JOYSTICK
-    public void ShowJoystick(Vector2 position)
-    {
-        Image joystick = null;
-
-        Image[] joysticks = gameplayInputCanvas.GetComponentsInChildren<Image>(true);
-
-        foreach (Image image in joysticks)
-        {
-            if (image.transform.parent == gameplayInputCanvas.transform)
-            {
-                joystick = image;
-            }
-            else 
-                image.enabled = true;
-        }
-
-        RectTransform joystickRect = joystick.GetComponent<RectTransform>();
-        joystickRect.position = position;
-        joystick.enabled = true;
-    }
-
-    public void HideJoystick()
-    {
-        Image[] joysticks = gameplayInputCanvas.GetComponentsInChildren<Image>(true);
-
-        foreach (Image image in joysticks)
-        {
-            image.enabled = false;
-        }
-    }
 }
