@@ -21,7 +21,6 @@ public class UFOAccessoriesBuffs : MonoBehaviour
         //BUFF SPEED BOOST
         speedBoostUFO.gameObject.SetActive(UFOStatusAlterationHelper.HasBuffMoveSpeed());
 
-
         //BUFF FAST CATCH
         fastCatchUFO.gameObject.SetActive(UFOStatusAlterationHelper.HasBuffCaptureSpeed());
 
@@ -33,5 +32,6 @@ public class UFOAccessoriesBuffs : MonoBehaviour
 
         //BUFF CAPTURE RADIUS
         captureRadiusUFO.gameObject.SetActive(UFOStatusAlterationHelper.HasBuffCaptureRadius());
+
     }
 }
