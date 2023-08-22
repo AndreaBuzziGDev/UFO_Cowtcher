@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 2316233886179570003}
   - component: {fileID: 3824681213956448144}
   - component: {fileID: 1113527563185232423}
+  - component: {fileID: 4058901690669759143}
   m_Layer: 7
   m_Name: UFO
   m_TagString: Untagged
@@ -669,6 +670,23 @@ MonoBehaviour:
   interactionPhysicsLayer:
     serializedVersion: 2
     m_Bits: 576
+--- !u!114 &4058901690669759143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941655071495466051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c411453454f044ea57b1c5272b4e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBoostUFO: {fileID: 921114208150684161}
+  fastCatchUFO: {fileID: 3545828347779314450}
+  fuelBoostUFO: {fileID: 7459200439220754802}
+  radarUFO: {fileID: 7804580733662872598}
+  captureRadiusUFO: {fileID: 5701248588092350614}
 --- !u!1 &8035438668784491012
 GameObject:
   m_ObjectHideFlags: 0
