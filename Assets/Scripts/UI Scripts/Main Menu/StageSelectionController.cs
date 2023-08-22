@@ -14,7 +14,7 @@ public class StageSelectionController : MonoBehaviour
     ///GUI REFERENCES
     [SerializeField] private Image scenePreview;
     [SerializeField] private Button playButton;
-    //[SerializeField] private
+    [SerializeField] private StageExpBar experienceBar;
 
 
 
@@ -64,13 +64,17 @@ public class StageSelectionController : MonoBehaviour
                 //SET INTENDED PREVIEW SCENE
                 scenePreview.sprite = SceneNavigationController.Instance.GetAssociatedSprite(targetStageScene);
 
-                //
-
+                //UPDATE EXPERIENCE BAR
+                experienceBar.UpdateExpBar(targetStageScene);
 
             }
             else
             {
+                //SET UNSETSCENE AS PREVIEW
                 scenePreview.sprite = SceneNavigationController.Instance.GetAssociatedSprite(SceneNavigationController.eStageSceneName.UnsetScene);
+
+                //UPDATE EXPERIENCE BAR
+                experienceBar.UpdateExpBar(SceneNavigationController.eStageSceneName.UnsetScene);
             }
         }
     }
