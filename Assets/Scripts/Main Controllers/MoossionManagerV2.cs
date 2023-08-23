@@ -6,19 +6,15 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
 {
     //DATA
     [SerializeField] List<Moossion> moossionPool = new();
-
-    [SerializeField] List<Moossion> moossionUnlock = new();//TODO: CHANGE TYPE WITH DEDICATED TYPE
-
     ///PROGRESSION COUNTER
     [SerializeField] private int completedMoossionCount = 0;
     public int CompletedMoossionCount { get { return completedMoossionCount; } }
 
 
     ///SCORE DATA
-    [SerializeField] private int baseScoreCaptureGeneric = 10;
-    [SerializeField] private int baseScoreCaptureSpecific = 20;
-    [SerializeField] private int baseScoreCaptureBuff = 15;
-    [SerializeField] private int baseScoreCaptureTurret = 5;
+    [SerializeField] private float completionMultiplierOne = 1.25f;
+    [SerializeField] private float completionMultiplierTwo = 1.5f;
+    [SerializeField] private float completionMultiplierThree = 2.0f;
 
 
     ///TYPE DIVERSIFICATION DATA
@@ -57,10 +53,6 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
             Moossion moo = activeMoossions[i];
             if (moo.IsComplete)
             {
-                //COMPLETE MOOSSION
-                CompleteMoossion(moo);
-
-
                 //TODO: INFORM THE FEED THAT THE MOOSSIONS HAVE BEEN UPDATED
 
 
@@ -79,8 +71,13 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
         moossionPool = MoossionPoolGeneric.MoossionPool;
 
         moossionOne = PickRandomMoossion();
+        Debug.Log("MoossionManager has picked Moossion 1: " + moossionOne.GetDescription());
+
         moossionTwo = PickRandomMoossion();
+        Debug.Log("MoossionManager has picked Moossion 2: " + moossionTwo.GetDescription());
+
         moossionThree = PickRandomMoossion();
+        Debug.Log("MoossionManager has picked Moossion 3: " + moossionThree.GetDescription());
     }
 
 
@@ -93,15 +90,33 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
         {
             int randomIndex = Random.Range(0, moossionPool.Count - 1);
             return moossionPool[randomIndex];
-        } else
+        }
+        else
         {
             return null;
         }
     }
 
+    public float GetFinalScoreMultiplier()
+    {
+        int successCounter = 0;
+        if (moossionOne.IsComplete) successCounter++;
+        if (moossionTwo.IsComplete) successCounter++;
+        if (moossionThree.IsComplete) successCounter++;
 
-    //TODO: FUNCTIONALITY TO PICK THE LOWEST-INDEX UNLOCKMOOSSION
+        switch (successCounter)
+        {
+            case 1:
+                return completionMultiplierOne;
+            case 2:
+                return completionMultiplierTwo;
+            case 3:
+                return completionMultiplierThree;
+            default:
+                return 1;
 
+        }
+    }
 
 
 
