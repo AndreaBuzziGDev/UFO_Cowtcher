@@ -16,7 +16,7 @@ public class SaveSystem
     public const string StageAddress = "Stages/";
     public const string StageUnlock = "/UnlockInfo";
     public const string StageLevel = "/Level";
-    public const string StageExp = "/Experience";
+    public const string StageExpAddress = "/Experience";
 
     ///
     public const string HSAddress = "HighScore";
@@ -60,21 +60,21 @@ public class SaveSystem
     //STAGE EXPERIENCE INFO
     public static void SetStageEXPInfo(string stageName, int experience)
     {
-        PlayerPrefs.SetInt(StageAddress + stageName + StageExp, experience);
+        PlayerPrefs.SetInt(StageAddress + stageName + StageExpAddress, experience);
         PlayerPrefs.Save();
     }
 
     public static int LoadStageEXPInfo(string stageName)
     {
-        return PlayerPrefs.GetInt(StageAddress + stageName + StageExp, 0);
+        return PlayerPrefs.GetInt(StageAddress + stageName + StageExpAddress, 0);
     }
 
     public static void ResetStageExpInfo()
     {
-        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageExp, 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageExp, 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageExp, 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageExp, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageExpAddress, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageExpAddress, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageExpAddress, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageExpAddress, 0);
         PlayerPrefs.Save();
     }
 
@@ -86,6 +86,7 @@ public class SaveSystem
     {
         //MINIMUM LEVEL IS 7
         if (level <= 0) level = 1;
+        if (level > 7) level = 7;
 
         PlayerPrefs.SetInt(StageAddress + stageName + StageLevel, level);
         PlayerPrefs.Save();
