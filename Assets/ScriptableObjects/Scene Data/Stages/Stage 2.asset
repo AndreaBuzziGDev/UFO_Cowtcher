@@ -15,4 +15,4 @@ MonoBehaviour:
   associatedSceneName: Stage 2
   associatedSprite: {fileID: 21300000, guid: e167340e3ff2af346a49452727c3895f, type: 3}
   stageID: 2
-  associatedLevelExperienceCaps: 64000000c80000002c010000f4010000bc02000084030000e8030000
+  associatedLevelExperienceCaps: c8000000f40100008403000014050000b80b000010270000
