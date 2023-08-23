@@ -57,8 +57,6 @@ public class StageSelectionController : MonoBehaviour
     {
         if (scenePreview != null)
         {
-            Sprite intendedSprite;
-
             if (isSceneSet)
             {
                 //SET INTENDED PREVIEW SCENE
