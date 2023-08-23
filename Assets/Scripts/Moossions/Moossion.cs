@@ -66,44 +66,5 @@ public abstract class Moossion
     }
     
     
-    //UTILITIES
-    //NB: PROCEDURAL "DIFFICULTY" FEATURES ARE WORKING, BUT HAVE BEEN SCRAPPED FOR NOW
-
-    ///DIFFICULTY COEFFICIENT
-    public static int GetDifficultyCoefficient()
-    {
-        int moossionCount = MoossionManager.Instance.CompletedMoossionCount;
-
-        int moossionDifficultyCoefficient = (int) moossionCount / 3;
-
-        if (moossionDifficultyCoefficient > 5) moossionDifficultyCoefficient = 5;
-
-        Debug.Log("Moossion - moossionDifficultyCoefficient: " + moossionDifficultyCoefficient);
-
-        return moossionDifficultyCoefficient;
-    }
-
-    ///DIFFICULTY REGULATION
-    public static int GetDifficultyBasedRandomQuantity(int difficultyCoefficient, Type handledType)
-    {
-        switch (handledType)
-        {
-            case Type.CaptureGeneric:
-                return 2 + difficultyCoefficient;
-
-            case Type.CaptureSpecific:
-                return 1 + difficultyCoefficient;
-
-            case Type.CaptureBuff:
-                return 2 + difficultyCoefficient;
-
-            case Type.CaptureTurret:
-                return 3 + difficultyCoefficient;
-
-            default:
-                return 1;
-        }
-    }
-
 
 }
