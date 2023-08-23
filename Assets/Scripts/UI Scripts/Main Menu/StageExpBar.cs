@@ -16,6 +16,7 @@ public class StageExpBar : MonoBehaviour
     {
         if(targetScene == SceneNavigationController.eStageSceneName.UnsetScene)
         {
+            Debug.Log("UNSETSCENE");
 
             //UPDATING GUI
             levelCounterText.text = "?";
@@ -32,8 +33,7 @@ public class StageExpBar : MonoBehaviour
                 int expInfo = SaveSystem.LoadStageEXPInfo(SceneNavigationController.Instance.GetAssociatedName(targetScene));
 
                 //COMPLETING INFO
-                Debug.Log("StageExpBar - lvlInfo: " + lvlInfo);
-                int expMax = SceneNavigationController.Instance.GetAssociatedLevelExperienceCap(targetScene, lvlInfo - 1);
+                int expMax = SceneNavigationController.Instance.GetAssociatedLevelExperienceCap(targetScene, lvlInfo);
                 if (expInfo == expMax) expInfo = expMax;
 
                 //UPDATING GUI

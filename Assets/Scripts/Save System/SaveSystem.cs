@@ -95,6 +95,7 @@ public class SaveSystem
     public static int LoadStageLevelInfo(string stageName)
     {
         int stageLevelInfo = PlayerPrefs.GetInt(StageAddress + stageName + StageLevel, 1);
+        Debug.Log("SaveSystem - stageLevelInfo: " + stageLevelInfo);
 
         //MINIMUM LEVEL IS 1, MAX 7
         if (stageLevelInfo <= 0) return 1;
