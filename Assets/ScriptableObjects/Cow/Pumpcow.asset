@@ -22,7 +22,7 @@ MonoBehaviour:
   AlertRadius: 5
   SpeedCalm: 1
   SpeedAlert: 4
-  Score: 20
+  Score: 30
   TimerAlertToCalm: 3
   TimerAlertToPanic: 2
   TimerRespawn: 5
