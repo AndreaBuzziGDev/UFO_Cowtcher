@@ -84,21 +84,24 @@ public class SaveSystem
     //STAGE EXPERIENCE INFO
     public static void SetStageLevelInfo(string stageName, int level)
     {
+        //MINIMUM LEVEL IS 7
+        if (level <= 0) level = 1;
+
         PlayerPrefs.SetInt(StageAddress + stageName + StageLevel, level);
         PlayerPrefs.Save();
     }
 
     public static int LoadStageLevelInfo(string stageName)
     {
-        return PlayerPrefs.GetInt(StageAddress + stageName + StageLevel, 0);
+        return PlayerPrefs.GetInt(StageAddress + stageName + StageLevel, 1);
     }
 
     public static void ResetStageLevelInfo()
     {
-        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageLevel, 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageLevel, 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageLevel, 0);
-        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageLevel, 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageLevel, 1);
+        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageLevel, 1);
+        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageLevel, 1);
+        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageLevel, 1);
         PlayerPrefs.Save();
     }
 
