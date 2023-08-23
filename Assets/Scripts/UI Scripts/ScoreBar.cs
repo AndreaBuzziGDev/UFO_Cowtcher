@@ -25,6 +25,13 @@ public class ScoreBar : MonoBehaviour
         scoreText.text = scoreValue.ToString();
     }
 
+    private void Update()
+    {
+        //TODO:
+        //EVERY SECOND: UPDATE SCORE BY 1
+
+    }
+
 
 
 
