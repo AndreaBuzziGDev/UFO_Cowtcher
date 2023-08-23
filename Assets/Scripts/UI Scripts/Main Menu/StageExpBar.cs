@@ -16,8 +16,6 @@ public class StageExpBar : MonoBehaviour
     {
         if(targetScene == SceneNavigationController.eStageSceneName.UnsetScene)
         {
-            Debug.Log("UNSETSCENE");
-
             //UPDATING GUI
             levelCounterText.text = "?";
             experienceBar.fillAmount = 0;
