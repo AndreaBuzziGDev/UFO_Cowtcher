@@ -84,7 +84,7 @@ public class SaveSystem
     //STAGE EXPERIENCE INFO
     public static void SetStageLevelInfo(string stageName, int level)
     {
-        //MINIMUM LEVEL IS 7
+        //MINIMUM LEVEL IS 1, MAX 7
         if (level <= 0) level = 1;
         if (level > 7) level = 7;
 
@@ -94,7 +94,13 @@ public class SaveSystem
 
     public static int LoadStageLevelInfo(string stageName)
     {
-        return PlayerPrefs.GetInt(StageAddress + stageName + StageLevel, 1);
+        int stageLevelInfo = PlayerPrefs.GetInt(StageAddress + stageName + StageLevel, 1);
+
+        //MINIMUM LEVEL IS 1, MAX 7
+        if (stageLevelInfo <= 0) return 1;
+        if (stageLevelInfo > 7) return 7;
+
+        return stageLevelInfo;
     }
 
     public static void ResetStageLevelInfo()

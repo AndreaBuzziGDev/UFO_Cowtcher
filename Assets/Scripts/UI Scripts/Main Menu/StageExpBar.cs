@@ -32,6 +32,7 @@ public class StageExpBar : MonoBehaviour
                 int expInfo = SaveSystem.LoadStageEXPInfo(SceneNavigationController.Instance.GetAssociatedName(targetScene));
 
                 //COMPLETING INFO
+                Debug.Log("StageExpBar - lvlInfo: " + lvlInfo);
                 int expMax = SceneNavigationController.Instance.GetAssociatedLevelExperienceCap(targetScene, lvlInfo - 1);
                 if (expInfo == expMax) expInfo = expMax;
 
