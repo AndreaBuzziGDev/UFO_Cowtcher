@@ -11,6 +11,8 @@ public class ScoreBar : MonoBehaviour
 
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
+    private float scoreTimer;
+
 
     //METHODS
     //...
@@ -23,13 +25,23 @@ public class ScoreBar : MonoBehaviour
     void Start()
     {
         scoreText.text = scoreValue.ToString();
+        scoreTimer = 1;
     }
 
     private void Update()
     {
         //TODO:
         //EVERY SECOND: UPDATE SCORE BY 1
+        if(scoreTimer > 0)
+        {
+            scoreTimer -= Time.deltaTime;
 
+        }
+        else
+        {
+            AddScore(1);
+            scoreTimer = 1;
+        }
     }
 
 
