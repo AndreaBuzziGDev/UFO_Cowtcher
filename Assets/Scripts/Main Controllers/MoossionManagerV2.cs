@@ -75,52 +75,18 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
     //INITIALIZATION
     public void Initialization()
     {
-
-        //TODO: ENFORCE THE PRESENCE OF UP TO 1 TARGET CAPTURE MOOSSION IF THE CONDITIONS ALLOW IT
-
-        //TODO: COPY FROM EXISTING CODE
         MoossionPoolGeneric.BakeMoossionPool();
         moossionPool = MoossionPoolGeneric.MoossionPool;
 
+        moossionOne = PickRandomMoossion();
+        moossionTwo = PickRandomMoossion();
+        moossionThree = PickRandomMoossion();
     }
 
 
 
 
     //FUNCTIONALITIES
-    public void CompleteMoossion(Moossion targetMoossion)
-    {
-        int score = 0;
-
-        switch (targetMoossion)
-        {
-            case MoossCaptGeneric:
-                score = targetMoossion.TargetQuantity * baseScoreCaptureGeneric;
-                break;
-            case MoossCaptSpecific:
-                score = targetMoossion.TargetQuantity * baseScoreCaptureSpecific;
-                break;
-            case MoossCaptBuff:
-                score = targetMoossion.TargetQuantity * baseScoreCaptureBuff;
-                break;
-            case MoossCaptTurret:
-                score = targetMoossion.TargetQuantity * baseScoreCaptureTurret;
-                break;
-        }
-
-
-        //ADD SCORE TO THE SCOREBOARD
-        UIController.Instance.IGPanel.HighScoreBar.AddScore(score);
-
-        //INCREASING COUNTER COMPLETED
-        //TODO: IMPLEMENT
-        //completedMoossionCount++;
-
-        //DEBUG
-        Debug.Log("MoossionManager - Completed Moossion: " + targetMoossion.Name);
-    }
-
-
     public Moossion PickRandomMoossion()
     {
         if (moossionPool.Count > 0)
