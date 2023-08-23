@@ -57,7 +57,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
             if (randomFloat <= asteroidPhaseMultiplier * asteroidChanceMultiplier)
             {
                 //CHOOSE RANDOM ASTEROID
-                int randomIndex = Random.Range(0, asteroidTypes.Count-1);
+                int randomIndex = Random.Range(0, asteroidTypes.Count);
 
                 //RELEASE ASTEROID
                 ReleaseAsteroid(asteroidTypes[randomIndex]);
