@@ -23,18 +23,28 @@ public class StageExpBar : MonoBehaviour
         }
         else
         {
-            //BASE INFO
-            int expInfo = SaveSystem.LoadStageEXPInfo(SceneNavigationController.Instance.GetAssociatedName(targetScene));
+            //EXPERIENCE LEVEL INFO
             int lvlInfo = SaveSystem.LoadStageLevelInfo(SceneNavigationController.Instance.GetAssociatedName(targetScene));
 
-            //COMPLETING INFO
-            int expMax = SceneNavigationController.Instance.GetAssociatedLevelExperienceCap(targetScene, lvlInfo);
+            if(lvlInfo < 7)
+            {
+                //EXPERIENCE AMOUNT INFO
+                int expInfo = SaveSystem.LoadStageEXPInfo(SceneNavigationController.Instance.GetAssociatedName(targetScene));
 
-            if (expInfo == expMax) expInfo = expMax;
+                //COMPLETING INFO
+                int expMax = SceneNavigationController.Instance.GetAssociatedLevelExperienceCap(targetScene, lvlInfo - 1);
+                if (expInfo == expMax) expInfo = expMax;
 
-            //UPDATING GUI
-            levelCounterText.text = lvlInfo.ToString();
-            experienceBar.fillAmount = expInfo / expMax;
+                //UPDATING GUI
+                levelCounterText.text = lvlInfo.ToString();
+                experienceBar.fillAmount = expInfo / expMax;
+            }
+            else
+            {
+                //UPDATING GUI
+                levelCounterText.text = lvlInfo.ToString();
+                experienceBar.fillAmount = 1;
+            }
 
         }
     }
