@@ -141,6 +141,8 @@ public class GameController : MonoSingleton<GameController>
     //GAME OVER
     private static void GameOver()
     {
+        //TODO: UPDATE SO THAT THIS SHOWS THE END-GAME RESULT
+
         UIController.Instance.ShowGameOver();
         PauseGame();
     }

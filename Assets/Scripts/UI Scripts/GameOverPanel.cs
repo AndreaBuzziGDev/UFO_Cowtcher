@@ -34,5 +34,6 @@ public class GameOverPanel : MonoBehaviour
         //
         HooveringGameOverTitle.gameObject.SetActive(false);
         QuitSubPanel.gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }
