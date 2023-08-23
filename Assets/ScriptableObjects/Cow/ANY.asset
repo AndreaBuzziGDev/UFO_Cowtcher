@@ -14,20 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 0
   rarity: 0
-  Name: Any cow
+  CowName: 
   Description: 
   spawnProbability: 20
+  spawnChanceTally: 10
   FuelRecoveryAmount: 1
   AlertRadius: 1
   SpeedCalm: 1
   SpeedAlert: 1
-  Score: 1
+  Score: 10
   TimerAlertToCalm: 1
   TimerAlertToPanic: 1
   TimerRespawn: 5
   movPatternCalm: {fileID: 0}
   movPatternAlert: {fileID: 0}
-  Alteration: {fileID: 0}
+  effect: 
+  InstantlyDeployedItemPickup: {fileID: 0}
+  associatedAsteroid: {fileID: 0}
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 
   AllowedSpawnPointTypes: 
