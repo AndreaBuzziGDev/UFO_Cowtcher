@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3489a99919ec6034da4db55e1322c953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingMusic: {fileID: 8300000, guid: 3d37bed61429cbb44913be2041d5a24a, type: 3}
+  gameplayMusic: {fileID: 8300000, guid: 379b2daaba32e3c4f94ac403555ef654, type: 3}
+  moossionsCompletionMusic: {fileID: 8300000, guid: 4a54bb0897357d44b9734afa06faf51f, type: 3}
