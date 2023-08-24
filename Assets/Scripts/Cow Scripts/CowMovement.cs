@@ -235,7 +235,6 @@ public class CowMovement : MonoBehaviour
     ///FENCE DETECTION
     public void CheckClosestFence(Fence newFence)
     {
-        //TODO: IMPLEMENT LOGIC
         if(closestFence != null)
         {
             if(closestFence != newFence && closestFence.CanBeChanged)
