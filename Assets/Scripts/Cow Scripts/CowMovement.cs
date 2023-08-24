@@ -152,7 +152,7 @@ public class CowMovement : MonoBehaviour
         else mySpeed = speedAlert;
 
         //VARIANT - REFLECTED DIRECTION
-
+        /*
         //TURNING
         Vector3 reflectedDirection = movementDirection;
         if (IsReflectingAgainstFence())
@@ -168,7 +168,7 @@ public class CowMovement : MonoBehaviour
 
         //GLOBAL SPEED MULTIPLIER
         rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * reflectedDirection;
-
+        */
 
         //VARIANT - RUN TOWARDS THE CENTER OF THE SPAWNING GRID
         Vector3 centeredDirection = movementDirection;
