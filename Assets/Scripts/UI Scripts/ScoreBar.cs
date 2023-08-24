@@ -9,9 +9,13 @@ public class ScoreBar : MonoBehaviour
     private int scoreValue = 0;
     public int Score { get { return scoreValue; } }
 
+    ///TIMER - 1 SEC, 1 SCORE
+    private float scoreTimer;
+
+    ///GUI REFERENCES
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
-    private float scoreTimer;
+
 
 
     //METHODS
