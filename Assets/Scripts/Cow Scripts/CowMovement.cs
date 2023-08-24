@@ -175,7 +175,7 @@ public class CowMovement : MonoBehaviour
         if (IsReflectingAgainstFence())
         {
             Vector3 diff = SpawningGrid.Instance.Center() - this.transform.position;
-            centeredDirection = new Vector3(diff.x, 0, diff.z);
+            centeredDirection = (new Vector3(diff.x, 0, diff.z)).normalized;
         }
 
 

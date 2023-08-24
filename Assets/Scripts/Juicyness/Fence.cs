@@ -6,9 +6,12 @@ public class Fence : MonoBehaviour
 {
 
     //DATA
-    [SerializeField] float outerTurnDistance = 3.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
-    [SerializeField] float cowBonusOffset = 1.0f;//DISTANCE AT WHICH TURN IS 0 DEGREES
+    [Tooltip("Beyond this distance from the Fence, the UFO is too far for the dodging to take place.")]
+    [SerializeField] float outerTurnDistance = 3.0f;
+    [Tooltip("This offset is used to give an handicap to the cow to determine wether the UFO is closer to the fence than the cow.")]
+    [SerializeField] float cowBonusOffset = 1.0f;
 
+    [Tooltip("During this time, the cow won't change the bordering fence it is referencing.")]
     [SerializeField] float unchangeTimer = 2.0f;
     private float actualTimer;
     public bool CanBeChanged { get { return (actualTimer <= 0); } }
@@ -60,15 +63,15 @@ public class Fence : MonoBehaviour
         //TODO: INTRODUCE A "MODULATOR" TO ALLOW SOME MARGIN TO DETERMINE WETHER THE UFO IS CLOSER THAN COW OR NOT
         Vector3 ufoPos = GameController.Instance.FindUFOAnywhere().transform.position;
         Vector3 vectorUFO = new Vector3(ufoPos.x, 0, ufoPos.z);
-        float distanceUFO = (transform.position - vectorUFO).magnitude;
+        float distanceFenceUFO = (transform.position - vectorUFO).magnitude;
 
-        bool isUFOWithinDistance = distanceUFO < outerTurnDistance;
+        bool isUFOWithinDistance = distanceFenceUFO < outerTurnDistance;
         if (isUFOWithinDistance)
         {
-            float distanceCow = (this.transform.position - approachingCowMovement.transform.position).magnitude;
-            bool isCowWithinDistance = (distanceCow < outerTurnDistance);
+            float distanceFenceCow = (this.transform.position - approachingCowMovement.transform.position).magnitude;
+            bool isCowWithinDistance = (distanceFenceCow + cowBonusOffset < outerTurnDistance);
 
-            bool isUFOCloserThanCow = (distanceCow + cowBonusOffset > distanceUFO);
+            bool isUFOCloserThanCow = (distanceFenceCow + cowBonusOffset > distanceFenceUFO);
 
             return (isCowWithinDistance && !isUFOCloserThanCow);
             //return isCowWithinDistance;
