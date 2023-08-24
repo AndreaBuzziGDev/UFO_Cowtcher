@@ -19,6 +19,7 @@ public class MusicController : MonoBehaviour
             {
                 musicSources[i].clip = _clip;
                 musicSources[i].Play();
+                break;
             }
         }
     }
