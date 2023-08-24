@@ -60,6 +60,8 @@ public class GameOverPanel : MonoBehaviour
         //SAVE LEVEL EXPERIENCE
 
 
+        //NOTIFY SUMMARY TO UPDATE ITSELF
+
     }
 
 
