@@ -835,7 +835,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuitSubPanel: {fileID: 8232245461656820662}
-  HooveringGameOverTitle: {fileID: 777816657693480514}
+  heading: {fileID: 777816657693480514}
+  summary: {fileID: 1383709888573735409}
+  buttons: {fileID: 3527759262657506111}
 --- !u!1 &1089793597664481401
 GameObject:
   m_ObjectHideFlags: 0
