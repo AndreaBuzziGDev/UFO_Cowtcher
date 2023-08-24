@@ -89,6 +89,7 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
         return (withinSouthWestX && withinSouthWestZ && withinNorthEastX && withinNorthEastZ);
     }
 
+    //TODO: UPGRADE AS A PROPERTY GETTER
     public Vector3 Center()
     {
         return (southWest.transform.position + northEast.transform.position);
