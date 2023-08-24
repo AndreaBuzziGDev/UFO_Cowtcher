@@ -25,10 +25,13 @@ public class GameOverPanel : MonoBehaviour
     }
 
 
-    //UNPAUSE
+    //FUNCTIONALITIES
+
+    //BUTTONS
+    ///RESTART
     public void Restart() => GameController.Instance.RestartScene();
 
-    //QUIT
+    ///QUIT
     public void Quit()
     {
         //
@@ -36,4 +39,21 @@ public class GameOverPanel : MonoBehaviour
         QuitSubPanel.gameObject.SetActive(true);
         this.gameObject.SetActive(false);
     }
+
+
+    //END-GAME REPORT
+    public void DoEndgameReport()
+    {
+        //SAVE HIGH SCORE
+
+        //SAVE LEVEL INFO
+
+        //CALCULATE EXPERIENCE
+
+        //SAVE LEVEL EXPERIENCE
+
+
+    }
+
+
 }
