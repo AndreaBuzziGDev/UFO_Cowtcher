@@ -63,7 +63,7 @@ public class ScoreBar : MonoBehaviour
         scoreText.text = scoreValue.ToString();
 
         //SAVE HIGHSCORE
-        SaveSystem.SaveHighScore(scoreValue);
+        //SaveSystem.SaveHighScore(scoreValue);
     }
 
 }
