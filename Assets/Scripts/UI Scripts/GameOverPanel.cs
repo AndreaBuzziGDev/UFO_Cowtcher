@@ -38,9 +38,12 @@ public class GameOverPanel : MonoBehaviour
     ///QUIT
     public void Quit()
     {
-        //
-        this.gameObject.SetActive(false);
+        //DEACTIVATING SELF
         heading.gameObject.SetActive(false);
+        summary.gameObject.SetActive(false);
+        buttons.gameObject.SetActive(false);
+
+        //ACTIVATING QUIT SUB-PANEL
         QuitSubPanel.gameObject.SetActive(true);
     }
 
