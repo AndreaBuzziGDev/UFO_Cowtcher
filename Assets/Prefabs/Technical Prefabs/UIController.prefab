@@ -1456,6 +1456,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c351b0f1f275ced4ab3f30626e45a2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highscoreValue: {fileID: 2740247599414477759}
+  capturesValue: {fileID: 7041439773359855225}
+  timeElapsedValue: {fileID: 6625395561264457954}
+  moossionOne: {fileID: 8657723886989248393}
+  moossionTwo: {fileID: 7797452089582726931}
+  moossionThree: {fileID: 6532847589893050491}
+  multiplierValue: {fileID: 1336952254502660697}
+  actualExpValue: {fileID: 5073080809196651474}
+  expBar: {fileID: 8218453662735384985}
 --- !u!1 &2426773525504525236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,7 +3432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1722893071128985023}
   m_Layer: 0
-  m_Name: Cow Counter
+  m_Name: Captures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5533,6 +5542,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5055888117478825972, guid: e4f765eb23d3f3748ab1989d907e113b, type: 3}
   m_PrefabInstance: {fileID: 7438670444875585461}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8218453662735384985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1528593067296708140, guid: e4f765eb23d3f3748ab1989d907e113b, type: 3}
+  m_PrefabInstance: {fileID: 7438670444875585461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbe26d686dd2a3458a97f655132dcfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7813083965707763507
 PrefabInstance:
   m_ObjectHideFlags: 0
