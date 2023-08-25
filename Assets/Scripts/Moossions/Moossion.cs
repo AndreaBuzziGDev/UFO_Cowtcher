@@ -62,7 +62,7 @@ public abstract class Moossion
     ///PROGRESSION HANDLING
     public void DoProgress(int progressQuantity)
     {
-        currentQuantity += progressQuantity;
+        if(!IsComplete) currentQuantity += progressQuantity;
     }
     
     

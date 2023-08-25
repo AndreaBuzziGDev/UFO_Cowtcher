@@ -27,19 +27,56 @@ public class EndGameSummary : MonoBehaviour
     //METHODS
     //...
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //FUNCTIONALITIES
+    public void DoEndGameSummary()
+    {
+        //HIGHSCORE
+        int highScore = UIController.Instance.IGPanel.HighScoreBar.Score;
+        highscoreValue.text = highScore.ToString();
+
+        ///SAVING HIGHSCORE
+        SaveSystem.SaveHighScore(highScore);
+
+
+        //CAPTURES
+        ///TODO: DEVELOP CAPTURE RECORDING SYSTEM
+        capturesValue.text = "???";
+
+        //TIME ELAPSED
+        float elapsedTime = Time.time;
+        int intElapsedTime = (int)elapsedTime;
+        timeElapsedValue.text = intElapsedTime.ToString();
+
+        //MOOSSIONS
+        moossionOne.text = "FAILED";
+        moossionTwo.text = "FAILED";
+        moossionThree.text = "FAILED";
+
+        if (MoossionManagerV2.Instance.MoossionOne.IsComplete) moossionOne.text = "COMPLETE";
+        if (MoossionManagerV2.Instance.MoossionTwo.IsComplete) moossionTwo.text = "COMPLETE";
+        if (MoossionManagerV2.Instance.MoossionThree.IsComplete) moossionThree.text = "COMPLETE";
+
+
+        //FINAL EXP
+        ///SCORE MULTIPLIER
+        float finalMult = MoossionManagerV2.Instance.GetFinalScoreMultiplier();
+        multiplierValue.text = finalMult.ToString();
+
+        ///ACTUAL EXP
+        float actualExp = finalMult * highScore;
+        actualExpValue.text = actualExp.ToString();
+
+
+        //TELL XP BAR TO UPDATE
+        SceneNavigationController.eStageSceneName currentScene = SceneNavigationController.Instance.GetCurrentSceneData().StageID;
+
+        ///UPDATE EXPERIENCE SYSTEM
+
+
+        ///GUI UPDATE
+        expBar.UpdateExpBar(currentScene);
+
+    }
 
 
 
