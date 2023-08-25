@@ -837,7 +837,7 @@ MonoBehaviour:
   QuitSubPanel: {fileID: 8232245461656820662}
   heading: {fileID: 777816657693480514}
   summary: {fileID: 1383709888573735409}
-  gameOverButtons: {fileID: 0}
+  gameOverButtons: {fileID: 3527759262657506111}
 --- !u!1 &1089793597664481401
 GameObject:
   m_ObjectHideFlags: 0

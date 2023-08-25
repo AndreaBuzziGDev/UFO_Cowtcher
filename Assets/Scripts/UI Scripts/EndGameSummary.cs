@@ -71,7 +71,7 @@ public class EndGameSummary : MonoBehaviour
         SceneNavigationController.eStageSceneName currentScene = SceneNavigationController.Instance.GetCurrentSceneData().StageID;
 
         ///UPDATE EXPERIENCE SYSTEM
-
+        expBar.UpdateExpSystem(currentScene, (int)actualExp);
 
         ///GUI UPDATE
         expBar.UpdateExpBar(currentScene);
