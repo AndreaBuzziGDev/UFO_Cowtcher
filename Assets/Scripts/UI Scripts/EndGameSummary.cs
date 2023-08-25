@@ -30,6 +30,8 @@ public class EndGameSummary : MonoBehaviour
     //FUNCTIONALITIES
     public void DoEndGameSummary()
     {
+        Debug.Log("EndGameSummary - DoEndGameSummary");
+
         //HIGHSCORE
         int highScore = UIController.Instance.IGPanel.HighScoreBar.Score;
         highscoreValue.text = highScore.ToString();
