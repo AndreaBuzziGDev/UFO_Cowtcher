@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class EndGameSummary : MonoBehaviour
 {
@@ -70,13 +71,22 @@ public class EndGameSummary : MonoBehaviour
 
 
         //TELL XP BAR TO UPDATE
-        SceneNavigationController.eStageSceneName currentScene = SceneNavigationController.Instance.GetCurrentSceneData().StageID;
+        try
+        {
+            SceneNavigationController.eStageSceneName currentScene = SceneNavigationController.Instance.GetCurrentSceneData().StageID;
 
-        ///UPDATE EXPERIENCE SYSTEM
-        expBar.UpdateExpSystem(currentScene, (int)actualExp);
+            ///UPDATE EXPERIENCE SYSTEM
+            expBar.UpdateExpSystem(currentScene, (int)actualExp);
 
-        ///GUI UPDATE
-        expBar.UpdateExpBar(currentScene);
+            ///GUI UPDATE
+            expBar.UpdateExpBar(currentScene);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("No experience system allowed in a non-stage scene. If this is a developer scene, default.");
+            Debug.LogError("Exception in EndgameSummary:" + e);
+        }
+        
 
     }
 

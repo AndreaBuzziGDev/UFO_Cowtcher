@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseGamePanel: {fileID: 2999353713454031584}
-  GameOverPanel: {fileID: 980551416422809614}
+  GameOverPanel: {fileID: 75337341082387232}
   CowdexPanel: {fileID: 4799944364165482422}
   MoossionsPanel: {fileID: 3060325067874239791}
   gameplayInputCanvas: {fileID: 3456844090314703}
@@ -5300,6 +5300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5638695568709566463, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00048828125
+      objectReference: {fileID: 0}
     - target: {fileID: 6047521770348608401, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_Name
       value: Cowdex Canvas
@@ -5307,6 +5311,14 @@ PrefabInstance:
     - target: {fileID: 6047521770348608401, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541237187441588060, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00048828125
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977351042501111697, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00048828125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
