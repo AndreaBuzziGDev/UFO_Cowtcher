@@ -63,7 +63,7 @@ public class EndGameSummary : MonoBehaviour
         //FINAL EXP
         ///SCORE MULTIPLIER
         float finalMult = MoossionManagerV2.Instance.GetFinalScoreMultiplier();
-        multiplierValue.text = "X " + finalMult.ToString() + " = ";
+        multiplierValue.text = "X " + ((decimal)finalMult).ToString() + " = ";
 
         ///ACTUAL EXP
         float actualExp = finalMult * highScore;
