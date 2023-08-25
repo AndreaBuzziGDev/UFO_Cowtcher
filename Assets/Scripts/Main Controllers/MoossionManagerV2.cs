@@ -113,7 +113,7 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
             case 3:
                 return completionMultiplierThree;
             default:
-                return 1;
+                return 1.00f;
 
         }
     }
