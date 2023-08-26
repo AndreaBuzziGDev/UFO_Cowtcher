@@ -5,6 +5,7 @@ using UnityEngine;
 public class OptionsController : MonoBehaviour
 {
     //DATA
+    //[SerializeField] private GameObject title;
     [SerializeField] private GameObject selection;
     [SerializeField] private GameObject bottom;
 
@@ -24,23 +25,26 @@ public class OptionsController : MonoBehaviour
     ///SELF
     public void ShowSelf()
     {
-
+        selection.SetActive(true);
+        bottom.SetActive(true);
     }
     public void HideSelf()
     {
-
+        selection.SetActive(false);
+        bottom.SetActive(false);
     }
 
     ///DEVELOPER OPTIONS
     public void ShowDevOptions()
     {
         HideSelf();
-
+        developerOptions.gameObject.SetActive(true);
     }
 
     public void HideDevOptions()
     {
         ShowSelf();
+        developerOptions.gameObject.SetActive(false);
     }
 
 }
