@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
 
 public class OptionsDev : MonoBehaviour
 {
@@ -33,7 +35,10 @@ public class OptionsDev : MonoBehaviour
         //DEBUGGING
         Debug.Log("DEVELOPER MANUAL RESET - COWDEX");
         //TODO: USE FOR CYCLE...
-
+        foreach (CowSO.UniqueID interestedID in Enum.GetValues(typeof(CowSO.UniqueID)).Cast<CowSO.UniqueID>().ToList())
+        {
+            Debug.Log("DEVELOPER MANUAL RESET - COW: " + interestedID + " Progress is: " + SaveSystem.LoadCowProgress(interestedID));
+        }
     }
 
 
