@@ -159,7 +159,6 @@ GameObject:
   - component: {fileID: 774499682940536606}
   - component: {fileID: 2122830048923380786}
   - component: {fileID: 7795563217602909132}
-  - component: {fileID: 4795589826902842933}
   m_Layer: 5
   m_Name: Audio Settings
   m_TagString: Untagged
@@ -268,19 +267,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2122830048923380786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4795589826902842933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002657746347322583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77f85221c53904f855efababb206a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 5978125423370016824}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1096825970331753579
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +292,6 @@ GameObject:
   - component: {fileID: 7482397588621063971}
   - component: {fileID: 5096725871066763219}
   - component: {fileID: 5186594855666994489}
-  - component: {fileID: 174252757881701052}
   m_Layer: 5
   m_Name: Reset All Experience
   m_TagString: Untagged
@@ -402,19 +400,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5096725871066763219}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &174252757881701052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1096825970331753579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77f85221c53904f855efababb206a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 2611569472121873602}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1558035231745952964
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,14 +425,13 @@ GameObject:
   - component: {fileID: 8027079390624006121}
   - component: {fileID: 458845201554301673}
   - component: {fileID: 6736760483277816902}
-  - component: {fileID: 120088427384411967}
   m_Layer: 5
   m_Name: PLACEHOLDER 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6520738403142822910
 RectTransform:
   m_ObjectHideFlags: 0
@@ -536,19 +533,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 458845201554301673}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &120088427384411967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558035231745952964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77f85221c53904f855efababb206a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 2611569472121873602}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1767467925313613433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1035,6 @@ GameObject:
   - component: {fileID: 7220650859231544001}
   - component: {fileID: 2835172395151490908}
   - component: {fileID: 5824119619750908591}
-  - component: {fileID: 198887357166133365}
   m_Layer: 5
   m_Name: Gameplay Settings
   m_TagString: Untagged
@@ -1147,19 +1143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2835172395151490908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &198887357166133365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114376556676760864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77f85221c53904f855efababb206a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 5978125423370016824}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2148580515497873477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,7 +1941,6 @@ GameObject:
   - component: {fileID: 2771140583420122963}
   - component: {fileID: 5614126664134692002}
   - component: {fileID: 5564924181666796980}
-  - component: {fileID: 2073677030532946019}
   m_Layer: 5
   m_Name: Reset Cowdex
   m_TagString: Untagged
@@ -2054,19 +2049,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5614126664134692002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2073677030532946019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4941424012319898860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77f85221c53904f855efababb206a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 2611569472121873602}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4959424970016664958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,7 +2500,6 @@ GameObject:
   - component: {fileID: 5010479857963416475}
   - component: {fileID: 3736439295475506268}
   - component: {fileID: 2363522387357821175}
-  - component: {fileID: 6729177613312832174}
   m_Layer: 5
   m_Name: DEVELOPER SETTINGS
   m_TagString: Untagged
@@ -2615,30 +2609,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2021508310697773352}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ShowDevOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6729177613312832174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7120902505779266202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77f85221c53904f855efababb206a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7211160528584983419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3012,6 @@ GameObject:
   - component: {fileID: 5232560751638997849}
   - component: {fileID: 4913334200050191645}
   - component: {fileID: 6650209098988685330}
-  - component: {fileID: 593709242588708661}
   m_Layer: 5
   m_Name: Control Settings
   m_TagString: Untagged
@@ -3139,19 +3120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4913334200050191645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &593709242588708661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8190319056358274931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77f85221c53904f855efababb206a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 5978125423370016824}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8710341684268743273
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,14 +3279,13 @@ GameObject:
   - component: {fileID: 5063077672777479505}
   - component: {fileID: 7910273659692978078}
   - component: {fileID: 8172671756672629928}
-  - component: {fileID: 2320898819548171081}
   m_Layer: 5
   m_Name: PLACEHOLDER 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4789688589288758656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3407,16 +3387,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7910273659692978078}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2320898819548171081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9102803883396330218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77f85221c53904f855efababb206a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 2611569472121873602}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
