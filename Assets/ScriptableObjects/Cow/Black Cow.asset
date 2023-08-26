@@ -15,7 +15,8 @@ MonoBehaviour:
   UID: 1
   rarity: 0
   CowName: Jamal
-  Description: A very common cow that likes to graze.
+  Description: The first of the two cows you have met on this planet, someone says
+    that it can produce chocolate milk
   spawnProbability: 50
   spawnChanceTally: 25
   FuelRecoveryAmount: 2

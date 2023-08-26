@@ -15,7 +15,8 @@ MonoBehaviour:
   UID: 11
   rarity: 1
   CowName: Pumpcow
-  Description: A cow that may jump and bounce its way around.
+  Description: "No one has ever seen a baby Pumpcow grow, who knows if it can be
+    used for Halloween\r"
   spawnProbability: 20
   spawnChanceTally: 10
   FuelRecoveryAmount: 3
