@@ -15,6 +15,9 @@ public class HideoutInfos : MonoBehaviour
     //UFO
     private UFO myUFO;
 
+    //PARTIAL FADING AT 100% OF COW LOGO
+    [SerializeField] [Range(1, 100f)] private float cowLogoPartialFading = 80f;
+
     //FADE DISTANCE
     [SerializeField] private float outerDistanceMaxFading = 3.5f;
     [SerializeField] private float innerDistanceMinFading = 2.5f;
