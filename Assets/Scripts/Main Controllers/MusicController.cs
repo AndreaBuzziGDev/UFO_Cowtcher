@@ -2,26 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicController : MonoBehaviour
+public class MusicController : MonoSingleton<MusicController>
 {
     //DATA
+    public AudioSource[] Sources;
 
-    //OPENING MUSIC
-    [SerializeField] private AudioClip openingMusic;
-
-    //GAMEPLAY MUSIC
-    [SerializeField] private AudioClip gameplayMusic;
-
-    //MOOSSIONS COMPLETION MUSIC
-    [SerializeField] private AudioClip moossionsCompletionMusic;
-
-    private void OnEnable()
+    private void Start()
     {
-        MainMenuController.Instance.gameObject.SetActive(true);
+        Sources = GetComponents<AudioSource>();
     }
 
-    public void PlayMusic()
+    public void PlayClip(AudioClip _clip)
     {
-        
+        for (int i = 0; i < Sources.Length; i++) 
+        {
+            if (!Sources[i].isPlaying) 
+            {
+                Sources[i].clip = _clip;
+                Sources[i].Play();
+                break;
+            }
+        }
     }
 }
