@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 1
   rarity: 0
-  CowName: Jamal
+  CowName: Black Cow
   Description: The first of the two cows you have met on this planet, someone says
     that it can produce chocolate milk
   spawnProbability: 50

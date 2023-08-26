@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 2
   rarity: 0
-  CowName: Kevin
+  CowName: White Cow
   Description: "This is the second cow you\u2019ve met, it looks like the creator
     of this world just inverted the colours\r"
   spawnProbability: 50
