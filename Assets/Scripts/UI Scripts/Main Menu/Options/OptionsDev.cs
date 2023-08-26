@@ -34,10 +34,9 @@ public class OptionsDev : MonoBehaviour
 
         //DEBUGGING
         Debug.Log("DEVELOPER MANUAL RESET - COWDEX");
-        //TODO: USE FOR CYCLE...
         foreach (CowSO.UniqueID interestedID in Enum.GetValues(typeof(CowSO.UniqueID)).Cast<CowSO.UniqueID>().ToList())
         {
-            Debug.Log("DEVELOPER MANUAL RESET - COW: " + interestedID + " Progress is: " + SaveSystem.LoadCowProgress(interestedID));
+            Debug.Log("DEVELOPER MANUAL RESET - COW: " + interestedID + ", current progress is: " + SaveSystem.LoadCowProgress(interestedID).KnowledgeValue);
         }
     }
 
