@@ -29,16 +29,9 @@ public class CowdexGUI : MonoBehaviour
     //METHODS
     //...
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GoToPage(0);
     }
 
 
