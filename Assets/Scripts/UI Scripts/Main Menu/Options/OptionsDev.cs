@@ -20,7 +20,12 @@ public class OptionsDev : MonoBehaviour
     {
 
     }
+    public void ResetStageUnlocks()
+    {
 
-    
+    }
+
+
+
 
 }
