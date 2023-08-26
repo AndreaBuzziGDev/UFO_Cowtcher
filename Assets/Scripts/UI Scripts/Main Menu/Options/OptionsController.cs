@@ -10,7 +10,7 @@ public class OptionsController : MonoBehaviour
     [SerializeField] private GameObject bottom;
 
     ///DEVELOPER OPTIONS
-    [SerializeField] private GameObject developerOptions;
+    [SerializeField] private OptionsDev developerOptions;
 
 
     //METHODS
