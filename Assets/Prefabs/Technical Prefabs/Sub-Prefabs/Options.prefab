@@ -122,9 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5487285723655516909}
-        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
-        m_MethodName: GoToCanvas
+      - m_Target: {fileID: 2021508310697773352}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: HideDevOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
