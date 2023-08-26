@@ -31,7 +31,7 @@ public class CowdexGUI : MonoBehaviour
 
     void OnEnable()
     {
-        GoToPage(0);
+        if(CowdexPages.Count > 0) GoToPage(0);
     }
 
 
