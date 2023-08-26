@@ -105,34 +105,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1446165033477130417}
     m_Modifications:
-    - target: {fileID: 95535862356598444, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: innerDistanceMinFading
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 95535862356598444, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: outerDistanceMaxFading
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338847225916277263, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338847225916277263, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338847225916277263, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338847225916277263, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338847225916277263, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.04
-      objectReference: {fileID: 0}
     - target: {fileID: 6643198033141641687, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -185,18 +157,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6643198033141641687, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7585279638336446817, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
       propertyPath: m_Name
       value: Hideout infos
       objectReference: {fileID: 0}
-    - target: {fileID: 8003573060261007220, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d3d844e398d1d04b9f35f978edfbb1d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
