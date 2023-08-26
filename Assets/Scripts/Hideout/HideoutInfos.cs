@@ -96,7 +96,7 @@ public class HideoutInfos : MonoBehaviour
                 float opacity = 1 - ((baseDistanceDiff - differenceBetweenTwo) / baseDistanceDiff);
 
                 //
-                cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, opacity);
+                cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, opacity * (cowLogoPartialFading/ 100));
                 hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, opacity);
             }
         }
