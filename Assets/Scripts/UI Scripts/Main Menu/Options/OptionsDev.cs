@@ -11,7 +11,15 @@ public class OptionsDev : MonoBehaviour
     //...
 
     //FUNCTIONALITIES
+    public void ResetAllExperience()
+    {
 
+    }
+
+    public void ResetAllCowdex()
+    {
+
+    }
 
     
 
