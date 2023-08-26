@@ -2351,6 +2351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96883325314782643ad061d21f45bcb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 6969537091834264051}
   selection: {fileID: 4642263948370248281}
   bottom: {fileID: 4959424970016664958}
   developerOptions: {fileID: 5567388378287458239}
