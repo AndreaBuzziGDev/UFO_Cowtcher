@@ -16,6 +16,8 @@ public class OptionsDev : MonoBehaviour
         SaveSystem.ResetStageExpInfo();
         SaveSystem.ResetStageLevelInfo();
 
+        //DEBUGGING
+        Debug.Log("DEVELOPER MANUAL RESET - EXPERIENCE");
 
     }
 
@@ -24,6 +26,9 @@ public class OptionsDev : MonoBehaviour
     {
         SaveSystem.ResetCowProgress();
 
+        //DEBUGGING
+        Debug.Log("DEVELOPER MANUAL RESET - COWDEX");
+
     }
 
 
@@ -31,6 +36,8 @@ public class OptionsDev : MonoBehaviour
     {
         SaveSystem.ResetStagesUnlock();
 
+        //DEBUGGING
+        Debug.Log("DEVELOPER MANUAL RESET - STAGE UNLOCKS");
 
     }
 
