@@ -5,7 +5,7 @@ using UnityEngine;
 public class MusicController : MonoSingleton<MusicController>
 {
     //DATA
-    public AudioSource[] Sources;
+    [SerializeField] private AudioSource[] Sources;
 
     private void Start()
     {
