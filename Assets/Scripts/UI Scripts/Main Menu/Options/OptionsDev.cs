@@ -42,8 +42,14 @@ public class OptionsDev : MonoBehaviour
     }
 
 
-    //TODO: RESET HIGH SCORE
+    public void ResetHighScore()
+    {
+        SaveSystem.ResetHighScore();
 
+        //DEBUGGING
+        Debug.Log("DEVELOPER MANUAL RESET - HIGHSCORE");
+
+    }
 
 
 
