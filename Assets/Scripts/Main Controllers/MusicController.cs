@@ -5,23 +5,23 @@ using UnityEngine;
 public class MusicController : MonoSingleton<MusicController>
 {
     //DATA
-    [SerializeField] private AudioSource[] Sources;
+
+    //OPENING GAME MUSIC
+    [SerializeField] AudioClip openingGameMusic;
+
+    //GAMEPLAY MUSIC
+    [SerializeField] AudioClip gameplayMusic;
+
+    //MOOSSIONS COMPLETION MUSIC
+    [SerializeField] AudioClip moossionsCompletionMusic;
 
     private void Start()
     {
-        Sources = GetComponents<AudioSource>();
+
     }
 
     public void PlayClip(AudioClip _clip)
     {
-        for (int i = 0; i < Sources.Length; i++) 
-        {
-            if (!Sources[i].isPlaying) 
-            {
-                Sources[i].clip = _clip;
-                Sources[i].Play();
-                break;
-            }
-        }
+
     }
 }
