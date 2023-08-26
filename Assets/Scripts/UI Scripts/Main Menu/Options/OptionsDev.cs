@@ -13,17 +13,29 @@ public class OptionsDev : MonoBehaviour
     //FUNCTIONALITIES
     public void ResetAllExperience()
     {
+        SaveSystem.ResetStageExpInfo();
+        SaveSystem.ResetStageLevelInfo();
+
 
     }
+
 
     public void ResetAllCowdex()
     {
+        SaveSystem.ResetCowProgress();
 
     }
+
+
     public void ResetStageUnlocks()
     {
+        SaveSystem.ResetStagesUnlock();
+
 
     }
+
+
+    //TODO: RESET HIGH SCORE
 
 
 
