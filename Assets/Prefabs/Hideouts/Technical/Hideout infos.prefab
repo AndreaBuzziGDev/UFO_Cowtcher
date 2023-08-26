@@ -197,8 +197,8 @@ Transform:
   m_GameObject: {fileID: 6488235879070387786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.8, y: 0.46, z: -0.04}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6643198033141641687}
@@ -244,7 +244,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 62ccf6b59a08ca14c9cd8da87935414e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d3d844e398d1d04b9f35f978edfbb1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -304,3 +304,4 @@ MonoBehaviour:
   cowLogo: {fileID: 8003573060261007220}
   hideoutCounter: {fileID: 4782559178037222879}
   outerDistanceMaxFading: 3.5
+  innerDistanceMinFading: 2.5
