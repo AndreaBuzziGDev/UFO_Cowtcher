@@ -15,10 +15,8 @@ MonoBehaviour:
   UID: 15
   rarity: 2
   CowName: Cowgon
-  Description: 'A flying cow that moves at a very high speed.
-
-    When panicked,
-    it may deliver a stun.'
+  Description: "I\u2019ve never seen something like this before but if I have to
+    guess I would say that it\u2019s better to catch it\r"
   spawnProbability: 20
   spawnChanceTally: 2
   FuelRecoveryAmount: 5

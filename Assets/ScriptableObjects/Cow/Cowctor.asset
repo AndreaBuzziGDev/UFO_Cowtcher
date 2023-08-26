@@ -15,7 +15,8 @@ MonoBehaviour:
   UID: 14
   rarity: 2
   CowName: Cowctor
-  Description: A cow that moves at an ever-increasing speed until she changes direction.
+  Description: "This one looks really cool. Be careful, when it goes in one direction
+    it starts to get fast \r"
   spawnProbability: 20
   spawnChanceTally: 3
   FuelRecoveryAmount: 5

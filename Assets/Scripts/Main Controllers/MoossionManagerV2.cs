@@ -6,19 +6,15 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
 {
     //DATA
     [SerializeField] List<Moossion> moossionPool = new();
-
-    [SerializeField] List<Moossion> moossionUnlock = new();//TODO: CHANGE TYPE WITH DEDICATED TYPE
-
     ///PROGRESSION COUNTER
     [SerializeField] private int completedMoossionCount = 0;
     public int CompletedMoossionCount { get { return completedMoossionCount; } }
 
 
     ///SCORE DATA
-    [SerializeField] private int baseScoreCaptureGeneric = 10;
-    [SerializeField] private int baseScoreCaptureSpecific = 20;
-    [SerializeField] private int baseScoreCaptureBuff = 15;
-    [SerializeField] private int baseScoreCaptureTurret = 5;
+    [SerializeField] private float completionMultiplierOne = 1.25f;
+    [SerializeField] private float completionMultiplierTwo = 1.5f;
+    [SerializeField] private float completionMultiplierThree = 2.0f;
 
 
     ///TYPE DIVERSIFICATION DATA
@@ -57,10 +53,6 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
             Moossion moo = activeMoossions[i];
             if (moo.IsComplete)
             {
-                //COMPLETE MOOSSION
-                CompleteMoossion(moo);
-
-
                 //TODO: INFORM THE FEED THAT THE MOOSSIONS HAVE BEEN UPDATED
 
 
@@ -75,67 +67,56 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
     //INITIALIZATION
     public void Initialization()
     {
-
-        //TODO: ENFORCE THE PRESENCE OF UP TO 1 TARGET CAPTURE MOOSSION IF THE CONDITIONS ALLOW IT
-
-        //TODO: COPY FROM EXISTING CODE
         MoossionPoolGeneric.BakeMoossionPool();
         moossionPool = MoossionPoolGeneric.MoossionPool;
 
+        moossionOne = PickRandomMoossion();
+        Debug.Log("MoossionManager has picked Moossion 1: " + moossionOne.GetDescription());
+
+        moossionTwo = PickRandomMoossion();
+        Debug.Log("MoossionManager has picked Moossion 2: " + moossionTwo.GetDescription());
+
+        moossionThree = PickRandomMoossion();
+        Debug.Log("MoossionManager has picked Moossion 3: " + moossionThree.GetDescription());
     }
 
 
 
 
     //FUNCTIONALITIES
-    public void CompleteMoossion(Moossion targetMoossion)
-    {
-        int score = 0;
-
-        switch (targetMoossion)
-        {
-            case MoossCaptGeneric:
-                score = targetMoossion.TargetQuantity * baseScoreCaptureGeneric;
-                break;
-            case MoossCaptSpecific:
-                score = targetMoossion.TargetQuantity * baseScoreCaptureSpecific;
-                break;
-            case MoossCaptBuff:
-                score = targetMoossion.TargetQuantity * baseScoreCaptureBuff;
-                break;
-            case MoossCaptTurret:
-                score = targetMoossion.TargetQuantity * baseScoreCaptureTurret;
-                break;
-        }
-
-
-        //ADD SCORE TO THE SCOREBOARD
-        UIController.Instance.IGPanel.HighScoreBar.AddScore(score);
-
-        //INCREASING COUNTER COMPLETED
-        //TODO: IMPLEMENT
-        //completedMoossionCount++;
-
-        //DEBUG
-        Debug.Log("MoossionManager - Completed Moossion: " + targetMoossion.Name);
-    }
-
-
     public Moossion PickRandomMoossion()
     {
         if (moossionPool.Count > 0)
         {
             int randomIndex = Random.Range(0, moossionPool.Count - 1);
             return moossionPool[randomIndex];
-        } else
+        }
+        else
         {
             return null;
         }
     }
 
+    public float GetFinalScoreMultiplier()
+    {
+        int successCounter = 0;
+        if (moossionOne.IsComplete) successCounter++;
+        if (moossionTwo.IsComplete) successCounter++;
+        if (moossionThree.IsComplete) successCounter++;
 
-    //TODO: FUNCTIONALITY TO PICK THE LOWEST-INDEX UNLOCKMOOSSION
+        switch (successCounter)
+        {
+            case 1:
+                return completionMultiplierOne;
+            case 2:
+                return completionMultiplierTwo;
+            case 3:
+                return completionMultiplierThree;
+            default:
+                return 1.00f;
 
+        }
+    }
 
 
 

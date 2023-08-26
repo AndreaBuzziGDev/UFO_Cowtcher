@@ -10,8 +10,8 @@ public class CowSO : ScriptableObject
     public enum UniqueID
     {
         ANY,
-        C000Jamal,
-        C001Kevin,
+        C000BlackCow,
+        C001WhiteCow,
         C002,
         C003,
         C004,
@@ -41,7 +41,7 @@ public class CowSO : ScriptableObject
 
     //DATA
     ///UNIQUE ID & ENUMS
-    public UniqueID UID = UniqueID.C000Jamal;
+    public UniqueID UID = UniqueID.C000BlackCow;
     public Rarity rarity = Rarity.Common;
 
 

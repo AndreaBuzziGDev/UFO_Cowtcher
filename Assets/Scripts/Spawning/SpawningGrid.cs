@@ -60,6 +60,7 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
 
         Debug.Log("SpawningGrid - southWest: " + southWest.transform.position);
         Debug.Log("SpawningGrid - northEast: " + northEast.transform.position);
+        Debug.Log("SpawningGrid - Center: " + Center());
 
     }
 
@@ -88,6 +89,11 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
         return (withinSouthWestX && withinSouthWestZ && withinNorthEastX && withinNorthEastZ);
     }
 
+    //TODO: UPGRADE AS A PROPERTY GETTER
+    public Vector3 Center()
+    {
+        return (southWest.transform.position + northEast.transform.position);
+    }
 
 
 

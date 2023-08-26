@@ -8,7 +8,11 @@ public class GameOverPanel : MonoBehaviour
 
     ///GUI REFERENCES
     [SerializeField] private QuitSubPanel QuitSubPanel;
-    [SerializeField] private HooveringGUIComponent HooveringGameOverTitle;
+
+    [SerializeField] private HooveringGUIComponent heading;
+    [SerializeField] private EndGameSummary summary;
+    [SerializeField] private GameObject gameOverButtons;
+
 
 
 
@@ -25,14 +29,31 @@ public class GameOverPanel : MonoBehaviour
     }
 
 
-    //UNPAUSE
+    //FUNCTIONALITIES
+
+    //BUTTONS
+    ///RESTART
     public void Restart() => GameController.Instance.RestartScene();
 
-    //QUIT
+    ///QUIT
     public void Quit()
     {
-        //
-        HooveringGameOverTitle.gameObject.SetActive(false);
+        //DEACTIVATING SELF
+        heading.gameObject.SetActive(false);
+        summary.gameObject.SetActive(false);
+        gameOverButtons.gameObject.SetActive(false);
+
+        //ACTIVATING QUIT SUB-PANEL
         QuitSubPanel.gameObject.SetActive(true);
     }
+
+
+    //END-GAME REPORT
+    public void DoEndgameReport()
+    {
+        //
+        summary.DoEndGameSummary();
+    }
+
+
 }

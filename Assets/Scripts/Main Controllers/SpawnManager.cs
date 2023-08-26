@@ -108,7 +108,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
 
         //TODO: UPDATE THIS SO THAT THE STARTING UIDs ARE ALL THOSE FROM THE COWS THE PLAYER HAS CAPTURED ACCORDING TO THE COWDEX
-        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal, CowSO.UniqueID.C001Kevin };
+        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
 
         //PREPARING DATA STRUCTURES
         TrackSpawnProbability(UIDs);

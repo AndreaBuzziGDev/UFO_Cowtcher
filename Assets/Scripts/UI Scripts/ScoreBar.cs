@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//TODO: MAKE THIS A MONOSINGLETON?
 public class ScoreBar : MonoBehaviour
 {
     //DATA
     private int scoreValue = 0;
     public int Score { get { return scoreValue; } }
 
+    ///TIMER - 1 SEC, 1 SCORE
+    private float scoreTimer;
+
+    ///GUI REFERENCES
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
+
+
 
 
     //METHODS
@@ -23,6 +30,23 @@ public class ScoreBar : MonoBehaviour
     void Start()
     {
         scoreText.text = scoreValue.ToString();
+        scoreTimer = 1;
+    }
+
+    private void Update()
+    {
+        //TODO:
+        //EVERY SECOND: UPDATE SCORE BY 1
+        if(scoreTimer > 0)
+        {
+            scoreTimer -= Time.deltaTime;
+
+        }
+        else
+        {
+            AddScore(1);
+            scoreTimer = 1;
+        }
     }
 
 
@@ -44,7 +68,7 @@ public class ScoreBar : MonoBehaviour
         scoreText.text = scoreValue.ToString();
 
         //SAVE HIGHSCORE
-        SaveSystem.SaveHighScore(scoreValue);
+        //SaveSystem.SaveHighScore(scoreValue);
     }
 
 }

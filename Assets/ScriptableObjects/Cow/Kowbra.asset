@@ -15,7 +15,8 @@ MonoBehaviour:
   UID: 10
   rarity: 1
   CowName: Kowbra
-  Description: A sneaky cow that likes to move in a serpentine way.
+  Description: "It is said that this cow it\u2019s one of the fastest on the planet,
+    the only problem is that it cannot go straight\r"
   spawnProbability: 20
   spawnChanceTally: 10
   FuelRecoveryAmount: 3

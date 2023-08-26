@@ -41,7 +41,7 @@ public class MoossCaptSpecific : Moossion
 
 
         //TODO: RANDOMIZE EVEN FURTHER
-        List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal, CowSO.UniqueID.C001Kevin };
+        List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
 
         int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
 

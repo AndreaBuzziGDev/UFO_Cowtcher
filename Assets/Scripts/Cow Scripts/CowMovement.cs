@@ -151,8 +151,10 @@ public class CowMovement : MonoBehaviour
         if (myCow.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
+        //VARIANT - REFLECTED DIRECTION
+        /*
         //TURNING
-        Vector3 reflectedDirection;
+        Vector3 reflectedDirection = movementDirection;
         if (IsReflectingAgainstFence())
         {
             //LAST FORWARD VECTOR (HANDLING CORNERS OF THE MAP)
@@ -163,13 +165,23 @@ public class CowMovement : MonoBehaviour
                 reflectedDirection = Vector3.Reflect(reflectedDirection, previousFenceNormal);
             }
         }
-        else
-        {
-            reflectedDirection = movementDirection;
-        }
 
         //GLOBAL SPEED MULTIPLIER
         rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * reflectedDirection;
+        */
+
+        //VARIANT - RUN TOWARDS THE CENTER OF THE SPAWNING GRID
+        Vector3 centeredDirection = movementDirection;
+        if (IsReflectingAgainstFence())
+        {
+            Vector3 diff = SpawningGrid.Instance.Center() - this.transform.position;
+            centeredDirection = (new Vector3(diff.x, 0, diff.z)).normalized;
+        }
+
+
+        //GLOBAL SPEED MULTIPLIER
+        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * centeredDirection;
+
     }
     
 
@@ -235,7 +247,6 @@ public class CowMovement : MonoBehaviour
     ///FENCE DETECTION
     public void CheckClosestFence(Fence newFence)
     {
-        //TODO: IMPLEMENT LOGIC
         if(closestFence != null)
         {
             if(closestFence != newFence && closestFence.CanBeChanged)

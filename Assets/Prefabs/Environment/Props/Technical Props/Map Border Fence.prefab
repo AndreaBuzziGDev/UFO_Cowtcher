@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7, y: 2, z: 3.1}
-  m_Center: {x: 0, y: 1, z: 1.5}
+  m_Size: {x: 1.7, y: 2, z: 5.0177608}
+  m_Center: {x: 0, y: 1, z: 2.4588807}
 --- !u!114 &8519043303443221895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,8 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c9e4c38650904439eaac7b975e5b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outerTurnDistance: 5
-  cowBonusOffset: 1
+  outerTurnDistance: 6
+  cowBonusOffset: 2
   unchangeTimer: 0.5
 --- !u!1 &3008297296414033687
 GameObject:
