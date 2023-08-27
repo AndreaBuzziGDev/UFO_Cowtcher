@@ -10,6 +10,10 @@ public class ProgressionSystem
     private static ProgressionStageFour stage4 = new ProgressionStageFour();
 
 
+    //TODO: QUICK UNLOCK ALL STAGES AND REWARDS...
+
+
+    //UNLOCKS ALL THE REWARDS FOR EVERY STAGE UP UNTIL THE EXPERIENCE LEVEL THE PLAYER HAS REACHED IN THAT STAGE.
     public static void UnlockAllAvailableRewards()
     {
         UnlockRewardsForLevel(SceneNavigationController.eStageSceneName.Stage1);
