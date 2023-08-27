@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicController : MonoSingleton<MusicController>
 {
@@ -32,6 +33,33 @@ public class MusicController : MonoSingleton<MusicController>
 
     }
 
+
+    //FUNCTIONALITIES
+    private void PlayBackgroundMusicCorrectlyBasedOnScene()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        switch (currentSceneName)
+        {
+            case "Stage 1":
+            case "Stage 2":
+            case "Stage 3":
+            case "Stage 4":
+                PlayMusic(gameplayMusic, activeMusicSource);
+                break;
+            case "Main Menu":
+                PlayMusic(openingGameMusic, activeMusicSource);
+                break;
+            default:
+                PlayMusic(gameplayMusic, activeMusicSource);
+                break;
+        }
+
+    }
+
+
+
+
+    //UTILITIES
     private void PlayMusic(AudioClip music, AudioSource audioSource)
     {
         audioSource.clip = music;
