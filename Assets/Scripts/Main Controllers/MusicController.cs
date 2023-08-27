@@ -13,20 +13,8 @@ public class MusicController : MonoBehaviour
     //GAMEPLAY MUSIC
     [SerializeField] AudioClip gameplayMusic;
 
-    //MOOSSIONS COMPLETION MUSIC
+    //MOOSSIONS COMPLETION MUSIC OR ENDING GAME MUSIC
     [SerializeField] AudioClip moossionsCompletionMusic;
-
-
-    [SerializeField] AudioClip buttonClick;
-    [SerializeField] AudioClip buttonOver;
-
-
-    [SerializeField] List<AudioClip> visitorsSpawns;
-    [SerializeField] List<AudioClip> playerHits;
-    [SerializeField] List<AudioClip> visitorHits;
-    [SerializeField] List<AudioClip> laserShots;
-
-    [SerializeField] AudioClip victory;
 
 
     private AudioSource musicSource1;
