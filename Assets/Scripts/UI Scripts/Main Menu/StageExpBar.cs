@@ -29,19 +29,22 @@ public class StageExpBar : MonoBehaviour
 
             //EXPERIENCE LEVEL INFO
             int lvlInfo = SaveSystem.LoadStageLevelInfo(targetSceneName);
+            Debug.Log("StageExpBar - lvlInfo: " + lvlInfo);
 
             //EXPERIENCE ADVANCES ONLY LEVELS 1-6 INCLUDED
             if (lvlInfo < 7)
             {
                 //EXPERIENCE AMOUNT INFO
                 int expInfo = SaveSystem.LoadStageEXPInfo(targetSceneName);
+                Debug.Log("StageExpBar - expInfo: " + expInfo);
 
                 //EXPERIENCE CAP
                 int experienceCapForCurrentLevel = SceneNavigationController.Instance.GetAssociatedLevelExperienceCap(targetScene, lvlInfo);
+                Debug.Log("StageExpBar - experienceCapForCurrentLevel: " + experienceCapForCurrentLevel);
 
                 //IF EXPERIENCE EXCEEDS CAP...
                 //TODO: THIS SHOULD BE A RECURSIVELY-CALLED METHOD. PLAYER MIGHT LEVEL UP MULTIPLE TIMES IN A SINGLE SHOT.
-                if(expInfo + expGained >= experienceCapForCurrentLevel)
+                if (expInfo + expGained >= experienceCapForCurrentLevel)
                 {
                     //INCREASE LEVEL
                     lvlInfo++;
@@ -49,20 +52,24 @@ public class StageExpBar : MonoBehaviour
                     //LEVEL 7 EXPERIENCE IS ALWAYS 0
                     if (lvlInfo == 7) expInfo = 0;
                     //NEW EXPERIENCE IS THE DIFFERENCE BETWEEN SUM AND CAP
-                    else expInfo = (expInfo + expGained) - experienceCapForCurrentLevel;
+                    else expInfo = (expInfo + expGained) - experienceCapForCurrentLevel;//TODO: GRANT 1 EXP IF LEVEL UP IS EXACTLY ON THE EDGE
 
                     //SAVING NEW LEVEL INFO
                     SaveSystem.SetStageLevelInfo(targetSceneName, lvlInfo);
+                    Debug.Log("StageExpBar - NEW LEVEL: " + lvlInfo);
 
                     //SAVING NEW LEVEL EXPERIENCE
                     SaveSystem.SetStageEXPInfo(targetSceneName, expInfo);
-
+                    Debug.Log("StageExpBar - NEW EXPERIENCE POINTS: " + expInfo);
 
                 }
                 else
                 {
                     //SAVING EXPERIENCE
                     SaveSystem.SetStageEXPInfo(targetSceneName, expInfo + expGained);
+
+                    int newExpInfo = SaveSystem.LoadStageEXPInfo(targetSceneName);
+                    Debug.Log("StageExpBar - NO LEVEL UP, newExpInfo: " + newExpInfo);
                 }
 
             }
