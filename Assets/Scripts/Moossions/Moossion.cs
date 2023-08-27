@@ -73,7 +73,7 @@ public abstract class Moossion
     
     public void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
-        Debug.Log("Cow Has Been captured: " + e.CapturedCow.CowTemplate.UID);
+        Debug.Log(this.name + " Cow Has Been captured: " + e.CapturedCow.CowTemplate.UID);
         HandleProgressLogic(e.CapturedCow);
     }
 
