@@ -28,9 +28,7 @@ public class MusicController : MonoSingleton<MusicController>
     private void OnEnable()
     {
         //MAKE THE INTENDED MUSIC PLAY
-        //TODO: SELECT MUSIC CORRECTLY BASED ON THE ACTIVE SCENE
-        PlayMusic(gameplayMusic, activeMusicSource);
-
+        PlayBackgroundMusicCorrectlyBasedOnScene();
     }
 
 
