@@ -40,10 +40,10 @@ public class MoossionsPanel : MonoBehaviour
         Info_1.UpdateInfos(moo_1, GetMatchingIcon(moo_1));
 
         ///MOOSSION 2
-        Info_1.UpdateInfos(moo_2, GetMatchingIcon(moo_2));
+        Info_2.UpdateInfos(moo_2, GetMatchingIcon(moo_2));
 
         ///MOOSSION 3
-        Info_1.UpdateInfos(moo_3, GetMatchingIcon(moo_3));
+        Info_3.UpdateInfos(moo_3, GetMatchingIcon(moo_3));
 
 
         //TODO: DEVELOP

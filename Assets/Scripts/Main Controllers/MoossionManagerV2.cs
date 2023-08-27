@@ -78,6 +78,8 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
 
         moossionThree = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 3: " + moossionThree.GetDescription());
+
+        activeMoossions = new List<Moossion> { moossionOne, moossionTwo, moossionThree };
     }
 
 
