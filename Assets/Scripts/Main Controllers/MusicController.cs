@@ -18,8 +18,8 @@ public class MusicController : MonoSingleton<MusicController>
 
 
     //AUDIO SOURCES
-    private AudioSource activeMusicSource;
-    private AudioSource secondaryMusicSource;
+    [SerializeField] private AudioSource activeMusicSource;
+    [SerializeField] private AudioSource moossionCompleteSource;
 
 
 
@@ -29,7 +29,7 @@ public class MusicController : MonoSingleton<MusicController>
         activeMusicSource = gameObject.AddComponent<AudioSource>();
         activeMusicSource.loop = true;
 
-        secondaryMusicSource = gameObject.AddComponent<AudioSource>();
+        moossionCompleteSource = gameObject.AddComponent<AudioSource>();
         activeMusicSource.loop = false;
 
         //MAKE THE INTENDED MUSIC PLAY
