@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 5395549189990602532, guid: 54cd35a5f82e56f4f8f52b2c4b63e99f, type: 3}
   - {fileID: 7620196952299980768, guid: 39b2ebd50da704a488242c6fd18df82d, type: 3}
   asteroidStartingAltitude: 10
-  asteroidChanceMultiplier: 10
+  asteroidChanceMultiplier: 5
 --- !u!1 &7523718914153947584
 GameObject:
   m_ObjectHideFlags: 0
