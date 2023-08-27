@@ -25,11 +25,12 @@ public class GameOverPanel : MonoBehaviour
     private void OnEnable()
     {
         QuitSubPanel.gameObject.SetActive(false);
-        
 
+        //UNLOCK REWARDS
         ProgressionSystem.UnlockAllAvailableRewards();
 
-        DoEndgameReport();
+        //ENDGAME REPORT
+        DoEndgame();
     }
 
     private void OnDisable()
@@ -58,7 +59,7 @@ public class GameOverPanel : MonoBehaviour
 
 
     //END-GAME REPORT
-    public void DoEndgameReport()
+    public void DoEndgame()
     {
         //
         summary.DoEndGameSummary();
