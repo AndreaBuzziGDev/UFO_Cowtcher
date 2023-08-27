@@ -5,32 +5,41 @@ using UnityEngine;
 public class MoossionPoolGeneric
 {
     //DATA
-    ///MOOSSION POOL
-    [SerializeField] private static List<Moossion> moossionPool = new();
-    public static List<Moossion> MoossionPool { get { return moossionPool; } }
-
-    ///TARGET MOOSSION POOL
-    //TODO: USE ANOTHER SCRIPT
-
-
 
     //METHODS
     //...
 
 
     //INITIALIZATION
-    public static void BakeMoossionPool()
+    public static Moossion PickRandomMoossion()
     {
-        moossionPool.Add(Moossion1());
-        moossionPool.Add(Moossion2());
-        moossionPool.Add(Moossion3());
-        moossionPool.Add(Moossion4());
-        moossionPool.Add(Moossion5());
-        moossionPool.Add(Moossion6());
-        moossionPool.Add(Moossion7());
-        moossionPool.Add(Moossion8());
-        moossionPool.Add(Moossion9());
-        moossionPool.Add(Moossion10());
+        int randomIndex = Random.Range(1, 11);
+        switch (randomIndex)
+        {
+            case 1:
+                return Moossion1();
+            case 2:
+                return Moossion2();
+            case 3:
+                return Moossion3();
+            case 4:
+                return Moossion4();
+            case 5:
+                return Moossion5();
+            case 6:
+                return Moossion6();
+            case 7:
+                return Moossion7();
+            case 8:
+                return Moossion8();
+            case 9:
+                return Moossion9();
+            case 10:
+                return Moossion10();
+            default:
+                Debug.LogError("MossionPoolGeneric - Error, defaulting to null");
+                return null;
+        }
     }
 
 

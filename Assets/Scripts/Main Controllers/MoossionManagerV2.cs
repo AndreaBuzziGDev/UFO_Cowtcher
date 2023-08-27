@@ -67,16 +67,13 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
     //INITIALIZATION
     public void Initialization()
     {
-        MoossionPoolGeneric.BakeMoossionPool();
-        moossionPool = MoossionPoolGeneric.MoossionPool;
-
-        moossionOne = PickRandomMoossion();
+        moossionOne = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 1: " + moossionOne.GetDescription());
 
-        moossionTwo = PickRandomMoossion();
+        moossionTwo = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 2: " + moossionTwo.GetDescription());
 
-        moossionThree = PickRandomMoossion();
+        moossionThree = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 3: " + moossionThree.GetDescription());
     }
 
