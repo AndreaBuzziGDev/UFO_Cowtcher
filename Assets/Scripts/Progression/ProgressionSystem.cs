@@ -16,6 +16,7 @@ public class ProgressionSystem
     //UNLOCKS ALL THE REWARDS FOR EVERY STAGE UP UNTIL THE EXPERIENCE LEVEL THE PLAYER HAS REACHED IN THAT STAGE.
     public static void UnlockAllAvailableRewards()
     {
+        Debug.Log("ProgressionSystem - Unlocking all achieved rewards.");
         UnlockRewardsForLevel(SceneNavigationController.eStageSceneName.Stage1);
         UnlockRewardsForLevel(SceneNavigationController.eStageSceneName.Stage2);
         UnlockRewardsForLevel(SceneNavigationController.eStageSceneName.Stage3);
