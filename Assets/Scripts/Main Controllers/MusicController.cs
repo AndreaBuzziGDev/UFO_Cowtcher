@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MusicController : MonoBehaviour
+public class MusicController : MonoSingleton<MusicController>
 {
     //DATA
 
@@ -17,36 +17,24 @@ public class MusicController : MonoBehaviour
     [SerializeField] AudioClip moossionsCompletionMusic;
 
 
-    private AudioSource musicSource1;
-    private AudioSource musicSource2;
+    //AUDIO SOURCES
     private AudioSource activeMusicSource;
     private AudioSource secondaryMusicSource;
 
-    private List<AudioSource> sfxAudioSources;
 
-    private void Awake()
+
+    //TODO: WHEN MAKING MUSIC PLAY BASED ON THE SCENE IT IS RUNNING IN, SWITCH TO AN "INITIALIZE" SOLUTION INSTEAD OF OnEnable
+    private void OnEnable()
     {
-        musicSource1 = gameObject.AddComponent<AudioSource>();
-        musicSource1.loop = true;
-        musicSource1.volume = 0f;
-        musicSource2 = gameObject.AddComponent<AudioSource>();
-        musicSource2.loop = true;
-        musicSource2.volume = 0f;
+        activeMusicSource = gameObject.AddComponent<AudioSource>();
+        activeMusicSource.loop = true;
 
-        activeMusicSource = musicSource1;
-        secondaryMusicSource = musicSource2;
+        secondaryMusicSource = gameObject.AddComponent<AudioSource>();
+        activeMusicSource.loop = false;
 
-        sfxAudioSources = new List<AudioSource>();
-        for (int i = 0; i < 10; i++)
-        {
-            sfxAudioSources.Add(gameObject.AddComponent<AudioSource>());
-            sfxAudioSources[i].loop = false;
-        }
-
-    }
-
-    private void Start ()
-    {
+        //MAKE THE INTENDED MUSIC PLAY
+        //TODO: SELECT MUSIC CORRECTLY BASED ON THE ACTIVE SCENE
+        PlayMusic(gameplayMusic, activeMusicSource, 1);
 
     }
 
@@ -55,96 +43,6 @@ public class MusicController : MonoBehaviour
         audioSource.clip = music;
         audioSource.volume = volume;
         audioSource.Play();
-    }
-
-    private void PlayMusicCrossfade(AudioClip music, float volume, float fadeInDuration, float fadeOutDuration)
-    {
-        if (activeMusicSource.clip == music) return;
-
-        StopAllCoroutines();
-
-        if (activeMusicSource.clip == null)
-        {
-            StartCoroutine(PlayMusicFadeIn(music, activeMusicSource, volume, fadeInDuration));
-            return;
-        }
-
-        StartCoroutine(PlayMusicFadeIn(music, secondaryMusicSource, volume, fadeInDuration));
-        StartCoroutine(PlayMusicFadeOut(activeMusicSource, fadeOutDuration));
-
-        AudioSource tempAudioSource = activeMusicSource;
-        activeMusicSource = secondaryMusicSource;
-        secondaryMusicSource = tempAudioSource;
-    }
-
-    private IEnumerator PlayMusicFadeIn(AudioClip music, AudioSource audioSource, float volume, float duration)
-    {
-        float currentTime = 0f;
-        float start = audioSource.volume;
-
-
-        PlayMusic(music, audioSource, 0f);
-
-        while (currentTime < duration)
-        {
-            currentTime += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(start, volume, currentTime / duration);
-            yield return null;
-        }
-    }
-
-    private IEnumerator PlayMusicFadeOut(AudioSource audioSource, float duration)
-    {
-        float currentTime = 0f;
-        float start = activeMusicSource.volume;
-
-        while (currentTime < duration)
-        {
-            currentTime += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(start, 0f, currentTime / duration);
-            yield return null;
-        }
-
-        audioSource.clip = null;
-    }
-
-    private void PlaySFX(AudioClip sound, float volume)
-    {
-        for (int i = 0; i < sfxAudioSources.Count; i++)
-        {
-            if (!sfxAudioSources[i].isPlaying)
-            {
-                sfxAudioSources[i].clip = sound;
-                sfxAudioSources[i].volume = volume;
-                sfxAudioSources[i].Play();
-                return;
-            }
-        }
-
-        Debug.LogError("Couldn't play SFX!");
-    }
-
-    private void PlaySFX(AudioClip sound, float volume, float delay)
-    {
-        for (int i = 0; i < sfxAudioSources.Count; i++)
-        {
-            if (!sfxAudioSources[i].isPlaying)
-            {
-                sfxAudioSources[i].clip = sound;
-                sfxAudioSources[i].volume = volume;
-                sfxAudioSources[i].PlayDelayed(delay);
-                return;
-            }
-        }
-
-        Debug.LogError("Couldn't play SFX!");
-    }
-
-    private void PlayRandomSFX(List<AudioClip> listOfSfx, float volume)
-    {
-        int randomIndex = Random.Range(0, listOfSfx.Count);
-        float randomDelay = Random.Range(0, 0.05f);
-        PlaySFX(listOfSfx[randomIndex], volume, randomDelay);
     }
 
 }
