@@ -30,6 +30,19 @@ public class MoossCaptSpecific : Moossion
         return "Capture " + TargetQuantity + " " + Cowdex.Instance.GetCow(targetUID).CowTemplate.CowName +" cows.";
     }
 
+    ///COW CAPTURE LOGIC PROGRESS
+    public override void HandleProgressLogic(Cow CapturedCow)
+    {
+        if (CapturedCow.CowTemplate.UID == targetUID)
+        {
+            DoProgress(1);
+        }
+        else
+        {
+            Debug.Log("A cow that is not the intended one has been captured: " + CapturedCow.CowTemplate.UID);
+        }
+    }
+
 
 
 
@@ -41,7 +54,7 @@ public class MoossCaptSpecific : Moossion
 
 
         //TODO: RANDOMIZE EVEN FURTHER
-        List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal, CowSO.UniqueID.C001Kevin };
+        List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
 
         int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
 

@@ -106,9 +106,23 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///INITIALIZE SPAWN PROBABILITY DICTIONARY
     private void initializeSpawnProbabilityDictionary()
     {
+        //GRANT "MINIMALLY-GRANTED" COWS
+        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
 
-        //TODO: UPDATE THIS SO THAT THE STARTING UIDs ARE ALL THOSE FROM THE COWS THE PLAYER HAS CAPTURED ACCORDING TO THE COWDEX
-        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000Jamal, CowSO.UniqueID.C001Kevin };
+        //THE SYSTEM IS INITIALIZED TAKING INTO ACCOUNT THE COWS THAT THE PLAYER HAS UNLOCKED (KNOWN or CAPTURED)
+        List<IndexedCow> indexedCows = Cowdex.Instance.GetAllIndexedActualCows();
+
+        foreach(IndexedCow ic in indexedCows)
+        {
+            if (!UIDs.Contains(ic.ReferenceTemplate.UID))
+            {
+                if ((int)ic.KnowledgeState > 0)
+                {
+                    UIDs.Add(ic.ReferenceTemplate.UID);
+                    Debug.Log("SpawnManager - Cow with UID: " + ic.ReferenceTemplate.UID + " is added to the spawn system due to its knowledge status being: " + ic.KnowledgeState.ToString());
+                }
+            }
+        }
 
         //PREPARING DATA STRUCTURES
         TrackSpawnProbability(UIDs);

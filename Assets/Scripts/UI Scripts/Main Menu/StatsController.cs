@@ -12,12 +12,12 @@ public class StatsController : MonoBehaviour
     //METHODS
     //...
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         if(scoreText != null)
         {
             scoreText.text = SaveSystem.LoadHighScore().ToString();
         }
     }
+
 }

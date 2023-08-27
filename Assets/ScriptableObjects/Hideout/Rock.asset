@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   type: 1
-  numberOfHideoutSlots: 1
+  numberOfHideoutSlots: 2
   HideoutPermanenceTimer: 5
   UFODetectionRadius: 0
   CowAllowedRadius: 3
+  RunForHideoutRadius: 5
+  spawnRadius: 2.5

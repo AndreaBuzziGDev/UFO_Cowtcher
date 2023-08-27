@@ -28,12 +28,14 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
     [SerializeField] private List<StageDataSO> StageData = new();
 
 
-    //
+    //DICTIONARIES
+    ///TECHNICAL SCENES
     private Dictionary<eTechnicalSceneName, TechnicalSceneDataSO> TechnicalSceneDictionary = new();
 
+    ///STAGES
     private Dictionary<eStageSceneName, StageDataSO> StageSceneDictionary = new();
-
     private Dictionary<eStageSceneName, Sprite> SceneSpritesDictionary = new();
+    private Dictionary<string, StageDataSO> StageStringNamesDictionary = new();
 
 
 
@@ -52,6 +54,7 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
         {
             StageSceneDictionary.Add(s.StageID, s);
             SceneSpritesDictionary.Add(s.StageID, s.AssociatedSprite);
+            StageStringNamesDictionary.Add(s.AssociatedSceneName, s);
 
         }
     }
@@ -107,14 +110,15 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
 
     public int GetAssociatedLevelExperienceCap(eStageSceneName targetScene, int levelIndex)
     {
+        int actualIndex = levelIndex - 1;
         switch (targetScene)
         {
             case eStageSceneName.Stage1:
             case eStageSceneName.Stage2:
             case eStageSceneName.Stage3:
             case eStageSceneName.Stage4:
-                Debug.Log("SceneNavigationController - targetScene: " + targetScene + " - levelIndex: " + (levelIndex-1));
-                return StageSceneDictionary[targetScene].AssociatedLevelExperienceCaps[levelIndex-1];
+                Debug.Log("SceneNavigationController - targetScene: " + targetScene + " - actualIndex: " + actualIndex);
+                return StageSceneDictionary[targetScene].AssociatedLevelExperienceCaps[actualIndex];
             default:
                 return 0;
         }
@@ -141,6 +145,12 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
         if (!string.IsNullOrEmpty(intendedScene)) SceneManager.LoadScene(intendedScene);
         else Debug.Log("Invalid Target Scene: " + targetScene);
 
+    }
+
+
+    public StageDataSO GetCurrentSceneData()
+    {
+        return StageStringNamesDictionary[SceneManager.GetActiveScene().name];
     }
 
 }

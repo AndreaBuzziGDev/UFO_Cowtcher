@@ -11,7 +11,7 @@ public class GameOverPanel : MonoBehaviour
 
     [SerializeField] private HooveringGUIComponent heading;
     [SerializeField] private EndGameSummary summary;
-    [SerializeField] private GameObject buttons;
+    [SerializeField] private GameObject gameOverButtons;
 
 
 
@@ -22,6 +22,16 @@ public class GameOverPanel : MonoBehaviour
         QuitSubPanel.gameObject.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        QuitSubPanel.gameObject.SetActive(false);
+
+        //UNLOCK REWARDS
+        ProgressionSystem.UnlockAllAvailableRewards();
+
+        //ENDGAME REPORT
+        DoEndgame();
+    }
 
     private void OnDisable()
     {
@@ -41,7 +51,7 @@ public class GameOverPanel : MonoBehaviour
         //DEACTIVATING SELF
         heading.gameObject.SetActive(false);
         summary.gameObject.SetActive(false);
-        buttons.gameObject.SetActive(false);
+        gameOverButtons.gameObject.SetActive(false);
 
         //ACTIVATING QUIT SUB-PANEL
         QuitSubPanel.gameObject.SetActive(true);
@@ -49,19 +59,10 @@ public class GameOverPanel : MonoBehaviour
 
 
     //END-GAME REPORT
-    public void DoEndgameReport()
+    public void DoEndgame()
     {
-        //SAVE HIGH SCORE
-
-        //SAVE LEVEL INFO
-
-        //CALCULATE EXPERIENCE
-
-        //SAVE LEVEL EXPERIENCE
-
-
-        //NOTIFY SUMMARY TO UPDATE ITSELF
-
+        //
+        summary.DoEndGameSummary();
     }
 
 

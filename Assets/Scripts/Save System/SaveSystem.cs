@@ -138,7 +138,6 @@ public class SaveSystem
 
     public static void ResetHighScore()
     {
-        Debug.LogError("SaveSystem - RESETTING HIGH SCORE.");
         PlayerPrefs.SetInt(HSAddress, 0);
         PlayerPrefs.Save();
     }

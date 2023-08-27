@@ -3650,7 +3650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2316233886179570003, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: maxFuelAmount
-      value: 45
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3824681213956448144, guid: 7ed794cce73304c40883cf4f98187b56, type: 3}
       propertyPath: MoveSpeed

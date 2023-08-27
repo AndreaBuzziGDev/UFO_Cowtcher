@@ -37,6 +37,13 @@ public class MoossCaptBuff : Moossion
     {
         return "Capture " + TargetQuantity + " cows while under the effect of a " + GetBuffNameForDesc(buff) + " Boost.";
     }
+    
+    ///COW CAPTURE LOGIC PROGRESS
+    public override void HandleProgressLogic(Cow CapturedCow)
+    {
+        Debug.Log("Moossion - LOGIC FOR MOOSSION TYPE CAPTURE BUFF HAS NOT BEEN IMPLEMENTED");
+    }
+
 
 
 

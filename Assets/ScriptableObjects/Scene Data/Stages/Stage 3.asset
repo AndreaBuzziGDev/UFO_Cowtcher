@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Stage 3
   m_EditorClassIdentifier: 
   associatedSceneName: Stage 3
-  associatedSprite: {fileID: 21300000, guid: 43c11655d5ad4ff4f8b6c1ebd315392f, type: 3}
+  associatedSprite: {fileID: 21300000, guid: 566414de0d5d9a648a049617e178e45e, type: 3}
   stageID: 3
   associatedLevelExperienceCaps: c8000000f40100008403000014050000b80b000010270000

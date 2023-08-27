@@ -396,12 +396,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 85
   m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -837,7 +837,7 @@ MonoBehaviour:
   QuitSubPanel: {fileID: 8232245461656820662}
   heading: {fileID: 777816657693480514}
   summary: {fileID: 1383709888573735409}
-  buttons: {fileID: 3527759262657506111}
+  gameOverButtons: {fileID: 3527759262657506111}
 --- !u!1 &1089793597664481401
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseGamePanel: {fileID: 2999353713454031584}
-  GameOverPanel: {fileID: 980551416422809614}
+  GameOverPanel: {fileID: 75337341082387232}
   CowdexPanel: {fileID: 4799944364165482422}
   MoossionsPanel: {fileID: 3060325067874239791}
   gameplayInputCanvas: {fileID: 3456844090314703}
@@ -1456,6 +1456,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c351b0f1f275ced4ab3f30626e45a2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highscoreValue: {fileID: 2740247599414477759}
+  capturesValue: {fileID: 7041439773359855225}
+  timeElapsedValue: {fileID: 6625395561264457954}
+  moossionOne: {fileID: 8657723886989248393}
+  moossionTwo: {fileID: 7797452089582726931}
+  moossionThree: {fileID: 6532847589893050491}
+  multiplierValue: {fileID: 1336952254502660697}
+  actualExpValue: {fileID: 5073080809196651474}
+  expBar: {fileID: 8218453662735384985}
 --- !u!1 &2426773525504525236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,12 +3380,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 85
   m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -3423,7 +3432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1722893071128985023}
   m_Layer: 0
-  m_Name: Cow Counter
+  m_Name: Captures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4719,8 +4728,8 @@ RectTransform:
   - {fileID: 8778694741845731743}
   m_Father: {fileID: 7805804538304943077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.52222216, y: 0.4}
-  m_AnchorMax: {x: 0.95140743, y: 0.671625}
+  m_AnchorMin: {x: 0.52222216, y: 0.3}
+  m_AnchorMax: {x: 0.95140743, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4852,8 +4861,8 @@ RectTransform:
   - {fileID: 5626145469322323585}
   m_Father: {fileID: 7805804538304943077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.04855556, y: 0.4}
-  m_AnchorMax: {x: 0.44533336, y: 0.671625}
+  m_AnchorMin: {x: 0.04855556, y: 0.3}
+  m_AnchorMax: {x: 0.44533336, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5291,6 +5300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5638695568709566463, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00048828125
+      objectReference: {fileID: 0}
     - target: {fileID: 6047521770348608401, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_Name
       value: Cowdex Canvas
@@ -5298,6 +5311,14 @@ PrefabInstance:
     - target: {fileID: 6047521770348608401, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541237187441588060, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00048828125
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977351042501111697, guid: a015934febda95a449607a87e109c6fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00048828125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5533,6 +5554,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5055888117478825972, guid: e4f765eb23d3f3748ab1989d907e113b, type: 3}
   m_PrefabInstance: {fileID: 7438670444875585461}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8218453662735384985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1528593067296708140, guid: e4f765eb23d3f3748ab1989d907e113b, type: 3}
+  m_PrefabInstance: {fileID: 7438670444875585461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbe26d686dd2a3458a97f655132dcfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7813083965707763507
 PrefabInstance:
   m_ObjectHideFlags: 0

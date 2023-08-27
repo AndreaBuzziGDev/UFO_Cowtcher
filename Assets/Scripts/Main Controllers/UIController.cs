@@ -14,7 +14,7 @@ public class UIController : MonoSingleton<UIController>
     private List<GameObject> AllMenuPanels = new();
 
     [SerializeField] private GameObject PauseGamePanel;
-    [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private GameOverPanel GameOverPanel;
     [SerializeField] private GameObject CowdexPanel;
     [SerializeField] private GameObject MoossionsPanel;
 
@@ -42,7 +42,7 @@ public class UIController : MonoSingleton<UIController>
     public void Initialize()
     {
         //
-        AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel, CowdexPanel, MoossionsPanel };
+        AllMenuPanels = new List<GameObject> { PauseGamePanel, GameOverPanel.gameObject, CowdexPanel, MoossionsPanel };
         HideAllMenuPanels();
         igPanel.HighScoreBar.ResetScore();
 
@@ -123,8 +123,8 @@ public class UIController : MonoSingleton<UIController>
 
 
     //GAMEOVER
-    public void ShowGameOver() => GameOverPanel.SetActive(true);
-    public void HideGameOver() => GameOverPanel.SetActive(false);
+    public void ShowGameOver() => GameOverPanel.gameObject.SetActive(true);
+    public void HideGameOver() => GameOverPanel.gameObject.SetActive(false);
 
 
     //COWDEX

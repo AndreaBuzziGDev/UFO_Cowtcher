@@ -38,6 +38,12 @@ public class MoossCaptTurret : Moossion
         return "Capture " + TargetQuantity + " cows while under the effect of a " + GetTurretNameForDesc(turret) + " Turret.";
     }
 
+    ///COW CAPTURE LOGIC PROGRESS
+    public override void HandleProgressLogic(Cow CapturedCow)
+    {
+        Debug.Log("Moossion - LOGIC FOR MOOSSION TYPE CAPTURE TURRET HAS NOT BEEN IMPLEMENTED");
+    }
+
 
 
 

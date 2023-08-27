@@ -375,6 +375,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283c13fa46e1b7a4ab9a588107472b24, type: 3}
+--- !u!114 &1113120703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1161959663034927411, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
+  m_PrefabInstance: {fileID: 8612450999744871793}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7767c4e317a5b5a46ae675164fed75ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1554190425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6452651908117019554, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
@@ -630,22 +641,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e7aa0d94e99a67840a99e343a807e54c, type: 3}
-    - target: {fileID: 3552264105851313472, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3552264105851313472, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3552264105851313472, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 4714878528482822052, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
+      propertyPath: developerOptions
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3552264105851313472, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1113120703}
     - target: {fileID: 5422070171684296439, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 12.755188

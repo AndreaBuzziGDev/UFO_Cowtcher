@@ -15,6 +15,9 @@ public class HideoutInfos : MonoBehaviour
     //UFO
     private UFO myUFO;
 
+    //PARTIAL FADING AT 100% OF COW LOGO
+    [SerializeField] [Range(1, 100f)] private float cowLogoPartialFading = 80f;
+
     //FADE DISTANCE
     [SerializeField] private float outerDistanceMaxFading = 3.5f;
     [SerializeField] private float innerDistanceMinFading = 2.5f;
@@ -93,7 +96,7 @@ public class HideoutInfos : MonoBehaviour
                 float opacity = 1 - ((baseDistanceDiff - differenceBetweenTwo) / baseDistanceDiff);
 
                 //
-                cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, opacity);
+                cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, opacity * (cowLogoPartialFading/ 100));
                 hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, opacity);
             }
         }
