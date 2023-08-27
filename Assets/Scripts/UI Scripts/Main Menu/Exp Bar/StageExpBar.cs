@@ -53,6 +53,7 @@ public class StageExpBar : MonoBehaviour
                 {
                     expPreviousTally += SceneNavigationController.Instance.GetAssociatedLevelExperienceCap(targetScene, i);
                 }
+                Debug.Log("StageExpBar - expInfo: " + expInfo);
                 Debug.Log("StageExpBar - expPreviousTally: " + expPreviousTally);
 
                 int factoredExp = expInfo - expPreviousTally;
