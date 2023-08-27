@@ -78,6 +78,13 @@ public abstract class Moossion
     }
 
     public abstract void HandleProgressLogic(Cow CapturedCow);
-    
+
+
+    //OPTIMIZATION FEATURES
+    public void DisposeOfOldMoossion()
+    {
+        Abductor.CowCapture -= HandleCowCapture;
+        MoossionCounter--;
+    }
 
 }
