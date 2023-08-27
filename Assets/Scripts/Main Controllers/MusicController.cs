@@ -19,7 +19,7 @@ public class MusicController : MonoSingleton<MusicController>
 
     //AUDIO SOURCES
     [SerializeField] private AudioSource activeMusicSource;
-    [SerializeField] private AudioSource moossionCompleteSource;
+    [SerializeField] private AudioSource moossionCompleteSource;//TODO: IMPLEMENT "PLAY MOOSSION MUSIC" WHEN MOOSSION IS COMPLETED
 
 
 
@@ -34,14 +34,13 @@ public class MusicController : MonoSingleton<MusicController>
 
         //MAKE THE INTENDED MUSIC PLAY
         //TODO: SELECT MUSIC CORRECTLY BASED ON THE ACTIVE SCENE
-        PlayMusic(gameplayMusic, activeMusicSource, 1);
+        PlayMusic(gameplayMusic, activeMusicSource);
 
     }
 
-    private void PlayMusic(AudioClip music, AudioSource audioSource, float volume)
+    private void PlayMusic(AudioClip music, AudioSource audioSource)
     {
         audioSource.clip = music;
-        audioSource.volume = volume;
         audioSource.Play();
     }
 
