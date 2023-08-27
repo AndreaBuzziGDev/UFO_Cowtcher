@@ -43,12 +43,11 @@ public class MusicController : MonoBehaviour
             sfxAudioSources[i].loop = false;
         }
 
-        enabled = false;
     }
 
-    private void OnEnable()
+    private void Start ()
     {
-        GameController.Instance.gameObject.SetActive(openingGameMusic);
+
     }
 
     private void PlayMusic(AudioClip music, AudioSource audioSource, float volume)
