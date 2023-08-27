@@ -67,6 +67,7 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
     //INITIALIZATION
     public void Initialization()
     {
+        //TODO: OLDER MOOSSIONS GET PRESERVED IN THE SYSTEM, THEY NEED TO BE DESTROYED.
         moossionOne = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 1: " + moossionOne.GetDescription());
 
