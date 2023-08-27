@@ -13,6 +13,11 @@ public class ScoreBar : MonoBehaviour
     ///TIMER - 1 SEC, 1 SCORE
     private float scoreTimer;
 
+    ///TIME ELAPSED TIMER
+    private float timeElapsed = 0;
+    public float TimeElapsed { get { return timeElapsed; } }
+
+
     ///GUI REFERENCES
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
@@ -47,6 +52,8 @@ public class ScoreBar : MonoBehaviour
             AddScore(1);
             scoreTimer = 1;
         }
+
+        timeElapsed += Time.deltaTime;
     }
 
 
@@ -61,14 +68,10 @@ public class ScoreBar : MonoBehaviour
 
 
     //TODO: NICE TO HAVE FEATURE THAT ALLOWS TO KNOW THE "SOURCE" OF A SCORE INCREASE
-
     public void AddScore(int delta)
     {
         scoreValue += delta;
         scoreText.text = scoreValue.ToString();
-
-        //SAVE HIGHSCORE
-        //SaveSystem.SaveHighScore(scoreValue);
     }
 
 }

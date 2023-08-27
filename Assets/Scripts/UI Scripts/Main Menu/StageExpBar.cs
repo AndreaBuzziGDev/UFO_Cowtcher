@@ -103,7 +103,7 @@ public class StageExpBar : MonoBehaviour
 
                 //UPDATING GUI
                 levelCounterText.text = lvlInfo.ToString();
-                experienceBar.fillAmount = expInfo / expMax;
+                experienceBar.fillAmount = ((float)expInfo / (float)expMax);
             }
             else
             {
