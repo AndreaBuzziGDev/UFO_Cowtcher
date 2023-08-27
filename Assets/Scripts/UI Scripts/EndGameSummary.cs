@@ -46,7 +46,7 @@ public class EndGameSummary : MonoBehaviour
         capturesValue.text = "???";
 
         //TIME ELAPSED
-        timeElapsedValue.text = UIController.Instance.IGPanel.HighScoreBar.TimeElapsed.ToString();
+        timeElapsedValue.text = ((decimal)UIController.Instance.IGPanel.HighScoreBar.TimeElapsed).ToString("#.##");
 
         //MOOSSIONS
         moossionOne.text = "FAILED";
