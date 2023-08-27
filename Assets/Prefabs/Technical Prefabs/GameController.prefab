@@ -154,18 +154,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicController
       objectReference: {fileID: 0}
-    - target: {fileID: 7896248974850449075, guid: 18cd449fbea7c954195a2c48651af6f1, type: 3}
-      propertyPath: gameplayMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 379b2daaba32e3c4f94ac403555ef654, type: 3}
-    - target: {fileID: 7896248974850449075, guid: 18cd449fbea7c954195a2c48651af6f1, type: 3}
-      propertyPath: openingGameMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 3d37bed61429cbb44913be2041d5a24a, type: 3}
-    - target: {fileID: 7896248974850449075, guid: 18cd449fbea7c954195a2c48651af6f1, type: 3}
-      propertyPath: moossionsCompletionMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 4a54bb0897357d44b9734afa06faf51f, type: 3}
     - target: {fileID: 9073854852592553377, guid: 18cd449fbea7c954195a2c48651af6f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
