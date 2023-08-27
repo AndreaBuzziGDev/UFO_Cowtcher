@@ -22,6 +22,11 @@ public class GameOverPanel : MonoBehaviour
         QuitSubPanel.gameObject.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        QuitSubPanel.gameObject.SetActive(false);
+        ProgressionSystem.UnlockAllAvailableRewards();
+    }
 
     private void OnDisable()
     {
