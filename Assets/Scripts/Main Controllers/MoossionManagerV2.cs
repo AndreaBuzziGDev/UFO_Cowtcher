@@ -131,6 +131,10 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
     //OPTIMIZATION FEATURES
     public void DisposeOfOldMoossions()
     {
+        Debug.Log("DisposeOfOldMoossions Moossion 1: " + moossionOne?.Name);
+        Debug.Log("DisposeOfOldMoossions Moossion 2: " + moossionTwo?.Name);
+        Debug.Log("DisposeOfOldMoossions Moossion 3: " + moossionThree?.Name);
+
         if (moossionOne != null) moossionOne.DisposeOfOldMoossion();
         if (moossionTwo != null) moossionTwo.DisposeOfOldMoossion();
         if (moossionThree != null) moossionThree.DisposeOfOldMoossion();
