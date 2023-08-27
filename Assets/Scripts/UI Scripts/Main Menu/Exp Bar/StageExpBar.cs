@@ -76,6 +76,18 @@ public class StageExpBar : MonoBehaviour
             }
 
         }
+
+
+        //EMBEDDED FUNCTIONALITY
+        UnlockRewards();
+
+    }
+
+
+    //EMBEDDED FUNCTIONALITY: UNLOCK REWARDS
+    public void UnlockRewards()
+    {
+        ProgressionSystem.UnlockAllAvailableRewards();
     }
 
 }
