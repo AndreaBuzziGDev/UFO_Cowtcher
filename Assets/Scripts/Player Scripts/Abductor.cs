@@ -37,7 +37,7 @@ public class Abductor : MonoBehaviour
 
 
     //EVENTS
-    public event EventHandler<CowCaptureEventArgs> CowCapture;
+    public static event EventHandler<CowCaptureEventArgs> CowCapture;
 
 
 
@@ -234,6 +234,19 @@ public class Abductor : MonoBehaviour
     }
 
 
+
+    //EVENT-FIRING METHOD
+    private void OnCowCapture(CowCaptureEventArgs myEventArg)
+    {
+        // make a copy to be more thread-safe
+        EventHandler<CowCaptureEventArgs> handler = CowCapture;
+
+        if (handler != null)
+        {
+            // invoke the subscribed event-handler(s)
+            handler(this, myEventArg);
+        }
+    }
 
 
 }

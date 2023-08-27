@@ -39,6 +39,10 @@ public abstract class Moossion
     public bool IsComplete { get { return currentQuantity >= targetQuantity; } }
 
 
+    //EVENT HANDLING
+
+
+
 
     //CONSTRUCTOR
     public Moossion(Type type, int quantity)
@@ -51,6 +55,8 @@ public abstract class Moossion
         moossionType = type;
         targetQuantity = quantity;
         currentQuantity = 0;
+
+        Abductor.CowCapture += HandleCowCapture;
     }
 
 
@@ -65,6 +71,13 @@ public abstract class Moossion
         if(!IsComplete) currentQuantity += progressQuantity;
     }
     
+    public void HandleCowCapture(object sender, CowCaptureEventArgs e)
+    {
+        Debug.Log("Cow Has Been captured: " + e.CapturedCow.CowTemplate.UID);
+        HandleProgressLogic(e.CapturedCow);
+    }
+
+    public abstract void HandleProgressLogic(Cow CapturedCow);
     
 
 }

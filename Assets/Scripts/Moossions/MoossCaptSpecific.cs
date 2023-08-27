@@ -30,6 +30,19 @@ public class MoossCaptSpecific : Moossion
         return "Capture " + TargetQuantity + " " + Cowdex.Instance.GetCow(targetUID).CowTemplate.CowName +" cows.";
     }
 
+    ///COW CAPTURE LOGIC PROGRESS
+    public override void HandleProgressLogic(Cow CapturedCow)
+    {
+        if (CapturedCow.CowTemplate.UID == targetUID)
+        {
+            DoProgress(1);
+        }
+        else
+        {
+            Debug.Log("A cow that is not the intended one has been captured: " + CapturedCow.CowTemplate.UID);
+        }
+    }
+
 
 
 
