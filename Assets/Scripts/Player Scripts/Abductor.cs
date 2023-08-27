@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using System;
 
 public class Abductor : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class Abductor : MonoBehaviour
 
     //OTHER DATA
     private FollowCamera playerCamera;
+
+
+    //EVENTS
+    public event EventHandler<CowCaptureEventArgs> CowCapture;
 
 
 
@@ -145,6 +150,9 @@ public class Abductor : MonoBehaviour
             //WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
             SpawnManager.Instance.HandleCowCapture(cow);
 
+            //SEND AN EVENT TO MOOSSIONS SO THAT THEY ARE NOTIFIED THAT A COW HAS BEEN CAPTURED
+            CowCaptureEventArgs myEventArg = new CowCaptureEventArgs(cow);
+            OnCowCapture(myEventArg);
 
 
             //INSTANTLY DEPLOYED ITEM
