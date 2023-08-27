@@ -55,8 +55,6 @@ public abstract class Moossion
         moossionType = type;
         targetQuantity = quantity;
         currentQuantity = 0;
-
-        Abductor.CowCapture += HandleCowCapture;
     }
 
 
@@ -70,21 +68,8 @@ public abstract class Moossion
     {
         if(!IsComplete) currentQuantity += progressQuantity;
     }
-    
-    public void HandleCowCapture(object sender, CowCaptureEventArgs e)
-    {
-        Debug.Log(this.name + " Cow Has Been captured: " + e.CapturedCow.CowTemplate.UID);
-        HandleProgressLogic(e.CapturedCow);
-    }
 
     public abstract void HandleProgressLogic(Cow CapturedCow);
 
-
-    //OPTIMIZATION FEATURES
-    public void DisposeOfOldMoossion()
-    {
-        Abductor.CowCapture -= HandleCowCapture;
-        MoossionCounter--;
-    }
 
 }

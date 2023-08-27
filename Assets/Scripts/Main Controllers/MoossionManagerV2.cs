@@ -67,9 +67,10 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
     //INITIALIZATION
     public void Initialization()
     {
-        DisposeOfOldMoossions();
+        //REGISTERING COW CAPTURE EVENT
+        Abductor.CowCapture += HandleCowCapture;
 
-        //TODO: OLDER MOOSSIONS GET PRESERVED IN THE SYSTEM, THEY NEED TO BE DESTROYED.
+        //GENERATING RANDOM MOOSSIONS
         moossionOne = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 1: " + moossionOne.GetDescription());
 
@@ -80,6 +81,12 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
         Debug.Log("MoossionManager has picked Moossion 3: " + moossionThree.GetDescription());
 
         activeMoossions = new List<Moossion> { moossionOne, moossionTwo, moossionThree };
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log("MoossionManager - Unregistering");
+        Abductor.CowCapture -= HandleCowCapture;
     }
 
 
@@ -122,26 +129,14 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
 
 
 
-    //UTILITIES
+    //HANDLING CAPTURE OF COWS
 
-
-
-
-
-    //OPTIMIZATION FEATURES
-    public void DisposeOfOldMoossions()
+    public void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
-        Debug.Log("DisposeOfOldMoossions Moossion 1: " + moossionOne?.Name);
-        Debug.Log("DisposeOfOldMoossions Moossion 2: " + moossionTwo?.Name);
-        Debug.Log("DisposeOfOldMoossions Moossion 3: " + moossionThree?.Name);
-
-        if (moossionOne != null) moossionOne.DisposeOfOldMoossion();
-        if (moossionTwo != null) moossionTwo.DisposeOfOldMoossion();
-        if (moossionThree != null) moossionThree.DisposeOfOldMoossion();
-
-        moossionOne = null;
-        moossionTwo = null;
-        moossionThree = null;
+        Debug.Log("MoossionManager - Cow Has Been captured: " + e.CapturedCow.CowTemplate.UID);
+        moossionOne.HandleProgressLogic(e.CapturedCow);
+        moossionTwo.HandleProgressLogic(e.CapturedCow);
+        moossionThree.HandleProgressLogic(e.CapturedCow);
     }
 
 }
