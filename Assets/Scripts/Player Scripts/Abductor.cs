@@ -133,6 +133,8 @@ public class Abductor : MonoBehaviour
     {
         foreach(GameObject inRangeCow in cowsInRange)
         {
+            //TODO: USE EVENT SYSTEM ON ALL INTERESTED TARGETS (UFO, SpawnManager)
+
             //PASS THE COW ATTRIBUTES TO THE RIGHT SCRIPTS
             Cow cow = inRangeCow.GetComponent<Cow>();
 
