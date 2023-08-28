@@ -90,8 +90,7 @@ public class MoossionPoolGeneric
     public static Moossion Moossion6()
     {
         //CONFIGURE
-        //TODO: RANDOMIZE TARGET WITHIN AVAILABLE TARGETS
-        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), ddd);
+        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), MoossCaptSpecific.GetRandomTargetCow());
 
         return mooss;
     }
