@@ -29,7 +29,11 @@ public class MoossCaptGeneric : Moossion
         return "Capture " + TargetQuantity + " cows of any type.";
     }
 
-
+    ///COW CAPTURE LOGIC PROGRESS
+    public override void HandleProgressLogic(Cow CapturedCow)
+    {
+        DoProgress(1);
+    }
 
 
     //UTILITIES

@@ -110,14 +110,15 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
 
     public int GetAssociatedLevelExperienceCap(eStageSceneName targetScene, int levelIndex)
     {
+        int actualIndex = levelIndex - 1;
         switch (targetScene)
         {
             case eStageSceneName.Stage1:
             case eStageSceneName.Stage2:
             case eStageSceneName.Stage3:
             case eStageSceneName.Stage4:
-                Debug.Log("SceneNavigationController - targetScene: " + targetScene + " - levelIndex: " + (levelIndex-1));
-                return StageSceneDictionary[targetScene].AssociatedLevelExperienceCaps[levelIndex-1];
+                Debug.Log("SceneNavigationController - targetScene: " + targetScene + " - actualIndex: " + actualIndex);
+                return StageSceneDictionary[targetScene].AssociatedLevelExperienceCaps[actualIndex];
             default:
                 return 0;
         }

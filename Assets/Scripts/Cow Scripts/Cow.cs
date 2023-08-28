@@ -114,8 +114,9 @@ public class Cow : MonoBehaviour
     private Rigidbody rb;
     private SpriteRenderer spriteRenderer;
 
+    ///EDITOR REFERENCES
     [SerializeField] private ParticleSystem HasFledParticles;
-
+    [SerializeField] private AudioSource mooAlertSource;
 
 
 
@@ -194,7 +195,11 @@ public class Cow : MonoBehaviour
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))
         {
-            if (IsCalm) this.currentState = State.Alert;
+            if (IsCalm)
+            {
+                this.currentState = State.Alert;
+                mooAlertSource.Play();//TODO: IN ORDER TO AVOID SOUND SPAM, THIS COULD BENEFIT FROM USING A DEDICATED CONTROLLER/MONOSINGLETON THAT PLAYS UP TO "N" MOO SOUND(s) AT ONCE.
+            }
             this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
         }
         else

@@ -44,40 +44,29 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
     //METHODS
     //...
 
-    // Update is called once per frame
-    void Update()
-    {
-        //HANDLE COMPLETION FOR MOOSSIONS THAT HAVE BEEN COMPLETED
-        for (int i = 0; i < activeMoossions.Count; i++)
-        {
-            Moossion moo = activeMoossions[i];
-            if (moo.IsComplete)
-            {
-                //TODO: INFORM THE FEED THAT THE MOOSSIONS HAVE BEEN UPDATED
-
-
-                //TODO: INFORM THE GUI THAT THE MOOSSIONS HAVE BEEN UPDATED
-
-
-
-            }
-        }
-    }
-
     //INITIALIZATION
     public void Initialization()
     {
-        MoossionPoolGeneric.BakeMoossionPool();
-        moossionPool = MoossionPoolGeneric.MoossionPool;
+        //REGISTERING COW CAPTURE EVENT
+        Abductor.CowCapture += HandleCowCapture;
 
-        moossionOne = PickRandomMoossion();
+        //GENERATING RANDOM MOOSSIONS
+        moossionOne = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 1: " + moossionOne.GetDescription());
 
-        moossionTwo = PickRandomMoossion();
+        moossionTwo = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 2: " + moossionTwo.GetDescription());
 
-        moossionThree = PickRandomMoossion();
+        moossionThree = MoossionPoolGeneric.PickRandomMoossion();
         Debug.Log("MoossionManager has picked Moossion 3: " + moossionThree.GetDescription());
+
+        activeMoossions = new List<Moossion> { moossionOne, moossionTwo, moossionThree };
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log("MoossionManager - Unregistering");
+        Abductor.CowCapture -= HandleCowCapture;
     }
 
 
@@ -120,8 +109,14 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
 
 
 
-    //UTILITIES
+    //HANDLING CAPTURE OF COWS
 
-
+    public void HandleCowCapture(object sender, CowCaptureEventArgs e)
+    {
+        Debug.Log("MoossionManager - Cow Has Been captured: " + e.CapturedCow.CowTemplate.UID);
+        moossionOne.HandleProgressLogic(e.CapturedCow);
+        moossionTwo.HandleProgressLogic(e.CapturedCow);
+        moossionThree.HandleProgressLogic(e.CapturedCow);
+    }
 
 }

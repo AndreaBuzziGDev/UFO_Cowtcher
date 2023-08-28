@@ -22,9 +22,16 @@ public class StageSelectionController : MonoBehaviour
     //...
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        //UNSET SCENE
         isSceneSet = false;
+
+        //UNLOCK REWARDS
+        ProgressionSystem.UnlockAllAvailableRewards();
+
+        //TODO: HANDLE ENABLEMENT OF STAGE SELECTION BUTTONS
+
     }
 
     private void Update()

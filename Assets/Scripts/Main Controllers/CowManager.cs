@@ -10,10 +10,11 @@ public class CowManager : MonoSingleton<CowManager>
 
 
     ///EXPERIMENTAL GLOBAL DATA TO MAKE STRUCTURES WORK
+    private float globalSpeedTimer;
+
     private float globalSpeedMultiplier = 100.0f;
     public float GlobalSpeedMultiplier { get { return globalSpeedMultiplier/100.0f; } }
-
-    private float globalSpeedTimer;
+    public bool IsGlobalSpeedAltered { get { return GlobalSpeedMultiplier != 1.0f; } }
 
 
     ///EXPERIMENTAL GLOBAL DATA TO MAKE 

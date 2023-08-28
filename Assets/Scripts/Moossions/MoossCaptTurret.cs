@@ -38,28 +38,7 @@ public class MoossCaptTurret : Moossion
         return "Capture " + TargetQuantity + " cows while under the effect of a " + GetTurretNameForDesc(turret) + " Turret.";
     }
 
-
-
-
-    //UTILITIES
-    ///
-    public static SoughtTurret GetRandomTarget()
-    {
-        //TODO: IMPLEMENT A COW-TYPE TRACKING SYSTEM
-        //TODO: WAIT FOR SpawnManager TO BE COMPLETE FOR THIS
-
-
-        //TODO: RANDOMIZE EVEN FURTHER
-        List<SoughtTurret> uniqueIDs = new List<SoughtTurret> { SoughtTurret.SlowingTurret, SoughtTurret.TerrorTurret };
-
-        int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
-
-        return uniqueIDs[randomIndex];
-    }
-
-
-
-    ///
+    ///DESCRIPTION HELPER
     public static string GetTurretNameForDesc(SoughtTurret sought)
     {
         switch (sought)
@@ -74,6 +53,37 @@ public class MoossCaptTurret : Moossion
                 return "INVALID TYPE " + sought;
         }
 
+    }
+
+    ///COW CAPTURE LOGIC PROGRESS
+    public override void HandleProgressLogic(Cow CapturedCow)
+    {
+        //TODO: EVALUATE SWITCH FROM SoughtTurret TO TYPE OF TURRET, DISCARD THE ENUM USED HERE
+        switch (turret)
+        {
+            case SoughtTurret.TerrorTurret:
+                if (CowManager.Instance.IsGlobalTerrify) DoProgress(1);
+                break;
+            case SoughtTurret.SlowingTurret:
+                if (CowManager.Instance.IsGlobalSpeedAltered) DoProgress(1);
+                break;
+            default:
+                Debug.LogError("Logic not implemented for Turret: " + turret);
+                break;
+        }
+    }
+
+
+
+
+    //UTILITIES
+    public static SoughtTurret GetRandomTargetTurret()
+    {
+        List<SoughtTurret> uniqueIDs = new List<SoughtTurret> { SoughtTurret.SlowingTurret, SoughtTurret.TerrorTurret };
+
+        int randomIndex = Random.Range(0, uniqueIDs.Count);
+
+        return uniqueIDs[randomIndex];
     }
 
 }

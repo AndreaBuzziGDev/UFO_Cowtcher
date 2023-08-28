@@ -72,7 +72,7 @@ public class UFO : MonoBehaviour
         //IS THE GAME OVER?
         if (fuelAmount <= 0)
         {
-            GameController.Instance.SetState(GameController.EGameState.GameOver);
+            if(!GameController.Instance.IsGameOver) GameController.Instance.SetState(GameController.EGameState.GameOver);
         }
 
     }

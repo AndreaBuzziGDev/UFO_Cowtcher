@@ -11,9 +11,6 @@ public class MoossionsPanel : MonoBehaviour
     [SerializeField] private MoossionsInformations Info_2;
     [SerializeField] private MoossionsInformations Info_3;
 
-    private List<MoossionsInformations> informations = new();
-
-
     ///MOOSSION ICONS
     [SerializeField] private Sprite IconCaptureGeneric;
     [SerializeField] private Sprite IconCaptureSpecific;
@@ -21,20 +18,12 @@ public class MoossionsPanel : MonoBehaviour
     [SerializeField] private Sprite IconCaptureTurret;
 
 
-
-
     //METHODS
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        informations = new List<MoossionsInformations> { Info_1, Info_2, Info_3};
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        UpdateInformations();
     }
 
 
@@ -51,10 +40,10 @@ public class MoossionsPanel : MonoBehaviour
         Info_1.UpdateInfos(moo_1, GetMatchingIcon(moo_1));
 
         ///MOOSSION 2
-        Info_1.UpdateInfos(moo_2, GetMatchingIcon(moo_2));
+        Info_2.UpdateInfos(moo_2, GetMatchingIcon(moo_2));
 
         ///MOOSSION 3
-        Info_1.UpdateInfos(moo_3, GetMatchingIcon(moo_3));
+        Info_3.UpdateInfos(moo_3, GetMatchingIcon(moo_3));
 
 
         //TODO: DEVELOP

@@ -123,11 +123,7 @@ public class UIController : MonoSingleton<UIController>
 
 
     //GAMEOVER
-    public void ShowGameOver()
-    {
-        GameOverPanel.gameObject.SetActive(true);
-        GameOverPanel.DoEndgameReport();
-    }
+    public void ShowGameOver() => GameOverPanel.gameObject.SetActive(true);
     public void HideGameOver() => GameOverPanel.gameObject.SetActive(false);
 
 
