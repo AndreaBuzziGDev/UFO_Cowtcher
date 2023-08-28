@@ -41,9 +41,19 @@ public class MoossCaptTurret : Moossion
     ///COW CAPTURE LOGIC PROGRESS
     public override void HandleProgressLogic(Cow CapturedCow)
     {
-        Debug.Log("Moossion - LOGIC FOR MOOSSION TYPE CAPTURE TURRET HAS NOT BEEN IMPLEMENTED");
         //TODO: EVALUATE SWITCH FROM SoughtTurret TO TYPE OF TURRET, DISCARD THE ENUM USED HERE
-
+        switch (turret)
+        {
+            case SoughtTurret.TerrorTurret:
+                if (CowManager.Instance.IsGlobalTerrify) DoProgress(1);
+                break;
+            case SoughtTurret.SlowingTurret:
+                if (CowManager.Instance.IsGlobalSpeedAltered) DoProgress(1);
+                break;
+            default:
+                Debug.LogError("Logic not implemented for Turret: " + turret);
+                break;
+        }
     }
 
 
