@@ -8,10 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7995478665179860056}
     m_Modifications:
-    - target: {fileID: 2049219752448876926, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -368407336, guid: 07cd3e32d651cf9478e6b5716b9f37ef, type: 3}
     - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.29
@@ -52,32 +48,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4930587279362825238, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 3e4fa5e671904594dbe11f44df164228, type: 2}
     - target: {fileID: 7228328683102558135, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
       propertyPath: m_Name
       value: Cowttleman Bird (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8035921986351277791, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 1512341259607912531}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3893921990349703669, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2761187782202646812, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3318967478805812375}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
---- !u!4 &2642810528185157956 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2761187782202646812, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 215209080597637208}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2665759494834015406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
@@ -146,27 +125,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowttleman Bird (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 8035921986351277791, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 257708618814658157}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3893921990349703669, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2761187782202646812, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2140182170279560255}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
 --- !u!4 &3855374758255107839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 1406028315718629897}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &3878306149897526037 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2761187782202646812, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
   m_PrefabInstance: {fileID: 1406028315718629897}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &8936939593366019286 stripped
@@ -180,140 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942e4f63369f246438b56040d36678ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &2195114214521315346
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2642810528185157956}
-    m_Modifications:
-    - target: {fileID: 297405543558975068, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_Name
-      value: Cowttleman Birds 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.20000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.32999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9659258
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.2588191
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
---- !u!4 &3318967478805812375 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-  m_PrefabInstance: {fileID: 2195114214521315346}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &3472191277329090245 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3339752475578934999, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-  m_PrefabInstance: {fileID: 2195114214521315346}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &3299660444211097786
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3878306149897526037}
-    m_Modifications:
-    - target: {fileID: 297405543558975068, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_Name
-      value: Cowttleman Birds 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9659258
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.2588191
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
---- !u!212 &257708618814658157 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3339752475578934999, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-  m_PrefabInstance: {fileID: 3299660444211097786}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2140182170279560255 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-  m_PrefabInstance: {fileID: 3299660444211097786}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3576457316616753446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,73 +211,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bae468b3a6b9ea141967f3cfbe601352, type: 3}
   m_PrefabInstance: {fileID: 3576457316616753446}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &4226000920628270724
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 9141123375060818834}
-    m_Modifications:
-    - target: {fileID: 297405543558975068, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_Name
-      value: Cowttleman Birds 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9659258
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.2588191
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
---- !u!4 &782516495215944193 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3493047188374647941, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-  m_PrefabInstance: {fileID: 4226000920628270724}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1512341259607912531 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3339752475578934999, guid: 0759282740cd0724da42724e9b281b5d, type: 3}
-  m_PrefabInstance: {fileID: 4226000920628270724}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4780712418498223066
 PrefabInstance:
@@ -624,17 +389,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowttleman Bird (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 8035921986351277791, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 3472191277329090245}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3893921990349703669, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2761187782202646812, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 782516495215944193}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
 --- !u!114 &3967436628421205073 stripped
@@ -651,10 +408,5 @@ MonoBehaviour:
 --- !u!4 &9117611424100802168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 6380051390153325198}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &9141123375060818834 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2761187782202646812, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
   m_PrefabInstance: {fileID: 6380051390153325198}
   m_PrefabAsset: {fileID: 0}

@@ -12,18 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowttleman Birds
       objectReference: {fileID: 0}
-    - target: {fileID: 3339752475578934999, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
-      propertyPath: m_Size.x
-      value: 6.946784
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339752475578934999, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
-      propertyPath: m_Size.y
-      value: 5.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339752475578934999, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1667730157, guid: 07cd3e32d651cf9478e6b5716b9f37ef, type: 3}
     - target: {fileID: 3493047188374647941, guid: a24d8f3b3493cfd4c9cd3aee7cdfd0f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2
