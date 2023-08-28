@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoossionFeedItem : MonoBehaviour
 {
     //DATA
-    [SerializeField] private float persistenceTimerMax = 3.0f;
+    private float persistenceTimerMax = 5.0f;
     private float persistenceTimer;
 
     [SerializeField] [Range(1, 3)] private int moossionIndex = 1;
