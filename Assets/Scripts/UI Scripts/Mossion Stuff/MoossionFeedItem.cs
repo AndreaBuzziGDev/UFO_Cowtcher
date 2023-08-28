@@ -8,13 +8,22 @@ public class MoossionFeedItem : MonoBehaviour
     [SerializeField] private float persistenceTimerMax = 3.0f;
     private float persistenceTimer;
 
-    [SerializeField] [Range(1, 3)]  private int moossionIndex = 1;
+    [SerializeField] [Range(1, 3)] private int moossionIndex = 1;
+
+
 
     //METHODS
     //...
     void Start()
     {
+        //REGISTER EVENT
         Moossion.MoossionComplete += HandleMoossionCompletion;
+
+        //TEXT ON START = EMPTY
+
+
+        //DISABLE ON GUI
+        this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,13 +40,19 @@ public class MoossionFeedItem : MonoBehaviour
     }
 
 
+    //UTILITIES
+    private string getNotificationContent() => "Moossion #" + moossionIndex + " complete!";
+
+
+
+
     //EVENT-HANDLING
     private void HandleMoossionCompletion(object sender, MoossionCompleteEventArgs e)
     {
         if(e.MoossionIndex == moossionIndex)
         {
-            //TODO: SHOW THIS ON GUI
-
+            this.gameObject.SetActive(true);
+            persistenceTimer = persistenceTimerMax;
         }
     }
 
