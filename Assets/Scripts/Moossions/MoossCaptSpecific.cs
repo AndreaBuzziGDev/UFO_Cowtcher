@@ -49,16 +49,21 @@ public class MoossCaptSpecific : Moossion
 
 
     //UTILITIES
-    public static CowSO.UniqueID GetRandomTarget()
+    public static CowSO.UniqueID GetRandomTargetCow()
     {
-        //TODO: IMPLEMENT A COW-TYPE TRACKING SYSTEM
-        //TODO: WAIT FOR SpawnManager TO BE COMPLETE FOR THIS
+        List<IndexedCow> playableCows = Cowdex.Instance.GetAllIndexedActualCows();
 
-
-        //TODO: RANDOMIZE EVEN FURTHER
+        //TODO: CROSS THIS INFORMATION WITH THE ALLOWED COWS ON THIS STAGE
         List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
+        foreach (IndexedCow ic in playableCows)
+        {
+            if (ic.KnowledgeState > 0 || ic.ReferenceTemplate.UID != CowSO.UniqueID.C000BlackCow || ic.ReferenceTemplate.UID != CowSO.UniqueID.C001WhiteCow)
+            {
+                uniqueIDs.Add(ic.ReferenceTemplate.UID);
+            }
+        }
 
-        int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
+        int randomIndex = Random.Range(0, uniqueIDs.Count);
 
         return uniqueIDs[randomIndex];
     }
