@@ -27,6 +27,9 @@ public class MusicController : MonoSingleton<MusicController>
     //TODO: WHEN MAKING MUSIC PLAY BASED ON THE SCENE IT IS RUNNING IN, SWITCH TO AN "INITIALIZE" SOLUTION INSTEAD OF OnEnable
     private void OnEnable()
     {
+        //REGISTERING COW CAPTURE EVENT
+        Moossion.MoossionComplete += HandleMoossionCompletion;
+
         //MAKE THE INTENDED MUSIC PLAY
         PlayBackgroundMusicCorrectlyBasedOnScene();
     }
@@ -56,9 +59,11 @@ public class MusicController : MonoSingleton<MusicController>
     }
 
     //PLAY MOOSSION COMPLETION MUSIC
+    private void HandleMoossionCompletion(object sender, MoossionCompleteEventArgs e) => PlayMoossionCompletionMusic();
+
     private void PlayMoossionCompletionMusic()
     {
-
+        PlayMusic(moossionsCompletionMusic, moossionCompleteSource);
     }
 
 
