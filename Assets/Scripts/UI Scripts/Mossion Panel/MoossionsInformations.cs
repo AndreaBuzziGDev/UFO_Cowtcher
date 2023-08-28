@@ -50,7 +50,7 @@ public class MoossionsInformations : MonoBehaviour
         MoossionDescription.text = referenceMoossion.GetDescription();
 
         //UPDATE PROGRESS BAR
-        MoossionProgressBar.fillAmount = referenceMoossion.CurrentQuantity / referenceMoossion.TargetQuantity;
+        MoossionProgressBar.fillAmount = (float)referenceMoossion.CurrentQuantity / (float)referenceMoossion.TargetQuantity;
 
 
         //TODO: MARK MOOSSION AS COMPLETE IF APPLICABLE

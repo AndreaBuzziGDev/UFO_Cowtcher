@@ -57,9 +57,12 @@ public class MoossCaptSpecific : Moossion
         List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
         foreach (IndexedCow ic in playableCows)
         {
-            if (ic.KnowledgeState > 0 || ic.ReferenceTemplate.UID != CowSO.UniqueID.C000BlackCow || ic.ReferenceTemplate.UID != CowSO.UniqueID.C001WhiteCow)
+            if (ic.KnowledgeState > 0)
             {
-                uniqueIDs.Add(ic.ReferenceTemplate.UID);
+                if (ic.ReferenceTemplate.UID != CowSO.UniqueID.C000BlackCow || ic.ReferenceTemplate.UID != CowSO.UniqueID.C001WhiteCow)
+                {
+                    uniqueIDs.Add(ic.ReferenceTemplate.UID);
+                }
             }
         }
 
