@@ -45,9 +45,18 @@ public class MoossionFeedItem : MonoBehaviour
     }
 
 
+    private void OnDestroy()
+    {
+        //UN-REGISTER EVENT
+        Moossion.MoossionComplete -= HandleMoossionCompletion;
+    }
+
+
+
+
+
     //UTILITIES
     private string getNotificationContent() => "Moossion #" + moossionIndex + " complete!";
-
 
 
 
@@ -62,7 +71,5 @@ public class MoossionFeedItem : MonoBehaviour
             this.gameObject.SetActive(true);
         }
     }
-
-
 
 }
