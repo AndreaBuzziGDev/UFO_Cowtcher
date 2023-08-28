@@ -44,26 +44,6 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
     //METHODS
     //...
 
-    // Update is called once per frame
-    void Update()
-    {
-        //HANDLE COMPLETION FOR MOOSSIONS THAT HAVE BEEN COMPLETED
-        for (int i = 0; i < activeMoossions.Count; i++)
-        {
-            Moossion moo = activeMoossions[i];
-            if (moo.IsComplete)
-            {
-                //TODO: INFORM THE FEED THAT THE MOOSSIONS HAVE BEEN UPDATED
-
-
-                //TODO: INFORM THE GUI THAT THE MOOSSIONS HAVE BEEN UPDATED
-
-
-
-            }
-        }
-    }
-
     //INITIALIZATION
     public void Initialization()
     {

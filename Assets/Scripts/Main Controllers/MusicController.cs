@@ -33,6 +33,7 @@ public class MusicController : MonoSingleton<MusicController>
 
 
     //FUNCTIONALITIES
+    //PLAY GAMEPLAY & MENU MUSIC
     private void PlayBackgroundMusicCorrectlyBasedOnScene()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
@@ -51,6 +52,12 @@ public class MusicController : MonoSingleton<MusicController>
                 PlayMusic(gameplayMusic, activeMusicSource);
                 break;
         }
+
+    }
+
+    //PLAY MOOSSION COMPLETION MUSIC
+    private void PlayMoossionCompletionMusic()
+    {
 
     }
 

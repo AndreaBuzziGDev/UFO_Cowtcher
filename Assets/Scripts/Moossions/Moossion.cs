@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class Moossion
 {
@@ -16,11 +17,17 @@ public abstract class Moossion
     }
 
 
+
     //DATA
+
+    public static int MoossionCounter = 1;
+
     ///
     private string name;
-    public static int MoossionCounter = 1;
     public string Name { get { return name; } }
+
+    ///
+    private int moossionIndex;
 
     ///
     private Type moossionType = 0;
@@ -39,8 +46,8 @@ public abstract class Moossion
     public bool IsComplete { get { return currentQuantity >= targetQuantity; } }
 
 
-    //EVENT HANDLING
-
+    //EVENT
+    public static event EventHandler<MoossionCompleteEventArgs> MoossionComplete;
 
 
 
@@ -49,6 +56,7 @@ public abstract class Moossion
     {
         //NAME IS AUTONUMBER
         name = "Moossion #" + MoossionCounter;
+        moossionIndex = MoossionCounter;
         MoossionCounter++;
 
         //PROPERTIES
@@ -69,7 +77,15 @@ public abstract class Moossion
     ///PROGRESS BY SET QUANTITY
     public void DoProgress(int progressQuantity)
     {
-        if(!IsComplete) currentQuantity += progressQuantity;
+        if (!IsComplete)
+        {
+            currentQuantity += progressQuantity;
+            if (IsComplete)
+            {
+                MoossionCompleteEventArgs myEventArg = new MoossionCompleteEventArgs(moossionIndex);
+                OnMoossionComplete(myEventArg);
+            }
+        }
     }
 
 
@@ -79,18 +95,33 @@ public abstract class Moossion
         switch (moossionType)
         {
             case Type.CaptureGeneric:
-                return Random.Range(20, 41);
+                return UnityEngine.Random.Range(20, 41);
             case Type.CaptureSpecific:
-                return Random.Range(5, 11);
+                return UnityEngine.Random.Range(5, 11);
             case Type.CaptureBuff:
-                return Random.Range(10, 26);
+                return UnityEngine.Random.Range(10, 26);
             case Type.CaptureTurret:
-                return Random.Range(10, 16);
+                return UnityEngine.Random.Range(10, 16);
             default:
                 Debug.LogError("Moossion Type: " + moossionType + " is not supported, defaulting 3");
                 return 3;
         }
 
     }
+
+
+    //EVENT-FIRING METHOD
+    private void OnMoossionComplete(MoossionCompleteEventArgs myEventArg)
+    {
+        // make a copy to be more thread-safe
+        EventHandler<MoossionCompleteEventArgs> handler = MoossionComplete;
+
+        if (handler != null)
+        {
+            // invoke the subscribed event-handler(s)
+            handler(this, myEventArg);
+        }
+    }
+
 
 }
