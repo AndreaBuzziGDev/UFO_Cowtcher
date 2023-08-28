@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoossionFeedItem : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class MoossionFeedItem : MonoBehaviour
     private float persistenceTimer;
 
     [SerializeField] [Range(1, 3)] private int moossionIndex = 1;
+
+    ///GUI REFERENCES
+    [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
+
 
 
 
@@ -20,7 +25,7 @@ public class MoossionFeedItem : MonoBehaviour
         Moossion.MoossionComplete += HandleMoossionCompletion;
 
         //TEXT ON START = EMPTY
-
+        feedItemText.text = "";
 
         //DISABLE ON GUI
         this.gameObject.SetActive(false);
@@ -51,8 +56,10 @@ public class MoossionFeedItem : MonoBehaviour
     {
         if(e.MoossionIndex == moossionIndex)
         {
-            this.gameObject.SetActive(true);
+            //SHOW MOOSSION FEED ITEM AND ITS CONTENT
             persistenceTimer = persistenceTimerMax;
+            feedItemText.text = getNotificationContent();
+            this.gameObject.SetActive(true);
         }
     }
 
