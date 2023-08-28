@@ -50,10 +50,7 @@ public class MoossionPoolGeneric
     public static Moossion Moossion1()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 20);
 
         return mooss;
     }
@@ -61,10 +58,7 @@ public class MoossionPoolGeneric
     public static Moossion Moossion2()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 40);
 
         return mooss;
     }
@@ -72,10 +66,7 @@ public class MoossionPoolGeneric
     public static Moossion Moossion3()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, MoossCaptGeneric.);
 
         return mooss;
     }
@@ -83,9 +74,6 @@ public class MoossionPoolGeneric
     public static Moossion Moossion4()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
         Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
 
         return mooss;
@@ -94,9 +82,6 @@ public class MoossionPoolGeneric
     public static Moossion Moossion5()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
         Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
 
         return mooss;
@@ -105,9 +90,6 @@ public class MoossionPoolGeneric
     public static Moossion Moossion6()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
         Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
 
         return mooss;
@@ -116,9 +98,6 @@ public class MoossionPoolGeneric
     public static Moossion Moossion7()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
         Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
 
         return mooss;
@@ -127,9 +106,6 @@ public class MoossionPoolGeneric
     public static Moossion Moossion8()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
         Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
 
         return mooss;
@@ -138,9 +114,6 @@ public class MoossionPoolGeneric
     public static Moossion Moossion9()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
         Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
 
         return mooss;
@@ -149,9 +122,6 @@ public class MoossionPoolGeneric
     public static Moossion Moossion10()
     {
         //CONFIGURE
-        //Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, 1);
-        //Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, 1, testCowUID);
-        //Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, 1, MoossCaptBuff.SoughtBuff.SpeedMovementBoost);
         Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
 
         return mooss;

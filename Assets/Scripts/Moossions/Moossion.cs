@@ -64,12 +64,33 @@ public abstract class Moossion
 
 
     ///PROGRESSION HANDLING
+    public abstract void HandleProgressLogic(Cow CapturedCow);
+
+    ///PROGRESS BY SET QUANTITY
     public void DoProgress(int progressQuantity)
     {
         if(!IsComplete) currentQuantity += progressQuantity;
     }
 
-    public abstract void HandleProgressLogic(Cow CapturedCow);
 
+    //UTILITIES
+    public int GetRandomTargetQuantity(Type moossionType)
+    {
+        switch (moossionType)
+        {
+            case Type.CaptureGeneric:
+                return Random.Range(20, 41);
+            case Type.CaptureSpecific:
+                return Random.Range(5, 11);
+            case Type.CaptureBuff:
+                return Random.Range(10, 26);
+            case Type.CaptureTurret:
+                return Random.Range(10, 16);
+            default:
+                Debug.LogError("Moossion Type: " + moossionType + " is not supported, defaulting 3");
+                return 3;
+        }
+
+    }
 
 }

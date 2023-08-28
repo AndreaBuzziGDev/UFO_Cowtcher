@@ -39,7 +39,27 @@ public class MoossCaptBuff : Moossion
     {
         return "Capture " + TargetQuantity + " cows while under the effect of a " + GetBuffNameForDesc(buff) + " Boost.";
     }
-    
+
+    ///DESCRIPTION HELPER
+    public static string GetBuffNameForDesc(SoughtBuff sought)
+    {
+        switch (sought)
+        {
+            case SoughtBuff.SpeedMovementBoost:
+                return "Movement Speed";
+            case SoughtBuff.FuelGainBoost:
+                return "Fuel Recovery Increase";
+            case SoughtBuff.CaptureSpeed:
+                return "Capture Speed";
+            case SoughtBuff.LargerCaptureRadius:
+                return "Capture Radius Increase";
+            default:
+                return "INVALID TYPE " + sought;
+        }
+
+    }
+
+
     ///COW CAPTURE LOGIC PROGRESS
     public override void HandleProgressLogic(Cow CapturedCow)
     {
@@ -65,41 +85,14 @@ public class MoossCaptBuff : Moossion
     }
 
 
-
-
-
     //UTILITIES
-    public static SoughtBuff GetRandomTarget()
+    public static SoughtBuff GetRandomTargetBuff()
     {
-        //TODO: IMPLEMENT A COW-TYPE TRACKING SYSTEM
-        //TODO: WAIT FOR SpawnManager TO BE COMPLETE FOR THIS
-
-
-        //TODO: RANDOMIZE EVEN FURTHER
         List<SoughtBuff> uniqueIDs = new List<SoughtBuff> { SoughtBuff.FuelGainBoost, SoughtBuff.SpeedMovementBoost };
 
         int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
 
         return uniqueIDs[randomIndex];
-    }
-
-    ///
-    public static string GetBuffNameForDesc(SoughtBuff sought)
-    {
-        switch (sought)
-        {
-            case SoughtBuff.SpeedMovementBoost:
-                return "Movement Speed";
-            case SoughtBuff.FuelGainBoost:
-                return "Fuel Recovery Increase";
-            case SoughtBuff.CaptureSpeed:
-                return "Capture Speed";
-            case SoughtBuff.LargerCaptureRadius:
-                return "Capture Radius Increase";
-            default:
-                return "INVALID TYPE " + sought;
-        }
-
     }
 
 }
