@@ -8,7 +8,7 @@ public class MoossionFeedItem : MonoBehaviour
     [SerializeField] private float persistenceTimerMax = 3.0f;
     private float persistenceTimer;
 
-    [SerializeField] private int moossionIndex = 1;
+    [SerializeField] [Range(1, 3)]  private int moossionIndex = 1;
 
     //METHODS
     //...
