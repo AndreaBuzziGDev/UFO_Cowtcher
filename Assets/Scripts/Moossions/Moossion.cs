@@ -74,7 +74,7 @@ public abstract class Moossion
 
 
     //UTILITIES
-    public int GetRandomTargetQuantity(Type moossionType)
+    public static int GetRandomTargetQuantity(Type moossionType)
     {
         switch (moossionType)
         {

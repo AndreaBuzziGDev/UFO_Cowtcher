@@ -47,6 +47,7 @@ public class MoossionPoolGeneric
 
     //MOOSSIONS
 
+    ///GENERIC
     public static Moossion Moossion1()
     {
         //CONFIGURE
@@ -54,7 +55,6 @@ public class MoossionPoolGeneric
 
         return mooss;
     }
-
     public static Moossion Moossion2()
     {
         //CONFIGURE
@@ -62,67 +62,73 @@ public class MoossionPoolGeneric
 
         return mooss;
     }
-
     public static Moossion Moossion3()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, MoossCaptGeneric.);
+        Moossion mooss = new MoossCaptGeneric(Moossion.Type.CaptureGeneric, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureGeneric));
 
         return mooss;
     }
 
+
+
+    ///SPECIFIC
     public static Moossion Moossion4()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), CowSO.UniqueID.C001WhiteCow);
 
         return mooss;
     }
-
     public static Moossion Moossion5()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), CowSO.UniqueID.C000BlackCow);
 
         return mooss;
     }
-
     public static Moossion Moossion6()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        //TODO: RANDOMIZE TARGET WITHIN AVAILABLE TARGETS
+        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), ddd);
 
         return mooss;
     }
 
+
+
+
+    ///BUFF
     public static Moossion Moossion7()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureBuff), MoossCaptBuff.GetRandomTargetBuff());
 
         return mooss;
     }
-
     public static Moossion Moossion8()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptBuff(Moossion.Type.CaptureBuff, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureBuff), MoossCaptBuff.GetRandomTargetBuff());
 
         return mooss;
     }
 
+
+
+    ///TURRET
     public static Moossion Moossion9()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureTurret), MoossCaptTurret.GetRandomTargetTurret());
 
         return mooss;
     }
-
     public static Moossion Moossion10()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, 1, MoossCaptTurret.SoughtTurret.TerrorTurret);
+        Moossion mooss = new MoossCaptTurret(Moossion.Type.CaptureTurret, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureTurret), MoossCaptTurret.GetRandomTargetTurret());
 
         return mooss;
     }

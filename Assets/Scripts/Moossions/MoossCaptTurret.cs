@@ -77,16 +77,11 @@ public class MoossCaptTurret : Moossion
 
 
     //UTILITIES
-    public static SoughtTurret GetRandomTarget()
+    public static SoughtTurret GetRandomTargetTurret()
     {
-        //TODO: IMPLEMENT A COW-TYPE TRACKING SYSTEM
-        //TODO: WAIT FOR SpawnManager TO BE COMPLETE FOR THIS
-
-
-        //TODO: RANDOMIZE EVEN FURTHER
         List<SoughtTurret> uniqueIDs = new List<SoughtTurret> { SoughtTurret.SlowingTurret, SoughtTurret.TerrorTurret };
 
-        int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
+        int randomIndex = Random.Range(0, uniqueIDs.Count);
 
         return uniqueIDs[randomIndex];
     }
