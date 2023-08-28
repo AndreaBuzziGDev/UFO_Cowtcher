@@ -42,6 +42,9 @@ public class MoossCaptBuff : Moossion
     public override void HandleProgressLogic(Cow CapturedCow)
     {
         Debug.Log("Moossion - LOGIC FOR MOOSSION TYPE CAPTURE BUFF HAS NOT BEEN IMPLEMENTED");
+        //TODO: EVALUATE SWITCH FROM SOUGHTBUFF TO THE BUFF OF THE ITEMPICKUPS, DISCARD THE ENUM USED HERE
+
+
     }
 
 

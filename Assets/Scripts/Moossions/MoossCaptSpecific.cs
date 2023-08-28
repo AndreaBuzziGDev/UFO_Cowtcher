@@ -27,7 +27,9 @@ public class MoossCaptSpecific : Moossion
     ///DESCRIPTION
     public override string GetDescription()
     {
-        return "Capture " + TargetQuantity + " " + Cowdex.Instance.GetCow(targetUID).CowTemplate.CowName +" cows.";
+        string defaultDesc = "Capture " + TargetQuantity + " " + Cowdex.Instance.GetCow(targetUID).CowTemplate.CowName;
+        if (TargetQuantity > 1) return defaultDesc + "(s)";
+        else return defaultDesc;
     }
 
     ///COW CAPTURE LOGIC PROGRESS

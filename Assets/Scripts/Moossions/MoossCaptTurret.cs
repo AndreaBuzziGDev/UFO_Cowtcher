@@ -42,6 +42,8 @@ public class MoossCaptTurret : Moossion
     public override void HandleProgressLogic(Cow CapturedCow)
     {
         Debug.Log("Moossion - LOGIC FOR MOOSSION TYPE CAPTURE TURRET HAS NOT BEEN IMPLEMENTED");
+        //TODO: EVALUATE SWITCH FROM SoughtTurret TO TYPE OF TURRET, DISCARD THE ENUM USED HERE
+
     }
 
 
