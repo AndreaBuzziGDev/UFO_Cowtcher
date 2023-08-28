@@ -198,7 +198,7 @@ public class Cow : MonoBehaviour
             if (IsCalm)
             {
                 this.currentState = State.Alert;
-                mooAlertSource.Play();
+                mooAlertSource.Play();//TODO: IN ORDER TO AVOID SOUND SPAM, THIS COULD BENEFIT FROM USING A DEDICATED CONTROLLER/MONOSINGLETON THAT PLAYS UP TO "N" MOO SOUND(s) AT ONCE.
             }
             this.TimerAlertToCalm = cowTemplate.TimerAlertToCalm;
         }
