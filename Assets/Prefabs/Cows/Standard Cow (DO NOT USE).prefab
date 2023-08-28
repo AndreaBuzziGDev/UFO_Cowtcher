@@ -244,6 +244,7 @@ MonoBehaviour:
   shakeSpeed: 50
   spawnCoords: {x: 0, y: 0, z: 0}
   HasFledParticles: {fileID: 125600187380295368, guid: 861c6e89228ffe0468232c77072ed3d3, type: 3}
+  mooAlertSource: {fileID: 7274476460106249080}
 --- !u!114 &2271979305478991426
 MonoBehaviour:
   m_ObjectHideFlags: 0
