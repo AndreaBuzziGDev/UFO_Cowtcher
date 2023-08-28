@@ -8,7 +8,9 @@ public class MoossCaptBuff : Moossion
     public enum SoughtBuff
     {
         SpeedMovementBoost,
-        FuelGainBoost
+        FuelGainBoost,
+        CaptureSpeed,
+        LargerCaptureRadius
     }
 
     //DATA
@@ -43,6 +45,24 @@ public class MoossCaptBuff : Moossion
     {
         Debug.Log("Moossion - LOGIC FOR MOOSSION TYPE CAPTURE BUFF HAS NOT BEEN IMPLEMENTED");
         //TODO: EVALUATE SWITCH FROM SOUGHTBUFF TO THE BUFF OF THE ITEMPICKUPS, DISCARD THE ENUM USED HERE
+        switch (buff)
+        {
+            case SoughtBuff.SpeedMovementBoost:
+                if (UFOStatusAlterationHelper.HasBuffMoveSpeed()) DoProgress(1);
+                break;
+            case SoughtBuff.FuelGainBoost:
+                if (UFOStatusAlterationHelper.HasBuffFuelGain()) DoProgress(1);
+                break;
+            case SoughtBuff.CaptureSpeed:
+                if (UFOStatusAlterationHelper.HasBuffCaptureSpeed()) DoProgress(1);
+                break;
+            case SoughtBuff.LargerCaptureRadius:
+                if (UFOStatusAlterationHelper.HasBuffCaptureRadius()) DoProgress(1);
+                break;
+            default:
+                Debug.LogError("Logic not implemented for Buff: " + buff);
+                break;
+        }
 
 
     }
