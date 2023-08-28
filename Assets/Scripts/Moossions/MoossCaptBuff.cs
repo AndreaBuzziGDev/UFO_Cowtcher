@@ -93,10 +93,12 @@ public class MoossCaptBuff : Moossion
         {
             case SoughtBuff.SpeedMovementBoost:
                 return "Movement Speed";
-
             case SoughtBuff.FuelGainBoost:
                 return "Fuel Recovery Increase";
-
+            case SoughtBuff.CaptureSpeed:
+                return "Capture Speed";
+            case SoughtBuff.LargerCaptureRadius:
+                return "Capture Radius Increase";
             default:
                 return "INVALID TYPE " + sought;
         }
