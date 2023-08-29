@@ -32,6 +32,7 @@ public class FadeOutEntity : MonoBehaviour
     //FUNCTIONALITIES
     public static void SpawnFadeOutEntity(FadeOutEntity prefab, Vector3 coords)
     {
+        //TODO: SPRITE SHOULD BE FLIPPED IN THE SAME DIRECTION AS THE COW THAT SPAWNED IT
         Instantiate(prefab, coords, Quaternion.identity);
     }
 
