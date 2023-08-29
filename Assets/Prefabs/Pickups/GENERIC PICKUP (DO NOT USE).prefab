@@ -120,5 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alteration: {fileID: 0}
+  lifetimeMax: 10
+  expirationTimeMax: 1
+  buffIconRenderer: {fileID: 2641711987203644661}
   shakeAmount: 0.25
   shakeSpeed: 7
