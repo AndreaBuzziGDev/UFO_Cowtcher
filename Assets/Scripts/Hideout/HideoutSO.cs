@@ -10,7 +10,7 @@ public class HideoutSO : ScriptableObject
     {
         Barn,
         Rock,
-        Garage
+        Bush
     }
 
     //DATA
