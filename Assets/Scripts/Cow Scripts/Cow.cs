@@ -111,7 +111,9 @@ public class Cow : MonoBehaviour
     ///EDITOR REFERENCES
     [SerializeField] private ParticleSystem HasFledParticles;
     [SerializeField] private AudioSource mooAlertSource;
+
     [SerializeField] private FadeOutEntity cowFadeOutHologramOnCapture;
+    public FadeOutEntity FadeOutHologram { get { return cowFadeOutHologramOnCapture; } }
 
 
 
@@ -285,6 +287,13 @@ public class Cow : MonoBehaviour
         //DESTROY COW (FLED)
         Destroy(this.gameObject);
 
+    }
+
+
+    //GET VISUAL CHILD POSITION
+    public GameObject GetVisualChild()
+    {
+        return transform.Find("VisualChild").gameObject;
     }
 
 }

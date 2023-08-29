@@ -30,6 +30,10 @@ public class FadeOutEntity : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    public static void SpawnFadeOutEntity(FadeOutEntity prefab, Vector3 coords)
+    {
+        Instantiate(prefab, coords, Quaternion.identity);
+    }
 
 
 }

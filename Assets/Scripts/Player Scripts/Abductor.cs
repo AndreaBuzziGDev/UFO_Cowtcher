@@ -169,20 +169,14 @@ public class Abductor : MonoBehaviour
                 prefabPickupItem.GetComponent<ItemPickup>().Spawn(cow.transform.position);
             }
 
+            //HOLOGRAM
+            GameObject visualChild = cow.GetVisualChild();
+            FadeOutEntity.SpawnFadeOutEntity(cow.FadeOutHologram, visualChild.transform.position);
 
-            //ASTEROID
-            //(ASTEROID SYSTEM HAS BEEN MODIFIED AND NOW WORKS AS AN INDIPENDENT FEATURE, KEPT THIS COMMENTED FOR FALLBACK REASONS)
-            /*
-            if (cow.CowTemplate.associatedAsteroid != null)
-            {
-                AsteroidManager.Instance.EnqueueAsteroid(cow.CowTemplate.associatedAsteroid, cow.CowTemplate.associatedAsteroid.QuantityOnCapture);
-            }
-            */
 
 
             //TODO: IMPROVE CREATION AND DESTRUCTION OF COWS VIA OBJECT POOLING
-            //cow.gameObject.SetActive(false);
-            Destroy(cow.gameObject);//FIXED COWS SO THAT THEY ARE DESTROYED
+            Destroy(cow.gameObject);
         }
         
         currentCaptureTimer = 0.0f;
