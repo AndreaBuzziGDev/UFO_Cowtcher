@@ -10,8 +10,8 @@ public class InteractibleStructure : MonoInteractible
     public bool HasBeenDepleted { get { return hasBeenDepleted; } set { hasBeenDepleted = value; } }
 
     ///SPRITE REFERENCES
-    [SerializeField] private Sprite turnedOffSprite;
-    [SerializeField] private Sprite turnedOnSprite;
+    [SerializeField] private Sprite turnedOffPedestalSprite;
+    [SerializeField] private Sprite turnedOnPedestalSprite;
 
     ///SPRITE RENDERER REFERENCES
     [SerializeField] private SpriteRenderer childPedestalRenderer;
@@ -39,7 +39,7 @@ public class InteractibleStructure : MonoInteractible
     // Start is called before the first frame update
     void Start()
     {
-        childPedestalRenderer.sprite = turnedOffSprite;
+        childPedestalRenderer.sprite = turnedOffPedestalSprite;
 
         lifetimeCurrent = lifetimeMax;
         if (StructureScriptableObject != null) myStructure = StructureScriptableObject.GetStructure();
@@ -84,7 +84,7 @@ public class InteractibleStructure : MonoInteractible
         //CHANGE SPRITE FOR ACTIVATION
         if (!turnedOn)
         {
-            childPedestalRenderer.sprite = turnedOnSprite;
+            childPedestalRenderer.sprite = turnedOnPedestalSprite;
             turnedOn = true;
         }
 
