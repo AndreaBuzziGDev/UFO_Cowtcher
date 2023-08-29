@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Barn
   m_EditorClassIdentifier: 
   type: 0
-  numberOfHideoutSlots: 2
+  numberOfHideoutSlots: 4
   HideoutPermanenceTimer: 5
   UFODetectionRadius: 5
   CowAllowedRadius: 2

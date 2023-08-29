@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bush
   m_EditorClassIdentifier: 
   type: 2
-  numberOfHideoutSlots: 1
+  numberOfHideoutSlots: 2
   HideoutPermanenceTimer: 5
   UFODetectionRadius: 5
   CowAllowedRadius: 3
