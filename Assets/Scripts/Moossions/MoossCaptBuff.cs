@@ -91,7 +91,8 @@ public class MoossCaptBuff : Moossion
         List<SoughtBuff> uniqueIDs = new List<SoughtBuff> {
             SoughtBuff.FuelGainBoost,
             SoughtBuff.SpeedMovementBoost,
-            SoughtBuff.CaptureSpeed
+            SoughtBuff.CaptureSpeed,
+            SoughtBuff.LargerCaptureRadius
         };
 
         int randomIndex = Random.Range(0, uniqueIDs.Count - 1);
