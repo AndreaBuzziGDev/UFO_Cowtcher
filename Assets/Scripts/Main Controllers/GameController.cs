@@ -29,10 +29,11 @@ public class GameController : MonoSingleton<GameController>
     ///COMPLEX DATA
     public GameControllerHelper helper = new();
 
-    ///OTHER DATA...
+    ///ITEM REFERENCES DATA - LAZY INITIALIZATION
     UFO player;
     PlayerController playerController;
-    
+    Abductor abductor;
+
 
 
 
@@ -170,7 +171,7 @@ public class GameController : MonoSingleton<GameController>
 
 
 
-    ///OTHER FUNCTIONALITIES
+    ///FIND OBJECTS FUNCTIONALITIES
     public UFO FindUFOAnywhere()
     {
         if (player == null) player = ((UFO)FindObjectOfType<UFO>());
@@ -181,6 +182,12 @@ public class GameController : MonoSingleton<GameController>
     {
         if (playerController == null) playerController = ((PlayerController) FindObjectOfType<PlayerController>());
         return playerController;
+    }
+
+    public Abductor FindAbductorAnywhere()
+    {
+        if (abductor == null) abductor = ((Abductor)FindObjectOfType<Abductor>());
+        return abductor;
     }
 
 }
