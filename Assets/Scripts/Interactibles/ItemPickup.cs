@@ -124,7 +124,6 @@ public class ItemPickup : MonoInteractible
             //HANDLE GRADUAL TRANSPARENCY
             expireTimeCurrent -= Time.deltaTime;
             float factor = expireTimeCurrent / expirationTimeMax;
-            Debug.Log("ItemPickup - factor: " + factor);
 
             //TODO: CHANGE WITH COLOR LERP
             Color buffSpriteColor = new Color(buffIconRenderer.color.r, buffIconRenderer.color.g, buffIconRenderer.color.b, factor);
