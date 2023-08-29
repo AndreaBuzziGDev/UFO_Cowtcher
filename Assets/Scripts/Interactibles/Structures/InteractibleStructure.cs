@@ -152,10 +152,7 @@ public class InteractibleStructure : MonoInteractible
         {
             //HANDLE GRADUAL TRANSPARENCY
             expireTimeCurrent -= Time.deltaTime;
-            Debug.Log("InteractibleStructure - expireTimeCurrent: " + expireTimeCurrent);
-
             float factor = expireTimeCurrent / expirationTimeMax;
-            Debug.Log("InteractibleStructure - factor: " + factor);
 
             //TODO: CHANGE WITH COLOR LERP
             Color pedestalColor = new Color(childPedestalRenderer.color.r, childPedestalRenderer.color.g, childPedestalRenderer.color.b, factor);
