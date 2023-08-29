@@ -44,4 +44,18 @@ public class SACaptureRadius : SAAbstract
         abductorScriptReference.SetCaptureSpeedBoost(0);
         */
     }
+
+
+
+
+    ///TIMERS
+    public override void UpdateTimers(float delta)
+    {
+        this.buffDuration -= delta;
+    }
+    public override bool IsStillRunning()
+    {
+        return (this.buffDuration > 0);
+    }
+
 }
