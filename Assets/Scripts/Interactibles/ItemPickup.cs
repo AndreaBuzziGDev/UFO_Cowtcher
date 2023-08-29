@@ -15,6 +15,7 @@ public class ItemPickup : MonoInteractible
     ///EXPIRATION
     [SerializeField] private float expirationTimeMax = 1.0f;
     private float expireTimeCurrent;
+    private bool hasBegunExpiration;
 
     ///SPRITE RENDERER REFERENCES
     [SerializeField] private SpriteRenderer buffIconRenderer;
@@ -110,8 +111,12 @@ public class ItemPickup : MonoInteractible
         }
         else
         {
-            Destroy(this.gameObject, expirationTimeMax);
-            expireTimeCurrent = expirationTimeMax;
+            if (!hasBegunExpiration)
+            {
+                Destroy(this.gameObject, expirationTimeMax);
+                expireTimeCurrent = expirationTimeMax;
+                hasBegunExpiration = true;
+            }
         }
 
         if (expireTimeCurrent > 0)
@@ -119,6 +124,7 @@ public class ItemPickup : MonoInteractible
             //HANDLE GRADUAL TRANSPARENCY
             expireTimeCurrent -= Time.deltaTime;
             float factor = expireTimeCurrent / expirationTimeMax;
+            Debug.Log("ItemPickup - factor: " + factor);
 
             //TODO: CHANGE WITH COLOR LERP
             Color buffSpriteColor = new Color(buffIconRenderer.color.r, buffIconRenderer.color.g, buffIconRenderer.color.b, factor);
