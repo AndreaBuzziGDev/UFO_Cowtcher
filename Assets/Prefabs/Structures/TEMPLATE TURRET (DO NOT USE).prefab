@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6e8c531bd76064997df7a999647985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnedOffPedestalSprite: {fileID: 0}
-  turnedOnPedestalSprite: {fileID: 0}
+  turnedOffPedestalSprite: {fileID: 21300000, guid: d2930b3092c92934198d9f5645c8b4c9, type: 3}
+  turnedOnPedestalSprite: {fileID: 21300000, guid: 3895d7e4a99400047a084c0455571755, type: 3}
   childPedestalRenderer: {fileID: 7758115590238631724}
   StructureScriptableObject: {fileID: 0}
   ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}
