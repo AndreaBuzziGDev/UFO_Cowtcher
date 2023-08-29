@@ -47,6 +47,7 @@ MonoBehaviour:
   asteroidTypes:
   - {fileID: 6831133052796865536, guid: 77e61b3fb94d016499eb1463c682e790, type: 3}
   - {fileID: 6831133052796865536, guid: abb7ae8d4bbd88b4faeb3e22462e8c6e, type: 3}
+  - {fileID: 2509557522298760595, guid: e2fcc647de4c5db40b6d83383ecc8a10, type: 3}
   - {fileID: 5823417047264269255, guid: c070ded55266ca4459b6077bf15975e8, type: 3}
   - {fileID: 5395549189990602532, guid: 54cd35a5f82e56f4f8f52b2c4b63e99f, type: 3}
   - {fileID: 7620196952299980768, guid: 39b2ebd50da704a488242c6fd18df82d, type: 3}
