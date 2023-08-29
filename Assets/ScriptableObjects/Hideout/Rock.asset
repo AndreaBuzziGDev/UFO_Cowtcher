@@ -18,4 +18,4 @@ MonoBehaviour:
   UFODetectionRadius: 5
   CowAllowedRadius: 3
   RunForHideoutRadius: 5
-  spawnRadius: 2.5
+  spawnRadius: 3
