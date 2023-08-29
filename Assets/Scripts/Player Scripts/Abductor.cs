@@ -241,7 +241,7 @@ public class Abductor : MonoBehaviour
 
 
     //FUNCTIONALITIES - ITEM PICKUP BOOSTs
-    private void SetCaptureSpeedBoost(float speedBoost)
+    public void SetCaptureSpeedBoost(float speedBoost)
     {
         captureSpeedBoost = speedBoost;
     }

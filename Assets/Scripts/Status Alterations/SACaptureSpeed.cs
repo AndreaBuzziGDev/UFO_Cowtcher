@@ -8,8 +8,7 @@ public class SACaptureSpeed : SAAbstract
     ///USEFUL BUFF DATA
     public float buffDuration;
     public float captureSpeedIntensity;
-    public bool isDebuff;
-    PlayerController pc;
+    Abductor abductorScriptReference;
 
     ///TEMPLATE
     SACaptureSpeedSO template;
@@ -22,9 +21,8 @@ public class SACaptureSpeed : SAAbstract
         this.template = inputTemplate;
         this.type = template.buffType;
         this.buffDuration = template.buffDuration;
-        this.captureSpeedIntensity = template.captureSpeedIntensity;
-        this.isDebuff = template.isDebuff;
-        pc = GameController.Instance.FindPlayerAnywhere();
+        this.captureSpeedIntensity = template.captureSpeedIntensity; 
+        abductorScriptReference = GameController.Instance.FindAbductorAnywhere();
     }
 
     //METHODS
@@ -34,19 +32,14 @@ public class SACaptureSpeed : SAAbstract
     ///BUFF
     public override void ApplyBuff()
     {
-        /*
-        if (isDebuff) pc.SetBonusMovSpeed(-this.captureSpeedIntensity);
-        else pc.SetBonusMovSpeed(this.captureSpeedIntensity);
+        abductorScriptReference.SetCaptureSpeedBoost(this.captureSpeedIntensity);
         UIController.Instance.IGPanel.BuffPanel.ActivateSpeedBoost();
-        */
+        
     }
 
     public override void ExpireBuff()
     {
-        /*
-        pc.SetBonusMovSpeed(0);
-        UIController.Instance.IGPanel.BuffPanel.DeactivateSpeedBoost();
-        */
+        abductorScriptReference.SetCaptureSpeedBoost(0);
     }
 
 
