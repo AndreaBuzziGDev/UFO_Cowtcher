@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   numberOfHideoutSlots: 4
   HideoutPermanenceTimer: 5
-  UFODetectionRadius: 5
+  UFODetectionRadius: 6
   CowAllowedRadius: 4
   RunForHideoutRadius: 6
   spawnRadius: 5
