@@ -133,8 +133,7 @@ public class InteractibleStructure : MonoInteractible
         }
         else
         {
-            //TODO: CHANGE SO THAT THE STRUCTURE IS EXPIRED INSTEAD?
-            Destroy(this.gameObject);
+            ExpireStructure();
         }
     }
 
