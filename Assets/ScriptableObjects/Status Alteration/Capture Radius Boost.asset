@@ -15,5 +15,5 @@ MonoBehaviour:
   buffType: 6
   LastsIndefinitely: 0
   buffDuration: 10
-  captureRadiusIncrease: 20
+  captureRadiusIncrease: 30
   isDebuff: 0
