@@ -255,6 +255,7 @@ MonoBehaviour:
   StructureScriptableObject: {fileID: 0}
   ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}
   lifetimeMax: 20
+  expirationTimeMax: 1
 --- !u!65 &3827693660343077909
 BoxCollider:
   m_ObjectHideFlags: 0
