@@ -34,6 +34,10 @@ public class InteractibleStructure : MonoInteractible
     [SerializeField] private float lifetimeMax = 20.0f;
     private float lifetimeCurrent;
 
+    ///EXPIRATION
+    [SerializeField] private float expirationTimeMax = 3.0f;
+    private float expireTimeCurrent;
+
 
 
     //METHODS
@@ -114,13 +118,14 @@ public class InteractibleStructure : MonoInteractible
         {
             ParticleSystem expirationParticlesInstance = Instantiate(ExpirationParticles, transform.position + new Vector3(0,1,0), Quaternion.identity);
             expirationParticlesInstance.Play();
-            Destroy(expirationParticlesInstance.gameObject, 3.0f);
+            Destroy(expirationParticlesInstance.gameObject, expirationTimeMax);
 
             hasPlayedExpirationParticles = true;
         }
 
         //DESTROY EXPIRED STRUCTURE
-        Destroy(this.gameObject, 3.0f);
+        Destroy(this.gameObject, expirationTimeMax);
+        expireTimeCurrent = expirationTimeMax;
 
     }
 
@@ -135,6 +140,22 @@ public class InteractibleStructure : MonoInteractible
         {
             ExpireStructure();
         }
+
+        //HANDLE TRANSPARENCY
+        if (expireTimeCurrent > 0)
+        {
+            //HANDLE GRADUAL TRANSPARENCY
+            expireTimeCurrent -= Time.deltaTime;
+            float factor = expireTimeCurrent / expirationTimeMax;
+
+            //TODO: CHANGE WITH COLOR LERP
+            Color pedestalColor = new Color(childPedestalRenderer.color.r, childPedestalRenderer.color.g, childPedestalRenderer.color.b, factor);
+            Color iconColor = new Color(childIconRenderer.color.r, childIconRenderer.color.g, childIconRenderer.color.b, factor);
+
+            childPedestalRenderer.color = pedestalColor;
+            childIconRenderer.color = iconColor;
+        }
+
     }
 
 
