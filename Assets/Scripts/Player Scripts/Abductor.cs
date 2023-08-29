@@ -240,6 +240,15 @@ public class Abductor : MonoBehaviour
 
 
 
+    //FUNCTIONALITIES - ITEM PICKUP BOOSTs
+    private void SetCaptureSpeedBoost(float speedBoost)
+    {
+        captureSpeedBoost = speedBoost;
+    }
+
+
+
+
     //EVENT-FIRING METHOD
     private void OnCowCapture(CowCaptureEventArgs myEventArg)
     {
