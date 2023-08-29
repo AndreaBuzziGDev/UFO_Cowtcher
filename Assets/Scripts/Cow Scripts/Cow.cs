@@ -290,10 +290,16 @@ public class Cow : MonoBehaviour
     }
 
 
+    //TODO: OPTIMIZE THESE.
     //GET VISUAL CHILD POSITION
     public GameObject GetVisualChild()
     {
         return transform.Find("VisualChild").gameObject;
+    }
+
+    public bool GetFlipX()
+    {
+        return transform.Find("ColliderChild").gameObject.GetComponent<CowCollider>().GetMovement().IsFlipped;
     }
 
 }

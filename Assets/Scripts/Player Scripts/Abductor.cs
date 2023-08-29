@@ -171,7 +171,8 @@ public class Abductor : MonoBehaviour
 
             //HOLOGRAM
             GameObject visualChild = cow.GetVisualChild();
-            FadeOutEntity.SpawnFadeOutEntity(cow.FadeOutHologram, visualChild.transform.position);
+            bool flippedX = cow.GetFlipX();
+            FadeOutEntity.SpawnFadeOutEntity(cow.FadeOutHologram, visualChild.transform.position, flippedX);
 
 
 

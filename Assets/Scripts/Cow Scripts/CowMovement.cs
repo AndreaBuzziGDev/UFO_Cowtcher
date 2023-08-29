@@ -30,6 +30,7 @@ public class CowMovement : MonoBehaviour
     ///TECHNICAL DATA FOR OTHER PURPOSES
     private Rigidbody rb;
     private SpriteRenderer spriteRenderer;
+    public bool IsFlipped { get { return spriteRenderer.flipX; } }
 
 
     //JUICYNESS DATA
