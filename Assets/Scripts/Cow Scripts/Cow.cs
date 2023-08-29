@@ -117,6 +117,7 @@ public class Cow : MonoBehaviour
     ///EDITOR REFERENCES
     [SerializeField] private ParticleSystem HasFledParticles;
     [SerializeField] private AudioSource mooAlertSource;
+    [SerializeField] private FadeOutEntity cowFadeOutHologramOnCapture;
 
 
 
