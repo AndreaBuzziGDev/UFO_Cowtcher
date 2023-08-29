@@ -28,7 +28,7 @@ public class InteractibleStructure : MonoInteractible
     ///JUICYNESS STUFF
     ///PARTICLES
     [SerializeField] private ParticleSystem ExpirationParticles;
-    private bool hasPlayedExpirationParticles;
+    private bool hasBegunExpiration;
 
     ///LIFETIME
     [SerializeField] private float lifetimeMax = 20.0f;
@@ -77,25 +77,28 @@ public class InteractibleStructure : MonoInteractible
     ///INTERACT
     public override void Interact(GameObject interactionSource)
     {
-        //IF SOURCE UFO
-        if (IsObjectWithinOperativeRadius(interactionSource))
+        //CAN BE INTERACTED ONLY IF IT'S NOT EXPIRING
+        if (expireTimeCurrent <= 0)
         {
-            Debug.Log("hasBeenDepleted: " + hasBeenDepleted);
-            //TODO: SHOULD BE REFACTORED TO INTERVIEW THE StructureAbstract OBJECT, IN ORDER TO ALLOW DIFFERENT BEHAVIOURS
-            if (!hasBeenDepleted)
+            //IF SOURCE UFO
+            if (IsObjectWithinOperativeRadius(interactionSource))
             {
-                myStructure.DoBehaviour(this);
+                Debug.Log("hasBeenDepleted: " + hasBeenDepleted);
+                //TODO: SHOULD BE REFACTORED TO INTERVIEW THE StructureAbstract OBJECT, IN ORDER TO ALLOW DIFFERENT BEHAVIOURS
+                if (!hasBeenDepleted)
+                {
+                    myStructure.DoBehaviour(this);
+                }
+            }
+
+            //CHANGE SPRITE FOR ACTIVATION
+            if (!turnedOn)
+            {
+                childPedestalRenderer.sprite = turnedOnPedestalSprite;
+                childIconRenderer.sprite = turnedOnIconSprite;
+                turnedOn = true;
             }
         }
-
-        //CHANGE SPRITE FOR ACTIVATION
-        if (!turnedOn)
-        {
-            childPedestalRenderer.sprite = turnedOnPedestalSprite;
-            childIconRenderer.sprite = turnedOnIconSprite;
-            turnedOn = true;
-        }
-
     }
 
 
@@ -114,18 +117,21 @@ public class InteractibleStructure : MonoInteractible
     private void ExpireStructure()
     {
         //PARTICLE EMISSION
-        if (!hasPlayedExpirationParticles && ExpirationParticles != null)
+        if (!hasBegunExpiration)
         {
-            ParticleSystem expirationParticlesInstance = Instantiate(ExpirationParticles, transform.position + new Vector3(0,1,0), Quaternion.identity);
-            expirationParticlesInstance.Play();
-            Destroy(expirationParticlesInstance.gameObject, expirationTimeMax);
+            if(ExpirationParticles != null)
+            {
+                ParticleSystem expirationParticlesInstance = Instantiate(ExpirationParticles, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+                expirationParticlesInstance.Play();
+                Destroy(expirationParticlesInstance.gameObject, expirationTimeMax);
+            }
 
-            hasPlayedExpirationParticles = true;
+            //DESTROY EXPIRED STRUCTURE
+            Destroy(this.gameObject, expirationTimeMax);
+            expireTimeCurrent = expirationTimeMax;
+            hasBegunExpiration = true;
         }
 
-        //DESTROY EXPIRED STRUCTURE
-        Destroy(this.gameObject, expirationTimeMax);
-        expireTimeCurrent = expirationTimeMax;
 
     }
 
@@ -136,7 +142,7 @@ public class InteractibleStructure : MonoInteractible
         {
             lifetimeCurrent -= Time.deltaTime;
         }
-        else
+        else if (!hasBegunExpiration)
         {
             ExpireStructure();
         }
@@ -146,7 +152,10 @@ public class InteractibleStructure : MonoInteractible
         {
             //HANDLE GRADUAL TRANSPARENCY
             expireTimeCurrent -= Time.deltaTime;
+            Debug.Log("InteractibleStructure - expireTimeCurrent: " + expireTimeCurrent);
+
             float factor = expireTimeCurrent / expirationTimeMax;
+            Debug.Log("InteractibleStructure - factor: " + factor);
 
             //TODO: CHANGE WITH COLOR LERP
             Color pedestalColor = new Color(childPedestalRenderer.color.r, childPedestalRenderer.color.g, childPedestalRenderer.color.b, factor);
