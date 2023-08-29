@@ -252,7 +252,8 @@ public class Abductor : MonoBehaviour
     {
         bonusCaptureRadius = radiusBoost;
     }
-
+    
+    //TODO: THIS SHOULD PROBABLY RETURN NOT JUST THE BONUS, BUT THE INCREASED RADIUS ITSELF (SIMPLIFYING CODE)
     public float CalcCaptureRadiusBonus() => maxRadius * (bonusCaptureRadius / 100);
 
 
