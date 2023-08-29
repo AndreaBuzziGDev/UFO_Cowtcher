@@ -68,11 +68,6 @@ public class Cow : MonoBehaviour
     private float alertRadius;
     public float AlertRadius { get { return alertRadius; } }//TODO: HAS TO BE MORPHED IN COW UNITS
 
-    ///SPEED DATA
-    private float speedCalm;
-    private float speedAlert;
-    private float speedBuffMultiplier;//EXPERIMENT TO SLOW DOWN COWS INDIVIDUALLY (NOT YET USED)
-
 
     private int score;
     public int Score { get { return score; } }
@@ -111,7 +106,6 @@ public class Cow : MonoBehaviour
 
 
     //TECHNICAL DATA FOR OTHER PURPOSES
-    private Rigidbody rb;
     private SpriteRenderer spriteRenderer;
 
     ///EDITOR REFERENCES
@@ -133,8 +127,6 @@ public class Cow : MonoBehaviour
         spriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
         spriteRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         spriteRenderer.receiveShadows = true;
-
-        rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
     private void Start()
@@ -265,8 +257,6 @@ public class Cow : MonoBehaviour
         this.cowName = cowTemplate.CowName;
         this.fuelRecoveryAmount = cowTemplate.FuelRecoveryAmount;
         this.alertRadius = cowTemplate.AlertRadius;
-        this.speedCalm = cowTemplate.SpeedCalm;
-        this.speedAlert = cowTemplate.SpeedAlert;
         this.score = cowTemplate.Score;
 
         ///TIMERS
