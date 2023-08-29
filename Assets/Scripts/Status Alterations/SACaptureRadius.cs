@@ -32,17 +32,13 @@ public class SACaptureRadius : SAAbstract
     ///BUFF
     public override void ApplyBuff()
     {
-        /*
-        abductorScriptReference.SetCaptureSpeedBoost(this.captureSpeedIntensity);
+        abductorScriptReference.SetCaptureRadiusBoost(this.captureRadiusIncrease);
         UIController.Instance.IGPanel.BuffPanel.ActivateSpeedBoost();
-        */
     }
 
     public override void ExpireBuff()
     {
-        /*
-        abductorScriptReference.SetCaptureSpeedBoost(0);
-        */
+        abductorScriptReference.SetCaptureRadiusBoost(0);
     }
 
 
