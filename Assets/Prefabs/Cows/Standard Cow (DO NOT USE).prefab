@@ -245,6 +245,7 @@ MonoBehaviour:
   spawnCoords: {x: 0, y: 0, z: 0}
   HasFledParticles: {fileID: 125600187380295368, guid: 861c6e89228ffe0468232c77072ed3d3, type: 3}
   mooAlertSource: {fileID: 7274476460106249080}
+  cowFadeOutHologramOnCapture: {fileID: 4325075315128471542, guid: 8b1e52c6819b83e4cb1f7970ca0e8187, type: 3}
 --- !u!114 &2271979305478991426
 MonoBehaviour:
   m_ObjectHideFlags: 0
