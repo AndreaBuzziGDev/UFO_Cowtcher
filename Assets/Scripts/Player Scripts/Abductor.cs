@@ -29,6 +29,9 @@ public class Abductor : MonoBehaviour
     private float currentCaptureTimer = 0f;
     private float captureDelta = 0f;
     private float timeBeforeReductionProgress = 0f;
+    private float captureSpeedBoost = 0f;
+
+    ///COWS IN RANGE
     private List<GameObject> cowsInRange = new List<GameObject>();//TODO: POSSIBLE REFACTOR SO THAT THIS HOLDS Cow(s)
 
 
@@ -72,7 +75,9 @@ public class Abductor : MonoBehaviour
 
             //HANDLE CAPTURE AND CIRCLE
             innerCircle.SetActive(true);
-            currentCaptureTimer += Time.deltaTime;
+
+            //UPDATED 29/08/2023 - CAPTURE SPEED BOOST
+            currentCaptureTimer += Time.deltaTime + (Time.deltaTime * (captureSpeedBoost / 100.0f));
             captureDelta = currentCaptureTimer / captureTimer;
             DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
 
