@@ -126,9 +126,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5967316260749106089, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
+      propertyPath: hideoutTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: 34ac69d400aa5be40af0aec1f77689af, type: 2}
     - target: {fileID: 8046838245138679848, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
       propertyPath: m_Name
-      value: Barn (Temporary)
+      value: Bush
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
