@@ -12,7 +12,7 @@ public class Abductor : MonoBehaviour
     [SerializeField] private float timeBeforeReduction;
     [SerializeField] private float maxRadius;
     [SerializeField] private float excessCaptureRadius = 0.4f;
-    [SerializeField] private float cooldownTimer;//TODO: IMPLEMENT/USE
+    [SerializeField] private float bonusCaptureRadius = 0f;//PERCENT
 
     private int circleSteps = 35;
     [SerializeField] private GameObject outerCircle;
@@ -29,7 +29,7 @@ public class Abductor : MonoBehaviour
     private float currentCaptureTimer = 0f;
     private float captureDelta = 0f;
     private float timeBeforeReductionProgress = 0f;
-    private float captureSpeedBoost = 0f;
+    private float captureSpeedBoost = 0f;//PERCENT
 
     ///COWS IN RANGE
     private List<GameObject> cowsInRange = new List<GameObject>();//TODO: POSSIBLE REFACTOR SO THAT THIS HOLDS Cow(s)
@@ -67,7 +67,7 @@ public class Abductor : MonoBehaviour
     {
         currentCaptureTimer = Mathf.Clamp(currentCaptureTimer, 0, captureTimer);
 
-        DrawCircle(circleSteps, maxRadius, outerCircleRenderer);
+        DrawCircle(circleSteps, maxRadius + CalcCaptureRadiusBonus(), outerCircleRenderer);
         if (cowsInRange.Count > 0)
         {
             //HANDLE ZOOM
@@ -79,7 +79,7 @@ public class Abductor : MonoBehaviour
             //UPDATED 29/08/2023 - CAPTURE SPEED BOOST
             currentCaptureTimer += Time.deltaTime + (Time.deltaTime * (captureSpeedBoost / 100.0f));
             captureDelta = currentCaptureTimer / captureTimer;
-            DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
+            DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius + CalcCaptureRadiusBonus(), captureDelta), innerCircleRenderer);
 
             timeBeforeReductionProgress = 0f;
 
@@ -99,11 +99,11 @@ public class Abductor : MonoBehaviour
 
                 currentCaptureTimer -= Time.deltaTime;
                 captureDelta = currentCaptureTimer / captureTimer;
-                DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
+                DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius + CalcCaptureRadiusBonus(), captureDelta), innerCircleRenderer);
             }
             else
             {
-                DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
+                DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius + CalcCaptureRadiusBonus(), captureDelta), innerCircleRenderer);
             }
         }
     }
@@ -186,7 +186,7 @@ public class Abductor : MonoBehaviour
         }
         
         currentCaptureTimer = 0.0f;
-        DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius, captureDelta), innerCircleRenderer);
+        DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius + CalcCaptureRadiusBonus(), captureDelta), innerCircleRenderer);
     }
 
 
@@ -209,7 +209,7 @@ public class Abductor : MonoBehaviour
     public void CowDetectionEnhanced()
     {
         cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+ CalcCaptureRadiusBonus() + excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
 
         Vector3 planeProjectedUFOPosition = new Vector3(transform.position.x, 0, transform.position.z);
 
@@ -221,7 +221,7 @@ public class Abductor : MonoBehaviour
                 //INTERACT WITH Cow
 
                 Cow myCowObject = collider.transform.gameObject.GetComponent<Cow>();
-                if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + excessCaptureRadius))
+                if ((myCowObject.transform.position - planeProjectedUFOPosition).magnitude <= (maxRadius + CalcCaptureRadiusBonus() + excessCaptureRadius))
                 {
                     cowsInRange.Add(collider.transform.gameObject);
                 }
@@ -241,10 +241,19 @@ public class Abductor : MonoBehaviour
 
 
     //FUNCTIONALITIES - ITEM PICKUP BOOSTs
+    ///BUFF - CAPTURE SPEED
     public void SetCaptureSpeedBoost(float speedBoost)
     {
         captureSpeedBoost = speedBoost;
     }
+
+    ///BUFF - CAPTURE RADIUS
+    public void SetCaptureRadiusBoost(float radiusBoost)
+    {
+        bonusCaptureRadius = radiusBoost;
+    }
+
+    public float CalcCaptureRadiusBonus() => maxRadius * (bonusCaptureRadius / 100);
 
 
 
