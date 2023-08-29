@@ -13,8 +13,11 @@ public class InteractibleStructure : MonoInteractible
     [SerializeField] private Sprite turnedOffPedestalSprite;
     [SerializeField] private Sprite turnedOnPedestalSprite;
 
+    [SerializeField] private Sprite turnedOnIconSprite;
+
     ///SPRITE RENDERER REFERENCES
     [SerializeField] private SpriteRenderer childPedestalRenderer;
+    [SerializeField] private SpriteRenderer childIconRenderer;
     private bool turnedOn;
 
 
@@ -85,6 +88,7 @@ public class InteractibleStructure : MonoInteractible
         if (!turnedOn)
         {
             childPedestalRenderer.sprite = turnedOnPedestalSprite;
+            childIconRenderer.sprite = turnedOnIconSprite;
             turnedOn = true;
         }
 
