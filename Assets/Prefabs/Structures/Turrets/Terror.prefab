@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1905210977476053208, guid: e2b7431d84436f54e8dd19d90764627d, type: 3}
+      propertyPath: turnedOnIconSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 80096f8792e03d24a918d451a7611040, type: 3}
+    - target: {fileID: -1905210977476053208, guid: e2b7431d84436f54e8dd19d90764627d, type: 3}
       propertyPath: StructureScriptableObject
       value: 
       objectReference: {fileID: 11400000, guid: 83807cc0fd2bb08429804f75aecc90f8, type: 2}

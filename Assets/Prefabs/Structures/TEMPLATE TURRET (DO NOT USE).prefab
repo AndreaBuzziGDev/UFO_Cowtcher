@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 80096f8792e03d24a918d451a7611040, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 9421fb4d7aba1814f9ff2c348b5e33be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4a9ece601a2d2f4fa3c83198fbc95f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2930b3092c92934198d9f5645c8b4c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -247,12 +247,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6e8c531bd76064997df7a999647985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnedOffSprite: {fileID: 21300000, guid: a4a9ece601a2d2f4fa3c83198fbc95f1, type: 3}
-  turnedOnSprite: {fileID: 21300000, guid: 6978fb76436c1ef47ab09db98e354567, type: 3}
+  turnedOffPedestalSprite: {fileID: 21300000, guid: d2930b3092c92934198d9f5645c8b4c9, type: 3}
+  turnedOnPedestalSprite: {fileID: 21300000, guid: 3895d7e4a99400047a084c0455571755, type: 3}
+  turnedOnIconSprite: {fileID: 0}
   childPedestalRenderer: {fileID: 7758115590238631724}
+  childIconRenderer: {fileID: 2687997450899680237}
   StructureScriptableObject: {fileID: 0}
   ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}
   lifetimeMax: 20
+  expirationTimeMax: 1
 --- !u!65 &3827693660343077909
 BoxCollider:
   m_ObjectHideFlags: 0

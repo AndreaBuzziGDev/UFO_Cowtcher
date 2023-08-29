@@ -10,11 +10,14 @@ public class InteractibleStructure : MonoInteractible
     public bool HasBeenDepleted { get { return hasBeenDepleted; } set { hasBeenDepleted = value; } }
 
     ///SPRITE REFERENCES
-    [SerializeField] private Sprite turnedOffSprite;
-    [SerializeField] private Sprite turnedOnSprite;
+    [SerializeField] private Sprite turnedOffPedestalSprite;
+    [SerializeField] private Sprite turnedOnPedestalSprite;
+
+    [SerializeField] private Sprite turnedOnIconSprite;
 
     ///SPRITE RENDERER REFERENCES
     [SerializeField] private SpriteRenderer childPedestalRenderer;
+    [SerializeField] private SpriteRenderer childIconRenderer;
     private bool turnedOn;
 
 
@@ -25,11 +28,15 @@ public class InteractibleStructure : MonoInteractible
     ///JUICYNESS STUFF
     ///PARTICLES
     [SerializeField] private ParticleSystem ExpirationParticles;
-    private bool hasPlayedExpirationParticles;
+    private bool hasBegunExpiration;
 
     ///LIFETIME
     [SerializeField] private float lifetimeMax = 20.0f;
     private float lifetimeCurrent;
+
+    ///EXPIRATION
+    [SerializeField] private float expirationTimeMax = 3.0f;
+    private float expireTimeCurrent;
 
 
 
@@ -39,7 +46,7 @@ public class InteractibleStructure : MonoInteractible
     // Start is called before the first frame update
     void Start()
     {
-        childPedestalRenderer.sprite = turnedOffSprite;
+        childPedestalRenderer.sprite = turnedOffPedestalSprite;
 
         lifetimeCurrent = lifetimeMax;
         if (StructureScriptableObject != null) myStructure = StructureScriptableObject.GetStructure();
@@ -70,24 +77,26 @@ public class InteractibleStructure : MonoInteractible
     ///INTERACT
     public override void Interact(GameObject interactionSource)
     {
-        //IF SOURCE UFO
-        if (IsObjectWithinOperativeRadius(interactionSource))
+        //CAN BE INTERACTED ONLY IF IT'S NOT EXPIRING
+        if (expireTimeCurrent <= 0)
         {
-            Debug.Log("hasBeenDepleted: " + hasBeenDepleted);
-            //TODO: SHOULD BE REFACTORED TO INTERVIEW THE StructureAbstract OBJECT, IN ORDER TO ALLOW DIFFERENT BEHAVIOURS
-            if (!hasBeenDepleted)
+            //IF SOURCE UFO
+            if (IsObjectWithinOperativeRadius(interactionSource))
             {
-                myStructure.DoBehaviour(this);
+                if (!hasBeenDepleted)
+                {
+                    myStructure.DoBehaviour(this);
+                }
+            }
+
+            //CHANGE SPRITE FOR ACTIVATION
+            if (!turnedOn)
+            {
+                childPedestalRenderer.sprite = turnedOnPedestalSprite;
+                childIconRenderer.sprite = turnedOnIconSprite;
+                turnedOn = true;
             }
         }
-
-        //CHANGE SPRITE FOR ACTIVATION
-        if (!turnedOn)
-        {
-            childPedestalRenderer.sprite = turnedOnSprite;
-            turnedOn = true;
-        }
-
     }
 
 
@@ -106,17 +115,21 @@ public class InteractibleStructure : MonoInteractible
     private void ExpireStructure()
     {
         //PARTICLE EMISSION
-        if (!hasPlayedExpirationParticles && ExpirationParticles != null)
+        if (!hasBegunExpiration)
         {
-            ParticleSystem expirationParticlesInstance = Instantiate(ExpirationParticles, transform.position + new Vector3(0,1,0), Quaternion.identity);
-            expirationParticlesInstance.Play();
-            Destroy(expirationParticlesInstance.gameObject, 3.0f);
+            if(ExpirationParticles != null)
+            {
+                ParticleSystem expirationParticlesInstance = Instantiate(ExpirationParticles, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+                expirationParticlesInstance.Play();
+                Destroy(expirationParticlesInstance.gameObject, expirationTimeMax);
+            }
 
-            hasPlayedExpirationParticles = true;
+            //DESTROY EXPIRED STRUCTURE
+            Destroy(this.gameObject, expirationTimeMax);
+            expireTimeCurrent = expirationTimeMax;
+            hasBegunExpiration = true;
         }
 
-        //DESTROY EXPIRED STRUCTURE
-        Destroy(this.gameObject, 3.0f);
 
     }
 
@@ -127,11 +140,26 @@ public class InteractibleStructure : MonoInteractible
         {
             lifetimeCurrent -= Time.deltaTime;
         }
-        else
+        else if (!hasBegunExpiration)
         {
-            //TODO: CHANGE SO THAT THE STRUCTURE IS EXPIRED INSTEAD?
-            Destroy(this.gameObject);
+            ExpireStructure();
         }
+
+        //HANDLE TRANSPARENCY
+        if (expireTimeCurrent > 0)
+        {
+            //HANDLE GRADUAL TRANSPARENCY
+            expireTimeCurrent -= Time.deltaTime;
+            float factor = expireTimeCurrent / expirationTimeMax;
+
+            //TODO: CHANGE WITH COLOR LERP
+            Color pedestalColor = new Color(childPedestalRenderer.color.r, childPedestalRenderer.color.g, childPedestalRenderer.color.b, factor);
+            Color iconColor = new Color(childIconRenderer.color.r, childIconRenderer.color.g, childIconRenderer.color.b, factor);
+
+            childPedestalRenderer.color = pedestalColor;
+            childIconRenderer.color = iconColor;
+        }
+
     }
 
 

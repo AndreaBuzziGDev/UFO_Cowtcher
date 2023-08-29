@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd9eed3dbde2fb44a40acddd4ec647d, type: 3}
-  m_Name: Garage
+  m_Script: {fileID: 11500000, guid: 5ad979de0ae47b1479d9e4800dcc1c33, type: 3}
+  m_Name: Capture Speed Boost
   m_EditorClassIdentifier: 
-  type: 2
-  numberOfHideoutSlots: 1
-  HideoutPermanenceTimer: 5
-  UFODetectionRadius: 5
-  CowAllowedRadius: 3
-  RunForHideoutRadius: 5
-  spawnRadius: 2.5
+  buffType: 3
+  LastsIndefinitely: 0
+  buffDuration: 10
+  captureSpeedIntensity: 30
+  isDebuff: 0

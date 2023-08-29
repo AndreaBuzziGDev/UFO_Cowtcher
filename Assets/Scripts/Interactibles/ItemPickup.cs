@@ -12,6 +12,14 @@ public class ItemPickup : MonoInteractible
     [SerializeField] private float lifetimeMax = 10.0f;
     private float lifetimeCurrent;
 
+    ///EXPIRATION
+    [SerializeField] private float expirationTimeMax = 1.0f;
+    private float expireTimeCurrent;
+    private bool hasBegunExpiration;
+
+    ///SPRITE RENDERER REFERENCES
+    [SerializeField] private SpriteRenderer buffIconRenderer;
+
 
     ///JUICYNESS STUFF
     ///SHAKE VARIABLES
@@ -43,11 +51,15 @@ public class ItemPickup : MonoInteractible
 
     public override void Interact(GameObject interactionSource)
     {
-        //DELIVER BUFF TO THE PLAYER UFO
-        GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(this.GetStatusAlteration());
+        //CAN BE INTERACTED ONLY IF IT'S NOT EXPIRING
+        if (expireTimeCurrent <= 0)
+        {
+            //DELIVER BUFF TO THE PLAYER UFO
+            GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(this.GetStatusAlteration());
 
-        //DESTROY PICKED UP ITEM
-        Destroy(this.gameObject);
+            //DESTROY PICKED UP ITEM
+            Destroy(this.gameObject);//TODO: POSSIBLE CHANGE SO THAT THIS DISAPPEARS GRADUALLY...
+        }
     }
 
 
@@ -99,8 +111,26 @@ public class ItemPickup : MonoInteractible
         }
         else
         {
-            Destroy(this.gameObject);
+            if (!hasBegunExpiration)
+            {
+                Destroy(this.gameObject, expirationTimeMax);
+                expireTimeCurrent = expirationTimeMax;
+                hasBegunExpiration = true;
+            }
         }
+
+        if (expireTimeCurrent > 0)
+        {
+            //HANDLE GRADUAL TRANSPARENCY
+            expireTimeCurrent -= Time.deltaTime;
+            float factor = expireTimeCurrent / expirationTimeMax;
+
+            //TODO: CHANGE WITH COLOR LERP
+            Color buffSpriteColor = new Color(buffIconRenderer.color.r, buffIconRenderer.color.g, buffIconRenderer.color.b, factor);
+            buffIconRenderer.color = buffSpriteColor;
+
+        }
+
     }
 
 

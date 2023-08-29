@@ -15,8 +15,8 @@ MonoBehaviour:
   UID: 15
   rarity: 2
   CowName: Cowgon
-  Description: "I\u2019ve never seen something like this before but if I have to
-    guess I would say that it\u2019s better to catch it\r"
+  Description: "I\u2019ve never seen something like this, on this planet, before.
+    Who knows what brought it here, maybe something magic?\r"
   spawnProbability: 20
   spawnChanceTally: 2
   FuelRecoveryAmount: 5
