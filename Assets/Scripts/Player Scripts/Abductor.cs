@@ -37,6 +37,10 @@ public class Abductor : MonoBehaviour
     private List<InteractibleStructure> turretsInRange = new List<InteractibleStructure>();//TODO: POSSIBLE REFACTOR SO THAT THIS HOLDS InteractibleStructure(s)
 
 
+    //PREFAB - ABDUCTOR RAY HOLOGRAM
+    [SerializeField] private FadeOutEntity abductorRayHologramPrefab;
+
+
     //OTHER DATA
     private FollowCamera playerCamera;
 
@@ -96,6 +100,10 @@ public class Abductor : MonoBehaviour
                 //RESET CIRCLE ONCE CAPTURE HAS BEEN COMPLETED
                 currentCaptureTimer = 0.0f;
                 DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius + CalcCaptureRadiusBonus(), captureDelta), innerCircleRenderer);
+
+                //PROJECT HOLOGRAM
+                FadeOutEntity.SpawnFadeOutEntity(abductorRayHologramPrefab, this.transform.position, this.transform);
+
             }
         }
         else
