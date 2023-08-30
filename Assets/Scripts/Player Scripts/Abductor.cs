@@ -102,7 +102,7 @@ public class Abductor : MonoBehaviour
                 DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius + CalcCaptureRadiusBonus(), captureDelta), innerCircleRenderer);
 
                 //PROJECT HOLOGRAM
-                FadeOutEntity.SpawnFadeOutEntity(abductorRayHologramPrefab, this.transform.position, this.transform);
+                FadeOutEntity.SpawnFadeOutEntity(abductorRayHologramPrefab, this.transform.position, this.gameObject.transform);
 
             }
         }
