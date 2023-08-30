@@ -207,6 +207,7 @@ public class Abductor : MonoBehaviour
     public void InteractibleAndCowsDetection()
     {
         cowsInRange.Clear();
+        turretsInRange.Clear();
         RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius + CalcCaptureRadiusBonus() + excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
 
         Vector3 planeProjectedUFOPosition = new Vector3(transform.position.x, 0, transform.position.z);
