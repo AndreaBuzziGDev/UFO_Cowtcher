@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5849808025766622695, guid: 0b5c107360613e04c80e714d082b7350, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7608503760561020247, guid: 0b5c107360613e04c80e714d082b7350, type: 3}
       propertyPath: m_Name
       value: Barn (4)
