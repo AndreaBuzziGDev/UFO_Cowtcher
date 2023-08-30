@@ -42,8 +42,8 @@ public class EndGameSummary : MonoBehaviour
 
 
         //CAPTURES
-        ///TODO: DEVELOP CAPTURE RECORDING SYSTEM
-        capturesValue.text = "???";
+        int cowScore = UIController.Instance.IGPanel.HighScoreBar.CapturedCows;
+        capturesValue.text = cowScore.ToString();
 
         //TIME ELAPSED
         timeElapsedValue.text = ((decimal)UIController.Instance.IGPanel.HighScoreBar.TimeElapsed).ToString("#.##");
