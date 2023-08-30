@@ -31,7 +31,18 @@ public class CowdexGUI : MonoBehaviour
 
     void OnEnable()
     {
-        if(CowdexPages.Count > 0) GoToPage(0);
+        //DEFAULT-KNOWN BLACK AND WHITE COWS
+        if (SaveSystem.LoadCowProgress(CowSO.UniqueID.C000BlackCow).KnowledgeValue == 0)
+        {
+            SaveSystem.SaveCowProgress(CowSO.UniqueID.C000BlackCow, SaveInfoCow.Knowledge.Known);
+        }
+
+        if (SaveSystem.LoadCowProgress(CowSO.UniqueID.C001WhiteCow).KnowledgeValue == 0)
+        {
+            SaveSystem.SaveCowProgress(CowSO.UniqueID.C001WhiteCow, SaveInfoCow.Knowledge.Known);
+        }
+
+        if (CowdexPages.Count > 0) GoToPage(0);
     }
 
 
