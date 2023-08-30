@@ -204,13 +204,14 @@ public class Abductor : MonoBehaviour
     public void CowDetectionEnhanced()
     {
         cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+ CalcCaptureRadiusBonus() + excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius + CalcCaptureRadiusBonus() + excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
 
         Vector3 planeProjectedUFOPosition = new Vector3(transform.position.x, 0, transform.position.z);
 
         /// CONTROL TO DISTINGUISH COWS OR OBJECTS TO INTERACT WITH
         foreach (RaycastHit collider in collidersHit)
         {
+            Debug.Log("Abductor - collider name: " + collider.transform.gameObject.name);
             if(collider.transform.gameObject.layer == cowLayer)
             {
                 //INTERACT WITH Cow
