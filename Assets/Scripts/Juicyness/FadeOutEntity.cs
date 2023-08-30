@@ -32,6 +32,7 @@ public class FadeOutEntity : MonoBehaviour
     //FUNCTIONALITIES
     public static void SpawnFadeOutEntity(FadeOutEntity prefab, Vector3 coords, bool flipX = false, Transform parentItem = null)
     {
+        //TODO: THIS IS NOT WORKING CORRECTLY
         FadeOutEntity fo;
         if (parentItem != null)
         {
