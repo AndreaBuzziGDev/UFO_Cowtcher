@@ -37,6 +37,9 @@ public class StageSelectionController : MonoBehaviour
         //UNLOCK REWARDS
         ProgressionSystem.UnlockAllAvailableRewards();
 
+        //DEFAULT-ENABLE STAGE 1
+        SaveSystem.SetStageUnlocked("Stage 1", true);
+
         //ENABLE STAGE BUTTONS
         buttonStage1.interactable = SaveSystem.IsStageUnlocked("Stage 1");
         buttonStage2.interactable = SaveSystem.IsStageUnlocked("Stage 2");
