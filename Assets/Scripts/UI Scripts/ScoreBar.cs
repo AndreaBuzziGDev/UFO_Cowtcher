@@ -7,8 +7,13 @@ using UnityEngine.UI;
 public class ScoreBar : MonoBehaviour
 {
     //DATA
+    ///SCORES
     private int scoreValue = 0;
     public int Score { get { return scoreValue; } }
+
+    private int capturedCows = 0;
+    public int CapturedCows { get { return capturedCows; } }
+
 
     ///TIMER - 1 SEC, 1 SCORE
     private float scoreTimer;
@@ -28,7 +33,12 @@ public class ScoreBar : MonoBehaviour
     //...
     void Awake()
     {
+        //REGISTERING COW CAPTURE EVENT
+        Abductor.CowCapture += HandleCowCapture;
+
+        //RESETTING SCORES
         scoreValue = 0;
+        capturedCows = 0;
     }
 
     // Start is called before the first frame update
@@ -74,4 +84,9 @@ public class ScoreBar : MonoBehaviour
         scoreText.text = scoreValue.ToString();
     }
 
+
+    public void HandleCowCapture(object sender, CowCaptureEventArgs e)
+    {
+        capturedCows++;
+    }
 }

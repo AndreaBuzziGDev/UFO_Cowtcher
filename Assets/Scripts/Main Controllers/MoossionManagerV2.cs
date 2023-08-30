@@ -113,7 +113,6 @@ public class MoossionManagerV2 : MonoSingleton<MoossionManagerV2>
 
     public void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
-        Debug.Log("MoossionManager - Cow Has Been captured: " + e.CapturedCow.CowTemplate.UID);
         moossionOne.HandleProgressLogic(e.CapturedCow);
         moossionTwo.HandleProgressLogic(e.CapturedCow);
         moossionThree.HandleProgressLogic(e.CapturedCow);
