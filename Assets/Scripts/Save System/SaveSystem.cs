@@ -108,10 +108,10 @@ public class SaveSystem
 
     public static void ResetStageLevelInfo()
     {
-        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageLevel, 7);
-        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageLevel, 7);
-        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageLevel, 7);
-        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageLevel, 7);
+        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageLevel, 1);
+        PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageLevel, 1);
+        PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageLevel, 1);
+        PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageLevel, 1);
         PlayerPrefs.Save();
     }
 
