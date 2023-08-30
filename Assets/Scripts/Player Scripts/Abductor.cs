@@ -33,6 +33,12 @@ public class Abductor : MonoBehaviour
 
     ///COWS IN RANGE
     private List<GameObject> cowsInRange = new List<GameObject>();//TODO: POSSIBLE REFACTOR SO THAT THIS HOLDS Cow(s)
+    ///INTERACTIBLE TURRETS IN RANGE
+    private List<InteractibleStructure> turretsInRange = new List<InteractibleStructure>();//TODO: POSSIBLE REFACTOR SO THAT THIS HOLDS InteractibleStructure(s)
+
+
+    //PREFAB - ABDUCTOR RAY HOLOGRAM
+    [SerializeField] private FadeOutEntity abductorRayHologramPrefab;
 
 
     //OTHER DATA
@@ -68,7 +74,7 @@ public class Abductor : MonoBehaviour
         currentCaptureTimer = Mathf.Clamp(currentCaptureTimer, 0, captureTimer);
 
         DrawCircle(circleSteps, maxRadius + CalcCaptureRadiusBonus(), outerCircleRenderer);
-        if (cowsInRange.Count > 0)
+        if (cowsInRange.Count > 0 || turretsInRange.Count > 0)
         {
             //HANDLE ZOOM
             playerCamera.SetIsZooming(true);
@@ -85,7 +91,19 @@ public class Abductor : MonoBehaviour
 
             if (currentCaptureTimer >= captureTimer)
             {
+                //CATCH COWS IN RANGE
                 CatchCows();
+
+                //INTERACT WITH TURRETS IN RANGE
+                InteractTowers();
+
+                //RESET CIRCLE ONCE CAPTURE HAS BEEN COMPLETED
+                currentCaptureTimer = 0.0f;
+                DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius + CalcCaptureRadiusBonus(), captureDelta), innerCircleRenderer);
+
+                //PROJECT HOLOGRAM
+                FadeOutEntity.SpawnFadeOutEntity(abductorRayHologramPrefab, this.transform.position, this.gameObject.transform);
+
             }
         }
         else
@@ -111,7 +129,7 @@ public class Abductor : MonoBehaviour
     private void FixedUpdate()
     {
         //CowDetectionLegacy();
-        CowDetectionEnhanced();
+        InteractibleAndCowsDetection();
     }
 
 
@@ -179,32 +197,26 @@ public class Abductor : MonoBehaviour
             //TODO: IMPROVE CREATION AND DESTRUCTION OF COWS VIA OBJECT POOLING
             Destroy(cow.gameObject);
         }
-        
-        currentCaptureTimer = 0.0f;
-        DrawCircle(circleSteps, Mathf.Lerp(minRadius, maxRadius + CalcCaptureRadiusBonus(), captureDelta), innerCircleRenderer);
     }
 
-
-    ///COW DETECTION
-    public void CowDetectionLegacy()
+    //
+    private void InteractTowers()
     {
-        cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, maxRadius, Vector3.down, transform.position.y, interactionPhysicsLayer);
-
-        foreach (RaycastHit cow in collidersHit)
+        foreach (InteractibleStructure interactStruct in turretsInRange)
         {
-            if (cow.collider != null)
-            {
-                cowsInRange.Add(cow.transform.gameObject);
-            }
+            interactStruct.Interact(this.gameObject);
         }
     }
 
-    /// THIS CONTROLS THE DISTANCE BETWEEN THE UFO AND THE COWS
-    public void CowDetectionEnhanced()
+
+
+    //DETECTION
+    ///COW AND INTERACTIBLE OBJECTS DETECTION
+    public void InteractibleAndCowsDetection()
     {
         cowsInRange.Clear();
-        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius+ CalcCaptureRadiusBonus() + excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
+        turretsInRange.Clear();
+        RaycastHit[] collidersHit = Physics.SphereCastAll(transform.position, (maxRadius + CalcCaptureRadiusBonus() + excessCaptureRadius), Vector3.down, transform.position.y, interactionPhysicsLayer);
 
         Vector3 planeProjectedUFOPosition = new Vector3(transform.position.x, 0, transform.position.z);
 
@@ -226,8 +238,30 @@ public class Abductor : MonoBehaviour
                 //INTERACT WITH MonoInteractible
 
                 MonoInteractible interactible = collider.transform.gameObject.GetComponent<MonoInteractible>();
-
-                if(interactible != null) interactible.Interact(this.gameObject);
+                if (interactible != null)
+                {
+                    if(interactible is InteractibleStructure)
+                    {
+                        //TODO: IMPROVE AND CORRECT THIS - TURRETS SHOULD INTERACT IMMEDIATELY IF ACTIVATED
+                        InteractibleStructure turret = (InteractibleStructure)interactible;
+                        if (!turret.HasBeenActivated)
+                        {
+                            if (!turret.HasBeenDepleted)
+                            {
+                                turretsInRange.Add(turret);
+                            }
+                        }
+                        else
+                        {
+                            turret.Interact(this.gameObject);
+                        }
+                    }
+                    else
+                    {
+                        //OTHER INTERACTIBLES ARE INSTANTANEOUS INTERACTIONS
+                        interactible.Interact(this.gameObject);
+                    }
+                }
 
             }
         }

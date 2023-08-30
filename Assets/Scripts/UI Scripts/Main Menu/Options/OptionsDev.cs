@@ -13,13 +13,24 @@ public class OptionsDev : MonoBehaviour
     //...
 
     //FUNCTIONALITIES
-    public void ResetAllExperience()
+    public void ResetAllLevels()
     {
-        SaveSystem.ResetStageExpInfo();
         SaveSystem.ResetStageLevelInfo();
 
         //DEBUGGING
-        Debug.Log("DEVELOPER MANUAL RESET - EXPERIENCE");
+        Debug.Log("DEVELOPER MANUAL RESET - EXPERIENCE LEVELS");
+        Debug.Log("DEVELOPER MANUAL RESET - Stage 1 Level: " + SaveSystem.LoadStageLevelInfo(SceneNavigationController.Instance.GetAssociatedName(SceneNavigationController.eStageSceneName.Stage1)));
+        Debug.Log("DEVELOPER MANUAL RESET - Stage 2 Level: " + SaveSystem.LoadStageLevelInfo(SceneNavigationController.Instance.GetAssociatedName(SceneNavigationController.eStageSceneName.Stage2)));
+        Debug.Log("DEVELOPER MANUAL RESET - Stage 3 Level: " + SaveSystem.LoadStageLevelInfo(SceneNavigationController.Instance.GetAssociatedName(SceneNavigationController.eStageSceneName.Stage3)));
+        Debug.Log("DEVELOPER MANUAL RESET - Stage 4 Level: " + SaveSystem.LoadStageLevelInfo(SceneNavigationController.Instance.GetAssociatedName(SceneNavigationController.eStageSceneName.Stage4)));
+
+    }
+    public void ResetAllExperience()
+    {
+        SaveSystem.ResetStageExpInfo();
+
+        //DEBUGGING
+        Debug.Log("DEVELOPER MANUAL RESET - EXPERIENCE AMOUNTS");
         Debug.Log("DEVELOPER MANUAL RESET - Stage 1 Experience: " + SaveSystem.LoadStageEXPInfo(SceneNavigationController.Instance.GetAssociatedName(SceneNavigationController.eStageSceneName.Stage1)));
         Debug.Log("DEVELOPER MANUAL RESET - Stage 2 Experience: " + SaveSystem.LoadStageEXPInfo(SceneNavigationController.Instance.GetAssociatedName(SceneNavigationController.eStageSceneName.Stage2)));
         Debug.Log("DEVELOPER MANUAL RESET - Stage 3 Experience: " + SaveSystem.LoadStageEXPInfo(SceneNavigationController.Instance.GetAssociatedName(SceneNavigationController.eStageSceneName.Stage3)));

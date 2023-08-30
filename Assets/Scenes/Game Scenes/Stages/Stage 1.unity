@@ -1575,7 +1575,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1309146764150611406, guid: 0b5c107360613e04c80e714d082b7350, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.9661322
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1309146764150611406, guid: 0b5c107360613e04c80e714d082b7350, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1583,7 +1583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1309146764150611406, guid: 0b5c107360613e04c80e714d082b7350, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.366516
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 1309146764150611406, guid: 0b5c107360613e04c80e714d082b7350, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2068,7 +2068,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1815920664150541163, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.2
+      value: -8.76
       objectReference: {fileID: 0}
     - target: {fileID: 1815920664150541163, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2076,7 +2076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1815920664150541163, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.5
+      value: -24.42
       objectReference: {fileID: 0}
     - target: {fileID: 1815920664150541163, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2604,7 +2604,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4505134696510545080, guid: 7fe79f168f12f514e9ef69620c9cc0d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.585637
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 4505134696510545080, guid: 7fe79f168f12f514e9ef69620c9cc0d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2612,7 +2612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4505134696510545080, guid: 7fe79f168f12f514e9ef69620c9cc0d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.006676
+      value: -12.8
       objectReference: {fileID: 0}
     - target: {fileID: 4505134696510545080, guid: 7fe79f168f12f514e9ef69620c9cc0d2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3806,6 +3806,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4766591876471490110, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5592028682301532077, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -4096,7 +4100,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: maxNumOfCows
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: isGridSpawnMode

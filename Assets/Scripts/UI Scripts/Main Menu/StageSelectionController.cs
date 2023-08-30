@@ -13,6 +13,13 @@ public class StageSelectionController : MonoBehaviour
 
     ///GUI REFERENCES
     [SerializeField] private Image scenePreview;
+
+    [SerializeField] private Button buttonStage1;
+    [SerializeField] private Button buttonStage2;
+    [SerializeField] private Button buttonStage3;
+    [SerializeField] private Button buttonStage4;
+
+
     [SerializeField] private Button playButton;
     [SerializeField] private StageExpBar experienceBar;
 
@@ -30,7 +37,11 @@ public class StageSelectionController : MonoBehaviour
         //UNLOCK REWARDS
         ProgressionSystem.UnlockAllAvailableRewards();
 
-        //TODO: HANDLE ENABLEMENT OF STAGE SELECTION BUTTONS
+        //ENABLE STAGE BUTTONS
+        buttonStage1.interactable = SaveSystem.IsStageUnlocked("Stage 1");
+        buttonStage2.interactable = SaveSystem.IsStageUnlocked("Stage 2");
+        buttonStage3.interactable = SaveSystem.IsStageUnlocked("Stage 3");
+        buttonStage4.interactable = SaveSystem.IsStageUnlocked("Stage 4");
 
     }
 

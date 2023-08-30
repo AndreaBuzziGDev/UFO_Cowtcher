@@ -1493,6 +1493,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenePreview: {fileID: 2826147035107828641}
+  buttonStage1: {fileID: 7860392608165234573}
+  buttonStage2: {fileID: 1300331087029491228}
+  buttonStage3: {fileID: 7207738656815956583}
+  buttonStage4: {fileID: 8082200699109373376}
   playButton: {fileID: 7533903953459813115}
   experienceBar: {fileID: 3202987929276894747}
 --- !u!1 &2808917266339653206
