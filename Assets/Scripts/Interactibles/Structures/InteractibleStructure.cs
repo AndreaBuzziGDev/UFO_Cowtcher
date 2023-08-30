@@ -5,9 +5,14 @@ using UnityEngine;
 public class InteractibleStructure : MonoInteractible
 {
     //DATA
-    ///
+    ///DEPLETION
     private bool hasBeenDepleted = false;
     public bool HasBeenDepleted { get { return hasBeenDepleted; } set { hasBeenDepleted = value; } }
+
+    ///ACTIVATION
+    private bool hasBeenActivated = false;
+    public bool HasBeenActivated { get { return hasBeenActivated; } }
+
 
     ///SPRITE REFERENCES
     [SerializeField] private Sprite turnedOffPedestalSprite;
@@ -77,6 +82,8 @@ public class InteractibleStructure : MonoInteractible
     ///INTERACT
     public override void Interact(GameObject interactionSource)
     {
+        hasBeenActivated = true;
+
         //CAN BE INTERACTED ONLY IF IT'S NOT EXPIRING
         if (expireTimeCurrent <= 0)
         {

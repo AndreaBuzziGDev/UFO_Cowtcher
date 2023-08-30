@@ -236,9 +236,16 @@ public class Abductor : MonoBehaviour
                     {
                         //TODO: IMPROVE AND CORRECT THIS - TURRETS SHOULD INTERACT IMMEDIATELY IF ACTIVATED
                         InteractibleStructure turret = (InteractibleStructure)interactible;
-                        if (!turret.HasBeenDepleted)
+                        if (!turret.HasBeenActivated)
                         {
-                            turretsInRange.Add(turret);
+                            if (!turret.HasBeenDepleted)
+                            {
+                                turretsInRange.Add(turret);
+                            }
+                        }
+                        else
+                        {
+                            turret.Interact(this.gameObject);
                         }
                     }
                     else
