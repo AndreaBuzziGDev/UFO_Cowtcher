@@ -4035,9 +4035,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2741007701270107690}
-        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 7883382402846591270}
+        m_TargetAssemblyTypeName: StageSelectionController, Assembly-CSharp
+        m_MethodName: LoadSelectedScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
