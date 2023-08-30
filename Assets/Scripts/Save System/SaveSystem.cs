@@ -47,7 +47,9 @@ public class SaveSystem
     public static void ResetStagesUnlock()
     {
         //STAGE 1 IS ALWAYS UNLOCKED.
-        //PlayerPrefs.SetInt(StageAddress + "Stage 1", 0);
+        PlayerPrefs.SetInt(StageAddress + "Stage 1" + StageUnlock, 1);
+
+        //OTHER STAGES UNLOCKED VIA PROGRESSION
         PlayerPrefs.SetInt(StageAddress + "Stage 2" + StageUnlock, 0);
         PlayerPrefs.SetInt(StageAddress + "Stage 3" + StageUnlock, 0);
         PlayerPrefs.SetInt(StageAddress + "Stage 4" + StageUnlock, 0);
