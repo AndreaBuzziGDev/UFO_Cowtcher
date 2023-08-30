@@ -11,6 +11,7 @@ public class OptionsController : MonoBehaviour
 
     ///DEVELOPER OPTIONS
     [SerializeField] private OptionsDev developerOptions;
+    [SerializeField] private OptionsCheat cheatOptions;
 
 
     //METHODS
@@ -48,5 +49,19 @@ public class OptionsController : MonoBehaviour
         ShowSelf();
         developerOptions.gameObject.SetActive(false);
     }
+
+    ///CHEATS
+    public void ShowCheats()
+    {
+        HideSelf();
+        cheatOptions.gameObject.SetActive(true);
+    }
+
+    public void HideCheats()
+    {
+        ShowSelf();
+        cheatOptions.gameObject.SetActive(false);
+    }
+
 
 }
