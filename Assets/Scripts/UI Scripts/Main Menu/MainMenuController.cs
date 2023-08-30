@@ -37,6 +37,13 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     // Start is called before the first frame update
     void Start()
     {
+#if UNITY_STANDALONE_WIN
+        //SET SCREEN TO MOBILE ASPECT RATIO 
+        int targetHeight = Screen.width * 16 / 9;
+        int targetWidth = Screen.height * 9 / 16;
+
+        Screen.SetResolution(targetWidth, targetHeight, true);
+#endif
         Initialization();
     }
 
