@@ -3428,6 +3428,7 @@ MonoBehaviour:
   selection: {fileID: 4642263948370248281}
   bottom: {fileID: 4959424970016664958}
   developerOptions: {fileID: 5567388378287458239}
+  cheatOptions: {fileID: 5898434181962918299}
 --- !u!1 &6969537091834264051
 GameObject:
   m_ObjectHideFlags: 0

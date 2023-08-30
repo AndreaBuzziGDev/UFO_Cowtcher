@@ -19,6 +19,7 @@ public class OptionsController : MonoBehaviour
     private void Start()
     {
         developerOptions.gameObject.SetActive(false);
+        cheatOptions.gameObject.SetActive(false);
     }
 
 
