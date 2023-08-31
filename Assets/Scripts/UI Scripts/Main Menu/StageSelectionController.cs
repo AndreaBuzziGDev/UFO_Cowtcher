@@ -32,7 +32,7 @@ public class StageSelectionController : MonoBehaviour
     void OnEnable()
     {
         //UNSET SCENE
-        isSceneSet = false;
+        UnsetTargetScene();
 
         //UNLOCK REWARDS
         ProgressionSystem.UnlockAllAvailableRewards();
