@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 948026894996805145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6408633600295670051}
+        m_TargetAssemblyTypeName: StageSelectionButton, Assembly-CSharp
+        m_MethodName: SetIntendedScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6408633600295670051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +409,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.7
+  m_fontSize: 81.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -879,7 +891,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.7
+  m_fontSize: 81.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1013,7 +1025,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 96.65
+  m_fontSize: 150
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1330,7 +1342,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.4
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1591,7 +1603,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.4
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2154,7 +2166,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2316579039616476454}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6898414513502137398}
+        m_TargetAssemblyTypeName: StageSelectionButton, Assembly-CSharp
+        m_MethodName: SetIntendedScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6898414513502137398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2261,7 +2285,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2395,7 +2419,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
+  m_fontSize: 134.8
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2604,7 +2628,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.7
+  m_fontSize: 81.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2777,7 +2801,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.4
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2911,7 +2935,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.4
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3045,7 +3069,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3363,7 +3387,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 62.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3497,7 +3521,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4315,7 +4339,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4872337465387156449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5926769684366289027}
+        m_TargetAssemblyTypeName: StageSelectionButton, Assembly-CSharp
+        m_MethodName: SetIntendedScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5926769684366289027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4451,7 +4487,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6514356595814569243}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6452651908117019554}
+        m_TargetAssemblyTypeName: StageSelectionButton, Assembly-CSharp
+        m_MethodName: SetIntendedScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6452651908117019554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4844,7 +4892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 554f9a94205feb6408e10f0a22ba637d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7aa0d94e99a67840a99e343a807e54c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5066,7 +5114,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5237,7 +5285,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58
+  m_fontSize: 85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5289,7 +5337,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 216565073823038192, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 53.3
       objectReference: {fileID: 0}
     - target: {fileID: 805526682643650025, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_Sprite
@@ -5397,7 +5445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6780247220326347951, guid: a015934febda95a449607a87e109c6fa, type: 3}
       propertyPath: m_fontSize
-      value: 100
+      value: 95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5445,7 +5493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3941598033590883164, guid: e4f765eb23d3f3748ab1989d907e113b, type: 3}
       propertyPath: m_fontSize
-      value: 52.2
+      value: 92.8
       objectReference: {fileID: 0}
     - target: {fileID: 5055888117478825972, guid: e4f765eb23d3f3748ab1989d907e113b, type: 3}
       propertyPath: m_Pivot.x
@@ -5562,43 +5610,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 218968670296769091, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 79.75
+      value: 41.9
       objectReference: {fileID: 0}
     - target: {fileID: 281693455366823861, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 160.25
+      value: 162.3
       objectReference: {fileID: 0}
     - target: {fileID: 398359135300535088, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 65.5
+      value: 51.5
       objectReference: {fileID: 0}
     - target: {fileID: 2577711062367504048, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 79.75
+      value: 69.8
       objectReference: {fileID: 0}
     - target: {fileID: 2856296754798326000, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 113.1
+      value: 76.25
       objectReference: {fileID: 0}
     - target: {fileID: 2889584220086201927, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 113.1
+      value: 76.25
       objectReference: {fileID: 0}
     - target: {fileID: 3210207987952819184, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 60.15
+      value: 41.9
       objectReference: {fileID: 0}
     - target: {fileID: 3692976999130174733, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 95
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 5378079805496914114, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 61.55
+      value: 41.9
       objectReference: {fileID: 0}
     - target: {fileID: 5436965161896048091, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 70.7
+      value: 76.25
       objectReference: {fileID: 0}
     - target: {fileID: 5978125423370016824, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_Name
@@ -5606,19 +5654,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6622672167447862622, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 65.5
+      value: 53.85
       objectReference: {fileID: 0}
     - target: {fileID: 6930324063711081006, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 95
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 7251895200770237128, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 79.75
+      value: 52.65
       objectReference: {fileID: 0}
     - target: {fileID: 8292878555299304681, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_fontSize
-      value: 95
+      value: 69.7
       objectReference: {fileID: 0}
     - target: {fileID: 8589062095999107720, guid: ac4e2b8933db22f418b68eabb4bce45b, type: 3}
       propertyPath: m_Pivot.x
