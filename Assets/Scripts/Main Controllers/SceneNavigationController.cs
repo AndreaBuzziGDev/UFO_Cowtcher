@@ -37,6 +37,9 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
     private Dictionary<eStageSceneName, Sprite> SceneSpritesDictionary = new();
     private Dictionary<string, StageDataSO> StageStringNamesDictionary = new();
 
+    //HAS LOADED
+    private bool hasLoaded = false;
+    public bool HasLoaded { get { return hasLoaded; } }
 
 
     //METHODS
@@ -57,6 +60,7 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
             StageStringNamesDictionary.Add(s.AssociatedSceneName, s);
 
         }
+        hasLoaded = true;
     }
 
 
@@ -81,30 +85,43 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
     ///STAGE SCENES
     public Sprite GetAssociatedSprite(eStageSceneName targetScene)
     {
-        switch (targetScene)
+        if(StageSceneDictionary.Count > 0)
         {
-            case eStageSceneName.Stage1:
-            case eStageSceneName.Stage2:
-            case eStageSceneName.Stage3:
-            case eStageSceneName.Stage4:
-                return StageSceneDictionary[targetScene].AssociatedSprite;
-            default:
-                return StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSprite;
+            switch (targetScene)
+            {
+                case eStageSceneName.Stage1:
+                case eStageSceneName.Stage2:
+                case eStageSceneName.Stage3:
+                case eStageSceneName.Stage4:
+                    return StageSceneDictionary[targetScene].AssociatedSprite;
+                default:
+                    return StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSprite;
+            }
         }
-
+        else
+        {
+            return null;
+        }
     }
 
     public string GetAssociatedName(eStageSceneName targetScene)
     {
-        switch (targetScene)
+        if (StageSceneDictionary.Count > 0)
         {
-            case eStageSceneName.Stage1:
-            case eStageSceneName.Stage2:
-            case eStageSceneName.Stage3:
-            case eStageSceneName.Stage4:
-                return StageSceneDictionary[targetScene].AssociatedSceneName;
-            default:
-                return StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSceneName;
+            switch (targetScene)
+            {
+                case eStageSceneName.Stage1:
+                case eStageSceneName.Stage2:
+                case eStageSceneName.Stage3:
+                case eStageSceneName.Stage4:
+                    return StageSceneDictionary[targetScene].AssociatedSceneName;
+                default:
+                    return StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSceneName;
+            }
+        }
+        else
+        {
+            return null;
         }
     }
 

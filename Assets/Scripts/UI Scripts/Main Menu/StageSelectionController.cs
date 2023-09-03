@@ -89,11 +89,14 @@ public class StageSelectionController : MonoBehaviour
             }
             else
             {
-                //SET UNSETSCENE AS PREVIEW
-                scenePreview.sprite = SceneNavigationController.Instance.GetAssociatedSprite(SceneNavigationController.eStageSceneName.UnsetScene);
+                if (SceneNavigationController.Instance != null)
+                {
+                    //SET UNSETSCENE AS PREVIEW
+                    scenePreview.sprite = SceneNavigationController.Instance.GetAssociatedSprite(SceneNavigationController.eStageSceneName.UnsetScene);
 
-                //UPDATE EXPERIENCE BAR
-                experienceBar.UpdateExpBar(SceneNavigationController.eStageSceneName.UnsetScene);
+                    //UPDATE EXPERIENCE BAR
+                    experienceBar.UpdateExpBar(SceneNavigationController.eStageSceneName.UnsetScene);
+                }
             }
         }
     }

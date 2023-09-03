@@ -62,7 +62,10 @@ public class GameOverPanel : MonoBehaviour
     public void DoEndgame()
     {
         //
-        summary.DoEndGameSummary();
+        if(UIController.Instance != null)
+        {
+            summary.DoEndGameSummary();
+        }
     }
 
 
