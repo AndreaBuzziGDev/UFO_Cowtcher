@@ -81,8 +81,8 @@ public class EndGameSummary : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError("No experience system allowed in a non-stage scene. If this is a developer scene, default.");
-            Debug.LogError("Exception in EndgameSummary:" + e);
+            Debug.Log("EndGameSummary - No experience system allowed in a non-stage scene. If this is a developer scene, default.");
+            Debug.Log("EndGameSummary - Exception in EndgameSummary:" + e);
         }
         
 

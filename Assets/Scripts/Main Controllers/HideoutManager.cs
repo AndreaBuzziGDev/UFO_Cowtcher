@@ -84,7 +84,7 @@ public class HideoutManager : MonoSingleton<HideoutManager>
         if (hideoutsByType.ContainsKey(type)) 
             return hideoutsByType[type];
         else 
-            return null;
+            return new List<Hideout>();
     }
 
     ///RETRIEVE HIDEOUTS THAT HAVE AVAILABLE SLOTS
