@@ -38,16 +38,24 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
     //INITIALIZATION
     public void Initialization()
     {
-        allowedCowIDs = GetAllowedCowsForMyScene().AllowedCowsUIDList;
+        AllowedCowsSO allowedCows = GetAllowedCowsForMyScene();
+        if (allowedCows != null)
+        {
+            allowedCowIDs = GetAllowedCowsForMyScene().AllowedCowsUIDList;
+        }
+        else
+        {
+            allowedCowIDs = new List<CowSO.UniqueID>();
+        }
     }
 
 
     //FUNCTIONALITY
-    public AllowedCowsSO GetAllowedCowsForMyScene()
+    private AllowedCowsSO GetAllowedCowsForMyScene()
     {
         return GetMatchingAllowedCows(SceneManager.GetActiveScene().name);
     }
-    public AllowedCowsSO GetMatchingAllowedCows(string sceneName)
+    private AllowedCowsSO GetMatchingAllowedCows(string sceneName)
     {
 
         return sceneName switch
