@@ -43,7 +43,7 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
         AllowedCowsSO allowedCows = GetAllowedCowsForMyScene();
         if (allowedCows != null)
         {
-            allowedCowIDs = GetAllowedCowsForMyScene().AllowedCowsUIDList;
+            allowedCowIDs = allowedCows.AllowedCowsUIDList;
         }
         else
         {
