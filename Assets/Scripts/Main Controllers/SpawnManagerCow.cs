@@ -8,6 +8,10 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
 {
     //DATA
 
+    ///
+    [SerializeField] private bool allowAllCows = false;
+    public bool AllowAllCows { get { return allowAllCows; } }
+
     ///ALLOWED COW TYPES
     [SerializeField] private List<CowSO.UniqueID> allowedCowIDs = new();
     public List<CowSO.UniqueID> AllowedCowIDs { get { return allowedCowIDs; } }

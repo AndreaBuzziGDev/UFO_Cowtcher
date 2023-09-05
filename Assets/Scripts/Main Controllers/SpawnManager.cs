@@ -35,7 +35,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     [Tooltip("If checked, this uses the random spawn percentage instead of respawning the captured cow with a cooldown")]
     [SerializeField] private bool isRandomizedSpawnMode = false;
 
-    private Dictionary<CowSO.UniqueID, float> baseSpawnChances = new();
     private Dictionary<CowSO.UniqueID, int> tallySpawnChances = new();
 
 
@@ -238,29 +237,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///FUNCTIONALITY TO CAPTURE COWS ACCESSIBLE FROM ANYWHERE
     public void HandleCowCapture(Cow interestedCow)
     {
-        //DISABLED RITUALS AS REQUESTED FOR VERTICAL SLICE
-        /*
-        List<RitualAbstract> rituals = Cowdex.Instance.GetRitualsThatContainCow(interestedCow.UID);
-
-        //TODO: THIS CAN BE OPTIMIZED BY STORING UIDs AND LATER SINGLE-CALLING GetCows FROM Cowdex
-        
-        foreach (RitualAbstract ritual in rituals)
-        {
-            if (ritual.HasCow(interestedCow.UID))
-            {
-                ritual.DoRitual(interestedCow.UID);
-                if (ritual.IsReadyToSpawn())
-                {
-                    //UPDATE RITUAL PROGRESSION
-                    ritual.HandleCowSpawn();
-
-                    //SUMMONING RITUAL TARGET COW IS AUTOMATICALLY ADDED TO RESPAWN QUEUE
-                    MarkForRespawn(ritual.TargetSpawnedCow, 0);
-                }
-            }
-        }
-        */
-
         //NOTIFY SYSTEMS THAT COW HAS BEEN CAPTURED
         SaveInfoCow cowSI = SaveSystem.LoadCowProgress(interestedCow.UID);
         if (!cowSI.IsCaptured)
@@ -275,7 +251,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         //
         if (isRandomizedSpawnMode)
         {
-            if (!baseSpawnChances.ContainsKey(interestedCow.UID))
+            if (!tallySpawnChances.ContainsKey(interestedCow.UID))
             {
                 TrackSpawnProbability(new List<CowSO.UniqueID> { interestedCow.UID });
             }
@@ -356,12 +332,17 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         List<Cow> cowPrefabs = Cowdex.Instance.GetCows(UIDs);
 
         //TODO: THIS MUST TRACK ONLY THE ALLOWED COWS FOR THIS MAP.
+        List<CowSO.UniqueID> allowedCowIds = SpawnManagerCow.Instance.AllowedCowIDs;
 
         foreach (Cow prefabCow in cowPrefabs)
         {
-            //NB: REFERENCING TEMPLATE. THIS IS A PREFAB, WHICH HAS NOT-YET RUN THE "Awake" METHOD
-            baseSpawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnProbability);
-            tallySpawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnChanceTally);
+            //ENFORCED BEHAVIOUR: ONLY "ALLOWED" COWS SPAWN IN THE SCENE
+            if (!SpawnManagerCow.Instance.AllowAllCows)
+            {
+                if (allowedCowIds.Contains(prefabCow.CowTemplate.UID)) tallySpawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnChanceTally);
+            }
+            //DEFAULT BEHAVIOUR: ALL COWS ENABLED
+            else tallySpawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnChanceTally);
 
         }
 
