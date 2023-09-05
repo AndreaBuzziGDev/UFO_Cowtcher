@@ -5,6 +5,7 @@ using UnityEngine;
 public class AsteroidManager : MonoSingleton<AsteroidManager>
 {
     //DATA
+    [SerializeField] private bool isAsteroidSystemActive = true;
     [SerializeField] private List<Asteroid> asteroidTypes = new();
     [SerializeField] [Range(2.0f, 20.0f)] private float asteroidStartingAltitude = 10.0f;
 
@@ -31,8 +32,7 @@ public class AsteroidManager : MonoSingleton<AsteroidManager>
     // Update is called once per frame
     void Update()
     {
-        HandleTimer();
-
+        if(isAsteroidSystemActive) HandleTimer();
     }
 
 
