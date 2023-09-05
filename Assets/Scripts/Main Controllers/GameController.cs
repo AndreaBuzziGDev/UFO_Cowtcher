@@ -107,14 +107,9 @@ public class GameController : MonoSingleton<GameController>
     private static void HandleStart()
     {
         Cowdex.Instance.Initialization();
-
         HideoutManager.Instance.Initialization();
-
-        SpawnManagerCow.Instance.Initialization();
         SpawnManager.Instance.Initialization();
-
         DifficultyManager.Instance.Initialization();
-
         MoossionManagerV2.Instance.Initialization();
 
         //INITIALIZE GUI LAST

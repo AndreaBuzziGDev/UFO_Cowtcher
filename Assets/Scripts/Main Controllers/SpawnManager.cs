@@ -76,6 +76,8 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///OVERALL INITIALIZATION PROCEDURE
     public void Initialization()
     {
+        SpawnManagerCow.Instance.Initialization();
+
         initializeCowCount();
         initializeSpawnProbabilityDictionary();
 
