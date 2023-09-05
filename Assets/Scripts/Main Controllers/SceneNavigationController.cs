@@ -19,7 +19,8 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
         Stage1,
         Stage2,
         Stage3,
-        Stage4
+        Stage4,
+        Tutorial
     }
 
 
@@ -93,6 +94,7 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
                 case eStageSceneName.Stage2:
                 case eStageSceneName.Stage3:
                 case eStageSceneName.Stage4:
+                case eStageSceneName.Tutorial:
                     return StageSceneDictionary[targetScene].AssociatedSprite;
                 default:
                     return StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSprite;
@@ -114,6 +116,7 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
                 case eStageSceneName.Stage2:
                 case eStageSceneName.Stage3:
                 case eStageSceneName.Stage4:
+                case eStageSceneName.Tutorial:
                     return StageSceneDictionary[targetScene].AssociatedSceneName;
                 default:
                     return StageSceneDictionary[eStageSceneName.UnsetScene].AssociatedSceneName;
@@ -151,6 +154,7 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
             case eStageSceneName.Stage2:
             case eStageSceneName.Stage3:
             case eStageSceneName.Stage4:
+            case eStageSceneName.Tutorial:
                 intendedScene = StageSceneDictionary[targetScene].AssociatedSceneName;
                 break;
             default:

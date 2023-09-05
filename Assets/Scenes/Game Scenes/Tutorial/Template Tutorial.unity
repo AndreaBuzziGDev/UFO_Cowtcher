@@ -376,7 +376,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5674855569820612393, guid: 266d5c45da1f7514bacbd0ea8445c722, type: 3}
       propertyPath: m_Name
-      value: Fences x64 (2)
+      value: Fences x16 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7077878850613703833, guid: 266d5c45da1f7514bacbd0ea8445c722, type: 3}
       propertyPath: m_RootOrder
@@ -574,7 +574,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5674855569820612393, guid: 266d5c45da1f7514bacbd0ea8445c722, type: 3}
       propertyPath: m_Name
-      value: Fences x64 (1)
+      value: Fences x16 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6186700387687803392, guid: 266d5c45da1f7514bacbd0ea8445c722, type: 3}
       propertyPath: m_Name
@@ -698,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5674855569820612393, guid: 266d5c45da1f7514bacbd0ea8445c722, type: 3}
       propertyPath: m_Name
-      value: Fences x64 (3)
+      value: Fences x16 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6186700387687803392, guid: 266d5c45da1f7514bacbd0ea8445c722, type: 3}
       propertyPath: m_Name
@@ -894,10 +894,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4766591876471490110, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: m_Volume
-      value: 0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 5592028682301532077, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -1127,7 +1123,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5674855569820612393, guid: 266d5c45da1f7514bacbd0ea8445c722, type: 3}
       propertyPath: m_Name
-      value: Fences x64
+      value: Fences x16
       objectReference: {fileID: 0}
     - target: {fileID: 5771831260078616510, guid: 266d5c45da1f7514bacbd0ea8445c722, type: 3}
       propertyPath: m_LocalPosition.x
