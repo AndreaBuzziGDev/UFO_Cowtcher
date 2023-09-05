@@ -38,6 +38,8 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
     //INITIALIZATION
     public void Initialization()
     {
+        Debug.Log("SpawnManagerCow - All Cows Allowed: " + allowAllCows);
+
         AllowedCowsSO allowedCows = GetAllowedCowsForMyScene();
         if (allowedCows != null)
         {
@@ -45,6 +47,7 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
         }
         else
         {
+            Debug.Log("SpawnManagerCow - Empty filter.");
             allowedCowIDs = new List<CowSO.UniqueID>();
         }
     }
