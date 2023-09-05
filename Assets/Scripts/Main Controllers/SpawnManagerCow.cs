@@ -41,15 +41,8 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
         Debug.Log("SpawnManagerCow - All Cows Allowed: " + allowAllCows);
 
         AllowedCowsSO allowedCows = GetAllowedCowsForMyScene();
-        if (allowedCows != null)
-        {
-            allowedCowIDs = allowedCows.AllowedCowsUIDList;
-        }
-        else
-        {
-            Debug.Log("SpawnManagerCow - Empty filter.");
-            allowedCowIDs = new List<CowSO.UniqueID>();
-        }
+        if (allowedCows != null) allowedCowIDs = allowedCows.AllowedCowsUIDList;
+        else Debug.Log("SpawnManagerCow - Empty filter.");
     }
 
 
