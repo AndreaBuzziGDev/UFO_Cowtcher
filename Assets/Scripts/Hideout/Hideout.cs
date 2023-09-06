@@ -81,7 +81,7 @@ public class Hideout : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         int availSlots = 0;

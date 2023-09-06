@@ -80,8 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideoutTemplate: {fileID: 11400000, guid: a51b63db87ae501478e1da1c8d86e300, type: 2}
   myInfos: {fileID: 1718976048537024214}
-  shakeAmount: 0.005
-  shakeSpeed: 30
+  shakeAmount: 0.1
+  shakeSpeed: 50
   shakeTime: 1
 --- !u!114 &2630102005506350373
 MonoBehaviour:
