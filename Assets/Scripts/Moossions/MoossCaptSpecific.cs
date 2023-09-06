@@ -54,12 +54,12 @@ public class MoossCaptSpecific : Moossion
         List<IndexedCow> playableCows = Cowdex.Instance.GetAllIndexedActualCows();
 
         //TODO: CROSS THIS INFORMATION WITH THE ALLOWED COWS ON THIS STAGE
-        List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
+        List<CowSO.UniqueID> uniqueIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000_BlackCow, CowSO.UniqueID.C001_WhiteCow };
         foreach (IndexedCow ic in playableCows)
         {
             if (ic.KnowledgeState > 0)
             {
-                if (ic.ReferenceTemplate.UID != CowSO.UniqueID.C000BlackCow || ic.ReferenceTemplate.UID != CowSO.UniqueID.C001WhiteCow)
+                if (ic.ReferenceTemplate.UID != CowSO.UniqueID.C000_BlackCow || ic.ReferenceTemplate.UID != CowSO.UniqueID.C001_WhiteCow)
                 {
                     uniqueIDs.Add(ic.ReferenceTemplate.UID);
                 }

@@ -10,25 +10,19 @@ public class CowSO : ScriptableObject
     public enum UniqueID
     {
         ANY,
-        C000BlackCow,
-        C001WhiteCow,
-        C002,
-        C003,
-        C004,
-        C005,
-        C006,
-        C007,
-        C008,
+        C000_BlackCow,
+        C001_WhiteCow,
 
-        R000Kowbra,
-        R001PumpCow,
-        R002Cowttleman,
-        R003Scarecow,
+        R000_Kowbra,
+        R001_PumpCow,
+        R002_Cowttleman,
+        R003_Scarecow,
 
-        L000Cowctor,
-        L001Cowgon,
-        L002,
-        L003
+        L000_Cowctor,
+        L001_Cowgon,
+
+        //ADD NEW VALUES HERE IN THE SAME ORDER AS COWS GDD
+
     }
 
     public enum Rarity
@@ -41,7 +35,7 @@ public class CowSO : ScriptableObject
 
     //DATA
     ///UNIQUE ID & ENUMS
-    public UniqueID UID = UniqueID.C000BlackCow;
+    public UniqueID UID = UniqueID.C000_BlackCow;
     public Rarity rarity = Rarity.Common;
 
 

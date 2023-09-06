@@ -107,7 +107,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     private void initializeSpawnProbabilityDictionary()
     {
         //GRANT "MINIMALLY-GRANTED" COWS
-        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
+        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000_BlackCow, CowSO.UniqueID.C001_WhiteCow };
 
         //THE SYSTEM IS INITIALIZED TAKING INTO ACCOUNT THE COWS THAT THE PLAYER HAS UNLOCKED (KNOWN or CAPTURED)
         List<IndexedCow> indexedCows = Cowdex.Instance.GetAllIndexedActualCows();
