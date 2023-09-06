@@ -42,6 +42,7 @@ public class Hideout : MonoBehaviour
     [SerializeField] private float shakeTime;
 
     private bool shake = false;
+    private bool altShake = false;
     private float currentShakeTime;
     private Vector3 hideoutPosition;
 
@@ -89,15 +90,23 @@ public class Hideout : MonoBehaviour
         //HIDEOUT SLOTS LOGIC
         for (int i = 0; i < hideoutSlots.Count; i++)
         {
-            if (!IsUFONear() && hideoutSlots[i].HostedCow != null)
+            if (hideoutSlots[i].HostedCow != null)
             {
                 //TODO: COROUTINE-IFY?
                 hideoutSlots[i].SlotPermanenceTimer -= Time.deltaTime;
 
                 if (hideoutSlots[i].CanSpawn)
                 {
-                    Cow respawnedCow = hideoutSlots[i].Vacate(hideoutPermanenceTimer);
-                    VacateHideout(respawnedCow);
+                    if (IsUFONear())
+                    {
+                        //FORCED SHAKING
+
+                    }
+                    else
+                    {
+                        Cow respawnedCow = hideoutSlots[i].Vacate(hideoutPermanenceTimer);
+                        VacateHideout(respawnedCow);
+                    }
                 }
             }
 
@@ -112,7 +121,8 @@ public class Hideout : MonoBehaviour
         if(myInfos != null) myInfos.UpdateCounter(numberOfHideoutSlots-availSlots, numberOfHideoutSlots);
 
         //ANIMATE SHAKING
-        if (shake) AnimateHideout();
+        if (shake) HideoutShakeHorizontal();
+        else if (altShake) HideoutShakeVertical();
     }
 
 
@@ -176,11 +186,17 @@ public class Hideout : MonoBehaviour
 
 
     //JUICYNESS
-    private void AnimateHideout()
+    private void HideoutShakeHorizontal()
     {
-        hideoutPosition = this.transform.position;
         transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.fixedUnscaledTime * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
     }
+
+    private void HideoutShakeVertical()
+    {
+        //TODO: EVALUATE LESS INTENSE VERTICAL SHAKE AND ONLY UPWARDS SHAKE (NO BELOW GROUND)
+        transform.position = new Vector3(transform.position.x, transform.position.y + Mathf.Sin(Time.fixedUnscaledTime * shakeSpeed) * shakeAmount, transform.position.z);
+    }
+
 
 
     //COROUTINES
