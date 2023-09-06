@@ -186,6 +186,7 @@ public class Hideout : MonoBehaviour
     //COROUTINES
     private IEnumerator ShakeRoutine()
     {
+        Debug.Log("Started Coroutine");
         //FUNCTIONALITIES
         myInfos.HandleHost();
 
@@ -198,6 +199,7 @@ public class Hideout : MonoBehaviour
         //STOP SHAKE
         transform.position = hideoutPosition;
         shake = false;
+        Debug.Log("Ended Coroutine");
     }
 
 

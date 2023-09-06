@@ -115,7 +115,6 @@ public class HideoutInfos : MonoBehaviour
     //COROUTINES
     private IEnumerator HostCowOpacity()
     {
-        Debug.Log("Started Coroutine");
         isHostCowOpaque = true;
 
         //STARTS AT MAX OPACITY
@@ -125,7 +124,6 @@ public class HideoutInfos : MonoBehaviour
         //WAIT
         yield return new WaitForSeconds(hostingShowUpTimer);
 
-        Debug.Log("Ended Coroutine");
         isHostCowOpaque = false;
     }
 
