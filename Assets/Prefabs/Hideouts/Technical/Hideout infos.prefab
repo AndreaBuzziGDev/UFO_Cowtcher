@@ -306,4 +306,4 @@ MonoBehaviour:
   cowLogoPartialFading: 80
   outerDistanceMaxFading: 3.5
   innerDistanceMinFading: 2.5
-  hostingShowUpTimer: 1
+  hostingShowUpTimer: 1.5
