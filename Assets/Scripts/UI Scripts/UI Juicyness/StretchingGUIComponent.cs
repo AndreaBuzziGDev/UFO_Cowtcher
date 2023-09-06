@@ -40,7 +40,7 @@ public class StretchingGUIComponent : MonoBehaviour
     //JUICYNESS
     private void animateStretchingGUI()
     {
-        float horizontalStretchFactor = Mathf.Sin(Time.unscaledTime * horizontalStretchSpeed) * (horizontalStretchPercent / 100);
+        float horizontalStretchFactor = Mathf.Sin(Time.fixedUnscaledTime * horizontalStretchSpeed) * (horizontalStretchPercent / 100);
 
         transform.localScale = new Vector3(
             originalScaleX * (1 + horizontalStretchFactor),
