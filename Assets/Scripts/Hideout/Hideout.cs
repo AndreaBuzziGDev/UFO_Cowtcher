@@ -194,6 +194,9 @@ public class Hideout : MonoBehaviour
             {
                 slot.Host(interestedCow);
                 shake = true;
+
+                myInfos.HandleHost();
+
                 break;
             }
         }

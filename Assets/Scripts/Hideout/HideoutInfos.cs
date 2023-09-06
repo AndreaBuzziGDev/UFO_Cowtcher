@@ -22,6 +22,10 @@ public class HideoutInfos : MonoBehaviour
     [SerializeField] private float outerDistanceMaxFading = 3.5f;
     [SerializeField] private float innerDistanceMinFading = 2.5f;
 
+    //HOSTING TIMER
+    [SerializeField] private float hostingShowUpTimer = 2.5f;
+    private bool isHostCowOpaque;
+
     //FADE COLOR
     private Color cowLogoBaseColor;
     private Color textInfoBaseColor;
@@ -50,6 +54,7 @@ public class HideoutInfos : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    //TODO: THIS EVENTUALLY CAN BE IMPROVED WITH AN EVENT SYSTEM, BUT IT MIGHT IMPLY SOME REWORKS AND SEVERAL TESTS
     public void UpdateCounter(int currentCount, int maxCapacity)
     {
         hideoutCounter.text = currentCount + "/" + maxCapacity;
@@ -59,6 +64,9 @@ public class HideoutInfos : MonoBehaviour
 
 
     //JUICYNESS
+    //INSTANT-OPACITY WHEN NEW HOSTING STARTED
+    public void HandleHost() => StartCoroutine(HostCowOpacity());
+
     //FADING WHEN UFO IS FAR
     private void HandleFading()
     {
@@ -66,15 +74,8 @@ public class HideoutInfos : MonoBehaviour
         float distanceXZ = (GetPositionXZ() - myUFO.GetPositionXZ()).magnitude;
 
         //
-        if (isHosting)
+        if (!isHostCowOpaque)
         {
-            //
-            cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, 1);
-            hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, 1);
-        }
-        else
-        {
-
             if (distanceXZ > outerDistanceMaxFading)
             {
 
@@ -96,11 +97,10 @@ public class HideoutInfos : MonoBehaviour
                 float opacity = 1 - ((baseDistanceDiff - differenceBetweenTwo) / baseDistanceDiff);
 
                 //
-                cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, opacity * (cowLogoPartialFading/ 100));
+                cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, opacity * (cowLogoPartialFading / 100));
                 hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, opacity);
             }
         }
-
     }
 
 
@@ -109,6 +109,24 @@ public class HideoutInfos : MonoBehaviour
     public Vector3 GetPositionXZ()
     {
         return new Vector3(this.transform.position.x, 0, this.transform.position.z);
+    }
+
+
+    //COROUTINES
+    private IEnumerator HostCowOpacity()
+    {
+        Debug.Log("Started Coroutine");
+        isHostCowOpaque = true;
+
+        //STARTS AT MAX OPACITY
+        cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, 1);
+        hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, 1);
+
+        //WAITS
+        yield return new WaitForSeconds(hostingShowUpTimer);
+
+        Debug.Log("Ended Coroutine");
+        isHostCowOpaque = false;
     }
 
 }
