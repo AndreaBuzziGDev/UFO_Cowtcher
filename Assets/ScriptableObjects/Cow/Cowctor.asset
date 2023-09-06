@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: Cowctor
   m_EditorClassIdentifier: 
-  UID: 14
+  UID: 7
   rarity: 2
   CowName: Cowctor
   Description: "This one looks really cool. Be careful, when it goes in one direction
