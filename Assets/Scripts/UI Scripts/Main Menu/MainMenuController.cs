@@ -58,6 +58,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     {
         InitializeImportantPrefabs();
         InitializeGUI();
+        Time.timeScale = 1;
     }
 
     ///IMPORTANT PREFAB INITIALIZATION
