@@ -40,10 +40,10 @@ public class Hideout : MonoBehaviour
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
     [SerializeField] private float shakeTime;
+    [SerializeField] private float altShakeTime;
 
     private bool shake = false;
     private bool altShake = false;
-    private float currentShakeTime;
     private Vector3 hideoutPosition;
 
 
@@ -99,8 +99,8 @@ public class Hideout : MonoBehaviour
                 {
                     if (IsUFONear())
                     {
-                        //FORCED SHAKING
-
+                        //ALTERNATIVE SHAKING
+                        if(!altShake) StartCoroutine(AltShakeRoutine());
                     }
                     else
                     {
@@ -200,9 +200,9 @@ public class Hideout : MonoBehaviour
 
 
     //COROUTINES
+    ///HORIZONTAL SHAKE WHEN A NEW COW IS HOSTED
     private IEnumerator ShakeRoutine()
     {
-        Debug.Log("Started Coroutine");
         //FUNCTIONALITIES
         myInfos.HandleHost();
 
@@ -215,13 +215,29 @@ public class Hideout : MonoBehaviour
         //STOP SHAKE
         transform.position = hideoutPosition;
         shake = false;
-        Debug.Log("Ended Coroutine");
+    }
+
+    ///VERTICAL SHAKE WHEN A COW IS AFRAID OF GOING OUTSIDE
+    private IEnumerator AltShakeRoutine()
+    {
+        //SHAKE
+        altShake = true;
+
+        //WAIT
+        yield return new WaitForSeconds(altShakeTime);
+
+        //STOP SHAKE
+        transform.position = hideoutPosition;
+        altShake = false;
     }
 
 
-        //DEBUGGING & TOOLING
+
+
+
+    //DEBUGGING & TOOLING
 #if UNITY_EDITOR
-        private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
 
