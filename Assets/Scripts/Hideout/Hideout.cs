@@ -207,7 +207,7 @@ public class Hideout : MonoBehaviour
     private void AnimateHideout()
     {
         hideoutPosition = this.transform.position;
-        transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.fixedUnscaledTime * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
     }
 
 
