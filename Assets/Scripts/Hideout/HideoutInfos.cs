@@ -122,7 +122,7 @@ public class HideoutInfos : MonoBehaviour
         cowLogo.color = new Color(cowLogoBaseColor.r, cowLogoBaseColor.g, cowLogoBaseColor.b, 1);
         hideoutCounter.color = new Color(textInfoBaseColor.r, textInfoBaseColor.g, textInfoBaseColor.b, 1);
 
-        //WAITS
+        //WAIT
         yield return new WaitForSeconds(hostingShowUpTimer);
 
         Debug.Log("Ended Coroutine");

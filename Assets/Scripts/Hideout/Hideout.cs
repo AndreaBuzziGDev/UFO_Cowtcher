@@ -64,7 +64,6 @@ public class Hideout : MonoBehaviour
         InitalizeHideoutSlots();
 
         //SETTING SHAKING
-        currentShakeTime = shakeTime;
         hideoutPosition = this.transform.position;
 
         //
@@ -83,24 +82,22 @@ public class Hideout : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         int availSlots = 0;
 
-        //TODO: EXPORT AS DEDICATED FUNCTIONALITY (updateHideoutSlot Timers and Statuses)
-        ufoDistanceXZ = new Vector3(playerUFO.transform.position.x, 0, playerUFO.transform.position.z);
+        ufoDistanceXZ = playerUFO.GetPositionXZ();
 
         //HIDEOUT SLOTS LOGIC
         for (int i = 0; i < hideoutSlots.Count; i++)
         {
             if (!IsUFONear() && hideoutSlots[i].HostedCow != null)
             {
+                //TODO: COROUTINE-IFY?
                 hideoutSlots[i].SlotPermanenceTimer -= Time.deltaTime;
 
                 if (hideoutSlots[i].CanSpawn)
                 {
                     Cow respawnedCow = hideoutSlots[i].Vacate(hideoutPermanenceTimer);
                     VacateHideout(respawnedCow);
-
                 }
             }
 
@@ -114,23 +111,8 @@ public class Hideout : MonoBehaviour
         //UPDATE INFOS
         if(myInfos != null) myInfos.UpdateCounter(numberOfHideoutSlots-availSlots, numberOfHideoutSlots);
 
-
-
-
-        //TODO: THIS CAN BE EXPORTED IN A METHOD
-        if (shake)
-        {
-            currentShakeTime -= Time.deltaTime;
-            AnimateHideout();
-        }
-
-        if (currentShakeTime <= 0)
-        {
-            currentShakeTime = shakeTime;
-            shake = false;
-            transform.position = hideoutPosition;
-        }
-
+        //ANIMATE SHAKING
+        if (shake) AnimateHideout();
     }
 
 
@@ -139,15 +121,8 @@ public class Hideout : MonoBehaviour
     //INITIALIZATION
     private void InitalizeHideoutSlots()
     {
-        for (int i = 0; i < numberOfHideoutSlots; i++)
-        {
-            hideoutSlots.Add(new HideoutSlot());
-        }
-
-        for (int i = 0; i < hideoutSlots.Count; i++)
-        {
-            hideoutSlots[i].SlotPermanenceTimer = hideoutPermanenceTimer;
-        }
+        for (int i = 0; i < numberOfHideoutSlots; i++) hideoutSlots.Add(new HideoutSlot());
+        for (int i = 0; i < hideoutSlots.Count; i++) hideoutSlots[i].SlotPermanenceTimer = hideoutPermanenceTimer;
     }
 
 
@@ -193,10 +168,7 @@ public class Hideout : MonoBehaviour
             if (!slot.IsHosting)
             {
                 slot.Host(interestedCow);
-                shake = true;
-
-                myInfos.HandleHost();
-
+                StartCoroutine(ShakeRoutine());
                 break;
             }
         }
@@ -211,10 +183,27 @@ public class Hideout : MonoBehaviour
     }
 
 
+    //COROUTINES
+    private IEnumerator ShakeRoutine()
+    {
+        //FUNCTIONALITIES
+        myInfos.HandleHost();
 
-    //DEBUGGING & TOOLING
+        //SHAKE
+        shake = true;
+
+        //WAIT
+        yield return new WaitForSeconds(shakeTime);
+
+        //STOP SHAKE
+        transform.position = hideoutPosition;
+        shake = false;
+    }
+
+
+        //DEBUGGING & TOOLING
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
+        private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
 
