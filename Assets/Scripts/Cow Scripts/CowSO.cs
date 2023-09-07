@@ -9,26 +9,59 @@ public class CowSO : ScriptableObject
     //NB: "ANY" RESERVED FOR APPLICATIONS THAT DO NOT NEED SPECIFYING A COW (LIKE NON-SPECIFIC RITUALS)
     public enum UniqueID
     {
+        //UNUSED
         ANY,
-        C000BlackCow,
-        C001WhiteCow,
-        C002,
-        C003,
-        C004,
-        C005,
-        C006,
-        C007,
-        C008,
 
-        R000Kowbra,
-        R001PumpCow,
-        R002Cowttleman,
-        R003Scarecow,
+        //FARM
+        C000_BlackCow,
+        C001_WhiteCow,
 
-        L000Cowctor,
-        L001Cowgon,
-        L002,
-        L003
+        R000_Kowbra,
+        R001_PumpCow,
+        R002_Cowttleman,
+        R003_Scarecow,
+
+        L000_Cowctor,
+        L001_Cowgon,
+
+
+        //BEACH
+        C002_Cowcktail,
+        C003_Cowst,
+
+        R004_Hippocowmp,
+        R005_Hermitcow,
+        R006_Cowloon,
+        R007_Sharkow,
+
+        L002_Cowhtulhu,
+        L003_Flying_Cowtchman,
+
+
+        //MOUNTAIN
+        C004_Skow,
+        C005_Cowld,
+
+        R008_Ice_Cowm,
+        R009_Cowdolf,
+        R010_Cownguin,
+        R011_Cowflake,
+
+        L004_Santa_Cows,
+        L005_Cowalanche,
+
+
+        //FANTASY
+        C006_Cowvalier,
+        C007_Abracowdabra,
+
+        R012_Linkow,
+        R013_Super_Cowrio,
+        R014_Unicowrn,
+        R015_Kowtos,
+
+        L006_Cowre_Trainer,
+        L007_Cowron
     }
 
     public enum Rarity
@@ -41,7 +74,7 @@ public class CowSO : ScriptableObject
 
     //DATA
     ///UNIQUE ID & ENUMS
-    public UniqueID UID = UniqueID.C000BlackCow;
+    public UniqueID UID = UniqueID.C000_BlackCow;
     public Rarity rarity = Rarity.Common;
 
 

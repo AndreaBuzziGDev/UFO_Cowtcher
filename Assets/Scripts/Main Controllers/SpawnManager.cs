@@ -78,8 +78,8 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         SpawnManagerCow.Instance.Initialization();
 
-        initializeCowCount();
-        initializeSpawnProbabilityDictionary();
+        InitializeCowCount();
+        InitializeSpawnProbabilityDictionary();
 
         initializeAllSpawnPoints();
         MakeDictionarySpawnPoints();
@@ -89,7 +89,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     ///MAIN INITIALIZATION
     ///COW TRACKING INITIALIZATION
-    private void initializeCowCount()
+    private void InitializeCowCount()
     {
         List<Cow> cows = FindObjectsOfType<Cow>().ToList();
         currentNumOfCows = cows.Count;
@@ -104,10 +104,10 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
 
     ///INITIALIZE SPAWN PROBABILITY DICTIONARY
-    private void initializeSpawnProbabilityDictionary()
+    private void InitializeSpawnProbabilityDictionary()
     {
         //GRANT "MINIMALLY-GRANTED" COWS
-        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID> { CowSO.UniqueID.C000BlackCow, CowSO.UniqueID.C001WhiteCow };
+        List<CowSO.UniqueID> UIDs = new List<CowSO.UniqueID>();
 
         //THE SYSTEM IS INITIALIZED TAKING INTO ACCOUNT THE COWS THAT THE PLAYER HAS UNLOCKED (KNOWN or CAPTURED)
         List<IndexedCow> indexedCows = Cowdex.Instance.GetAllIndexedActualCows();
@@ -126,7 +126,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
         //PREPARING DATA STRUCTURES
         TrackSpawnProbability(UIDs);
-
     }
 
 

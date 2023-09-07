@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: Pumpcow
   m_EditorClassIdentifier: 
-  UID: 11
+  UID: 4
   rarity: 1
   CowName: Pumpcow
   Description: "No one has ever seen a baby Pumpcow grow, who knows if it can be

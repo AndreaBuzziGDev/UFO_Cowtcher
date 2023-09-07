@@ -17,7 +17,7 @@ public class HooveringGUIComponent : MonoBehaviour
     //...
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         AnimateHooveringUFO();
     }
@@ -27,6 +27,7 @@ public class HooveringGUIComponent : MonoBehaviour
     //JUICYNESS
     private void AnimateHooveringUFO()
     {
+        //TODO: USE SMOOTHDAMP SOLUTION INSTEAD?
 
         transform.position = new Vector3(
             transform.position.x,

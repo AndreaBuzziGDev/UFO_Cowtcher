@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: Cowttleman
   m_EditorClassIdentifier: 
-  UID: 12
+  UID: 5
   rarity: 1
   CowName: Cowttleman
   Description: "Even on this planet you have to work but it\u2019s strange that a

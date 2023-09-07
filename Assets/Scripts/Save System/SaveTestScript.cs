@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaveTestScript : MonoBehaviour
 {
     //DATA
-    [SerializeField] private CowSO.UniqueID testCowUID = CowSO.UniqueID.C002;
+    [SerializeField] private CowSO.UniqueID testCowUID = CowSO.UniqueID.R000_Kowbra;
     [SerializeField] private string testStageName = "Stage 3";
 
 

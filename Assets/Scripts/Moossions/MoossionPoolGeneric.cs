@@ -6,7 +6,7 @@ public class MoossionPoolGeneric
 {
     //DATA
     ///TEST DATA
-    private static CowSO.UniqueID testCowUID = CowSO.UniqueID.C000BlackCow;
+    private static CowSO.UniqueID testCowUID = CowSO.UniqueID.C000_BlackCow;
 
     //METHODS
     //...
@@ -76,14 +76,14 @@ public class MoossionPoolGeneric
     public static Moossion Moossion4()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), CowSO.UniqueID.C001WhiteCow);
+        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), CowSO.UniqueID.C001_WhiteCow);
 
         return mooss;
     }
     public static Moossion Moossion5()
     {
         //CONFIGURE
-        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), CowSO.UniqueID.C000BlackCow);
+        Moossion mooss = new MoossCaptSpecific(Moossion.Type.CaptureSpecific, Moossion.GetRandomTargetQuantity(Moossion.Type.CaptureSpecific), CowSO.UniqueID.C000_BlackCow);
 
         return mooss;
     }
