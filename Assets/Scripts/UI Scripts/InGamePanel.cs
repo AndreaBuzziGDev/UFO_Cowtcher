@@ -12,6 +12,9 @@ public class InGamePanel : MonoBehaviour
     [SerializeField] private ScoreBar highScoreBar;
     public ScoreBar HighScoreBar { get { return highScoreBar; } }
 
+    [SerializeField] private RectTransform fuelBitTarget;
+    public RectTransform FuelBitTarget { get {  return fuelBitTarget; } }
+
     [SerializeField] private BuffPanel buffPanel;
     [SerializeField] private BuffPanel debuffPanel;
     [SerializeField] private BuffPanel ritualPanel;
