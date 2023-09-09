@@ -31,7 +31,7 @@ public class HooveringGUIComponent : MonoBehaviour
 
         transform.position = new Vector3(
             transform.position.x,
-            transform.position.y + Mathf.Sin(Time.fixedUnscaledTime * shakeSpeed) * shakeAmount,
+            transform.position.y + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount,
             transform.position.z
             );
 
