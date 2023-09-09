@@ -60,21 +60,14 @@ public class Fence : MonoBehaviour
 
     public bool GetTurningFactor(CowMovement approachingCowMovement)
     {
-        //TODO: INTRODUCE A "MODULATOR" TO ALLOW SOME MARGIN TO DETERMINE WETHER THE UFO IS CLOSER THAN COW OR NOT
-        Vector3 ufoPos = GameController.Instance.FindUFOAnywhere().transform.position;
-        Vector3 vectorUFO = new Vector3(ufoPos.x, 0, ufoPos.z);
+        Vector3 vectorUFO = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
         float distanceFenceUFO = (transform.position - vectorUFO).magnitude;
 
         bool isUFOWithinDistance = distanceFenceUFO < outerTurnDistance;
         if (isUFOWithinDistance)
         {
-            float distanceFenceCow = (this.transform.position - approachingCowMovement.transform.position).magnitude;
-            bool isCowWithinDistance = (distanceFenceCow + cowBonusOffset < outerTurnDistance);
-
-            bool isUFOCloserThanCow = (distanceFenceCow + cowBonusOffset > distanceFenceUFO);
-
-            return (isCowWithinDistance && !isUFOCloserThanCow);
-            //return isCowWithinDistance;
+            float distanceFenceCow = (transform.position - approachingCowMovement.transform.position).magnitude;
+            return (distanceFenceCow + cowBonusOffset < outerTurnDistance);
         }
         else
         {
