@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: Flying Cowtchman
   m_EditorClassIdentifier: 
-  UID: 8
+  UID: 16
   rarity: 2
-  CowName: Cowgon
-  Description: "I\u2019ve never seen something like this, on this planet, before.
-    Who knows what brought it here, maybe something magic?\r"
+  CowName: Flying Cowtchman
+  Description: "You start to feel shivers on your back every time you see it, maybe
+    you will be haunted?\r"
   spawnProbability: 20
   spawnChanceTally: 2
   FuelRecoveryAmount: 5
@@ -34,4 +34,4 @@ MonoBehaviour:
   associatedAsteroid: {fileID: 0}
   SummoningRitual: {fileID: 0}
   FavouriteHideoutTypes: 
-  AllowedSpawnPointTypes: 04000000
+  AllowedSpawnPointTypes: 00000000
