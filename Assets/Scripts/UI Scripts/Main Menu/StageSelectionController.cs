@@ -14,7 +14,6 @@ public class StageSelectionController : MonoBehaviour
     ///GUI REFERENCES
     [SerializeField] private Image scenePreview;
 
-    [SerializeField] private Button buttonTutorial;
     [SerializeField] private Button buttonStage1;
     [SerializeField] private Button buttonStage2;
     [SerializeField] private Button buttonStage3;

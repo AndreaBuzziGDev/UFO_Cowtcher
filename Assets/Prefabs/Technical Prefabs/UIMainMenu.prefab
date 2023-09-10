@@ -1855,6 +1855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuCanvas: {fileID: 5806489727003370524}
   StageSelectCanvas: {fileID: 2352505462292243640}
+  TutorialsCanvas: {fileID: 1080969127599685391}
   GarageCanvas: {fileID: 3429600480413757714}
   CowdexCanvas: {fileID: 4438732651385129772}
   OptionsCanvas: {fileID: 4094442925116974205}
