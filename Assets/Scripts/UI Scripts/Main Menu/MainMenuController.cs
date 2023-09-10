@@ -22,7 +22,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     [SerializeField] private Canvas MainMenuCanvas;
     [SerializeField] private Canvas StageSelectCanvas;
     [SerializeField] private Canvas TutorialsCanvas;
-    [SerializeField] private Canvas GarageCanvas;
+    [SerializeField] private Canvas StatsCanvas;
     [SerializeField] private Canvas CowdexCanvas;
     [SerializeField] private Canvas OptionsCanvas;
 
@@ -84,7 +84,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
             MainMenuCanvas, 
             StageSelectCanvas, 
             TutorialsCanvas, 
-            GarageCanvas, 
+            StatsCanvas, 
             CowdexCanvas, 
             OptionsCanvas 
         };
@@ -120,7 +120,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
                 break;
             case eMainMenuCanvas.Garage:
                 //GARAGE
-                GarageCanvas.gameObject.SetActive(true);
+                StatsCanvas.gameObject.SetActive(true);
                 break;
             case eMainMenuCanvas.Cowdex:
                 //COWDEX
