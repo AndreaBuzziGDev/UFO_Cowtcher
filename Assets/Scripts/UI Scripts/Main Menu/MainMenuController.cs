@@ -10,6 +10,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     {
         Main,
         StageSelect,
+        Tutorials,
         Garage,
         Cowdex,
         Options,
@@ -20,8 +21,9 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     //DATA
     [SerializeField] private Canvas MainMenuCanvas;
     [SerializeField] private Canvas StageSelectCanvas;
+    [SerializeField] private Canvas TutorialsCanvas;
     [SerializeField] private Canvas GarageCanvas;
-    [SerializeField] private Canvas CowdexCanvas;//TODO: CONNECT IN THE GUI
+    [SerializeField] private Canvas CowdexCanvas;
     [SerializeField] private Canvas OptionsCanvas;
 
     private List<Canvas> allCanvas = new();
@@ -78,7 +80,14 @@ public class MainMenuController : MonoSingleton<MainMenuController>
 
     private void BuildAllCanvas()
     {
-        allCanvas = new List<Canvas> { MainMenuCanvas, StageSelectCanvas, GarageCanvas, CowdexCanvas, OptionsCanvas };
+        allCanvas = new List<Canvas> { 
+            MainMenuCanvas, 
+            StageSelectCanvas, 
+            TutorialsCanvas, 
+            GarageCanvas, 
+            CowdexCanvas, 
+            OptionsCanvas 
+        };
     }
 
     private void DisableAllCanvas() 
@@ -104,6 +113,10 @@ public class MainMenuController : MonoSingleton<MainMenuController>
             case eMainMenuCanvas.StageSelect:
                 //STAGE SELECT
                 StageSelectCanvas.gameObject.SetActive(true);
+                break;
+            case eMainMenuCanvas.Tutorials:
+                //STAGE SELECT
+                TutorialsCanvas.gameObject.SetActive(true);
                 break;
             case eMainMenuCanvas.Garage:
                 //GARAGE
