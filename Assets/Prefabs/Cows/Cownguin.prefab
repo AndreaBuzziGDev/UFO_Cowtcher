@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8568331000911921527
+--- !u!1001 &3588766991496695945
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -55,15 +55,15 @@ PrefabInstance:
     - target: {fileID: 2625790151766469665, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 94f0cd549fedf0748bc05c3841135230, type: 3}
+      objectReference: {fileID: 21300000, guid: 8a97ebb9c5921b74dabf38a3e8b20c1a, type: 3}
     - target: {fileID: 5259244113235226185, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
       propertyPath: m_Name
-      value: Cowld
+      value: Cownguin
       objectReference: {fileID: 0}
     - target: {fileID: 6923396806548110374, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
       propertyPath: cowTemplate
       value: 
-      objectReference: {fileID: 11400000, guid: b8d714b08f0483a4598a8b37e41e1706, type: 2}
+      objectReference: {fileID: 11400000, guid: 3c130d8833f4d33458f8801d4863805a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
