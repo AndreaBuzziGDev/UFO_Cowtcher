@@ -1835,7 +1835,7 @@ MonoBehaviour:
   MainMenuCanvas: {fileID: 5806489727003370524}
   StageSelectCanvas: {fileID: 2352505462292243640}
   TutorialsCanvas: {fileID: 1080969127599685391}
-  GarageCanvas: {fileID: 3429600480413757714}
+  StatsCanvas: {fileID: 3429600480413757714}
   CowdexCanvas: {fileID: 4438732651385129772}
   OptionsCanvas: {fileID: 4094442925116974205}
 --- !u!1 &2010108994979764375
@@ -2668,7 +2668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTargetCanvas: 4
+  myTargetCanvas: 5
 --- !u!1 &2475886934893265484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3352,7 +3352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTargetCanvas: 5
+  myTargetCanvas: 6
 --- !u!1 &3513365268842042928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,7 +3499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTargetCanvas: 2
+  myTargetCanvas: 3
 --- !u!1 &3832118249776788332
 GameObject:
   m_ObjectHideFlags: 0
@@ -7404,7 +7404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b11fc5fe43a7e64f82e443440fbdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTargetCanvas: 3
+  myTargetCanvas: 4
 --- !u!1 &8179912344865188988
 GameObject:
   m_ObjectHideFlags: 0

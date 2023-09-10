@@ -11,7 +11,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
         Main,
         StageSelect,
         Tutorials,
-        Garage,
+        Stats,
         Cowdex,
         Options,
         Quit
@@ -118,7 +118,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
                 //STAGE SELECT
                 TutorialsCanvas.gameObject.SetActive(true);
                 break;
-            case eMainMenuCanvas.Garage:
+            case eMainMenuCanvas.Stats:
                 //GARAGE
                 StatsCanvas.gameObject.SetActive(true);
                 break;
