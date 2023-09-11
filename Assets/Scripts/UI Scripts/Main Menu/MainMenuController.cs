@@ -10,7 +10,8 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     {
         Main,
         StageSelect,
-        Garage,
+        Tutorials,
+        Stats,
         Cowdex,
         Options,
         Quit
@@ -20,8 +21,9 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     //DATA
     [SerializeField] private Canvas MainMenuCanvas;
     [SerializeField] private Canvas StageSelectCanvas;
-    [SerializeField] private Canvas GarageCanvas;
-    [SerializeField] private Canvas CowdexCanvas;//TODO: CONNECT IN THE GUI
+    [SerializeField] private Canvas TutorialsCanvas;
+    [SerializeField] private Canvas StatsCanvas;
+    [SerializeField] private Canvas CowdexCanvas;
     [SerializeField] private Canvas OptionsCanvas;
 
     private List<Canvas> allCanvas = new();
@@ -58,6 +60,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
     {
         InitializeImportantPrefabs();
         InitializeGUI();
+        Time.timeScale = 1;
     }
 
     ///IMPORTANT PREFAB INITIALIZATION
@@ -77,7 +80,14 @@ public class MainMenuController : MonoSingleton<MainMenuController>
 
     private void BuildAllCanvas()
     {
-        allCanvas = new List<Canvas> { MainMenuCanvas, StageSelectCanvas, GarageCanvas, CowdexCanvas, OptionsCanvas };
+        allCanvas = new List<Canvas> { 
+            MainMenuCanvas, 
+            StageSelectCanvas, 
+            TutorialsCanvas, 
+            StatsCanvas, 
+            CowdexCanvas, 
+            OptionsCanvas 
+        };
     }
 
     private void DisableAllCanvas() 
@@ -104,9 +114,13 @@ public class MainMenuController : MonoSingleton<MainMenuController>
                 //STAGE SELECT
                 StageSelectCanvas.gameObject.SetActive(true);
                 break;
-            case eMainMenuCanvas.Garage:
+            case eMainMenuCanvas.Tutorials:
+                //STAGE SELECT
+                TutorialsCanvas.gameObject.SetActive(true);
+                break;
+            case eMainMenuCanvas.Stats:
                 //GARAGE
-                GarageCanvas.gameObject.SetActive(true);
+                StatsCanvas.gameObject.SetActive(true);
                 break;
             case eMainMenuCanvas.Cowdex:
                 //COWDEX

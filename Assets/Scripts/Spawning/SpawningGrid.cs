@@ -71,10 +71,6 @@ public class SpawningGrid : MonoSingleton<SpawningGrid>
         int randomX = (int)Random.Range(southWest.transform.position.x, northEast.transform.position.x);
         int randomZ = (int)Random.Range(southWest.transform.position.z, northEast.transform.position.z);
 
-        Debug.Log("SpawningGrid - randomX: " + randomX);
-        Debug.Log("SpawningGrid - randomZ: " + randomZ);
-
-
         return new Vector3(randomX, 0, randomZ);
     }
 

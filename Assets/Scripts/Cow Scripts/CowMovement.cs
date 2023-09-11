@@ -152,36 +152,19 @@ public class CowMovement : MonoBehaviour
         if (myCow.IsCalm) mySpeed = speedCalm;
         else mySpeed = speedAlert;
 
-        //VARIANT - REFLECTED DIRECTION
-        /*
-        //TURNING
-        Vector3 reflectedDirection = movementDirection;
-        if (IsReflectingAgainstFence())
-        {
-            //LAST FORWARD VECTOR (HANDLING CORNERS OF THE MAP)
-            reflectedDirection = Vector3.Reflect(movementDirection, closestFence.transform.forward);
-
-            if (previousFenceNormal != closestFence.transform.forward)
-            {
-                reflectedDirection = Vector3.Reflect(reflectedDirection, previousFenceNormal);
-            }
-        }
-
-        //GLOBAL SPEED MULTIPLIER
-        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * reflectedDirection;
-        */
-
         //VARIANT - RUN TOWARDS THE CENTER OF THE SPAWNING GRID
-        Vector3 centeredDirection = movementDirection;
-        if (IsReflectingAgainstFence())
+        Vector3 intendedDirection = movementDirection;
+
+        //TODO: UPGRADE FOR SPECIAL COWS THAT CHASE THE PLAYER NO MATTER WHAT
+        if (IsReflectingAgainstFence() && myCow.CowTemplate.UID != CowSO.UniqueID.R003_Scarecow)
         {
             Vector3 diff = SpawningGrid.Instance.Center() - this.transform.position;
-            centeredDirection = (new Vector3(diff.x, 0, diff.z)).normalized;
+            intendedDirection = (new Vector3(diff.x, 0, diff.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
         }
 
 
         //GLOBAL SPEED MULTIPLIER
-        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * centeredDirection;
+        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
 
     }
     

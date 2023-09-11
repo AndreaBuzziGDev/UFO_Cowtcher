@@ -8,6 +8,10 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
 {
     //DATA
 
+    ///
+    [SerializeField] private bool allowAllCows = false;
+    public bool AllowAllCows { get { return allowAllCows; } }
+
     ///ALLOWED COW TYPES
     [SerializeField] private List<CowSO.UniqueID> allowedCowIDs = new();
     public List<CowSO.UniqueID> AllowedCowIDs { get { return allowedCowIDs; } }
@@ -34,16 +38,20 @@ public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
     //INITIALIZATION
     public void Initialization()
     {
-        allowedCowIDs = GetAllowedCowsForMyScene().AllowedCowsUIDList;
+        Debug.Log("SpawnManagerCow - All Cows Allowed: " + allowAllCows);
+
+        AllowedCowsSO allowedCows = GetAllowedCowsForMyScene();
+        if (allowedCows != null) allowedCowIDs = allowedCows.AllowedCowsUIDList;
+        else Debug.Log("SpawnManagerCow - Empty filter.");
     }
 
 
     //FUNCTIONALITY
-    public AllowedCowsSO GetAllowedCowsForMyScene()
+    private AllowedCowsSO GetAllowedCowsForMyScene()
     {
         return GetMatchingAllowedCows(SceneManager.GetActiveScene().name);
     }
-    public AllowedCowsSO GetMatchingAllowedCows(string sceneName)
+    private AllowedCowsSO GetMatchingAllowedCows(string sceneName)
     {
 
         return sceneName switch

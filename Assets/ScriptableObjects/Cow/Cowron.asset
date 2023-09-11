@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
+  m_Name: Cowron
+  m_EditorClassIdentifier: 
+  UID: 32
+  rarity: 2
+  CowName: Cowron
+  Description: "A terrifying being who managed to find the only ring. It is said
+    that he used to be good but was corrupted\r"
+  spawnProbability: 20
+  spawnChanceTally: 2
+  FuelRecoveryAmount: 5
+  AlertRadius: 6
+  SpeedCalm: 7
+  SpeedAlert: 5
+  Score: 100
+  TimerAlertToCalm: 30
+  TimerAlertToPanic: 10
+  TimerRespawn: 100
+  movPatternCalm: {fileID: 11400000, guid: 2c10789586a038c418beaadb0a361797, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: 4330d5b1210ce76419d3002d1517b1b0, type: 2}
+  effect: 
+  InstantlyDeployedItemPickup: {fileID: 0}
+  associatedAsteroid: {fileID: 0}
+  SummoningRitual: {fileID: 0}
+  FavouriteHideoutTypes: 
+  AllowedSpawnPointTypes: 04000000

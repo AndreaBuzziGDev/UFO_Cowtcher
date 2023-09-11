@@ -22,11 +22,12 @@ public class HooveringGUIComponent : MonoBehaviour
         AnimateHooveringUFO();
     }
 
-
+    //TODO: FIX: THIS MUST FLUCTUATE AROUND THE STARTING POINT! RECORD INITIAL POSITION.
 
     //JUICYNESS
     private void AnimateHooveringUFO()
     {
+        //TODO: USE SMOOTHDAMP SOLUTION INSTEAD?
 
         transform.position = new Vector3(
             transform.position.x,

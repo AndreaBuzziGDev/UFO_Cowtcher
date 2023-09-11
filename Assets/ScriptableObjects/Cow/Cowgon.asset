@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: Cowgon
   m_EditorClassIdentifier: 
-  UID: 15
+  UID: 8
   rarity: 2
   CowName: Cowgon
   Description: "I\u2019ve never seen something like this, on this planet, before.

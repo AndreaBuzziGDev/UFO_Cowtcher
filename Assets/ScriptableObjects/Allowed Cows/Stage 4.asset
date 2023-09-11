@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7ca05c130854f409cea994e7f51071, type: 3}
   m_Name: Stage 4
   m_EditorClassIdentifier: 
-  allowedCowsUIDList: 0100000002000000
+  allowedCowsUIDList: 190000001a0000001b0000001c0000001d0000001e0000001f00000020000000

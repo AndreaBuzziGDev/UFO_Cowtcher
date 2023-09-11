@@ -45,7 +45,7 @@ public class ProgressionSystem
                 break;
         }
 
-        if (myProgression != null)
+        if (myProgression != null && SceneNavigationController.Instance != null)
         {
             //GET LEVEL
             string stageName = SceneNavigationController.Instance.GetAssociatedName(intendedScene);

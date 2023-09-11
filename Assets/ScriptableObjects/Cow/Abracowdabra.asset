@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
+  m_Name: Abracowdabra
+  m_EditorClassIdentifier: 
+  UID: 26
+  rarity: 0
+  CowName: Abracowdabra
+  Description: This cow probably survived an unpleasant event when it was little
+    and this bring it to become a magician, but now you captured
+  spawnProbability: 50
+  spawnChanceTally: 25
+  FuelRecoveryAmount: 2
+  AlertRadius: 4
+  SpeedCalm: 2
+  SpeedAlert: 3
+  Score: 10
+  TimerAlertToCalm: 3
+  TimerAlertToPanic: 2
+  TimerRespawn: 5
+  movPatternCalm: {fileID: 11400000, guid: 5ee150804550d4d4aa388ba26fa8cae2, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: 6d65614ce7d3db34691ec04853afd574, type: 2}
+  effect: 
+  InstantlyDeployedItemPickup: {fileID: 0}
+  associatedAsteroid: {fileID: 0}
+  SummoningRitual: {fileID: 0}
+  FavouriteHideoutTypes: 02000000
+  AllowedSpawnPointTypes: 03000000

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
   m_Name: ScareCow
   m_EditorClassIdentifier: 
-  UID: 13
+  UID: 6
   rarity: 1
   CowName: Scarecow
   Description: "I don\u2019t know if for you it\u2019s the same but this thing it\u2019s

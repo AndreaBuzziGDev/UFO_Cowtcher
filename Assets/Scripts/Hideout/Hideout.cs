@@ -40,9 +40,10 @@ public class Hideout : MonoBehaviour
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
     [SerializeField] private float shakeTime;
+    [SerializeField] private float altShakeTime;
 
     private bool shake = false;
-    private float currentShakeTime;
+    private bool altShake = false;
     private Vector3 hideoutPosition;
 
 
@@ -64,7 +65,6 @@ public class Hideout : MonoBehaviour
         InitalizeHideoutSlots();
 
         //SETTING SHAKING
-        currentShakeTime = shakeTime;
         hideoutPosition = this.transform.position;
 
         //
@@ -81,26 +81,32 @@ public class Hideout : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
         int availSlots = 0;
 
-        //TODO: EXPORT AS DEDICATED FUNCTIONALITY (updateHideoutSlot Timers and Statuses)
-        ufoDistanceXZ = new Vector3(playerUFO.transform.position.x, 0, playerUFO.transform.position.z);
+        ufoDistanceXZ = playerUFO.GetPositionXZ();
 
         //HIDEOUT SLOTS LOGIC
         for (int i = 0; i < hideoutSlots.Count; i++)
         {
-            if (!IsUFONear() && hideoutSlots[i].HostedCow != null)
+            if (hideoutSlots[i].HostedCow != null)
             {
+                //TODO: COROUTINE-IFY?
                 hideoutSlots[i].SlotPermanenceTimer -= Time.deltaTime;
 
                 if (hideoutSlots[i].CanSpawn)
                 {
-                    Cow respawnedCow = hideoutSlots[i].Vacate(hideoutPermanenceTimer);
-                    VacateHideout(respawnedCow);
-
+                    if (IsUFONear())
+                    {
+                        //ALTERNATIVE SHAKING
+                        if(!altShake) StartCoroutine(AltShakeRoutine());
+                    }
+                    else
+                    {
+                        Cow respawnedCow = hideoutSlots[i].Vacate(hideoutPermanenceTimer);
+                        VacateHideout(respawnedCow);
+                    }
                 }
             }
 
@@ -114,23 +120,9 @@ public class Hideout : MonoBehaviour
         //UPDATE INFOS
         if(myInfos != null) myInfos.UpdateCounter(numberOfHideoutSlots-availSlots, numberOfHideoutSlots);
 
-
-
-
-        //TODO: THIS CAN BE EXPORTED IN A METHOD
-        if (shake)
-        {
-            currentShakeTime -= Time.deltaTime;
-            AnimateHideout();
-        }
-
-        if (currentShakeTime <= 0)
-        {
-            currentShakeTime = shakeTime;
-            shake = false;
-            transform.position = hideoutPosition;
-        }
-
+        //ANIMATE SHAKING
+        if (shake) HideoutShakeHorizontal();
+        else if (altShake) HideoutShakeVertical();
     }
 
 
@@ -139,15 +131,8 @@ public class Hideout : MonoBehaviour
     //INITIALIZATION
     private void InitalizeHideoutSlots()
     {
-        for (int i = 0; i < numberOfHideoutSlots; i++)
-        {
-            hideoutSlots.Add(new HideoutSlot());
-        }
-
-        for (int i = 0; i < hideoutSlots.Count; i++)
-        {
-            hideoutSlots[i].SlotPermanenceTimer = hideoutPermanenceTimer;
-        }
+        for (int i = 0; i < numberOfHideoutSlots; i++) hideoutSlots.Add(new HideoutSlot());
+        for (int i = 0; i < hideoutSlots.Count; i++) hideoutSlots[i].SlotPermanenceTimer = hideoutPermanenceTimer;
     }
 
 
@@ -193,7 +178,7 @@ public class Hideout : MonoBehaviour
             if (!slot.IsHosting)
             {
                 slot.Host(interestedCow);
-                shake = true;
+                StartCoroutine(ShakeRoutine());
                 break;
             }
         }
@@ -201,11 +186,52 @@ public class Hideout : MonoBehaviour
 
 
     //JUICYNESS
-    private void AnimateHideout()
+    private void HideoutShakeHorizontal()
     {
-        hideoutPosition = this.transform.position;
-        transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.fixedUnscaledTime * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
     }
+
+    private void HideoutShakeVertical()
+    {
+        //TODO: EVALUATE LESS INTENSE VERTICAL SHAKE AND ONLY UPWARDS SHAKE (NO BELOW GROUND)
+        transform.position = new Vector3(transform.position.x, transform.position.y + Mathf.Sin(Time.fixedUnscaledTime * shakeSpeed) * shakeAmount, transform.position.z);
+    }
+
+
+
+    //COROUTINES
+    ///HORIZONTAL SHAKE WHEN A NEW COW IS HOSTED
+    private IEnumerator ShakeRoutine()
+    {
+        //FUNCTIONALITIES
+        myInfos.HandleHost();
+
+        //SHAKE
+        shake = true;
+
+        //WAIT
+        yield return new WaitForSeconds(shakeTime);
+
+        //STOP SHAKE
+        transform.position = hideoutPosition;
+        shake = false;
+    }
+
+    ///VERTICAL SHAKE WHEN A COW IS AFRAID OF GOING OUTSIDE
+    private IEnumerator AltShakeRoutine()
+    {
+        //SHAKE
+        altShake = true;
+
+        //WAIT
+        yield return new WaitForSeconds(altShakeTime);
+
+        //STOP SHAKE
+        transform.position = hideoutPosition;
+        altShake = false;
+    }
+
+
 
 
 

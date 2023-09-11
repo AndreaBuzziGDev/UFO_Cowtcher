@@ -9,11 +9,11 @@ public class ProgressionStageOne : IProgressionRewards
     public void UnlockCompleted1()
     {
         //UNLOCKS KOWBRA
-        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.R000Kowbra).KnowledgeValue;
+        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.R000_Kowbra).KnowledgeValue;
 
         if (knowValue == SaveInfoCow.Knowledge.Unknown)
         {
-            SaveSystem.SaveCowProgress(CowSO.UniqueID.R000Kowbra, SaveInfoCow.Knowledge.Known);
+            SaveSystem.SaveCowProgress(CowSO.UniqueID.R000_Kowbra, SaveInfoCow.Knowledge.Known);
             Debug.Log("Stage 1 Progression - Completed Level 1 - Unlocked Kowbra.");
         }
         else
@@ -25,11 +25,11 @@ public class ProgressionStageOne : IProgressionRewards
     public void UnlockCompleted2()
     {
         //UNLOCKS SCARECOW
-        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.R003Scarecow).KnowledgeValue;
+        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.R003_Scarecow).KnowledgeValue;
 
         if (knowValue == SaveInfoCow.Knowledge.Unknown)
         {
-            SaveSystem.SaveCowProgress(CowSO.UniqueID.R003Scarecow, SaveInfoCow.Knowledge.Known);
+            SaveSystem.SaveCowProgress(CowSO.UniqueID.R003_Scarecow, SaveInfoCow.Knowledge.Known);
             Debug.Log("Stage 1 Progression - Completed Level 2 - Unlocked Scarecow.");
         }
         else
@@ -41,11 +41,11 @@ public class ProgressionStageOne : IProgressionRewards
     public void UnlockCompleted3()
     {
         //UNLOCKS COWTTLEMAN
-        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.R002Cowttleman).KnowledgeValue;
+        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.R002_Cowttleman).KnowledgeValue;
 
         if (knowValue == SaveInfoCow.Knowledge.Unknown)
         {
-            SaveSystem.SaveCowProgress(CowSO.UniqueID.R002Cowttleman, SaveInfoCow.Knowledge.Known);
+            SaveSystem.SaveCowProgress(CowSO.UniqueID.R002_Cowttleman, SaveInfoCow.Knowledge.Known);
             Debug.Log("Stage 1 Progression - Completed Level 3 - Unlocked Cowttleman.");
         }
         else
@@ -57,11 +57,11 @@ public class ProgressionStageOne : IProgressionRewards
     public void UnlockCompleted4()
     {
         //UNLOCKS PUMPCOW
-        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.R001PumpCow).KnowledgeValue;
+        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.R001_PumpCow).KnowledgeValue;
 
         if (knowValue == SaveInfoCow.Knowledge.Unknown)
         {
-            SaveSystem.SaveCowProgress(CowSO.UniqueID.R001PumpCow, SaveInfoCow.Knowledge.Known);
+            SaveSystem.SaveCowProgress(CowSO.UniqueID.R001_PumpCow, SaveInfoCow.Knowledge.Known);
             Debug.Log("Stage 1 Progression - Completed Level 4 - Unlocked PumpCow.");
         }
         else
@@ -85,11 +85,11 @@ public class ProgressionStageOne : IProgressionRewards
     public void UnlockCompleted5()
     {
         //UNLOCKS COWCTOR
-        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.L000Cowctor).KnowledgeValue;
+        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.L000_Cowctor).KnowledgeValue;
 
         if (knowValue == SaveInfoCow.Knowledge.Unknown)
         {
-            SaveSystem.SaveCowProgress(CowSO.UniqueID.L000Cowctor, SaveInfoCow.Knowledge.Known);
+            SaveSystem.SaveCowProgress(CowSO.UniqueID.L000_Cowctor, SaveInfoCow.Knowledge.Known);
             Debug.Log("Stage 1 Progression - Completed Level 5 - Unlocked Cowctor.");
         }
         else
@@ -101,11 +101,11 @@ public class ProgressionStageOne : IProgressionRewards
     public void UnlockCompleted6()
     {
         //UNLOCKS COWGON
-        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.L001Cowgon).KnowledgeValue;
+        SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(CowSO.UniqueID.L001_Cowgon).KnowledgeValue;
 
         if (knowValue == SaveInfoCow.Knowledge.Unknown)
         {
-            SaveSystem.SaveCowProgress(CowSO.UniqueID.L001Cowgon, SaveInfoCow.Knowledge.Known);
+            SaveSystem.SaveCowProgress(CowSO.UniqueID.L001_Cowgon, SaveInfoCow.Knowledge.Known);
             Debug.Log("Stage 1 Progression - Completed Level 6 - Unlocked Cowgon.");
         }
         else

@@ -76,8 +76,11 @@ public class MusicController : MonoSingleton<MusicController>
     //UTILITIES
     private void PlayMusic(AudioClip music, AudioSource audioSource)
     {
-        audioSource.clip = music;
-        audioSource.Play();
+        if(audioSource != null)
+        {
+            audioSource.clip = music;
+            audioSource.Play();
+        }
     }
 
 }
