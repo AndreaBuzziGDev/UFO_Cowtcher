@@ -69,6 +69,6 @@ public class FuelParticle_WorldItem : MonoBehaviour
     //EASING
     public static float EaseInSpeed(float t) => t * t;
 
-    public static float EaseInVerticalMov(float t) => t * t;
+    public static float EaseInVerticalMov(float t) => t * t * t;
 
 }
