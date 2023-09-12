@@ -6,8 +6,8 @@ public class FuelParticleGeneration : MonoBehaviour
 {
     //DATA
     [SerializeField] FuelParticle_WorldItem particlePrefab;
-    float particleRadius = 0.5f;
-    int particleAmount = 5;
+    [SerializeField] float particleRadius = 0.5f;
+    [SerializeField] int particleAmount = 5;
 
 
 
