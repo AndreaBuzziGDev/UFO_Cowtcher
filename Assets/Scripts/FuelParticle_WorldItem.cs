@@ -43,4 +43,22 @@ public class FuelParticle_WorldItem : MonoBehaviour
         rb.velocity = particleSpeed * destination.normalized;
 
     }
+
+
+    //COLLISIONS
+    void OnCollisionEnter(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            //DETECT IF COLLISION IS UFO
+            GameObject otherGO = collision.gameObject;
+            UFO playerUFO = otherGO.GetComponent<UFO>();
+            if(playerUFO != null)
+            {
+                Destroy(this.gameObject);
+            }
+
+        }
+    }
+
 }
