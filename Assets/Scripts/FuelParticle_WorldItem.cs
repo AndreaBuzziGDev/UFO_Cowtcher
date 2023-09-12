@@ -17,7 +17,12 @@ public class FuelParticle_WorldItem : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+
+        //TARGET UFO
         targetObject = GameController.Instance.FindUFOAnywhere();
+
+        //TARGET FUEL BAR
+        //targetObject = UIController.Instance.IGPanel.PlayerFuelBar;
     }
 
     // Update is called once per frame
@@ -25,7 +30,14 @@ public class FuelParticle_WorldItem : MonoBehaviour
     {
         //MOVE TOWARDS UFO
         Vector3 destination = targetObject.transform.position - this.transform.position;
-        Debug.Log("destination: " + destination);
+
+        //MOVE TOWARDS FUEL BAR
+        /*
+        Vector3 destination = cam.ScreenToWorldPoint(targetObject.transform.position) - this.transform.position;
+        Debug.Log("destination 1 - : " + targetObject.transform.position);
+        Debug.Log("destination 2 - : " + cam.ScreenToWorldPoint(targetObject.transform.position));
+        Debug.Log("destination 3 - : " + destination);
+        */
 
         //TODO: ACCELERATE
         rb.velocity = particleSpeed * destination.normalized;
