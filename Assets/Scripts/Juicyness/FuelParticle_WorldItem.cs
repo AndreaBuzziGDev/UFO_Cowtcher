@@ -49,7 +49,7 @@ public class FuelParticle_WorldItem : MonoBehaviour
         Vector3 intendedVelocity = Mathf.Lerp(0, particleMaxSpeed, EaseInQuad(timer / maxTimer)) * destination.normalized;
         Vector3 mitigatedVelocity = new Vector3(intendedVelocity.x, 0, intendedVelocity.z);
 
-        rb.velocity = Vector3.Lerp(mitigatedVelocity, intendedVelocity, EaseInExpo(timer / maxTimer));
+        rb.velocity = Vector3.Lerp(mitigatedVelocity, intendedVelocity, EaseInQuad(timer / maxTimer));
     }
 
 
