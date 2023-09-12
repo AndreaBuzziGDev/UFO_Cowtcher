@@ -22,6 +22,7 @@ public class FuelBar : MonoBehaviour
     //...
     private void Awake()
     {
+        barPosition = this.GetComponent<RectTransform>().transform.position;
         currentShakeTime = shakeTime;
     }
 
@@ -29,6 +30,7 @@ public class FuelBar : MonoBehaviour
     {
         if (shake)
         {
+            //TODO: USE COROUTINE?
             currentShakeTime -= Time.deltaTime;
             AnimateShake();
         }
@@ -63,15 +65,14 @@ public class FuelBar : MonoBehaviour
 
 
     //
-    public void SetShaking()
-    {
-        shake = true;
-    }
+    public void SetShaking() => shake = true;
 
     private void AnimateShake()
     {
-        barPosition = this.GetComponent<RectTransform>().transform.position;
-        this.GetComponent<RectTransform>().transform.position = new Vector3(transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, transform.position.y, transform.position.z);
+        this.GetComponent<RectTransform>().transform.position = new Vector3(
+            transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, 
+            transform.position.y, 
+            transform.position.z);
     }
 
 }

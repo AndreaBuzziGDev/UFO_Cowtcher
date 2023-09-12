@@ -5275,6 +5275,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7278993586334137433, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+      propertyPath: shakeAmount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8222427068834504389, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0.3
