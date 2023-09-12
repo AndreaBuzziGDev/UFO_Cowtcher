@@ -6,10 +6,13 @@ public class FuelParticle_WorldItem : MonoBehaviour
 {
     //DATA
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float particleSpeed = 5.0f;
+    [SerializeField] private float particleMaxSpeed = 25.0f;
 
     private Camera cam;
     private UFO targetObject;
+
+    private float timer;
+    private float maxTimer = 1.0f;
 
 
     //METHODS
@@ -17,6 +20,7 @@ public class FuelParticle_WorldItem : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+        timer = 0;
 
         //TARGET UFO
         targetObject = GameController.Instance.FindUFOAnywhere();
@@ -39,8 +43,9 @@ public class FuelParticle_WorldItem : MonoBehaviour
         Debug.Log("destination 3 - : " + destination);
         */
 
-        //TODO: ACCELERATE
-        rb.velocity = particleSpeed * destination.normalized;
+        timer += Time.deltaTime;
+
+        rb.velocity = Mathf.Lerp(0, particleMaxSpeed, EaseIn(timer / maxTimer)) * destination.normalized;
 
     }
 
@@ -56,6 +61,12 @@ public class FuelParticle_WorldItem : MonoBehaviour
             //TODO: PLAY PARTICLE EFFECT WHEN UFO IS HIT ?
             Destroy(this.gameObject);
         }
+    }
+
+    //EASING
+    public static float EaseIn(float t)
+    {
+        return t * t;
     }
 
 }

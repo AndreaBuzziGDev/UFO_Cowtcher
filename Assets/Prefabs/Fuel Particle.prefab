@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2672816228222209352}
-  particleSpeed: 5
+  particleMaxSpeed: 50
 --- !u!136 &6923104028718001725
 CapsuleCollider:
   m_ObjectHideFlags: 0
