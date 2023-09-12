@@ -46,8 +46,10 @@ public class FuelParticle_WorldItem : MonoBehaviour
         timer += Time.deltaTime;
 
         //TODO: VERTICAL ACCELERATION
-        rb.velocity = Mathf.Lerp(0, particleMaxSpeed, EaseIn(timer / maxTimer)) * destination.normalized;
+        Vector3 intendedVelocity = Mathf.Lerp(0, particleMaxSpeed, EaseInSpeed(timer / maxTimer)) * destination.normalized;
+        Vector3 mitigatedVelocity = new Vector3(intendedVelocity.x, 0, intendedVelocity.z);
 
+        rb.velocity = Vector3.Lerp(mitigatedVelocity, intendedVelocity, EaseInVerticalMov(timer / maxTimer));
     }
 
 
@@ -65,9 +67,8 @@ public class FuelParticle_WorldItem : MonoBehaviour
     }
 
     //EASING
-    public static float EaseIn(float t)
-    {
-        return t * t;
-    }
+    public static float EaseInSpeed(float t) => t * t;
+
+    public static float EaseInVerticalMov(float t) => t * t;
 
 }
