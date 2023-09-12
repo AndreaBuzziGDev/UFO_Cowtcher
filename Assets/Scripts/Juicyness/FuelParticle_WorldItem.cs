@@ -45,7 +45,6 @@ public class FuelParticle_WorldItem : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        //TODO: VERTICAL ACCELERATION
         Vector3 intendedVelocity = Mathf.Lerp(0, particleMaxSpeed, EaseInQuad(timer / maxTimer)) * destination.normalized;
         Vector3 mitigatedVelocity = new Vector3(intendedVelocity.x, 0, intendedVelocity.z);
 
