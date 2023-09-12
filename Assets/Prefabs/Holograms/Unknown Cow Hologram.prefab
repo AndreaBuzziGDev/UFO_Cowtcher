@@ -90,3 +90,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 4802829281570637937, guid: 730d32d177d35aa4ba7784acd80de9c6, type: 3}
+  particleRadius: 0.5
+  particleAmount: 5
