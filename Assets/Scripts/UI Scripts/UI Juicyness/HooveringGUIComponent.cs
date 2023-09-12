@@ -11,10 +11,15 @@ public class HooveringGUIComponent : MonoBehaviour
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
 
+    private Vector3 basePosition;
 
 
     //METHODS
     //...
+    private void Awake()
+    {
+        basePosition = transform.position;
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,9 +35,9 @@ public class HooveringGUIComponent : MonoBehaviour
         //TODO: USE SMOOTHDAMP SOLUTION INSTEAD?
 
         transform.position = new Vector3(
-            transform.position.x,
-            transform.position.y + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount,
-            transform.position.z
+            basePosition.x,
+            basePosition.y + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount,
+            basePosition.z
             );
 
     }
