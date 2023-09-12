@@ -46,18 +46,14 @@ public class FuelParticle_WorldItem : MonoBehaviour
 
 
     //COLLISIONS
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        foreach (ContactPoint contact in collision.contacts)
+        //DETECT IF COLLISION IS UFO
+        GameObject otherGO = other.gameObject;
+        UFO playerUFO = otherGO.GetComponent<UFO>();
+        if (playerUFO != null)
         {
-            //DETECT IF COLLISION IS UFO
-            GameObject otherGO = collision.gameObject;
-            UFO playerUFO = otherGO.GetComponent<UFO>();
-            if(playerUFO != null)
-            {
-                Destroy(this.gameObject);
-            }
-
+            Destroy(this.gameObject);
         }
     }
 
