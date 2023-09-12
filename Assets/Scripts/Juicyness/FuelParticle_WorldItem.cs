@@ -45,6 +45,7 @@ public class FuelParticle_WorldItem : MonoBehaviour
 
         timer += Time.deltaTime;
 
+        //TODO: VERTICAL ACCELERATION
         rb.velocity = Mathf.Lerp(0, particleMaxSpeed, EaseIn(timer / maxTimer)) * destination.normalized;
 
     }
