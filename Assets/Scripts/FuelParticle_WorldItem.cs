@@ -6,7 +6,7 @@ public class FuelParticle_WorldItem : MonoBehaviour
 {
     //DATA
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float particleMaxSpeed = 25.0f;
+    [SerializeField] private float particleMaxSpeed = 50.0f;
 
     private Camera cam;
     private UFO targetObject;
