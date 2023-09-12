@@ -5,23 +5,20 @@ using UnityEngine;
 public class FuelParticleGeneration : MonoBehaviour
 {
     //DATA
-
+    [SerializeField] FuelParticle_WorldItem particlePrefab;
 
 
 
     //METHODS
     //...
 
-    // Start is called before the first frame update
-    void Start()
+    public void CreateFuelParticles(int targetAmount)
     {
-        
+        for(int i = 0; i <= targetAmount; i++)
+        {
+            Instantiate(particlePrefab);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 }
