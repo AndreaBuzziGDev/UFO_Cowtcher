@@ -6,6 +6,7 @@ public class FuelParticleGeneration : MonoBehaviour
 {
     //DATA
     [SerializeField] FuelParticle_WorldItem particlePrefab;
+    float particleRadius = 0.5f;
 
 
 
@@ -22,7 +23,11 @@ public class FuelParticleGeneration : MonoBehaviour
         for(int i = 0; i <= targetAmount; i++)
         {
             //RANDOMIZE IN CIRCLE AROUND COW
-            Instantiate(particlePrefab, this.transform.position + UtilsRadius.RandomPositionOnCircleRadius(1), Quaternion.identity);
+            Instantiate(
+                particlePrefab, 
+                this.transform.position + UtilsRadius.RandomPositionOnCircleRadius(particleRadius), 
+                Quaternion.identity
+                );
         }
     }
 
