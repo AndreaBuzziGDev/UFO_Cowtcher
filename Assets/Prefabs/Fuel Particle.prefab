@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6511767963045073164}
   - component: {fileID: 4129226616401120746}
   - component: {fileID: 2672816228222209352}
+  - component: {fileID: 4802829281570637937}
   m_Layer: 0
   m_Name: Fuel Particle
   m_TagString: Untagged
@@ -112,3 +113,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4802829281570637937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187320844800321020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7a3bf871ae84d4ba37e770da6f032a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2672816228222209352}
+  particleSpeed: 5
