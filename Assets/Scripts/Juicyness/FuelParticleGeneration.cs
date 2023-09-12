@@ -21,7 +21,8 @@ public class FuelParticleGeneration : MonoBehaviour
     {
         for(int i = 0; i <= targetAmount; i++)
         {
-            Instantiate(particlePrefab);
+            //RANDOMIZE IN CIRCLE AROUND COW
+            Instantiate(particlePrefab, this.transform.position + UtilsRadius.RandomPositionOnCircleRadius(1), Quaternion.identity);
         }
     }
 
