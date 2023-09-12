@@ -53,6 +53,7 @@ public class FuelParticle_WorldItem : MonoBehaviour
         UFO playerUFO = otherGO.GetComponent<UFO>();
         if (playerUFO != null)
         {
+            //TODO: PLAY PARTICLE EFFECT WHEN UFO IS HIT ?
             Destroy(this.gameObject);
         }
     }

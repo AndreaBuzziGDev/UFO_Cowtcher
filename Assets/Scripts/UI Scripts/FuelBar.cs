@@ -25,7 +25,7 @@ public class FuelBar : MonoBehaviour
         currentShakeTime = shakeTime;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (shake)
         {
