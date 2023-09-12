@@ -943,7 +943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'REACH INSTANTLY: S 1 - L 7'
+  m_text: 'REACH INSTANTLY: S 3 - L 7'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1268,7 +1268,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5898434181962918299}
         m_TargetAssemblyTypeName: OptionsCheat, Assembly-CSharp
-        m_MethodName: CheatTwo
+        m_MethodName: CheatFour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1820,7 +1820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'REACH INSTANTLY: S 1 - L 7'
+  m_text: 'REACH INSTANTLY: S 4 - L 7'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2355,7 +2355,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'REACH INSTANTLY: S 1 - L 7'
+  m_text: 'REACH INSTANTLY: S 2 - L 7'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3480,7 +3480,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5898434181962918299}
         m_TargetAssemblyTypeName: OptionsCheat, Assembly-CSharp
-        m_MethodName: CheatTwo
+        m_MethodName: CheatThree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4103,7 +4103,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5898434181962918299}
         m_TargetAssemblyTypeName: OptionsCheat, Assembly-CSharp
-        m_MethodName: CheatTwo
+        m_MethodName: CheatFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
