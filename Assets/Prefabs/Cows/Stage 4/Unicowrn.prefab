@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: cowTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 2b17ae7bec7ec254a8fffe4a54861319, type: 2}
+    - target: {fileID: 6923396806548110374, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: cowFadeOutHologramOnCapture
+      value: 
+      objectReference: {fileID: 9214518739162181658, guid: 4880834320957894e9bcdb7623143221, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
