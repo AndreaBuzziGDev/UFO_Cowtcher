@@ -24,7 +24,6 @@ public class FadeOutEntity : MonoBehaviour
         fadeoutTimer -= Time.deltaTime;
         float factor = fadeoutTimer / fadeoutTimerMax;
 
-        //TODO: USE COLOR LERP
         sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, factor);
     }
 
