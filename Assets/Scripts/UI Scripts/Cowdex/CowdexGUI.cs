@@ -19,9 +19,9 @@ public class CowdexGUI : MonoBehaviour
     public int NumberOfPages { get { return CowdexPages.Count; } }
 
 
-
     ///GUI REFERENCES
     [SerializeField] private CowdexPageGUI myCowdexPageGUI;
+    [SerializeField] private TMPro.TextMeshProUGUI pageCounter;
 
 
 
@@ -90,6 +90,10 @@ public class CowdexGUI : MonoBehaviour
 
         //UPDATE THE COWDEXPAGE
         myCowdexPageGUI.SetPage(CowdexPages[pageIndex]);
+
+        //UPDATE THE PAGE COUNTER
+        int guiIndex = pageIndex + 1;
+        pageCounter.text = guiIndex + " / " + NumberOfPages;
 
     }
 

@@ -1844,6 +1844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCowdexPageGUI: {fileID: 484079875627011429}
+  pageCounter: {fileID: 6071103187961254467}
 --- !u!1 &6095564404901153060
 GameObject:
   m_ObjectHideFlags: 0
