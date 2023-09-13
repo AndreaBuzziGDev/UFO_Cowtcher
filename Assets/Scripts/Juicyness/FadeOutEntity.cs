@@ -10,7 +10,8 @@ public class FadeOutEntity : MonoBehaviour
     private float fadeoutTimer;
 
     ///GUI REFERENCES
-    [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private SpriteRenderer hologramSpriteRenderer;
+    [SerializeField] private TMPro.TextMeshPro hologramText;
 
     //METHODS
     //...
@@ -24,7 +25,15 @@ public class FadeOutEntity : MonoBehaviour
         fadeoutTimer -= Time.deltaTime;
         float factor = fadeoutTimer / fadeoutTimerMax;
 
-        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, factor);
+        if(hologramSpriteRenderer != null)
+        {
+            hologramSpriteRenderer.color = new Color(hologramSpriteRenderer.color.r, hologramSpriteRenderer.color.g, hologramSpriteRenderer.color.b, factor);
+        }
+
+        if (hologramText != null)
+        {
+            hologramText.color = new Color(hologramText.color.r, hologramText.color.g, hologramText.color.b, factor);
+        }
     }
 
 
@@ -42,7 +51,7 @@ public class FadeOutEntity : MonoBehaviour
             fo = Instantiate(prefab, coords, Quaternion.identity, null);
         }
 
-        fo.sr.flipX = flipX;
+        fo.hologramSpriteRenderer.flipX = flipX;
     }
 
 
