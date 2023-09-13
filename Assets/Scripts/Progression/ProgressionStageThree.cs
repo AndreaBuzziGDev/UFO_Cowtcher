@@ -92,7 +92,7 @@ public class ProgressionStageThree : IProgressionRewards
         }
         else
         {
-            SaveSystem.SetStageUnlocked("Stage 2", true);
+            SaveSystem.SetStageUnlocked(unlockedStage, true);
             Debug.Log(stageName + " Progression - Completed Level 4 - Unlocked " + unlockedStage);
         }
     }
