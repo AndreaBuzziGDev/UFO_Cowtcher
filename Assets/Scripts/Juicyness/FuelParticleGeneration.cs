@@ -25,7 +25,6 @@ public class FuelParticleGeneration : MonoBehaviour
 
     private void CreateFuelParticles(int targetAmount)
     {
-        Debug.Log("targetAmount: " + targetAmount);
         for(int i = 0; i < targetAmount; i++)
         {
             //RANDOMIZE IN CIRCLE AROUND COW
