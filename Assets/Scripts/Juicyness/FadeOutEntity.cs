@@ -51,7 +51,9 @@ public class FadeOutEntity : MonoBehaviour
             fo = Instantiate(prefab, coords, Quaternion.identity, null);
         }
 
-        fo.hologramSpriteRenderer.flipX = flipX;
+        if(fo.hologramSpriteRenderer != null) 
+            fo.hologramSpriteRenderer.flipX = flipX;
+
     }
 
 
