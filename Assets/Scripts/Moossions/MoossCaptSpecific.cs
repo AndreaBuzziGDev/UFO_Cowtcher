@@ -39,10 +39,6 @@ public class MoossCaptSpecific : Moossion
         {
             DoProgress(1);
         }
-        else
-        {
-            Debug.Log("A cow that is not the intended one has been captured: " + CapturedCow.CowTemplate.UID);
-        }
     }
 
 
