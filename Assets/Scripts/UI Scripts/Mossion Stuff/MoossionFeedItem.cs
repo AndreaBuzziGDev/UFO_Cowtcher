@@ -8,7 +8,6 @@ public class MoossionFeedItem : MonoBehaviour
     //DATA
     [SerializeField] private float persistenceTimerMax = 5.0f;
     private float persistenceTimer;
-    private int moossionIndex;
 
     ///GUI REFERENCES
     [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
