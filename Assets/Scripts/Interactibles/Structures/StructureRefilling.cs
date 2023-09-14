@@ -34,6 +34,10 @@ public class StructureRefilling : StructureAbstract
 
             if (remainingQuantity <= 0) wrappingStructure.HasBeenDepleted = true;
 
+            //GENERATE PARTICLES?
+            //TODO: FIRE AN EVENT WHENEVER A NEW UNIT OF FUEL HAS BEEN FULLY DEPLETED
+            //      COROUTINE ON THE STRUCTURE WILL HANDLE THE REST
+
         }
 
     }
