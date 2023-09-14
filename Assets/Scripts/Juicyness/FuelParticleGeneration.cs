@@ -8,6 +8,7 @@ public class FuelParticleGeneration : MonoBehaviour
     [SerializeField] FuelParticle_WorldItem particlePrefab;
     [SerializeField] float particleRadius = 0.5f;
     [SerializeField] int particleAmount = 5;
+    [SerializeField] Vector3 offset = Vector3.zero;
 
     [SerializeField] bool generatesParticlesOnStart = true;
 
@@ -24,12 +25,13 @@ public class FuelParticleGeneration : MonoBehaviour
 
     private void CreateFuelParticles(int targetAmount)
     {
-        for(int i = 0; i <= targetAmount; i++)
+        Debug.Log("targetAmount: " + targetAmount);
+        for(int i = 0; i < targetAmount; i++)
         {
             //RANDOMIZE IN CIRCLE AROUND COW
             Instantiate(
                 particlePrefab, 
-                this.transform.position + UtilsRadius.RandomPositionOnCircleRadius(particleRadius), 
+                this.transform.position + offset + UtilsRadius.RandomPositionOnCircleRadius(particleRadius), 
                 Quaternion.identity
                 );
         }
