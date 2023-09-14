@@ -10,7 +10,16 @@ public class HideoutSO : ScriptableObject
     {
         Barn,
         Rock,
-        Bush
+        Bush,
+        SandCastle,
+        BeachCabin,
+        TreasureChest,
+        Cart,
+        Igloo,
+        ChristmasPresents,
+        Well,
+        MagicBook,
+        ArcadeCabinet
     }
 
     //DATA
