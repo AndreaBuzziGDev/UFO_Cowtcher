@@ -4,6 +4,8 @@ public class StructureRefilling : StructureAbstract
 {
     //DATA
     private float remainingQuantity;
+    private int RemainingQuantityAsInt { get { return (int) remainingQuantity; } }
+
     private float refillingSpeed;
 
     //CONSTRUCTOR
@@ -29,12 +31,17 @@ public class StructureRefilling : StructureAbstract
 
             GameController.Instance.FindUFOAnywhere().ChangeFuel(transactionQuantity);
 
+            //GENERATE PARTICLES
+            if ((int) (remainingQuantity - transactionQuantity) < RemainingQuantityAsInt)
+            {
+                wrappingStructure.ParticleGen.CreateFuelParticles();
+            }
+
             //DRAW FUEL FROM POOL
             remainingQuantity -= transactionQuantity;
 
             if (remainingQuantity <= 0) wrappingStructure.HasBeenDepleted = true;
 
-            //GENERATE PARTICLES?
             //TODO: FIRE AN EVENT WHENEVER A NEW UNIT OF FUEL HAS BEEN FULLY DEPLETED
             //      COROUTINE ON THE STRUCTURE WILL HANDLE THE REST
 

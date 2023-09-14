@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 2871382618478964565}
   - component: {fileID: -1905210977476053208}
   - component: {fileID: 3827693660343077909}
+  - component: {fileID: 1159798967417723928}
   m_Layer: 9
   m_Name: TEMPLATE TURRET (DO NOT USE)
   m_TagString: Untagged
@@ -256,6 +257,7 @@ MonoBehaviour:
   ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}
   lifetimeMax: 20
   expirationTimeMax: 1
+  particleGen: {fileID: 1159798967417723928}
 --- !u!65 &3827693660343077909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -277,3 +279,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.3816442, y: 6.471445, z: 1}
   m_Center: {x: -0.11456299, y: 3.2062488, z: 0}
+--- !u!114 &1159798967417723928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000384660636271075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7fe3e00d4f6df14ba95ac3b7fba210e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 4802829281570637937, guid: 730d32d177d35aa4ba7784acd80de9c6, type: 3}
+  particleRadius: 0.75
+  particleAmount: 1
+  generatesParticlesOnStart: 0

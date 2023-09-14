@@ -46,7 +46,8 @@ public class InteractibleStructure : MonoInteractible
 
 
     ///PARTICLES FOR REFUELING TOWER
-    
+    [SerializeField] private FuelParticleGeneration particleGen;
+    public FuelParticleGeneration ParticleGen { get { return particleGen; } }
 
 
 

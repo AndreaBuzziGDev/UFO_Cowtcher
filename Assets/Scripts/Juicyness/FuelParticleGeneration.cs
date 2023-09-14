@@ -9,17 +9,20 @@ public class FuelParticleGeneration : MonoBehaviour
     [SerializeField] float particleRadius = 0.5f;
     [SerializeField] int particleAmount = 5;
 
+    [SerializeField] bool generatesParticlesOnStart = true;
 
 
     //METHODS
     //...
     private void Start()
     {
-        CreateFuelParticles(particleAmount);
+        if(generatesParticlesOnStart) CreateFuelParticles(particleAmount);
     }
 
     //FUNCTIONALITIES
-    public void CreateFuelParticles(int targetAmount)
+    public void CreateFuelParticles() => CreateFuelParticles(particleAmount);
+
+    private void CreateFuelParticles(int targetAmount)
     {
         for(int i = 0; i <= targetAmount; i++)
         {
