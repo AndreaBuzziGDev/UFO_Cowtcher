@@ -6,10 +6,9 @@ using UnityEngine.UI;
 public class MoossionFeedItem : MonoBehaviour
 {
     //DATA
-    private float persistenceTimerMax = 5.0f;
+    [SerializeField] private float persistenceTimerMax = 5.0f;
     private float persistenceTimer;
-
-    [SerializeField] [Range(1, 3)] private int moossionIndex = 1;
+    private int moossionIndex;
 
     ///GUI REFERENCES
     [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
@@ -52,24 +51,15 @@ public class MoossionFeedItem : MonoBehaviour
     }
 
 
-
-
-
-    //UTILITIES
-    private string getNotificationContent() => "Moossion #" + moossionIndex + " complete!";
-
-
+    
 
     //EVENT-HANDLING
     private void HandleMoossionCompletion(object sender, MoossionCompleteEventArgs e)
     {
-        if(e.MoossionIndex == moossionIndex)
-        {
-            //SHOW MOOSSION FEED ITEM AND ITS CONTENT
-            persistenceTimer = persistenceTimerMax;
-            feedItemText.text = getNotificationContent();
-            this.gameObject.SetActive(true);
-        }
+        //SHOW MOOSSION FEED ITEM AND ITS CONTENT
+        persistenceTimer = persistenceTimerMax;
+        feedItemText.text = "Moossion #" + e.MoossionIndex + " complete!";
+        this.gameObject.SetActive(true);
     }
 
 }
