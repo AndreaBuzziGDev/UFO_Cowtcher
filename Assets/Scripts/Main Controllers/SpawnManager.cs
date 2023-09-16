@@ -239,7 +239,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     public void HandleCowCapture(Cow interestedCow)
     {
         //NOTIFY SYSTEMS THAT COW HAS BEEN CAPTURED
-        SaveInfoCow cowSI = SaveSystem.LoadCowProgress(interestedCow.UID);
+        SaveInfoCow cowSI = SaveSystem.LoadCowProgress(interestedCow.CowTemplate.UID);
         if (!cowSI.IsCaptured)
         {
             SaveSystem.SaveCowProgress(interestedCow.UID, SaveInfoCow.Knowledge.Captured);
