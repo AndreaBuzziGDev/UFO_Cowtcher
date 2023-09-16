@@ -61,6 +61,8 @@ public class CaptureFeedItem : MonoBehaviour
             feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.CowName;
             this.gameObject.SetActive(true);
         }
+
+        //TODO: EXECUTE GUI ANIMATION
     }
 
 }
