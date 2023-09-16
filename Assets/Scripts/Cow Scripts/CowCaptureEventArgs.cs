@@ -10,7 +10,7 @@ public class CowCaptureEventArgs : EventArgs
     public Cow CapturedCow { get { return captured; } }
 
     private bool isNewlyCaptured;
-    public bool IsNewlyCaptured { get { return isNewlyCaptured} }
+    public bool IsNewlyCaptured { get { return isNewlyCaptured; } }
 
     //CONSTRUCTOR
     public CowCaptureEventArgs(Cow capturedCow)
