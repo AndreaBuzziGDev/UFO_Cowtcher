@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class CowCaptureNew : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //DATA
+    private CowSO.UniqueID cowUID;
+    public CowSO.UniqueID CowUID { get { return cowUID; } }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    //CONSTRUCTOR
+    public CowCaptureNew(CowSO.UniqueID capturedCowUID) => cowUID = capturedCowUID;
+
 }
