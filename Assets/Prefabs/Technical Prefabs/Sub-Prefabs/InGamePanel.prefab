@@ -604,7 +604,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8416221993610421898}
-  - component: {fileID: 2971860268328391654}
   m_Layer: 0
   m_Name: Capture Feed
   m_TagString: Untagged
@@ -632,20 +631,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2971860268328391654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4261396392865878172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 325c9d3e466f7ef48b2cfce9cc6f0bc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  persistenceTimerMax: 5
-  feedItemText: {fileID: 0}
 --- !u!1 &4294004336950744081
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   persistenceTimerMax: 5
-  feedItemText: {fileID: 0}
+  feedItemText: {fileID: 8649331851100634020}
 --- !u!1 &5276146742738980430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1031,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 48.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1180,7 +1165,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 48.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1389,7 +1374,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.35
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
