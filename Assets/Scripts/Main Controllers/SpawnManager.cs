@@ -243,6 +243,8 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         if (!cowSI.IsCaptured)
         {
             SaveSystem.SaveCowProgress(interestedCow.UID, SaveInfoCow.Knowledge.Captured);
+            //FIRE EVENT FOR A NEW COW BEING CAPTURED
+
         }
 
 
