@@ -19,7 +19,7 @@ public class CaptureFeedItem : MonoBehaviour
     void Start()
     {
         //REGISTER EVENT
-        //Moossion.MoossionComplete += HandleMoossionCompletion;
+        Abductor.CowCapture += HandleCowCapture;
 
         //TEXT ON START = EMPTY
         feedItemText.text = "";
@@ -45,19 +45,18 @@ public class CaptureFeedItem : MonoBehaviour
     private void OnDestroy()
     {
         //UN-REGISTER EVENT
-        //Moossion.MoossionComplete -= HandleMoossionCompletion;
+        Abductor.CowCapture -= HandleCowCapture;
     }
 
 
 
 
     //EVENT-HANDLING
-    //TODO: SWITCH TO ANOTHER EVENT
-    private void HandleMoossionCompletion(object sender, MoossionCompleteEventArgs e)
+    private void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
         //SHOW MOOSSION FEED ITEM AND ITS CONTENT
         persistenceTimer = persistenceTimerMax;
-        feedItemText.text = "Captured cow #" + e.MoossionIndex + " complete!";
+        feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.UID;
         this.gameObject.SetActive(true);
     }
 
