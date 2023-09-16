@@ -55,9 +55,12 @@ public class CaptureFeedItem : MonoBehaviour
     private void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
         //SHOW MOOSSION FEED ITEM AND ITS CONTENT
-        persistenceTimer = persistenceTimerMax;
-        feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.UID;
-        this.gameObject.SetActive(true);
+        if (e.IsNewlyCaptured)
+        {
+            persistenceTimer = persistenceTimerMax;
+            feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.UID;
+            this.gameObject.SetActive(true);
+        }
     }
 
 }
