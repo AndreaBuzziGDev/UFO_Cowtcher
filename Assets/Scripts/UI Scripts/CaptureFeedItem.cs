@@ -58,7 +58,7 @@ public class CaptureFeedItem : MonoBehaviour
         if (e.IsNewlyCaptured)
         {
             persistenceTimer = persistenceTimerMax;
-            feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.UID;
+            feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.CowName;
             this.gameObject.SetActive(true);
         }
     }
