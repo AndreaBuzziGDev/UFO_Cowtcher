@@ -11,6 +11,12 @@ public class CaptureFeedItem : MonoBehaviour
     ///GUI REFERENCES
     [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
 
+    ///GUI ANIMATION STUFF
+    [SerializeField] private Vector3 slidingOffset = new Vector3(10, 10, 10);
+    private Vector3 startingPos = Vector3.zero;
+
+    [SerializeField] private float slideInTimerMax = 1.0f;
+    private float slideInTimer;
 
 
 
@@ -21,6 +27,9 @@ public class CaptureFeedItem : MonoBehaviour
         //REGISTER EVENT
         Abductor.CowCapture += HandleCowCapture;
 
+        //DEFAULT POSITION
+        startingPos = this.transform.position;
+
         //TEXT ON START = EMPTY
         feedItemText.text = "";
 
@@ -28,12 +37,16 @@ public class CaptureFeedItem : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void FixedUpdate()
     {
+        //HANDLE SLIDING IN
+        this.transform.position = Vector3.Lerp(startingPos, )
+        
+        //HANDLE PERSISTENCE ON SCREEN
         if (persistenceTimer > 0)
         {
-            persistenceTimer -= Time.deltaTime;
+            persistenceTimer -= Time.fixedDeltaTime;
         }
         else
         {
@@ -62,7 +75,8 @@ public class CaptureFeedItem : MonoBehaviour
             this.gameObject.SetActive(true);
         }
 
-        //TODO: EXECUTE GUI ANIMATION
+        //EXECUTE GUI ANIMATION
+        slideInTimer = slideInTimerMax;
     }
 
 }
