@@ -41,7 +41,8 @@ public class CaptureFeedItem : MonoBehaviour
     private void FixedUpdate()
     {
         //HANDLE SLIDING IN
-        this.transform.position = Vector3.Lerp(startingPos, )
+        this.transform.position = Vector3.Lerp(startingPos, startingPos+slidingOffset, slideInTimer / slideInTimerMax);
+        slideInTimer -= Time.fixedDeltaTime;
         
         //HANDLE PERSISTENCE ON SCREEN
         if (persistenceTimer > 0)
