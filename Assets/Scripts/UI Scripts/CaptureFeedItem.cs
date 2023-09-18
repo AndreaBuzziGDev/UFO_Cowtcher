@@ -12,7 +12,8 @@ public class CaptureFeedItem : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
 
     ///GUI ANIMATION STUFF
-    [SerializeField] private Vector3 slidingOffset = new Vector3(10, 10, 10);
+    //TODO: THIS COULD BE IMPROVED BY PROGRAMMATICALLY LOOKING FOR THE SIZE OF THE SCREEN
+    [SerializeField] private Vector3 slidingOffset = new Vector3(500, 0, 0);
     private Vector3 startingPos = Vector3.zero;
 
     [SerializeField] private float slideInTimerMax = 1.0f;
