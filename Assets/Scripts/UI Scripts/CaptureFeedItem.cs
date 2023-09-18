@@ -104,10 +104,11 @@ public class CaptureFeedItem : MonoBehaviour
     //EVENT-HANDLING
     private void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
-        //SHOW MOOSSION FEED ITEM AND ITS CONTENT
+        //SHOW FEED ITEM AND ITS CONTENT
         if (e.IsNewlyCaptured)
         {
             persistenceTimer = persistenceTimerMax;
+            slideInTimer = slideInTimerMax;
             feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.CowName;
             this.gameObject.SetActive(true);
         }

@@ -16,7 +16,7 @@ public class CowCaptureEventArgs : EventArgs
     public CowCaptureEventArgs(Cow capturedCow)
     {
         captured = capturedCow;
-        isNewlyCaptured = SaveSystem.LoadCowProgress(capturedCow.CowTemplate.UID).IsCaptured;
+        isNewlyCaptured = !SaveSystem.LoadCowProgress(capturedCow.CowTemplate.UID).IsCaptured;
     }
 
 }
