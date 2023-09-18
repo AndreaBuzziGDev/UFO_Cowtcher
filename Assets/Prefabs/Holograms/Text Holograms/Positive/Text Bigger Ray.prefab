@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e269a8964276f44fa533eee8827e523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeoutTimerMax: 1
+  fadeoutTimerMax: 2
   hologramSpriteRenderer: {fileID: 0}
   hologramText: {fileID: 7750823691095964966}
 --- !u!1 &8688451770819128888
