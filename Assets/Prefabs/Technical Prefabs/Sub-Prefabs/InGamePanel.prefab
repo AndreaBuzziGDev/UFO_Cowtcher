@@ -605,6 +605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8416221993610421898}
   - component: {fileID: 1404543758603381385}
+  - component: {fileID: 3647072185802327203}
   m_Layer: 0
   m_Name: Capture Feed
   m_TagString: Untagged
@@ -645,11 +646,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325c9d3e466f7ef48b2cfce9cc6f0bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  persistenceTimerMax: 3
   feedItemText: {fileID: 8649331851100634020}
+  persistenceTimerMax: 3
+  persistenceFadeoutThreshold: 1
   slidingOffset: {x: 500, y: 0, z: 0}
   slideInTimerMax: 1
   isDebug: 0
+--- !u!225 &3647072185802327203
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261396392865878172}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4294004336950744081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5391879141650091215}
   - component: {fileID: 8265449936431437924}
+  - component: {fileID: 1803033410806499812}
   m_Layer: 0
   m_Name: Moossion Feed
   m_TagString: Untagged
@@ -1656,11 +1671,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991a04b6ef64c61449c3f7f02835ae92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  persistenceTimerMax: 3
   feedItemText: {fileID: 6167337227193816994}
+  persistenceTimerMax: 3
+  persistenceFadeoutThreshold: 1
   slidingOffset: {x: 500, y: 0, z: 0}
   slideInTimerMax: 1
   isDebug: 0
+--- !u!225 &1803033410806499812
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213993445991765732}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7692126360415077919
 GameObject:
   m_ObjectHideFlags: 0
