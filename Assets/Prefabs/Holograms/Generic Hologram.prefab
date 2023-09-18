@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeoutTimerMax: 1
-  sr: {fileID: 455273566453735775}
+  hologramSpriteRenderer: {fileID: 455273566453735775}
+  hologramText: {fileID: 0}
 --- !u!1 &8688451770819128888
 GameObject:
   m_ObjectHideFlags: 0
