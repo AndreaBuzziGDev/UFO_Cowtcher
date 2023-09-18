@@ -18,8 +18,7 @@ public class MoossionFeedItem : MonoBehaviour
 
     ///GUI - ANIMATION 
     //TODO: THIS CODE IS COPIED FROM CaptureFeedItem - IF TIME IS AVAILABLE, USE INHERITANCE TO PROPERLY FACTOR CODE
-    //TODO: THIS COULD BE IMPROVED BY PROGRAMMATICALLY LOOKING FOR THE SIZE OF THE SCREEN
-    [SerializeField] private Vector3 slidingOffset = new Vector3(500, 0, 0);
+    private Vector3 slidingOffset = new Vector3(500, 0, 0);
     private Vector3 startingPos = Vector3.zero;
 
     [SerializeField] private float slideInTimerMax = 1.0f;
@@ -42,10 +41,7 @@ public class MoossionFeedItem : MonoBehaviour
 
         //GUI INITIALIZE
         canvasGroup = GetComponent<CanvasGroup>();
-
-
-        Debug.Log()
-
+        slidingOffset = new Vector3(GetComponent<RectTransform>().rect.width, 0, 0);
 
         //HANDLE DEBUG OR DISABLE ON GUI
         if (isDebug)

@@ -5227,6 +5227,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 52.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8265449936431437924, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+      propertyPath: isDebug
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8416221993610421898, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0.5
