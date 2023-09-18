@@ -26,6 +26,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
 
     //NEGATIVE EFFECTS
     [SerializeField] private FadeOutEntity prefabInstantFuelLoss;
+    //TODO: MORE EFFECTS...
 
 
 
