@@ -549,14 +549,14 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 0
+  m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &472773189565281237
 MonoBehaviour:
@@ -842,7 +842,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!222 &646885920696502387
 CanvasRenderer:
@@ -899,6 +899,7 @@ MonoBehaviour:
   buffPanel: {fileID: 2021044648806414993}
   debuffPanel: {fileID: 2676263890377671662}
   ritualPanel: {fileID: 1674718046764822040}
+  feed: {fileID: 4675056588280696882}
 --- !u!1 &4435830714403031307
 GameObject:
   m_ObjectHideFlags: 0

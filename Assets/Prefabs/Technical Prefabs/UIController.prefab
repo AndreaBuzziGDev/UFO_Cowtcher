@@ -5191,26 +5191,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1464559309320640334, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3651736979147514576, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3651736979147514576, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: m_OverrideSorting
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4294004336950744081, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_Name
       value: InGamePanel
       objectReference: {fileID: 0}
-    - target: {fileID: 6241730459995727219, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: feed
-      value: 
-      objectReference: {fileID: 5889162007254131272}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5230,17 +5214,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4af43430b1857f540ab579cdc162523e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5889162007254131272 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4675056588280696882, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-  m_PrefabInstance: {fileID: 1250772087363727994}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b4225cfcac9e6340a1a2bf648d2578f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1257013324867517479
@@ -5723,18 +5696,6 @@ PrefabInstance:
     - target: {fileID: 7809771184081580284, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
       propertyPath: m_Name
       value: Gameplay Input Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692800145072291167, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692800145072291167, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692800145072291167, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
