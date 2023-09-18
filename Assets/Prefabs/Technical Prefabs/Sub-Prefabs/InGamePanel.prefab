@@ -707,7 +707,7 @@ MonoBehaviour:
   persistenceFadeoutThreshold: 1
   slidingOffset: {x: 500, y: 0, z: 0}
   slideInTimerMax: 1
-  isDebug: 1
+  isDebug: 0
 --- !u!225 &3647072185802327203
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1790,7 +1790,7 @@ MonoBehaviour:
   persistenceFadeoutThreshold: 1
   slidingOffset: {x: 500, y: 0, z: 0}
   slideInTimerMax: 1
-  isDebug: 1
+  isDebug: 0
 --- !u!225 &1803033410806499812
 CanvasGroup:
   m_ObjectHideFlags: 0
