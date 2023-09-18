@@ -7,11 +7,15 @@ public class FeedPanelShortcuts : MonoBehaviour
     //FUNCTIONALITIES
     public void MoossionShortcut()
     {
-        Debug.Log("ClickableFeedItem - MoossionShortcut");
+        GameController.Instance.SetState(GameController.EGameState.Paused);
+        UIController.Instance.ShowCowdex();
+
     }
     public void CowdexShortcut()
     {
-        Debug.Log("ClickableFeedItem - CowdexShortcut");
+        GameController.Instance.SetState(GameController.EGameState.Paused);
+        UIController.Instance.ShowMoossions();
+
     }
 
 }
