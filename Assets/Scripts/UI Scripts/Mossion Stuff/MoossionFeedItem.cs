@@ -106,8 +106,9 @@ public class MoossionFeedItem : MonoBehaviour
     //EVENT-HANDLING
     private void HandleMoossionCompletion(object sender, MoossionCompleteEventArgs e)
     {
-        //SHOW MOOSSION FEED ITEM AND ITS CONTENT
+        //SHOW FEED ITEM AND ITS CONTENT
         persistenceTimer = persistenceTimerMax;
+        slideInTimer = slideInTimerMax;
         feedItemText.text = "Moossion #" + e.MoossionIndex + " complete!";
         this.gameObject.SetActive(true);
     }
