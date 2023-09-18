@@ -10,11 +10,23 @@ public class UFOAccessoriesBuffs : MonoBehaviour
 
 {
     //DATA
+    ///SPRITE RENDERERS
     [SerializeField] private SpriteRenderer speedBoostUFO;
     [SerializeField] private SpriteRenderer fastCatchUFO;
     [SerializeField] private SpriteRenderer fuelBoostUFO;
     [SerializeField] private SpriteRenderer radarUFO;
     [SerializeField] private SpriteRenderer captureRadiusUFO;
+
+    ///HOLOGRAM PREFABS
+    //POSITIVE EFFECTS
+    [SerializeField] private FadeOutEntity prefab2xFuel;
+    [SerializeField] private FadeOutEntity prefabRange;
+    [SerializeField] private FadeOutEntity prefabFastCatch;
+    [SerializeField] private FadeOutEntity prefabMoveSpeed;
+
+    //NEGATIVE EFFECTS
+    [SerializeField] private FadeOutEntity prefabInstantFuelLoss;
+
 
 
     //METHODS
