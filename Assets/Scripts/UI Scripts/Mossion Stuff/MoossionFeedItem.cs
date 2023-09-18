@@ -21,6 +21,9 @@ public class MoossionFeedItem : MonoBehaviour
     [SerializeField] private float slideInTimerMax = 1.0f;
     private float slideInTimer;
 
+    ///DEBUG
+    [SerializeField] private bool isDebug;
+
 
 
     //METHODS
@@ -36,13 +39,16 @@ public class MoossionFeedItem : MonoBehaviour
         //TEXT ON START = EMPTY
         feedItemText.text = "TEST MOOSSION FEED";
 
-        //DISABLE ON GUI
-        //TODO: UN-COMMENT
-        //this.gameObject.SetActive(false);
-
-        //TODO: REMOVE
-        persistenceTimer = persistenceTimerMax;
-        slideInTimer = slideInTimerMax;
+        //HANDLE DEBUG OR DISABLE ON GUI
+        if (isDebug)
+        {
+            persistenceTimer = persistenceTimerMax;
+            slideInTimer = slideInTimerMax;
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

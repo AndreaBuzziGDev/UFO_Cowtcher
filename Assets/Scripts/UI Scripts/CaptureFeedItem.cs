@@ -19,6 +19,9 @@ public class CaptureFeedItem : MonoBehaviour
     [SerializeField] private float slideInTimerMax = 1.0f;
     private float slideInTimer;
 
+    ///DEBUG
+    [SerializeField] private bool isDebug;
+
 
 
     //METHODS
@@ -34,13 +37,16 @@ public class CaptureFeedItem : MonoBehaviour
         //TEXT ON START = EMPTY
         feedItemText.text = "TEST CAPTURE FEED";//TODO: SET EMPTY
 
-        //DISABLE ON GUI
-        //TODO: UN-COMMENT
-        //this.gameObject.SetActive(false);
-
-        //TODO: REMOVE
-        persistenceTimer = persistenceTimerMax;
-        slideInTimer = slideInTimerMax;
+        //HANDLE DEBUG OR DISABLE ON GUI
+        if (isDebug)
+        {
+            persistenceTimer = persistenceTimerMax;
+            slideInTimer = slideInTimerMax;
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
 
