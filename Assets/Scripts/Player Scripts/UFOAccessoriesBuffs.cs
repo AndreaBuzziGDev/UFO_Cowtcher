@@ -15,6 +15,16 @@ public class UFOAccessoriesBuffs : MonoBehaviour
     [SerializeField] private SpriteRenderer radarUFO;
     [SerializeField] private SpriteRenderer captureRadiusUFO;
 
+
+    //METHODS
+    //...
+    private void Start()
+    {
+        //REGISTER EVENT
+
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -34,4 +44,13 @@ public class UFOAccessoriesBuffs : MonoBehaviour
         captureRadiusUFO.gameObject.SetActive(UFOStatusAlterationHelper.HasBuffCaptureRadius());
 
     }
+
+    //FUNCTIONALITIES
+
+    //REGISTER EVENT
+    private void HandleBuff()
+    {
+
+    }
+
 }
