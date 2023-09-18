@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ItemPickup : MonoInteractible
 {
@@ -27,6 +28,8 @@ public class ItemPickup : MonoInteractible
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
 
+    //EVENT
+    public static event EventHandler<SAPickupEventArgs> ItemPickedUp;
 
 
 
@@ -54,8 +57,13 @@ public class ItemPickup : MonoInteractible
         //CAN BE INTERACTED ONLY IF IT'S NOT EXPIRING
         if (expireTimeCurrent <= 0)
         {
+            //TODO: REFACTOR THIS VIA EVENT HANDLING
             //DELIVER BUFF TO THE PLAYER UFO
             GameController.Instance.FindPlayerAnywhere().AddStatusAlteration(this.GetStatusAlteration());
+
+            //FIRE EVENT - AN ITEM HAS BEEN PICKED UP
+            SAPickupEventArgs myEventArg = new SAPickupEventArgs(Alteration.buffType);
+            OnItemPickedUp(myEventArg);
 
             //DESTROY PICKED UP ITEM
             Destroy(this.gameObject);//TODO: POSSIBLE CHANGE SO THAT THIS DISAPPEARS GRADUALLY...
@@ -125,7 +133,6 @@ public class ItemPickup : MonoInteractible
             expireTimeCurrent -= Time.deltaTime;
             float factor = expireTimeCurrent / expirationTimeMax;
 
-            //TODO: CHANGE WITH COLOR LERP
             Color buffSpriteColor = new Color(buffIconRenderer.color.r, buffIconRenderer.color.g, buffIconRenderer.color.b, factor);
             buffIconRenderer.color = buffSpriteColor;
 
@@ -133,5 +140,20 @@ public class ItemPickup : MonoInteractible
 
     }
 
+
+
+
+    //EVENT-FIRING METHOD
+    private void OnItemPickedUp(SAPickupEventArgs myEventArg)
+    {
+        // make a copy to be more thread-safe
+        EventHandler<SAPickupEventArgs> handler = ItemPickedUp;
+
+        if (handler != null)
+        {
+            // invoke the subscribed event-handler(s)
+            handler(this, myEventArg);
+        }
+    }
 
 }
