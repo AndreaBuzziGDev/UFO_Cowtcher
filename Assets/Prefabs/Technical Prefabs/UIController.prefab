@@ -5193,7 +5193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404543758603381385, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: slidingOffset.x
-      value: 432
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 1404543758603381385, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: slidingOffset.y

@@ -31,28 +31,25 @@ public class CaptureFeedItem : MonoBehaviour
         startingPos = this.transform.position;
 
         //TEXT ON START = EMPTY
-        feedItemText.text = "";
+        feedItemText.text = "TEST";//TODO: SET EMPTY
 
         //DISABLE ON GUI
-        this.gameObject.SetActive(false);
+        //TODO: UN-COMMENT
+        //this.gameObject.SetActive(false);
+
+        //TODO: REMOVE
+        persistenceTimer = persistenceTimerMax;
+        slideInTimer = slideInTimerMax;
     }
 
 
     private void FixedUpdate()
     {
-        //HANDLE SLIDING IN
-        this.transform.position = Vector3.Lerp(startingPos, startingPos+slidingOffset, slideInTimer / slideInTimerMax);
-        slideInTimer -= Time.fixedDeltaTime;
-        
+        //HANDLE SLIDE-IN
+        HandleSlideIn();
+
         //HANDLE PERSISTENCE ON SCREEN
-        if (persistenceTimer > 0)
-        {
-            persistenceTimer -= Time.fixedDeltaTime;
-        }
-        else
-        {
-            this.gameObject.SetActive(false);
-        }
+        HandlePersistence();
     }
 
 
@@ -61,6 +58,26 @@ public class CaptureFeedItem : MonoBehaviour
         //UN-REGISTER EVENT
         Abductor.CowCapture -= HandleCowCapture;
     }
+
+
+    //FUNCTIONALITIES
+
+    ///SLIDE-IN
+    private void HandleSlideIn()
+    {
+        this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));//TODO: EASING
+        if (slideInTimer > 0) slideInTimer -= Time.fixedDeltaTime;
+        else slideInTimer = 0;
+    }
+
+    ///PERSISTENCE ON SCREEN
+    private void HandlePersistence() 
+    {
+        if (persistenceTimer > 0) persistenceTimer -= Time.fixedDeltaTime;
+        else this.gameObject.SetActive(false);
+    }
+
+
 
 
 
@@ -79,5 +96,9 @@ public class CaptureFeedItem : MonoBehaviour
         //EXECUTE GUI ANIMATION
         slideInTimer = slideInTimerMax;
     }
+
+
+    //EASING
+    public static float EaseInQuad(float t) => t * t;
 
 }
