@@ -43,6 +43,10 @@ public class MoossionFeedItem : MonoBehaviour
         //GUI INITIALIZE
         canvasGroup = GetComponent<CanvasGroup>();
 
+
+        Debug.Log()
+
+
         //HANDLE DEBUG OR DISABLE ON GUI
         if (isDebug)
         {
