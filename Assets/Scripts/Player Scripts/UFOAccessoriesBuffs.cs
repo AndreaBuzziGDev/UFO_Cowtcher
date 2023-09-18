@@ -72,7 +72,32 @@ public class UFOAccessoriesBuffs : MonoBehaviour
     public void HandleItemPickup(object sender, SAPickupEventArgs e)
     {
         //SHOW CORRESPONDING BUFF
+        FadeOutEntity correspondingHologram = getMatchingHologram(e.StatusAlterationID);
+        if (correspondingHologram != null)
+        {
+            //TODO: HANDLE APPROPRIATE POSITION
+            Vector3 coords = this.transform.position;
+            FadeOutEntity.SpawnFadeOutEntity(correspondingHologram, coords);
+        }
+    }
 
+    public FadeOutEntity getMatchingHologram(SAAbstract.EBuffType statusAlterationID)
+    {
+        switch (statusAlterationID)
+        {
+            case SAAbstract.EBuffType.FuelBoost2X:
+                return prefab2xFuel;
+            case SAAbstract.EBuffType.CaptureRadius:
+                return prefabRange;
+            case SAAbstract.EBuffType.FastCatch:
+                return prefabFastCatch;
+            case SAAbstract.EBuffType.SpeedBoost:
+                return prefabMoveSpeed;
+            case SAAbstract.EBuffType.FuelLoss:
+                return prefabInstantFuelLoss;
+            default:
+                return null;
+        }
     }
 
 }
