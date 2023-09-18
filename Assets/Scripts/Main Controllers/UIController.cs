@@ -119,10 +119,6 @@ public class UIController : MonoSingleton<UIController>
     public void HideInputCanvas() => gameplayInputCanvas.SetActive(false);
 
     //IN-GAME PANEL
-    ///FEED
-    public void ShowFeed() => igPanel.ShowFeed();
-    public void HideFeed() => igPanel.HideFeed();
-
     public void ShowFeed() => feed.gameObject.SetActive(true);
     public void HideFeed() => feed.gameObject.SetActive(false);
 
