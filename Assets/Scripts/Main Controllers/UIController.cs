@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class UIController : MonoSingleton<UIController>
 {
-    //NB: THERE MIGHT BE AN "EXPLOSION" OF UI COMPONENTS BASED ON NECESSITY.
-    //THIS CLASS IS MEANT TO HANDLE BASIC UI. IF NECESSARY, SWITCH TO SOMETHING THAT ACTS LIKE A "TOP-LEVEL" MANAGER
-    //WHILE SOME OTHER SUB-COMPONENTS HANDLE THE DETAILS OF THE CODE.
-
     //DATA
     //TODO: MIGHT BE SIMPLIFIED BY USING DEDICATED CLASSES
     private List<GameObject> AllMenuPanels = new();
@@ -18,8 +14,14 @@ public class UIController : MonoSingleton<UIController>
     [SerializeField] private GameObject CowdexPanel;
     [SerializeField] private GameObject MoossionsPanel;
 
+    ///GAMEPLAY INPUT CANVAS
     [SerializeField] private GameObject gameplayInputCanvas;
     public GameObject GameplayInputCanvas { get { return gameplayInputCanvas; } }
+
+    ///FEED
+    [SerializeField] private FeedPanelShortcuts feed;
+    public FeedPanelShortcuts Feed { get { return feed; } }
+
 
 
     //IN GAME PANEL - FUNCTIONALITIES USED BY OTHER CLASSES, UIController ACTS AS UNIQUE PROVIDER
@@ -120,6 +122,10 @@ public class UIController : MonoSingleton<UIController>
     ///FEED
     public void ShowFeed() => igPanel.ShowFeed();
     public void HideFeed() => igPanel.HideFeed();
+
+    public void ShowFeed() => feed.gameObject.SetActive(true);
+    public void HideFeed() => feed.gameObject.SetActive(false);
+
 
 
     //PAUSE

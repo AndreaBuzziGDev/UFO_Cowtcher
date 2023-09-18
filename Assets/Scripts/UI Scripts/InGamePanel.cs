@@ -21,19 +21,4 @@ public class InGamePanel : MonoBehaviour
     public BuffPanel DebuffPanel { get { return debuffPanel; } }
     public BuffPanel RitualPanel { get { return ritualPanel; } }
 
-
-    ///FEED
-    [SerializeField] private FeedPanelShortcuts feed;
-    public FeedPanelShortcuts Feed { get { return feed; } }
-
-
-
-    //METHODS
-
-    //FUNCTIONALITIES
-
-    public void ShowFeed() => feed.gameObject.SetActive(true);
-    public void HideFeed() => feed.gameObject.SetActive(false);
-
-
 }
