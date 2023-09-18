@@ -725,6 +725,7 @@ MonoBehaviour:
   prefabFastCatch: {fileID: 4325075315128471542, guid: 53c258a05fa73da40a40e0794d447924, type: 3}
   prefabMoveSpeed: {fileID: 4325075315128471542, guid: 4532b88458e100540b3aeab8168d599c, type: 3}
   prefabInstantFuelLoss: {fileID: 4325075315128471542, guid: aee2532a88008644f97b5cbb6fc9d61d, type: 3}
+  hologramPosition: {fileID: 1311634881397638210}
 --- !u!1 &8035438668784491012
 GameObject:
   m_ObjectHideFlags: 0
