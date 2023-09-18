@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MoossionFeedItem : MonoBehaviour
+public class FeedItemCapture : MonoBehaviour
 {
     //DATA
 
@@ -16,8 +15,8 @@ public class MoossionFeedItem : MonoBehaviour
     [SerializeField] private float persistenceFadeoutThreshold = 1f;
     private float persistenceTimer;
 
-    ///GUI - ANIMATION 
-    //TODO: THIS CODE IS COPIED FROM CaptureFeedItem - IF TIME IS AVAILABLE, USE INHERITANCE TO PROPERLY FACTOR CODE
+    ///GUI - ANIMATION
+    //TODO: THIS COULD BE IMPROVED BY PROGRAMMATICALLY LOOKING FOR THE SIZE OF THE SCREEN
     private Vector3 slidingOffset = new Vector3(500, 0, 0);
     private Vector3 startingPos = Vector3.zero;
 
@@ -34,7 +33,7 @@ public class MoossionFeedItem : MonoBehaviour
     void Start()
     {
         //REGISTER EVENT
-        Moossion.MoossionComplete += HandleMoossionCompletion;
+        Abductor.CowCapture += HandleCowCapture;
 
         //DEFAULT POSITION
         startingPos = this.transform.position;
@@ -46,7 +45,7 @@ public class MoossionFeedItem : MonoBehaviour
         //HANDLE DEBUG OR DISABLE ON GUI
         if (isDebug)
         {
-            feedItemText.text = "TEST MOOSSION FEED";
+            feedItemText.text = "TEST CAPTURE FEED";
             persistenceTimer = persistenceTimerMax;
             slideInTimer = slideInTimerMax;
         }
@@ -56,8 +55,8 @@ public class MoossionFeedItem : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         //HANDLE SLIDE-IN
         HandleSlideIn();
@@ -70,7 +69,7 @@ public class MoossionFeedItem : MonoBehaviour
     private void OnDestroy()
     {
         //UN-REGISTER EVENT
-        Moossion.MoossionComplete -= HandleMoossionCompletion;
+        Abductor.CowCapture -= HandleCowCapture;
     }
 
 
@@ -90,7 +89,7 @@ public class MoossionFeedItem : MonoBehaviour
         if (persistenceTimer > 0)
         {
             persistenceTimer -= Time.fixedDeltaTime;
-            if(persistenceTimer <= persistenceFadeoutThreshold)
+            if (persistenceTimer <= persistenceFadeoutThreshold)
             {
                 this.canvasGroup.alpha = Mathf.Lerp(0, 1, persistenceTimer / persistenceFadeoutThreshold);
             }
@@ -104,16 +103,22 @@ public class MoossionFeedItem : MonoBehaviour
 
 
     //EVENT-HANDLING
-    private void HandleMoossionCompletion(object sender, MoossionCompleteEventArgs e)
+    private void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
         //SHOW FEED ITEM AND ITS CONTENT
-        persistenceTimer = persistenceTimerMax;
-        slideInTimer = slideInTimerMax;
-        this.canvasGroup.alpha = 1;
-        this.transform.position = startingPos + slidingOffset;
+        if (e.IsNewlyCaptured)
+        {
+            persistenceTimer = persistenceTimerMax;
+            slideInTimer = slideInTimerMax;
+            this.canvasGroup.alpha = 1;
+            this.transform.position = startingPos + slidingOffset;
 
-        feedItemText.text = "Moossion #" + e.MoossionIndex + " complete!";
-        this.gameObject.SetActive(true);
+            feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.CowName;
+            this.gameObject.SetActive(true);
+        }
+
+        //EXECUTE GUI ANIMATION
+        slideInTimer = slideInTimerMax;
     }
 
 
