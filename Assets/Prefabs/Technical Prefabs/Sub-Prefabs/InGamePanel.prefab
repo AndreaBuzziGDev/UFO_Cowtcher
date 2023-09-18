@@ -649,6 +649,7 @@ MonoBehaviour:
   feedItemText: {fileID: 8649331851100634020}
   slidingOffset: {x: 500, y: 0, z: 0}
   slideInTimerMax: 1
+  isDebug: 0
 --- !u!1 &4294004336950744081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,6 +1660,7 @@ MonoBehaviour:
   feedItemText: {fileID: 6167337227193816994}
   slidingOffset: {x: 500, y: 0, z: 0}
   slideInTimerMax: 1
+  isDebug: 0
 --- !u!1 &7692126360415077919
 GameObject:
   m_ObjectHideFlags: 0
