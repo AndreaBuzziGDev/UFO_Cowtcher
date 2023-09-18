@@ -109,6 +109,7 @@ public class CaptureFeedItem : MonoBehaviour
         {
             persistenceTimer = persistenceTimerMax;
             slideInTimer = slideInTimerMax;
+            this.canvasGroup.alpha = 1;
             this.transform.position = startingPos + slidingOffset;
 
             feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.CowName;

@@ -90,7 +90,7 @@ public class MoossionFeedItem : MonoBehaviour
         if (persistenceTimer > 0)
         {
             persistenceTimer -= Time.fixedDeltaTime;
-            if(persistenceTimer<= persistenceFadeoutThreshold)
+            if(persistenceTimer <= persistenceFadeoutThreshold)
             {
                 this.canvasGroup.alpha = Mathf.Lerp(0, 1, persistenceTimer / persistenceFadeoutThreshold);
             }
@@ -109,6 +109,7 @@ public class MoossionFeedItem : MonoBehaviour
         //SHOW FEED ITEM AND ITS CONTENT
         persistenceTimer = persistenceTimerMax;
         slideInTimer = slideInTimerMax;
+        this.canvasGroup.alpha = 1;
         this.transform.position = startingPos + slidingOffset;
 
         feedItemText.text = "Moossion #" + e.MoossionIndex + " complete!";
