@@ -6,14 +6,18 @@ using UnityEngine.UI;
 public class MoossionFeedItem : MonoBehaviour
 {
     //DATA
-    [SerializeField] private float persistenceTimerMax = 3.0f;
-    private float persistenceTimer;
 
     ///GUI REFERENCES
     [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
+    private CanvasGroup canvasGroup;
 
+    ///GUI - PERSISTENCE
+    [SerializeField] private float persistenceTimerMax = 3.0f;
+    [SerializeField] private float persistenceFadeoutThreshold = 1f;
+    private float persistenceTimer;
+
+    ///GUI - ANIMATION 
     //TODO: THIS CODE IS COPIED FROM CaptureFeedItem - IF TIME IS AVAILABLE, USE INHERITANCE TO PROPERLY FACTOR CODE
-    ///GUI ANIMATION STUFF
     //TODO: THIS COULD BE IMPROVED BY PROGRAMMATICALLY LOOKING FOR THE SIZE OF THE SCREEN
     [SerializeField] private Vector3 slidingOffset = new Vector3(500, 0, 0);
     private Vector3 startingPos = Vector3.zero;
@@ -36,12 +40,13 @@ public class MoossionFeedItem : MonoBehaviour
         //DEFAULT POSITION
         startingPos = this.transform.position;
 
-        //TEXT ON START = EMPTY
-        feedItemText.text = "TEST MOOSSION FEED";
+        //GUI INITIALIZE
+        canvasGroup = GetComponent<CanvasGroup>();
 
         //HANDLE DEBUG OR DISABLE ON GUI
         if (isDebug)
         {
+            feedItemText.text = "TEST MOOSSION FEED";
             persistenceTimer = persistenceTimerMax;
             slideInTimer = slideInTimerMax;
         }
@@ -82,7 +87,14 @@ public class MoossionFeedItem : MonoBehaviour
     ///PERSISTENCE ON SCREEN
     private void HandlePersistence()
     {
-        if (persistenceTimer > 0) persistenceTimer -= Time.fixedDeltaTime;
+        if (persistenceTimer > 0)
+        {
+            persistenceTimer -= Time.fixedDeltaTime;
+            if(persistenceTimer<= persistenceFadeoutThreshold)
+            {
+                this.canvasGroup.alpha = Mathf.Lerp(0, 1, persistenceTimer / persistenceFadeoutThreshold);
+            }
+        }
         else this.gameObject.SetActive(false);
     }
 

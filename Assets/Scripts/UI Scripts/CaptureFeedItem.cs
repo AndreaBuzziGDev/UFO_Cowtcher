@@ -5,13 +5,17 @@ using UnityEngine;
 public class CaptureFeedItem : MonoBehaviour
 {
     //DATA
-    [SerializeField] private float persistenceTimerMax = 3.0f;
-    private float persistenceTimer;
 
     ///GUI REFERENCES
     [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
+    private CanvasGroup canvasGroup;
 
-    ///GUI ANIMATION STUFF
+    ///GUI - PERSISTENCE
+    [SerializeField] private float persistenceTimerMax = 3.0f;
+    [SerializeField] private float persistenceFadeoutThreshold = 1f;
+    private float persistenceTimer;
+
+    ///GUI - ANIMATION
     //TODO: THIS COULD BE IMPROVED BY PROGRAMMATICALLY LOOKING FOR THE SIZE OF THE SCREEN
     [SerializeField] private Vector3 slidingOffset = new Vector3(500, 0, 0);
     private Vector3 startingPos = Vector3.zero;
@@ -34,12 +38,13 @@ public class CaptureFeedItem : MonoBehaviour
         //DEFAULT POSITION
         startingPos = this.transform.position;
 
-        //TEXT ON START = EMPTY
-        feedItemText.text = "TEST CAPTURE FEED";//TODO: SET EMPTY
+        //GUI INITIALIZE
+        canvasGroup = GetComponent<CanvasGroup>();
 
         //HANDLE DEBUG OR DISABLE ON GUI
         if (isDebug)
         {
+            feedItemText.text = "TEST CAPTURE FEED";
             persistenceTimer = persistenceTimerMax;
             slideInTimer = slideInTimerMax;
         }
@@ -78,9 +83,16 @@ public class CaptureFeedItem : MonoBehaviour
     }
 
     ///PERSISTENCE ON SCREEN
-    private void HandlePersistence() 
+    private void HandlePersistence()
     {
-        if (persistenceTimer > 0) persistenceTimer -= Time.fixedDeltaTime;
+        if (persistenceTimer > 0)
+        {
+            persistenceTimer -= Time.fixedDeltaTime;
+            if (persistenceTimer <= persistenceFadeoutThreshold)
+            {
+                this.canvasGroup.alpha = Mathf.Lerp(0, 1, persistenceTimer / persistenceFadeoutThreshold);
+            }
+        }
         else this.gameObject.SetActive(false);
     }
 
