@@ -28,6 +28,9 @@ public class UFOAccessoriesBuffs : MonoBehaviour
     [SerializeField] private FadeOutEntity prefabInstantFuelLoss;
     //TODO: MORE EFFECTS...
 
+    //POSITION TO SPAWN HOLOGRAMS
+    [SerializeField] private Transform hologramPosition;
+
 
 
     //METHODS
@@ -75,9 +78,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
         FadeOutEntity correspondingHologram = GetMatchingHologram(e.StatusAlterationID);
         if (correspondingHologram != null)
         {
-            //TODO: HANDLE APPROPRIATE POSITION
-            Vector3 coords = this.transform.position;
-            FadeOutEntity.SpawnFadeOutEntity(correspondingHologram, coords);
+            FadeOutEntity.SpawnFadeOutEntity(correspondingHologram, hologramPosition.position);
         }
     }
 
