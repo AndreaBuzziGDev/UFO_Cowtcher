@@ -32,7 +32,7 @@ public class CaptureFeedItem : MonoBehaviour
         startingPos = this.transform.position;
 
         //TEXT ON START = EMPTY
-        feedItemText.text = "TEST";//TODO: SET EMPTY
+        feedItemText.text = "TEST CAPTURE FEED";//TODO: SET EMPTY
 
         //DISABLE ON GUI
         //TODO: UN-COMMENT

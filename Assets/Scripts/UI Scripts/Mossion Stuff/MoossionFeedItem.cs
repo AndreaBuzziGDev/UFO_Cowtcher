@@ -34,7 +34,7 @@ public class MoossionFeedItem : MonoBehaviour
         startingPos = this.transform.position;
 
         //TEXT ON START = EMPTY
-        feedItemText.text = "";
+        feedItemText.text = "TEST MOOSSION FEED";
 
         //DISABLE ON GUI
         //TODO: UN-COMMENT
@@ -46,7 +46,7 @@ public class MoossionFeedItem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //HANDLE SLIDE-IN
         HandleSlideIn();
