@@ -109,6 +109,8 @@ public class MoossionFeedItem : MonoBehaviour
         //SHOW FEED ITEM AND ITS CONTENT
         persistenceTimer = persistenceTimerMax;
         slideInTimer = slideInTimerMax;
+        this.transform.position = startingPos + slidingOffset;
+
         feedItemText.text = "Moossion #" + e.MoossionIndex + " complete!";
         this.gameObject.SetActive(true);
     }
