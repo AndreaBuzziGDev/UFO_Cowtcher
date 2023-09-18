@@ -66,7 +66,7 @@ public class ItemPickup : MonoInteractible
             OnItemPickedUp(myEventArg);
 
             //DESTROY PICKED UP ITEM
-            Destroy(this.gameObject);//TODO: POSSIBLE CHANGE SO THAT THIS DISAPPEARS GRADUALLY...
+            Destroy(this.gameObject);
         }
     }
 
