@@ -72,7 +72,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
     public void HandleItemPickup(object sender, SAPickupEventArgs e)
     {
         //SHOW CORRESPONDING BUFF
-        FadeOutEntity correspondingHologram = getMatchingHologram(e.StatusAlterationID);
+        FadeOutEntity correspondingHologram = GetMatchingHologram(e.StatusAlterationID);
         if (correspondingHologram != null)
         {
             //TODO: HANDLE APPROPRIATE POSITION
@@ -81,7 +81,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
         }
     }
 
-    public FadeOutEntity getMatchingHologram(SAAbstract.EBuffType statusAlterationID)
+    public FadeOutEntity GetMatchingHologram(SAAbstract.EBuffType statusAlterationID)
     {
         switch (statusAlterationID)
         {
