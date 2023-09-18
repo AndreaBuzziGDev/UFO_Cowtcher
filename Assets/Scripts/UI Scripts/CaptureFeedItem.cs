@@ -77,7 +77,7 @@ public class CaptureFeedItem : MonoBehaviour
     ///SLIDE-IN
     private void HandleSlideIn()
     {
-        this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));//TODO: EASING
+        this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
         if (slideInTimer > 0) slideInTimer -= Time.fixedDeltaTime;
         else slideInTimer = 0;
     }
