@@ -61,7 +61,6 @@ public class Abductor : MonoBehaviour
         ///LAYER INITIALIZATION
         cowLayer = LayerMask.NameToLayer("CowPhysicsLayer");
         interactionLayer = LayerMask.NameToLayer("ObjectInteractionPhysicsLayer");
-
     }
 
     private void Start()

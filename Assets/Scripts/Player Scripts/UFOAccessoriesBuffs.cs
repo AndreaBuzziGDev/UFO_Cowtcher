@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UFOAccessoriesBuffs : MonoBehaviour
 
@@ -21,7 +22,7 @@ public class UFOAccessoriesBuffs : MonoBehaviour
     private void Start()
     {
         //REGISTER EVENT
-
+        ItemPickup.ItemPickedUp += HandleItemPickup;
     }
 
 
@@ -45,11 +46,19 @@ public class UFOAccessoriesBuffs : MonoBehaviour
 
     }
 
+    private void OnDisable()
+    {
+        //UN-REGISTER EVENT
+        ItemPickup.ItemPickedUp -= HandleItemPickup;
+    }
+
+
     //FUNCTIONALITIES
 
-    //REGISTER EVENT
-    private void HandleBuff()
+    //HANDLING PICKUP OF ITEMS
+    public void HandleItemPickup(object sender, SAPickupEventArgs e)
     {
+        //SHOW CORRESPONDING BUFF
 
     }
 
