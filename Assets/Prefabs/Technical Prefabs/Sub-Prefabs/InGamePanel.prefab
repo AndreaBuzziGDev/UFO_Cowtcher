@@ -645,9 +645,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325c9d3e466f7ef48b2cfce9cc6f0bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  persistenceTimerMax: 5
+  persistenceTimerMax: 3
   feedItemText: {fileID: 8649331851100634020}
-  slidingOffset: {x: 10, y: 10, z: 10}
+  slidingOffset: {x: 500, y: 0, z: 0}
   slideInTimerMax: 1
 --- !u!1 &4294004336950744081
 GameObject:
@@ -1655,8 +1655,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991a04b6ef64c61449c3f7f02835ae92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  persistenceTimerMax: 5
+  persistenceTimerMax: 3
   feedItemText: {fileID: 6167337227193816994}
+  slidingOffset: {x: 500, y: 0, z: 0}
+  slideInTimerMax: 1
 --- !u!1 &7692126360415077919
 GameObject:
   m_ObjectHideFlags: 0

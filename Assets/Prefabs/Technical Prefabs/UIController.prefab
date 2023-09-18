@@ -5191,29 +5191,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1404543758603381385, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: slidingOffset.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 1404543758603381385, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: slidingOffset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1404543758603381385, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: slidingOffset.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1404543758603381385, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: persistenceTimerMax
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4294004336950744081, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_Name
       value: InGamePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265449936431437924, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: persistenceTimerMax
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
