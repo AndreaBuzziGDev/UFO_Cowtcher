@@ -161,6 +161,12 @@ public class CowMovement : MonoBehaviour
             Vector3 diff = SpawningGrid.Instance.Center() - this.transform.position;
             intendedDirection = (new Vector3(diff.x, 0, diff.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
         }
+        else
+        {
+            //INTERPOLATION TO MAKE SURE THE COW DOES NOT TURN SUDDENLY
+            //VERSION 1 - FLAT 0.5 INTERPOLATION AT FIXED UPDATES
+            intendedDirection = Vector3.Lerp(rb.velocity.normalized, intendedDirection, 0.5f);
+        }
 
 
         //GLOBAL SPEED MULTIPLIER
