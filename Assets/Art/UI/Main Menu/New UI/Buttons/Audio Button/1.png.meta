@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b50d4f79cf3f4e4092a9918422930c9
+guid: 1db1e0250389ef14390183a9f8e437d6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,6 +107,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_4
+      name: 1 1_4
       rect:
         serializedVersion: 2
         x: 214
@@ -150,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 128bf14cd9059ca40bac4913f17f7066
-      internalID: -48106657
+      spriteID: 7becc087f009f1e4087e48c3b3aad333
+      internalID: 1949006047
       vertices: []
       indices: 
       edges: []
@@ -159,7 +172,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f2e02fcfd6c02e145a44e946cb6f1d2a
     internalID: 0
     vertices: []
     indices: 
@@ -167,15 +180,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1_0: -1297212328
-      1_1: -1737450909
-      1_2: -901646833
-      1_3: -394056625
-      1_4: -48106657
-      1_5: -1348530496
-      1_6: 893542490
-      1_7: -1841694946
-      1_8: -249832409
+      1 1_0: -2019232170
+      1 1_1: -1577354029
+      1 1_2: 739285715
+      1 1_3: -1866399043
+      1 1_4: 1949006047
+      1 1_5: 1872046684
+      1 1_6: 1348620393
+      1 1_7: 275369691
+      1 1_8: -1168605619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
