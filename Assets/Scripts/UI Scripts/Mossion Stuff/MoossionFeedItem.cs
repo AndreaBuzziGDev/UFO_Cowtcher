@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MoossionFeedItem : MonoBehaviour
 {
     //DATA
-    [SerializeField] private float persistenceTimerMax = 5.0f;
+    [SerializeField] private float persistenceTimerMax = 3.0f;
     private float persistenceTimer;
 
     ///GUI REFERENCES
