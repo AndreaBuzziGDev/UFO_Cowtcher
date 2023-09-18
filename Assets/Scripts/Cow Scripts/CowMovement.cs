@@ -43,6 +43,8 @@ public class CowMovement : MonoBehaviour
     [SerializeField] private Fence closestFence;
     private Vector3 previousFenceNormal;
 
+    ///TURNING SPEED
+    [SerializeField] float turningSpeedMult = 2.5f;
 
 
 
@@ -164,8 +166,7 @@ public class CowMovement : MonoBehaviour
         else
         {
             //INTERPOLATION TO MAKE SURE THE COW DOES NOT TURN SUDDENLY
-            //VERSION 1 - FLAT 0.5 INTERPOLATION AT FIXED UPDATES
-            intendedDirection = Vector3.Lerp(rb.velocity.normalized, intendedDirection, 0.5f);
+            intendedDirection = Vector3.Lerp(rb.velocity.normalized, intendedDirection, Time.fixedDeltaTime * turningSpeedMult).normalized;
         }
 
 
