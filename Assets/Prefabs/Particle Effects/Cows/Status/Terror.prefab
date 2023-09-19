@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7371038380615960172}
   - component: {fileID: 7371522103222707776}
   m_Layer: 0
-  m_Name: CFX3 Skulls
+  m_Name: Terror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
