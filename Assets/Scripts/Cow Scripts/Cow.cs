@@ -280,14 +280,21 @@ public class Cow : MonoBehaviour
     public void Flee()
     {
         //PARTICLE EMISSION
-        ParticleSystem fleeParticlesInstance = Instantiate(CowDisappearParticles, spriteRenderer.transform.position, Quaternion.identity);
-        fleeParticlesInstance.Play();
-        Destroy(fleeParticlesInstance.gameObject, 3.0f);
+        PlayDisappear();
 
         //DESTROY COW (FLED)
         Destroy(this.gameObject);
 
     }
+
+    //USED WHEN FLEEING MAP OR ENTERING A HIDEOUT
+    public void PlayDisappear()
+    {
+        ParticleSystem fleeParticlesInstance = Instantiate(CowDisappearParticles, spriteRenderer.transform.position, Quaternion.identity);
+        fleeParticlesInstance.Play();
+        Destroy(fleeParticlesInstance.gameObject, 3.0f);
+    }
+
 
 
     //TODO: OPTIMIZE THESE.
