@@ -52,14 +52,14 @@ public class StructureExplosion : MonoBehaviour
 
         for(int i = 0; i<smallExplosionTransforms.Count; i++)
         {
-            if(i % 2 == 0 && randomInt % 2 == 0)
+            if (i % 2 == 0 && randomInt % 2 == 0)
             {
                 //EVEN INDEX AND EVEN RANDOM
                 Vector3 position = smallExplosionTransforms[i].position;
                 GameObject instance = Instantiate(smallExplosionPs.gameObject, position, Quaternion.identity);
                 Destroy(instance, 5);
             }
-            else
+            else if(i % 2 != 0 && randomInt % 2 != 0)
             {
                 //UNEVEN INDEX AND UNEVEN RANDOM
                 Vector3 position = smallExplosionTransforms[i].position;
