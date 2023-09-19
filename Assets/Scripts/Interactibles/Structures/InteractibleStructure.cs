@@ -35,7 +35,7 @@ public class InteractibleStructure : MonoInteractible
     [SerializeField] private GameObject expirationSubComponent;
     private bool hasBegunExpiration;
 
-    ///EXPIRATION
+    ///EXPIRATION DATA
     [SerializeField] private float expirationTimeMax = 3.0f;
     private float expireTimeCurrent;
 

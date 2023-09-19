@@ -418,7 +418,7 @@ Transform:
   m_GameObject: {fileID: 5187214460378767882}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: -1.11, z: 0.01}
+  m_LocalPosition: {x: 0.47, y: -1.446, z: -0.013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -596,6 +596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1983383794712029446}
+  - component: {fileID: 4502258583389302392}
   m_Layer: 9
   m_Name: Final Explosion
   m_TagString: Untagged
@@ -620,6 +621,28 @@ Transform:
   - {fileID: 7064711135678056434}
   m_Father: {fileID: 5110308315319567686}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4502258583389302392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411113859708167765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80173dc9d00ef574aacf1218d3f37f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigExplosionTransform: {fileID: 915990625466990366}
+  smallExplosionTransforms:
+  - {fileID: 4160299959797645284}
+  - {fileID: 1812518934895223910}
+  - {fileID: 5092260694239405002}
+  - {fileID: 1210798980230000051}
+  - {fileID: 6289586962880907123}
+  - {fileID: 5270986144639302323}
+  bigExplosionPS: {fileID: 1892078723244562, guid: 5e17259f95100bf4e9e231c3256686f7, type: 3}
+  smallExplosionPs: {fileID: 1134129239631916, guid: f37cd62e951d770439331c126142e666, type: 3}
 --- !u!1 &8286566320680501994
 GameObject:
   m_ObjectHideFlags: 0
