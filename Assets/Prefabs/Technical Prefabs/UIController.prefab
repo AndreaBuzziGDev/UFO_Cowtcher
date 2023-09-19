@@ -891,6 +891,7 @@ MonoBehaviour:
   CowdexPanel: {fileID: 4799944364165482422}
   MoossionsPanel: {fileID: 3060325067874239791}
   gameplayInputCanvas: {fileID: 3456844090314703}
+  feed: {fileID: 3332867236285946437}
   igPanel: {fileID: 5171458789816014601}
 --- !u!1 &1248432681733321348
 GameObject:
@@ -3108,7 +3109,7 @@ MonoBehaviour:
   persistenceTimerMax: 3
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
-  isDebug: 0
+  isDebug: 1
 --- !u!225 &913104778083356908
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3140,7 +3141,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -6067,10 +6068,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGamePanel
       objectReference: {fileID: 0}
-    - target: {fileID: 6241730459995727219, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: feed
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2804138775343460701, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
@@ -6578,7 +6575,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2713853064530837037, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 8939016876175409418}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
