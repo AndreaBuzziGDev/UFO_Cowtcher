@@ -405,25 +405,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7070237012498121254}
     m_Modifications:
-    - target: {fileID: 8758790404060296314, guid: 0975a176d24e6d045b876447616b0df7, type: 3}
-      propertyPath: InitialModule.startColor.minMaxState
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8883770002104310266, guid: 0975a176d24e6d045b876447616b0df7, type: 3}
       propertyPath: m_Name
       value: Slow
       objectReference: {fileID: 0}
     - target: {fileID: 8889269759709126782, guid: 0975a176d24e6d045b876447616b0df7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.144
+      value: 0.029
       objectReference: {fileID: 0}
     - target: {fileID: 8889269759709126782, guid: 0975a176d24e6d045b876447616b0df7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.37
+      value: 0.497
       objectReference: {fileID: 0}
     - target: {fileID: 8889269759709126782, guid: 0975a176d24e6d045b876447616b0df7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.126
+      value: -0.092
       objectReference: {fileID: 0}
     - target: {fileID: 8889269759709126782, guid: 0975a176d24e6d045b876447616b0df7, type: 3}
       propertyPath: m_LocalRotation.w
