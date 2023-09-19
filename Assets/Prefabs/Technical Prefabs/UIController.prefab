@@ -5192,21 +5192,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3641339784546456974, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: m_Color.a
-      value: 0.15686275
-      objectReference: {fileID: 0}
     - target: {fileID: 4294004336950744081, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
       propertyPath: m_Name
       value: InGamePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278993586334137433, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: gradientSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278993586334137433, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
-      propertyPath: maxAlphaValue
-      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

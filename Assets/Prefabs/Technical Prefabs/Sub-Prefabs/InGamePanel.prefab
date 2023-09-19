@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.12156863}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.15686275}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -372,6 +372,8 @@ MonoBehaviour:
   shakeAmount: 10
   shakeSpeed: 50
   shakeTime: 0.5
+  maxAlphaValue: 0.3
+  gradientSpeed: 3
   fuelBarImg: {fileID: 1058408724155275373}
   fuelEmergencyGradient: {fileID: 3641339784546456974}
 --- !u!1 &2149665426863300923
