@@ -76,6 +76,11 @@ public class FuelBar : MonoBehaviour
             Color gradCol = fuelEmergencyGradient.color;
             fuelEmergencyGradient.color = new Color(gradCol.r, gradCol.g, gradCol.b, Mathf.Sin(Time.realtimeSinceStartup));
         }
+        else
+        {
+            Color gradCol = fuelEmergencyGradient.color;
+            fuelEmergencyGradient.color = new Color(gradCol.r, gradCol.g, gradCol.b, 0);
+        }
 
     }
 
