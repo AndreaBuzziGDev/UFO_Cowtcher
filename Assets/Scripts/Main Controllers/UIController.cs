@@ -15,8 +15,8 @@ public class UIController : MonoSingleton<UIController>
     [SerializeField] private GameObject MoossionsPanel;
 
     ///GAMEPLAY INPUT CANVAS
-    [SerializeField] private GameObject gameplayInputCanvas;
-    public GameObject GameplayInputCanvas { get { return gameplayInputCanvas; } }
+    [SerializeField] private GameplayInputCanvas gameplayInputCanvas;
+    public GameplayInputCanvas GameplayInputCanvas { get { return gameplayInputCanvas; } }
 
     ///FEED
     [SerializeField] private FeedPanelShortcuts feed;
@@ -81,42 +81,15 @@ public class UIController : MonoSingleton<UIController>
     public void HigeIGPanel() => igPanel.gameObject.SetActive(false);
 
     //JOYSTICK
-    public void ShowJoystick(Vector2 position)
-    {
-        Image joystick = null;
+    public void ShowJoystick(Vector2 position) => gameplayInputCanvas.ShowJoystick(position);
 
-        Image[] joysticks = gameplayInputCanvas.GetComponentsInChildren<Image>(true);
-
-        foreach (Image image in joysticks)
-        {
-            if (image.transform.parent == gameplayInputCanvas.transform)
-            {
-                joystick = image;
-            }
-            else
-                image.enabled = true;
-        }
-
-        RectTransform joystickRect = joystick.GetComponent<RectTransform>();
-        joystickRect.position = position;
-        joystick.enabled = true;
-    }
-
-    public void HideJoystick()
-    {
-        Image[] joysticks = gameplayInputCanvas.GetComponentsInChildren<Image>(true);
-
-        foreach (Image image in joysticks)
-        {
-            image.enabled = false;
-        }
-    }
+    public void HideJoystick() => gameplayInputCanvas.HideJoystick();
 
 
 
     //INPUT CANVAS
-    public void ShowInputCanvas() => gameplayInputCanvas.SetActive(true);
-    public void HideInputCanvas() => gameplayInputCanvas.SetActive(false);
+    public void ShowInputCanvas() => gameplayInputCanvas.gameObject.SetActive(true);
+    public void HideInputCanvas() => gameplayInputCanvas.gameObject.SetActive(false);
 
     //IN-GAME PANEL
     public void ShowFeed() => feed.gameObject.SetActive(true);
@@ -141,7 +114,7 @@ public class UIController : MonoSingleton<UIController>
 
 
     //MOOSSIONS
-    public void ShowMoossions() 
+    public void ShowMoossions()
     {
         MoossionsPanel.SetActive(true);
         HigeIGPanel();

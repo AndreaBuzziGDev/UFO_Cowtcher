@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class GameplayInputCanvas : MonoBehaviour
 {
     //DATA
-    [SerializeField] private Image joystick;
+    [SerializeField] Image myJoystickBackground;
+    [SerializeField] Image myJoystick;
 
     //TODO: MOVE FEED STUFF (REFERENCES AND METHODS) HERE?
 
@@ -15,14 +16,37 @@ public class GameplayInputCanvas : MonoBehaviour
     //...
     public void ShowJoystick(Vector2 position)
     {
+        /*
+        Image joystick = null;
+
+        Image[] joysticks = GetComponentsInChildren<Image>(true);
+
+        foreach (Image image in joysticks)
+        {
+            if (image.transform.parent == transform)
+                joystick = image;
+            else
+                image.enabled = true;
+        }
+
         RectTransform joystickRect = joystick.GetComponent<RectTransform>();
         joystickRect.position = position;
         joystick.enabled = true;
+        */
+        myJoystickBackground.enabled = true;
+        myJoystickBackground.GetComponent<RectTransform>().position = position;
+        myJoystick.enabled = true;
     }
 
     public void HideJoystick()
     {
-        joystick.enabled = false;
+        /**/
+        Image[] joysticks = GetComponentsInChildren<Image>(true);
+
+        foreach (Image image in joysticks)
+        {
+            image.enabled = false;
+        }
     }
 
 
