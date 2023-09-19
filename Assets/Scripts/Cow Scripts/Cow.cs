@@ -109,7 +109,7 @@ public class Cow : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     ///EDITOR REFERENCES
-    [SerializeField] private ParticleSystem HasFledParticles;
+    [SerializeField] private ParticleSystem CowDisappearParticles;
     [SerializeField] private AudioSource mooAlertSource;
 
     [SerializeField] private FadeOutEntity cowFadeOutHologramOnCapture;
@@ -280,7 +280,7 @@ public class Cow : MonoBehaviour
     public void Flee()
     {
         //PARTICLE EMISSION
-        ParticleSystem fleeParticlesInstance = Instantiate(HasFledParticles, spriteRenderer.transform.position, Quaternion.identity);
+        ParticleSystem fleeParticlesInstance = Instantiate(CowDisappearParticles, spriteRenderer.transform.position, Quaternion.identity);
         fleeParticlesInstance.Play();
         Destroy(fleeParticlesInstance.gameObject, 3.0f);
 
