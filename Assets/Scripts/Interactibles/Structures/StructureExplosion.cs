@@ -26,11 +26,16 @@ public class StructureExplosion : MonoBehaviour
     // Start is called before the first frame update
     void OnDestroy()
     {
-        //DO BIG EXPLOSION
-        DoBigExplosion();
+        if (!this.gameObject.scene.isLoaded) 
+            return;
+        else
+        {
+            //DO BIG EXPLOSION
+            DoBigExplosion();
 
-        //DO SMALL EXPLOSIONS
-        DoSmallExplosion();
+            //DO SMALL EXPLOSIONS
+            DoSmallExplosion();
+        }
     }
 
     
