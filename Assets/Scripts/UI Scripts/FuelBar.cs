@@ -7,13 +7,17 @@ using UnityEngine.UI;
 public class FuelBar : MonoBehaviour
 {
     //DATA
-    //
+    //FUEL BAR SHAKE DATA
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
     [SerializeField] private float shakeTime;
     private float currentShakeTime;
-
     bool shake = false;
+
+    //EMERGENCY FUEL GRADIENT DATA
+    [SerializeField] [Range(0, 1)] private float maxAlphaValue = 0.4f;
+    [SerializeField] [Range(1, 10)] private float gradientSpeed = 1.0f;
+
 
     //GUI REFERENCES
     [SerializeField] private Image fuelBarImg;
@@ -74,7 +78,12 @@ public class FuelBar : MonoBehaviour
         if (ufo.isEmergencyFuel)
         {
             Color gradCol = fuelEmergencyGradient.color;
-            fuelEmergencyGradient.color = new Color(gradCol.r, gradCol.g, gradCol.b, Mathf.Sin(Time.realtimeSinceStartup));
+            fuelEmergencyGradient.color = new Color(
+                gradCol.r, 
+                gradCol.g, 
+                gradCol.b, 
+                Mathf.Abs(Mathf.Sin(Time.time * gradientSpeed)) * maxAlphaValue
+                );
         }
         else
         {
