@@ -6,14 +6,19 @@ using UnityEngine.UI;
 
 public class FuelBar : MonoBehaviour
 {
-    public Image FuelBarImg;
-
-    bool shake = false;
+    //DATA
+    //
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
-    private float currentShakeTime;
     [SerializeField] private float shakeTime;
+    private float currentShakeTime;
 
+    bool shake = false;
+
+    //GUI REFERENCES
+    public Image FuelBarImg;
+
+    //TECHNICAL
     Vector3 barPosition;
 
 
