@@ -8,30 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4376075168481622658}
     m_Modifications:
-    - target: {fileID: 1934103908450116264, guid: 7e79b573b7799a14ea857b10c2bc81a9, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1934103908450116264, guid: 7e79b573b7799a14ea857b10c2bc81a9, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1934103908450116264, guid: 7e79b573b7799a14ea857b10c2bc81a9, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116697286338817392, guid: 7e79b573b7799a14ea857b10c2bc81a9, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116697286338817392, guid: 7e79b573b7799a14ea857b10c2bc81a9, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116697286338817392, guid: 7e79b573b7799a14ea857b10c2bc81a9, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4584965940791854176, guid: 7e79b573b7799a14ea857b10c2bc81a9, type: 3}
       propertyPath: m_Name
       value: Malicious
