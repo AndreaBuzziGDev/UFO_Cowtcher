@@ -190,7 +190,7 @@ MonoBehaviour:
   persistenceTimerMax: 3
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
-  isDebug: 1
+  isDebug: 0
 --- !u!225 &4121444162027144992
 CanvasGroup:
   m_ObjectHideFlags: 0
