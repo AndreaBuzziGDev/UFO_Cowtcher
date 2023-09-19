@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3301339082170334086}
   m_Layer: 9
-  m_Name: Death particle Effects
+  m_Name: Expiration Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   childPedestalRenderer: {fileID: 7758115590238631724}
   childIconRenderer: {fileID: 2687997450899680237}
   StructureScriptableObject: {fileID: 0}
-  ExpirationParticles: {fileID: 125600187380295368, guid: 82cb1457b4827f943aec457e62af7dbf, type: 3}
+  expirationSubComponent: {fileID: 3696982349139374918}
   lifetimeMax: 20
   expirationTimeMax: 1
   particleGen: {fileID: 1159798967417723928}
@@ -438,7 +438,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 309908454665629572, guid: 842bab7786a2df94e922d901f08e9956, type: 3}
       propertyPath: m_Intensity
-      value: 2.2165236
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 496487244642044110, guid: 842bab7786a2df94e922d901f08e9956, type: 3}
       propertyPath: m_Materials.Array.size
