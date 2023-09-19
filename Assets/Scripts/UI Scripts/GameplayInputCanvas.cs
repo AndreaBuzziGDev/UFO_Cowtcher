@@ -16,23 +16,6 @@ public class GameplayInputCanvas : MonoBehaviour
     //...
     public void ShowJoystick(Vector2 position)
     {
-        /*
-        Image joystick = null;
-
-        Image[] joysticks = GetComponentsInChildren<Image>(true);
-
-        foreach (Image image in joysticks)
-        {
-            if (image.transform.parent == transform)
-                joystick = image;
-            else
-                image.enabled = true;
-        }
-
-        RectTransform joystickRect = joystick.GetComponent<RectTransform>();
-        joystickRect.position = position;
-        joystick.enabled = true;
-        */
         myJoystickBackground.enabled = true;
         myJoystickBackground.GetComponent<RectTransform>().position = position;
         myJoystick.enabled = true;
@@ -40,13 +23,8 @@ public class GameplayInputCanvas : MonoBehaviour
 
     public void HideJoystick()
     {
-        /**/
-        Image[] joysticks = GetComponentsInChildren<Image>(true);
-
-        foreach (Image image in joysticks)
-        {
-            image.enabled = false;
-        }
+        myJoystickBackground.enabled = false;
+        myJoystick.enabled = false;
     }
 
 
