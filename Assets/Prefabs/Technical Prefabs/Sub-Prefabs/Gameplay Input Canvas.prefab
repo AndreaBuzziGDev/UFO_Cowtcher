@@ -1040,7 +1040,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &3317883703500002475
 MonoBehaviour:
@@ -1071,6 +1071,7 @@ GameObject:
   - component: {fileID: 6496419712261721330}
   - component: {fileID: 8326498725222576725}
   - component: {fileID: 848840926588344685}
+  - component: {fileID: 72549146523461819}
   m_Layer: 5
   m_Name: Gameplay Input Canvas
   m_TagString: Untagged
@@ -1162,3 +1163,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &72549146523461819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809771184081580284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c99b3e2cb04cd4da1b06564f3d085a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myJoystickBackground: {fileID: 7211446938431042959}
+  myJoystick: {fileID: 1275276484314534316}
