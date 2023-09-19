@@ -58,6 +58,7 @@ public class InteractibleStructure : MonoInteractible
     void Start()
     {
         childPedestalRenderer.sprite = turnedOffPedestalSprite;
+        expirationSubComponent.SetActive(false);
 
         lifetimeCurrent = lifetimeMax;
         if (StructureScriptableObject != null) myStructure = StructureScriptableObject.GetStructure();
