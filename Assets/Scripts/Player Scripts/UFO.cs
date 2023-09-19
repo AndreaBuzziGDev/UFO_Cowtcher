@@ -21,6 +21,7 @@ public class UFO : MonoBehaviour
     ///FUEL BOTTOM DELAY MANAGEMENT
     [SerializeField] [Range(0.0f, 100.0f)] private float fuelEmergencyThreshold = 20.0f;
     [SerializeField] private float fuelEmergencyExtensionFactor = 2.0f;
+    public bool isEmergencyFuel { get { return ((fuelAmount / maxFuelAmount) * 100) <= fuelEmergencyThreshold; } }
 
 
     ///SCORE
@@ -60,7 +61,7 @@ public class UFO : MonoBehaviour
 
         //FUEL CHANGES
         float extensionMultiplier = 1;
-        if (((fuelAmount/maxFuelAmount) * 100) <= fuelEmergencyThreshold)
+        if (isEmergencyFuel)
         {
             extensionMultiplier = fuelEmergencyExtensionFactor;
         }

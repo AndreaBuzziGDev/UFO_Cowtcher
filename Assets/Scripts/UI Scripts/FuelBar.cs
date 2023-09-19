@@ -16,7 +16,9 @@ public class FuelBar : MonoBehaviour
     bool shake = false;
 
     //GUI REFERENCES
-    public Image FuelBarImg;
+    [SerializeField] private Image fuelBarImg;
+    [SerializeField] private Image fuelEmergencyGradient;
+
 
     //TECHNICAL
     Vector3 barPosition;
@@ -53,18 +55,28 @@ public class FuelBar : MonoBehaviour
     public void UpdateFuelBar(UFO ufo)
     {
         float normalizedFuel = (float) ufo.FuelAmount / (float) ufo.MaxFuelAmount;
-        FuelBarImg.fillAmount = normalizedFuel;
+        fuelBarImg.fillAmount = normalizedFuel;
+
+        //HANDLE THE CHANGE OF COLOR IN THE FUEL BAR
         if (normalizedFuel >= 0.5f)
         {
             float halfMax = ufo.MaxFuelAmount / 2.0f;
             float awaitedValue = (halfMax - (ufo.MaxFuelAmount - ufo.FuelAmount)) / halfMax;
 
-            FuelBarImg.color = Color.Lerp(Color.yellow, Color.white, awaitedValue);
+            fuelBarImg.color = Color.Lerp(Color.yellow, Color.white, awaitedValue);
         }
         else
         {
-            FuelBarImg.color = Color.Lerp(Color.red, Color.yellow, (normalizedFuel/0.5f));
+            fuelBarImg.color = Color.Lerp(Color.red, Color.yellow, (normalizedFuel/0.5f));
         }
+
+        //HANDLE THE EMERGENCY STATE - RED SCREEN BORDERS
+        if (ufo.isEmergencyFuel)
+        {
+            Color gradCol = fuelEmergencyGradient.color;
+            fuelEmergencyGradient.color = new Color(gradCol.r, gradCol.g, gradCol.b, Mathf.Sin(Time.realtimeSinceStartup));
+        }
+
     }
 
 
