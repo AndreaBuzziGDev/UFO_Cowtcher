@@ -31,17 +31,17 @@ public class InteractibleStructure : MonoInteractible
     StructureAbstract myStructure;
 
     ///JUICYNESS STUFF
-    ///PARTICLES
-    [SerializeField] private ParticleSystem ExpirationParticles;
+    ///EXPIRATION PARTICLES
+    [SerializeField] private GameObject expirationSubComponent;
     private bool hasBegunExpiration;
-
-    ///LIFETIME
-    [SerializeField] private float lifetimeMax = 20.0f;
-    private float lifetimeCurrent;
 
     ///EXPIRATION
     [SerializeField] private float expirationTimeMax = 3.0f;
     private float expireTimeCurrent;
+
+    ///LIFETIME
+    [SerializeField] private float lifetimeMax = 20.0f;
+    private float lifetimeCurrent;
 
 
 
@@ -130,12 +130,8 @@ public class InteractibleStructure : MonoInteractible
         //PARTICLE EMISSION
         if (!hasBegunExpiration)
         {
-            if(ExpirationParticles != null)
-            {
-                ParticleSystem expirationParticlesInstance = Instantiate(ExpirationParticles, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-                expirationParticlesInstance.Play();
-                Destroy(expirationParticlesInstance.gameObject, expirationTimeMax);
-            }
+            //START EXPIRATION EFFECT
+            if(expirationSubComponent != null) expirationSubComponent.SetActive(true);
 
             //DESTROY EXPIRED STRUCTURE
             Destroy(this.gameObject, expirationTimeMax);
