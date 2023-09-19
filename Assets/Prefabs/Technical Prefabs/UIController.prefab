@@ -5196,6 +5196,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGamePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7278993586334137433, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+      propertyPath: fuelBarImg
+      value: 
+      objectReference: {fileID: 2300103242102270487}
+    - target: {fileID: 7278993586334137433, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+      propertyPath: fuelEmergencyGradient
+      value: 
+      objectReference: {fileID: 2581408849226000372}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5206,6 +5214,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 381003154091779492, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
   m_PrefabInstance: {fileID: 1250772087363727994}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2300103242102270487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1058408724155275373, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+  m_PrefabInstance: {fileID: 1250772087363727994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2581408849226000372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3641339784546456974, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
+  m_PrefabInstance: {fileID: 1250772087363727994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5171458789816014601 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6241730459995727219, guid: 7f8738fbf68bee9438533a7543611a83, type: 3}
