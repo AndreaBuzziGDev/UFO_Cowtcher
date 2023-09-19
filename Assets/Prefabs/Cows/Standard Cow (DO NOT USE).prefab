@@ -516,6 +516,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7371038380615960172, guid: a0770cf91f83e6443924f689f6a42819, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371038380615960172, guid: a0770cf91f83e6443924f689f6a42819, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.8627451
+      objectReference: {fileID: 0}
     - target: {fileID: 7371522103222707776, guid: a0770cf91f83e6443924f689f6a42819, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
