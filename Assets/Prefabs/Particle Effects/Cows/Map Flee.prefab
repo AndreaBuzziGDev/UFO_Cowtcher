@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 125600187380295368}
   - component: {fileID: 8011795431788029628}
   m_Layer: 0
-  m_Name: Cow Has Fled Particles
+  m_Name: Map Flee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
