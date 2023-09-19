@@ -10,7 +10,6 @@ public class AudioToggle : MonoBehaviour
 
     public void ChangeButton()
     {
-        Debug.Log("ChangeButton");
         if (this.enabled)
         {
             targetButton.gameObject.SetActive(true);
