@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: spawnType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5384352071184832941, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384352071184832941, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5967316260749106089, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
       propertyPath: hideoutTemplate
       value: 
@@ -96,11 +104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0b95ccf6c73f1049a694344b1493f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.62
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0b95ccf6c73f1049a694344b1493f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0b95ccf6c73f1049a694344b1493f8f, type: 3}
       propertyPath: m_LocalPosition.z

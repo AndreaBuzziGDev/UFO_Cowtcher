@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: spawnType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5384352071184832941, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.48
+      objectReference: {fileID: 0}
     - target: {fileID: 5967316260749106089, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
       propertyPath: hideoutTemplate
       value: 
