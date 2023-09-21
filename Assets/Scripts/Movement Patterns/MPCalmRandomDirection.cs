@@ -6,7 +6,7 @@ public class MPCalmRandomDirection : AbstractMovementPattern
 {
     //DATA
     ///TEMPLATE
-    private readonly MPCalmBouncySO template;
+    private readonly MPCalmRandomDirectionSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     private float jumpHeight;
@@ -19,7 +19,7 @@ public class MPCalmRandomDirection : AbstractMovementPattern
 
 
     //CONSTRUCTOR
-    public MPCalmRandomDirection(MPCalmBouncySO inputTemplate)
+    public MPCalmRandomDirection(MPCalmRandomDirectionSO inputTemplate)
     {
         this.template = inputTemplate;
         this.jumpHeight = inputTemplate.jumpHeight;

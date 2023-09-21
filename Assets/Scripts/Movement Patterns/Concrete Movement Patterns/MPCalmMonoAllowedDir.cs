@@ -6,7 +6,7 @@ public class MPCalmMonoAllowedDir : AbstractMovementPattern
 {
     //DATA
     ///TEMPLATE
-    private readonly MPCalmRandMonoDirSO template;
+    private readonly MPCalmMonoAllowedDirSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     [SerializeField] public float timerStill;
@@ -18,7 +18,7 @@ public class MPCalmMonoAllowedDir : AbstractMovementPattern
 
 
     //CONSTRUCTOR
-    public MPCalmMonoAllowedDir(MPCalmRandMonoDirSO inputTemplate)
+    public MPCalmMonoAllowedDir(MPCalmMonoAllowedDirSO inputTemplate)
     {
         this.template = inputTemplate;
         this.AllowedDirections = inputTemplate.AllowedDirections;
