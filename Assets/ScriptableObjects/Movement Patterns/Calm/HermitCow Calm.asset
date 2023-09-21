@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: HermitCow Calm
   m_EditorClassIdentifier: 
   jumps: 1
-  jumpHeight: 0.15
-  jumpSpeed: 0.5
+  jumpHeight: 0.1
+  jumpSpeed: 2
   timerMoving: 4
   timerStill: 0.5
   randomizerSlider: 0.5
