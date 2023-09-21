@@ -6,7 +6,7 @@ public class MPLegendaryAlert : AbstractMovementAlert
 {
     //DATA
     ///TEMPLATE
-    private readonly MPCowgonAlertSO template;
+    private readonly MPLegendaryAlertSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     private float timerToPlayerStun = 10.0f;
@@ -14,7 +14,7 @@ public class MPLegendaryAlert : AbstractMovementAlert
 
 
     //CONSTRUCTOR
-    public MPLegendaryAlert(MPCowgonAlertSO inputTemplate)
+    public MPLegendaryAlert(MPLegendaryAlertSO inputTemplate)
     {
         this.template = inputTemplate;
         this.stunDuration = template.stunDuration;
