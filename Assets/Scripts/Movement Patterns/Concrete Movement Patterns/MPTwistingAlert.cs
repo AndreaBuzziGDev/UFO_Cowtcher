@@ -36,9 +36,9 @@ public class MPTwistingAlert : AbstractMovementAlert
         if (directionChangeRate <= 0.0f)
         {
             ResetTimers();
-            Vector3 crossProduct = Vector3.Cross(alertDirection, interestedCow.transform.up);
+            Vector3 crossProduct = Vector3.Cross(alertDirection.normalized, interestedCow.transform.up);
 
-            alertDirection = interestedCow.MovementDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
+            alertDirection = alertDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
         }
 
         return alertDirection.normalized;
