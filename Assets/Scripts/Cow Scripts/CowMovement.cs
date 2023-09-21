@@ -13,7 +13,7 @@ public class CowMovement : MonoBehaviour
     ///MOVEMENT PATTERNS
     private AbstractMovementPattern movPatternCalm;
     private AbstractMovementAlert movPatternAlert;
-    private AbstractMovementPattern currentMovPattern 
+    private AbstractMovementPattern CurrentMovPattern 
     { 
         get 
         { 
@@ -85,13 +85,15 @@ public class CowMovement : MonoBehaviour
         }
 
         //HANDLE VISUAL JUMP
-        /*
-        spriteRenderer.transform.position = new Vector3(
-            transform.position.x,
-            Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * ) * currentMovPattern.
-            transform.position.z
-        );
-        */
+        if (CurrentMovPattern.Jumps)
+        {
+            spriteRenderer.transform.position = new Vector3(
+               transform.position.x,
+               Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * CurrentMovPattern.JumpSpeed)) * CurrentMovPattern.JumpHeight,
+               transform.position.z
+           );
+        }
+        
     }
 
     private void FixedUpdate()

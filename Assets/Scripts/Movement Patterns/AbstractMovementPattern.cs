@@ -15,9 +15,9 @@ public abstract class AbstractMovementPattern
 
     
     ///JUMP
-    public bool Jumps() => Template().jumps;
-    public float JumpHeight() => Template().jumpHeight;
-    public float JumpSpeed() => Template().jumpSpeed;
+    public bool Jumps { get { return Template().jumps; } }
+    public float JumpHeight { get { return Template().jumpHeight; } }
+    public float JumpSpeed { get { return Template().jumpSpeed; } }
 
 
     ///TIMERS
