@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Hermitcow Alert
   m_EditorClassIdentifier: 
   jumps: 1
-  jumpHeight: 0.5
-  jumpSpeed: 1
+  jumpHeight: 0.15
+  jumpSpeed: 0.5

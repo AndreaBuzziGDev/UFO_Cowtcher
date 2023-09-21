@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ice Cowm Alert
   m_EditorClassIdentifier: 
   jumps: 1
-  jumpHeight: 0.5
-  jumpSpeed: 1
+  jumpHeight: 0.75
+  jumpSpeed: 0.5
