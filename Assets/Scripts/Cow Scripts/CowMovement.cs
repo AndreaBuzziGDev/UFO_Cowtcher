@@ -67,7 +67,7 @@ public class CowMovement : MonoBehaviour
 
     private void Update()
     {
-        if (movementDirection.x > 0)
+        if (rb.velocity.x > 0)
         {
             spriteRenderer.flipX = true;
         }
