@@ -163,7 +163,7 @@ public class CowMovement : MonoBehaviour
             Vector3 mapCenterDirection = SpawningGrid.Instance.Center() - this.transform.position;
             intendedDirection = (new Vector3(mapCenterDirection.x, 0, mapCenterDirection.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
         }
-        else
+        else if(CowHelper.IsUFOWithinRadius(myCow))
         {
             //INTERPOLATION TO MAKE SURE THE COW DOES NOT TURN SUDDENLY
             intendedDirection = Vector3.Lerp(rb.velocity.normalized, intendedDirection, Time.fixedDeltaTime * turningSpeedMult).normalized;
