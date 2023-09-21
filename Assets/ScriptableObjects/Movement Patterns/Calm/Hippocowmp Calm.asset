@@ -17,5 +17,5 @@ MonoBehaviour:
   jumpSpeed: 1
   TimerSameDirectionMovement: 4
   DirectionChangeRate: 0.1
-  Frequency: 2
+  Frequency: 5
   Magnitude: 1
