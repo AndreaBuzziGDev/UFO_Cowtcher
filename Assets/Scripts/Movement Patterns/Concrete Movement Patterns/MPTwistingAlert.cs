@@ -46,32 +46,24 @@ public class MPTwistingAlert : AbstractMovementAlert
 
     public override Vector3 ManagePanic(CowMovement myCow)
     {
-        Hideout targetHideout = myCow.CowScript.TargetHideout;
-        Vector3 hideoutDirection = targetHideout.transform.position - myCow.transform.position;
 
-        if (directionChangeRate <= 0.0f)
+        if (CowHideoutHelper.ShouldRunForHideout(myCow.CowScript))
         {
-            ResetTimers();
-            Vector3 crossProduct = Vector3.Cross(hideoutDirection.normalized, myCow.transform.up);
+            Vector3 hideoutDirection = CowHideoutHelper.HideoutDirection(myCow.CowScript).normalized;
 
-            hideoutDirection = myCow.MovementDirection + (magnitude * 2) * Mathf.Sin(Time.time * frequency) * crossProduct;
+            if (directionChangeRate <= 0.0f)
+            {
+                ResetTimers();
+                Vector3 crossProduct = Vector3.Cross(hideoutDirection, myCow.transform.up);
+
+                hideoutDirection = myCow.MovementDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
+            }
+
+            return hideoutDirection.normalized;
         }
-
-        //TODO: THIS CODE WILL EVENTUALLY BE MOVED ELSEWHERE
-        UFO menace = GameController.Instance.FindUFOAnywhere();
-        Vector3 flatUfoVector = new Vector3(menace.transform.position.x, targetHideout.transform.position.y, menace.transform.position.z);
-        Vector3 ufoHideoutVector = targetHideout.transform.position - flatUfoVector;
-
-        //Debug.Log("hideoutDirection: " + hideoutDirection);
-        //Debug.Log("ufoHideoutVector: " + ufoHideoutVector);
-
-        if (ufoHideoutVector.magnitude <= hideoutDirection.magnitude)
-        {
-            Debug.Log("UFO IS CLOSER TO HIDEOUT THAN COW!");
+        else
             return ManageMovement(myCow);
-        }
 
-        return hideoutDirection.normalized;
     }
 
     public override void ResetTimers()

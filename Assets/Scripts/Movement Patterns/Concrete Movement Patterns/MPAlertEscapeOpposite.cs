@@ -36,14 +36,9 @@ public class MPAlertEscapeOpposite : AbstractMovementAlert
     public override Vector3 ManagePanic(CowMovement myCow)
     {
         if (CowHideoutHelper.ShouldRunForHideout(myCow.CowScript))
-        {
-            //
             return CowHideoutHelper.HideoutDirection(myCow.CowScript).normalized;
-        }
         else
-        {
             return ManageMovement(myCow);
-        }
     }
 
     ///TIMERS
