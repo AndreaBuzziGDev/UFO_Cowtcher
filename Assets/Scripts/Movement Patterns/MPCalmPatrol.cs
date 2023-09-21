@@ -40,9 +40,12 @@ public class MPCalmPatrol : AbstractMovementPattern
         //GO BACK TO PATROL POINT
         Vector3 toLastAlertCoords = interestedCow.CowScript.LastAlertCoords - interestedCow.transform.position;
         if (toLastAlertCoords.magnitude < 0.1)
+        {
             ResetTimers();
-
-        return toLastAlertCoords.normalized;
+            return Vector3.zero;
+        }
+        else
+            return toLastAlertCoords.normalized;
     }
 
     ///TIMERS
