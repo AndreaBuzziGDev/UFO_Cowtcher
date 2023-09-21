@@ -89,7 +89,7 @@ public class CowMovement : MonoBehaviour
         {
             spriteRenderer.transform.position = new Vector3(
                transform.position.x,
-               Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * CurrentMovPattern.JumpSpeed)) * CurrentMovPattern.JumpHeight,
+               Mathf.Abs(Mathf.Sin(Time.time * 5 * CurrentMovPattern.JumpSpeed)) * CurrentMovPattern.JumpHeight,
                transform.position.z
            );
         }

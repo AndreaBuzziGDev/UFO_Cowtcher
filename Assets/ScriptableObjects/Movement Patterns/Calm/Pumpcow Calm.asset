@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0636713c576b0c74581f87d21c964684, type: 3}
+  m_Script: {fileID: 11500000, guid: f1713f209a857bb44afe6404109c9eed, type: 3}
   m_Name: Pumpcow Calm
   m_EditorClassIdentifier: 
-  TimerSameDirectionMovement: 1
-  DashDistance: 3
-  DashDuration: 1.1
+  jumps: 1
+  jumpHeight: 0.5
+  jumpSpeed: 1
+  timerMoving: 2
+  timerStill: 1
+  randomizerSlider: 0.5
