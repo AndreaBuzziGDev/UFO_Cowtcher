@@ -87,7 +87,7 @@ public class CowMovement : MonoBehaviour
         //HANDLE VISUAL JUMP
         spriteRenderer.transform.position = new Vector3(
             transform.position.x,
-            transform.position.y,
+            Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * ) * currentMovPattern.
             transform.position.z
         );
 
