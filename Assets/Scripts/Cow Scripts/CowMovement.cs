@@ -13,6 +13,14 @@ public class CowMovement : MonoBehaviour
     ///MOVEMENT PATTERNS
     private AbstractMovementPattern movPatternCalm;
     private AbstractMovementAlert movPatternAlert;
+    private AbstractMovementPattern currentMovPattern 
+    { 
+        get 
+        { 
+            if (myCow.IsCalm) return movPatternCalm;
+            else return movPatternAlert;
+        } 
+    }
 
 
     ///MOVEMENT DIRECTION (AFFECTED BY MOVEMENT PATTERNS)
@@ -66,6 +74,7 @@ public class CowMovement : MonoBehaviour
 
     private void Update()
     {
+        //HANDLE VISUAL FLIPPING
         if (rb.velocity.x > 0)
         {
             spriteRenderer.flipX = true;
@@ -74,6 +83,14 @@ public class CowMovement : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        //HANDLE VISUAL JUMP
+        spriteRenderer.transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y,
+            transform.position.z
+        );
+
     }
 
     private void FixedUpdate()
