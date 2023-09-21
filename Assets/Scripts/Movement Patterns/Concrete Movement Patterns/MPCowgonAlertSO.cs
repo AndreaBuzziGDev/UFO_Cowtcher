@@ -11,6 +11,6 @@ public class MPCowgonAlertSO : MPAbstractAlertSO
 
     public override AbstractMovementPattern GetMovPattern()
     {
-        return new MPCowgonAlert(this);
+        return new MPLegendaryAlert(this);
     }
 }

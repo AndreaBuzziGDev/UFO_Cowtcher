@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MPCowgonAlert : AbstractMovementAlert
+public class MPLegendaryAlert : AbstractMovementAlert
 {
     //DATA
     ///TEMPLATE
@@ -14,7 +14,7 @@ public class MPCowgonAlert : AbstractMovementAlert
 
 
     //CONSTRUCTOR
-    public MPCowgonAlert(MPCowgonAlertSO inputTemplate)
+    public MPLegendaryAlert(MPCowgonAlertSO inputTemplate)
     {
         this.template = inputTemplate;
         this.stunDuration = template.stunDuration;
@@ -28,11 +28,11 @@ public class MPCowgonAlert : AbstractMovementAlert
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement myCowMovement)
     {
-        Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().transform.position;
+        Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
         Vector3 desiredDirection = myCowMovement.transform.position - menacePosition;
-        Vector3 vertLessDirection = new Vector3(desiredDirection.x, 0, desiredDirection.z);
 
         //TODO: DEBUFF UFO WITH "STUN" FOR 1 SECOND EVERY 10 SECONDS
+        //TODO: THIS NEEDS TO BE REWORKED - ANOTHER SCRIPT WILL CARRY ON THE WORK NEEDED FOR THIS TO OPERATE INDEPENDENTLY FROM EACH LEGENDARY COW
         if (timerToPlayerStun <= 0.0f)
         {
             PlayerController pc = GameController.Instance.FindPlayerAnywhere();
@@ -50,15 +50,11 @@ public class MPCowgonAlert : AbstractMovementAlert
         }
 
 
-        return vertLessDirection.normalized;
+        return desiredDirection.normalized;
     }
 
     public override Vector3 ManagePanic(CowMovement myCow)
     {
-        //TODO: IMPLEMENT SO THAT COW WILL RANDOMLY DECIDE ONE DIRECTION AND KEEP IT
-        //NB: COULD BE A "FLEE DIRECTION" VECTOR THAT IS HANDLED BY THE ManageMovement Alert CODE
-        //GetFleeFromMap();
-
         return myCow.MovementDirection.normalized;//WITH THIS IMPLEMENTATION, THEY SIMPLY KEEP THE LAST DIRECTION AND FLEE
     }
 
