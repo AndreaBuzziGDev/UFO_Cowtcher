@@ -263,7 +263,7 @@ MonoBehaviour:
   shakeSpeed: 50
   fenceDetectionRadius: 0
   closestFence: {fileID: 0}
-  turningSpeedMult: 1.5
+  turningSpeedMult: 2
 --- !u!1 &6481535709489429120
 GameObject:
   m_ObjectHideFlags: 0

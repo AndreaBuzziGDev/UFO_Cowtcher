@@ -162,14 +162,21 @@ public class CowMovement : MonoBehaviour
         {
             Vector3 mapCenterDirection = SpawningGrid.Instance.Center() - this.transform.position;
             intendedDirection = (new Vector3(mapCenterDirection.x, 0, mapCenterDirection.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
+
+            //GLOBAL SPEED MULTIPLIER
+            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
-        else if(CowHelper.IsUFOWithinRadius(myCow))
+        else if(CowHelper.IsUFOWithinRadius(myCow) && myCow.CowTemplate.UID != CowSO.UniqueID.R003_Scarecow)
         {
+            if (rb.velocity == Vector3.zero)
+                rb.velocity = (this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).normalized;
+
             //INTERPOLATION TO MAKE SURE THE COW DOES NOT TURN SUDDENLY - BUT ONLY WHEN FLEEING FROM THE UFO
-            rb.velocity = Vector3.Lerp(
-                rb.velocity,
-                mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection, 
-                Time.fixedDeltaTime * turningSpeedMult
+            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * 
+                Vector3.Lerp(
+                    rb.velocity.normalized,
+                    intendedDirection, 
+                    Time.fixedDeltaTime * turningSpeedMult
                 );
         }
         else
