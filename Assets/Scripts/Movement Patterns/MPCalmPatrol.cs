@@ -16,7 +16,6 @@ public class MPCalmPatrol : AbstractMovementPattern
     private Vector3 nextRandomDirection = Vector3.forward;
 
 
-
     //CONSTRUCTOR
     public MPCalmPatrol(MPCalmPatrolSO inputTemplate)
     {
@@ -32,17 +31,18 @@ public class MPCalmPatrol : AbstractMovementPattern
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
-        //
+
+
+        //GO IN A RANDOM DIRECTION
         if (timerMoving > 0) 
-            return interestedCow.transform.position + nextRandomDirection;
+            return nextRandomDirection;
 
         //GO BACK TO PATROL POINT
-        Vector3 distance = (initialPosition - interestedCow.transform.position);
-        if (distance.magnitude < 0.1)
+        Vector3 toLastAlertCoords = interestedCow.CowScript.LastAlertCoords - interestedCow.transform.position;
+        if (toLastAlertCoords.magnitude < 0.1)
             ResetTimers();
 
-
-        return distance.normalized;
+        return toLastAlertCoords.normalized;
     }
 
     ///TIMERS
@@ -52,7 +52,6 @@ public class MPCalmPatrol : AbstractMovementPattern
     }
     public override void ResetTimers()
     {
-        this.timerStill = template.timerStill + Random.Range(-0.5f, this.randomizerSlider);
         this.timerMoving = template.timerMoving;
 
         nextRandomDirection = UtilsRadius.RandomPositionOnCircleRadius(1);

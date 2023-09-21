@@ -103,6 +103,9 @@ public class Cow : MonoBehaviour
     public Vector3 spawnCoords = Vector3.zero;
     public Vector3 SpawnCoords { get { return spawnCoords; } }
 
+    public Vector3 lastAlertCoords = Vector3.zero;
+    public Vector3 LastAlertCoords { get { return lastAlertCoords; } }
+
 
 
     //TECHNICAL DATA FOR OTHER PURPOSES
@@ -170,8 +173,9 @@ public class Cow : MonoBehaviour
         this.TimerAlertToCalm = 0.0f;
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
-        //SET BIRTH POINT
+        //ADDITIONAL DATA FOR MOV PATTERNS
         spawnCoords = transform.position;
+        lastAlertCoords = transform.position;
 
     }
 
@@ -206,6 +210,7 @@ public class Cow : MonoBehaviour
         //STEP 2
         if (IsAlert)
         {
+            lastAlertCoords = transform.position;
 
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
             if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
