@@ -10,7 +10,9 @@ public class MPCalmBouncy : AbstractMovementPattern
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     private float jumpHeight;
-    private float stepMovementDuration;
+    private float timerMoving;
+    private float timerStill;
+    private float randomizerSlider;
 
     private Vector3 nextRandomDirection = Vector3.forward;
 
@@ -21,7 +23,9 @@ public class MPCalmBouncy : AbstractMovementPattern
     {
         this.template = inputTemplate;
         this.jumpHeight = inputTemplate.jumpHeight;
-        this.stepMovementDuration = inputTemplate.stepMovementDuration;
+        this.timerMoving = inputTemplate.timerMoving;
+        this.timerStill = inputTemplate.timerStill;
+        this.randomizerSlider = inputTemplate.randomizerSlider;
 
     }
 
@@ -32,19 +36,24 @@ public class MPCalmBouncy : AbstractMovementPattern
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
-        return Vector3.zero;
+        Vector3 result = Vector3.zero;
+        if (timerMoving > 0) return nextRandomDirection;
+        return result;
     }
 
     ///TIMERS
     public override void UpdateTimers(float delta)
     {
-        //NOT NEEDED
-
+        if (timerMoving > 0) timerMoving -= delta;
+        else if (timerStill > 0) timerStill -= delta;
+        else ResetTimers();
     }
     public override void ResetTimers()
     {
-        //NOT NEEDED
+        this.timerStill = template.timerStill + Random.Range(-0.5f, this.randomizerSlider);
+        this.timerMoving = template.timerMoving;
 
+        nextRandomDirection = UtilsRadius.RandomPositionOnCircleRadius(1);
     }
 
 }
