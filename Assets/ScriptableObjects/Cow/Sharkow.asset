@@ -27,7 +27,7 @@ MonoBehaviour:
   TimerAlertToPanic: 1
   TimerRespawn: 5
   movPatternCalm: {fileID: 11400000, guid: 8bd28f98848d3db4d98342e1982cd091, type: 2}
-  movPatternAlert: {fileID: 11400000, guid: dff38ae395a91b54299c416719a22506, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: c68017730377cbc4eb8a7ca34332a294, type: 2}
   effect: Power-ups loses or instant fuel loss
   InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: a433a9cbcb3505b4eaecd10575007fdb, type: 3}
   associatedAsteroid: {fileID: 0}
