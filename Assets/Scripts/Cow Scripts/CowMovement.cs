@@ -54,6 +54,16 @@ public class CowMovement : MonoBehaviour
     [SerializeField] float turningSpeedMult = 2.5f;
 
 
+    //COWS THAT IGNORE MOVEMENT ALGORITHM DETAILS:
+    HashSet<CowSO.UniqueID> cowsThatIgnoreMov = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.R003_Scarecow,
+        CowSO.UniqueID.R007_Sharkow,
+        CowSO.UniqueID.R011_Cowflake,
+        CowSO.UniqueID.R015_Kowtos
+    };
+
+
+
 
     //METHODS
     //...
