@@ -38,7 +38,9 @@ public class MPTwistingAlert : AbstractMovementAlert
             ResetTimers();
             Vector3 crossProduct = Vector3.Cross(alertDirection.normalized, interestedCow.transform.up);
 
+            Debug.Log("MPTwistingAlert - alertDirection before: " + alertDirection);
             alertDirection = alertDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
+            Debug.Log("MPTwistingAlert - alertDirection after: " + alertDirection);
         }
 
         return alertDirection.normalized;
@@ -56,7 +58,9 @@ public class MPTwistingAlert : AbstractMovementAlert
                 ResetTimers();
                 Vector3 crossProduct = Vector3.Cross(hideoutDirection, myCow.transform.up);
 
-                hideoutDirection = myCow.MovementDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
+                Debug.Log("MPTwistingAlert - hideoutDirection before: " + hideoutDirection);
+                hideoutDirection = hideoutDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
+                Debug.Log("MPTwistingAlert - hideoutDirection after: " + hideoutDirection);
             }
 
             return hideoutDirection.normalized;
