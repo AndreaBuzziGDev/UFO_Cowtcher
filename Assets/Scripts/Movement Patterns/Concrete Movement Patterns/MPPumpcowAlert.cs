@@ -47,8 +47,7 @@ public class MPPumpcowAlert : AbstractMovementAlert
         Vector3 hideoutDirection = targetHideout.transform.position - myCow.transform.position;
 
         //TODO: THIS CODE WILL EVENTUALLY BE MOVED ELSEWHERE
-        UFO menace = GameController.Instance.FindUFOAnywhere();
-        Vector3 flatUfoVector = new Vector3(menace.transform.position.x, targetHideout.transform.position.y, menace.transform.position.z);
+        Vector3 flatUfoVector = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
         Vector3 ufoHideoutVector = targetHideout.transform.position - flatUfoVector;
 
         Debug.Log("hideoutDirection: " + hideoutDirection);
