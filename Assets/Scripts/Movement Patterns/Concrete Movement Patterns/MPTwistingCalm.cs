@@ -37,7 +37,10 @@ public class MPTwistingCalm : AbstractMovementPattern
         {
             directionChangeRate = template.DirectionChangeRate;
 
-            Vector3 crossProduct = Vector3.Cross(interestedCow.MovementDirection, interestedCow.transform.up);
+            if (result == Vector3.zero) 
+                result = UtilsRadius.RandomPositionOnCircleRadius(1);
+
+            Vector3 crossProduct = Vector3.Cross(result, interestedCow.transform.up);
 
             result = interestedCow.MovementDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
         }
