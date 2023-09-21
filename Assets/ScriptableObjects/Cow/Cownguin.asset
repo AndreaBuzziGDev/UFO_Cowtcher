@@ -22,13 +22,13 @@ MonoBehaviour:
   FuelRecoveryAmount: 3
   AlertRadius: 8
   SpeedCalm: 3
-  SpeedAlert: 2
+  SpeedAlert: 5
   Score: 30
   TimerAlertToCalm: 3
   TimerAlertToPanic: 2
   TimerRespawn: 5
-  movPatternCalm: {fileID: 11400000, guid: 5ee150804550d4d4aa388ba26fa8cae2, type: 2}
-  movPatternAlert: {fileID: 11400000, guid: 6d65614ce7d3db34691ec04853afd574, type: 2}
+  movPatternCalm: {fileID: 11400000, guid: d869c01278719cc438bf50ff0d6b4655, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: 0ef64d616e630d64bab361531dc8ef96, type: 2}
   effect: 
   InstantlyDeployedItemPickup: {fileID: 0}
   associatedAsteroid: {fileID: 0}
