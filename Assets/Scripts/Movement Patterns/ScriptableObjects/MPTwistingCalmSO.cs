@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Calm Kowbra", menuName = "MovementPattern/Calm/Kowbra Calm")]
-public class MPKowbraCalmSO : MPAbstractCalmSO
+public class MPTwistingCalmSO : MPAbstractCalmSO
 {
     public float TimerSameDirectionMovement = 2f;
     public float DirectionChangeRate = 0.1f;
@@ -12,6 +12,6 @@ public class MPKowbraCalmSO : MPAbstractCalmSO
 
     public override AbstractMovementPattern GetMovPattern()
     {
-        return new MPKowbraCalm(this);
+        return new MPTwistingCalm(this);
     }
 }

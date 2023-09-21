@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MPKowbraAlert : AbstractMovementAlert
+public class MPTwistingAlert : AbstractMovementAlert
 {
     //DATA
     ///TEMPLATE
-    private readonly MPKowbraAlertSO template;
+    private readonly MPTwistingAlertSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     private float directionChangeRate;
@@ -15,7 +15,7 @@ public class MPKowbraAlert : AbstractMovementAlert
 
 
     //CONSTRUCTOR
-    public MPKowbraAlert(MPKowbraAlertSO inputTemplate)
+    public MPTwistingAlert(MPTwistingAlertSO inputTemplate)
     {
         this.template = inputTemplate;
         this.directionChangeRate = template.DirectionChangeRate;

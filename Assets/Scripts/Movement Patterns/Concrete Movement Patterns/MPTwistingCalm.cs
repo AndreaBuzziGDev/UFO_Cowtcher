@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MPKowbraCalm : AbstractMovementPattern
+public class MPTwistingCalm : AbstractMovementPattern
 {
     //DATA
     ///TEMPLATE
-    private readonly MPKowbraCalmSO template;
+    private readonly MPTwistingCalmSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     private float timerSameDirectionMovement;
@@ -16,7 +16,7 @@ public class MPKowbraCalm : AbstractMovementPattern
 
 
     //CONSTRUCTOR
-    public MPKowbraCalm(MPKowbraCalmSO inputTemplate)
+    public MPTwistingCalm(MPTwistingCalmSO inputTemplate)
     {
         this.template = inputTemplate;
         this.timerSameDirectionMovement = template.TimerSameDirectionMovement;

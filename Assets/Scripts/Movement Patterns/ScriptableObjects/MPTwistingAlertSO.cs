@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Alert Kowbra", menuName = "MovementPattern/Alert/Kowbra Alert")]
-public class MPKowbraAlertSO : MPAbstractAlertSO
+public class MPTwistingAlertSO : MPAbstractAlertSO
 {
     public float DirectionChangeRate = 0.1f;
     public float Frequency = 10f;
@@ -11,6 +11,6 @@ public class MPKowbraAlertSO : MPAbstractAlertSO
 
     public override AbstractMovementPattern GetMovPattern()
     {
-        return new MPKowbraAlert(this);
+        return new MPTwistingAlert(this);
     }
 }
