@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cowrio Alert
   m_EditorClassIdentifier: 
   jumps: 1
-  jumpHeight: 0.25
-  jumpSpeed: 0.5
+  jumpHeight: 0.35
+  jumpSpeed: 2
