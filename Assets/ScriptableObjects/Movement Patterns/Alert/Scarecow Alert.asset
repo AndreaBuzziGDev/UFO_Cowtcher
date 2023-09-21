@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119e3b8c1fa308e468a819f5242d48a2, type: 3}
   m_Name: Scarecow Alert
   m_EditorClassIdentifier: 
+  jumps: 0
+  jumpHeight: 0.5
+  jumpSpeed: 1
+  timerMoving: 1
+  timerStill: 0
+  randomizerSlider: 0
