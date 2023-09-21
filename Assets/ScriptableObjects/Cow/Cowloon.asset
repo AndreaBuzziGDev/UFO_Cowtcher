@@ -20,7 +20,7 @@ MonoBehaviour:
   spawnProbability: 20
   spawnChanceTally: 10
   FuelRecoveryAmount: 3
-  AlertRadius: 8
+  AlertRadius: 4
   SpeedCalm: 3
   SpeedAlert: 2
   Score: 30
