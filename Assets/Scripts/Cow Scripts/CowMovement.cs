@@ -170,7 +170,7 @@ public class CowMovement : MonoBehaviour
                 rb.velocity,
                 mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection, 
                 Time.fixedDeltaTime * turningSpeedMult
-                ).normalized;
+                );
         }
         else
         {
