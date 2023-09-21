@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MPAlertBouncy : AbstractMovementAlert
+public class MPAlertRandomDirection : AbstractMovementAlert
 {
     //DATA
     ///TEMPLATE
-    private readonly MPAlertBouncySO template;
+    private readonly MPAlertRandomDirectionSO template;
 
     //CONSTRUCTOR
-    public MPAlertBouncy(MPAlertBouncySO inputTemplate)
+    public MPAlertRandomDirection(MPAlertRandomDirectionSO inputTemplate)
     {
         this.template = inputTemplate;
     }
