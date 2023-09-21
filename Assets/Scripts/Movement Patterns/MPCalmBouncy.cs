@@ -8,10 +8,21 @@ public class MPCalmBouncy : AbstractMovementPattern
     ///TEMPLATE
     private readonly MPCalmBouncySO template;
 
+    ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
+    private float jumpHeight;
+    private float stepMovementDuration;
+
+    private Vector3 nextRandomDirection = Vector3.forward;
+
+
+
     //CONSTRUCTOR
     public MPCalmBouncy(MPCalmBouncySO inputTemplate)
     {
         this.template = inputTemplate;
+        this.jumpHeight = inputTemplate.jumpHeight;
+        this.stepMovementDuration = inputTemplate.stepMovementDuration;
+
     }
 
 

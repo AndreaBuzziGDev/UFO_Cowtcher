@@ -6,6 +6,7 @@ using UnityEngine;
 public class MPCalmBouncySO : MPAbstractCalmSO
 {
     [SerializeField] public float jumpHeight = 0.5f;
+
     public override AbstractMovementPattern GetMovPattern()
     {
         return new MPCalmBouncy(this);
