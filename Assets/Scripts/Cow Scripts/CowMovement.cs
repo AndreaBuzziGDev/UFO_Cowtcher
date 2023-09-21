@@ -187,7 +187,7 @@ public class CowMovement : MonoBehaviour
         Vector3 intendedDirection = movementDirection;
 
         //TODO: UPGRADE FOR SPECIAL COWS THAT CHASE THE PLAYER NO MATTER WHAT
-        if (IsReflectingAgainstFence() && myCow.CowTemplate.UID != CowSO.UniqueID.R003_Scarecow)
+        if (IsReflectingAgainstFence() && !cowsThatIgnoreMov.Contains(myCow.CowTemplate.UID))
         {
             Vector3 mapCenterDirection = SpawningGrid.Instance.Center() - this.transform.position;
             intendedDirection = (new Vector3(mapCenterDirection.x, 0, mapCenterDirection.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
@@ -195,7 +195,7 @@ public class CowMovement : MonoBehaviour
             //GLOBAL SPEED MULTIPLIER
             rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
-        else if(CowHelper.IsUFOWithinRadius(myCow) && myCow.CowTemplate.UID != CowSO.UniqueID.R003_Scarecow)
+        else if(CowHelper.IsUFOWithinRadius(myCow) && !cowsThatIgnoreMov.Contains(myCow.CowTemplate.UID))
         {
             if (rb.velocity == Vector3.zero)
                 rb.velocity = (this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).normalized;
