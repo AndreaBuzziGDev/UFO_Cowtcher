@@ -24,7 +24,6 @@ public class CowMovement : MonoBehaviour
     ///SPEED DATA
     private float speedCalm;
     private float speedAlert;
-    private float speedBuffMultiplier;//EXPERIMENT TO SLOW DOWN COWS INDIVIDUALLY (NOT YET USED)
 
 
     ///TECHNICAL DATA FOR OTHER PURPOSES
