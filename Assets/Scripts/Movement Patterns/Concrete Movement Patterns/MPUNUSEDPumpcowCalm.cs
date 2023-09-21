@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MPPumpcowCalm : AbstractMovementPattern
+public class MPUNUSEDPumpcowCalm : AbstractMovementPattern
 {
     //NB: WON'T USE THIS.
 
 
     //DATA
     ///TEMPLATE
-    private readonly MPPumpcowCalmSO template;
+    private readonly MPUNUSEDPumpcowCalmSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     private float dashSpeed;
@@ -17,7 +17,7 @@ public class MPPumpcowCalm : AbstractMovementPattern
 
 
     //CONSTRUCTOR
-    public MPPumpcowCalm(MPPumpcowCalmSO inputTemplate)
+    public MPUNUSEDPumpcowCalm(MPUNUSEDPumpcowCalmSO inputTemplate)
     {
         this.template = inputTemplate;
         this.dashSpeed = template.DashSpeed;

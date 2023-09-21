@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MPPumpcowAlert : AbstractMovementAlert
+public class MPUNUSEDPumpcowAlert : AbstractMovementAlert
 {
     //NB: WON'T USE THIS.
 
 
     //DATA
     ///TEMPLATE
-    private readonly MPPumpcowAlertSO template;
+    private readonly MPUNUSEDPumpcowAlertSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     private float dashSpeed;
@@ -18,7 +18,7 @@ public class MPPumpcowAlert : AbstractMovementAlert
 
 
     //CONSTRUCTOR
-    public MPPumpcowAlert(MPPumpcowAlertSO inputTemplate)
+    public MPUNUSEDPumpcowAlert(MPUNUSEDPumpcowAlertSO inputTemplate)
     {
         this.template = inputTemplate;
         this.dashSpeed = template.DashSpeed;
