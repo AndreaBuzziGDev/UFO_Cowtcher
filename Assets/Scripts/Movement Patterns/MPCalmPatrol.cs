@@ -32,9 +32,11 @@ public class MPCalmPatrol : AbstractMovementPattern
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
+        //
         if (timerMoving > 0) 
-            return nextRandomDirection;
+            return interestedCow.transform.position + nextRandomDirection;
 
+        //GO BACK TO PATROL POINT
         Vector3 distance = (initialPosition - interestedCow.transform.position);
         if (distance.magnitude < 0.1)
             ResetTimers();

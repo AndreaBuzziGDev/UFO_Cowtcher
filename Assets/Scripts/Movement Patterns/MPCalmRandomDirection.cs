@@ -50,7 +50,6 @@ public class MPCalmRandomDirection : AbstractMovementPattern
         this.timerStill = template.timerStill + Random.Range(-0.5f, this.randomizerSlider);
         this.timerMoving = template.timerMoving;
 
-        //TODO: FIX
         nextRandomDirection = UtilsRadius.RandomPositionOnCircleRadius(1);
     }
 
