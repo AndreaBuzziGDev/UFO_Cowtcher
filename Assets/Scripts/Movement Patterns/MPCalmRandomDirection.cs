@@ -9,7 +9,6 @@ public class MPCalmRandomDirection : AbstractMovementPattern
     private readonly MPCalmRandomDirectionSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
-    private float jumpHeight;
     private float timerMoving;
     private float timerStill;
     private float randomizerSlider;
@@ -22,7 +21,6 @@ public class MPCalmRandomDirection : AbstractMovementPattern
     public MPCalmRandomDirection(MPCalmRandomDirectionSO inputTemplate)
     {
         this.template = inputTemplate;
-        this.jumpHeight = inputTemplate.jumpHeight;
         this.timerMoving = inputTemplate.timerMoving;
         this.timerStill = inputTemplate.timerStill;
         this.randomizerSlider = inputTemplate.randomizerSlider;
@@ -36,13 +34,8 @@ public class MPCalmRandomDirection : AbstractMovementPattern
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
-        Vector3 result = Vector3.zero;
-        if (timerMoving > 0)
-        {
-            //TODO: FIND A WAY TO DO JUMP
-            return nextRandomDirection;
-        }
-        return result;
+        if (timerMoving > 0) return nextRandomDirection;
+        return Vector3.zero;
     }
 
     ///TIMERS
