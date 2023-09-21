@@ -8,6 +8,10 @@ public class MPCalmPatrol : AbstractMovementPattern
     ///TEMPLATE
     private readonly MPCalmPatrolSO template;
 
+    ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
+    
+
+
     //CONSTRUCTOR
     public MPCalmPatrol(MPCalmPatrolSO inputTemplate)
     {
