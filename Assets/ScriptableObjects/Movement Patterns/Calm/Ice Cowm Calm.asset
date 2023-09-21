@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1713f209a857bb44afe6404109c9eed, type: 3}
-  m_Name: Pumpcow Calm
+  m_Name: Ice Cowm Calm
   m_EditorClassIdentifier: 
   jumps: 1
-  jumpHeight: 0.5
-  jumpSpeed: 1
+  jumpHeight: 0.75
+  jumpSpeed: 0.5
   timerMoving: 2
-  timerStill: 0.5
+  timerStill: 1
   randomizerSlider: 0.5
