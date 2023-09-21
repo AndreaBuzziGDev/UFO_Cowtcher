@@ -15,6 +15,6 @@ MonoBehaviour:
   jumps: 0
   jumpHeight: 0.5
   jumpSpeed: 1
-  timerMoving: 2
-  timerStill: 1
+  timerMoving: 1
+  timerStill: 0.5
   randomizerSlider: 0
