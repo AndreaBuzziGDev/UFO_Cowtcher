@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Calm Bouncy", menuName = "MovementPattern/Calm/Bouncy")]
+[CreateAssetMenu(fileName = "New Random", menuName = "MovementPattern/Calm/Random")]
 public class MPCalmRandomDirectionSO : MPAbstractCalmSO
 {
     [SerializeField] public float timerMoving = 2f;

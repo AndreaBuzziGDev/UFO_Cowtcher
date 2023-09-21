@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Random Mono Direction", menuName = "MovementPattern/Calm/Random Mono Direction")]
+[CreateAssetMenu(fileName = "New Random Only Allowed", menuName = "MovementPattern/Calm/Random Only Allowed")]
 public class MPCalmMonoAllowedDirSO : MPAbstractCalmSO
 {
     [SerializeField] public float timerStill = 1;
