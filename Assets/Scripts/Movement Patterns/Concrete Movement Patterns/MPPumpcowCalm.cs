@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MPPumpcowCalm : AbstractMovementPattern
 {
+    //NB: WON'T USE THIS.
+
+
     //DATA
     ///TEMPLATE
     private readonly MPPumpcowCalmSO template;

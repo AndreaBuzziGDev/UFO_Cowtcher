@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MPPumpcowAlert : AbstractMovementAlert
 {
+    //NB: WON'T USE THIS.
+
+
     //DATA
     ///TEMPLATE
     private readonly MPPumpcowAlertSO template;
@@ -11,6 +14,7 @@ public class MPPumpcowAlert : AbstractMovementAlert
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
     private float dashSpeed;
     private float dashDuration;
+
 
 
     //CONSTRUCTOR
