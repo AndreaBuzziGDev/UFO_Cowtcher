@@ -247,6 +247,7 @@ public class CowMovement : MonoBehaviour
     }
 
     ///FENCE DETECTION
+    //TODO: THIS MOST LIKELY WON'T BE NEEDED ANYTYME SOON
     public void CheckClosestFence(Fence newFence)
     {
         if(closestFence != null)
