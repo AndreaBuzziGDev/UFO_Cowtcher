@@ -33,13 +33,12 @@ public class MPAlertTowardsUFO : AbstractMovementAlert
     {
         if (timerMoving > 0)
         {
-            Vector3 ufoPos = GameController.Instance.FindUFOAnywhere().transform.position;
-            Vector3 planeProjectedUfoPos = new Vector3(ufoPos.x, 0, ufoPos.z);
+            Vector3 planeProjectedUfoPos = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
 
             Vector3 intendedDirection = planeProjectedUfoPos - interestedCow.transform.position;
             if (intendedDirection.magnitude >= 0.1)
             {
-                return (planeProjectedUfoPos - interestedCow.transform.position).normalized;
+                return intendedDirection.normalized;
             }
             else
                 return Vector3.zero;
