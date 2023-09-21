@@ -31,9 +31,8 @@ public class MPTwistingAlert : AbstractMovementAlert
 
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
-        Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().transform.position;
+        Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
         Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
-        Vector3 alertDirection = new Vector3(desiredDirection.x, 0, desiredDirection.z);
 
         if (directionChangeRate <= 0.0f)
         {

@@ -35,7 +35,7 @@ public class MPTwistingCalm : AbstractMovementPattern
 
         if (directionChangeRate <= 0.0f)
         {
-            ResetChageRateTimer();
+            directionChangeRate = template.DirectionChangeRate;
 
             Vector3 crossProduct = Vector3.Cross(interestedCow.MovementDirection, interestedCow.transform.up);
 
@@ -56,10 +56,6 @@ public class MPTwistingCalm : AbstractMovementPattern
         //CAN'T USE IT HERE
     }
 
-    private void ResetChageRateTimer()
-    {
-        directionChangeRate = template.DirectionChangeRate;
-    }
 
     private void ResetSameDirectionTimer()
     {
