@@ -18,4 +18,4 @@ MonoBehaviour:
   TimerSameDirectionMovement: 4
   DirectionChangeRate: 0.1
   Frequency: 2
-  Magnitude: 0.3
+  Magnitude: 1

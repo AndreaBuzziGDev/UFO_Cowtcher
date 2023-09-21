@@ -7,7 +7,7 @@ public class MPTwistingAlertSO : MPAbstractAlertSO
 {
     public float DirectionChangeRate = 0.1f;
     public float Frequency = 10f;
-    [Range(0, 1.0f)]public float Magnitude = 1.0f;
+    [Range(0, 90.0f)]public float Magnitude = 30.0f;
 
     public override AbstractMovementPattern GetMovPattern()
     {
