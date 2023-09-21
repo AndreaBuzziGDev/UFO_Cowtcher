@@ -33,5 +33,5 @@ MonoBehaviour:
   InstantlyDeployedItemPickup: {fileID: 0}
   associatedAsteroid: {fileID: 0}
   SummoningRitual: {fileID: 0}
-  FavouriteHideoutTypes: 01000000
+  FavouriteHideoutTypes: 0b000000
   AllowedSpawnPointTypes: 04000000
