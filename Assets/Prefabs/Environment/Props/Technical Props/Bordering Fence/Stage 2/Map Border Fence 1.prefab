@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 5489075754274149332}
   - component: {fileID: 3395813021628623228}
   m_Layer: 0
-  m_Name: Map Border Fence
+  m_Name: Map Border Fence 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
