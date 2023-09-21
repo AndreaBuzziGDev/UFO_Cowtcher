@@ -26,7 +26,7 @@ public class MPAlertSlide : AbstractMovementAlert
 
         //USE CowMovement OR Cow OR SOME OTHER SCRIPT TO DETECT IF A COLLISION HAPPENED, AND IF IT DID, USE IT TO CHANGE DIRECTION (SHOULD BOUNCE)
 
-        return Vector3.zero;
+        return desiredDirection;
     }
 
     public override Vector3 ManagePanic(CowMovement myCow)
