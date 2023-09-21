@@ -37,7 +37,11 @@ public class MPCalmBouncy : AbstractMovementPattern
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         Vector3 result = Vector3.zero;
-        if (timerMoving > 0) return nextRandomDirection;
+        if (timerMoving > 0)
+        {
+            //TODO: FIND A WAY TO DO JUMP
+            return nextRandomDirection;
+        }
         return result;
     }
 
