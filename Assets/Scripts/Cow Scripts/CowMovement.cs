@@ -55,7 +55,14 @@ public class CowMovement : MonoBehaviour
 
 
     //COWS THAT IGNORE MOVEMENT ALGORITHM DETAILS:
-    HashSet<CowSO.UniqueID> cowsThatIgnoreMov = new HashSet<CowSO.UniqueID> {
+    HashSet<CowSO.UniqueID> cowsThatIgnoreFenceDodge = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.R003_Scarecow,
+        CowSO.UniqueID.R007_Sharkow,
+        CowSO.UniqueID.R011_Cowflake,
+        CowSO.UniqueID.R015_Kowtos
+    };
+    
+    HashSet<CowSO.UniqueID> cowsThatIgnoreSmoothing = new HashSet<CowSO.UniqueID> {
         CowSO.UniqueID.R003_Scarecow,
         CowSO.UniqueID.R007_Sharkow,
         CowSO.UniqueID.R011_Cowflake,
@@ -186,8 +193,9 @@ public class CowMovement : MonoBehaviour
         //VARIANT - RUN TOWARDS THE CENTER OF THE SPAWNING GRID
         Vector3 intendedDirection = movementDirection;
 
-        //TODO: UPGRADE FOR SPECIAL COWS THAT CHASE THE PLAYER NO MATTER WHAT
-        if (IsReflectingAgainstFence() && !cowsThatIgnoreMov.Contains(myCow.CowTemplate.UID))
+
+        //SOME COWS IGNORE THE FENCE DODGING
+        if (IsReflectingAgainstFence() && !cowsThatIgnoreFenceDodge.Contains(myCow.CowTemplate.UID))
         {
             Vector3 mapCenterDirection = SpawningGrid.Instance.Center() - this.transform.position;
             intendedDirection = (new Vector3(mapCenterDirection.x, 0, mapCenterDirection.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
@@ -195,12 +203,13 @@ public class CowMovement : MonoBehaviour
             //GLOBAL SPEED MULTIPLIER
             rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
-        else if(CowHelper.IsUFOWithinRadius(myCow) && !cowsThatIgnoreMov.Contains(myCow.CowTemplate.UID))
+
+        //SOME COWS NEED INTERPOLATION FOR WHEN FLEEING THE UFO
+        else if (CowHelper.IsUFOWithinRadius(myCow) && !cowsThatIgnoreFenceDodge.Contains(myCow.CowTemplate.UID))
         {
             if (rb.velocity == Vector3.zero)
                 rb.velocity = (this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).normalized;
 
-            //INTERPOLATION TO MAKE SURE THE COW DOES NOT TURN SUDDENLY - BUT ONLY WHEN FLEEING FROM THE UFO
             rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * 
                 Vector3.Lerp(
                     rb.velocity.normalized,
@@ -208,11 +217,10 @@ public class CowMovement : MonoBehaviour
                     Time.fixedDeltaTime * turningSpeedMult
                 );
         }
+
+        //DEFAULT
         else
-        {
-            //GLOBAL SPEED MULTIPLIER
             rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
-        }
 
     }
     
