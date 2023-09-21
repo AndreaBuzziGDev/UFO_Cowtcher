@@ -29,16 +29,15 @@ public class MPPumpcowAlert : AbstractMovementAlert
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
-        Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().transform.position;
+        Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
         Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
-        Vector3 vertLessDirection = new Vector3(desiredDirection.x, 0, desiredDirection.z);
 
         if (dashDuration <= 0f)
         {
             ResetTimers();
         }
 
-        return vertLessDirection.normalized * dashSpeed * dashDuration;
+        return desiredDirection.normalized * dashSpeed * dashDuration;
     }
 
     public override Vector3 ManagePanic(CowMovement myCow)
