@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MPCalmRandMonoDir : AbstractMovementPattern
+public class MPCalmMonoAllowedDir : AbstractMovementPattern
 {
     //DATA
     ///TEMPLATE
@@ -18,7 +18,7 @@ public class MPCalmRandMonoDir : AbstractMovementPattern
 
 
     //CONSTRUCTOR
-    public MPCalmRandMonoDir(MPCalmRandMonoDirSO inputTemplate)
+    public MPCalmMonoAllowedDir(MPCalmRandMonoDirSO inputTemplate)
     {
         this.template = inputTemplate;
         this.AllowedDirections = inputTemplate.AllowedDirections;

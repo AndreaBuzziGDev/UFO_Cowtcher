@@ -13,6 +13,6 @@ public class MPCalmRandMonoDirSO : MPAbstractCalmSO
 
     public override AbstractMovementPattern GetMovPattern()
     {
-        return new MPCalmRandMonoDir(this);
+        return new MPCalmMonoAllowedDir(this);
     }
 }

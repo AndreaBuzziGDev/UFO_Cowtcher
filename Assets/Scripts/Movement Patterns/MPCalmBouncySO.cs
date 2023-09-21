@@ -12,6 +12,6 @@ public class MPCalmBouncySO : MPAbstractCalmSO
 
     public override AbstractMovementPattern GetMovPattern()
     {
-        return new MPCalmBouncy(this);
+        return new MPCalmRandomDirection(this);
     }
 }

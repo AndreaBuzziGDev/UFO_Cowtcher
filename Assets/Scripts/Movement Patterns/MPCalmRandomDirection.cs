@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MPCalmBouncy : AbstractMovementPattern
+public class MPCalmRandomDirection : AbstractMovementPattern
 {
     //DATA
     ///TEMPLATE
@@ -19,7 +19,7 @@ public class MPCalmBouncy : AbstractMovementPattern
 
 
     //CONSTRUCTOR
-    public MPCalmBouncy(MPCalmBouncySO inputTemplate)
+    public MPCalmRandomDirection(MPCalmBouncySO inputTemplate)
     {
         this.template = inputTemplate;
         this.jumpHeight = inputTemplate.jumpHeight;
