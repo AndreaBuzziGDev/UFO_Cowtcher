@@ -85,12 +85,13 @@ public class CowMovement : MonoBehaviour
         }
 
         //HANDLE VISUAL JUMP
+        /*
         spriteRenderer.transform.position = new Vector3(
             transform.position.x,
             Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * ) * currentMovPattern.
             transform.position.z
         );
-
+        */
     }
 
     private void FixedUpdate()

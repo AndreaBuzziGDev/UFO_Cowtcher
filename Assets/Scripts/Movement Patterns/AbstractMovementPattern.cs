@@ -8,10 +8,16 @@ public abstract class AbstractMovementPattern
 
     //METHODS
     ///TEMPLATE
-    public abstract IMovementPattern Template();
+    public abstract MPAbstractParentSO Template();
 
     ///MOVEMENT
     public abstract Vector3 ManageMovement(CowMovement myCowMovement);
+
+    ///JUMP
+    public bool Jumps()
+    {
+        return Template().jumps;
+    }
 
     ///TIMERS
     public abstract void UpdateTimers(float delta);

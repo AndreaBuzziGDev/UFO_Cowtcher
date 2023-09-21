@@ -29,7 +29,7 @@ public class MPCalmMonoAllowedDir : AbstractMovementPattern
     //METHODS
 
     ///TEMPLATE
-    public override IMovementPattern Template() => template;
+    public override MPAbstractParentSO Template() => template;
 
 
     ///MOVEMENT

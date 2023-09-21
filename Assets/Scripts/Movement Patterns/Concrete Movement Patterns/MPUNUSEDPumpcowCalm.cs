@@ -25,7 +25,7 @@ public class MPUNUSEDPumpcowCalm : AbstractMovementPattern
     }
 
     ///TEMPLATE
-    public override IMovementPattern Template() => template;
+    public override MPAbstractParentSO Template() => template;
 
 
     public override Vector3 ManageMovement(CowMovement interestedCow)
