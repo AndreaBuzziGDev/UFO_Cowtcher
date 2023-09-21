@@ -160,8 +160,8 @@ public class CowMovement : MonoBehaviour
         //TODO: UPGRADE FOR SPECIAL COWS THAT CHASE THE PLAYER NO MATTER WHAT
         if (IsReflectingAgainstFence() && myCow.CowTemplate.UID != CowSO.UniqueID.R003_Scarecow)
         {
-            Vector3 diff = SpawningGrid.Instance.Center() - this.transform.position;
-            intendedDirection = (new Vector3(diff.x, 0, diff.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
+            Vector3 mapCenterDirection = SpawningGrid.Instance.Center() - this.transform.position;
+            intendedDirection = (new Vector3(mapCenterDirection.x, 0, mapCenterDirection.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
         }
         else
         {
