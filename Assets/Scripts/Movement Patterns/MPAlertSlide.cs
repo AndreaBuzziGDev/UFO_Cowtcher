@@ -21,13 +21,17 @@ public class MPAlertSlide : AbstractMovementAlert
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
+        //USE interestedCow.CowScript TO DETECT IF IT HIT SOMETHING
+
         return Vector3.zero;
     }
 
     public override Vector3 ManagePanic(CowMovement myCow)
     {
-        return Vector3.zero;
-
+        if (CowHideoutHelper.ShouldRunForHideout(myCow.CowScript))
+            return CowHideoutHelper.HideoutDirection(myCow.CowScript).normalized;
+        else
+            return ManageMovement(myCow);
     }
 
     ///TIMERS
