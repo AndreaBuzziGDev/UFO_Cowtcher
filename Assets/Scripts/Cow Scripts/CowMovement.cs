@@ -165,13 +165,18 @@ public class CowMovement : MonoBehaviour
         }
         else if(CowHelper.IsUFOWithinRadius(myCow))
         {
-            //INTERPOLATION TO MAKE SURE THE COW DOES NOT TURN SUDDENLY
-            intendedDirection = Vector3.Lerp(rb.velocity.normalized, intendedDirection, Time.fixedDeltaTime * turningSpeedMult).normalized;
+            //INTERPOLATION TO MAKE SURE THE COW DOES NOT TURN SUDDENLY - BUT ONLY WHEN FLEEING FROM THE UFO
+            rb.velocity = Vector3.Lerp(
+                rb.velocity,
+                mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection, 
+                Time.fixedDeltaTime * turningSpeedMult
+                ).normalized;
         }
-
-
-        //GLOBAL SPEED MULTIPLIER
-        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+        else
+        {
+            //GLOBAL SPEED MULTIPLIER
+            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+        }
 
     }
     
