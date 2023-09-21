@@ -13,11 +13,12 @@ public abstract class AbstractMovementPattern
     ///MOVEMENT
     public abstract Vector3 ManageMovement(CowMovement myCowMovement);
 
+    
     ///JUMP
-    public bool Jumps()
-    {
-        return Template().jumps;
-    }
+    public bool Jumps() => Template().jumps;
+    public float JumpHeight() => Template().jumpHeight;
+    public float JumpSpeed() => Template().jumpSpeed;
+
 
     ///TIMERS
     public abstract void UpdateTimers(float delta);
