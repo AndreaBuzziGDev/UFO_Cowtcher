@@ -16,5 +16,5 @@ MonoBehaviour:
   jumpHeight: 0.5
   jumpSpeed: 1
   DirectionChangeRate: 0.01
-  Frequency: 30
-  Magnitude: 20
+  Frequency: 15
+  Magnitude: 10
