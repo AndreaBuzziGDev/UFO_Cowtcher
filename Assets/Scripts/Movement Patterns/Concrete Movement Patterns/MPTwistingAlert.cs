@@ -38,7 +38,7 @@ public class MPTwistingAlert : AbstractMovementAlert
             ResetTimers();
             Vector3 crossProduct = Vector3.Cross(alertDirection, interestedCow.transform.up);
 
-            alertDirection = alertDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
+            alertDirection = interestedCow.MovementDirection + magnitude * Mathf.Sin(Time.time * frequency) * crossProduct;
         }
 
         return alertDirection.normalized;
