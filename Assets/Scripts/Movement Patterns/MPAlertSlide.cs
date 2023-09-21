@@ -21,7 +21,10 @@ public class MPAlertSlide : AbstractMovementAlert
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
-        //USE interestedCow.CowScript TO DETECT IF IT HIT SOMETHING
+        Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
+        Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
+
+        //USE CowMovement OR Cow OR SOME OTHER SCRIPT TO DETECT IF A COLLISION HAPPENED, AND IF IT DID, USE IT TO CHANGE DIRECTION (SHOULD BOUNCE)
 
         return Vector3.zero;
     }
