@@ -63,6 +63,7 @@ public class CowMovement : MonoBehaviour
     };
     
     HashSet<CowSO.UniqueID> cowsThatIgnoreSmoothing = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.R000_Kowbra,
         CowSO.UniqueID.R003_Scarecow,
         CowSO.UniqueID.R007_Sharkow,
         CowSO.UniqueID.R011_Cowflake,
@@ -204,8 +205,8 @@ public class CowMovement : MonoBehaviour
             rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
 
-        //SOME COWS NEED INTERPOLATION FOR WHEN FLEEING THE UFO
-        else if (CowHelper.IsUFOWithinRadius(myCow) && !cowsThatIgnoreFenceDodge.Contains(myCow.CowTemplate.UID))
+        //SOME COWS NEED MOVEMENT SMOOTHING FOR WHEN FLEEING THE UFO
+        else if (CowHelper.IsUFOWithinRadius(myCow) && !cowsThatIgnoreSmoothing.Contains(myCow.CowTemplate.UID))
         {
             if (rb.velocity == Vector3.zero)
                 rb.velocity = (this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).normalized;
