@@ -32,17 +32,22 @@ public class MPAlertSlide : AbstractMovementAlert
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         //GET COLLIDER
-        if(this.cowColl != null)
+        if(this.cowColl == null)
         {
             this.cowColl = interestedCow.gameObject.GetComponent<CowCollider>();
         }
 
+        //REFLECT AGAINST COLLISION
         if (this.cowColl.HasCollided)
         {
-            //REFLECT AGAINST COLLISION
-            slideDirection = Vector3.Reflect(slideDirection, Vector3.up);
+            Vector3 collNormal = cowColl.GetCollisionData();
+            Vector3 planarNormal = new Vector3(collNormal.x, 0, collNormal.z);
+
+            slideDirection = Vector3.Reflect(slideDirection, planarNormal);
         }
-        else if (slideDirection == Vector3.zero || canChangeDirection)
+
+        //HANDLE DIRECTION STUFF
+        if (slideDirection == Vector3.zero || canChangeDirection)
         {
             //OR HANDLE DIRECTION STUFF
             slideDirection = interestedCow.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ();
@@ -50,11 +55,8 @@ public class MPAlertSlide : AbstractMovementAlert
         }
 
         //HANDLE TIMERS
-        if (sameDirectionTimer <= 0)
-        {
+        if (sameDirectionTimer <= 0) 
             ResetTimers();
-            canChangeDirection = true;
-        }
 
         Debug.Log("MPAlertSlide - slideDirection: " + slideDirection);
         return slideDirection.normalized;
@@ -76,5 +78,6 @@ public class MPAlertSlide : AbstractMovementAlert
     public override void ResetTimers()
     {
         sameDirectionTimer = template.sameDirectionTimer;
+        canChangeDirection = true;
     }
 }
