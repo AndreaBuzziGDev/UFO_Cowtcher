@@ -21,19 +21,15 @@ public class CowCollider : MonoBehaviour
 
 
     //COLLISION DETECTION
-    void OnCollisionStay(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("CowCollider - OnCollisionStay");
+        //
+        ContactPoint contact = collision.contacts[0];
+        Debug.Log("CowCollider - OnCollisionEnter Normal: " + contact.normal);
 
         //
-        /*
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            Debug.DrawRay(contact.point, contact.normal, Color.white);
-        }
-        if (collision.relativeVelocity.magnitude > 2)
-            audioSource.Play();
-        */
+
+
     }
 
 
