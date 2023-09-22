@@ -37,15 +37,14 @@ public class MPAlertSlide : AbstractMovementAlert
             this.cowColl = interestedCow.gameObject.GetComponent<CowCollider>();
         }
 
-        //REFLECT AGAINST COLLISION
         if (this.cowColl.HasCollided)
         {
-            Debug.Log("MPAlertSlide - HasCollided");
+            //REFLECT AGAINST COLLISION
             slideDirection = Vector3.Reflect(slideDirection, Vector3.up);
         }
-        //OR HANDLE DIRECTION STUFF
         else if (slideDirection == Vector3.zero || canChangeDirection)
         {
+            //OR HANDLE DIRECTION STUFF
             slideDirection = interestedCow.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ();
             canChangeDirection = false;
         }
@@ -73,7 +72,6 @@ public class MPAlertSlide : AbstractMovementAlert
     public override void UpdateTimers(float delta)
     {
         sameDirectionTimer -= delta;
-
     }
     public override void ResetTimers()
     {
