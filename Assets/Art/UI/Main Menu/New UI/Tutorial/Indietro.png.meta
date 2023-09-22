@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -147,7 +147,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Indietro_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 316
+        width: 278
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc6864c3c4ce5540a4c88ea0a2b3a9c
+      internalID: 1981167597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +179,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Indietro_0: -1882319255
+      Indietro_1: -249601528
+      Indietro_10: -150165183
+      Indietro_2: 1981167597
+      Indietro_3: -749333402
+      Indietro_4: -288886489
+      Indietro_5: 547145329
+      Indietro_6: 764023568
+      Indietro_7: -499530866
+      Indietro_8: -837438696
+      Indietro_9: 1902032668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

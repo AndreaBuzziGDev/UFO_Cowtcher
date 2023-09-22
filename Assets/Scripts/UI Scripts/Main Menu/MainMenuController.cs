@@ -109,6 +109,7 @@ public class MainMenuController : MonoSingleton<MainMenuController>
             case eMainMenuCanvas.Main:
                 //MAIN MENU
                 MainMenuCanvas.gameObject.SetActive(true);
+                TutorialsCanvas.gameObject.SetActive(true);
                 break;
             case eMainMenuCanvas.StageSelect:
                 //STAGE SELECT

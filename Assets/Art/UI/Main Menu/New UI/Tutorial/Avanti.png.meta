@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -147,7 +147,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Avanti_3
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 320
+        width: 278
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaed2f9439657c143b31c4626096768e
+      internalID: -968510224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +179,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Avanti_0: -56419281
+      Avanti_1: -357566951
+      Avanti_10: -2049616605
+      Avanti_11: -1484674707
+      Avanti_12: 830251392
+      Avanti_13: -472210181
+      Avanti_14: 1698057035
+      Avanti_2: -629149999
+      Avanti_3: -968510224
+      Avanti_4: 1618577300
+      Avanti_5: -1284273141
+      Avanti_6: -1594070948
+      Avanti_7: 1164065909
+      Avanti_8: 1080277321
+      Avanti_9: 427789392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
