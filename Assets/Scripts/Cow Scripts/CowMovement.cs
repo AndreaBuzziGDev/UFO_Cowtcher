@@ -65,6 +65,7 @@ public class CowMovement : MonoBehaviour
 
     HashSet<CowSO.UniqueID> cowsThatIgnoreSmoothing = new HashSet<CowSO.UniqueID> {
         CowSO.UniqueID.R000_Kowbra,
+        CowSO.UniqueID.L000_Cowctor,
         CowSO.UniqueID.R004_Hippocowmp,
         CowSO.UniqueID.R012_Linkow,
         CowSO.UniqueID.R010_Cownguin,
