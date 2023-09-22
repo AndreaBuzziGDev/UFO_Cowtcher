@@ -9,14 +9,19 @@ public class MPAlertSlide : AbstractMovementAlert
     private readonly MPAlertSlideSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
-    private Vector3 slideDirection = Vector3.zero;
+    private float sameDirectionTimer;
+    private bool canChangeDirection = true;
 
+    private CowCollider cowColl = null;
+    Vector3 slideDirection = Vector3.zero;
 
+    
 
     //CONSTRUCTOR
     public MPAlertSlide(MPAlertSlideSO inputTemplate)
     {
         this.template = inputTemplate;
+        this.sameDirectionTimer = inputTemplate.sameDirectionTimer;
     }
 
 
@@ -26,26 +31,33 @@ public class MPAlertSlide : AbstractMovementAlert
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
-        //TODO: ONLY WHEN ENTERING THE ALERT STATE THE FIRST TIME THE COW STARTS FLEEING THE UFO
-        if(slideDirection == Vector3.zero)
+        //GET COLLIDER
+        if(this.cowColl != null)
         {
-            Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
-            slideDirection = interestedCow.transform.position - menacePosition;
+            this.cowColl = interestedCow.gameObject.GetComponent<CowCollider>();
         }
 
-        //USE CowMovement OR Cow OR SOME OTHER SCRIPT TO DETECT IF A COLLISION HAPPENED, AND IF IT DID, USE IT TO CHANGE DIRECTION (SHOULD BOUNCE)
-        //TODO: OPTIMIZE
-        CowCollider cowMov = interestedCow.gameObject.GetComponent<CowCollider>();
-        if (cowMov != null)
+        //REFLECT AGAINST COLLISION
+        if (this.cowColl.HasCollided)
         {
-            if (cowMov.HasCollided)
-            {
-                Debug.Log("MPAlertSlide - ManageMovement");
-                //TODO: FINISH IMPLEMENTATION
-                slideDirection = Vector3.Reflect(slideDirection, cowMov.GetCollisionData());
-            }
+            Debug.Log("MPAlertSlide - HasCollided");
+            slideDirection = Vector3.Reflect(slideDirection, Vector3.up);
+        }
+        //OR HANDLE DIRECTION STUFF
+        else if (slideDirection == Vector3.zero || canChangeDirection)
+        {
+            slideDirection = interestedCow.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ();
+            canChangeDirection = false;
         }
 
+        //HANDLE TIMERS
+        if (sameDirectionTimer <= 0)
+        {
+            ResetTimers();
+            canChangeDirection = true;
+        }
+
+        Debug.Log("MPAlertSlide - slideDirection: " + slideDirection);
         return slideDirection.normalized;
     }
 
@@ -60,11 +72,11 @@ public class MPAlertSlide : AbstractMovementAlert
     ///TIMERS
     public override void UpdateTimers(float delta)
     {
-        //NOT NEEDED
+        sameDirectionTimer -= delta;
 
     }
     public override void ResetTimers()
     {
-
+        sameDirectionTimer = template.sameDirectionTimer;
     }
 }

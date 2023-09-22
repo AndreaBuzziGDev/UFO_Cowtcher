@@ -56,6 +56,7 @@ public class CowMovement : MonoBehaviour
 
     //COWS THAT IGNORE MOVEMENT ALGORITHM DETAILS:
     HashSet<CowSO.UniqueID> cowsThatIgnoreFenceDodge = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.R010_Cownguin,
         CowSO.UniqueID.R003_Scarecow,
         CowSO.UniqueID.R007_Sharkow,
         CowSO.UniqueID.R011_Cowflake,
@@ -66,6 +67,7 @@ public class CowMovement : MonoBehaviour
         CowSO.UniqueID.R000_Kowbra,
         CowSO.UniqueID.R004_Hippocowmp,
         CowSO.UniqueID.R012_Linkow,
+        CowSO.UniqueID.R010_Cownguin,
         CowSO.UniqueID.R003_Scarecow,
         CowSO.UniqueID.R007_Sharkow,
         CowSO.UniqueID.R011_Cowflake,
