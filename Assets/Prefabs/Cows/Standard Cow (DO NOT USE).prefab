@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5394048494833358103
 Transform:
   m_ObjectHideFlags: 0
@@ -77,9 +77,11 @@ GameObject:
   m_Component:
   - component: {fileID: 51620534516586991}
   - component: {fileID: 4687243823262481106}
+  - component: {fileID: 1649241016650468563}
   - component: {fileID: 7274476460106249080}
   - component: {fileID: 6923396806548110374}
   - component: {fileID: 2271979305478991426}
+  - component: {fileID: 4221890030956089728}
   m_Layer: 6
   m_Name: Standard Cow (DO NOT USE)
   m_TagString: Untagged
@@ -131,6 +133,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!65 &1649241016650468563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259244113235226185}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.5713425}
+  m_Center: {x: 0, y: 0.5, z: 0.2631748}
 --- !u!82 &7274476460106249080
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,6 +266,7 @@ MonoBehaviour:
   shakeAmount: 0.035
   shakeSpeed: 50
   spawnCoords: {x: 0, y: 0, z: 0}
+  lastAlertCoords: {x: 0, y: 0, z: 0}
   CowDisappearParticles: {fileID: 9157105887693468085, guid: b4bdb63b71957644fb9d25fec810ea9a, type: 3}
   mooAlertSource: {fileID: 7274476460106249080}
   cowFadeOutHologramOnCapture: {fileID: 9214518739162181658, guid: 13293ec1982b10b4cb35d48425f46afa, type: 3}
@@ -264,6 +288,19 @@ MonoBehaviour:
   fenceDetectionRadius: 0
   closestFence: {fileID: 0}
   turningSpeedMult: 2
+--- !u!114 &4221890030956089728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259244113235226185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97680d4349a736b4ca24b559e1b733c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentCow: {fileID: 6923396806548110374}
 --- !u!1 &6481535709489429120
 GameObject:
   m_ObjectHideFlags: 0

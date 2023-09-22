@@ -8,6 +8,9 @@ public class CowCollider : MonoBehaviour
     [SerializeField] private Cow parentCow;
     private CowMovement mov;
 
+    ///COLLISION USEFUL DATA
+    
+
 
     //METHODS
     //...
@@ -16,6 +19,22 @@ public class CowCollider : MonoBehaviour
         mov = parentCow.GetComponent<CowMovement>();
     }
 
+
+    //COLLISION DETECTION
+    void OnCollisionStay(Collision collision)
+    {
+        Debug.Log("CowCollider - OnCollisionStay");
+
+        //
+        /*
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            Debug.DrawRay(contact.point, contact.normal, Color.white);
+        }
+        if (collision.relativeVelocity.magnitude > 2)
+            audioSource.Play();
+        */
+    }
 
 
     //FUNCTIONALITIES

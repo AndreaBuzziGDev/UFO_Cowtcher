@@ -21,6 +21,7 @@ public class MPAlertSlide : AbstractMovementAlert
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
+        //TODO: ONLY WHEN ENTERING THE ALERT STATE THE FIRST TIME THE COW STARTS FLEEING THE UFO
         Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
         Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
 
