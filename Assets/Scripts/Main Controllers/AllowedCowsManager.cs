@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class SpawnManagerCow : MonoSingleton<SpawnManagerCow>
+public class AllowedCowsManager : MonoSingleton<AllowedCowsManager>
 {
     //DATA
 

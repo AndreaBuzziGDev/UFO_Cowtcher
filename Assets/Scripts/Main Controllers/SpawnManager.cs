@@ -76,7 +76,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///OVERALL INITIALIZATION PROCEDURE
     public void Initialization()
     {
-        SpawnManagerCow.Instance.Initialization();
+        AllowedCowsManager.Instance.Initialization();
 
         InitializeCowCount();
         InitializeSpawnProbabilityDictionary();
@@ -333,12 +333,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         List<Cow> cowPrefabs = Cowdex.Instance.GetCows(UIDs);
 
         //TODO: THIS MUST TRACK ONLY THE ALLOWED COWS FOR THIS MAP.
-        List<CowSO.UniqueID> allowedCowIds = SpawnManagerCow.Instance.AllowedCowIDs;
+        List<CowSO.UniqueID> allowedCowIds = AllowedCowsManager.Instance.AllowedCowIDs;
 
         foreach (Cow prefabCow in cowPrefabs)
         {
             //ENFORCED BEHAVIOUR: ONLY "ALLOWED" COWS SPAWN IN THE SCENE
-            if (!SpawnManagerCow.Instance.AllowAllCows)
+            if (!AllowedCowsManager.Instance.AllowAllCows)
             {
                 if (allowedCowIds.Contains(prefabCow.CowTemplate.UID)) tallySpawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnChanceTally);
             }
