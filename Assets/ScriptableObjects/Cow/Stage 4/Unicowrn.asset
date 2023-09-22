@@ -28,7 +28,7 @@ MonoBehaviour:
   TimerAlertToPanic: 2
   TimerRespawn: 5
   movPatternCalm: {fileID: 11400000, guid: 2c10789586a038c418beaadb0a361797, type: 2}
-  movPatternAlert: {fileID: 11400000, guid: 4330d5b1210ce76419d3002d1517b1b0, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: d31eb371d0e575646bc90ed67c44eee8, type: 2}
   effect: 
   InstantlyDeployedItemPickup: {fileID: 0}
   associatedAsteroid: {fileID: 0}
