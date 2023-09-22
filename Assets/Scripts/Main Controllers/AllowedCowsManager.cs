@@ -18,13 +18,6 @@ public class AllowedCowsManager : MonoSingleton<AllowedCowsManager>
 
 
 
-    ///EFFECTIVELY UNLOCKED COWS
-    //TODO: USE THIS AS A SUPPORT FEATURE TO RECORD THE COWS THAT THE PLAYER EFFECTIVELY CAPTURED (THIS COULD/SHOULD BE MOVED IN COWDEX INSTEAD?)
-    private List<CowSO.UniqueID> enabledCowIDs = new();
-    public List<CowSO.UniqueID> EnabledCowIDs { get { return enabledCowIDs; } }
-
-
-
     ///SCRIPTABLE OBJECTS TO TRACK ALLOWED COW SPAWNS
     [SerializeField] private AllowedCowsSO allowedStage1;
     [SerializeField] private AllowedCowsSO allowedStage2;
