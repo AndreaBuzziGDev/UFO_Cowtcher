@@ -59,7 +59,6 @@ public class MPAlertSlide : AbstractMovementAlert
         if (sameDirectionTimer <= 0) 
             ResetTimers();
 
-        Debug.Log("MPAlertSlide - slideDirection: " + slideDirection);
         return slideDirection.normalized;
     }
 
