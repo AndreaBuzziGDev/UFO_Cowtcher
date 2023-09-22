@@ -8,6 +8,11 @@ public class MPAlertSlide : AbstractMovementAlert
     ///TEMPLATE
     private readonly MPAlertSlideSO template;
 
+    ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
+    private Vector3 slideDirection = Vector3.zero;
+
+
+
     //CONSTRUCTOR
     public MPAlertSlide(MPAlertSlideSO inputTemplate)
     {
@@ -22,17 +27,26 @@ public class MPAlertSlide : AbstractMovementAlert
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         //TODO: ONLY WHEN ENTERING THE ALERT STATE THE FIRST TIME THE COW STARTS FLEEING THE UFO
-        Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
-        Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
-
-        //USE CowMovement OR Cow OR SOME OTHER SCRIPT TO DETECT IF A COLLISION HAPPENED, AND IF IT DID, USE IT TO CHANGE DIRECTION (SHOULD BOUNCE)
-        if (false)
+        if(slideDirection == Vector3.zero)
         {
-            //TODO: FINISH IMPLEMENTATION
-            //desiredDirection = 
+            Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
+            slideDirection = interestedCow.transform.position - menacePosition;
         }
 
-        return desiredDirection.normalized;
+        //USE CowMovement OR Cow OR SOME OTHER SCRIPT TO DETECT IF A COLLISION HAPPENED, AND IF IT DID, USE IT TO CHANGE DIRECTION (SHOULD BOUNCE)
+        //TODO: OPTIMIZE
+        CowCollider cowMov = interestedCow.gameObject.GetComponent<CowCollider>();
+        if (cowMov != null)
+        {
+            if (cowMov.HasCollided)
+            {
+                Debug.Log("MPAlertSlide - ManageMovement");
+                //TODO: FINISH IMPLEMENTATION
+                slideDirection = Vector3.Reflect(slideDirection, cowMov.GetCollisionData());
+            }
+        }
+
+        return slideDirection.normalized;
     }
 
     public override Vector3 ManagePanic(CowMovement myCow)
@@ -51,7 +65,6 @@ public class MPAlertSlide : AbstractMovementAlert
     }
     public override void ResetTimers()
     {
-        //NOT NEEDED
 
     }
 }

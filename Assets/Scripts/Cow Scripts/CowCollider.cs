@@ -9,13 +9,18 @@ public class CowCollider : MonoBehaviour
     private CowMovement mov;
 
     ///COLLISION USEFUL DATA
-    
+    private Vector3 lastCollisionNormal;
+
+    private bool hasCollided;
+    public bool HasCollided { get { return hasCollided; } }
+
 
 
     //METHODS
     //...
     private void Awake()
     {
+        //TODO: HANDLE VIA SERIALIZATION?
         mov = parentCow.GetComponent<CowMovement>();
     }
 
@@ -28,13 +33,22 @@ public class CowCollider : MonoBehaviour
         Debug.Log("CowCollider - OnCollisionEnter Normal: " + contact.normal);
 
         //
-
-
+        lastCollisionNormal = contact.normal;
+        hasCollided = true;
     }
 
 
     //FUNCTIONALITIES
     public Cow GetCow() => parentCow;
     public CowMovement GetMovement() => mov;
+
+
+
+    public Vector3 GetCollisionData()
+    {
+        hasCollided = false;
+        return lastCollisionNormal;
+    }
+
 
 }
