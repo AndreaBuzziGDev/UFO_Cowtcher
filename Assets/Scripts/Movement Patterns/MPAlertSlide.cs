@@ -25,6 +25,11 @@ public class MPAlertSlide : AbstractMovementAlert
         Vector3 desiredDirection = interestedCow.transform.position - menacePosition;
 
         //USE CowMovement OR Cow OR SOME OTHER SCRIPT TO DETECT IF A COLLISION HAPPENED, AND IF IT DID, USE IT TO CHANGE DIRECTION (SHOULD BOUNCE)
+        if (false)
+        {
+            //TODO: FINISH IMPLEMENTATION
+            //desiredDirection = 
+        }
 
         return desiredDirection.normalized;
     }
