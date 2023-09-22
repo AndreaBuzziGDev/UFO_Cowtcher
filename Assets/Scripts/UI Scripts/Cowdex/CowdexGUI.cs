@@ -75,13 +75,11 @@ public class CowdexGUI : MonoBehaviour
     public void NextPage()
     {
         GoToPage(pageIndex + 1);
-        Debug.Log("CowdexGUI - pageIndex: " + pageIndex);
     }
 
     public void PreviousPage()
     {
         GoToPage(pageIndex - 1);
-        Debug.Log("CowdexGUI - pageIndex: " + pageIndex);
     }
 
     public void GoToPage(int targetIndexPage)
