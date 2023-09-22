@@ -41,6 +41,8 @@ public class Change_ScrollPoint : MonoBehaviour
         else
         {
             Tutorial.gameObject.SetActive(false);
+            PlayerPrefs.SetInt("TutorialAvailable", 1);
+            PlayerPrefs.Save();
         }
         
         

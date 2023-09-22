@@ -109,7 +109,10 @@ public class MainMenuController : MonoSingleton<MainMenuController>
             case eMainMenuCanvas.Main:
                 //MAIN MENU
                 MainMenuCanvas.gameObject.SetActive(true);
-                TutorialsCanvas.gameObject.SetActive(true);
+                if (PlayerPrefs.GetFloat("TutorialAvailable") == 0)//NEW CODE
+                {
+                    TutorialsCanvas.gameObject.SetActive(true);//NEW CODE
+                }
                 break;
             case eMainMenuCanvas.StageSelect:
                 //STAGE SELECT

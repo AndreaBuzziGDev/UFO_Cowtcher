@@ -141,6 +141,7 @@ public class SaveSystem
     public static void ResetHighScore()
     {
         PlayerPrefs.SetInt(HSAddress, 0);
+        PlayerPrefs.SetInt("TutorialAvailable", 0);//NEW CODE
         PlayerPrefs.Save();
     }
 
