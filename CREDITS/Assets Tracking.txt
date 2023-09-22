@@ -88,6 +88,9 @@ Tiny Worlds - Link: https://assetstore.unity.com/packages/2d/fonts/free-pixel-fo
 UI Gradients:
 Screaming Brain Studios - Link: https://opengameart.org/content/gradient-texture-pack
 
+Snowflake:
+PNGEGG (Unknown author) - Link: https://www.pngegg.com/en/png-bwkfv
+
 
 
 
