@@ -15,4 +15,4 @@ MonoBehaviour:
   jumps: 0
   jumpHeight: 0.5
   jumpSpeed: 1
-  sameDirectionTimer: 10
+  sameDirectionTimer: 5
