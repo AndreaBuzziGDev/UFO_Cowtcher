@@ -41,7 +41,7 @@ public class MPAlertSlide : AbstractMovementAlert
         if (this.cowColl.HasCollided)
         {
             Vector3 collNormal = cowColl.GetCollisionData();
-            Vector3 planarNormal = new Vector3(collNormal.x, 0, collNormal.z);
+            Vector3 planarNormal = new(collNormal.x, 0, collNormal.z);
 
             slideDirection = Vector3.Reflect(slideDirection, planarNormal);
         }
