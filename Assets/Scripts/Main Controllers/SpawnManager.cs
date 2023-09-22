@@ -78,6 +78,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         AllowedCowsManager.Instance.Initialization();
 
+        //ENSURES THAT WHEN LOADING THE STAGE, ALL COMMON COWS ARE INSTANTLY "KNOWN" OR ABOVE
+        InitializeCommonCowsAsKnown();
+
         InitializeCowCount();
         InitializeSpawnProbabilityDictionary();
 
@@ -88,18 +91,35 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
 
     ///MAIN INITIALIZATION
+    private void InitializeCommonCowsAsKnown()
+    {
+        List<CowSO.UniqueID> allowedCowIds = AllowedCowsManager.Instance.AllowedCowIDs;
+
+        List<CowSO> allowedScriptableCows = Cowdex.Instance.GetScriptableCows(allowedCowIds);
+        foreach(CowSO cSO in allowedScriptableCows)
+        {
+            if(cSO.rarity == CowSO.Rarity.Common)
+            {
+                Debug.Log("SpawnManager - Common Cow: " + cSO.CowName);
+                //UNLOCKS
+                SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(cSO.UID).KnowledgeValue;
+
+                if (knowValue == SaveInfoCow.Knowledge.Unknown)
+                {
+                    Debug.Log("SpawnManager - Unlocking: " + cSO.CowName);
+                    SaveSystem.SaveCowProgress(cSO.UID, SaveInfoCow.Knowledge.Known);
+                }
+            }
+        }
+    }
+
+
     ///COW TRACKING INITIALIZATION
     private void InitializeCowCount()
     {
         List<Cow> cows = FindObjectsOfType<Cow>().ToList();
         currentNumOfCows = cows.Count;
         Debug.Log("SpawnManager - start num of cows: " + currentNumOfCows);
-
-        //TODO: UPGRADE SO THAT IT TRACKS THE DIFFERENT TYPES OF COWS THAT EXIST ON THE MAP
-
-
-        //
-
 
     }
 
