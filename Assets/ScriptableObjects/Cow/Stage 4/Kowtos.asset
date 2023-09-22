@@ -27,8 +27,8 @@ MonoBehaviour:
   TimerAlertToCalm: 3
   TimerAlertToPanic: 1
   TimerRespawn: 5
-  movPatternCalm: {fileID: 11400000, guid: 8bd28f98848d3db4d98342e1982cd091, type: 2}
-  movPatternAlert: {fileID: 11400000, guid: dff38ae395a91b54299c416719a22506, type: 2}
+  movPatternCalm: {fileID: 11400000, guid: 6a425ebe929362044a8052082d0ae344, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: 3da7e9543aaccb240905ff13e088e444, type: 2}
   effect: 'Increment fuel consumption for 10 s '
   InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: a433a9cbcb3505b4eaecd10575007fdb, type: 3}
   associatedAsteroid: {fileID: 0}
