@@ -5854,6 +5854,7 @@ MonoBehaviour:
   persistenceTimerMax: 3
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
+  slideOutTimerMax: 1
   isDebug: 1
   spriteToAnimate: {fileID: 5754614860916557667}
 --- !u!114 &5754614860916557667
@@ -5874,7 +5875,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e8f4112f3eb13c340a59c78bb5dbe9a7, type: 3}
   - {fileID: 21300000, guid: 6c7860e3d542b404f951bce558c9b1fb, type: 3}
   - {fileID: 21300000, guid: ab67249c69f7acf4487bea4b1239431b, type: 3}
-  m_Speed: 0.02
+  m_Speed: 0.08
   isLooping: 0
 --- !u!114 &7884704985626597256 stripped
 MonoBehaviour:
@@ -5908,6 +5909,7 @@ MonoBehaviour:
   persistenceTimerMax: 3
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
+  slideOutTimerMax: 1
   isDebug: 1
   spriteToAnimate: {fileID: 3406271329902801205}
 --- !u!114 &3406271329902801205
@@ -5928,5 +5930,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 207fbe78ad985cb49a8791b6d26104bb, type: 3}
   - {fileID: 21300000, guid: 7ea5074b347c05a42823e84c1419d5bf, type: 3}
   - {fileID: 21300000, guid: d44b2c0f6f5edb34b92c4370756abdac, type: 3}
-  m_Speed: 0.02
+  m_Speed: 0.08
   isLooping: 0

@@ -138,7 +138,7 @@ public class FeedItem : MonoBehaviour
 
     private void HandleSlideOut()
     {
-        this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
+        //this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
 
     }
 
