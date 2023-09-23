@@ -177,6 +177,24 @@ public class PlayerController : MonoBehaviour
             UIController.Instance.IGPanel.BuffPanel.fadeToTransparent = true;
     }
 
+    public void FlushPositiveAlterations()
+    {
+        List<SAAbstract> expired = new();
+        foreach (SAAbstract alteration in statusAlterations)
+        {
+            if (alteration.GetType() == typeof(SASpeedBoost)) expired.Add(alteration);
+            if (alteration.GetType() == typeof(SAFuelGainBoost)) expired.Add(alteration);
+            if (alteration.GetType() == typeof(SACaptureSpeed)) expired.Add(alteration);
+            if (alteration.GetType() == typeof(SACaptureRadius)) expired.Add(alteration);
+        }
+
+        statusAlterations = statusAlterations.Except(expired).ToList();
+
+        foreach (SAAbstract alteration in expired)
+            alteration.ExpireBuff();
+    }
+
+
     private void UpdateAlterationsTimers(float delta)
     {
         List<SAAbstract> expired = new();
@@ -198,9 +216,7 @@ public class PlayerController : MonoBehaviour
         //HANDLE ALTERATIONS THAT NEED TO BE MANUALLY EXPIRED (NB: UNCLEAN CODE SOLUTION - BUT IT WORKS)
         //Debug.Log("Expired Alterations count: " + expired.Count);
         foreach (SAAbstract alteration in expired)
-        {
             alteration.ExpireBuff();
-        }
     }
 
     public void SetBonusMovSpeed(float percentBonus)
