@@ -71,4 +71,20 @@ public class UFOStatusAlterationHelper
         return GameController.Instance.FindPlayerAnywhere().StatusAlterations;
     }
 
+    public static bool HasPositiveAlterations()
+    {
+        List<SAAbstract> allAlterations = GetPlayerAlterations();
+
+        foreach(SAAbstract alteration in allAlterations)
+        {
+            if (alteration.GetType() == typeof(SASpeedBoost)) return true;
+            if (alteration.GetType() == typeof(SAFuelGainBoost)) return true;
+            if (alteration.GetType() == typeof(SACaptureSpeed)) return true;
+            if (alteration.GetType() == typeof(SACaptureRadius)) return true;
+        }
+
+        return false;
+    }
+
+
 }
