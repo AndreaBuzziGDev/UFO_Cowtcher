@@ -17,6 +17,7 @@ public class UFOFreezingController : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
+        Debug.Log("UFOFreezingController");
         if (!glow.isPlaying) glow.Play();
         if (!persistent.isPlaying) persistent.Play();
         iceBlockSprite.gameObject.SetActive(true);

@@ -21,11 +21,13 @@ public class UFOParticleEffects : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (UFOStatusAlterationHelper.HasStun() && !malfunction.isActiveAndEnabled)
-            malfunction.gameObject.SetActive(true);//TODO: ALTERNATIVE IMPLEMENTATION?
+        //STUN
+        //malfunction.gameObject.SetActive(UFOStatusAlterationHelper.HasStun());//TODO: ALTERNATIVE IMPLEMENTATION?
+        malfunction.gameObject.SetActive(true);
 
-        if (UFOStatusAlterationHelper.HasFreeze() && !freezing.isActiveAndEnabled)
-            freezing.gameObject.SetActive(true);//TODO: ALTERNATIVE IMPLEMENTATION?
+        //FREEZE
+        //freezing.gameObject.SetActive(UFOStatusAlterationHelper.HasFreeze());//TODO: ALTERNATIVE IMPLEMENTATION?
+        freezing.gameObject.SetActive(true);
 
         //TODO: SLOWDOWN/CURSED?
 
