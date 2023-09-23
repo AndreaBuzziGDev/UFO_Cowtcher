@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SASharkBiteSO : MonoBehaviour
+[CreateAssetMenu(fileName = "New Shark Bite", menuName = "Status Alterations/Shark Bite")]
+public class SASharkBiteSO : SAAbstractSO
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] [Range (0, 100)] public float currentScoreLoss = 20.0f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public override SAAbstract GetBuff() => new SASharkBite(this);
 }
