@@ -5730,6 +5730,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4596394502433048843, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2561945168293272347}
+    - target: {fileID: 4596394502433048843, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoossionShortcut
+      objectReference: {fileID: 0}
     - target: {fileID: 6802390248640278280, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.7
@@ -5846,7 +5854,7 @@ MonoBehaviour:
   persistenceTimerMax: 3
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
-  isDebug: 0
+  isDebug: 1
   spriteToAnimate: {fileID: 5754614860916557667}
 --- !u!114 &5754614860916557667
 MonoBehaviour:
@@ -5900,7 +5908,7 @@ MonoBehaviour:
   persistenceTimerMax: 3
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
-  isDebug: 0
+  isDebug: 1
   spriteToAnimate: {fileID: 3406271329902801205}
 --- !u!114 &3406271329902801205
 MonoBehaviour:
