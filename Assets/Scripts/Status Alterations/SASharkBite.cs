@@ -27,7 +27,7 @@ public class SASharkBite : SAAbstract
     {
         this.template = inputTemplate;
         this.type = template.buffType;
-        float currentScoreLoss = 20.0f;
+        this.currentScoreLoss = template.currentScoreLoss;
 
         pc = GameController.Instance.FindPlayerAnywhere();
     }
