@@ -5694,12 +5694,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4569343830273638465, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      propertyPath: feedItemText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889932140341249453, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      propertyPath: feedItemText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7809771184081580284, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
       propertyPath: m_Name
       value: Gameplay Input Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4537894958700729466, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+    - {fileID: 2975348164257075115, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}

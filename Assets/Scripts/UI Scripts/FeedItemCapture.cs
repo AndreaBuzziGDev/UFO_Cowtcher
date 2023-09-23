@@ -7,7 +7,7 @@ public class FeedItemCapture : MonoBehaviour
     //DATA
 
     ///GUI REFERENCES
-    [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
+    //[SerializeField] private TMPro.TextMeshProUGUI feedItemText;
     private CanvasGroup canvasGroup;
 
     ///GUI - PERSISTENCE
@@ -45,7 +45,7 @@ public class FeedItemCapture : MonoBehaviour
         //HANDLE DEBUG OR DISABLE ON GUI
         if (isDebug)
         {
-            feedItemText.text = "TEST CAPTURE FEED";
+            //feedItemText.text = "TEST CAPTURE FEED";
             persistenceTimer = persistenceTimerMax;
             slideInTimer = slideInTimerMax;
         }
@@ -113,7 +113,7 @@ public class FeedItemCapture : MonoBehaviour
             this.canvasGroup.alpha = 1;
             this.transform.position = startingPos + slidingOffset;
 
-            feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.CowName;
+            //feedItemText.text = "Captured new Cow: " + e.CapturedCow.CowTemplate.CowName;
             this.gameObject.SetActive(true);
         }
 

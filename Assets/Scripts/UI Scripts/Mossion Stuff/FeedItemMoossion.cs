@@ -8,7 +8,7 @@ public class FeedItemMoossion : MonoBehaviour
     //DATA
 
     ///GUI REFERENCES
-    [SerializeField] private TMPro.TextMeshProUGUI feedItemText;
+    //[SerializeField] private TMPro.TextMeshProUGUI feedItemText;
     private CanvasGroup canvasGroup;
 
     ///GUI - PERSISTENCE
@@ -46,7 +46,7 @@ public class FeedItemMoossion : MonoBehaviour
         //HANDLE DEBUG OR DISABLE ON GUI
         if (isDebug)
         {
-            feedItemText.text = "TEST MOOSSION FEED";
+            //feedItemText.text = "TEST MOOSSION FEED";
             persistenceTimer = persistenceTimerMax;
             slideInTimer = slideInTimerMax;
         }
@@ -64,6 +64,7 @@ public class FeedItemMoossion : MonoBehaviour
 
         //HANDLE PERSISTENCE ON SCREEN
         HandlePersistence();
+
     }
 
 
@@ -112,7 +113,7 @@ public class FeedItemMoossion : MonoBehaviour
         this.canvasGroup.alpha = 1;
         this.transform.position = startingPos + slidingOffset;
 
-        feedItemText.text = "Moossion #" + e.MoossionIndex + " complete!";
+        //feedItemText.text = "Moossion #" + e.MoossionIndex + " complete!";
         this.gameObject.SetActive(true);
     }
 
