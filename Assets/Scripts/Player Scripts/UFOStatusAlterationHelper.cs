@@ -58,6 +58,14 @@ public class UFOStatusAlterationHelper
     }
 
 
+    public static bool HasStun()
+    {
+        return GameController.Instance.FindPlayerAnywhere().IsStunned;
+    }
+
+    //TODO: HAS FREEZE
+
+
 
 
     //UTILITIES
