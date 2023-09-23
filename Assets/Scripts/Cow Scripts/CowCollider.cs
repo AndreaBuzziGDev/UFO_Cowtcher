@@ -5,8 +5,8 @@ using UnityEngine;
 public class CowCollider : MonoBehaviour
 {
     //DATA
-    [SerializeField] private Cow parentCow;
-    private CowMovement mov;
+    [SerializeField] private Cow cowScript;
+    [SerializeField] private CowMovement mov;
 
     ///COLLISION USEFUL DATA
     private Vector3 lastCollisionNormal;
@@ -18,12 +18,6 @@ public class CowCollider : MonoBehaviour
 
     //METHODS
     //...
-    private void Awake()
-    {
-        //TODO: HANDLE VIA SERIALIZATION?
-        mov = parentCow.GetComponent<CowMovement>();
-    }
-
 
     //COLLISION DETECTION
     void OnCollisionEnter(Collision collision)
@@ -39,7 +33,7 @@ public class CowCollider : MonoBehaviour
 
 
     //FUNCTIONALITIES
-    public Cow GetCow() => parentCow;
+    public Cow GetCow() => cowScript;
     public CowMovement GetMovement() => mov;
 
 
