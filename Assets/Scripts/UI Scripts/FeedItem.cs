@@ -144,7 +144,6 @@ public class FeedItem : MonoBehaviour
 
     private void HandleSlideOut()
     {
-        Debug.Log("FeedItem - slideOutTimer: " + slideOutTimer);
         this.transform.position = Vector3.Lerp(startingPos + slidingOffset, startingPos, EaseOutQuad(slideOutTimer / slideOutTimerMax));
         if (slideOutTimer > 0) 
             slideOutTimer -= Time.fixedDeltaTime;
