@@ -65,6 +65,8 @@ public class FeedItemMoossion : MonoBehaviour
         //HANDLE PERSISTENCE ON SCREEN
         HandlePersistence();
 
+        //HANDLE SLIDE-OUT
+        
     }
 
 

@@ -63,6 +63,9 @@ public class FeedItemCapture : MonoBehaviour
 
         //HANDLE PERSISTENCE ON SCREEN
         HandlePersistence();
+
+        //HANDLE SLIDE-OUT
+
     }
 
 
