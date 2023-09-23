@@ -29,7 +29,14 @@ public class FeedItem : MonoBehaviour
     private Vector3 startingPos = Vector3.zero;
 
     [SerializeField] private float slideInTimerMax = 1.0f;
+    [SerializeField] private float slideOutTimerMax = 1.0f;
     private float slideInTimer;
+    private float slideOutTimer;
+
+    bool hasSlidIn;
+    bool hasPersisted;
+    bool hasSlidOut;
+
 
     ///DEBUG
     [SerializeField] private bool isDebug;
@@ -75,12 +82,16 @@ public class FeedItem : MonoBehaviour
     private void FixedUpdate()
     {
         //HANDLE SLIDE-IN
-        HandleSlideIn();
+        if(!hasSlidIn)
+            HandleSlideIn();
 
         //HANDLE PERSISTENCE ON SCREEN
-        HandlePersistence();
+        if (!hasPersisted)
+            HandlePersistence();
 
         //HANDLE SLIDE-OUT
+        if (hasPersisted && hasSlidIn)
+            HandleSlideOut();
 
     }
 
@@ -99,7 +110,13 @@ public class FeedItem : MonoBehaviour
     {
         this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
         if (slideInTimer > 0) slideInTimer -= Time.fixedDeltaTime;
-        else slideInTimer = 0;
+        else
+        {
+            slideInTimer = 0;
+            hasSlidIn = true;
+            spriteToAnimate.Func_PlayUIAnim();
+        }
+
     }
 
     ///PERSISTENCE ON SCREEN
@@ -113,7 +130,16 @@ public class FeedItem : MonoBehaviour
                 this.canvasGroup.alpha = Mathf.Lerp(0, 1, persistenceTimer / persistenceFadeoutThreshold);
             }
         }
-        else this.gameObject.SetActive(false);
+        else
+        {
+            spriteToAnimate.Func_PlayUIAnim();
+        }
+    }
+
+    private void HandleSlideOut()
+    {
+        this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
+
     }
 
 
@@ -127,6 +153,7 @@ public class FeedItem : MonoBehaviour
         //SHOW FEED ITEM AND ITS CONTENT
         persistenceTimer = persistenceTimerMax;
         slideInTimer = slideInTimerMax;
+        slideOutTimer = slideOutTimerMax;
         this.canvasGroup.alpha = 1;
         this.transform.position = startingPos + slidingOffset;
 
