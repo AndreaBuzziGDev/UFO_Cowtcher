@@ -43,14 +43,19 @@ Low-Poly Well
 Well by ajmason3D [CC BY 4.0] via Sketchfab - Link: https://sketchfab.com/3d-models/low-poly-well-ce043536933847fa8a96352d28d56fb9
 
 
+
+
 Cow shader for sprites to cast shadows
 https://www.youtube.com/watch?v=d_OBjV7c1CY&t=34s
+
+
 
 FuelBar:
 MortalPhoenix - Link: https://opengameart.org/content/health-bar-0
 
 Main Menu Background Planet Art:
 upklyak - Link: https://www.freepik.com/free-vector/ice-planet-space-galaxy-comet-with-crystal-surface-blue-frozen-globe-with-glaciers-universe-fa_19454342.htm
+
 
 Stage Select Background 1:
 pikisuperstar - Link: https://www.freepik.com/free-vector/gradient-mountain-landscape_20547362.htm
@@ -63,6 +68,8 @@ Freepik - https://www.freepik.com/free-vector/flat-design-mountain-landscape_202
 
 Stage Select Background 4:
 Freepik -  Link: https://www.freepik.com/free-vector/gradient-mountain-landscape_19852070.htm
+
+
 
 Question mark image:
 Freepik -  Link: https://www.freepik.com/free-photo/questioning-concept-with-question-mark_42621277.htm
@@ -84,6 +91,8 @@ ROYALCLUB - Link: https://www.royalclub.sh/royalclub-supplies
 
 Thaleah Fat Free Pixel Font:
 Tiny Worlds - Link: https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059
+
+
 
 UI Gradients:
 Screaming Brain Studios - Link: https://opengameart.org/content/gradient-texture-pack
@@ -109,6 +118,16 @@ JarredGibb - Link: https://freesound.org/people/JarredGibb/sounds/233141/
 
 
 
+MUSIC
+
+Stage 2 Music (Ice Cream Date)
+Djaro - Link: https://opengameart.org/content/ice-cream-date
+
+Stage 3 Music (Otherworldly Oceanside - Day 7)
+Zane Little Music - Link: https://opengameart.org/content/otherworldly-oceanside-day-7
+
+Stage 4 Music (Hope(Orchestral battle music))
+MintoDog - Link: https://opengameart.org/content/hopeorchestral-battle-music
 
 
 
