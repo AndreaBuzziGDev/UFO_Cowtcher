@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 46654971337499364}
+  - component: {fileID: 6968283302742665610}
   m_Layer: 7
   m_Name: Particle Effects
   m_TagString: Untagged
@@ -169,6 +170,18 @@ Transform:
   - {fileID: 9078039579295339196}
   m_Father: {fileID: 2213579584673786655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6968283302742665610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606777833104725296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365cbdb6fc4e99f48802f2b947bf5f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1126894735114397966
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9078039579295339196}
+  - component: {fileID: 9788221763160307}
   m_Layer: 7
   m_Name: Freezing
   m_TagString: Untagged
@@ -204,6 +218,18 @@ Transform:
   - {fileID: 6037112809627432028}
   m_Father: {fileID: 46654971337499364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9788221763160307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126894735114397966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 878998a513577fb43beb090d12918e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2469648296422726837
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3156579080418670549}
+  - component: {fileID: 3083618972235694962}
   m_Layer: 7
   m_Name: Malfunction (Stun)
   m_TagString: Untagged
@@ -576,6 +603,18 @@ Transform:
   - {fileID: 1197199785305446480}
   m_Father: {fileID: 46654971337499364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3083618972235694962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419862857622889882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3c41eb271b82240a3c39ffcec8d2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5060880783683343900
 GameObject:
   m_ObjectHideFlags: 0
