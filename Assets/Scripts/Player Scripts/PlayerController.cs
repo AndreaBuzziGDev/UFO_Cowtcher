@@ -152,9 +152,17 @@ public class PlayerController : MonoBehaviour
 
     ///ALTERNATIVE STATUS ALTERATIONS
     //STUN
-    public void ApplyStun(float inputDuration) => this.stunDuration = inputDuration;
+    public void ApplyStun(float inputDuration)
+    {
+        if(!IsFrozen)
+            stunDuration = inputDuration;
+    }
     //FREEZE
-    public void ApplyFrozen(float inputDuration) => this.freezeDuration = inputDuration;
+    public void ApplyFrozen(float inputDuration)
+    {
+        if(!IsStunned)
+            freezeDuration = inputDuration;
+    }
 
 
     ///STATUS ALTERATIONS
