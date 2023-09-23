@@ -16,6 +16,9 @@ public class UFO : MonoBehaviour
     ///FUEL GAIN MULTIPLIER
     private float fuelGainMultiplier = 1.0f;
 
+    ///FUEL CONSUMPTION INCREASE
+    private float fuelConsumptionCoeff = 0.0f;
+
 
 
     ///FUEL BOTTOM DELAY MANAGEMENT
@@ -113,6 +116,11 @@ public class UFO : MonoBehaviour
     public void ChangeFuelBoostMultiplier(float newMultiplier)
     {
         fuelGainMultiplier = newMultiplier;
+    }
+
+    public void ChangeFuelConsumptionMultiplier(float newMultiplier)
+    {
+        fuelConsumptionCoeff = newMultiplier;
     }
 
 

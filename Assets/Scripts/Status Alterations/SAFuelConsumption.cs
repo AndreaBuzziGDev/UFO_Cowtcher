@@ -9,9 +9,8 @@ public class SAFuelConsumption : SAAbstract
     public SAAbstract.EBuffType type;
     public float buffDuration;
     public float consumptionIncrease;
-    public bool hasExpired = false;
 
-    PlayerController pc;
+    UFO pc;
 
     ///TEMPLATE
     SAFuelConsumptionSO template;
@@ -24,7 +23,7 @@ public class SAFuelConsumption : SAAbstract
         this.type = template.buffType;//TODO: IMPLEMENT THIS
         this.buffDuration = template.buffDuration;
 
-        pc = GameController.Instance.FindPlayerAnywhere();
+        pc = GameController.Instance.FindUFOAnywhere();
     }
 
     //METHODS
@@ -34,15 +33,12 @@ public class SAFuelConsumption : SAAbstract
     ///BUFF
     public override void ApplyBuff()
     {
-        //TODO: IMPLEMENT
-
-        hasExpired = true;
+        pc.ChangeFuelConsumptionMultiplier(this.consumptionIncrease);
     }
 
     public override void ExpireBuff()
     {
-        //TODO: IMPLEMENT
-
+        pc.ChangeFuelConsumptionMultiplier(0);
     }
 
 
@@ -50,13 +46,11 @@ public class SAFuelConsumption : SAAbstract
     ///TIMERS
     public override void UpdateTimers(float delta)
     {
-        //TODO: IMPLEMENT
-
+        this.buffDuration -= delta;
     }
     public override bool IsStillRunning()
     {
-        //TODO: IMPLEMENT/UPDATE
-        return !this.hasExpired;
+        return (this.buffDuration > 0);
     }
 
 }
