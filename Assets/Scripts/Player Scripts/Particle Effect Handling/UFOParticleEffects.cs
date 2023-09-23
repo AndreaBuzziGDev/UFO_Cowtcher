@@ -18,8 +18,8 @@ public class UFOParticleEffects : MonoBehaviour
         freezing.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
         if (UFOStatusAlterationHelper.HasStun() && !malfunction.isActiveAndEnabled)
             malfunction.gameObject.SetActive(true);//TODO: ALTERNATIVE IMPLEMENTATION?
