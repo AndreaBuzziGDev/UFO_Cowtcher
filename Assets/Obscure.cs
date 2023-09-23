@@ -14,16 +14,20 @@ public class Obscure : MonoBehaviour
         targetTime = 0f;
         c= new Color(0,0,0);
         c.a = 0.4f;
+        Panel.GetComponent<Image>().color = c;
     }
 
     private void Update()
     {
-        targetTime += Time.deltaTime;
-        if(targetTime > 5f && c.a < 0.78f) 
+        if(PlayerPrefs.GetInt("TutorialAvailable")==1)
         {
-            c.a += ((Time.deltaTime) * 0.04f);
-        }
+            targetTime += Time.deltaTime;
+            if(targetTime > 5f && c.a < 0.78f) 
+            {
+                c.a += ((Time.deltaTime) * 0.04f);
+            }
             Panel.GetComponent<Image>().color = c;
+        }
 
         
     }

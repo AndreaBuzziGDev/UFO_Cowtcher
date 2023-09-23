@@ -9,7 +9,9 @@ public class Change_ScrollPoint : MonoBehaviour
    [SerializeField] private Sprite CheckSprite;
    [SerializeField] private Sprite NextPageSprite;
    [SerializeField] private Sprite[] ScrollPoints;
+   [SerializeField] private Sprite[] TutorialImages;
    [SerializeField] private GameObject ScrollPoint;
+   [SerializeField] private GameObject TutorialImage;
    [SerializeField] private Button BackButton;
    [SerializeField] private Button NextButton;
    [SerializeField] private Canvas Tutorial;
@@ -22,6 +24,7 @@ public class Change_ScrollPoint : MonoBehaviour
             index++;
             BackButton.gameObject.SetActive(true);
             ScrollPoint.GetComponent<Image>().sprite = ScrollPoints[index];
+            TutorialImage.GetComponent<Image>().sprite = TutorialImages[index];
             
         }
 
@@ -29,6 +32,7 @@ public class Change_ScrollPoint : MonoBehaviour
         {
             index++;
             ScrollPoint.GetComponent<Image>().sprite = ScrollPoints[index];
+            TutorialImage.GetComponent<Image>().sprite = TutorialImages[index];
         }
 
         else if (index == 2)
@@ -36,6 +40,7 @@ public class Change_ScrollPoint : MonoBehaviour
             index++;
             NextButton.GetComponent<Image>().sprite = CheckSprite;
             ScrollPoint.GetComponent<Image>().sprite = ScrollPoints[index];
+            TutorialImage.GetComponent<Image>().sprite = TutorialImages[index];
         }
 
         else
@@ -43,6 +48,7 @@ public class Change_ScrollPoint : MonoBehaviour
             Tutorial.gameObject.SetActive(false);
             index = 0;
             ScrollPoint.GetComponent<Image>().sprite = ScrollPoints[index];
+            TutorialImage.GetComponent<Image>().sprite = TutorialImages[index];
             NextButton.GetComponent<Image>().sprite = NextPageSprite;
             BackButton.gameObject.SetActive(false);
             PlayerPrefs.SetInt("TutorialAvailable", 1);
@@ -60,12 +66,14 @@ public class Change_ScrollPoint : MonoBehaviour
             index--;
             BackButton.gameObject.SetActive(false);
             ScrollPoint.GetComponent<Image>().sprite = ScrollPoints[index];
+            TutorialImage.GetComponent<Image>().sprite = TutorialImages[index];
         }
 
         else if (index == 2)
         {
             index--;
             ScrollPoint.GetComponent<Image>().sprite = ScrollPoints[index];
+            TutorialImage.GetComponent<Image>().sprite = TutorialImages[index];
         }
 
         else if (index == 3)
@@ -73,6 +81,7 @@ public class Change_ScrollPoint : MonoBehaviour
             index--;
             NextButton.GetComponent<Image>().sprite = NextPageSprite;
             ScrollPoint.GetComponent<Image>().sprite = ScrollPoints[index];
+            TutorialImage.GetComponent<Image>().sprite = TutorialImages[index];
         }
 
 
