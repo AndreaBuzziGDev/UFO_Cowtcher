@@ -10,8 +10,6 @@ public class SASharkBite : SAAbstract
     public float currentScoreLoss;
     public bool hasExpired = false;
 
-    PlayerController pc;
-
     ///TEMPLATE
     SASharkBiteSO template;
 
