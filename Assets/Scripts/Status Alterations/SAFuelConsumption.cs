@@ -20,8 +20,9 @@ public class SAFuelConsumption : SAAbstract
     public SAFuelConsumption(SAFuelConsumptionSO inputTemplate)
     {
         this.template = inputTemplate;
-        this.type = template.buffType;//TODO: IMPLEMENT THIS
+        this.type = template.buffType;
         this.buffDuration = template.buffDuration;
+        this.consumptionIncrease = template.consumptionIncrease;
 
         pc = GameController.Instance.FindUFOAnywhere();
     }

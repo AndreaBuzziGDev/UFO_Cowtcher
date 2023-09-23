@@ -1323,6 +1323,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fe79f168f12f514e9ef69620c9cc0d2, type: 3}
+--- !u!1001 &688744022
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.540658
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.588215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659258
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.2588191
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645923651131038170, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380184395463108149, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+      propertyPath: m_Name
+      value: Kratos Fuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
 --- !u!1001 &743753266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4223,3 +4280,4 @@ SceneRoots:
   - {fileID: 1585448815}
   - {fileID: 30605625}
   - {fileID: 670047069}
+  - {fileID: 688744022}

@@ -51,7 +51,7 @@ public class UFO : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         HandleFuelLogic();
         
@@ -68,7 +68,11 @@ public class UFO : MonoBehaviour
         {
             extensionMultiplier = fuelEmergencyExtensionFactor;
         }
-        fuelAmount -= (Time.deltaTime * (1/extensionMultiplier)) * (1 + 1 * fuelConsumptionCoeff);
+
+        float consumedFuel = (Time.deltaTime * (1 / extensionMultiplier)) * (1 + (1 * (fuelConsumptionCoeff/100)));
+        Debug.Log("UFO - consumedFuel: " + consumedFuel);
+
+        fuelAmount -= consumedFuel;
 
         //GUI UPDATE
         UIController.Instance.IGPanel.PlayerFuelBar.UpdateFuelBar(this);
@@ -121,6 +125,7 @@ public class UFO : MonoBehaviour
     public void ChangeFuelConsumptionMultiplier(float newMultiplier)
     {
         fuelConsumptionCoeff = newMultiplier;
+        Debug.Log("UFO - fuelConsumptionCoeff: " + fuelConsumptionCoeff);
     }
 
 
