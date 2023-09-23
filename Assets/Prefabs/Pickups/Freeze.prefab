@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 2641711987203644661, guid: cc089067635a27e4eab8aee36116c037, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 24dd95e0417be6b48966129ed2907cb3, type: 3}
+      objectReference: {fileID: 21300000, guid: c48c08309dea75f44aa3c67e89e840bd, type: 3}
     - target: {fileID: 5755845425069914449, guid: cc089067635a27e4eab8aee36116c037, type: 3}
       propertyPath: m_Name
       value: Freeze

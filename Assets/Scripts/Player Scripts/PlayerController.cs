@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
     //FUNCTIONALITIES
     public void Move(Vector3 direction)
     {
-        if (IsStunned)
+        if (IsStunned || IsFrozen)
         {
             myRigidBody.velocity = Vector3.zero;
         }
