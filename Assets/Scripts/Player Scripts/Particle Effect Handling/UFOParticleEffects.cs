@@ -5,21 +5,30 @@ using UnityEngine;
 public class UFOParticleEffects : MonoBehaviour
 {
     //DATA
-    [SerializeField] private UFOMalfunctionController
+    [SerializeField] private UFOMalfunctionController malfunction;
+    [SerializeField] private UFOFreezingController freezing;
 
 
     //METHODS
     //...
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        malfunction.gameObject.SetActive(false);
+        freezing.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (UFOStatusAlterationHelper.HasStun() && !malfunction.isActiveAndEnabled)
+            malfunction.gameObject.SetActive(true);//TODO: ALTERNATIVE IMPLEMENTATION?
+
+        if (UFOStatusAlterationHelper.HasFreeze() && !freezing.isActiveAndEnabled)
+            freezing.gameObject.SetActive(true);//TODO: ALTERNATIVE IMPLEMENTATION?
+
     }
+
+
+
 }
