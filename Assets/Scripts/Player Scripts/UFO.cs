@@ -68,7 +68,7 @@ public class UFO : MonoBehaviour
         {
             extensionMultiplier = fuelEmergencyExtensionFactor;
         }
-        fuelAmount -= Time.deltaTime * (1/extensionMultiplier);
+        fuelAmount -= (Time.deltaTime * (1/extensionMultiplier)) * (1 + 1 * fuelConsumptionCoeff);
 
         //GUI UPDATE
         UIController.Instance.IGPanel.PlayerFuelBar.UpdateFuelBar(this);
