@@ -171,7 +171,13 @@ public class PlayerController : MonoBehaviour
         statusAlterations.Add(newAlteration);
 
         //TODO: THIS MUST ALLOW FOR THE OTHER VARIANTS (FREEZE)
-        if(newAlteration.GetType() == typeof(SAFuelLossInstant))
+        System.Type alterationType = newAlteration.GetType();
+        if (
+            alterationType == typeof(SAFuelLossInstant)
+            || alterationType == typeof(SAFuelConsumption)
+            || alterationType == typeof(SASharkBite)
+            || alterationType == typeof(SAFreeze)
+            )
             UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
         else
             UIController.Instance.IGPanel.BuffPanel.fadeToTransparent = true;
