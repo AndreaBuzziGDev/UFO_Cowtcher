@@ -40,10 +40,8 @@ public class UISpriteAnimation : MonoBehaviour
         yield return new WaitForSeconds(m_Speed);
         if (m_IndexSprite >= m_SpriteArray.Length)
         {
-            if (isLooping)
-                m_IndexSprite = 0;
-            else
-                isDone = true;
+            m_IndexSprite = 0;
+            if (!isLooping) isDone = true;
         }
 
         m_Image.sprite = m_SpriteArray[m_IndexSprite];
