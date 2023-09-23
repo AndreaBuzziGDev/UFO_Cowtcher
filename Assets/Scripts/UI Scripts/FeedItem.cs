@@ -93,6 +93,9 @@ public class FeedItem : MonoBehaviour
         if (hasPersisted && hasSlidIn)
             HandleSlideOut();
 
+        if (hasSlidOut)
+            this.gameObject.SetActive(false);
+
     }
 
 
@@ -138,8 +141,13 @@ public class FeedItem : MonoBehaviour
 
     private void HandleSlideOut()
     {
-        //this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
-
+        this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
+        if (slideOutTimer > 0) slideOutTimer -= Time.fixedDeltaTime;
+        else
+        {
+            slideOutTimer = 0;
+            hasSlidOut = true;
+        }
     }
 
 
@@ -150,32 +158,36 @@ public class FeedItem : MonoBehaviour
     //EVENT-HANDLING
     private void HandleMoossionCompletion(object sender, MoossionCompleteEventArgs e)
     {
-        //SHOW FEED ITEM AND ITS CONTENT
-        persistenceTimer = persistenceTimerMax;
-        slideInTimer = slideInTimerMax;
-        slideOutTimer = slideOutTimerMax;
-        this.canvasGroup.alpha = 1;
-        this.transform.position = startingPos + slidingOffset;
-
-        this.gameObject.SetActive(true);
+        startSlideAnimation();
     }
 
     private void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
-        //SHOW FEED ITEM AND ITS CONTENT
         if (e.IsNewlyCaptured)
-        {
-            persistenceTimer = persistenceTimerMax;
-            slideInTimer = slideInTimerMax;
-            this.canvasGroup.alpha = 1;
-            this.transform.position = startingPos + slidingOffset;
+            startSlideAnimation();
+    }
 
-            this.gameObject.SetActive(true);
-        }
+    private void startSlideAnimation()
+    {
+
+        //SHOW FEED ITEM AND ITS CONTENT
+        persistenceTimer = persistenceTimerMax;
+        slideInTimer = slideInTimerMax;
+        slideOutTimer = slideOutTimerMax;
+
+        hasSlidIn = false;
+        hasPersisted = false;
+        hasSlidOut = false;
+
+        this.canvasGroup.alpha = 1;
+        this.transform.position = startingPos + slidingOffset;
+
+        this.gameObject.SetActive(true);
 
         //EXECUTE GUI ANIMATION
         slideInTimer = slideInTimerMax;
     }
+
 
 
     //EASING
