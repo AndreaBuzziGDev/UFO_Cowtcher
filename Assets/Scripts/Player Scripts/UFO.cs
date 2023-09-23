@@ -70,7 +70,6 @@ public class UFO : MonoBehaviour
         }
 
         float consumedFuel = (Time.deltaTime * (1 / extensionMultiplier)) * (1 + (1 * (fuelConsumptionCoeff/100)));
-        Debug.Log("UFO - consumedFuel: " + consumedFuel);
 
         fuelAmount -= consumedFuel;
 
