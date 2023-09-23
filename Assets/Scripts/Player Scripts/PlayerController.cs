@@ -160,16 +160,13 @@ public class PlayerController : MonoBehaviour
     ///STATUS ALTERATIONS
     public void AddStatusAlteration(SAAbstract newAlteration)
     {
-        //TODO: REFACTOR AS DICTIONARY -> ONLY ONE TYPE AT A TIME (SUB-TODO: IMPLEMENT COMPARABLES SO THE BIGGER BUFF WINS)
         statusAlterations.Add(newAlteration);
+
+        //TODO: THIS MUST ALLOW FOR THE OTHER VARIANTS (FREEZE)
         if(newAlteration.GetType() == typeof(SAFuelLossInstant))
-        {
             UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
-        }
         else
-        {
             UIController.Instance.IGPanel.BuffPanel.fadeToTransparent = true;
-        }
     }
 
     private void UpdateAlterationsTimers(float delta)
