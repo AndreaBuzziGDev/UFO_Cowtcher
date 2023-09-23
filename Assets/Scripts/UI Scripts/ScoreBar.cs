@@ -117,6 +117,7 @@ public class ScoreBar : MonoBehaviour
             scoreValue = scoreValue - scoreLoss;
             if (scoreValue < 0) 
                 scoreValue = 0;
+            scoreText.text = scoreValue.ToString();
         }
 
 
