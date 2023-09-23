@@ -27,7 +27,7 @@ public class UFOParticleEffects : MonoBehaviour
         if (UFOStatusAlterationHelper.HasFreeze() && !freezing.isActiveAndEnabled)
             freezing.gameObject.SetActive(true);//TODO: ALTERNATIVE IMPLEMENTATION?
 
-        //TODO: SLOWDOWN?
+        //TODO: SLOWDOWN/CURSED?
 
     }
 
