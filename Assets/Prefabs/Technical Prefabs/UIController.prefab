@@ -5766,15 +5766,23 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5889932140341249453, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+    - {fileID: 4569343830273638465, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4537894958700729466, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
     - {fileID: 2975348164257075115, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 865987666002661238, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 5282741849021681289}
+    - targetCorrespondingSourceObject: {fileID: 865987666002661238, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
       insertIndex: 2
       addedObject: {fileID: 5754614860916557667}
+    - targetCorrespondingSourceObject: {fileID: 1334312837266467519, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2797166095015109479}
     - targetCorrespondingSourceObject: {fileID: 1334312837266467519, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
       insertIndex: 2
       addedObject: {fileID: 3406271329902801205}
@@ -5822,6 +5830,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 865987666002661238, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
   m_PrefabInstance: {fileID: 7813083965707763507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5282741849021681289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6947151284000190533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d8df6be6a647740b64f901ae79b421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  persistenceTimerMax: 3
+  persistenceFadeoutThreshold: 1
+  slideInTimerMax: 1
+  isDebug: 0
+  spriteToAnimate: {fileID: 5754614860916557667}
 --- !u!114 &5754614860916557667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5858,6 +5884,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1334312837266467519, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
   m_PrefabInstance: {fileID: 7813083965707763507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2797166095015109479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145060472566666636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d8df6be6a647740b64f901ae79b421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  persistenceTimerMax: 3
+  persistenceFadeoutThreshold: 1
+  slideInTimerMax: 1
+  isDebug: 0
+  spriteToAnimate: {fileID: 3406271329902801205}
 --- !u!114 &3406271329902801205
 MonoBehaviour:
   m_ObjectHideFlags: 0
