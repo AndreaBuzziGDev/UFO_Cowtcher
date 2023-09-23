@@ -28,8 +28,8 @@ MonoBehaviour:
   TimerRespawn: 5
   movPatternCalm: {fileID: 11400000, guid: 40e90ad339ec6b8489ef3ce878c2598f, type: 2}
   movPatternAlert: {fileID: 11400000, guid: c68017730377cbc4eb8a7ca34332a294, type: 2}
-  effect: Power-ups loses or instant fuel loss
-  InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: a433a9cbcb3505b4eaecd10575007fdb, type: 3}
+  effect: Shark Bite
+  InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: 03512cf153a7e8a47b4ef42a01ef8520, type: 3}
   associatedAsteroid: {fileID: 0}
   SummoningRitual: {fileID: 11400000, guid: 5eed19db8b0ef0e4796e9439d0220e2d, type: 2}
   FavouriteHideoutTypes: 

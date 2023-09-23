@@ -30,7 +30,7 @@ MonoBehaviour:
   movPatternCalm: {fileID: 11400000, guid: 6c71cfc2e1ec6dd41a598bdd4532160d, type: 2}
   movPatternAlert: {fileID: 11400000, guid: dff38ae395a91b54299c416719a22506, type: 2}
   effect: Freeze the ufo for 3s
-  InstantlyDeployedItemPickup: {fileID: 0}
+  InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: 19c97c809e12edd439668eba619f068e, type: 3}
   associatedAsteroid: {fileID: 0}
   SummoningRitual: {fileID: 11400000, guid: 5eed19db8b0ef0e4796e9439d0220e2d, type: 2}
   FavouriteHideoutTypes: 

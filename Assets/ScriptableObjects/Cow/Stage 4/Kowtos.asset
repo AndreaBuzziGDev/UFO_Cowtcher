@@ -30,7 +30,7 @@ MonoBehaviour:
   movPatternCalm: {fileID: 11400000, guid: 6a425ebe929362044a8052082d0ae344, type: 2}
   movPatternAlert: {fileID: 11400000, guid: 3da7e9543aaccb240905ff13e088e444, type: 2}
   effect: 'Increment fuel consumption for 10 s '
-  InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: a433a9cbcb3505b4eaecd10575007fdb, type: 3}
+  InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
   associatedAsteroid: {fileID: 0}
   SummoningRitual: {fileID: 11400000, guid: 5eed19db8b0ef0e4796e9439d0220e2d, type: 2}
   FavouriteHideoutTypes: 
