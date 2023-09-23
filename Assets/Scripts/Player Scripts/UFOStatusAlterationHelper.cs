@@ -58,6 +58,11 @@ public class UFOStatusAlterationHelper
     }
 
 
+    //ALTERNATIVE STATUS ALTERATIONS (NOT VIA PICKUP)
+    public static bool HasStun() => GameController.Instance.FindPlayerAnywhere().IsStunned;
+    public static bool HasFreeze() => GameController.Instance.FindPlayerAnywhere().IsFrozen;
+
+
 
 
     //UTILITIES

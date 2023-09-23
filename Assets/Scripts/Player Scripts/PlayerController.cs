@@ -21,9 +21,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float MoveSpeed = 5;
     Rigidbody myRigidBody;
 
+
     ///OTHER DATA
-    private float stunDuration = 0.0f;//NB: AFTER PROTOTYPE, REFACTOR THIS AS STATUS ALTERATION
+
+    ///ALTERNATIVE STATUS ALTERATIONS
+    //
+    private float stunDuration = 0.0f;
     public bool IsStunned { get { return (stunDuration > 0); } }
+
+    //
+    private float freezeDuration = 0.0f;
+    public bool IsFrozen { get { return (freezeDuration > 0); } }
+
+
 
 
     ///STATUS ALTERATION DATA
@@ -31,6 +41,8 @@ public class PlayerController : MonoBehaviour
     public List<SAAbstract> StatusAlterations { get { return statusAlterations; } }
 
     private float movSpeedBonus;
+
+
 
 
 
@@ -47,10 +59,19 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (stunDuration > 0) stunDuration -= Time.deltaTime;
+        //HANDLING ALTERNATIVE STATUS ALTERATIONS
+        if (stunDuration > 0) 
+            stunDuration -= Time.fixedDeltaTime;
+
+        if (freezeDuration > 0)
+            freezeDuration -= Time.fixedDeltaTime;
+
+        //HANDLING STATUS ALTERATIONS
         UpdateAlterationsTimers(Time.deltaTime);
 
-        if (!GameController.Instance.IsPaused) Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
+        //MOVEMENT
+        if (!GameController.Instance.IsPaused) 
+            Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
     }
 
 
@@ -128,23 +149,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    ///ALTERNATIVE STATUS ALTERATIONS
+    //STUN
     public void ApplyStun(float inputDuration)
     {
-        this.stunDuration = inputDuration;
+        if(!IsFrozen)
+            stunDuration = inputDuration;
+    }
+    //FREEZE
+    public void ApplyFrozen(float inputDuration)
+    {
+        if(!IsStunned)
+            freezeDuration = inputDuration;
     }
 
+
+    ///STATUS ALTERATIONS
     public void AddStatusAlteration(SAAbstract newAlteration)
     {
-        //TODO: REFACTOR AS DICTIONARY -> ONLY ONE TYPE AT A TIME (SUB-TODO: IMPLEMENT COMPARABLES SO THE BIGGER BUFF WINS)
         statusAlterations.Add(newAlteration);
+
+        //TODO: THIS MUST ALLOW FOR THE OTHER VARIANTS (FREEZE)
         if(newAlteration.GetType() == typeof(SAFuelLossInstant))
-        {
             UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
-        }
         else
-        {
             UIController.Instance.IGPanel.BuffPanel.fadeToTransparent = true;
-        }
     }
 
     private void UpdateAlterationsTimers(float delta)
