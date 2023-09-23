@@ -41,6 +41,10 @@ public class Change_ScrollPoint : MonoBehaviour
         else
         {
             Tutorial.gameObject.SetActive(false);
+            index = 0;
+            ScrollPoint.GetComponent<Image>().sprite = ScrollPoints[index];
+            NextButton.GetComponent<Image>().sprite = NextPageSprite;
+            BackButton.gameObject.SetActive(false);
             PlayerPrefs.SetInt("TutorialAvailable", 1);
             PlayerPrefs.Save();
         }
