@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SASharkBite : SAAbstract
 {
@@ -15,8 +16,9 @@ public class SASharkBite : SAAbstract
     SASharkBiteSO template;
 
 
-    ///EVENT
-    
+    //EVENTS
+    public static event EventHandler<SharkBiteEventArgs> SharkBite;
+
 
 
 
@@ -38,6 +40,8 @@ public class SASharkBite : SAAbstract
     public override void ApplyBuff()
     {
         //FIRE EVENT
+        SharkBiteEventArgs myEventArg = new SharkBiteEventArgs(this.currentScoreLoss);
+        OnSharkBite(myEventArg);
 
         hasExpired = true;
     }
@@ -59,6 +63,22 @@ public class SASharkBite : SAAbstract
     public override bool IsStillRunning()
     {
         return !this.hasExpired;
+    }
+
+
+
+
+    //EVENT-FIRING METHOD
+    private void OnSharkBite(SharkBiteEventArgs myEventArg)
+    {
+        // make a copy to be more thread-safe
+        EventHandler<SharkBiteEventArgs> handler = SharkBite;
+
+        if (handler != null)
+        {
+            // invoke the subscribed event-handler(s)
+            handler(this, myEventArg);
+        }
     }
 
 }

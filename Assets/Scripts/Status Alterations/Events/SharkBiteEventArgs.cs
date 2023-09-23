@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class SharkBiteEventArgs : MonoBehaviour
+public class SharkBiteEventArgs : EventArgs
 {
-    // Start is called before the first frame update
-    void Start()
+    //DATA
+    private float currentScoreLoss;
+    public float TargetScoreLoss { get { return currentScoreLoss; } }
+
+    //CONSTRUCTOR
+    public SharkBiteEventArgs(float lossPercent)
     {
-        
+        this.currentScoreLoss = lossPercent;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
