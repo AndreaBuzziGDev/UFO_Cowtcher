@@ -86,5 +86,10 @@ public class UFOStatusAlterationHelper
         return false;
     }
 
+    public static void FlushPositiveAlterations()
+    {
+        GameController.Instance.FindPlayerAnywhere().FlushPositiveAlterations();
+    }
+
 
 }

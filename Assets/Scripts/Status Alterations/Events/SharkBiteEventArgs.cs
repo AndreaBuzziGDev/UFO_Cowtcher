@@ -7,7 +7,7 @@ public class SharkBiteEventArgs : EventArgs
 {
     //DATA
     private float currentScoreLoss;
-    public float TargetScoreLoss { get { return currentScoreLoss; } }
+    public float CurrentScoreLoss { get { return currentScoreLoss; } }
 
     //CONSTRUCTOR
     public SharkBiteEventArgs(float lossPercent)

@@ -35,9 +35,6 @@ public class FuelBar : MonoBehaviour
     {
         barPosition = this.GetComponent<RectTransform>().transform.position;
         currentShakeTime = shakeTime;
-
-        //REGISTER EVENT
-        SASharkBite.SharkBite += HandleSharkBite;
     }
 
     private void FixedUpdate()
@@ -107,18 +104,6 @@ public class FuelBar : MonoBehaviour
             transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount, 
             transform.position.y, 
             transform.position.z);
-    }
-
-
-
-
-
-    //EVENT-HANDLING
-    private void HandleSharkBite(object sender, SharkBiteEventArgs e)
-    {
-        List<SAAbstract> alterations = UFOStatusAlterationHelper.GetPlayerAlterations();
-
-
     }
 
 
