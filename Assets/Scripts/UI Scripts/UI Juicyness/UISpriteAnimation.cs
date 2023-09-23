@@ -13,22 +13,22 @@ public class UISpriteAnimation : MonoBehaviour
     [SerializeField] private bool isLooping;
 
     private int m_IndexSprite;
-    Coroutine m_CorotineAnim;
+    private Coroutine m_CorotineAnim;
 
-    bool IsDone;
+    private bool isDone;
 
 
     //METHODS
 
     public void Func_PlayUIAnim()
     {
-        IsDone = false;
+        isDone = false;
         StartCoroutine(Func_PlayAnimUI());
     }
 
     public void Func_StopUIAnim()
     {
-        IsDone = true;
+        isDone = true;
         StopCoroutine(Func_PlayAnimUI());
     }
 
@@ -38,13 +38,18 @@ public class UISpriteAnimation : MonoBehaviour
     IEnumerator Func_PlayAnimUI()
     {
         yield return new WaitForSeconds(m_Speed);
-        if (m_IndexSprite >= m_SpriteArray.Length && isLooping)
+        if (m_IndexSprite >= m_SpriteArray.Length)
         {
-            m_IndexSprite = 0;
+            if (isLooping)
+                m_IndexSprite = 0;
+            else
+                isDone = true;
         }
+
         m_Image.sprite = m_SpriteArray[m_IndexSprite];
         m_IndexSprite += 1;
-        if (IsDone == false)
+
+        if (isDone == false)
             m_CorotineAnim = StartCoroutine(Func_PlayAnimUI());
     }
 }
