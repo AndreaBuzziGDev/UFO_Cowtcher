@@ -12,9 +12,19 @@ public class AudioToggle : MonoBehaviour
     {
         if (this.enabled)
         {
+            if (this.gameObject.name.Equals("AudioButton"))
+            {
+                PlayerPrefs.SetInt("Volume", 0);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Volume", 1);
+            }
             targetButton.gameObject.SetActive(true);
             this.gameObject.SetActive(false);
         }
+        Debug.Log(PlayerPrefs.GetInt("Volume"));
+
     }
 
 }
