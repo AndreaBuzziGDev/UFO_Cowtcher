@@ -128,13 +128,16 @@ public class FeedItem : MonoBehaviour
         if (persistenceTimer > 0)
         {
             persistenceTimer -= Time.fixedDeltaTime;
+            /*
             if (persistenceTimer <= persistenceFadeoutThreshold)
             {
                 this.canvasGroup.alpha = Mathf.Lerp(0, 1, persistenceTimer / persistenceFadeoutThreshold);
             }
+            */
         }
         else
         {
+            persistenceTimer = 0;
             spriteToAnimate.Func_PlayUIAnim();
         }
     }
