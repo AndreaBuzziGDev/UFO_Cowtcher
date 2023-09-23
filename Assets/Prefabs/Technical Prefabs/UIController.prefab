@@ -5851,7 +5851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  persistenceTimerMax: 3
+  persistenceTimerMax: 2
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
   slideOutTimerMax: 1
@@ -5906,7 +5906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  persistenceTimerMax: 3
+  persistenceTimerMax: 2
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
   slideOutTimerMax: 1

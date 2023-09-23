@@ -71,6 +71,7 @@ public class FeedItem : MonoBehaviour
             //feedItemText.text = "TEST CAPTURE FEED";
             persistenceTimer = persistenceTimerMax;
             slideInTimer = slideInTimerMax;
+            slideOutTimer = slideOutTimerMax;
         }
         else
         {
@@ -82,20 +83,16 @@ public class FeedItem : MonoBehaviour
     private void FixedUpdate()
     {
         //HANDLE SLIDE-IN
-        if(!hasSlidIn)
+        if (!hasSlidIn)
             HandleSlideIn();
 
         //HANDLE PERSISTENCE ON SCREEN
-        if (!hasPersisted)
+        if (hasSlidIn && !hasPersisted)
             HandlePersistence();
 
         //HANDLE SLIDE-OUT
-        if (hasPersisted && hasSlidIn)
+        if (hasSlidIn && hasPersisted && !hasSlidOut)
             HandleSlideOut();
-
-        if (hasSlidOut)
-            this.gameObject.SetActive(false);
-
     }
 
 
@@ -112,7 +109,8 @@ public class FeedItem : MonoBehaviour
     private void HandleSlideIn()
     {
         this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
-        if (slideInTimer > 0) slideInTimer -= Time.fixedDeltaTime;
+        if (slideInTimer > 0) 
+            slideInTimer -= Time.fixedDeltaTime;
         else
         {
             slideInTimer = 0;
@@ -128,6 +126,7 @@ public class FeedItem : MonoBehaviour
         if (persistenceTimer > 0)
         {
             persistenceTimer -= Time.fixedDeltaTime;
+            //NOT USED ANYMORE
             /*
             if (persistenceTimer <= persistenceFadeoutThreshold)
             {
@@ -138,18 +137,22 @@ public class FeedItem : MonoBehaviour
         else
         {
             persistenceTimer = 0;
+            hasPersisted = true;
             spriteToAnimate.Func_PlayUIAnim();
         }
     }
 
     private void HandleSlideOut()
     {
-        this.transform.position = Vector3.Lerp(startingPos, startingPos + slidingOffset, EaseInQuad(slideInTimer / slideInTimerMax));
-        if (slideOutTimer > 0) slideOutTimer -= Time.fixedDeltaTime;
+        Debug.Log("FeedItem - slideOutTimer: " + slideOutTimer);
+        this.transform.position = Vector3.Lerp(startingPos + slidingOffset, startingPos, EaseOutQuad(slideOutTimer / slideOutTimerMax));
+        if (slideOutTimer > 0) 
+            slideOutTimer -= Time.fixedDeltaTime;
         else
         {
             slideOutTimer = 0;
             hasSlidOut = true;
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -195,5 +198,6 @@ public class FeedItem : MonoBehaviour
 
     //EASING
     public static float EaseInQuad(float t) => t * t;
+    public static float EaseOutQuad(float t) => 1 - EaseInQuad(1 - t);
 
 }
