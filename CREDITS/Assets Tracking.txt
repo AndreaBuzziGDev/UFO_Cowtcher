@@ -91,6 +91,10 @@ Screaming Brain Studios - Link: https://opengameart.org/content/gradient-texture
 Snowflake:
 PNGEGG (Unknown author) - Link: https://www.pngegg.com/en/png-bwkfv
 
+Ice Block:
+
+Illustoon - Link: https://illustoon.com/?id=12339
+
 
 
 
@@ -98,6 +102,15 @@ SOUNDS
 Cow Moo Sound Base:
 JarredGibb - Link: https://freesound.org/people/JarredGibb/sounds/233141/
 
+
+
+
+
+
+CODE SNIPPETS:
+
+UISpriteAnimation:
+Xwin-Studio - Link: https://github.com/Xwin-Studio/UI_Animation
 
 
 
