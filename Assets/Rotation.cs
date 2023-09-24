@@ -18,7 +18,7 @@ public class Rotation : MonoBehaviour
 
     private void Update()
     {
-        Planet.transform.Rotate(new Vector3(0, 0, rotation));
-        Shadow.transform.Rotate(new Vector3(0, 0, -rotation));
+        Planet.transform.Rotate(new Vector3(0, 0, rotation * Time.deltaTime));
+        Shadow.transform.Rotate(new Vector3(0, 0, -rotation * Time.deltaTime));
     }
 }
