@@ -17,31 +17,40 @@ public class Gestore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetValues();
+    }
+
+    private void Update()
+    {
+        Debug.Log(""+index);
+       
+    }
+
+    public void SetValues()
+    {
         Planet.GetComponent<Image>().sprite = Planets[index];
         Accessory.GetComponent<Image>().sprite = Accessories[index];
         parentController.SetTargetScene(intendedTargetScene[index]);
-        Debug.Log(index);
     }
 
     // Update is called once per frame
     public void IndexUpdate() 
     {
+        index++;
         if (index < intendedTargetScene.Length && index!=0)
         { 
-        Debug.Log(index);
+       // Debug.Log(index);
             Planet.GetComponent<Image>().sprite = Planets[index];
             Accessory.GetComponent<Image>().sprite = Accessories[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
-            index++;
         }
         else
         {
-        Debug.Log(index);
+       // Debug.Log(index);
             index = 0;
             Planet.GetComponent<Image>().sprite = Planets[index];
             Accessory.GetComponent<Image>().sprite = Accessories[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
-            index++;
         }
     }
     
