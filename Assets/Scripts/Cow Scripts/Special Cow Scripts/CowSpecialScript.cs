@@ -37,19 +37,21 @@ public abstract class CowSpecialScript : MonoBehaviour
             else
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
-                HandleDedicatedBehaviour();
+                EnableDedicatedBehaviour();
             }
         }
         else if (myCow.IsCalm)
         {
             specialEffectActivationTimer = specialEffectActivationTimerMax;
-            //TODO: DISABLE SPECIAL SCRIPT
-
+            DisableDedicatedBehaviour();
         }
     }
 
 
     //ABSTRACT METHODOLOGY
-    protected abstract void HandleDedicatedBehaviour();
+    protected abstract void EnableDedicatedBehaviour();
+    protected abstract void DisableDedicatedBehaviour();
+
+
 
 }
