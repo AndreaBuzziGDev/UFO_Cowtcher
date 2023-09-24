@@ -6,7 +6,7 @@ public abstract class CowSpecialScript : MonoBehaviour
 {
     //DATA
     [SerializeField] private Cow myCow;
-    [SerializeField] private CowMovement myMovement;
+    [SerializeField] private CowMovement myMovement;//JUST IN CASE
 
     [SerializeField] private float specialEffectActivationTimerMax = 10.0f;
     private float specialEffectActivationTimer;
