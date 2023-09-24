@@ -7,8 +7,10 @@ public class Gestore : MonoBehaviour
 {
     [SerializeField] Sprite[] Planets;
     [SerializeField] Sprite[] Accessories;
+    [SerializeField] Sprite[] AccessoriesRetro;
     [SerializeField] GameObject Planet;
     [SerializeField] GameObject Accessory;
+    [SerializeField] GameObject AccessoryRetro;
     [SerializeField] private SceneNavigationController.eStageSceneName[] intendedTargetScene;
     [SerializeField] private StageSelectionController parentController;
 
@@ -30,6 +32,7 @@ public class Gestore : MonoBehaviour
     {
         Planet.GetComponent<Image>().sprite = Planets[index];
         Accessory.GetComponent<Image>().sprite = Accessories[index];
+        AccessoryRetro.GetComponent<Image>().sprite = AccessoriesRetro[index];
         parentController.SetTargetScene(intendedTargetScene[index]);
     }
 
@@ -42,6 +45,7 @@ public class Gestore : MonoBehaviour
        // Debug.Log(index);
             Planet.GetComponent<Image>().sprite = Planets[index];
             Accessory.GetComponent<Image>().sprite = Accessories[index];
+            AccessoryRetro.GetComponent<Image>().sprite = AccessoriesRetro[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
         }
         else
@@ -50,6 +54,7 @@ public class Gestore : MonoBehaviour
             index = 0;
             Planet.GetComponent<Image>().sprite = Planets[index];
             Accessory.GetComponent<Image>().sprite = Accessories[index];
+            AccessoryRetro.GetComponent<Image>().sprite = AccessoriesRetro[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
         }
     }
@@ -62,6 +67,7 @@ public class Gestore : MonoBehaviour
             // Debug.Log(index);
             Planet.GetComponent<Image>().sprite = Planets[index];
             Accessory.GetComponent<Image>().sprite = Accessories[index];
+            AccessoryRetro.GetComponent<Image>().sprite = AccessoriesRetro[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
         }
         else
@@ -70,6 +76,7 @@ public class Gestore : MonoBehaviour
             index = 3;
             Planet.GetComponent<Image>().sprite = Planets[index];
             Accessory.GetComponent<Image>().sprite = Accessories[index];
+            AccessoryRetro.GetComponent<Image>().sprite = AccessoriesRetro[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
         }
     }
