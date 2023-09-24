@@ -22,11 +22,6 @@ public class Gestore : MonoBehaviour
         SetValues();
     }
 
-    private void Update()
-    {
-        Debug.Log(""+index);
-       
-    }
 
     public void SetValues()
     {
