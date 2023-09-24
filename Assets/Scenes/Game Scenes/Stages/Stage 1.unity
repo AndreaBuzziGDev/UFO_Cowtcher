@@ -3676,14 +3676,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6210996173924150914, guid: eb5f299441240eb42b5716a5e3bfe2ba, type: 3}
-      propertyPath: myAudioListener
-      value: 
-      objectReference: {fileID: 3831804759275437023}
-    - target: {fileID: 6210996173924150914, guid: eb5f299441240eb42b5716a5e3bfe2ba, type: 3}
-      propertyPath: audioStateForceDisable
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6237138419294589591, guid: eb5f299441240eb42b5716a5e3bfe2ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000019073486
@@ -3737,11 +3729,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5f299441240eb42b5716a5e3bfe2ba, type: 3}
---- !u!81 &3831804759275437023 stripped
-AudioListener:
-  m_CorrespondingSourceObject: {fileID: 5057803354254620679, guid: eb5f299441240eb42b5716a5e3bfe2ba, type: 3}
-  m_PrefabInstance: {fileID: 3831804759275437022}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4642791705689300072
 PrefabInstance:
   m_ObjectHideFlags: 0
