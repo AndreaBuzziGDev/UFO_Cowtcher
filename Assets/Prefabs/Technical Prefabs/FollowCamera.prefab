@@ -125,3 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0df21201e3d3824a989460d0b2489a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myAudioListener: {fileID: 5057803354254620679}
+  audioStateForceDisable: 0
