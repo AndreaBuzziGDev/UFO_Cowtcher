@@ -13,6 +13,14 @@ public class CowMovement : MonoBehaviour
     ///MOVEMENT PATTERNS
     private AbstractMovementPattern movPatternCalm;
     private AbstractMovementAlert movPatternAlert;
+    private AbstractMovementPattern CurrentMovPattern 
+    { 
+        get 
+        { 
+            if (myCow.IsCalm) return movPatternCalm;
+            else return movPatternAlert;
+        } 
+    }
 
 
     ///MOVEMENT DIRECTION (AFFECTED BY MOVEMENT PATTERNS)
@@ -24,7 +32,6 @@ public class CowMovement : MonoBehaviour
     ///SPEED DATA
     private float speedCalm;
     private float speedAlert;
-    private float speedBuffMultiplier;//EXPERIMENT TO SLOW DOWN COWS INDIVIDUALLY (NOT YET USED)
 
 
     ///TECHNICAL DATA FOR OTHER PURPOSES
@@ -42,6 +49,31 @@ public class CowMovement : MonoBehaviour
     [SerializeField] private float fenceDetectionRadius;
     [SerializeField] private Fence closestFence;
     private Vector3 previousFenceNormal;
+
+    ///TURNING SPEED
+    [SerializeField] float turningSpeedMult = 2.5f;
+
+
+    //COWS THAT IGNORE MOVEMENT ALGORITHM DETAILS:
+    HashSet<CowSO.UniqueID> cowsThatIgnoreFenceDodge = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.R010_Cownguin,
+        CowSO.UniqueID.R003_Scarecow,
+        CowSO.UniqueID.R007_Sharkow,
+        CowSO.UniqueID.R011_Cowflake,
+        CowSO.UniqueID.R015_Kowtos
+    };
+
+    HashSet<CowSO.UniqueID> cowsThatIgnoreSmoothing = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.R000_Kowbra,
+        CowSO.UniqueID.L000_Cowctor,
+        CowSO.UniqueID.R004_Hippocowmp,
+        CowSO.UniqueID.R012_Linkow,
+        CowSO.UniqueID.R010_Cownguin,
+        CowSO.UniqueID.R003_Scarecow,
+        CowSO.UniqueID.R007_Sharkow,
+        CowSO.UniqueID.R011_Cowflake,
+        CowSO.UniqueID.R015_Kowtos
+    };
 
 
 
@@ -65,7 +97,8 @@ public class CowMovement : MonoBehaviour
 
     private void Update()
     {
-        if (movementDirection.x > 0)
+        //HANDLE VISUAL FLIPPING
+        if (rb.velocity.x > 0)
         {
             spriteRenderer.flipX = true;
         }
@@ -73,6 +106,17 @@ public class CowMovement : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        //HANDLE VISUAL JUMP
+        if (CurrentMovPattern.Jumps)
+        {
+            spriteRenderer.transform.position = new Vector3(
+               transform.position.x,
+               Mathf.Abs(Mathf.Sin(Time.time * 5 * CurrentMovPattern.JumpSpeed)) * CurrentMovPattern.JumpHeight,
+               transform.position.z
+           );
+        }
+        
     }
 
     private void FixedUpdate()
@@ -155,16 +199,34 @@ public class CowMovement : MonoBehaviour
         //VARIANT - RUN TOWARDS THE CENTER OF THE SPAWNING GRID
         Vector3 intendedDirection = movementDirection;
 
-        //TODO: UPGRADE FOR SPECIAL COWS THAT CHASE THE PLAYER NO MATTER WHAT
-        if (IsReflectingAgainstFence() && myCow.CowTemplate.UID != CowSO.UniqueID.R003_Scarecow)
+
+        //SOME COWS IGNORE THE FENCE DODGING
+        if (IsReflectingAgainstFence() && !cowsThatIgnoreFenceDodge.Contains(myCow.CowTemplate.UID))
         {
-            Vector3 diff = SpawningGrid.Instance.Center() - this.transform.position;
-            intendedDirection = (new Vector3(diff.x, 0, diff.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
+            Vector3 mapCenterDirection = SpawningGrid.Instance.Center() - this.transform.position;
+            intendedDirection = (new Vector3(mapCenterDirection.x, 0, mapCenterDirection.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
+
+            //GLOBAL SPEED MULTIPLIER
+            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
 
+        //SOME COWS NEED MOVEMENT SMOOTHING FOR WHEN FLEEING THE UFO
+        else if (CowHelper.IsUFOWithinRadius(myCow) && !cowsThatIgnoreSmoothing.Contains(myCow.CowTemplate.UID))
+        {
+            if (rb.velocity == Vector3.zero)
+                rb.velocity = (this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).normalized;
 
-        //GLOBAL SPEED MULTIPLIER
-        rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * 
+                Vector3.Lerp(
+                    rb.velocity.normalized,
+                    intendedDirection, 
+                    Time.fixedDeltaTime * turningSpeedMult
+                );
+        }
+
+        //DEFAULT
+        else
+            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
 
     }
     
@@ -229,6 +291,7 @@ public class CowMovement : MonoBehaviour
     }
 
     ///FENCE DETECTION
+    //TODO: THIS MOST LIKELY WON'T BE NEEDED ANYTYME SOON
     public void CheckClosestFence(Fence newFence)
     {
         if(closestFence != null)

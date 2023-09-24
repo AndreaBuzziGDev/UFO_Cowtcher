@@ -6,14 +6,25 @@ using UnityEngine.UI;
 
 public class FuelBar : MonoBehaviour
 {
-    public Image FuelBarImg;
-
-    bool shake = false;
+    //DATA
+    //FUEL BAR SHAKE DATA
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
-    private float currentShakeTime;
     [SerializeField] private float shakeTime;
+    private float currentShakeTime;
+    bool shake = false;
 
+    //EMERGENCY FUEL GRADIENT DATA
+    [SerializeField] [Range(0, 1)] private float maxAlphaValue = 0.4f;
+    [SerializeField] [Range(1, 10)] private float gradientSpeed = 1.0f;
+
+
+    //GUI REFERENCES
+    [SerializeField] private Image fuelBarImg;
+    [SerializeField] private Image fuelEmergencyGradient;
+
+
+    //TECHNICAL
     Vector3 barPosition;
 
 
@@ -48,18 +59,38 @@ public class FuelBar : MonoBehaviour
     public void UpdateFuelBar(UFO ufo)
     {
         float normalizedFuel = (float) ufo.FuelAmount / (float) ufo.MaxFuelAmount;
-        FuelBarImg.fillAmount = normalizedFuel;
+        fuelBarImg.fillAmount = normalizedFuel;
+
+        //HANDLE THE CHANGE OF COLOR IN THE FUEL BAR
         if (normalizedFuel >= 0.5f)
         {
             float halfMax = ufo.MaxFuelAmount / 2.0f;
             float awaitedValue = (halfMax - (ufo.MaxFuelAmount - ufo.FuelAmount)) / halfMax;
 
-            FuelBarImg.color = Color.Lerp(Color.yellow, Color.white, awaitedValue);
+            fuelBarImg.color = Color.Lerp(Color.yellow, Color.white, awaitedValue);
         }
         else
         {
-            FuelBarImg.color = Color.Lerp(Color.red, Color.yellow, (normalizedFuel/0.5f));
+            fuelBarImg.color = Color.Lerp(Color.red, Color.yellow, (normalizedFuel/0.5f));
         }
+
+        //HANDLE THE EMERGENCY STATE - RED SCREEN BORDERS
+        if (ufo.isEmergencyFuel)
+        {
+            Color gradCol = fuelEmergencyGradient.color;
+            fuelEmergencyGradient.color = new Color(
+                gradCol.r, 
+                gradCol.g, 
+                gradCol.b, 
+                Mathf.Abs(Mathf.Sin(Time.time * gradientSpeed)) * maxAlphaValue
+                );
+        }
+        else
+        {
+            Color gradCol = fuelEmergencyGradient.color;
+            fuelEmergencyGradient.color = new Color(gradCol.r, gradCol.g, gradCol.b, 0);
+        }
+
     }
 
 
@@ -74,5 +105,6 @@ public class FuelBar : MonoBehaviour
             transform.position.y, 
             transform.position.z);
     }
+
 
 }

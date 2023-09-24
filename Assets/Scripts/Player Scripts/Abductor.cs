@@ -61,7 +61,6 @@ public class Abductor : MonoBehaviour
         ///LAYER INITIALIZATION
         cowLayer = LayerMask.NameToLayer("CowPhysicsLayer");
         interactionLayer = LayerMask.NameToLayer("ObjectInteractionPhysicsLayer");
-
     }
 
     private void Start()
@@ -170,12 +169,12 @@ public class Abductor : MonoBehaviour
             UFO.ChangeFuelCapture(cow.CowTemplate);
             UFO.ChangeScore(cow.Score);
 
-            //WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
-            SpawnManager.Instance.HandleCowCapture(cow);
-
             //SEND AN EVENT TO MOOSSIONS SO THAT THEY ARE NOTIFIED THAT A COW HAS BEEN CAPTURED
             CowCaptureEventArgs myEventArg = new CowCaptureEventArgs(cow);
             OnCowCapture(myEventArg);
+
+            //WARN SPAWNMANAGER THAT A GIVEN COW HAS BEEN CAUGHT
+            SpawnManager.Instance.HandleCowCapture(cow);
 
 
             //INSTANTLY DEPLOYED ITEM
@@ -300,6 +299,5 @@ public class Abductor : MonoBehaviour
             handler(this, myEventArg);
         }
     }
-
 
 }

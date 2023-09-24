@@ -9,34 +9,42 @@ public class MPAlertTowardsUFO : AbstractMovementAlert
     private readonly MPAlertTowardsUFOSO template;
 
     ///ACTUALLY USEFUL DATA FOR MOVEMENT PATTERN
-    //NON
+    private float timerMoving;
+    private float timerStill;
+    private float randomizerSlider;
+
 
 
     //CONSTRUCTOR
     public MPAlertTowardsUFO(MPAlertTowardsUFOSO inputTemplate)
     {
         this.template = inputTemplate;
+        this.timerMoving = inputTemplate.timerMoving;
+        this.timerStill = inputTemplate.timerStill;
+        this.randomizerSlider = inputTemplate.randomizerSlider;
     }
 
 
     ///TEMPLATE
-    public override IMovementPattern Template() => template;
+    public override MPAbstractParentSO Template() => template;
 
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
-        Vector3 ufoPos = GameController.Instance.FindUFOAnywhere().transform.position;
-        Vector3 planeProjectedUfoPos = new Vector3(ufoPos.x, 0, ufoPos.z);
-
-        Vector3 intendedDirection = planeProjectedUfoPos - interestedCow.transform.position;
-        if (intendedDirection.magnitude >= 0.1)
+        if (timerMoving > 0)
         {
-            return (planeProjectedUfoPos - interestedCow.transform.position).normalized;
+            Vector3 planeProjectedUfoPos = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
+
+            Vector3 intendedDirection = planeProjectedUfoPos - interestedCow.transform.position;
+            if (intendedDirection.magnitude >= 0.1)
+            {
+                return intendedDirection.normalized;
+            }
+            else
+                return Vector3.zero;
         }
         else
-        {
             return Vector3.zero;
-        }
     }
 
     public override Vector3 ManagePanic(CowMovement myCow)
@@ -47,12 +55,13 @@ public class MPAlertTowardsUFO : AbstractMovementAlert
     ///TIMERS
     public override void UpdateTimers(float delta)
     {
-        //NOT NEEDED
-
+        if (timerMoving > 0) timerMoving -= delta;
+        else if (timerStill > 0) timerStill -= delta;
+        else ResetTimers();
     }
     public override void ResetTimers()
     {
-        //NOT NEEDED
-
+        this.timerStill = template.timerStill + Random.Range(-0.5f, this.randomizerSlider);
+        this.timerMoving = template.timerMoving;
     }
 }

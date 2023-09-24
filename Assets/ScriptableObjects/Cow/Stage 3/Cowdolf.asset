@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
+  m_Name: Cowdolf
+  m_EditorClassIdentifier: 
+  UID: 20
+  rarity: 1
+  CowName: Cowdolf
+  Description: "When it\u2019s starting to snow, thanks to his fur, it doesn\u2019t
+    feel cold. Sometimes it can be seen towing sleighs\r"
+  spawnProbability: 20
+  spawnChanceTally: 10
+  FuelRecoveryAmount: 3
+  AlertRadius: 5
+  SpeedCalm: 1
+  SpeedAlert: 4
+  Score: 30
+  TimerAlertToCalm: 3
+  TimerAlertToPanic: 2
+  TimerRespawn: 5
+  movPatternCalm: {fileID: 11400000, guid: 545347c0dd7662f4c975fe500bb6a278, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: 0a1c605c9605b0e409bb26558f844c05, type: 2}
+  effect: 
+  InstantlyDeployedItemPickup: {fileID: 0}
+  associatedAsteroid: {fileID: 0}
+  SummoningRitual: {fileID: 0}
+  FavouriteHideoutTypes: 08000000
+  AllowedSpawnPointTypes: 00000000

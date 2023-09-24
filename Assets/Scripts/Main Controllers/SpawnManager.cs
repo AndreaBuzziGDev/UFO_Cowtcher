@@ -76,7 +76,10 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     ///OVERALL INITIALIZATION PROCEDURE
     public void Initialization()
     {
-        SpawnManagerCow.Instance.Initialization();
+        AllowedCowsManager.Instance.Initialization();
+
+        //ENSURES THAT WHEN LOADING THE STAGE, ALL COMMON COWS ARE INSTANTLY "KNOWN" OR ABOVE
+        InitializeCommonCowsAsKnown();
 
         InitializeCowCount();
         InitializeSpawnProbabilityDictionary();
@@ -88,18 +91,35 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     }
 
     ///MAIN INITIALIZATION
+    private void InitializeCommonCowsAsKnown()
+    {
+        List<CowSO.UniqueID> allowedCowIds = AllowedCowsManager.Instance.AllowedCowIDs;
+
+        List<CowSO> allowedScriptableCows = Cowdex.Instance.GetScriptableCows(allowedCowIds);
+        foreach(CowSO cSO in allowedScriptableCows)
+        {
+            if(cSO.rarity == CowSO.Rarity.Common)
+            {
+                Debug.Log("SpawnManager - Common Cow: " + cSO.CowName);
+                //UNLOCKS
+                SaveInfoCow.Knowledge knowValue = SaveSystem.LoadCowProgress(cSO.UID).KnowledgeValue;
+
+                if (knowValue == SaveInfoCow.Knowledge.Unknown)
+                {
+                    Debug.Log("SpawnManager - Unlocking: " + cSO.CowName);
+                    SaveSystem.SaveCowProgress(cSO.UID, SaveInfoCow.Knowledge.Known);
+                }
+            }
+        }
+    }
+
+
     ///COW TRACKING INITIALIZATION
     private void InitializeCowCount()
     {
         List<Cow> cows = FindObjectsOfType<Cow>().ToList();
         currentNumOfCows = cows.Count;
         Debug.Log("SpawnManager - start num of cows: " + currentNumOfCows);
-
-        //TODO: UPGRADE SO THAT IT TRACKS THE DIFFERENT TYPES OF COWS THAT EXIST ON THE MAP
-
-
-        //
-
 
     }
 
@@ -239,7 +259,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     public void HandleCowCapture(Cow interestedCow)
     {
         //NOTIFY SYSTEMS THAT COW HAS BEEN CAPTURED
-        SaveInfoCow cowSI = SaveSystem.LoadCowProgress(interestedCow.UID);
+        SaveInfoCow cowSI = SaveSystem.LoadCowProgress(interestedCow.CowTemplate.UID);
         if (!cowSI.IsCaptured)
         {
             SaveSystem.SaveCowProgress(interestedCow.UID, SaveInfoCow.Knowledge.Captured);
@@ -333,12 +353,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         List<Cow> cowPrefabs = Cowdex.Instance.GetCows(UIDs);
 
         //TODO: THIS MUST TRACK ONLY THE ALLOWED COWS FOR THIS MAP.
-        List<CowSO.UniqueID> allowedCowIds = SpawnManagerCow.Instance.AllowedCowIDs;
+        List<CowSO.UniqueID> allowedCowIds = AllowedCowsManager.Instance.AllowedCowIDs;
 
         foreach (Cow prefabCow in cowPrefabs)
         {
             //ENFORCED BEHAVIOUR: ONLY "ALLOWED" COWS SPAWN IN THE SCENE
-            if (!SpawnManagerCow.Instance.AllowAllCows)
+            if (!AllowedCowsManager.Instance.AllowAllCows)
             {
                 if (allowedCowIds.Contains(prefabCow.CowTemplate.UID)) tallySpawnChances.Add(prefabCow.CowTemplate.UID, prefabCow.CowTemplate.spawnChanceTally);
             }

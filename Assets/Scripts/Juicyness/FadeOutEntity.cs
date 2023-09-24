@@ -34,6 +34,8 @@ public class FadeOutEntity : MonoBehaviour
         {
             hologramText.color = new Color(hologramText.color.r, hologramText.color.g, hologramText.color.b, factor);
         }
+
+        if (fadeoutTimer <= 0) Destroy(this.gameObject);
     }
 
 

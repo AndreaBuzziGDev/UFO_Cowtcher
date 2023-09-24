@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1649241016650468563, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_Center.y
+      value: 1.9
+      objectReference: {fileID: 0}
     - target: {fileID: 2388964484425164700, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.456
@@ -60,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8cec1532b2006d3459cc77f8ee1ab4b3, type: 3}
+    - target: {fileID: 4687243823262481106, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 5259244113235226185, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
       propertyPath: m_Name
       value: Flying Cowtchman

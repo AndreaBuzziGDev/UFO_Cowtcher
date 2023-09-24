@@ -12,6 +12,7 @@ public class InGamePanel : MonoBehaviour
     [SerializeField] private ScoreBar highScoreBar;
     public ScoreBar HighScoreBar { get { return highScoreBar; } }
 
+    ///GUI EFFECT PANELS
     [SerializeField] private BuffPanel buffPanel;
     [SerializeField] private BuffPanel debuffPanel;
     [SerializeField] private BuffPanel ritualPanel;
@@ -19,12 +20,5 @@ public class InGamePanel : MonoBehaviour
     public BuffPanel BuffPanel { get { return buffPanel; } }
     public BuffPanel DebuffPanel { get { return debuffPanel; } }
     public BuffPanel RitualPanel { get { return ritualPanel; } }
-
-
-    //METHODS
-
-    //FUNCTIONALITIES
-    //...
-
 
 }

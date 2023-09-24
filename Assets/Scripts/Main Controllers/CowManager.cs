@@ -14,7 +14,7 @@ public class CowManager : MonoSingleton<CowManager>
 
     private float globalSpeedMultiplier = 100.0f;
     public float GlobalSpeedMultiplier { get { return globalSpeedMultiplier/100.0f; } }
-    public bool IsGlobalSpeedAltered { get { return GlobalSpeedMultiplier != 1.0f; } }
+    public bool IsGloballySlowed { get { return GlobalSpeedMultiplier < 1.0f; } }
 
 
     ///EXPERIMENTAL GLOBAL DATA TO MAKE 

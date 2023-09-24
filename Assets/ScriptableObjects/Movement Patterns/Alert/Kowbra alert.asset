@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd706b04fd49e434aa76ae6fe514058e, type: 3}
   m_Name: Kowbra alert
   m_EditorClassIdentifier: 
+  jumps: 0
+  jumpHeight: 0.5
+  jumpSpeed: 1
   DirectionChangeRate: 0.01
   Frequency: 15
-  Magnitude: 0.2
+  Magnitude: 10

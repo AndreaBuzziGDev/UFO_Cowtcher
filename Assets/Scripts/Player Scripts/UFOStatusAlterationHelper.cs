@@ -58,6 +58,11 @@ public class UFOStatusAlterationHelper
     }
 
 
+    //ALTERNATIVE STATUS ALTERATIONS (NOT VIA PICKUP)
+    public static bool HasStun() => GameController.Instance.FindPlayerAnywhere().IsStunned;
+    public static bool HasFreeze() => GameController.Instance.FindPlayerAnywhere().IsFrozen;
+
+
 
 
     //UTILITIES
@@ -65,5 +70,26 @@ public class UFOStatusAlterationHelper
     {
         return GameController.Instance.FindPlayerAnywhere().StatusAlterations;
     }
+
+    public static bool HasPositiveAlterations()
+    {
+        List<SAAbstract> allAlterations = GetPlayerAlterations();
+
+        foreach(SAAbstract alteration in allAlterations)
+        {
+            if (alteration.GetType() == typeof(SASpeedBoost)) return true;
+            if (alteration.GetType() == typeof(SAFuelGainBoost)) return true;
+            if (alteration.GetType() == typeof(SACaptureSpeed)) return true;
+            if (alteration.GetType() == typeof(SACaptureRadius)) return true;
+        }
+
+        return false;
+    }
+
+    public static void FlushPositiveAlterations()
+    {
+        GameController.Instance.FindPlayerAnywhere().FlushPositiveAlterations();
+    }
+
 
 }

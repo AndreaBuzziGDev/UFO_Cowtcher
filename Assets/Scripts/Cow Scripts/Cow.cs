@@ -103,13 +103,16 @@ public class Cow : MonoBehaviour
     public Vector3 spawnCoords = Vector3.zero;
     public Vector3 SpawnCoords { get { return spawnCoords; } }
 
+    public Vector3 lastAlertCoords = Vector3.zero;
+    public Vector3 LastAlertCoords { get { return lastAlertCoords; } }
+
 
 
     //TECHNICAL DATA FOR OTHER PURPOSES
     private SpriteRenderer spriteRenderer;
 
     ///EDITOR REFERENCES
-    [SerializeField] private ParticleSystem HasFledParticles;
+    [SerializeField] private ParticleSystem CowDisappearParticles;
     [SerializeField] private AudioSource mooAlertSource;
 
     [SerializeField] private FadeOutEntity cowFadeOutHologramOnCapture;
@@ -170,8 +173,9 @@ public class Cow : MonoBehaviour
         this.TimerAlertToCalm = 0.0f;
         this.TimerAlertToPanic = cowTemplate.TimerAlertToPanic;
 
-        //SET BIRTH POINT
+        //ADDITIONAL DATA FOR MOV PATTERNS
         spawnCoords = transform.position;
+        lastAlertCoords = transform.position;
 
     }
 
@@ -206,6 +210,7 @@ public class Cow : MonoBehaviour
         //STEP 2
         if (IsAlert)
         {
+            lastAlertCoords = transform.position;
 
             Mathf.Clamp(this.TimerAlertToPanic, 0, cowTemplate.TimerAlertToPanic);
             if (CowHelper.IsUFOWithinRadius(this) && this.TimerAlertToPanic > 0) this.TimerAlertToPanic -= Time.deltaTime;
@@ -280,17 +285,23 @@ public class Cow : MonoBehaviour
     public void Flee()
     {
         //PARTICLE EMISSION
-        ParticleSystem fleeParticlesInstance = Instantiate(HasFledParticles, spriteRenderer.transform.position, Quaternion.identity);
-        fleeParticlesInstance.Play();
-        Destroy(fleeParticlesInstance.gameObject, 3.0f);
+        PlayDisappear();
 
         //DESTROY COW (FLED)
         Destroy(this.gameObject);
 
     }
 
+    //USED WHEN FLEEING MAP OR ENTERING A HIDEOUT
+    public void PlayDisappear()
+    {
+        ParticleSystem fleeParticlesInstance = Instantiate(CowDisappearParticles, spriteRenderer.transform.position, Quaternion.identity);
+        fleeParticlesInstance.Play();
+        Destroy(fleeParticlesInstance.gameObject, 3.0f);
+    }
 
-    //TODO: OPTIMIZE THESE.
+
+
     //GET VISUAL CHILD POSITION
     public GameObject GetVisualChild()
     {
@@ -299,7 +310,7 @@ public class Cow : MonoBehaviour
 
     public bool GetFlipX()
     {
-        return transform.Find("ColliderChild").gameObject.GetComponent<CowCollider>().GetMovement().IsFlipped;
+        return gameObject.GetComponent<CowCollider>().GetMovement().IsFlipped;
     }
 
 }

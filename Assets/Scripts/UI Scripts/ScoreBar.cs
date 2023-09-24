@@ -33,9 +33,6 @@ public class ScoreBar : MonoBehaviour
     //...
     void Awake()
     {
-        //REGISTERING COW CAPTURE EVENT
-        Abductor.CowCapture += HandleCowCapture;
-
         //RESETTING SCORES
         scoreValue = 0;
         capturedCows = 0;
@@ -68,6 +65,22 @@ public class ScoreBar : MonoBehaviour
 
 
 
+    //ENABLE-DISABLE
+    void OnEnable()
+    {
+        //REGISTER EVENTS
+        Abductor.CowCapture += HandleCowCapture;
+        SASharkBite.SharkBite += HandleSharkBite;
+
+    }
+    private void OnDisable()
+    {
+        Abductor.CowCapture -= HandleCowCapture;
+        SASharkBite.SharkBite -= HandleSharkBite;
+    }
+
+
+
 
     //FUNCTIONALITIES
     public void ResetScore()
@@ -85,8 +98,28 @@ public class ScoreBar : MonoBehaviour
     }
 
 
+
+    //EVENT HANDLING
+
     public void HandleCowCapture(object sender, CowCaptureEventArgs e)
     {
         capturedCows++;
+    }
+
+    private void HandleSharkBite(object sender, SharkBiteEventArgs e)
+    {
+        if (UFOStatusAlterationHelper.HasPositiveAlterations())
+            UFOStatusAlterationHelper.FlushPositiveAlterations();
+        else
+        {
+            //INSTANTLY LOSE % CURRENT SCORE
+            int scoreLoss = (int)(scoreValue * (e.CurrentScoreLoss / 100));
+            scoreValue = scoreValue - scoreLoss;
+            if (scoreValue < 0) 
+                scoreValue = 0;
+            scoreText.text = scoreValue.ToString();
+        }
+
+
     }
 }

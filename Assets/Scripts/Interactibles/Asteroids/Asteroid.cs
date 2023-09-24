@@ -59,7 +59,7 @@ public class Asteroid : MonoBehaviour
         {
             GameObject explosionPrefab = Instantiate(ImpactExplosion, this.transform.position + additionalTranslate, Quaternion.identity);
             //TODO: DESTROY DELAYED OR SOMEHOW STOP EXPLOSION FROM OCCURRING
-            Destroy(explosionPrefab, 1);
+            Destroy(explosionPrefab, 5);
         }
 
         //DESTROY ASTEROID

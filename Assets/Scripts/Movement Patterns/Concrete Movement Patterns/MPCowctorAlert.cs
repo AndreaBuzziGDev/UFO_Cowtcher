@@ -22,7 +22,7 @@ public class MPCowctorAlert : AbstractMovementAlert
     }
 
     ///TEMPLATE
-    public override IMovementPattern Template() => template;
+    public override MPAbstractParentSO Template() => template;
 
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)

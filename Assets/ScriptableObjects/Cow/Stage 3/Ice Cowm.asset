@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
+  m_Name: Ice Cowm
+  m_EditorClassIdentifier: 
+  UID: 19
+  rarity: 1
+  CowName: Ice Cowm
+  Description: "Despite its aspect it\u2019s not tasty as it looks. It like to sleep
+    next to snow cones to avoid melting\r"
+  spawnProbability: 20
+  spawnChanceTally: 10
+  FuelRecoveryAmount: 3
+  AlertRadius: 4
+  SpeedCalm: 3
+  SpeedAlert: 7
+  Score: 30
+  TimerAlertToCalm: 1
+  TimerAlertToPanic: 2
+  TimerRespawn: 5
+  movPatternCalm: {fileID: 11400000, guid: b765440c31062f14c964ba4287ca2abf, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: 3a707f186c12c27458b47fe8a2cfe6d6, type: 2}
+  effect: 
+  InstantlyDeployedItemPickup: {fileID: 0}
+  associatedAsteroid: {fileID: 0}
+  SummoningRitual: {fileID: 0}
+  FavouriteHideoutTypes: 06000000
+  AllowedSpawnPointTypes: 00000000
