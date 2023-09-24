@@ -621,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4972830164035142165, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
       propertyPath: m_text
-      value: 'Next
+      value: '
 
 '
       objectReference: {fileID: 0}
