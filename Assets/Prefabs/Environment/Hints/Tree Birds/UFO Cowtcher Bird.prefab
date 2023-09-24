@@ -13,6 +13,10 @@ PrefabInstance:
       value: UFO Cowtcher Bird
       objectReference: {fileID: 0}
     - target: {fileID: 4425771495017324238, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
+      propertyPath: birdAnimator
+      value: 
+      objectReference: {fileID: 5852550115722724951}
+    - target: {fileID: 4425771495017324238, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 9055676805337864383}
@@ -129,6 +133,11 @@ PrefabInstance:
 --- !u!4 &3566416099444578112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 12336665550173498, guid: c37beeb4392a94e43abec5cbcac6b9d4, type: 3}
+  m_PrefabInstance: {fileID: 3554924133948351098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5852550115722724951 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6948438465413866541, guid: c37beeb4392a94e43abec5cbcac6b9d4, type: 3}
   m_PrefabInstance: {fileID: 3554924133948351098}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &9055676805337864383 stripped
