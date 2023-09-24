@@ -147,13 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adaf2a98b5ba9e488c23aa385863d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentSpawnChance: 30
   quantityOnCapture: 5
   spawnsOnBadImpact: 0
-  badImpactCoordY: 2
   myAsteroidContent: {fileID: 0}
   additionalTranslate: {x: 0, y: 1, z: -1}
-  ImpactExplosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  ImpactExplosion: {fileID: 4593184484909914552, guid: 07426a68a7f5b01498e55c64c55acfac, type: 3}
 --- !u!1001 &5665025563433143084
 PrefabInstance:
   m_ObjectHideFlags: 0

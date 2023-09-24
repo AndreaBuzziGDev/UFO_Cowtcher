@@ -15,13 +15,12 @@ public class MPCalmTowardsSpawnCoords : AbstractMovementPattern
 
 
     ///TEMPLATE
-    public override IMovementPattern Template() => template;
+    public override MPAbstractParentSO Template() => template;
 
     ///MOVEMENT
     public override Vector3 ManageMovement(CowMovement interestedCow)
     {
         Vector3 toSpawnCoords = interestedCow.CowScript.SpawnCoords - interestedCow.transform.position;
-
         if (toSpawnCoords.magnitude >= 0.1)
         {
             return (toSpawnCoords).normalized;

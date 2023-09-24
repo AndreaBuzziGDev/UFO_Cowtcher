@@ -32,6 +32,8 @@ public class CowdexGUI : MonoBehaviour
     void OnEnable()
     {
         //DEFAULT-KNOWN BLACK AND WHITE COWS
+        //NB: DISABLED. NOW SPAWNMANAGER HANDLES COMMON COWS AS INSTANTLY-KNOWN
+        /*
         if (SaveSystem.LoadCowProgress(CowSO.UniqueID.C000_BlackCow).KnowledgeValue == 0)
         {
             SaveSystem.SaveCowProgress(CowSO.UniqueID.C000_BlackCow, SaveInfoCow.Knowledge.Known);
@@ -41,6 +43,7 @@ public class CowdexGUI : MonoBehaviour
         {
             SaveSystem.SaveCowProgress(CowSO.UniqueID.C001_WhiteCow, SaveInfoCow.Knowledge.Known);
         }
+        */
 
         if (CowdexPages.Count > 0) GoToPage(0);
     }
@@ -72,13 +75,11 @@ public class CowdexGUI : MonoBehaviour
     public void NextPage()
     {
         GoToPage(pageIndex + 1);
-        Debug.Log("CowdexGUI - pageIndex: " + pageIndex);
     }
 
     public void PreviousPage()
     {
         GoToPage(pageIndex - 1);
-        Debug.Log("CowdexGUI - pageIndex: " + pageIndex);
     }
 
     public void GoToPage(int targetIndexPage)

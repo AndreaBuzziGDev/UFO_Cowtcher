@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a2f62734945c43a024b18a37c1793, type: 3}
+  m_Name: Kowtos
+  m_EditorClassIdentifier: 
+  UID: 30
+  rarity: 1
+  CowName: Kowtos
+  Description: "Only by looking into her eyes can you understand what she is feeling,
+    all that anger might be directed at you. Maybe it's better to run away\r"
+  spawnProbability: 20
+  spawnChanceTally: 15
+  FuelRecoveryAmount: 0
+  AlertRadius: 6
+  SpeedCalm: 3
+  SpeedAlert: 4
+  Score: 0
+  TimerAlertToCalm: 3
+  TimerAlertToPanic: 1
+  TimerRespawn: 5
+  movPatternCalm: {fileID: 11400000, guid: 6a425ebe929362044a8052082d0ae344, type: 2}
+  movPatternAlert: {fileID: 11400000, guid: 3da7e9543aaccb240905ff13e088e444, type: 2}
+  effect: 'Increment fuel consumption for 10 s '
+  InstantlyDeployedItemPickup: {fileID: 7926208514392685230, guid: bdbd7dfb787a0314d821029fcf103b06, type: 3}
+  associatedAsteroid: {fileID: 0}
+  SummoningRitual: {fileID: 11400000, guid: 5eed19db8b0ef0e4796e9439d0220e2d, type: 2}
+  FavouriteHideoutTypes: 
+  AllowedSpawnPointTypes: 00000000

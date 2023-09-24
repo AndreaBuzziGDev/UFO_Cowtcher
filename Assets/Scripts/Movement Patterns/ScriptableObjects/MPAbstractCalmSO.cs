@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MPAbstractCalmSO : ScriptableObject, IMovementPattern
+public abstract class MPAbstractCalmSO : MPAbstractParentSO
 {
-    public abstract AbstractMovementPattern GetMovPattern();
+    //USED FOR SLOTTING ONLY CALM PATTERNS
 
 }

@@ -129,11 +129,13 @@ public class GameController : MonoSingleton<GameController>
     private static void PauseGame()
     {
         UIController.Instance.HideInputCanvas();
+        UIController.Instance.HideFeed();
         Time.timeScale = 0;
     }
     private static void UnpauseGame()
     {
         UIController.Instance.ShowInputCanvas();
+        UIController.Instance.ShowFeed();
         Time.timeScale = 1;
     }
 

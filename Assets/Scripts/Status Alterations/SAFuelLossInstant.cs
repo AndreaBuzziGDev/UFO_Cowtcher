@@ -35,12 +35,12 @@ public class SAFuelLossInstant : SAAbstract
         playerUFO.ChangeFuel(-instantFuelLossPercent);
 
         this.hasExpired = true;
-        UIController.Instance.IGPanel.BuffPanel.ActivateFuelLoss();
+        UIController.Instance.IGPanel.BuffPanel.ActivateFuelLoss();//TODO: VERIFY
 
     }
     public override void ExpireBuff()
     {
-        UIController.Instance.IGPanel.BuffPanel.DeactivateFuelLoss();
+        UIController.Instance.IGPanel.BuffPanel.DeactivateFuelLoss();//TODO: VERIFY
     }
 
 

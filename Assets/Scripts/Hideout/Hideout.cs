@@ -177,6 +177,10 @@ public class Hideout : MonoBehaviour
         {
             if (!slot.IsHosting)
             {
+                //PLAY DISAPPEARANCE PARTICLES
+                interestedCow.PlayDisappear();
+
+                //COW GETS HOSTED
                 slot.Host(interestedCow);
                 StartCoroutine(ShakeRoutine());
                 break;

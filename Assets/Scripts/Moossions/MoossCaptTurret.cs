@@ -65,7 +65,7 @@ public class MoossCaptTurret : Moossion
                 if (CowManager.Instance.IsGlobalTerrify) DoProgress(1);
                 break;
             case SoughtTurret.SlowingTurret:
-                if (CowManager.Instance.IsGlobalSpeedAltered) DoProgress(1);
+                if (CowManager.Instance.IsGloballySlowed) DoProgress(1);
                 break;
             default:
                 Debug.LogError("Logic not implemented for Turret: " + turret);

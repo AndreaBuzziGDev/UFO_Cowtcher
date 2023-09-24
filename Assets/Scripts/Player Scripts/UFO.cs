@@ -16,11 +16,15 @@ public class UFO : MonoBehaviour
     ///FUEL GAIN MULTIPLIER
     private float fuelGainMultiplier = 1.0f;
 
+    ///FUEL CONSUMPTION INCREASE
+    private float fuelConsumptionCoeff = 0.0f;
+
 
 
     ///FUEL BOTTOM DELAY MANAGEMENT
     [SerializeField] [Range(0.0f, 100.0f)] private float fuelEmergencyThreshold = 20.0f;
     [SerializeField] private float fuelEmergencyExtensionFactor = 2.0f;
+    public bool isEmergencyFuel { get { return ((fuelAmount / maxFuelAmount) * 100) <= fuelEmergencyThreshold; } }
 
 
     ///SCORE
@@ -47,7 +51,7 @@ public class UFO : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         HandleFuelLogic();
         
@@ -60,11 +64,14 @@ public class UFO : MonoBehaviour
 
         //FUEL CHANGES
         float extensionMultiplier = 1;
-        if (((fuelAmount/maxFuelAmount) * 100) <= fuelEmergencyThreshold)
+        if (isEmergencyFuel)
         {
             extensionMultiplier = fuelEmergencyExtensionFactor;
         }
-        fuelAmount -= Time.deltaTime * (1/extensionMultiplier);
+
+        float consumedFuel = (Time.deltaTime * (1 / extensionMultiplier)) * (1 + (1 * (fuelConsumptionCoeff/100)));
+
+        fuelAmount -= consumedFuel;
 
         //GUI UPDATE
         UIController.Instance.IGPanel.PlayerFuelBar.UpdateFuelBar(this);
@@ -112,6 +119,12 @@ public class UFO : MonoBehaviour
     public void ChangeFuelBoostMultiplier(float newMultiplier)
     {
         fuelGainMultiplier = newMultiplier;
+    }
+
+    public void ChangeFuelConsumptionMultiplier(float newMultiplier)
+    {
+        fuelConsumptionCoeff = newMultiplier;
+        Debug.Log("UFO - fuelConsumptionCoeff: " + fuelConsumptionCoeff);
     }
 
 
