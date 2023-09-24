@@ -34,7 +34,7 @@ public class Gestore : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void IndexUpdate() 
+    public void NextPlanet() 
     {
         index++;
         if (index < intendedTargetScene.Length && index!=0)
@@ -53,5 +53,25 @@ public class Gestore : MonoBehaviour
             parentController.SetTargetScene(intendedTargetScene[index]);
         }
     }
-    
+
+    public void PreviousPlanet()
+    {
+        index--;
+        if (index >= 0)
+        {
+            // Debug.Log(index);
+            Planet.GetComponent<Image>().sprite = Planets[index];
+            Accessory.GetComponent<Image>().sprite = Accessories[index];
+            parentController.SetTargetScene(intendedTargetScene[index]);
+        }
+        else
+        {
+            // Debug.Log(index);
+            index = 3;
+            Planet.GetComponent<Image>().sprite = Planets[index];
+            Accessory.GetComponent<Image>().sprite = Accessories[index];
+            parentController.SetTargetScene(intendedTargetScene[index]);
+        }
+    }
+
 }
