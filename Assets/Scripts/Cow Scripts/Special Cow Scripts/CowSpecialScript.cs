@@ -5,12 +5,8 @@ using UnityEngine;
 public abstract class CowSpecialScript : MonoBehaviour
 {
     //DATA
-    [SerializeField] private Cow myCow;
-    [SerializeField] private CowMovement myMovement;//JUST IN CASE
-
-    [SerializeField] private float specialEffectActivationTimerMax = 10.0f;
-    private float specialEffectActivationTimer;
-
+    [SerializeField] protected Cow myCow;
+    [SerializeField] protected CowMovement myMovement;//JUST IN CASE
 
 
     //METHODS
@@ -32,25 +28,26 @@ public abstract class CowSpecialScript : MonoBehaviour
     {
         if (myCow.IsAlert)
         {
-            if (specialEffectActivationTimer > 0)
-                specialEffectActivationTimer -= Time.fixedDeltaTime;
-            else
-            {
-                specialEffectActivationTimer = specialEffectActivationTimerMax;
-                EnableDedicatedBehaviour();
-            }
+            //TODO: ENABLE INSTANT-SPECIAL EFFECTS (ATMOSPHERIC STUFF & THAT KIND OF THINGS)
+
+
+            //DEDICATED BEHAVIOUR
+            HandleDedicatedBehaviour();
+
         }
         else if (myCow.IsCalm)
         {
-            specialEffectActivationTimer = specialEffectActivationTimerMax;
             DisableDedicatedBehaviour();
         }
     }
 
 
     //ABSTRACT METHODOLOGY
-    protected abstract void EnableDedicatedBehaviour();
-    protected abstract void DisableDedicatedBehaviour();
+    protected abstract void HandleDedicatedBehaviour();
+    protected virtual void DisableDedicatedBehaviour()
+    {
+
+    }
 
 
 
