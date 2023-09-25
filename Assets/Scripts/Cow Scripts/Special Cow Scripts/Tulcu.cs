@@ -6,7 +6,11 @@ public class Tulcu : CowSpecialScript
 {
     //DATA
     [SerializeField] private float terrorDuration = 1.0f;
-    [SerializeField] private float specialEffectActivationTimerMax = 3.0f;//TODO: THIS IS THE DELAY, SHOULD ALSO USE A DIFFERENT ITEM TO IMPLEMENT THE SUBSEQUENT DELAYS?
+    [SerializeField] private float subsequentApplicationDelay = 3.0f;
+    [SerializeField] private static int maxCount = 3;
+    private static int count;
+
+    [SerializeField] private float specialEffectActivationTimerMax = 5.0f;
     private float specialEffectActivationTimer;
 
     ///TECHNICAL DATA
@@ -43,7 +47,7 @@ public class Tulcu : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplyTerror(this.terrorDuration);
+                StartCoroutine(TerrorRoutine);
             }
         }
     }
@@ -67,6 +71,26 @@ public class Tulcu : CowSpecialScript
 
         //TODO: DO SOME VISUAL EFFECTS ON THE COW?
 
+    }
+
+
+    //COROUTINES
+    private IEnumerator TerrorRoutine()
+    {
+        //WAIT
+        yield return new WaitForSeconds(subsequentApplicationDelay);
+
+        //APPLY TERROR AGAIN
+        ApplyTerror(terrorDuration);
+
+        //IF COUNT HAS NOT BEEN MAXED OUT, RE-SCHEDULE
+        if (count < maxCount)
+        {
+            count++;
+            StartCoroutine(TerrorRoutine());
+        }
+        else
+            count = 0;
     }
 
 }
