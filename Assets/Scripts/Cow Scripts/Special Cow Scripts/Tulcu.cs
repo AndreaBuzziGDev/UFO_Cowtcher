@@ -6,7 +6,7 @@ public class Tulcu : CowSpecialScript
 {
     //DATA
     [SerializeField] private float terrorDuration = 1.0f;
-    [SerializeField] private float specialEffectActivationTimerMax = 3.0f;
+    [SerializeField] private float specialEffectActivationTimerMax = 3.0f;//TODO: THIS IS THE DELAY, SHOULD ALSO USE A DIFFERENT ITEM TO IMPLEMENT THE SUBSEQUENT DELAYS?
     private float specialEffectActivationTimer;
 
     ///TECHNICAL DATA
