@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     private float freezeDuration = 0.0f;
     public bool IsFrozen { get { return (freezeDuration > 0); } }
 
+    //
+    private float terrorDuration = 0.0f;
+    public bool IsTerrified { get { return terrorDuration > 0; } }
+
 
 
 
@@ -154,14 +158,20 @@ public class PlayerController : MonoBehaviour
     //STUN
     public void ApplyStun(float inputDuration)
     {
-        if(!IsFrozen)
+        if(!IsFrozen || !IsTerrified)
             stunDuration = inputDuration;
     }
     //FREEZE
     public void ApplyFrozen(float inputDuration)
     {
-        if(!IsStunned)
+        if(!IsStunned || !IsTerrified)
             freezeDuration = inputDuration;
+    }
+    //TERROR
+    public void ApplyTerror(float inputDuration)
+    {
+        if (!IsFrozen || !IsStunned)
+            terrorDuration = inputDuration;
     }
 
 
