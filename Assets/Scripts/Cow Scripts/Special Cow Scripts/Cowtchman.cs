@@ -45,7 +45,7 @@ public class Cowtchman : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplySpecialEffect();
+                ApplySpecialEffect(this.curseDuration);
             }
         }
     }
@@ -58,7 +58,7 @@ public class Cowtchman : CowSpecialScript
     }
 
     //FUNCTIONALITIES
-    public void ApplySpecialEffect()
+    public static void ApplySpecialEffect(float stunDuration)
     {
         //TODO: IMPLEMENT
 

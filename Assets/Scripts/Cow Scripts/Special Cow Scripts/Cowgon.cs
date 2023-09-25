@@ -11,7 +11,6 @@ public class Cowgon : CowSpecialScript
 
     ///TECHNICAL DATA
     private UFO playerUFO;
-    private PlayerController playerController;
 
 
 
@@ -20,7 +19,6 @@ public class Cowgon : CowSpecialScript
     {
         //REFERENCES
         playerUFO = GameController.Instance.FindUFOAnywhere();
-        playerController = GameController.Instance.FindPlayerAnywhere();
 
         //
         specialEffectActivationTimer = specialEffectActivationTimerMax;
@@ -42,7 +40,7 @@ public class Cowgon : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplySpecialEffect();
+                ApplySpecialEffect(this.stunDuration);
             }
         }
     }
@@ -55,9 +53,9 @@ public class Cowgon : CowSpecialScript
     }
 
     //FUNCTIONALITIES
-    public void ApplySpecialEffect()
+    public static void ApplySpecialEffect(float stunDuration)
     {
-        playerController.ApplyStun(this.stunDuration);
+        GameController.Instance.FindPlayerAnywhere().ApplyStun(stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
 
         //TODO: DO SOME VISUAL EFFECTS ON THE COW?
