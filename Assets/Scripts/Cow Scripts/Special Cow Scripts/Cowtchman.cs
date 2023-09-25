@@ -54,10 +54,9 @@ public class Cowtchman : CowSpecialScript
 
 
     //FUNCTIONALITIES
-    public static void ApplyCurse(float stunDuration)
+    public static void ApplyCurse(float curseDuration)
     {
-        //TODO: APPLY CURSE TO PLAYER (FIRE EVENT INSTEAD?)
-
+        GlobalEffectDutch.Instance.ApplyCurse(curseDuration);
 
         //playerController.ApplyStun(this.stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
@@ -65,12 +64,6 @@ public class Cowtchman : CowSpecialScript
         //TODO: DO SOME VISUAL EFFECTS ON THE COW?
 
     }
-
-
-
-    //COROUTINE
-    //TODO: SHOULD THIS BE MOVED IN THE MONOSINGLETON GLOBAL ITEM CONTROLLING THE GAMEPLAY?
-
 
 
     //EVENT PROPAGATION
