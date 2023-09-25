@@ -59,7 +59,7 @@ public class Cowron : CowSpecialScript
     }
 
     //FUNCTIONALITIES
-    public static void ApplySpecialEffect(float avalancheDuration)
+    public static void ApplySpecialEffect(float ringPowerDuration)
     {
         //TODO: IMPLEMENT
 
