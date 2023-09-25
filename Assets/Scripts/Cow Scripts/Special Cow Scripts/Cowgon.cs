@@ -23,6 +23,8 @@ public class Cowgon : CowSpecialScript
     }
 
     //ABSTRACT CONCRETIZATION
+
+    ///BEHAVIOUR
     protected override void HandleDedicatedBehaviour()
     {
         //IF WITHIN ALERT RADIUS
