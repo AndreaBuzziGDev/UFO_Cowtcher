@@ -11,7 +11,6 @@ public class Tulcu : CowSpecialScript
 
     ///TECHNICAL DATA
     private UFO playerUFO;
-    private PlayerController playerController;
 
 
 
@@ -21,7 +20,6 @@ public class Tulcu : CowSpecialScript
     {
         //REFERENCES
         playerUFO = GameController.Instance.FindUFOAnywhere();
-        playerController = GameController.Instance.FindPlayerAnywhere();
 
         //
         specialEffectActivationTimer = specialEffectActivationTimerMax;
@@ -59,7 +57,10 @@ public class Tulcu : CowSpecialScript
         //TODO: IMPLEMENT
 
         //APPLY TERROR TO PLAYER (FIRE EVENT?) - SHOULD IT BE PAIRED WITH A COROUTINE TO HANDLE RE-ITERATED TERROR?
+        GameController.Instance.FindPlayerAnywhere().ApplyStun(terrorDuration / 3);
+
         //APPLY TERROR TO COWS (FIRE EVENT?) - SHOULD IT BE PAIRED WITH A COROUTINE TO HANDLE RE-ITERATED TERROR?
+        CowManager.Instance.ApplyGlobalTerrify(terrorDuration);
 
         //playerController.ApplyStun(this.stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
