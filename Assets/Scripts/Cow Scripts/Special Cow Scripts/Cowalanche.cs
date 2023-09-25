@@ -59,7 +59,7 @@ public class Cowalanche : CowSpecialScript
     }
 
     //FUNCTIONALITIES
-    public static void ApplySpecialEffect(float terrorDuration)
+    public static void ApplySpecialEffect(float avalancheDuration)
     {
         //TODO: IMPLEMENT
 
