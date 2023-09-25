@@ -36,7 +36,8 @@ public class MPLegendaryAlert : AbstractMovementAlert
 
     public override Vector3 ManagePanic(CowMovement myCow)
     {
-        return myCow.MovementDirection.normalized;//WITH THIS IMPLEMENTATION, THEY SIMPLY KEEP THE LAST DIRECTION AND FLEE
+        //LEGENDARY COWS RUN 10% FASTER WHEN IN PANIC
+        return 1.1f * ManageMovement(myCow);
     }
 
     ///TIMERS
