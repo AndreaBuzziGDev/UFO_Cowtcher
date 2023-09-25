@@ -49,7 +49,7 @@ public class Rotation : MonoBehaviour
         {
             
 
-            if (Accessory.transform.rotation.z > 0.05)
+            if (Accessory.transform.rotation.z > 0)
             {
                 spin = -1;
             }
