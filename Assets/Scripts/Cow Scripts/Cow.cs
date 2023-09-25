@@ -191,6 +191,9 @@ public class Cow : MonoBehaviour
     //COW AI
     private void CowAI()
     {
+        //STEP 0 - RING POWER
+        if (GlobalEffectSauron.Instance.IsRingPower)
+            currentState = State.Alert;
 
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))

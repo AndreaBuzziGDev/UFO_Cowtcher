@@ -7,7 +7,7 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     //DATA
     private float avalancheSpeedMultiplier = 100.0f;
     public float AvalancheSpeedMult { get { return avalancheSpeedMultiplier / 100.0f; } }
-    public bool IsAvalanche { get { return AvalancheSpeedMult > 1.0f; } }
+    public bool IsAvalanche { get { return AvalancheSpeedMult > 1.0f; } }//TODO: SHOULD PROBABLY USE A BOOL VAR FOR THIS?
 
 
 
