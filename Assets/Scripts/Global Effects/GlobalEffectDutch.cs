@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlobalEffectPirate : MonoBehaviour
+public class GlobalEffectDutch : MonoBehaviour
 {
+    //DATA
+
+
+    //METHODS
+    //...
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +21,9 @@ public class GlobalEffectPirate : MonoBehaviour
     {
         
     }
+
+
+    //FUNCTIONALITIES
+
+
 }
