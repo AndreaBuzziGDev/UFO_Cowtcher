@@ -57,7 +57,7 @@ public class Tulcu : CowSpecialScript
         //TODO: IMPLEMENT
 
         //APPLY TERROR TO PLAYER (FIRE EVENT?) - SHOULD IT BE PAIRED WITH A COROUTINE TO HANDLE RE-ITERATED TERROR?
-        GameController.Instance.FindPlayerAnywhere().ApplyStun(terrorDuration / 3);
+        GameController.Instance.FindPlayerAnywhere().ApplyStun(terrorDuration / 3);//TODO: STUN THE UFO FOR FULL TIMER?
 
         //APPLY TERROR TO COWS (FIRE EVENT?) - SHOULD IT BE PAIRED WITH A COROUTINE TO HANDLE RE-ITERATED TERROR?
         CowManager.Instance.ApplyGlobalTerrify(terrorDuration);
