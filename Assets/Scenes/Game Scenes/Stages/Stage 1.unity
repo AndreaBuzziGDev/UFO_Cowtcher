@@ -660,6 +660,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
+--- !u!1001 &289966696
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.9046216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.283203
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194544032547867266, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214413578308500772, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
+      propertyPath: m_Name
+      value: Ice Cowm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f9d68797c3a15041a036608408f25d4, type: 3}
 --- !u!1001 &292400765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2236,6 +2293,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 79debf20d4e44d54dbca8635e58ac5e7, type: 3}
+--- !u!1001 &1377736107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3720841
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.345402
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 49459766336867897, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252399307426363807, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
+      propertyPath: m_Name
+      value: Cowflake
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 76b1b97558262ac429b6c3b5e78c8533, type: 3}
 --- !u!1001 &1392849390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4133,7 +4247,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: maxNumOfCows
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: isGridSpawnMode
@@ -4269,3 +4383,5 @@ SceneRoots:
   - {fileID: 30605625}
   - {fileID: 670047069}
   - {fileID: 1167547304}
+  - {fileID: 1377736107}
+  - {fileID: 289966696}
