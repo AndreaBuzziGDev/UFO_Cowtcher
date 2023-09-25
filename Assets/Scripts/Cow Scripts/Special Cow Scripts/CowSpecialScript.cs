@@ -46,6 +46,8 @@ public abstract class CowSpecialScript : MonoBehaviour
 
     ///BEHAVIOUR
     protected abstract void HandleDedicatedBehaviour();
+
+    //TODO: DISCARD
     protected virtual void DisableDedicatedBehaviour()
     {
 
