@@ -6,7 +6,8 @@ using System.Linq;
 public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
 {
     //DATA
-
+    private bool isCurseActive;
+    public bool IsCurseActive { get { return isCurseActive; } }
 
     List<Cow> disappearedCows = new();
 
@@ -44,6 +45,7 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
             }
         }
 
+        isCurseActive = true;
         StartCoroutine(CurseRoutine(curseDuration));
     }
 
@@ -60,6 +62,7 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
         foreach(Cow dCow in disappearedCows)
             dCow.gameObject.SetActive(true);
 
+        isCurseActive = false;
     }
 
 }

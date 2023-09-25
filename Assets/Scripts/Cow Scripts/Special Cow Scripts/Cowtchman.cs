@@ -40,7 +40,7 @@ public class Cowtchman : CowSpecialScript
             //HANDLE A TIMER
             if (specialEffectActivationTimer > 0)
                 specialEffectActivationTimer -= Time.fixedDeltaTime;
-            else
+            else if(!GlobalEffectDutch.Instance.IsCurseActive)
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
