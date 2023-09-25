@@ -31,27 +31,6 @@ public class MPLegendaryAlert : AbstractMovementAlert
         Vector3 menacePosition = GameController.Instance.FindUFOAnywhere().GetPositionXZ();
         Vector3 desiredDirection = myCowMovement.transform.position - menacePosition;
 
-        //TODO: MAKE THIS A SPECIAL VARIANT OF ALERT ESCAPE OPPOSITE.
-
-        //TODO: DEBUFF UFO WITH "STUN" FOR 1 SECOND EVERY 10 SECONDS
-        //TODO: THIS NEEDS TO BE REWORKED - ANOTHER SCRIPT WILL CARRY ON THE WORK NEEDED FOR THIS TO OPERATE INDEPENDENTLY FROM EACH LEGENDARY COW
-        if (timerToPlayerStun <= 0.0f)
-        {
-            PlayerController pc = GameController.Instance.FindPlayerAnywhere();
-
-            //STUN IF WITHIN RADIUS
-            Vector3 cowPos = myCowMovement.transform.position;
-            Vector3 baseUFOPos = new Vector3(pc.transform.position.x, 0, pc.transform.position.z);//TODO: THIS IS USED OFTEN. EXPORT AS FUNCTIONALITY/UTILITY?
-            if ((cowPos-baseUFOPos).magnitude < myCowMovement.CowScript.AlertRadius )
-            {
-                pc.ApplyStun(this.stunDuration);
-                UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
-                  
-            }
-            ResetTimers();
-        }
-
-
         return desiredDirection.normalized;
     }
 
