@@ -7,7 +7,7 @@ public class Cowalanche : CowSpecialScript
     //DATA
     [SerializeField] private float avalancheDuration = 5.0f;
     [SerializeField] [Range(0, 100)] private float cowSpeedIncreasePercent = 50;
-    [SerializeField] private float specialEffectActivationTimerMax = 5.0f;//TODO: THIS IS THE DELAY, SHOULD ALSO USE A DIFFERENT ITEM TO IMPLEMENT THE SUBSEQUENT DELAYS?
+    [SerializeField] private float specialEffectActivationTimerMax = 5.0f;
     private float specialEffectActivationTimer;
 
     ///TECHNICAL DATA
