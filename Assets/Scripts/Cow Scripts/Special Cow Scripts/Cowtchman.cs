@@ -60,6 +60,8 @@ public class Cowtchman : CowSpecialScript
     //FUNCTIONALITIES
     public void ApplySpecialEffect()
     {
+        //TODO: IMPLEMENT
+
         //APPLY CURSE TO PLAYER (FIRE EVENT INSTEAD?)
 
         //USE COROUTINE TO HANDLE THE DISAPPEARANCE OF COWS?
