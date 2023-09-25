@@ -18,8 +18,12 @@ public class Cowgon : CowSpecialScript
     //METHODS
     private void Start()
     {
+        //REFERENCES
         playerUFO = GameController.Instance.FindUFOAnywhere();
         playerController = GameController.Instance.FindPlayerAnywhere();
+
+        //
+        specialEffectActivationTimer = specialEffectActivationTimerMax;
     }
 
     //ABSTRACT CONCRETIZATION
