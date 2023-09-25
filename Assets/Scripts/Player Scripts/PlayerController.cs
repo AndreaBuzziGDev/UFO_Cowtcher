@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private float freezeDuration = 0.0f;
     public bool IsFrozen { get { return (freezeDuration > 0); } }
 
-    //
+    //TODO: IMPLEMENT THE REST AND USE - FOR NOW TERROR ON UFO WILL BE STUN.
     private float terrorDuration = 0.0f;
     public bool IsTerrified { get { return terrorDuration > 0; } }
 
