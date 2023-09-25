@@ -28,11 +28,11 @@ public abstract class CowSpecialScript : MonoBehaviour
     {
         if (myCow.IsAlert)
         {
-            //TODO: ENABLE INSTANT-SPECIAL EFFECTS (ATMOSPHERIC STUFF & THAT KIND OF THINGS)
-
-
             //DEDICATED BEHAVIOUR
             HandleDedicatedBehaviour();
+
+            //TODO: ENABLE INSTANT-SPECIAL EFFECTS (ATMOSPHERIC STUFF & THAT KIND OF THINGS)
+
 
         }
         else if (myCow.IsCalm)
@@ -51,6 +51,7 @@ public abstract class CowSpecialScript : MonoBehaviour
 
     }
 
+    //TODO: ALLOW IMPLEMENTATION OF OTHER ASPECTS
 
 
 }
