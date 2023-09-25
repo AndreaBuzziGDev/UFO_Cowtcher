@@ -62,7 +62,9 @@ public class Derek : CowSpecialScript
     public static void ApplySpecialEffect(float ringPowerDuration)
     {
         //CHOOSE RANDOMLY - DRAGON, DUTCH, TULCU, COWALANCHE, SAURON
+
         //TODO: ONLY IF THE CORRESPONDING COW HAS BEEN UNLOCKED
+
         int randomIndex = Random.Range(0, 5);
         switch (randomIndex)
         {
