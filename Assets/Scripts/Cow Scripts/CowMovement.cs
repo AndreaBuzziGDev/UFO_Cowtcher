@@ -82,6 +82,13 @@ public class CowMovement : MonoBehaviour
         CowSO.UniqueID.L003_Flying_Cowtchman
     };
 
+    ///RUN FASTER DURING AVALANCHE
+    HashSet<CowSO.UniqueID> runsFasterInAvalanche = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.L005_Cowalanche,
+        CowSO.UniqueID.R011_Cowflake,
+        CowSO.UniqueID.R008_Ice_Cowm
+    };
+
 
     //METHODS
     //...
@@ -232,7 +239,12 @@ public class CowMovement : MonoBehaviour
 
         //DEFAULT
         else
-            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+        {
+            if (runsFasterInAvalanche.Contains(myCow.CowTemplate.UID))
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * GlobalEffectAvalanche.Instance.AvalancheSpeedMult * intendedDirection;
+            else
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+        }
 
     }
     
