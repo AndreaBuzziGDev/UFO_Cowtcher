@@ -79,5 +79,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5259244113235226185, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8207363792838798875}
   m_SourcePrefab: {fileID: 100100000, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+--- !u!114 &3727994553371295582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2271979305478991426, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 3187368139416686876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261870537795141461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d9dfc2b588569418a06ca81fbf7850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5489631595458194746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6923396806548110374, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 3187368139416686876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261870537795141461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0447c8e0fc5dce4fb8b1528ce83d51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7261870537795141461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5259244113235226185, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 3187368139416686876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8207363792838798875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261870537795141461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82761ca96ba030c4ab2d4d823258d51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCow: {fileID: 5489631595458194746}
+  myMovement: {fileID: 3727994553371295582}
+  avalancheDuration: 5
+  cowSpeedIncreasePercent: 50
+  specialEffectActivationTimerMax: 5
