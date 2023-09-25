@@ -132,6 +132,9 @@ NoiseCollector - https://freesound.org/people/NoiseCollector/sounds/4512/
 Tulcu:
 Shaddius - https://freesound.org/people/Shaddius/sounds/450619/
 
+Cowtchman
+acclivity - https://freesound.org/people/acclivity/sounds/13698/
+
 
 Santa Cows:
 metaepitome - Link: https://freesound.org/people/metaepitome/sounds/331333/
