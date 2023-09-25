@@ -11,6 +11,12 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
 
     List<Cow> disappearedCows = new();
 
+    ///EXCLUDED COWS
+    HashSet<CowSO.UniqueID> excludedCows = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.L003_Flying_Cowtchman,
+        CowSO.UniqueID.L006_Cowre_Trainer
+    };
+
 
     //METHODS
     //...
@@ -38,7 +44,7 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
 
         foreach(Cow fCow in allFoundCows)
         {
-            if (fCow.gameObject.activeSelf && fCow.CowTemplate.UID != CowSO.UniqueID.L003_Flying_Cowtchman)
+            if (fCow.gameObject.activeSelf && !excludedCows.Contains(fCow.CowTemplate.UID))
             {
                 disappearedCows.Add(fCow);
                 fCow.gameObject.SetActive(false);

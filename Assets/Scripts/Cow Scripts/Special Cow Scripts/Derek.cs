@@ -74,7 +74,7 @@ public class Derek : CowSpecialScript
                 Tulcu.ApplyTerror(1);
                 break;
             case 3:
-                Cowalanche.ApplyAvalanche(1);
+                Cowalanche.ApplyAvalanche(5,25);
                 break;
             case 4:
                 Cowron.ApplyRingPower();
