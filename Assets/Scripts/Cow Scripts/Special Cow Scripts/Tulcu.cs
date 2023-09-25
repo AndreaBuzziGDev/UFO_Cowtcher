@@ -7,8 +7,8 @@ public class Tulcu : CowSpecialScript
     //DATA
     [SerializeField] private float terrorDuration = 1.0f;
     [SerializeField] private float subsequentApplicationDelay = 3.0f;
-    [SerializeField] private static int maxCount = 3;
-    private static int count;
+    [SerializeField] private int maxCount = 3;
+    private int count;
 
     [SerializeField] private float specialEffectActivationTimerMax = 5.0f;
     private float specialEffectActivationTimer;
