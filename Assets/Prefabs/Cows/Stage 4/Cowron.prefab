@@ -76,6 +76,14 @@ PrefabInstance:
       propertyPath: cowFadeOutHologramOnCapture
       value: 
       objectReference: {fileID: 9214518739162181658, guid: ae2b33ae61a82264eabfc954ccbdc1e1, type: 3}
+    - target: {fileID: 7274476460106249080, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274476460106249080, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a2b669ae1348e84f9c4c364a6ec69b5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -125,6 +133,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCow: {fileID: 5489631595458194746}
   myMovement: {fileID: 3727994553371295582}
-  ringPowerDuration: 5
-  ufoSpeedDecreasePercent: 20
   specialEffectActivationTimerMax: 5
