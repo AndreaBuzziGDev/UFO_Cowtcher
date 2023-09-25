@@ -24,7 +24,7 @@ public class Cowtchman : CowSpecialScript
         playerController = GameController.Instance.FindPlayerAnywhere();
 
         //
-        specialEffectActivationTimer = specialEffectActivationTimerMax;
+        specialEffectActivationTimer = 0.1f;//THE CURSE PICKS UP IMMEDIATELY AFTER ENTERING ALERT RADIUS
     }
 
 
