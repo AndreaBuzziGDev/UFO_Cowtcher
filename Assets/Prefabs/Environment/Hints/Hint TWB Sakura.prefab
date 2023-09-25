@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3864687888559031464, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d57e8e0ac32d5a94eb4da881b1d94d83, type: 3}
     - target: {fileID: 4893135105638448859, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: hints.Array.size
       value: 3
