@@ -1256,7 +1256,7 @@ MonoBehaviour:
   TutorialImages:
   - {fileID: 21300000, guid: 94a38a2d0149b034c901e4c705f4930d, type: 3}
   - {fileID: 21300000, guid: cdd059b6191767045b88f0a90f9e754f, type: 3}
-  - {fileID: 21300000, guid: 4ad04f142ad67b3478a6c2a7476d600e, type: 3}
+  - {fileID: 21300000, guid: 5db148cb5371b1047bb681e91df0984d, type: 3}
   - {fileID: 21300000, guid: 07cb66799634a864893a5347b2fb1644, type: 3}
   ScrollPoint: {fileID: 4339791328708112218}
   TutorialImage: {fileID: 6995471077261593030}
@@ -2988,7 +2988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4433152061252965288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3404,7 +3404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6593822357000997339
 RectTransform:
   m_ObjectHideFlags: 0
