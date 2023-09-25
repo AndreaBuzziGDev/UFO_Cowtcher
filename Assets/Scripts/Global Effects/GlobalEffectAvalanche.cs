@@ -30,7 +30,7 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     //FUNCTIONALITIES
     public void ApplyAvalanche(float avalancheDuration, float speedBonusPercent)
     {
-        avalancheSpeedMultiplier += speedBonusPercent;
+        avalancheSpeedMultiplier += speedBonusPercent * 4;
         StartCoroutine(AvalancheRoutine(avalancheDuration));
     }
 

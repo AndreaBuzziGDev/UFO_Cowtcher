@@ -212,7 +212,7 @@ public class CowMovement : MonoBehaviour
         //VARIANT - RUN TOWARDS THE CENTER OF THE SPAWNING GRID
         Vector3 intendedDirection = movementDirection;
 
-
+        //TODO: POLISH
         //SOME COWS IGNORE THE FENCE DODGING
         if (IsReflectingAgainstFence() && !cowsThatIgnoreFenceDodge.Contains(myCow.CowTemplate.UID))
         {
@@ -220,7 +220,11 @@ public class CowMovement : MonoBehaviour
             intendedDirection = (new Vector3(mapCenterDirection.x, 0, mapCenterDirection.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
 
             //GLOBAL SPEED MULTIPLIER
-            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+            //TODO: OPTIMIZE
+            if (runsFasterInAvalanche.Contains(myCow.CowTemplate.UID))
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * GlobalEffectAvalanche.Instance.AvalancheSpeedMult * intendedDirection;
+            else
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
 
         //SOME COWS NEED MOVEMENT SMOOTHING FOR WHEN FLEEING THE UFO
@@ -229,15 +233,21 @@ public class CowMovement : MonoBehaviour
             if (rb.velocity == Vector3.zero)
                 rb.velocity = (this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).normalized;
 
-            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * 
-                Vector3.Lerp(
+            Vector3 lerpVector = Vector3.Lerp(
                     rb.velocity.normalized,
-                    intendedDirection, 
+                    intendedDirection,
                     Time.fixedDeltaTime * turningSpeedMult
                 );
+
+            //TODO: OPTIMIZE
+            if (runsFasterInAvalanche.Contains(myCow.CowTemplate.UID))
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * GlobalEffectAvalanche.Instance.AvalancheSpeedMult * lerpVector;
+            else
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
 
         //DEFAULT
+        //TODO: OPTIMIZE
         else
         {
             if (runsFasterInAvalanche.Contains(myCow.CowTemplate.UID))

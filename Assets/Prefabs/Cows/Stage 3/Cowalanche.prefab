@@ -130,5 +130,5 @@ MonoBehaviour:
   myCow: {fileID: 5489631595458194746}
   myMovement: {fileID: 3727994553371295582}
   avalancheDuration: 5
-  cowSpeedIncreasePercent: 50
+  cowSpeedIncreasePercent: 100
   specialEffectActivationTimerMax: 5
