@@ -119,7 +119,9 @@ MonoBehaviour:
   myCow: {fileID: 1095180708247441280}
   myMovement: {fileID: 8115966601086475748}
   terrorDuration: 1
-  specialEffectActivationTimerMax: 3
+  subsequentApplicationDelay: 3
+  maxCount: 3
+  specialEffectActivationTimerMax: 5
 --- !u!114 &8115966601086475748 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2271979305478991426, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
