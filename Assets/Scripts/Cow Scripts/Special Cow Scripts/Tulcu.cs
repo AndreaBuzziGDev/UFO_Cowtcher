@@ -24,7 +24,7 @@ public class Tulcu : CowSpecialScript
         playerController = GameController.Instance.FindPlayerAnywhere();
 
         //
-        specialEffectActivationTimer = 0.1f;//THE CURSE PICKS UP IMMEDIATELY AFTER ENTERING ALERT RADIUS
+        specialEffectActivationTimer = specialEffectActivationTimerMax;
     }
 
 
