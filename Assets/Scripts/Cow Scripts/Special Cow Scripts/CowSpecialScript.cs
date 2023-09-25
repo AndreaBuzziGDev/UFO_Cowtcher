@@ -43,6 +43,8 @@ public abstract class CowSpecialScript : MonoBehaviour
 
 
     //ABSTRACT METHODOLOGY
+
+    ///BEHAVIOUR
     protected abstract void HandleDedicatedBehaviour();
     protected virtual void DisableDedicatedBehaviour()
     {
