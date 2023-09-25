@@ -76,6 +76,7 @@ public class Cowtchman : CowSpecialScript
 
 
     //COROUTINE
+    //TODO: SHOULD THIS BE MOVED IN THE MONOSINGLETON GLOBAL ITEM CONTROLLING THE GAMEPLAY?
 
 
 }
