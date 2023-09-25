@@ -40,10 +40,11 @@ public class Tulcu : CowSpecialScript
         if ((myCow.transform.position - playerUFO.GetPositionXZ()).magnitude < myCow.AlertRadius)
         {
             //HANDLE A TIMER
-            if (specialEffectActivationTimer > 0 && count != 0)
+            if (specialEffectActivationTimer > 0 && count == 0)
                 specialEffectActivationTimer -= Time.fixedDeltaTime;
             else
             {
+                Debug.Log("Tulcu - Applying Debuff");
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
@@ -77,16 +78,15 @@ public class Tulcu : CowSpecialScript
     //COROUTINES
     private IEnumerator TerrorRoutine()
     {
-        //WAIT
-        yield return new WaitForSeconds(subsequentApplicationDelay);
-
-        //APPLY TERROR AGAIN
+        //APPLY TERROR
         ApplyTerror(terrorDuration);
+
+        count++;
 
         //IF COUNT HAS NOT BEEN MAXED OUT, RE-SCHEDULE
         if (count < maxCount)
         {
-            count++;
+            yield return new WaitForSeconds(subsequentApplicationDelay);
             StartCoroutine(TerrorRoutine());
         }
         else
