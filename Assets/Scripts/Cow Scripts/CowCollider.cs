@@ -24,7 +24,6 @@ public class CowCollider : MonoBehaviour
     {
         //
         ContactPoint contact = collision.contacts[0];
-        Debug.Log("CowCollider - OnCollisionEnter Normal: " + contact.normal);
 
         //
         lastCollisionNormal = contact.normal;
