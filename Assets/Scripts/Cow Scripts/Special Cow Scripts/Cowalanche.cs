@@ -63,8 +63,8 @@ public class Cowalanche : CowSpecialScript
     {
         //TODO: IMPLEMENT
 
-        //APPLY TERROR TO PLAYER (FIRE EVENT?) - SHOULD IT BE PAIRED WITH A COROUTINE TO HANDLE RE-ITERATED TERROR?
-        //APPLY TERROR TO COWS (FIRE EVENT?) - SHOULD IT BE PAIRED WITH A COROUTINE TO HANDLE RE-ITERATED TERROR?
+        //APPLY AVALANCHE TO UFO (FIRE EVENT?)
+        //APPLY AVALANCHE TO COWS (FIRE EVENT?)
 
         //playerController.ApplyStun(this.stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
