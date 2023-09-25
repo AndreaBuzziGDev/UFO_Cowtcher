@@ -133,5 +133,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCow: {fileID: 5489631595458194746}
   myMovement: {fileID: 3727994553371295582}
-  curseDuration: 1
+  curseDuration: 5
   specialEffectActivationTimerMax: 5
