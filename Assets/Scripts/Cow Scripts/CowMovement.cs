@@ -75,7 +75,11 @@ public class CowMovement : MonoBehaviour
         CowSO.UniqueID.R015_Kowtos
     };
 
-
+    //COWS:
+    ///IMMUNE TO TERROR
+    HashSet<CowSO.UniqueID> immuneToTerror = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.L002_Cowhtulhu
+    };
 
 
     //METHODS
@@ -144,12 +148,13 @@ public class CowMovement : MonoBehaviour
                 break;
         }
 
-        //TODO: COULD THIS BE IMPROVED FURTHER?
 
         //IF TERROR: SHAKE
-        if (myCow.MovState == Cow.MovementState.Terror) AnimateTerror();
+        if (myCow.MovState == Cow.MovementState.Terror && !immuneToTerror.Contains(myCow.CowTemplate.UID) )
+            AnimateTerror();
         //ELSE: MOVE
-        else HandleMovement();
+        else 
+            HandleMovement();
     }
 
 
