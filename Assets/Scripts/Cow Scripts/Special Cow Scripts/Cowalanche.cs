@@ -25,7 +25,7 @@ public class Cowalanche : CowSpecialScript
         playerController = GameController.Instance.FindPlayerAnywhere();
 
         //
-        specialEffectActivationTimer = 0.1f;//AVALANCHE STARTS IMMEDIATELY
+        specialEffectActivationTimer = 2f;//AVALANCHE STARTS IMMEDIATELY
     }
 
 
@@ -46,7 +46,7 @@ public class Cowalanche : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplyAvalanche(this.avalancheDuration);
+                ApplyAvalanche(this.avalancheDuration, this.cowSpeedIncreasePercent);
             }
         }
     }
@@ -55,12 +55,11 @@ public class Cowalanche : CowSpecialScript
 
 
     //FUNCTIONALITIES
-    public static void ApplyAvalanche(float avalancheDuration)
+    public static void ApplyAvalanche(float avalancheDuration, float speedBonusPercent)
     {
-        //TODO: IMPLEMENT
-
-        //APPLY AVALANCHE TO UFO (FIRE EVENT?)
-        //APPLY AVALANCHE TO COWS (FIRE EVENT?)
+        //ACCELERATE INTENDED COWS
+        GlobalEffectAvalanche.Instance.ApplyAvalanche(avalancheDuration, speedBonusPercent);
+        //TODO: SHOULD SLOW DOWN UFO
 
         //playerController.ApplyStun(this.stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
