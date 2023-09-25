@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SantaCows : MonoBehaviour
 {
+    //TODO: THIS IS NOT A CowSpecialScript. SHOULD USE SOMETHING ELSE INSTEAD
+
+
     // Start is called before the first frame update
     void Start()
     {
