@@ -56,11 +56,8 @@ public class Cowtchman : CowSpecialScript
     //FUNCTIONALITIES
     public static void ApplyCurse(float stunDuration)
     {
-        //TODO: IMPLEMENT
+        //TODO: APPLY CURSE TO PLAYER (FIRE EVENT INSTEAD?)
 
-        //APPLY CURSE TO PLAYER (FIRE EVENT INSTEAD?)
-
-        //USE COROUTINE TO HANDLE THE DISAPPEARANCE OF COWS?
 
         //playerController.ApplyStun(this.stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
