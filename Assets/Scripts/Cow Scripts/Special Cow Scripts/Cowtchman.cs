@@ -51,11 +51,7 @@ public class Cowtchman : CowSpecialScript
     }
 
 
-    protected override void DisableDedicatedBehaviour()
-    {
-        //TODO: CHECK IF IT NEEDS IMPLEMENTATION
 
-    }
 
     //FUNCTIONALITIES
     public static void ApplyCurse(float stunDuration)

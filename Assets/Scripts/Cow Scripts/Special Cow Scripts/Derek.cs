@@ -52,11 +52,7 @@ public class Derek : CowSpecialScript
     }
 
 
-    protected override void DisableDedicatedBehaviour()
-    {
-        //TODO: CHECK IF IT NEEDS IMPLEMENTATION
 
-    }
 
     //FUNCTIONALITIES
     public static void ApplySpecialEffect(float ringPowerDuration)

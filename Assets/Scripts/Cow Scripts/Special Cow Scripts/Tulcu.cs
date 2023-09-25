@@ -51,11 +51,7 @@ public class Tulcu : CowSpecialScript
     }
 
 
-    protected override void DisableDedicatedBehaviour()
-    {
-        //TODO: CHECK IF IT NEEDS IMPLEMENTATION
 
-    }
 
     //FUNCTIONALITIES
     public static void ApplyTerror(float terrorDuration)

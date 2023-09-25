@@ -50,11 +50,7 @@ public class Cowron : CowSpecialScript
     }
 
 
-    protected override void DisableDedicatedBehaviour()
-    {
-        //TODO: CHECK IF IT NEEDS IMPLEMENTATION
 
-    }
 
     //FUNCTIONALITIES
     public static void ApplyRingPower()
