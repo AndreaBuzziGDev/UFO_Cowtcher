@@ -44,7 +44,6 @@ public class Tulcu : CowSpecialScript
                 specialEffectActivationTimer -= Time.fixedDeltaTime;
             else if(count == 0)
             {
-                Debug.Log("Tulcu - Applying Debuff");
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
@@ -79,14 +78,12 @@ public class Tulcu : CowSpecialScript
         //APPLY TERROR
         ApplyTerror(terrorDuration);
         count++;
-        Debug.Log("Tulcu - Applied terror for the: " + count + " time");
         yield return new WaitForSeconds(subsequentApplicationDelay);
 
 
         //IF COUNT HAS NOT BEEN MAXED OUT, RE-SCHEDULE
         if (count < maxCount)
         {
-            Debug.Log("Tulcu - Starting Coroutine with Index: " + (count + 1));
             StartCoroutine(TerrorRoutine());
         }
         else
