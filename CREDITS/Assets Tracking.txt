@@ -126,6 +126,9 @@ soundmary - https://freesound.org/people/soundmary/sounds/194963/
 Cowctor ALT:
 egomassive - Link: https://freesound.org/people/egomassive/sounds/536730/
 
+Cowgon:
+NoiseCollector - https://freesound.org/people/NoiseCollector/sounds/4512/
+
 Tulcu:
 Shaddius - https://freesound.org/people/Shaddius/sounds/450619/
 
