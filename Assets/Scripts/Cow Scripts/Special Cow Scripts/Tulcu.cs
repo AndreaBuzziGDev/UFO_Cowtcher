@@ -41,7 +41,10 @@ public class Tulcu : CowSpecialScript
         {
             //HANDLE A TIMER
             if (specialEffectActivationTimer > 0)
-                specialEffectActivationTimer -= Time.fixedDeltaTime;
+            {
+                if (count == 0)
+                    specialEffectActivationTimer -= Time.fixedDeltaTime;
+            }
             else if(count == 0)
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
