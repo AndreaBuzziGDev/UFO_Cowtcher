@@ -59,6 +59,9 @@ public class Cowgon : CowSpecialScript
     {
         playerController.ApplyStun(this.stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
+
+        //TODO: DO SOME VISUAL EFFECTS ON THE COW?
+
     }
 
 }
