@@ -45,7 +45,7 @@ public class Tulcu : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplySpecialEffect(this.terrorDuration);
+                ApplyTerror(this.terrorDuration);
             }
         }
     }
@@ -58,7 +58,7 @@ public class Tulcu : CowSpecialScript
     }
 
     //FUNCTIONALITIES
-    public static void ApplySpecialEffect(float terrorDuration)
+    public static void ApplyTerror(float terrorDuration)
     {
         //TODO: IMPLEMENT
 

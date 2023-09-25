@@ -46,7 +46,7 @@ public class Cowalanche : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplySpecialEffect(this.avalancheDuration);
+                ApplyAvalanche(this.avalancheDuration);
             }
         }
     }
@@ -59,7 +59,7 @@ public class Cowalanche : CowSpecialScript
     }
 
     //FUNCTIONALITIES
-    public static void ApplySpecialEffect(float avalancheDuration)
+    public static void ApplyAvalanche(float avalancheDuration)
     {
         //TODO: IMPLEMENT
 

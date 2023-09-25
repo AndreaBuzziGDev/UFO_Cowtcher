@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cowtchman : CowSpecialScript
 {
     //DATA
-    [SerializeField] private float curseDuration = 1.0f;
+    [SerializeField] private float curseDuration = 5.0f;
     [SerializeField] private float specialEffectActivationTimerMax = 5.0f;
     private float specialEffectActivationTimer;
 
@@ -45,7 +45,7 @@ public class Cowtchman : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplySpecialEffect(this.curseDuration);
+                ApplyCurse(this.curseDuration);
             }
         }
     }
@@ -58,7 +58,7 @@ public class Cowtchman : CowSpecialScript
     }
 
     //FUNCTIONALITIES
-    public static void ApplySpecialEffect(float stunDuration)
+    public static void ApplyCurse(float stunDuration)
     {
         //TODO: IMPLEMENT
 

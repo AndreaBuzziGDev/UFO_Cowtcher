@@ -40,7 +40,7 @@ public class Cowgon : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplySpecialEffect(this.stunDuration);
+                ApplyStun(this.stunDuration);
             }
         }
     }
@@ -53,7 +53,7 @@ public class Cowgon : CowSpecialScript
     }
 
     //FUNCTIONALITIES
-    public static void ApplySpecialEffect(float stunDuration)
+    public static void ApplyStun(float stunDuration)
     {
         GameController.Instance.FindPlayerAnywhere().ApplyStun(stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
