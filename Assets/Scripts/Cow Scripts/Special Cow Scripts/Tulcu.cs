@@ -40,14 +40,14 @@ public class Tulcu : CowSpecialScript
         if ((myCow.transform.position - playerUFO.GetPositionXZ()).magnitude < myCow.AlertRadius)
         {
             //HANDLE A TIMER
-            if (specialEffectActivationTimer > 0)
+            if (specialEffectActivationTimer > 0 && count != 0)
                 specialEffectActivationTimer -= Time.fixedDeltaTime;
             else
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                StartCoroutine(TerrorRoutine);
+                StartCoroutine(TerrorRoutine());
             }
         }
     }
