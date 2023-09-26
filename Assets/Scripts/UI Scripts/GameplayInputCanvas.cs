@@ -27,6 +27,8 @@ public class GameplayInputCanvas : MonoBehaviour
         myJoystick.enabled = false;
     }
 
+    public void PauseGame() => GameController.Instance.helper.HandleEscInput();
+
 
 
 }

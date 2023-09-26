@@ -9257,10 +9257,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7792221855733420117, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6678651837923775677}
     - target: {fileID: 7809771184081580284, guid: de51f158f275d744bbc11b3c54676ab4, type: 3}
       propertyPath: m_Name
       value: Gameplay Input Canvas
