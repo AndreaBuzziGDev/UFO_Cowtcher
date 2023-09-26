@@ -29,8 +29,6 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     {
         if (IsAvalanche)
             PlaySnow();
-        else
-            StopSnow();
     }
 
 
@@ -45,7 +43,6 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
 
     private void PlaySnow()
     {
-        Debug.Log("Cowalanche PlaySnow");
         foreach (ParticleSystem sf in snowFalls)
         {
             if (!sf.isPlaying)
@@ -57,7 +54,6 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     }
     private void StopSnow()
     {
-        Debug.Log("Cowalanche StopSnow");
         foreach (ParticleSystem sf in snowFalls)
         {
             if (sf.isPlaying)
@@ -75,7 +71,7 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
 
         //RE-SET SPEED
         avalancheSpeedMultiplier = 100.0f;
-        Debug.Log("Cowalanche ended");
+        StopSnow();
     }
 
 }

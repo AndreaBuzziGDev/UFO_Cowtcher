@@ -37,7 +37,7 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
         if(true)
             PlayRain();
         else
-            StopRain();
+            StopRain();//TODO: MOVE ELSEWHERE LIKE WITH SNOWSTORM
     }
 
 
