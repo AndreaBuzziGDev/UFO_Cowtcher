@@ -77,7 +77,7 @@ public class Derek : CowSpecialScript
                 Cowtchman.ApplyCurse(5);
                 break;
             case 2:
-                Tulcu.ApplyTerror(1);
+                Tulcu.ApplyTerror(1, 3, 3);
                 break;
             case 3:
                 Cowalanche.ApplyAvalanche(5,25);

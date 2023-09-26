@@ -47,7 +47,7 @@ public class Cowtchman : CowSpecialScript
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
-                //SPECIAL EFFECT - APPLY STUN
+                //SPECIAL EFFECT - APPLY CURSE
                 ApplyCurse(this.curseDuration);
             }
         }

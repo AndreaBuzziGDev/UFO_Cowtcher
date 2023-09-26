@@ -5,6 +5,8 @@ using UnityEngine;
 public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
 {
     //DATA
+    private int terrorCount = 0;
+    public bool IsTerrorActive { get { return terrorCount > 0; } }
 
     ///PARTICLES
     [SerializeField] List<ParticleSystem> rainFalls;
@@ -28,20 +30,19 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*
-        if ()
-        {
-
-        }
-        */
-        if(true)
+        if(IsTerrorActive)
             PlayRain();
-        else
-            StopRain();//TODO: MOVE ELSEWHERE LIKE WITH SNOWSTORM
     }
 
 
     //FUNCTIONALITIES
+    public void ApplyTerror(float terrorDuration, int terrorIterations, float waveDelay)
+    {
+        terrorCount = terrorIterations;
+        StartCoroutine(TerrorRoutine(terrorDuration, waveDelay));
+    }
+
+
     private void PlayRain()
     {
         foreach (ParticleSystem rf in rainFalls)
@@ -74,6 +75,36 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
             if (rs.isPlaying)
                 rs.gameObject.SetActive(false);
         }
+    }
+
+
+
+    //COROUTINES
+    private IEnumerator TerrorRoutine(float terrorDuration, float waveDelay)
+    {
+        //TODO: IMPLEMENT
+
+        //APPLY TERROR TO PLAYER
+        GameController.Instance.FindPlayerAnywhere().ApplyStun(terrorDuration / 3);//TODO: STUN THE UFO FOR FULL TIMER?
+
+        //APPLY TERROR TO COWS (FIRE EVENT?)
+        CowManager.Instance.ApplyGlobalTerrify(terrorDuration);
+
+        //playerController.ApplyStun(this.stunDuration);
+        UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
+
+        //
+        terrorCount--;
+
+        if (terrorCount > 0)
+        {
+            yield return new WaitForSeconds(waveDelay);
+            StartCoroutine(TerrorRoutine(terrorDuration, waveDelay));
+
+        }
+        else
+            StopRain();
+
     }
 
 }

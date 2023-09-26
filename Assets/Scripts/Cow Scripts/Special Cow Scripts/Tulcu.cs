@@ -6,11 +6,10 @@ public class Tulcu : CowSpecialScript
 {
     //DATA
     [SerializeField] private float terrorDuration = 1.0f;
+    [SerializeField] private int terrorIterations = 3;
     [SerializeField] private float subsequentApplicationDelay = 3.0f;
-    [SerializeField] private int maxCount = 3;
-    private int count;
 
-    [SerializeField] private float specialEffectActivationTimerMax = 5.0f;
+    [SerializeField] private float specialEffectActivationTimerMax = 0.1f;
     private float specialEffectActivationTimer;
 
     ///TECHNICAL DATA
@@ -42,15 +41,15 @@ public class Tulcu : CowSpecialScript
             //HANDLE A TIMER
             if (specialEffectActivationTimer > 0)
             {
-                if (count == 0)
+                if (!GlobalEffectTulcu.Instance.IsTerrorActive)
                     specialEffectActivationTimer -= Time.fixedDeltaTime;
             }
-            else if(count == 0)
+            else
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                StartCoroutine(TerrorRoutine());
+                ApplyTerror(this.terrorDuration, this.terrorIterations, this.subsequentApplicationDelay);
             }
         }
     }
@@ -59,38 +58,12 @@ public class Tulcu : CowSpecialScript
 
 
     //FUNCTIONALITIES
-    public static void ApplyTerror(float terrorDuration)
+    public static void ApplyTerror(float terrorDuration, int terrorIterations, float waveDelay)
     {
-        //APPLY TERROR TO PLAYER (FIRE EVENT?) - SHOULD IT BE PAIRED WITH A COROUTINE TO HANDLE RE-ITERATED TERROR?
-        GameController.Instance.FindPlayerAnywhere().ApplyStun(terrorDuration / 3);//TODO: STUN THE UFO FOR FULL TIMER?
-
-        //APPLY TERROR TO COWS (FIRE EVENT?) - SHOULD IT BE PAIRED WITH A COROUTINE TO HANDLE RE-ITERATED TERROR?
-        CowManager.Instance.ApplyGlobalTerrify(terrorDuration);
-
-        //playerController.ApplyStun(this.stunDuration);
-        UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
+        GlobalEffectTulcu.Instance.ApplyTerror(terrorDuration, terrorIterations, waveDelay);
 
         //TODO: DO SOME VISUAL EFFECTS ON THE COW?
 
-    }
-
-
-    //COROUTINES
-    private IEnumerator TerrorRoutine()
-    {
-        //APPLY TERROR
-        ApplyTerror(terrorDuration);
-        count++;
-        yield return new WaitForSeconds(subsequentApplicationDelay);
-
-
-        //IF COUNT HAS NOT BEEN MAXED OUT, RE-SCHEDULE
-        if (count < maxCount)
-        {
-            StartCoroutine(TerrorRoutine());
-        }
-        else
-            count = 0;
     }
 
 }
