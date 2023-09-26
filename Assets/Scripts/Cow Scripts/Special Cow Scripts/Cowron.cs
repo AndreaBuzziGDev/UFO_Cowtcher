@@ -58,7 +58,7 @@ public class Cowron : CowSpecialScript
     //FUNCTIONALITIES
     public static void ApplyRingPower(float ringPowerDuration, float speedMalus)
     {
-        GlobalEffectSauron.Instance.ApplyRingPower(ringPowerDuration, -speedMalus);//REMEMBER: NEGATIVE SPEED BONUS
+        GlobalEffectSauron.Instance.ApplyRingPower(ringPowerDuration, speedMalus);//REMEMBER: NEGATIVE SPEED BONUS
 
         //playerController.ApplyStun(this.stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
