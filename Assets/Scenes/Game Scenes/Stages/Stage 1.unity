@@ -3802,69 +3802,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4021673506348170653, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4021673506348170653, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4021673507484540116, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051000659596729192, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051000661010987553, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051000661010987553, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4275020629101030084, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4275020629101030084, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4275020629977385869, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403705772658803607, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403705772658803607, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403705774206231262, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5592028682301532077, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
       propertyPath: m_Name
       value: GameController
-      objectReference: {fileID: 0}
-    - target: {fileID: 5626537411655283056, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5626537412397420601, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5626537412397420601, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5687211359725146770, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
       propertyPath: m_LocalPosition.x
