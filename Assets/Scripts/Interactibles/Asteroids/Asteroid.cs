@@ -27,6 +27,12 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private Vector3 additionalTranslate;
     [SerializeField] private GameObject ImpactExplosion;
 
+    ///TRAIL SOUND
+    [SerializeField] private AudioSource asteroidTrailSound;
+
+    ///EXPLOSION SOUND
+    [SerializeField] private GameObject asteroidExplosionSoundCarryingPrefab;
+
 
 
     //METHODS
@@ -61,6 +67,10 @@ public class Asteroid : MonoBehaviour
             //TODO: DESTROY DELAYED OR SOMEHOW STOP EXPLOSION FROM OCCURRING
             Destroy(explosionPrefab, 5);
         }
+
+        //PLAY SOUND OF EXPLOSION
+        GameObject soundExplosion = Instantiate(asteroidExplosionSoundCarryingPrefab, this.transform.position, Quaternion.identity);
+        Destroy(soundExplosion, 4);
 
         //DESTROY ASTEROID
         Destroy(this.gameObject);
