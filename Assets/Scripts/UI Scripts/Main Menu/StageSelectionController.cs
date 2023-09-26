@@ -24,6 +24,10 @@ public class StageSelectionController : MonoBehaviour
     [SerializeField] private StageExpBar experienceBar;
 
 
+    ///SOUNDS
+    [SerializeField] private AudioSource playGameSound;
+
+
 
     //METHODS
     //...
@@ -105,8 +109,21 @@ public class StageSelectionController : MonoBehaviour
     ///TARGET REACHING
     public void LoadSelectedScene()
     {
-        if (isSceneSet) SceneNavigationController.Instance.LoadScene(targetStageScene);
+        if (isSceneSet)
+        {
+            playGameSound.Play();
+            StartCoroutine(LoadSceneRoutine());
+        }
     }
 
+    //COROUTINE
+    private IEnumerator LoadSceneRoutine()
+    {
+        //WAIT FOR TIME
+        yield return new WaitForSeconds(3);
+
+        //LOAD STAGE
+        SceneNavigationController.Instance.LoadScene(targetStageScene);
+    }
 
 }
