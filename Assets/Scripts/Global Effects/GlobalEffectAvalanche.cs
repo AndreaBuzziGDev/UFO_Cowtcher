@@ -20,8 +20,8 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     // Start is called before the first frame update
     void Start()
     {
-        foreach (ParticleSystem rf in snowFalls)
-            rf.gameObject.SetActive(false);
+        foreach (ParticleSystem sf in snowFalls)
+            sf.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
