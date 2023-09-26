@@ -10,6 +10,8 @@ public class GlobalEffectSauron : MonoSingleton<GlobalEffectSauron>
 
     public bool IsRingPowerActive { get { return SauronMult < 1; } }
 
+    ///PARTICLES
+    [SerializeField] List<ParticleSystem> ignesFatui;
 
 
     //METHODS
@@ -18,13 +20,15 @@ public class GlobalEffectSauron : MonoSingleton<GlobalEffectSauron>
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (ParticleSystem igne in ignesFatui)
+            igne.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (IsRingPowerActive)
+            PlayRingPower();
     }
 
 
@@ -37,6 +41,27 @@ public class GlobalEffectSauron : MonoSingleton<GlobalEffectSauron>
 
 
 
+    private void PlayRingPower()
+    {
+        foreach (ParticleSystem igne in ignesFatui)
+        {
+            if (!igne.isPlaying)
+            {
+                igne.gameObject.SetActive(true);
+                igne.Play();
+            }
+        }
+    }
+    private void StopRingPower()
+    {
+        foreach (ParticleSystem igne in ignesFatui)
+        {
+            if (igne.isPlaying)
+                igne.gameObject.SetActive(false);
+        }
+    }
+
+
 
     //COROUTINES
     private IEnumerator RingPowerRoutine(float ringPowerDuration)
@@ -46,6 +71,7 @@ public class GlobalEffectSauron : MonoSingleton<GlobalEffectSauron>
 
         //RE-SET SPEED
         sauronMult = 100.0f;
+        StopRingPower();
     }
 
 }
