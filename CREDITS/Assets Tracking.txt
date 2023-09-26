@@ -233,6 +233,8 @@ ejfortin - https://freesound.org/people/ejfortin/sounds/49663/
 Turret Activation
 BloodPixelHero - Link: https://freesound.org/people/BloodPixelHero/sounds/580858/
 
+Turret Explosion
+derplayer - https://freesound.org/people/derplayer/sounds/587189/
 
 
 

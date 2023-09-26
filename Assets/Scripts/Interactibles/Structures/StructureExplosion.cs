@@ -19,6 +19,10 @@ public class StructureExplosion : MonoBehaviour
     [SerializeField] private GameObject smallExplosionPs;
 
 
+    ///AUDIO SOURCE
+    [SerializeField] private GameObject turretExplosionSoundCarryingPrefab;
+
+
 
     //METHODS
     //...
@@ -35,6 +39,9 @@ public class StructureExplosion : MonoBehaviour
 
             //DO SMALL EXPLOSIONS
             DoSmallExplosion();
+
+            //PLAY SOUND
+            Instantiate(turretExplosionSoundCarryingPrefab, this.transform.position, Quaternion.identity);
         }
     }
 

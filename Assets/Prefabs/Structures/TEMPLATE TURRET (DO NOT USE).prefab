@@ -741,6 +741,7 @@ MonoBehaviour:
   - {fileID: 5270986144639302323}
   bigExplosionPS: {fileID: 1892078723244562, guid: 5e17259f95100bf4e9e231c3256686f7, type: 3}
   smallExplosionPs: {fileID: 1134129239631916, guid: f37cd62e951d770439331c126142e666, type: 3}
+  turretExplosionSoundCarryingPrefab: {fileID: 4811688562516748578, guid: c1305991ccf10344d95885233425bf81, type: 3}
 --- !u!1 &8286566320680501994
 GameObject:
   m_ObjectHideFlags: 0
