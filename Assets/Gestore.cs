@@ -11,8 +11,11 @@ public class Gestore : MonoBehaviour
     [SerializeField] GameObject Planet;
     [SerializeField] GameObject Accessory;
     [SerializeField] GameObject AccessoryRetro;
+    [SerializeField] GameObject LockPlanet;
+    [SerializeField] GameObject Shadow;
     [SerializeField] private SceneNavigationController.eStageSceneName[] intendedTargetScene;
     [SerializeField] private StageSelectionController parentController;
+    [SerializeField] private Button playButton;
 
 
     private int index = 0;
@@ -42,6 +45,7 @@ public class Gestore : MonoBehaviour
             Accessory.GetComponent<Image>().sprite = Accessories[index];
             AccessoryRetro.GetComponent<Image>().sprite = AccessoriesRetro[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
+            
         }
         else
         {
@@ -52,6 +56,26 @@ public class Gestore : MonoBehaviour
             AccessoryRetro.GetComponent<Image>().sprite = AccessoriesRetro[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
         }
+
+        //Controllo disponibilità pianeta
+        if (!SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString()))
+        {
+            Planet.GetComponent<Image>().color = Color.black;
+            Accessory.GetComponent<Image>().color = Color.black;
+            AccessoryRetro.GetComponent<Image>().color = Color.black;
+            LockPlanet.SetActive(true);
+            Shadow.SetActive(false);
+        }
+        else
+        {
+            Planet.GetComponent<Image>().color = Color.white;
+            Accessory.GetComponent<Image>().color = Color.white;
+            AccessoryRetro.GetComponent<Image>().color = Color.white;
+            LockPlanet.SetActive(false);
+            Shadow.SetActive(true);
+        }
+        playButton.interactable = SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString());
+
     }
 
     public void PreviousPlanet()
@@ -74,6 +98,26 @@ public class Gestore : MonoBehaviour
             AccessoryRetro.GetComponent<Image>().sprite = AccessoriesRetro[index];
             parentController.SetTargetScene(intendedTargetScene[index]);
         }
+
+        //Controllo disponibilità pianeta
+        if (!SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString()))
+        {
+            Planet.GetComponent<Image>().color = Color.black;
+            Accessory.GetComponent<Image>().color = Color.black;
+            AccessoryRetro.GetComponent<Image>().color = Color.black;
+            LockPlanet.SetActive(true);
+            Shadow.SetActive(false);
+        }
+        else
+        {
+            Planet.GetComponent<Image>().color = Color.white;
+            Accessory.GetComponent<Image>().color = Color.white;
+            AccessoryRetro.GetComponent<Image>().color = Color.white;
+            LockPlanet.SetActive(false);
+            Shadow.SetActive(true);
+        }
+        playButton.interactable = SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString());
+
     }
 
 }
