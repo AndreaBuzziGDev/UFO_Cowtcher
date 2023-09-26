@@ -118,7 +118,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.427
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Page Counter SpaceGalaxyRegularFonty
   m_EditorClassIdentifier: 
-  hashCode: -1006858273
+  hashCode: -1974355783
   material: {fileID: -1261699999853307863}
-  materialHashCode: -1113380193
+  materialHashCode: -1678927623
   m_Version: 1.1.0
   m_SourceFontFileGUID: 92db5ef2cedc8e44cb0a9f079edff616
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 92db5ef2cedc8e44cb0a9f079edff616, type: 3}
