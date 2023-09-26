@@ -7,7 +7,7 @@ public class Obscure : MonoBehaviour
 {
     private float targetTime;
     [SerializeField] GameObject Panel;
-    private Color c;
+    public Color c;
 
     private void Start()
     {

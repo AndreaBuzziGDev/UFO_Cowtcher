@@ -68,6 +68,7 @@ public class Gestore : MonoBehaviour
             LockPlanet.SetActive(true);
             PreviewLocked.SetActive(true);
             Shadow.SetActive(false);
+            playButton.GetComponent<Animator>().gameObject.SetActive(false);
         }
         else
         {
@@ -77,6 +78,8 @@ public class Gestore : MonoBehaviour
             LockPlanet.SetActive(false);
             PreviewLocked.SetActive(false);
             Shadow.SetActive(true);
+            playButton.GetComponent<Animator>().gameObject.SetActive(true);
+
         }
         playButton.interactable = SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString());
 
@@ -112,6 +115,8 @@ public class Gestore : MonoBehaviour
             LockPlanet.SetActive(true);
             PreviewLocked.SetActive(true);
             Shadow.SetActive(false);
+            playButton.GetComponent<Animator>().gameObject.SetActive(false);
+
         }
         else
         {
@@ -121,6 +126,8 @@ public class Gestore : MonoBehaviour
             LockPlanet.SetActive(false);
             PreviewLocked.SetActive(false);
             Shadow.SetActive(true);
+            playButton.GetComponent<Animator>().gameObject.SetActive(true);
+
         }
         playButton.interactable = SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString());
 

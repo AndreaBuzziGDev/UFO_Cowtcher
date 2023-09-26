@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a1127f227c5a6e347920cb902c6e4078
+guid: 446dedd0bdb4afc46aae41ec971b0bac
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 15
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -81,33 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -149,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1b_1
+      name: 1c_1
       rect:
         serializedVersion: 2
         x: 309
@@ -163,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62519531def78464eb8da27e8d3ef397
-      internalID: -1278626531
+      spriteID: 5619904eb2de31e4b8d99b545372b349
+      internalID: -599766976
       vertices: []
       indices: 
       edges: []
@@ -172,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 004af9f0d5ff3c248ba08af102fb8d61
     internalID: 0
     vertices: []
     indices: 
@@ -180,18 +154,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1b_0: -1787384949
-      1b_1: -1278626531
-      1b_10: -665872099
-      1b_11: -1003812770
-      1b_2: 2088743295
-      1b_3: -1652594074
-      1b_4: 1681978687
-      1b_5: -1200527285
-      1b_6: -1399042130
-      1b_7: 1458972283
-      1b_8: 305778658
-      1b_9: -1341141947
+      1c_0: 419010334
+      1c_1: -599766976
+      1c_10: 1230070731
+      1c_11: -2053999722
+      1c_2: -1721788718
+      1c_3: -781252635
+      1c_4: -312710348
+      1c_5: -1154843227
+      1c_6: 1616082218
+      1c_7: 886807982
+      1c_8: -615975248
+      1c_9: 1584876377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
