@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 226d6848cdfdc384d8663f2a9fe2691a
+guid: dc9293ef523d799409eaa7c6ad1105e6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,33 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -149,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BARRA0_4
+      name: Lock-PreviewPic_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 65
-        width: 1634
-        height: 375
+        y: 0
+        width: 642
+        height: 558
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f552ffcf623f90f4c963a14acf6ed5c5
-      internalID: 702364533
+      spriteID: 20a432fcfb5c92144b686a5625f07dce
+      internalID: 82651011
       vertices: []
       indices: 
       edges: []
@@ -172,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: e7d0ef36c991e70408b5cdd651fb6263
     internalID: 0
     vertices: []
     indices: 
@@ -180,23 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BARRA0_0: -1815943412
-      BARRA0_1: 1251204596
-      BARRA0_10: 621827604
-      BARRA0_11: 869040726
-      BARRA0_12: 1896666415
-      BARRA0_13: -585152239
-      BARRA0_14: 153915843
-      BARRA0_15: 179026904
-      BARRA0_16: -997333683
-      BARRA0_2: 1551961340
-      BARRA0_3: 428535102
-      BARRA0_4: 702364533
-      BARRA0_5: 1166083421
-      BARRA0_6: -172247983
-      BARRA0_7: 402158741
-      BARRA0_8: 1900096724
-      BARRA0_9: 2072627260
+      Lock-PreviewPic_0: 82651011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

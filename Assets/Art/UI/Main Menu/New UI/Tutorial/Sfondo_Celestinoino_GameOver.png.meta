@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 226d6848cdfdc384d8663f2a9fe2691a
+guid: 711df613e8c1aea489710ae56ada6bd4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BARRA0_4
+      name: Sfondo_Celestinoino_GameOver_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 65
-        width: 1634
-        height: 375
+        x: 227
+        y: 623
+        width: 929
+        height: 1883
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f552ffcf623f90f4c963a14acf6ed5c5
-      internalID: 702364533
+      spriteID: b30145e980fd55e409ed7b48e713deeb
+      internalID: -1466158431
       vertices: []
       indices: 
       edges: []
@@ -180,23 +180,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BARRA0_0: -1815943412
-      BARRA0_1: 1251204596
-      BARRA0_10: 621827604
-      BARRA0_11: 869040726
-      BARRA0_12: 1896666415
-      BARRA0_13: -585152239
-      BARRA0_14: 153915843
-      BARRA0_15: 179026904
-      BARRA0_16: -997333683
-      BARRA0_2: 1551961340
-      BARRA0_3: 428535102
-      BARRA0_4: 702364533
-      BARRA0_5: 1166083421
-      BARRA0_6: -172247983
-      BARRA0_7: 402158741
-      BARRA0_8: 1900096724
-      BARRA0_9: 2072627260
+      Sfondo_Celestinoino_GameOver_0: -1466158431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

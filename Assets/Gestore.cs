@@ -13,9 +13,11 @@ public class Gestore : MonoBehaviour
     [SerializeField] GameObject AccessoryRetro;
     [SerializeField] GameObject LockPlanet;
     [SerializeField] GameObject Shadow;
+    [SerializeField] GameObject PreviewLocked;
     [SerializeField] private SceneNavigationController.eStageSceneName[] intendedTargetScene;
     [SerializeField] private StageSelectionController parentController;
     [SerializeField] private Button playButton;
+    private Color blackPlanet = new Color(0.1f, 0.1f, 0.1f, 1);
 
 
     private int index = 0;
@@ -60,10 +62,11 @@ public class Gestore : MonoBehaviour
         //Controllo disponibilità pianeta
         if (!SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString()))
         {
-            Planet.GetComponent<Image>().color = Color.black;
-            Accessory.GetComponent<Image>().color = Color.black;
-            AccessoryRetro.GetComponent<Image>().color = Color.black;
+            Planet.GetComponent<Image>().color = blackPlanet;
+            Accessory.GetComponent<Image>().color = blackPlanet;
+            AccessoryRetro.GetComponent<Image>().color = blackPlanet;
             LockPlanet.SetActive(true);
+            PreviewLocked.SetActive(true);
             Shadow.SetActive(false);
         }
         else
@@ -72,6 +75,7 @@ public class Gestore : MonoBehaviour
             Accessory.GetComponent<Image>().color = Color.white;
             AccessoryRetro.GetComponent<Image>().color = Color.white;
             LockPlanet.SetActive(false);
+            PreviewLocked.SetActive(false);
             Shadow.SetActive(true);
         }
         playButton.interactable = SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString());
@@ -102,10 +106,11 @@ public class Gestore : MonoBehaviour
         //Controllo disponibilità pianeta
         if (!SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString()))
         {
-            Planet.GetComponent<Image>().color = Color.black;
-            Accessory.GetComponent<Image>().color = Color.black;
-            AccessoryRetro.GetComponent<Image>().color = Color.black;
+            Planet.GetComponent<Image>().color = blackPlanet;
+            Accessory.GetComponent<Image>().color = blackPlanet;
+            AccessoryRetro.GetComponent<Image>().color = blackPlanet;
             LockPlanet.SetActive(true);
+            PreviewLocked.SetActive(true);
             Shadow.SetActive(false);
         }
         else
@@ -114,6 +119,7 @@ public class Gestore : MonoBehaviour
             Accessory.GetComponent<Image>().color = Color.white;
             AccessoryRetro.GetComponent<Image>().color = Color.white;
             LockPlanet.SetActive(false);
+            PreviewLocked.SetActive(false);
             Shadow.SetActive(true);
         }
         playButton.interactable = SaveSystem.IsStageUnlocked("Stage " + (index + 1).ToString());
