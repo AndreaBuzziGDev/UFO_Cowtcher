@@ -1,5 +1,7 @@
 ...
 
+The assets found in the game (for example the art of cows) and not specified in this tracking were made by the Game Designer and team member Six to Seven Simone Marzeddu.
+
 Low Poly Farm Pack Lite
 Link: https://assetstore.unity.com/packages/3d/environments/industrial/low-poly-farm-pack-lite-188100
 
@@ -42,12 +44,34 @@ Magic Book by patrakeevasveta [CC BY 4.0] via Sketchfab - Link: https://sketchfa
 Low-Poly Well
 Well by ajmason3D [CC BY 4.0] via Sketchfab - Link: https://sketchfab.com/3d-models/low-poly-well-ce043536933847fa8a96352d28d56fb9
 
+TREES:
+
+Stage 2 (Umbrellas): 
+Beach Umbrella - Low Poly by Styro - Link: https://sketchfab.com/3d-models/beach-umbrella-low-poly-2c8c7cc2aa154388a5c321c284211236 (CC BY 4.0)
+
+Stage 3 (Christmas trees): 
+
+Christmas Tree Low Poly 2021 by Thunder_Owl - Link: https://sketchfab.com/3d-models/christmas-tree-low-poly-2021-ee1024bde6dd4162ba4407bd890e5838 (CC BY 4.0)
+
+Stage 4 (Sakura Trees): 
+
+FREE LOW POLY SAKURA TREE by juansan0 - Link: https://sketchfab.com/3d-models/free-low-poly-sakura-tree-02c5ca153e8e4e86920690b07146352b (CC BY 4.0)
+
+FENCES:
+
+Stage 2: Low Poly Fence Pack by Broken Vector - Link: https://brokenvector.itch.io/low-poly-fence-pack
+
+Stage 3: 
+Low poly wood fence with snow by assetfactory - Link: https://sketchfab.com/3d-models/low-poly-wood-fence-with-snow-b6e3e7135119421cb11e38ae7024707a (CC BY 4.0)
+Low poly wood fence with snow by assetfactory - Link: https://sketchfab.com/3d-models/low-poly-wood-fence-with-snow-50cd197696334fcfb005978f2a7ae41f (CC BY 4.0)
+Low poly wood fence with snow by assetfactory - Link: https://sketchfab.com/3d-models/low-poly-wood-fence-with-snow-ae0d79f6d0fe4d6eaa023b1cd905c3ba (CC BY 4.0)
+
+Stage 4: Low Poly Stone walls by AkuVain - Link: https://sketchfab.com/3d-models/low-poly-stone-walls-3e71a31454664216b1284056639106f6 (CC BY 4.0)
 
 
-
-Cow shader for sprites to cast shadows
+SHADER: 
+Cow shader for sprites to cast shadows:
 https://www.youtube.com/watch?v=d_OBjV7c1CY&t=34s
-
 
 
 FuelBar:
