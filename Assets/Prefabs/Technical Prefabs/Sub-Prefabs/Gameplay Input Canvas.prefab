@@ -57,7 +57,7 @@ MonoBehaviour:
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
   slideOutTimerMax: 1
-  isDebug: 1
+  isDebug: 0
   spriteToAnimate: {fileID: 4994585797052413544}
   gic: {fileID: 72549146523461819}
 --- !u!114 &4994585797052413544
