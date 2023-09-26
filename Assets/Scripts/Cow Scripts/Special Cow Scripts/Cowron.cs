@@ -5,6 +5,8 @@ using UnityEngine;
 public class Cowron : CowSpecialScript
 {
     //DATA
+    [SerializeField] private float ringPowerDuration = 5.0f;
+    [SerializeField] [Range(0, 100)] private float speedMalus = 50;
     [SerializeField] private float specialEffectActivationTimerMax = 5.0f;
     private float specialEffectActivationTimer;
 
@@ -44,7 +46,7 @@ public class Cowron : CowSpecialScript
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
 
                 //SPECIAL EFFECT - APPLY STUN
-                ApplyRingPower();
+                ApplyRingPower(ringPowerDuration, speedMalus);
             }
         }
     }
@@ -53,12 +55,9 @@ public class Cowron : CowSpecialScript
 
 
     //FUNCTIONALITIES
-    public static void ApplyRingPower()
+    public static void ApplyRingPower(float ringPowerDuration, float speedMalus)
     {
-        //TODO: IMPLEMENT
-
-        //APPLY POWER OF THE RING TO UFO (FIRE EVENT?)
-        //APPLY POWER OF THE RING TO COWS (FIRE EVENT?)
+        GlobalEffectSauron.Instance.ApplyRingPower(ringPowerDuration, -speedMalus);//REMEMBER: NEGATIVE SPEED BONUS
 
         //playerController.ApplyStun(this.stunDuration);
         UIController.Instance.IGPanel.DebuffPanel.fadeToTransparent = true;
