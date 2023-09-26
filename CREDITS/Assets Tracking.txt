@@ -230,6 +230,10 @@ UFO Stun (TODO)
 ???
 
 
+UFO Particle pickup
+YXMusic - https://freesound.org/people/YXMusic/sounds/423653/
+
+
 Item Pickup
 ejfortin - https://freesound.org/people/ejfortin/sounds/49663/
 

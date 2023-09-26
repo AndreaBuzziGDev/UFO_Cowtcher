@@ -14,6 +14,11 @@ public class FuelParticle_WorldItem : MonoBehaviour
     private float timer;
     private float maxTimer = 1.0f;
 
+    ///EXPLOSION SOUND
+    [SerializeField] private GameObject asteroidExplosionSoundCarryingPrefab;
+
+
+
 
     //METHODS
     //...
@@ -60,7 +65,10 @@ public class FuelParticle_WorldItem : MonoBehaviour
         UFO playerUFO = otherGO.GetComponent<UFO>();
         if (playerUFO != null)
         {
-            //TODO: PLAY PARTICLE EFFECT WHEN UFO IS HIT ?
+            //PLAY SOUND OF EXPLOSION
+            GameObject soundExplosion = Instantiate(asteroidExplosionSoundCarryingPrefab, this.transform.position, Quaternion.identity);
+            Destroy(soundExplosion, 4);
+
             Destroy(this.gameObject);
         }
     }

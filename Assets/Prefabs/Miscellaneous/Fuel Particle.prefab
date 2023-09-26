@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2672816228222209352}
   particleMaxSpeed: 50
+  asteroidExplosionSoundCarryingPrefab: {fileID: 3645422981338621153, guid: b6c9a15f88fab0842859dbbad2d78404, type: 3}
 --- !u!136 &6923104028718001725
 CapsuleCollider:
   m_ObjectHideFlags: 0
