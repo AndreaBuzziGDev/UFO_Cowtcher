@@ -501,8 +501,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2871382618478964565}
-  - component: {fileID: -1905210977476053208}
   - component: {fileID: 3827693660343077909}
+  - component: {fileID: -1905210977476053208}
   - component: {fileID: 1159798967417723928}
   - component: {fileID: 7561644486984487891}
   m_Layer: 9
@@ -528,6 +528,27 @@ Transform:
   - {fileID: 862715481678736958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3827693660343077909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000384660636271075}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.3816442, y: 6.471445, z: 1}
+  m_Center: {x: -0.11456299, y: 3.2062488, z: 0}
 --- !u!114 &-1905210977476053208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,27 +572,6 @@ MonoBehaviour:
   expirationTimeMax: 1
   lifetimeMax: 20
   particleGen: {fileID: 1159798967417723928}
---- !u!65 &3827693660343077909
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7000384660636271075}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4.3816442, y: 6.471445, z: 1}
-  m_Center: {x: -0.11456299, y: 3.2062488, z: 0}
 --- !u!114 &1159798967417723928
 MonoBehaviour:
   m_ObjectHideFlags: 0
