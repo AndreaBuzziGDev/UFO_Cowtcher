@@ -57,7 +57,7 @@ MonoBehaviour:
   persistenceFadeoutThreshold: 1
   slideInTimerMax: 1
   slideOutTimerMax: 1
-  isDebug: 0
+  isDebug: 1
   spriteToAnimate: {fileID: 4994585797052413544}
   gic: {fileID: 72549146523461819}
 --- !u!114 &4994585797052413544
@@ -1030,7 +1030,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3acc57f5ffd1be4469bd4e62d40f15d6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
