@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoSingleton<GameController>
 {
     //ENUMS
-    //TODO: MIGHT BE USEFUL TO USE AN ENUM TO HANDLE WETHER THE PLAYER IS IN THE MAIN MENU OR IN A PLAYABLE LEVEL
-
-
-
     public enum EGameState
     {
         Start,
@@ -35,6 +31,8 @@ public class GameController : MonoSingleton<GameController>
     Abductor abductor;
 
 
+    ///SOUNDS
+    [SerializeField] private AudioSource gameOverSound;
 
 
     //METHODS
@@ -143,6 +141,9 @@ public class GameController : MonoSingleton<GameController>
     //GAME OVER
     private static void GameOver()
     {
+        //PLAYS GAME OVER SOUND
+        GameController.Instance.gameOverSound.Play();
+
         //DISABLES OTHER UI ELEMENTS
         UIController.Instance.HigeIGPanel();
 
