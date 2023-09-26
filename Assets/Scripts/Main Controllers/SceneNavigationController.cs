@@ -76,9 +76,10 @@ public class SceneNavigationController : MonoSingleton<SceneNavigationController
         //TODO: THIS CAN BE ENORMOUSLY SIMPLIFIED.
         string intendedScene = TechnicalSceneDictionary[eTechnicalSceneName.MainMenu].AssociatedSceneName;
 
-        //TODO: THIS CAN BE EXPORTED AS A DEDICATED FUNCTIONALITY
-        if (!string.IsNullOrEmpty(intendedScene)) SceneManager.LoadScene(intendedScene);
-        else Debug.Log("Invalid Target Scene: " + targetScene);
+        if (!string.IsNullOrEmpty(intendedScene)) 
+            SceneManager.LoadScene(intendedScene);
+        else 
+            Debug.Log("Invalid Target Scene: " + targetScene);
 
     }
 
