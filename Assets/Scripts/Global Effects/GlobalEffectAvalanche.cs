@@ -29,13 +29,10 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     // Update is called once per frame
     void Update()
     {
-        /*
-        if ()
-        {
-
-        }
-        */
-        PlaySnow();
+        if (IsAvalanche)
+            PlaySnow();
+        else
+            StopSnow();
     }
 
 
@@ -54,6 +51,14 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
         {
             if (!sf.isPlaying)
                 sf.Play();
+        }
+    }
+    private void StopSnow()
+    {
+        foreach (ParticleSystem sf in snowFalls)
+        {
+            if (!sf.isPlaying)
+                sf.Stop();
         }
     }
 

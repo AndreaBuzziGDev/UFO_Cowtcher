@@ -36,7 +36,10 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
 
         }
         */
-        PlayRain();
+        if(true)
+            PlayRain();
+        else
+            StopRain();
     }
 
 
@@ -52,6 +55,20 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
         {
             if (!rs.isPlaying)
                 rs.Play();
+        }
+    }
+
+    private void StopRain()
+    {
+        foreach (ParticleSystem rf in rainFalls)
+        {
+            if (!rf.isPlaying)
+                rf.Stop();
+        }
+        foreach (ParticleSystem rs in rainSplashes)
+        {
+            if (!rs.isPlaying)
+                rs.Stop();
         }
     }
 
