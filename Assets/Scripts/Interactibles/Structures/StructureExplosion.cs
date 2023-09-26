@@ -41,7 +41,8 @@ public class StructureExplosion : MonoBehaviour
             DoSmallExplosion();
 
             //PLAY SOUND
-            Instantiate(turretExplosionSoundCarryingPrefab, this.transform.position, Quaternion.identity);
+            GameObject soundExplosion = Instantiate(turretExplosionSoundCarryingPrefab, this.transform.position, Quaternion.identity);
+            Destroy(soundExplosion, 4);
         }
     }
 
