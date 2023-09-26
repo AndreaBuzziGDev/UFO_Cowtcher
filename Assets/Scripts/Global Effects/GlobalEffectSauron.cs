@@ -8,8 +8,7 @@ public class GlobalEffectSauron : MonoSingleton<GlobalEffectSauron>
     private float sauronMult = 100.0f;
     public float SauronMult { get { return sauronMult / 100.0f; } }
 
-    private bool isRingPower;
-    public bool IsRingPower { get { return isRingPower; } }
+    public bool IsRingPower { get { return SauronMult < 1; } }
 
 
 
@@ -30,13 +29,23 @@ public class GlobalEffectSauron : MonoSingleton<GlobalEffectSauron>
 
 
     //FUNCTIONALITIES
-    //TODO: EFFECT TO APPLY RING POWER
+    public void ApplyRingPower(float ringPowerDuration, float speedMalus)
+    {
+        sauronMult -= speedMalus;
+        StartCoroutine(RingPowerRoutine(ringPowerDuration));
+    }
 
 
 
 
     //COROUTINES
-    //TODO: COROUTINE TO HANDLE EFFECT
+    private IEnumerator RingPowerRoutine(float ringPowerDuration)
+    {
+        //WAIT FOR TIME
+        yield return new WaitForSeconds(ringPowerDuration);
 
+        //RE-SET SPEED
+        sauronMult = 100.0f;
+    }
 
 }
