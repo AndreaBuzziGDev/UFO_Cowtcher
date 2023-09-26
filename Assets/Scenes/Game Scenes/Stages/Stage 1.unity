@@ -3188,63 +3188,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e115be471b7c4408507ae8319bae2c, type: 3}
---- !u!1001 &1922186778
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2871769424612793839, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_Name
-      value: Cowhtulhu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 12.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039313607623092809, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b4a9a442f95c8b449ab8f05bfc05e523, type: 3}
 --- !u!1001 &1922560680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3859,10 +3802,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2829809177772426602, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5592028682301532077, guid: 9168672af7eafa24db7ef829049614a3, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -4137,7 +4076,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: maxNumOfCows
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 714969314596704649, guid: 20047c4d00487e64b848a9b73be4576a, type: 3}
       propertyPath: isGridSpawnMode
@@ -4272,4 +4211,3 @@ SceneRoots:
   - {fileID: 1585448815}
   - {fileID: 30605625}
   - {fileID: 670047069}
-  - {fileID: 1922186778}
