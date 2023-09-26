@@ -79,7 +79,8 @@ public class CowMovement : MonoBehaviour
     ///IMMUNE TO TERROR
     HashSet<CowSO.UniqueID> immuneToTerror = new HashSet<CowSO.UniqueID> {
         CowSO.UniqueID.L002_Cowhtulhu,
-        CowSO.UniqueID.L003_Flying_Cowtchman
+        CowSO.UniqueID.L003_Flying_Cowtchman,
+        CowSO.UniqueID.L006_Cowre_Trainer
     };
 
     ///RUN FASTER DURING AVALANCHE
