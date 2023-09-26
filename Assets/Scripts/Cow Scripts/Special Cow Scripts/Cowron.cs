@@ -6,13 +6,12 @@ public class Cowron : CowSpecialScript
 {
     //DATA
     [SerializeField] private float ringPowerDuration = 5.0f;
-    [SerializeField] [Range(0, 100)] private float speedMalus = 50;
+    [SerializeField] [Range(0, 100)] private float speedMalus = 20;
     [SerializeField] private float specialEffectActivationTimerMax = 5.0f;
     private float specialEffectActivationTimer;
 
     ///TECHNICAL DATA
     private UFO playerUFO;
-    private PlayerController playerController;
 
 
 
@@ -22,7 +21,6 @@ public class Cowron : CowSpecialScript
     {
         //REFERENCES
         playerUFO = GameController.Instance.FindUFOAnywhere();
-        playerController = GameController.Instance.FindPlayerAnywhere();
 
         //
         specialEffectActivationTimer = specialEffectActivationTimerMax;
@@ -40,7 +38,10 @@ public class Cowron : CowSpecialScript
         {
             //HANDLE A TIMER
             if (specialEffectActivationTimer > 0)
-                specialEffectActivationTimer -= Time.fixedDeltaTime;
+            {
+                if (!GlobalEffectSauron.Instance.IsRingPowerActive)
+                    specialEffectActivationTimer -= Time.fixedDeltaTime;
+            }
             else
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;

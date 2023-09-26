@@ -8,7 +8,7 @@ public class GlobalEffectSauron : MonoSingleton<GlobalEffectSauron>
     private float sauronMult = 100.0f;
     public float SauronMult { get { return sauronMult / 100.0f; } }
 
-    public bool IsRingPower { get { return SauronMult < 1; } }
+    public bool IsRingPowerActive { get { return SauronMult < 1; } }
 
 
 

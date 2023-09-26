@@ -77,7 +77,7 @@ public class Derek : CowSpecialScript
                 Cowalanche.ApplyAvalanche(5,25);
                 break;
             case 4:
-                Cowron.ApplyRingPower();
+                Cowron.ApplyRingPower(5, 20);
                 break;
             default:
                 break;

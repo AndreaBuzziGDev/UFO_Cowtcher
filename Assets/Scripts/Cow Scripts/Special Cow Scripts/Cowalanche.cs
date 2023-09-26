@@ -40,7 +40,10 @@ public class Cowalanche : CowSpecialScript
         {
             //HANDLE A TIMER
             if (specialEffectActivationTimer > 0)
-                specialEffectActivationTimer -= Time.fixedDeltaTime;
+            {
+                if (!GlobalEffectAvalanche.Instance.IsAvalanche)
+                    specialEffectActivationTimer -= Time.fixedDeltaTime;
+            }
             else
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;

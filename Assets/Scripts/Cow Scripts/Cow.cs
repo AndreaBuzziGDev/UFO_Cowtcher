@@ -192,7 +192,7 @@ public class Cow : MonoBehaviour
     private void CowAI()
     {
         //STEP 0 - RING POWER
-        if (GlobalEffectSauron.Instance.IsRingPower)
+        if (GlobalEffectSauron.Instance.IsRingPowerActive)
             currentState = State.Alert;
 
         //STEP 1
