@@ -143,6 +143,10 @@ public class GameController : MonoSingleton<GameController>
     //GAME OVER
     private static void GameOver()
     {
+        //DISABLES OTHER UI ELEMENTS
+        UIController.Instance.HigeIGPanel();
+
+        //SHOWS GAME OVER AND PAUSES
         UIController.Instance.ShowGameOver();
         PauseGame();
     }
