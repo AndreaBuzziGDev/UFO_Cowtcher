@@ -12,6 +12,8 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
     //METHODS
     //...
 
+    //TODO: COMPLETE. MUST WORK PROPERLY VIA A REFACTOR OF THE TULCU EFFECT (NEEDS TO WORK LIKE EVERYTHING ELSE
+
     // Start is called before the first frame update
     void Start()
     {
