@@ -9,7 +9,9 @@ public class GameplayInputCanvas : MonoBehaviour
     [SerializeField] Image myJoystickBackground;
     [SerializeField] Image myJoystick;
 
-    //TODO: MOVE FEED STUFF (REFERENCES AND METHODS) HERE?
+    //SOUNDS
+    [SerializeField] AudioSource notificationSound;
+
 
 
     //METHODS
@@ -30,5 +32,10 @@ public class GameplayInputCanvas : MonoBehaviour
     public void PauseGame() => GameController.Instance.helper.HandleEscInput();
 
 
+    public void PlayNotificationSound()
+    {
+        if (!notificationSound.isPlaying)
+            notificationSound.Play();
+    }
 
 }

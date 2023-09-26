@@ -46,6 +46,10 @@ public class FeedItem : MonoBehaviour
     [SerializeField] private UISpriteAnimation spriteToAnimate;
 
 
+    ///GUI REFERENCES (SOUND PLAYING)
+    [SerializeField] private GameplayInputCanvas gic;
+
+
 
 
     //METHODS
@@ -163,6 +167,7 @@ public class FeedItem : MonoBehaviour
     //EVENT-HANDLING
     private void HandleMoossionCompletion(object sender, MoossionCompleteEventArgs e)
     {
+        gic.PlayNotificationSound();
         startSlideAnimation();
     }
 
