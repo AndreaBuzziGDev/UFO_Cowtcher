@@ -125,3 +125,4 @@ MonoBehaviour:
   buffIconRenderer: {fileID: 2641711987203644661}
   shakeAmount: 0.25
   shakeSpeed: 7
+  itempPickupSoundCarryingPrefab: {fileID: 990834504189455018, guid: e479681620eb3664d98a004d23a10b8b, type: 3}

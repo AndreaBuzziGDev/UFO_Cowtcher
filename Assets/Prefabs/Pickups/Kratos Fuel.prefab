@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: Alteration
       value: 
       objectReference: {fileID: 11400000, guid: e5592910476bd6c4db14d00cc23cc6a0, type: 2}
+    - target: {fileID: 7544958186759497162, guid: cc089067635a27e4eab8aee36116c037, type: 3}
+      propertyPath: itempPickupSoundCarryingPrefab
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

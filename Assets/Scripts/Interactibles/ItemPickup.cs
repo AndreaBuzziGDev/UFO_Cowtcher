@@ -28,6 +28,12 @@ public class ItemPickup : MonoInteractible
     [SerializeField] private float shakeAmount;
     [SerializeField] private float shakeSpeed;
 
+    ///PICKUP SOUND
+    [SerializeField] private GameObject itempPickupSoundCarryingPrefab;
+
+
+
+
     //EVENT
     public static event EventHandler<SAPickupEventArgs> ItemPickedUp;
 
@@ -64,6 +70,13 @@ public class ItemPickup : MonoInteractible
             //FIRE EVENT - AN ITEM HAS BEEN PICKED UP
             SAPickupEventArgs myEventArg = new SAPickupEventArgs(Alteration.buffType);
             OnItemPickedUp(myEventArg);
+
+            //PLAY SOUND OF PICKUP
+            if(itempPickupSoundCarryingPrefab != null)
+            {
+                GameObject soundExplosion = Instantiate(itempPickupSoundCarryingPrefab, this.transform.position, Quaternion.identity);
+                Destroy(soundExplosion, 4);
+            }
 
             //DESTROY PICKED UP ITEM
             Destroy(this.gameObject);
