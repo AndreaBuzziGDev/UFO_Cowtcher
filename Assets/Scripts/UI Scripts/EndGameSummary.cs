@@ -53,10 +53,11 @@ public class EndGameSummary : MonoBehaviour
         moossionTwo.text = "FAILED";
         moossionThree.text = "FAILED";
 
+        /*
         if (MoossionManagerV2.Instance.MoossionOne.IsComplete) moossionOne.text = "COMPLETE";
         if (MoossionManagerV2.Instance.MoossionTwo.IsComplete) moossionTwo.text = "COMPLETE";
         if (MoossionManagerV2.Instance.MoossionThree.IsComplete) moossionThree.text = "COMPLETE";
-
+        */
         
         //FINAL EXP
         ///SCORE MULTIPLIER
