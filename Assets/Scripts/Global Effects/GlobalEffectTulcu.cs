@@ -15,15 +15,24 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
     // Start is called before the first frame update
     void Start()
     {
-        PlayRain();
-
+        /*
+        foreach (ParticleSystem rf in rainFalls)
+            rf.Stop();
+        foreach (ParticleSystem rs in rainSplashes)
+            rs.Stop();
+        */
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-     
-        
+        /*
+        if ()
+        {
+
+        }
+        */
+        PlayRain();
     }
 
 
@@ -31,9 +40,15 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
     private void PlayRain()
     {
         foreach (ParticleSystem rf in rainFalls)
-            rf.Play();
+        {
+            if (!rf.isPlaying)
+                rf.Play();
+        }
         foreach (ParticleSystem rs in rainSplashes)
-            rs.Play();
+        {
+            if (!rs.isPlaying)
+                rs.Play();
+        }
     }
 
 }
