@@ -248,17 +248,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18cd449fbea7c954195a2c48651af6f1, type: 3}
---- !u!114 &574749099 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1983828877858108774, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-  m_PrefabInstance: {fileID: 8612450999744871793}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b0b879413891246958bc2691577bcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &865611265
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,55 +596,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1029609017208447584, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1887674295227425581, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
       propertyPath: m_Name
       value: UI Main Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741007701270107690, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3063687295780315611, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972830164035142165, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_text
-      value: '
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 5485875701693849219, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextPlanet
-      objectReference: {fileID: 0}
-    - target: {fileID: 5784161635429161935, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5784161635429161935, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5784161635429161935, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 574749099}
-    - target: {fileID: 5784161635429161935, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5784161635429161935, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetValues
-      objectReference: {fileID: 0}
-    - target: {fileID: 5784161635429161935, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Gestore, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5784161635429161935, guid: feb25631c4e89044fa9884a094fd265b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
