@@ -9,6 +9,9 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     public float AvalancheSpeedMult { get { return avalancheSpeedMultiplier / 100.0f; } }
     public bool IsAvalanche { get { return AvalancheSpeedMult > 1.0f; } }//TODO: SHOULD PROBABLY USE A BOOL VAR FOR THIS?
 
+    ///PARTICLES
+    [SerializeField] List<ParticleSystem> snowFalls;
+
 
 
     //METHODS
@@ -17,13 +20,22 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     // Start is called before the first frame update
     void Start()
     {
-        
+        /*
+        foreach (ParticleSystem rf in snowFalls)
+            rf.Stop();
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
+        if ()
+        {
 
+        }
+        */
+        PlaySnow();
     }
 
 
@@ -32,6 +44,17 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     {
         avalancheSpeedMultiplier += speedBonusPercent;
         StartCoroutine(AvalancheRoutine(avalancheDuration));
+    }
+
+
+
+    private void PlaySnow()
+    {
+        foreach (ParticleSystem sf in snowFalls)
+        {
+            if (!sf.isPlaying)
+                sf.Play();
+        }
     }
 
 
