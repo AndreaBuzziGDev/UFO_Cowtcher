@@ -106,6 +106,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1446165033477130417}
     m_Modifications:
+    - target: {fileID: 4782559178037222879, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
+      propertyPath: m_fontSize
+      value: 9.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782559178037222879, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a06678468a616046b713285ed2d8b55, type: 2}
+    - target: {fileID: 4782559178037222879, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4792514673235601911, guid: 0a06678468a616046b713285ed2d8b55, type: 2}
+    - target: {fileID: 4782559178037222879, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6643198033141641687, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -150,6 +166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hideout infos
       objectReference: {fileID: 0}
+    - target: {fileID: 8815540090802172820, guid: ac995aea43383b04e9ea5d3b6890d845, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -4792514673235601911, guid: 0a06678468a616046b713285ed2d8b55, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
