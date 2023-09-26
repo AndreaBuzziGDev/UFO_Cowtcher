@@ -86,7 +86,8 @@ public class CowMovement : MonoBehaviour
     HashSet<CowSO.UniqueID> runsFasterInAvalanche = new HashSet<CowSO.UniqueID> {
         CowSO.UniqueID.L005_Cowalanche,
         CowSO.UniqueID.R011_Cowflake,
-        CowSO.UniqueID.R008_Ice_Cowm
+        CowSO.UniqueID.R008_Ice_Cowm,
+        CowSO.UniqueID.L006_Cowre_Trainer
     };
 
 
