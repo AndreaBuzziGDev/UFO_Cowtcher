@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1cf7f05207ca5cc48b5e616009fadfad
+guid: c1a52ea526fd3e54092960e38be123c7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,18 +121,53 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Pouse_Button_3
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 321
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9e53d67a9c3ea44bfb2eb57dfab3a2
+      internalID: -1712507193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 6a2cbc21ddfffe7498cebfaae29788d2
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pouse_Button_0: -989831564
+      Pouse_Button_1: -640436269
+      Pouse_Button_10: 858645741
+      Pouse_Button_11: -988975416
+      Pouse_Button_12: 2063170395
+      Pouse_Button_13: -793187610
+      Pouse_Button_2: 1430622498
+      Pouse_Button_3: -1712507193
+      Pouse_Button_4: -216630194
+      Pouse_Button_5: 1152352941
+      Pouse_Button_6: -252557425
+      Pouse_Button_7: 786085365
+      Pouse_Button_8: -245443398
+      Pouse_Button_9: 1475943104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -57,11 +57,11 @@ public class EndGameSummary : MonoBehaviour
         if (MoossionManagerV2.Instance.MoossionTwo.IsComplete) moossionTwo.text = "COMPLETE";
         if (MoossionManagerV2.Instance.MoossionThree.IsComplete) moossionThree.text = "COMPLETE";
 
-
+        
         //FINAL EXP
         ///SCORE MULTIPLIER
         float finalMult = MoossionManagerV2.Instance.GetFinalScoreMultiplier();
-        multiplierValue.text = "X " + finalMult.ToString() + " = ";
+        multiplierValue.text = "X " + finalMult.ToString();// + " = ";
 
         ///ACTUAL EXP
         float actualExp = finalMult * highScore;
