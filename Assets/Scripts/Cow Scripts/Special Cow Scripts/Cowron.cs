@@ -23,7 +23,7 @@ public class Cowron : CowSpecialScript
         playerUFO = GameController.Instance.FindUFOAnywhere();
 
         //
-        specialEffectActivationTimer = specialEffectActivationTimerMax;
+        specialEffectActivationTimer = 0.1;
     }
 
 
