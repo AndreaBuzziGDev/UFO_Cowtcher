@@ -13,6 +13,8 @@ public class InteractibleStructure : MonoInteractible
     private bool hasBeenActivated = false;
     public bool HasBeenActivated { get { return hasBeenActivated; } }
 
+    ///AUDIO SOURCE
+    [SerializeField] private AudioSource activationSound;
 
     ///SPRITE REFERENCES
     [SerializeField] private Sprite turnedOffPedestalSprite;
@@ -89,7 +91,12 @@ public class InteractibleStructure : MonoInteractible
     ///INTERACT
     public override void Interact(GameObject interactionSource)
     {
-        hasBeenActivated = true;
+        //ACTIVATE TURRET ON INTERACTION
+        if (!hasBeenActivated)
+        {
+            activationSound.Play();
+            hasBeenActivated = true;
+        }
 
         //CAN BE INTERACTED ONLY IF IT'S NOT EXPIRING
         if (expireTimeCurrent <= 0)
