@@ -11,6 +11,10 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
 
     List<Cow> disappearedCows = new();
 
+    ///PARTICLE & ATMOSPHERIC
+    [SerializeField] List<ParticleSystem> windRushes;
+
+
     ///EXCLUDED COWS
     HashSet<CowSO.UniqueID> excludedCows = new HashSet<CowSO.UniqueID> {
         CowSO.UniqueID.L003_Flying_Cowtchman,
@@ -24,13 +28,15 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (ParticleSystem pSyst in windRushes)
+            pSyst.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isCurseActive)
+            PlayFog();
     }
 
 
@@ -53,6 +59,28 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
 
         isCurseActive = true;
         StartCoroutine(CurseRoutine(curseDuration));
+    }
+
+
+    private void PlayFog()
+    {
+        foreach (ParticleSystem rf in windRushes)
+        {
+            if (!rf.isPlaying)
+            {
+                rf.gameObject.SetActive(true);
+                rf.Play();
+            }
+        }
+    }
+
+    private void StopFog()
+    {
+        foreach (ParticleSystem rf in windRushes)
+        {
+            if (rf.isPlaying)
+                rf.gameObject.SetActive(false);
+        }
     }
 
 
