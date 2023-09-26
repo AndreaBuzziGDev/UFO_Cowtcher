@@ -25,7 +25,7 @@ public class Derek : CowSpecialScript
         playerController = GameController.Instance.FindPlayerAnywhere();
 
         //
-        specialEffectActivationTimer = 0.1f;//RING POWER STARTS IMMEDIATELY
+        specialEffectActivationTimer = 0.1f;//DEREK DEBUFFS ARE IMMEDIATE
     }
 
 
