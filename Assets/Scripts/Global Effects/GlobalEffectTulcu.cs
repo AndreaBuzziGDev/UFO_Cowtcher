@@ -5,6 +5,8 @@ using UnityEngine;
 public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
 {
     //DATA
+
+    ///PARTICLES
     [SerializeField] List<ParticleSystem> rainFalls;
     [SerializeField] List<ParticleSystem> rainSplashes;
 
