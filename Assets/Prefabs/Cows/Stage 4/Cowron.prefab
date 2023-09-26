@@ -133,4 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCow: {fileID: 5489631595458194746}
   myMovement: {fileID: 3727994553371295582}
-  specialEffectActivationTimerMax: 5
+  ringPowerDuration: 5
+  speedMalus: 20
+  specialEffectActivationTimerMax: 0.1
