@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 73c85080e3530ae43abb32084874688e, type: 3}
+  m_Sprite: {fileID: 2103113364, guid: 6f9a7aa874ec2f740b2f50ced19eef3c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1131,9 +1131,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756246184629376528}
-        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
-        m_MethodName: GoToCanvas
+      - m_Target: {fileID: 6678651837923775677}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: HideCowdex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1207,7 +1207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseGamePanel: {fileID: 2999353713454031584}
   GameOverPanel: {fileID: 75337341082387232}
-  CowdexPanel: {fileID: 4799944364165482422}
+  CowdexPanel: {fileID: 8520171916739579325}
   MoossionsPanel: {fileID: 3060325067874239791}
   gameplayInputCanvas: {fileID: 7884704985626597256}
   feed: {fileID: 2561945168293272347}
@@ -1438,7 +1438,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 97.55
+  m_fontSize: 100
   m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3732,7 +3732,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.7
+  m_fontSize: 70.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4908,7 +4908,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 97.55
+  m_fontSize: 100
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4984,8 +4984,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 0, y: 0.05466667}
   m_AnchorMax: {x: 1, y: 0.94533336}
-  m_AnchoredPosition: {x: 300, y: -5}
-  m_SizeDelta: {x: 597, y: 7.398926}
+  m_AnchoredPosition: {x: 0.5999756, y: -0.40576172}
+  m_SizeDelta: {x: 0.15989864, y: -0.69146484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &642113748702137849
 CanvasRenderer:
@@ -5015,7 +5015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d2b4a27923851df4593834f56718473d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a15cac53063b38458656b706697d920, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5860,7 +5860,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.7
+  m_fontSize: 60.75
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8018,11 +8018,6 @@ PrefabInstance:
 --- !u!224 &3013478937357992691 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4081327604495384276, guid: a015934febda95a449607a87e109c6fa, type: 3}
-  m_PrefabInstance: {fileID: 1257013324867517479}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4799944364165482422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6047521770348608401, guid: a015934febda95a449607a87e109c6fa, type: 3}
   m_PrefabInstance: {fileID: 1257013324867517479}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7437948278325304588
