@@ -28,6 +28,8 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
     // Start is called before the first frame update
     void Start()
     {
+        RenderSettings.fog = false;
+
         foreach (ParticleSystem pSyst in windRushes)
             pSyst.gameObject.SetActive(false);
     }
@@ -64,6 +66,8 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
 
     private void PlayFog()
     {
+        RenderSettings.fog = true;
+
         foreach (ParticleSystem rf in windRushes)
         {
             if (!rf.isPlaying)
@@ -76,6 +80,8 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
 
     private void StopFog()
     {
+        RenderSettings.fog = false;
+
         foreach (ParticleSystem rf in windRushes)
         {
             if (rf.isPlaying)
