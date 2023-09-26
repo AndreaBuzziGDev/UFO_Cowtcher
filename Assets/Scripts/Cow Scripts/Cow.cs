@@ -150,6 +150,7 @@ public class Cow : MonoBehaviour
     {
         //IsGlobalTerrify
         //TODO: THIS CAN BE REFACTORED AND IMPROVED
+        //TODO: THIS EVENTUALLY CAN BE IMPROVED TO SEPARATE TURRET TERROR FROM TULCU TERROR
         if (CowManager.Instance.IsGlobalTerrify)
         {
             //MOVEMENT STATE IS BEING TERRIFIED
@@ -190,6 +191,9 @@ public class Cow : MonoBehaviour
     //COW AI
     private void CowAI()
     {
+        //STEP 0 - RING POWER
+        if (GlobalEffectSauron.Instance.IsRingPowerActive)
+            currentState = State.Alert;
 
         //STEP 1
         if (CowHelper.IsUFOWithinRadius(this))

@@ -1,5 +1,7 @@
 ...
 
+The assets found in the game (for example the art of cows) and not specified in this tracking were made by the Game Designer and team member Six to Seven Simone Marzeddu.
+
 Low Poly Farm Pack Lite
 Link: https://assetstore.unity.com/packages/3d/environments/industrial/low-poly-farm-pack-lite-188100
 
@@ -42,12 +44,34 @@ Magic Book by patrakeevasveta [CC BY 4.0] via Sketchfab - Link: https://sketchfa
 Low-Poly Well
 Well by ajmason3D [CC BY 4.0] via Sketchfab - Link: https://sketchfab.com/3d-models/low-poly-well-ce043536933847fa8a96352d28d56fb9
 
+TREES:
+
+Stage 2 (Umbrellas): 
+Beach Umbrella - Low Poly by Styro - Link: https://sketchfab.com/3d-models/beach-umbrella-low-poly-2c8c7cc2aa154388a5c321c284211236 (CC BY 4.0)
+
+Stage 3 (Christmas trees): 
+
+Christmas Tree Low Poly 2021 by Thunder_Owl - Link: https://sketchfab.com/3d-models/christmas-tree-low-poly-2021-ee1024bde6dd4162ba4407bd890e5838 (CC BY 4.0)
+
+Stage 4 (Sakura Trees): 
+
+FREE LOW POLY SAKURA TREE by juansan0 - Link: https://sketchfab.com/3d-models/free-low-poly-sakura-tree-02c5ca153e8e4e86920690b07146352b (CC BY 4.0)
+
+FENCES:
+
+Stage 2: Low Poly Fence Pack by Broken Vector - Link: https://brokenvector.itch.io/low-poly-fence-pack
+
+Stage 3: 
+Low poly wood fence with snow by assetfactory - Link: https://sketchfab.com/3d-models/low-poly-wood-fence-with-snow-b6e3e7135119421cb11e38ae7024707a (CC BY 4.0)
+Low poly wood fence with snow by assetfactory - Link: https://sketchfab.com/3d-models/low-poly-wood-fence-with-snow-50cd197696334fcfb005978f2a7ae41f (CC BY 4.0)
+Low poly wood fence with snow by assetfactory - Link: https://sketchfab.com/3d-models/low-poly-wood-fence-with-snow-ae0d79f6d0fe4d6eaa023b1cd905c3ba (CC BY 4.0)
+
+Stage 4: Low Poly Stone walls by AkuVain - Link: https://sketchfab.com/3d-models/low-poly-stone-walls-3e71a31454664216b1284056639106f6 (CC BY 4.0)
 
 
-
-Cow shader for sprites to cast shadows
+SHADER: 
+Cow shader for sprites to cast shadows:
 https://www.youtube.com/watch?v=d_OBjV7c1CY&t=34s
-
 
 
 FuelBar:
@@ -115,6 +139,91 @@ Wallpapers-Clan - Link: https://wallpapers-clan.com/sticker-png/viking-rune-axe/
 SOUNDS
 Cow Moo Sound Base:
 JarredGibb - Link: https://freesound.org/people/JarredGibb/sounds/233141/
+
+Bird Sound:
+Lunevix - Link: https://freesound.org/people/Lunevix/sounds/581314/
+
+
+Cowctor:
+soundmary - https://freesound.org/people/soundmary/sounds/194963/
+
+Cowctor ALT:
+egomassive - Link: https://freesound.org/people/egomassive/sounds/536730/
+
+Cowgon:
+NoiseCollector - https://freesound.org/people/NoiseCollector/sounds/4512/
+
+Tulcu:
+Shaddius - https://freesound.org/people/Shaddius/sounds/450619/
+
+Cowtchman
+acclivity - https://freesound.org/people/acclivity/sounds/13698/
+
+Santa Cows:
+metaepitome - Link: https://freesound.org/people/metaepitome/sounds/331333/
+
+Cowalanche (base):
+qubodup - https://freesound.org/people/qubodup/sounds/59996/
+
+
+Derek ???
+
+
+Cowron
+ihitokage - https://freesound.org/people/ihitokage/sounds/656063/
+
+
+
+Scarecow
+
+
+Shark
+iwanPlays - https://freesound.org/people/iwanPlays/sounds/626084/
+
+Cowflake
+JustInvoke - https://freesound.org/people/JustInvoke/sounds/446112/
+
+Kowtos
+Akrythael - https://freesound.org/people/Akrythael/sounds/334915/
+
+Kowtos - Bang
+Quickmusik - https://freesound.org/people/Quickmusik/sounds/459876/
+
+
+
+
+Cowloon
+Jofae - https://freesound.org/people/Jofae/sounds/368175/
+
+Cownguin 1
+MATRIXXX_ - https://freesound.org/people/MATRIXXX_/sounds/459156/
+
+Cownguin 2
+MATRIXXX_ - https://freesound.org/people/MATRIXXX_/sounds/459341/
+
+
+Cowrio
+awhhhyeah - https://freesound.org/people/awhhhyeah/sounds/448256/
+
+
+
+TREES
+STAGE 1
+Abacagi - https://freesound.org/people/Abacagi/sounds/511347/
+
+STAGE 2
+BranndyBottle - https://freesound.org/people/BranndyBottle/sounds/464695/
+
+STAGE 3
+ChrilleElGringo - https://freesound.org/people/ChrilleElGringo/sounds/333522/
+
+STAGE 4
+duckduckpony - https://freesound.org/people/duckduckpony/sounds/204028/
+
+
+
+UFO Abduction:
+Leszek_Szary - Link: https://freesound.org/people/Leszek_Szary/sounds/146728/
 
 
 

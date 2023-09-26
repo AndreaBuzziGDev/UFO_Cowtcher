@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     private float freezeDuration = 0.0f;
     public bool IsFrozen { get { return (freezeDuration > 0); } }
 
+    //TODO: IMPLEMENT THE REST AND USE - FOR NOW TERROR ON UFO WILL BE STUN.
+    private float terrorDuration = 0.0f;
+    public bool IsTerrified { get { return terrorDuration > 0; } }
+
 
 
 
@@ -143,9 +147,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //myRigidBody.velocity = (1+(movSpeedBonus/100)) * MoveSpeed * (direction);
-
-            myRigidBody.AddForce((1 + (movSpeedBonus / 100)) * MoveSpeed * (direction), ForceMode.Impulse);
+            myRigidBody.AddForce((1 + (movSpeedBonus / 100)) * MoveSpeed * GlobalEffectSauron.Instance.SauronMult * (direction), ForceMode.Impulse);
         }
     }
 
@@ -154,14 +156,20 @@ public class PlayerController : MonoBehaviour
     //STUN
     public void ApplyStun(float inputDuration)
     {
-        if(!IsFrozen)
+        if(!IsFrozen || !IsTerrified)
             stunDuration = inputDuration;
     }
     //FREEZE
     public void ApplyFrozen(float inputDuration)
     {
-        if(!IsStunned)
+        if(!IsStunned || !IsTerrified)
             freezeDuration = inputDuration;
+    }
+    //TERROR
+    public void ApplyTerror(float inputDuration)
+    {
+        if (!IsFrozen || !IsStunned)
+            terrorDuration = inputDuration;
     }
 
 

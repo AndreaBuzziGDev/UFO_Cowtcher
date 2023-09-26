@@ -1,90 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &104365743934162571
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3043222153231337840}
-    m_Modifications:
-    - target: {fileID: 166824803314938668, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 166824803314938668, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 166824803314938668, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228328683102558135, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_Name
-      value: Cowttleman Bird (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
---- !u!4 &2842041503661646461 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 104365743934162571}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7996031664961773652 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8035921986351277791, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 104365743934162571}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942e4f63369f246438b56040d36678ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &474733433408724722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3864687888559031464, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d57e8e0ac32d5a94eb4da881b1d94d83, type: 3}
     - target: {fileID: 4893135105638448859, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: hints.Array.size
       value: 3
@@ -108,15 +27,15 @@ PrefabInstance:
     - target: {fileID: 4893135105638448859, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: hints.Array.data[0]
       value: 
-      objectReference: {fileID: 7996031664961773652}
+      objectReference: {fileID: 73308565742123043}
     - target: {fileID: 4893135105638448859, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: hints.Array.data[1]
       value: 
-      objectReference: {fileID: 1529833115199730583}
+      objectReference: {fileID: 9086795731015868086}
     - target: {fileID: 4893135105638448859, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: hints.Array.data[2]
       value: 
-      objectReference: {fileID: 8251669925444678529}
+      objectReference: {fileID: 7980040176481739471}
     - target: {fileID: 5058187730780663137, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: m_Size.x
       value: 1.5
@@ -173,13 +92,13 @@ PrefabInstance:
       addedObject: {fileID: 6382908830513112044}
     - targetCorrespondingSourceObject: {fileID: 3219270980201355138, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2842041503661646461}
+      addedObject: {fileID: 5225046514647464458}
     - targetCorrespondingSourceObject: {fileID: 3219270980201355138, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6682328936046850494}
+      addedObject: {fileID: 4007536597154503839}
     - targetCorrespondingSourceObject: {fileID: 3219270980201355138, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4252730434495869352}
+      addedObject: {fileID: 2826472334896079078}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
 --- !u!4 &3043222153231337840 stripped
@@ -192,7 +111,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8564742852176436510, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
   m_PrefabInstance: {fileID: 474733433408724722}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2091506873678124382
+--- !u!1001 &3262779796309692786
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -200,76 +119,210 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3043222153231337840}
     m_Modifications:
-    - target: {fileID: 166824803314938668, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 2852665236495882297, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_Name
+      value: UFO Cowtcher Bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.12
+      value: 0.842
       objectReference: {fileID: 0}
-    - target: {fileID: 166824803314938668, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.01
+      value: 4.47
       objectReference: {fileID: 0}
-    - target: {fileID: 166824803314938668, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.18
+      value: -0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228328683102558135, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_Name
-      value: Cowttleman Bird (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
---- !u!4 &4252730434495869352 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 2091506873678124382}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8251669925444678529 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+--- !u!114 &73308565742123043 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8035921986351277791, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 2091506873678124382}
+  m_CorrespondingSourceObject: {fileID: 3189614171776952657, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+  m_PrefabInstance: {fileID: 3262779796309692786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942e4f63369f246438b56040d36678ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &5225046514647464458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+  m_PrefabInstance: {fileID: 3262779796309692786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4827020363665443742
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3043222153231337840}
+    m_Modifications:
+    - target: {fileID: 2852665236495882297, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_Name
+      value: UFO Cowtcher Bird (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.637
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.929
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.511
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+--- !u!4 &2826472334896079078 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+  m_PrefabInstance: {fileID: 4827020363665443742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7980040176481739471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3189614171776952657, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+  m_PrefabInstance: {fileID: 4827020363665443742}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942e4f63369f246438b56040d36678ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &5933775780724979687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3043222153231337840}
+    m_Modifications:
+    - target: {fileID: 2852665236495882297, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_Name
+      value: UFO Cowtcher Bird (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.053
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.337
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+--- !u!4 &4007536597154503839 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7333163042481908600, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+  m_PrefabInstance: {fileID: 5933775780724979687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9086795731015868086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3189614171776952657, guid: 8efb4f176e0fcc947bc4d374f82e2ab2, type: 3}
+  m_PrefabInstance: {fileID: 5933775780724979687}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -1569,84 +1622,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3942208044751350275, guid: 5e354a71fe46f6a4eb73ec6e457dd413, type: 3}
---- !u!1001 &8844607205574694216
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3043222153231337840}
-    m_Modifications:
-    - target: {fileID: 166824803314938668, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 166824803314938668, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228328683102558135, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-      propertyPath: m_Name
-      value: Cowttleman Bird (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
---- !u!114 &1529833115199730583 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8035921986351277791, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 8844607205574694216}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942e4f63369f246438b56040d36678ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &6682328936046850494 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2738819314139342070, guid: e51165b6078680a4b8cd485284d74d94, type: 3}
-  m_PrefabInstance: {fileID: 8844607205574694216}
-  m_PrefabAsset: {fileID: 0}

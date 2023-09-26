@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GlobalEffectDerek : MonoBehaviour
 {
+    //TODO: EXPECTED DISCARD ON THIS.
+
     // Start is called before the first frame update
     void Start()
     {

@@ -76,8 +76,63 @@ PrefabInstance:
       propertyPath: cowFadeOutHologramOnCapture
       value: 
       objectReference: {fileID: 9214518739162181658, guid: ae2b33ae61a82264eabfc954ccbdc1e1, type: 3}
+    - target: {fileID: 7274476460106249080, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274476460106249080, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a2b669ae1348e84f9c4c364a6ec69b5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5259244113235226185, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4580067080980297578}
   m_SourcePrefab: {fileID: 100100000, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+--- !u!114 &3727994553371295582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2271979305478991426, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 3187368139416686876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261870537795141461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d9dfc2b588569418a06ca81fbf7850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5489631595458194746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6923396806548110374, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 3187368139416686876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261870537795141461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0447c8e0fc5dce4fb8b1528ce83d51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7261870537795141461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5259244113235226185, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 3187368139416686876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4580067080980297578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261870537795141461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec35cb90976f1f4f9532d37e2e8379a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCow: {fileID: 5489631595458194746}
+  myMovement: {fileID: 3727994553371295582}
+  ringPowerDuration: 5
+  speedMalus: 20
+  specialEffectActivationTimerMax: 0.1

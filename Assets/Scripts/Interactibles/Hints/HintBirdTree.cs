@@ -27,18 +27,15 @@ public class HintBirdTree : HintAbstract
     [SerializeField] private float upwardsSpeed = 5.0f;
     [SerializeField] private float targetDirectionSpread = 1.0f;
 
-
     ///FLIGHT
     private Vector3 startingPosition;
     private Vector3 flightDirection = Vector3.zero;
 
 
-
-
-
     ///TECHNICAL DATA
     Rigidbody rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator birdAnimator;
 
 
 
@@ -49,6 +46,7 @@ public class HintBirdTree : HintAbstract
     {
         rb = GetComponent<Rigidbody>();
         startingPosition = this.transform.position;
+        birdAnimator.enabled = false;
     }
 
     // Update is called once per frame
@@ -90,27 +88,6 @@ public class HintBirdTree : HintAbstract
     }
 
 
-    //HORIZONTAL FLIP
-    private void HorizontalFlip()
-    {
-        if (spriteRenderer != null)
-        {
-            if (flightDirection.x >= 0)
-            {
-                spriteRenderer.flipX = false;
-            }
-            else
-            {
-                spriteRenderer.flipX = true;
-            }
-        }
-    }
-
-
-
-
-
-
 
     //IMPLEMENTING HintAbstract
     ///PLAY
@@ -132,6 +109,9 @@ public class HintBirdTree : HintAbstract
         usefulFlightTimer = usefulFlightTimerMax;
         flightTimer = flightTimerMax;
 
+        //PLAY ANIMATOR
+        birdAnimator.enabled = true;
+
     }
 
     ///RESET
@@ -149,6 +129,9 @@ public class HintBirdTree : HintAbstract
 
         //ZERO VELOCITY
         rb.velocity = Vector3.zero;
+
+        //STOP ANIMATOR
+        birdAnimator.enabled = false;
 
         //ENABLE
         this.gameObject.SetActive(true);
@@ -214,5 +197,24 @@ public class HintBirdTree : HintAbstract
     }
 
 
+
+
+    //UTILITIES
+
+    //HORIZONTAL FLIP
+    private void HorizontalFlip()
+    {
+        if (spriteRenderer != null)
+        {
+            if (flightDirection.x >= 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+    }
 
 }

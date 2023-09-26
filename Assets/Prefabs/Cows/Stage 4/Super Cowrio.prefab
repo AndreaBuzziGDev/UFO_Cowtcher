@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: cowFadeOutHologramOnCapture
       value: 
       objectReference: {fileID: 9214518739162181658, guid: 4880834320957894e9bcdb7623143221, type: 3}
+    - target: {fileID: 7274476460106249080, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274476460106249080, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c7c319fb19882a4d8416f833f1b13ad, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

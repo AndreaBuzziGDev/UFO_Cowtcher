@@ -80,8 +80,60 @@ PrefabInstance:
       propertyPath: cowFadeOutHologramOnCapture
       value: 
       objectReference: {fileID: 9214518739162181658, guid: ae2b33ae61a82264eabfc954ccbdc1e1, type: 3}
+    - target: {fileID: 7274476460106249080, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b832363cabb7a44eb1d87ab2e4bf926, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5259244113235226185, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 825234541769251081}
   m_SourcePrefab: {fileID: 100100000, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+--- !u!114 &1095180708247441280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6923396806548110374, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 8009095290368603046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2871769424612793839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0447c8e0fc5dce4fb8b1528ce83d51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2871769424612793839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5259244113235226185, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 8009095290368603046}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &825234541769251081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2871769424612793839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ce8daa3ae89ef449b1d20dfa418e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCow: {fileID: 1095180708247441280}
+  myMovement: {fileID: 8115966601086475748}
+  terrorDuration: 1
+  subsequentApplicationDelay: 3
+  maxCount: 3
+  specialEffectActivationTimerMax: 0.1
+--- !u!114 &8115966601086475748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2271979305478991426, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+  m_PrefabInstance: {fileID: 8009095290368603046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2871769424612793839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d9dfc2b588569418a06ca81fbf7850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

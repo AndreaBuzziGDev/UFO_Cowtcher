@@ -75,7 +75,21 @@ public class CowMovement : MonoBehaviour
         CowSO.UniqueID.R015_Kowtos
     };
 
+    //COWS:
+    ///IMMUNE TO TERROR
+    HashSet<CowSO.UniqueID> immuneToTerror = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.L002_Cowhtulhu,
+        CowSO.UniqueID.L003_Flying_Cowtchman,
+        CowSO.UniqueID.L006_Cowre_Trainer
+    };
 
+    ///RUN FASTER DURING AVALANCHE
+    HashSet<CowSO.UniqueID> runsFasterInAvalanche = new HashSet<CowSO.UniqueID> {
+        CowSO.UniqueID.L005_Cowalanche,
+        CowSO.UniqueID.R011_Cowflake,
+        CowSO.UniqueID.R008_Ice_Cowm,
+        CowSO.UniqueID.L006_Cowre_Trainer
+    };
 
 
     //METHODS
@@ -144,12 +158,13 @@ public class CowMovement : MonoBehaviour
                 break;
         }
 
-        //TODO: COULD THIS BE IMPROVED FURTHER?
 
         //IF TERROR: SHAKE
-        if (myCow.MovState == Cow.MovementState.Terror) AnimateTerror();
+        if (myCow.MovState == Cow.MovementState.Terror && !immuneToTerror.Contains(myCow.CowTemplate.UID) )
+            AnimateTerror();
         //ELSE: MOVE
-        else HandleMovement();
+        else 
+            HandleMovement();
     }
 
 
@@ -199,7 +214,7 @@ public class CowMovement : MonoBehaviour
         //VARIANT - RUN TOWARDS THE CENTER OF THE SPAWNING GRID
         Vector3 intendedDirection = movementDirection;
 
-
+        //TODO: POLISH
         //SOME COWS IGNORE THE FENCE DODGING
         if (IsReflectingAgainstFence() && !cowsThatIgnoreFenceDodge.Contains(myCow.CowTemplate.UID))
         {
@@ -207,7 +222,11 @@ public class CowMovement : MonoBehaviour
             intendedDirection = (new Vector3(mapCenterDirection.x, 0, mapCenterDirection.z)).normalized;//TOWARDS CENTER OF SPAWNING GRID
 
             //GLOBAL SPEED MULTIPLIER
-            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+            //TODO: OPTIMIZE
+            if (runsFasterInAvalanche.Contains(myCow.CowTemplate.UID))
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * GlobalEffectAvalanche.Instance.AvalancheSpeedMult * intendedDirection;
+            else
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
 
         //SOME COWS NEED MOVEMENT SMOOTHING FOR WHEN FLEEING THE UFO
@@ -216,17 +235,28 @@ public class CowMovement : MonoBehaviour
             if (rb.velocity == Vector3.zero)
                 rb.velocity = (this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).normalized;
 
-            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * 
-                Vector3.Lerp(
+            Vector3 lerpVector = Vector3.Lerp(
                     rb.velocity.normalized,
-                    intendedDirection, 
+                    intendedDirection,
                     Time.fixedDeltaTime * turningSpeedMult
                 );
+
+            //TODO: OPTIMIZE
+            if (runsFasterInAvalanche.Contains(myCow.CowTemplate.UID))
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * GlobalEffectAvalanche.Instance.AvalancheSpeedMult * lerpVector;
+            else
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
         }
 
         //DEFAULT
+        //TODO: OPTIMIZE
         else
-            rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+        {
+            if (runsFasterInAvalanche.Contains(myCow.CowTemplate.UID))
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * GlobalEffectAvalanche.Instance.AvalancheSpeedMult * intendedDirection;
+            else
+                rb.velocity = mySpeed * CowManager.Instance.GlobalSpeedMultiplier * intendedDirection;
+        }
 
     }
     

@@ -44,6 +44,9 @@ public class Abductor : MonoBehaviour
     //OTHER DATA
     private FollowCamera playerCamera;
 
+    //SOUNDS
+    [SerializeField] private AudioSource abductorCaptureSound;
+
 
     //EVENTS
     public static event EventHandler<CowCaptureEventArgs> CowCapture;
@@ -90,6 +93,9 @@ public class Abductor : MonoBehaviour
 
             if (currentCaptureTimer >= captureTimer)
             {
+                //PLAY SOUND
+                abductorCaptureSound.Play();
+
                 //CATCH COWS IN RANGE
                 CatchCows();
 

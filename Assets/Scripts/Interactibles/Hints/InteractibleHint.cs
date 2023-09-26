@@ -5,6 +5,10 @@ using UnityEngine;
 public class InteractibleHint : MonoInteractible
 {
     //DATA
+    ///AUDIO SOURCE
+    [SerializeField] private AudioSource birdPlaySoundSource;
+    [SerializeField] private AudioSource treeShakeSoundSource;
+
     ///HINTS
     [SerializeField] private List<HintAbstract> hints = new();
 
@@ -46,6 +50,8 @@ public class InteractibleHint : MonoInteractible
         {
             foreach (HintAbstract h in hints) h.Play();
 
+            birdPlaySoundSource.Play();
+            treeShakeSoundSource.Play();
             cooldownTimer = cooldownMax;
             hasReset = false;
         }
