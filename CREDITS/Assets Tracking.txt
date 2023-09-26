@@ -237,6 +237,13 @@ Turret Explosion
 derplayer - https://freesound.org/people/derplayer/sounds/587189/
 
 
+Asteroid Explosion
+derplayer - https://freesound.org/people/derplayer/sounds/587194/
+
+Asteroid Trail
+IENBA - https://freesound.org/people/IENBA/sounds/698696/
+
+
 
 
 UFO Abduction:
