@@ -25,7 +25,7 @@ public class Cowalanche : CowSpecialScript
         playerController = GameController.Instance.FindPlayerAnywhere();
 
         //
-        specialEffectActivationTimer = 2f;//AVALANCHE STARTS IMMEDIATELY
+        specialEffectActivationTimer = 0.1f;//AVALANCHE STARTS IMMEDIATELY
     }
 
 
