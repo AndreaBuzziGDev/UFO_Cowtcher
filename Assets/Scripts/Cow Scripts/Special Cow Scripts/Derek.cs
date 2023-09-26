@@ -40,7 +40,13 @@ public class Derek : CowSpecialScript
         {
             //HANDLE A TIMER
             if (specialEffectActivationTimer > 0)
+            {
+                //TODO: AFTER ADJUSTING TULCU, FIX HERE
+                if( !GlobalEffectDutch.Instance.IsCurseActive &&
+                    !GlobalEffectAvalanche.Instance.IsAvalanche &&
+                    !GlobalEffectSauron.Instance.IsRingPowerActive)
                 specialEffectActivationTimer -= Time.fixedDeltaTime;
+            }
             else
             {
                 specialEffectActivationTimer = specialEffectActivationTimerMax;
