@@ -25,7 +25,7 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (IsAvalanche)
             PlaySnow();
@@ -45,6 +45,7 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
 
     private void PlaySnow()
     {
+        Debug.Log("Cowalanche PlaySnow");
         foreach (ParticleSystem sf in snowFalls)
         {
             if (!sf.isPlaying)
@@ -56,10 +57,11 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
     }
     private void StopSnow()
     {
+        Debug.Log("Cowalanche StopSnow");
         foreach (ParticleSystem sf in snowFalls)
         {
-            if (!sf.isPlaying)
-                sf.Stop();
+            if (sf.isPlaying)
+                sf.gameObject.SetActive(false);
         }
     }
 
@@ -73,6 +75,7 @@ public class GlobalEffectAvalanche : MonoSingleton<GlobalEffectAvalanche>
 
         //RE-SET SPEED
         avalancheSpeedMultiplier = 100.0f;
+        Debug.Log("Cowalanche ended");
     }
 
 }

@@ -66,13 +66,13 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
     {
         foreach (ParticleSystem rf in rainFalls)
         {
-            if (!rf.isPlaying)
-                rf.Stop();
+            if (rf.isPlaying)
+                rf.gameObject.SetActive(false);
         }
         foreach (ParticleSystem rs in rainSplashes)
         {
-            if (!rs.isPlaying)
-                rs.Stop();
+            if (rs.isPlaying)
+                rs.gameObject.SetActive(false);
         }
     }
 
