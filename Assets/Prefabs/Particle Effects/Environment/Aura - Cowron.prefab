@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
   m_Layer: 0
-  m_Name: CFX3_Snow_Dense
+  m_Name: Aura - Cowron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,7 +91,7 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       minMaxState: 0
-      scalar: 4
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -145,7 +145,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 2
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 0.8784314, b: 0.1882353, a: 0}
@@ -205,10 +205,10 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 0.5019608}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.7058824}
     startSize:
       minMaxState: 3
-      scalar: 0.07
+      scalar: 0.06
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -226,7 +226,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0.71428573
+          value: 0.6666667
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -295,13 +295,19 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -322,13 +328,19 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -369,7 +381,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1610
+    maxNumParticles: 210
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -418,7 +430,7 @@ ParticleSystem:
     angle: 1
     length: 5
     boxX: 20
-    boxY: 0
+    boxY: 10
     boxZ: 20
     radius:
       value: 0.2
@@ -523,7 +535,7 @@ ParticleSystem:
     serializedVersion: 4
     rateOverTime:
       minMaxState: 0
-      scalar: 400
+      scalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -836,8 +848,8 @@ ParticleSystem:
       minMaxState: 1
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0.6431373, b: 0.18039216, a: 0}
+        key1: {r: 1, g: 0.89411765, b: 0.6039216, a: 1}
         key2: {r: 1, g: 0.627451, b: 0.627451, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -853,8 +865,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 19660
-        atime2: 45875
+        atime1: 26214
+        atime2: 39321
         atime3: 65535
         atime4: 0
         atime5: 0
@@ -1014,13 +1026,13 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       minMaxState: 3
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: -0.5
+          value: 0.5
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1032,7 +1044,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: -1
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1113,7 +1125,7 @@ ParticleSystem:
     enabled: 1
     x:
       minMaxState: 3
-      scalar: 0.2
+      scalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1140,13 +1152,13 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       minMaxState: 3
-      scalar: 0
+      scalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0
+          value: -1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1158,7 +1170,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1167,7 +1179,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       minMaxState: 3
-      scalar: 0.2
+      scalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2868,7 +2880,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7c9d6983f275678479ebf019a670f9cf, type: 2}
+  - {fileID: 2100000, guid: b692d0ba979c41946bbe57f2baba17eb, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -2891,7 +2903,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.015
+  m_MaxParticleSize: 0.005
   m_CameraVelocityScale: 0
   m_VelocityScale: 0.1
   m_LengthScale: 0.5

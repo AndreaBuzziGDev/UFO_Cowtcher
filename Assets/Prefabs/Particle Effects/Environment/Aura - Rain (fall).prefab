@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2461203982218664524}
   - component: {fileID: 6077168872989578695}
   m_Layer: 0
-  m_Name: CFXR4 Rain Falling
+  m_Name: Aura - Rain (fall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

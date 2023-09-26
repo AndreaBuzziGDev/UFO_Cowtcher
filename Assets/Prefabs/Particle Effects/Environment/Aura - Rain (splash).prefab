@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 1172081452124834313}
   - component: {fileID: 1172081452124834318}
   m_Layer: 0
-  m_Name: CFXR4 Rain Splashes
+  m_Name: Aura - Rain (splash)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
