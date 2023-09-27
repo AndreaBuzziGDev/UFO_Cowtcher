@@ -71,7 +71,7 @@ public class StageExpBar : MonoBehaviour
             else
             {
                 //UPDATING GUI
-                levelCounterText.text = lvlInfo.ToString();
+                levelCounterText.text = "MAX";
                 experienceBar.fillAmount = 1;
             }
 
