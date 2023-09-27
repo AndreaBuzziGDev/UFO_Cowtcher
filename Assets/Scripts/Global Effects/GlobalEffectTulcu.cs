@@ -83,7 +83,8 @@ public class GlobalEffectTulcu : MonoSingleton<GlobalEffectTulcu>
     private IEnumerator TerrorRoutine(float terrorDuration, float waveDelay)
     {
         //APPLY TERROR TO PLAYER
-        GameController.Instance.FindPlayerAnywhere().ApplyStun(terrorDuration / 3);//TODO: STUN THE UFO FOR FULL TIMER?
+        //TODO: CHANGE
+        GameController.Instance.FindPlayerAnywhere().ApplyTerror(terrorDuration / 3);//TODO: STUN THE UFO FOR FULL TIMER?
 
         //APPLY TERROR TO COWS (FIRE EVENT?)
         CowManager.Instance.ApplyGlobalTerrify(terrorDuration);

@@ -40,13 +40,18 @@ public class PlayerController : MonoBehaviour
 
 
 
-
     ///STATUS ALTERATION DATA
     private List<SAAbstract> statusAlterations = new();
     public List<SAAbstract> StatusAlterations { get { return statusAlterations; } }
 
     private float movSpeedBonus;
 
+
+    //JUICYNESS DATA
+    ///TERROR
+    [SerializeField] private float shakeAmount = 0.035f;
+    [SerializeField] private float shakeSpeed = 50f;
+    private Vector3 lastPosBeforeTerror;
 
 
 
@@ -71,12 +76,27 @@ public class PlayerController : MonoBehaviour
         if (freezeDuration > 0)
             freezeDuration -= Time.fixedDeltaTime;
 
+        if (terrorDuration > 0)
+            terrorDuration -= Time.fixedDeltaTime;
+        else
+            this.transform.position = lastPosBeforeTerror;
+
         //HANDLING STATUS ALTERATIONS
         UpdateAlterationsTimers(Time.deltaTime);
 
         //MOVEMENT
-        if (!GameController.Instance.IsPaused) 
-            Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
+        if (!GameController.Instance.IsPaused)
+        {
+            if (IsTerrified)
+            {
+                AnimateTerror();
+            }
+            else
+            {
+                lastPosBeforeTerror = this.transform.position;
+                Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
+            }
+        }
     }
 
 
@@ -141,6 +161,7 @@ public class PlayerController : MonoBehaviour
 
 
     //FUNCTIONALITIES
+    //MOVEMENT
     public void Move(Vector3 direction)
     {
         if (IsStunned || IsFrozen)
@@ -159,15 +180,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //MOVEMENT EASING
+    ///MOVEMENT EASING
     private float easing(float input)
     {
         return easeOutCube(input);
     }
 
-    //QUAD
+    ///QUAD
     private float easeQuad(float t) => t * t;
 
+    ///CUBE
     private float easeOutCube(double t)
     {
         return (float) (1 - Math.Pow(1 - t, 3));
@@ -193,6 +215,16 @@ public class PlayerController : MonoBehaviour
     {
         if (!IsFrozen || !IsStunned)
             terrorDuration = inputDuration;
+    }
+
+    ///TERROR MOVEMENT
+    private void AnimateTerror()
+    {
+        transform.position = new Vector3(
+            transform.position.x + Mathf.Sin(Time.unscaledTime * shakeSpeed) * shakeAmount,
+            transform.position.y,
+            transform.position.z + Mathf.Cos(Time.unscaledTime * shakeSpeed) * shakeAmount
+            );
     }
 
 
