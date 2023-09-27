@@ -109,3 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69df3b4778bd1604a9dacddb27a16762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Gifts:
+  - {fileID: 1424810079913189593, guid: 354ead816013fea439d6e6aa291566ea, type: 3}
+  - {fileID: 7734662266168459771, guid: 48d2a9121b499ba4c87618394ba3ebc5, type: 3}
+  - {fileID: 9159838588471157575, guid: 882de7d58e4436949b3b05dd86900760, type: 3}
+  - {fileID: 7926208514392685230, guid: 46ab49b38631c624cbaf91cd11ca92f1, type: 3}
+  - {fileID: 1567208035466714716, guid: 8d694a5d0110baa42b166fa3323dcb58, type: 3}
