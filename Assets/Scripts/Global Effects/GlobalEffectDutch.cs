@@ -103,6 +103,7 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
             dCow.gameObject.SetActive(true);
 
         isCurseActive = false;
+        StopFog();
     }
 
 }
