@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3944596243743698854, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
       propertyPath: m_Name
-      value: Stage 3
+      value: Stage 4
       objectReference: {fileID: 0}
     - target: {fileID: 4425771495017324238, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
       propertyPath: birdAnimator
@@ -129,6 +129,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -942911579, guid: 3709a4738cc725941be7547fe18c36a6, type: 3}
+    - target: {fileID: 6948438465413866541, guid: c37beeb4392a94e43abec5cbcac6b9d4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cd852896b1a5a714696c99d5b30e3f21, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
