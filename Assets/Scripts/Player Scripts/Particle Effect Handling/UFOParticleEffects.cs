@@ -7,6 +7,7 @@ public class UFOParticleEffects : MonoBehaviour
     //DATA
     [SerializeField] private UFOMalfunctionController malfunction;
     [SerializeField] private UFOFreezingController freezing;
+    [SerializeField] private UFOFearController terror;
     [SerializeField] private UFOCurseController curse;
 
     //METHODS
@@ -23,16 +24,16 @@ public class UFOParticleEffects : MonoBehaviour
     void FixedUpdate()
     {
         //STUN
-        malfunction.gameObject.SetActive(UFOStatusAlterationHelper.HasStun());//TODO: ALTERNATIVE IMPLEMENTATION?
+        malfunction.gameObject.SetActive(UFOStatusAlterationHelper.HasStun());
 
         //FREEZE
-        freezing.gameObject.SetActive(UFOStatusAlterationHelper.HasFreeze());//TODO: ALTERNATIVE IMPLEMENTATION?
+        freezing.gameObject.SetActive(UFOStatusAlterationHelper.HasFreeze());
 
         //FEAR
-
+        terror.gameObject.SetActive(GlobalEffectTulcu.Instance.IsTerrorActive);
 
         //CURSE
-        curse.gameObject.SetActive(GlobalEffectDutch.Instance.IsCurseActive);//TODO: ALTERNATIVE IMPLEMENTATION?
+        curse.gameObject.SetActive(GlobalEffectDutch.Instance.IsCurseActive);
 
     }
 

@@ -5,10 +5,8 @@ using UnityEngine;
 public class UFOFearController : MonoBehaviour
 {
     //DATA
-    /*
-    [SerializeField] private ParticleSystem cursedWord;
-    [SerializeField] private ParticleSystem poisonFog;
-    */
+    [SerializeField] private ParticleSystem terrorWord;
+    [SerializeField] private ParticleSystem ghosts;
 
     //METHODS
     //...
@@ -16,24 +14,13 @@ public class UFOFearController : MonoBehaviour
     //
     void OnEnable()
     {
-        Debug.Log("UFOFearController");
-        /*
-        if (!smallBurstLoop1.isPlaying) smallBurstLoop1.Play();
-        if (!smallBurstLoop2.isPlaying) smallBurstLoop2.Play();
-        if (!glow.isPlaying) glow.Play();
-        if (!rain.isPlaying) rain.Play();
-        if (!stunWord.isPlaying) stunWord.Play();
-        */
+        if (!terrorWord.isPlaying) terrorWord.Play();
+        if (!ghosts.isPlaying) ghosts.Play();
     }
 
     void OnDisable()
     {
-        /*
-        smallBurstLoop1.Stop();
-        smallBurstLoop2.Stop();
-        glow.Stop();
-        rain.Stop();
-        stunWord.Stop();
-        */
+        if (terrorWord.isPlaying) terrorWord.Stop();
+        if (ghosts.isPlaying) ghosts.Stop();
     }
 }
