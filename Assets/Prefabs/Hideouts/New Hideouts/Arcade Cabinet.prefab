@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: hideoutTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 821c5096d8e815f4a8d3565d0eb805de, type: 2}
+    - target: {fileID: 7694757892136341557, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8046838245138679848, guid: fb56f5d46e91edd418ea9fbf06ef5d19, type: 3}
       propertyPath: m_Name
       value: Arcade Cabinet
@@ -108,7 +112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0b95ccf6c73f1049a694344b1493f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0b95ccf6c73f1049a694344b1493f8f, type: 3}
       propertyPath: m_LocalPosition.z
