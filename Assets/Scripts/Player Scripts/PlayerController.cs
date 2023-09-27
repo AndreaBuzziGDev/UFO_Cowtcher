@@ -75,8 +75,24 @@ public class PlayerController : MonoBehaviour
 
         //MOVEMENT
         if (!GameController.Instance.IsPaused) 
-            Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
+            Move(
+                new Vector3(
+                    easing(MovementInputFactor.x), 
+                    0,
+                    easing(MovementInputFactor.y)
+                    )
+                );
     }
+
+    //MOVEMENT EASING
+    private float easing(float input)
+    {
+        return easeQuad(input);
+    }
+
+    //QUAD
+    private float easeQuad(float t) => t * t;
+
 
 
 
@@ -147,9 +163,17 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            myRigidBody.AddForce((1 + (movSpeedBonus / 100)) * MoveSpeed * GlobalEffectSauron.Instance.SauronMult * (direction), ForceMode.Impulse);
+            myRigidBody.AddForce(
+                (1 + (movSpeedBonus / 100)) 
+                * MoveSpeed 
+                * GlobalEffectSauron.Instance.SauronMult 
+                * direction
+                , ForceMode.Impulse
+                );
         }
     }
+
+
 
 
     ///ALTERNATIVE STATUS ALTERATIONS
