@@ -21,11 +21,8 @@ public class AudioToggle : MonoBehaviour
     {
         if (isAudioActiveButton)
         {
-            if (PlayerPrefs.GetInt("Volume", 1) > 0)
-            {
-                this.gameObject.SetActive(PlayerPrefs.GetInt("Volume", 1) > 0);
-                targetButton.gameObject.SetActive(!(PlayerPrefs.GetInt("Volume", 1) > 0));
-            }
+            this.gameObject.SetActive(PlayerPrefs.GetInt("Volume", 1) > 0);
+            targetButton.gameObject.SetActive(!(PlayerPrefs.GetInt("Volume", 1) > 0));
         }
     }
 

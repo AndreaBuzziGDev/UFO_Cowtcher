@@ -1843,6 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetButton: {fileID: 5047276195673002821}
+  isAudioActiveButton: 0
 --- !u!1 &1886019543573868584
 GameObject:
   m_ObjectHideFlags: 0
@@ -3990,7 +3991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6593822357000997339
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8683,6 +8684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetButton: {fileID: 3707440401530885155}
+  isAudioActiveButton: 1
 --- !u!1 &6490786810311638449
 GameObject:
   m_ObjectHideFlags: 0
