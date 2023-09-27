@@ -8727,6 +8727,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1438717129239436501, guid: f09414b075f6e874dae6247f039b3f7c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fd810b52e51b8a143be6ba0b5adca55d, type: 2}
+    - target: {fileID: 1438717129239436501, guid: f09414b075f6e874dae6247f039b3f7c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4792514673235601911, guid: fd810b52e51b8a143be6ba0b5adca55d, type: 2}
     - target: {fileID: 1937312701861927075, guid: f09414b075f6e874dae6247f039b3f7c, type: 3}
       propertyPath: m_fontAsset
       value: 
