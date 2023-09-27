@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CameraAudio : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CameraAudio : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        AudioToggle.toggleAudioEventArg += HandleAudioChanges;
         RefreshAudioState();
     }
 
@@ -28,10 +30,18 @@ public class CameraAudio : MonoBehaviour
             myAudioListener.enabled = (audioEnablePref > 0);
     }
 
+    private void OnDisable()
+    {
+        AudioToggle.toggleAudioEventArg -= HandleAudioChanges;
+    }
 
 
 
     //EVENT HANDLING
-    //TODO: COMPLETE AFTER MERGE WITH UI MODIFICATIONS HAS BEEN DONE
+    public void HandleAudioChanges(object sender, EventArgs e)
+    {
+        myAudioListener.enabled = (PlayerPrefs.GetInt("Volume", 1)) > 0;
+    }
+
 
 }
