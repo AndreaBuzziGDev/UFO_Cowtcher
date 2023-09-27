@@ -394,6 +394,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
         //2) OBTAIN THE MATCHING RANDOM COW FROM THE SpawnManagerCow
         CowSO.UniqueID randomChoice = SpawnManagerHelper.GetCorrespondingCowFromTally(tallySpawnChances, randomChance);
+        Debug.Log("SpawnManager - Spawning Cow: " + randomChoice);
 
         //3) SPAWN COW
         //TODO: THIS COULD BE EXPORTED
