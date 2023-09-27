@@ -15,7 +15,14 @@ public class PlayAudioIfUFONearby : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if ((this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).magnitude < maxHearingDistance)
+        //NORMALIZED POSITION
+        Vector3 myNormalizedPos = new Vector3(
+            this.transform.position.x,
+            0,
+            this.transform.position.z
+            );
+
+        if ((myNormalizedPos - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).magnitude < maxHearingDistance)
         {
             myAudioSource.Play();
         }

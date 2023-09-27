@@ -42,7 +42,16 @@ public class Asteroid : MonoBehaviour
     {
         if (myAsteroidContent == null) 
             Debug.LogError("Asteroid " + this.gameObject.name + " has no content assigned.");
-        if((this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).magnitude < maxHearingDistance){
+
+
+        //NORMALIZED POSITION
+        Vector3 myNormalizedPos = new Vector3(
+            this.transform.position.x,
+            0,
+            this.transform.position.z
+            );
+
+        if ((myNormalizedPos - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).magnitude < maxHearingDistance){
             asteroidTrailSound.Play();
         }
     }
