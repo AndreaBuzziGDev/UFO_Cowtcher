@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3944596243743698854, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
       propertyPath: m_Name
-      value: UFO Cowtcher Bird
+      value: Stage 1
       objectReference: {fileID: 0}
     - target: {fileID: 4425771495017324238, guid: c71db0f35ef3fec48902598f44151ee0, type: 3}
       propertyPath: birdAnimator
