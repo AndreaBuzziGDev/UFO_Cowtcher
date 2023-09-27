@@ -18,6 +18,12 @@ public class UFOFearController : MonoBehaviour
         if (!ghosts.isPlaying) ghosts.Play();
     }
 
+    void FixedUpdate()
+    {
+        if(!terrorWord.isPlaying && GameController.Instance.FindPlayerAnywhere().IsTerrified)
+            terrorWord.Play();
+    }
+
     void OnDisable()
     {
         if (terrorWord.isPlaying) terrorWord.Stop();
