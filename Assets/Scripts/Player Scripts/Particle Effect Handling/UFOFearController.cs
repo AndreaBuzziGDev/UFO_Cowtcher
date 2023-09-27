@@ -2,29 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UFOMalfunctionController : MonoBehaviour
+public class UFOFearController : MonoBehaviour
 {
     //DATA
-    [SerializeField] private ParticleSystem smallBurstLoop1;
-    [SerializeField] private ParticleSystem smallBurstLoop2;
-    [SerializeField] private ParticleSystem glow;
-    [SerializeField] private ParticleSystem rain;
-    [SerializeField] private ParticleSystem stunWord;
-
-    
+    /*
+    [SerializeField] private ParticleSystem cursedWord;
+    [SerializeField] private ParticleSystem poisonFog;
+    */
 
     //METHODS
     //...
 
-    // Start is called before the first frame update
+    //
     void OnEnable()
     {
-        Debug.Log("UFOMalfunctionController");
-        smallBurstLoop1.Play();
-        smallBurstLoop2.Play();
-        glow.Play();
-        rain.Play();
-        stunWord.Play();
+        Debug.Log("UFOFearController");
         /*
         if (!smallBurstLoop1.isPlaying) smallBurstLoop1.Play();
         if (!smallBurstLoop2.isPlaying) smallBurstLoop2.Play();
@@ -36,11 +28,12 @@ public class UFOMalfunctionController : MonoBehaviour
 
     void OnDisable()
     {
+        /*
         smallBurstLoop1.Stop();
         smallBurstLoop2.Stop();
         glow.Stop();
         rain.Stop();
         stunWord.Stop();
+        */
     }
-
 }
