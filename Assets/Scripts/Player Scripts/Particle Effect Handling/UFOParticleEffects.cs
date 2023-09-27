@@ -7,7 +7,7 @@ public class UFOParticleEffects : MonoBehaviour
     //DATA
     [SerializeField] private UFOMalfunctionController malfunction;
     [SerializeField] private UFOFreezingController freezing;
-
+    [SerializeField] private UFOCurseController curse;
 
     //METHODS
     //...
@@ -16,6 +16,7 @@ public class UFOParticleEffects : MonoBehaviour
     {
         malfunction.gameObject.SetActive(false);
         freezing.gameObject.SetActive(false);
+        curse.gameObject.SetActive(false);
     }
 
 
@@ -27,7 +28,11 @@ public class UFOParticleEffects : MonoBehaviour
         //FREEZE
         freezing.gameObject.SetActive(UFOStatusAlterationHelper.HasFreeze());//TODO: ALTERNATIVE IMPLEMENTATION?
 
-        //TODO: SLOWDOWN/CURSED?
+        //FEAR
+
+
+        //CURSE
+        curse.gameObject.SetActive(GlobalEffectDutch.Instance.IsCurseActive);//TODO: ALTERNATIVE IMPLEMENTATION?
 
     }
 
