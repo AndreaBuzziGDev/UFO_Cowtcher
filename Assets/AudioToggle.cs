@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class AudioToggle : MonoBehaviour
 {
-
+    //DATA
     [SerializeField] private Button targetButton;
 
+
+    public static EventHandler<EventArgs> toggleAudioEventArg;
+
+
+    //METHODS
+
+    //FUNCTIONALITIES
     public void ChangeButton()
     {
         if (this.enabled)
@@ -25,6 +33,23 @@ public class AudioToggle : MonoBehaviour
         }
         Debug.Log(PlayerPrefs.GetInt("Volume"));
 
+        OnAudioToggle(new EventArgs());
     }
 
+    //EVENT STUFF
+    private void OnAudioToggle(EventArgs e)
+    {
+        EventHandler<EventArgs> handler = toggleAudioEventArg;
+        if (handler != null)
+        {
+            handler(this, e);
+        }
+    }
+
+    /*
+    private void SendEvent(object sender, EventArgs myEventArgs)
+    {
+
+    }
+    */
 }
