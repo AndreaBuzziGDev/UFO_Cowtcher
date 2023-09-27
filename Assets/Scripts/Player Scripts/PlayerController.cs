@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
     ///TERROR
     [SerializeField] private float shakeAmount = 0.035f;
     [SerializeField] private float shakeSpeed = 50f;
-    private Vector3 lastPosBeforeTerror;
 
 
 
@@ -78,8 +77,6 @@ public class PlayerController : MonoBehaviour
 
         if (terrorDuration > 0)
             terrorDuration -= Time.fixedDeltaTime;
-        else
-            this.transform.position = lastPosBeforeTerror;
 
         //HANDLING STATUS ALTERATIONS
         UpdateAlterationsTimers(Time.deltaTime);
@@ -93,7 +90,6 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                lastPosBeforeTerror = this.transform.position;
                 Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
             }
         }
