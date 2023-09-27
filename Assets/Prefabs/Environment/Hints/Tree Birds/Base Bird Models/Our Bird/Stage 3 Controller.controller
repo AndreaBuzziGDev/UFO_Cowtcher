@@ -28,7 +28,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 0-sheet_0 (1)
+  m_Name: Stage 3 Controller
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -64,7 +64,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 61dbb2a6e81509d4abc9b6e6dfdc2003, type: 2}
+  m_Motion: {fileID: 7400000, guid: a78590714d430b045b63d44d8dfb37e5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
