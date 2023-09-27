@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UFOCurse : MonoBehaviour
+public class UFOCurseController : MonoBehaviour
 {
     //DATA
     [SerializeField] private ParticleSystem cursedWord;
@@ -14,7 +14,6 @@ public class UFOCurse : MonoBehaviour
     //
     void OnEnable()
     {
-        Debug.Log("UFOFearController");
         if (!cursedWord.isPlaying) cursedWord.Play();
         if (!poisonFog.isPlaying) poisonFog.Play();
     }
