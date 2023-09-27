@@ -12,7 +12,7 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
     List<Cow> disappearedCows = new();
 
     ///PARTICLE & ATMOSPHERIC
-    [SerializeField] List<ParticleSystem> windRushes;
+    [SerializeField] List<ParticleSystem> bubbles;
 
 
     ///EXCLUDED COWS
@@ -30,7 +30,7 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
     {
         RenderSettings.fog = false;
 
-        foreach (ParticleSystem pSyst in windRushes)
+        foreach (ParticleSystem pSyst in bubbles)
             pSyst.gameObject.SetActive(false);
     }
 
@@ -68,7 +68,7 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
     {
         RenderSettings.fog = true;
 
-        foreach (ParticleSystem rf in windRushes)
+        foreach (ParticleSystem rf in bubbles)
         {
             if (!rf.isPlaying)
             {
@@ -82,7 +82,7 @@ public class GlobalEffectDutch : MonoSingleton<GlobalEffectDutch>
     {
         RenderSettings.fog = false;
 
-        foreach (ParticleSystem rf in windRushes)
+        foreach (ParticleSystem rf in bubbles)
         {
             if (rf.isPlaying)
                 rf.gameObject.SetActive(false);
