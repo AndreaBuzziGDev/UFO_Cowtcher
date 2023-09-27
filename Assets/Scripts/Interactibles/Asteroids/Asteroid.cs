@@ -29,6 +29,7 @@ public class Asteroid : MonoBehaviour
 
     ///TRAIL SOUND
     [SerializeField] private AudioSource asteroidTrailSound;
+    [SerializeField] private float maxHearingDistance = 20f;
 
     ///EXPLOSION SOUND
     [SerializeField] private GameObject asteroidExplosionSoundCarryingPrefab;
@@ -39,7 +40,11 @@ public class Asteroid : MonoBehaviour
     //...
     private void Start()
     {
-        if (myAsteroidContent == null) Debug.LogError("Asteroid " + this.gameObject.name + " has no content assigned.");
+        if (myAsteroidContent == null) 
+            Debug.LogError("Asteroid " + this.gameObject.name + " has no content assigned.");
+        if((this.transform.position - GameController.Instance.FindUFOAnywhere().GetPositionXZ()).magnitude < maxHearingDistance){
+            asteroidTrailSound.Play();
+        }
     }
 
 
