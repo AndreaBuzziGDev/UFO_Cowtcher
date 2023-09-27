@@ -8,12 +8,26 @@ public class AudioToggle : MonoBehaviour
 {
     //DATA
     [SerializeField] private Button targetButton;
+    [SerializeField] private bool isAudioActiveButton;
 
-
+    //EVENT HANDLER
     public static EventHandler<EventArgs> toggleAudioEventArg;
 
 
     //METHODS
+    //...
+
+    private void OnEnable()
+    {
+        if (isAudioActiveButton)
+        {
+            if (PlayerPrefs.GetInt("Volume", 1) > 0)
+            {
+                this.gameObject.SetActive(PlayerPrefs.GetInt("Volume", 1) > 0);
+                targetButton.gameObject.SetActive(!(PlayerPrefs.GetInt("Volume", 1) > 0));
+            }
+        }
+    }
 
     //FUNCTIONALITIES
     public void ChangeButton()
@@ -36,6 +50,8 @@ public class AudioToggle : MonoBehaviour
         OnAudioToggle(new EventArgs());
     }
 
+
+
     //EVENT STUFF
     private void OnAudioToggle(EventArgs e)
     {
@@ -46,10 +62,4 @@ public class AudioToggle : MonoBehaviour
         }
     }
 
-    /*
-    private void SendEvent(object sender, EventArgs myEventArgs)
-    {
-
-    }
-    */
 }
