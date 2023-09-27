@@ -120,7 +120,7 @@ public class StageSelectionController : MonoBehaviour
     private IEnumerator LoadSceneRoutine()
     {
         //WAIT FOR TIME
-        yield return new WaitForSeconds(2.3f);
+        yield return new WaitForSeconds(0.15f);
 
         //LOAD STAGE
         SceneNavigationController.Instance.LoadScene(targetStageScene);
