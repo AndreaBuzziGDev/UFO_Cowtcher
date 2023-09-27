@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SnowyBirds_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 174
+        width: 696
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08360ef14761455438e444bf5495ee8f
+      internalID: 939559038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowyBirds_1
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 174
+        width: 680
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91789a2667514354d97aab92bd9fed60
+      internalID: -782447527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowyBirds_2
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 174
+        width: 694
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af374880275929843a5c810bbdb937dd
+      internalID: 150271324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowyBirds_3
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 157
+        width: 696
+        height: 554
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e31968cd3daaa4aba447d74fdb9102
+      internalID: -1824792153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowyBirds_4
+      rect:
+        serializedVersion: 2
+        x: 3251
+        y: 174
+        width: 696
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4ada13255dd8e4c9179f90c647ee75
+      internalID: 1329160283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowyBirds_5
+      rect:
+        serializedVersion: 2
+        x: 4069
+        y: 174
+        width: 677
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e2b8cd0dbe39349ae2962b90331a69
+      internalID: 1572923850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +258,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SnowyBirds_0: 939559038
+      SnowyBirds_1: -782447527
+      SnowyBirds_2: 150271324
+      SnowyBirds_3: -1824792153
+      SnowyBirds_4: 1329160283
+      SnowyBirds_5: 1572923850
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

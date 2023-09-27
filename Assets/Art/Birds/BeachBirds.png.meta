@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BeachBirds_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 174
+        width: 696
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2c80bcd988b8d42bb8afdde4cce195
+      internalID: -815315908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeachBirds_1
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 174
+        width: 696
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdfa52a0d5237f4bb6e6fbc944344e7
+      internalID: -767344893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeachBirds_2
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 174
+        width: 694
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940b4cfad9d4fa44a95b6f173d4ed02c
+      internalID: 198502457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeachBirds_3
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 134
+        width: 699
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76c11e68f5a58f4b989aa4617590b60
+      internalID: 2065225295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeachBirds_4
+      rect:
+        serializedVersion: 2
+        x: 3251
+        y: 174
+        width: 696
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062561e14ec27e84eba5ff45796508b5
+      internalID: 1966124693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeachBirds_5
+      rect:
+        serializedVersion: 2
+        x: 4050
+        y: 174
+        width: 696
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5112d7047d7ee445bf9b6d15f242bd0
+      internalID: -86970682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +258,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BeachBirds_0: -815315908
+      BeachBirds_1: -767344893
+      BeachBirds_2: 198502457
+      BeachBirds_3: 2065225295
+      BeachBirds_4: 1966124693
+      BeachBirds_5: -86970682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

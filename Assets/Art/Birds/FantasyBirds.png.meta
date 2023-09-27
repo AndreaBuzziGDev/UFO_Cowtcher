@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: FantasyBirds_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 174
+        width: 696
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9627c76afc9c24482c72c71a922b73
+      internalID: -942911579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FantasyBirds_1
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 174
+        width: 677
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87eee6fb51377c24886753b4ee88932e
+      internalID: 2143013443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FantasyBirds_2
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 174
+        width: 694
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d68acf77b446b6449bc771fde794ef3
+      internalID: -2004073756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FantasyBirds_3
+      rect:
+        serializedVersion: 2
+        x: 2454
+        y: 155
+        width: 694
+        height: 549
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a08304db80c5b742a59079871bc8c72
+      internalID: -453359401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FantasyBirds_4
+      rect:
+        serializedVersion: 2
+        x: 3251
+        y: 174
+        width: 696
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d18333f03d5cf41abc61d3239959bb
+      internalID: 1564259356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FantasyBirds_5
+      rect:
+        serializedVersion: 2
+        x: 4071
+        y: 174
+        width: 675
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1ac1a36a84298489c7bfbd89f1e23b
+      internalID: -10890608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +258,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FantasyBirds_0: -942911579
+      FantasyBirds_1: 2143013443
+      FantasyBirds_2: -2004073756
+      FantasyBirds_3: -453359401
+      FantasyBirds_4: 1564259356
+      FantasyBirds_5: -10890608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
