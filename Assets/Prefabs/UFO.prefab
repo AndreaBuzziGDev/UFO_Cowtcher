@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   malfunction: {fileID: 3083618972235694962}
   freezing: {fileID: 9788221763160307}
+  curse: {fileID: 0}
 --- !u!1 &1126894735114397966
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &760507685740131610
 Transform:
   m_ObjectHideFlags: 0
