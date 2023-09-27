@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
+using System;
 
 
 public class PlayerController : MonoBehaviour
@@ -75,23 +76,8 @@ public class PlayerController : MonoBehaviour
 
         //MOVEMENT
         if (!GameController.Instance.IsPaused) 
-            Move(
-                new Vector3(
-                    easing(MovementInputFactor.x), 
-                    0,
-                    easing(MovementInputFactor.y)
-                    )
-                );
+            Move(new Vector3(MovementInputFactor.x, 0, MovementInputFactor.y));
     }
-
-    //MOVEMENT EASING
-    private float easing(float input)
-    {
-        return easeQuad(input);
-    }
-
-    //QUAD
-    private float easeQuad(float t) => t * t;
 
 
 
@@ -167,12 +153,25 @@ public class PlayerController : MonoBehaviour
                 (1 + (movSpeedBonus / 100)) 
                 * MoveSpeed 
                 * GlobalEffectSauron.Instance.SauronMult 
-                * direction
+                * direction.normalized * easing(direction.magnitude)
                 , ForceMode.Impulse
                 );
         }
     }
 
+    //MOVEMENT EASING
+    private float easing(float input)
+    {
+        return easeOutCube(input);
+    }
+
+    //QUAD
+    private float easeQuad(float t) => t * t;
+
+    private float easeOutCube(double t)
+    {
+        return (float) (1 - Math.Pow(1 - t, 3));
+    }
 
 
 
