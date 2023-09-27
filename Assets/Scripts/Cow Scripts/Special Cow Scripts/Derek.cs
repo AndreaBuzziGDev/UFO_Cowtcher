@@ -44,7 +44,8 @@ public class Derek : CowSpecialScript
                 //TODO: AFTER ADJUSTING TULCU, FIX HERE
                 if( !GlobalEffectDutch.Instance.IsCurseActive &&
                     !GlobalEffectAvalanche.Instance.IsAvalanche &&
-                    !GlobalEffectSauron.Instance.IsRingPowerActive)
+                    !GlobalEffectSauron.Instance.IsRingPowerActive &&
+                    !GlobalEffectTulcu.Instance.IsTerrorActive)
                 specialEffectActivationTimer -= Time.fixedDeltaTime;
             }
             else
