@@ -149,7 +149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 41307646016299603, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: m_Name
-      value: Hint TWB
+      value: Hint TWB Paddock
       objectReference: {fileID: 0}
     - target: {fileID: 41307646016299603, guid: 96efad582f3ce444abf0c00efdaf245f, type: 3}
       propertyPath: m_Layer
