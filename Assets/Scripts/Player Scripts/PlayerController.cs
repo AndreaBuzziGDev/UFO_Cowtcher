@@ -188,7 +188,7 @@ public class PlayerController : MonoBehaviour
     ///CUBE
     private float easeOutCube(double t)
     {
-        return (float) (1 - Math.Pow(1 - t, 3));
+        return (float) (t*t*t);
     }
 
 
