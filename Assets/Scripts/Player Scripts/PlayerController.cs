@@ -179,14 +179,14 @@ public class PlayerController : MonoBehaviour
     ///MOVEMENT EASING
     private float easing(float input)
     {
-        return easeOutCube(input);
+        return EaseInCube(input);
     }
 
     ///QUAD
-    private float easeQuad(float t) => t * t;
+    private float EaseInQuad(float t) => t * t;
 
     ///CUBE
-    private float easeOutCube(double t)
+    private float EaseInCube(double t)
     {
         return (float) (t*t*t);
     }
