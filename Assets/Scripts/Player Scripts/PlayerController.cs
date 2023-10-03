@@ -176,6 +176,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //TODO: EASING FUNCTIONS IN A DEDICATED CLASS?
+
     ///MOVEMENT EASING
     private float easing(float input)
     {
