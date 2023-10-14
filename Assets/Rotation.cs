@@ -37,15 +37,15 @@ public class Rotation : MonoBehaviour
         Shadow.transform.Rotate(new Vector3(0, 0, -rotation * Time.deltaTime));
         
 
-        if (Accessory.GetComponent<Image>().sprite.name == "Moon")
+        if (Accessory.GetComponent<Image>().sprite.name == "Moon_0")
         {
             Accessory.transform.Rotate(new Vector3(0, 0, -rotation / 4 * Time.deltaTime));
         }
-        else if (AccessoryRetro.GetComponent<Image>().sprite.name == "Portal")
+        else if (AccessoryRetro.GetComponent<Image>().sprite.name == "Portal_0")
         {
             AccessoryRetro.transform.Rotate(new Vector3(0, 0, -rotation / 2 * Time.deltaTime));
         }
-        else if (Accessory.GetComponent<Image>().sprite.name == "Halo")
+        else if (Accessory.GetComponent<Image>().sprite.name == "Halo_0")
         {
             
 
