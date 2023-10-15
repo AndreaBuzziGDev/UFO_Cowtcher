@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: cowTemplate
       value: 
       objectReference: {fileID: 11400000, guid: e0efb8bd451f58b41b37db7add9dca11, type: 2}
+    - target: {fileID: 7274476460106249080, guid: 7e2fc04240223634691e2404afd5d9f5, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

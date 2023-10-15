@@ -154,6 +154,7 @@ MonoBehaviour:
   additionalTranslate: {x: 0, y: 1, z: -1}
   ImpactExplosion: {fileID: 4593184484909914552, guid: 07426a68a7f5b01498e55c64c55acfac, type: 3}
   asteroidTrailSound: {fileID: 6524657898570029654}
+  maxHearingDistance: 20
   asteroidExplosionSoundCarryingPrefab: {fileID: 5273076500606721245, guid: 4f0a4de32f2f5eb4c9d2dd7925827ce4, type: 3}
 --- !u!82 &6524657898570029654
 AudioSource:
@@ -167,7 +168,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: be7c5c182f6c6224b9aa3c708c9e5d11, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
